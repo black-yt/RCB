@@ -1054,8 +1054,16 @@ async function renderFileContent(path, name, url, evt, baseUrl, filePath) {
   }
 
   if (VIEWABLE_IMG_EXTS.has(ext)) {
+    if (STATIC_MODE) {
+      const check = await fetch(url, { method: 'HEAD' }).catch(() => null);
+      if (!check || !check.ok) { div.innerHTML = `<div class="placeholder">This file is too large for GitHub Pages.<br><br>View source on <a href="https://github.com/black-yt/ResearchClawBench" target="_blank" style="color:var(--accent)">GitHub</a></div>`; return; }
+    }
     div.innerHTML = `<img src="${url}">`;
   } else if (VIEWABLE_EMBED_EXTS.has(ext)) {
+    if (STATIC_MODE) {
+      const check = await fetch(url, { method: 'HEAD' }).catch(() => null);
+      if (!check || !check.ok) { div.innerHTML = `<div class="placeholder">This PDF is too large for GitHub Pages.<br><br>View source on <a href="https://github.com/black-yt/ResearchClawBench" target="_blank" style="color:var(--accent)">GitHub</a></div>`; return; }
+    }
     div.innerHTML = `<iframe src="${url}" style="width:100%;height:100%;border:none"></iframe>`;
   } else if (VIEWABLE_TABLE_EXTS.has(ext)) {
     if (STATIC_MODE) { div.innerHTML = '<div class="placeholder">Excel preview not available in static mode</div>'; return; }
