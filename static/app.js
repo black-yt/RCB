@@ -1013,8 +1013,14 @@ async function renderFileContent(path, name, url, evt, baseUrl, filePath) {
   const div = document.getElementById('file-content-body');
   const ext = name.split('.').pop().toLowerCase();
 
+  const GITHUB_REPO = 'https://github.com/black-yt/ResearchClawBench';
+
   if (!isViewableFile(name)) {
-    div.innerHTML = `<div class="placeholder">Binary file — cannot preview: ${esc(name)}</div>`;
+    if (STATIC_MODE) {
+      div.innerHTML = `<div class="placeholder">This file cannot be previewed due to GitHub Pages limitations.<br><br>View source file on <a href="${GITHUB_REPO}" target="_blank" style="color:var(--accent)">GitHub</a></div>`;
+    } else {
+      div.innerHTML = `<div class="placeholder">Binary file — cannot preview: ${esc(name)}</div>`;
+    }
     return;
   }
 
@@ -1041,7 +1047,7 @@ async function renderFileContent(path, name, url, evt, baseUrl, filePath) {
         html = '<div class="placeholder">Empty spreadsheet</div>';
       }
       div.innerHTML = html;
-    } catch (_) { div.innerHTML = '<div class="placeholder">Failed to load spreadsheet</div>'; }
+    } catch (_) { div.innerHTML = STATIC_MODE ? '<div class="placeholder">File not available due to GitHub Pages size limits.<br><br>View source on <a href="https://github.com/black-yt/ResearchClawBench" target="_blank" style="color:var(--accent)">GitHub</a></div>' : '<div class="placeholder">Failed to load file</div>'; }
   } else if (VIEWABLE_CSV_EXTS.has(ext)) {
     try {
       const text = await (await fetch(url)).text();
@@ -1059,7 +1065,7 @@ async function renderFileContent(path, name, url, evt, baseUrl, filePath) {
       html += '</tbody></table></div>';
       html += `<div style="margin-top:8px;font-size: 13.5px;color:var(--text-tertiary)">${lines.length} rows × ${rows[0].length} cols</div>`;
       div.innerHTML = html;
-    } catch (_) { div.innerHTML = '<div class="placeholder">Failed to load file</div>'; }
+    } catch (_) { div.innerHTML = STATIC_MODE ? '<div class="placeholder">File not available due to GitHub Pages size limits.<br><br>View source on <a href="https://github.com/black-yt/ResearchClawBench" target="_blank" style="color:var(--accent)">GitHub</a></div>' : '<div class="placeholder">Failed to load file</div>'; }
   } else {
     try {
       const text = await (await fetch(url)).text();
@@ -1089,7 +1095,7 @@ async function renderFileContent(path, name, url, evt, baseUrl, filePath) {
           div.innerHTML = `<pre class="file-code-block"><code>${esc(text)}</code></pre>`;
         }
       }
-    } catch (_) { div.innerHTML = '<p class="placeholder">Failed to load</p>'; }
+    } catch (_) { div.innerHTML = STATIC_MODE ? '<div class="placeholder">File not available due to GitHub Pages size limits.<br><br>View source on <a href="https://github.com/black-yt/ResearchClawBench" target="_blank" style="color:var(--accent)">GitHub</a></div>' : '<div class="placeholder">Failed to load file</div>'; }
   }
 }
 
@@ -1133,7 +1139,15 @@ async function triggerScoring() {
   try {
     await fetch(`${API}/api/runs/${state.currentRunId}/score`, { method: 'POST' });
     const runId = state.currentRunId;
+    let pollCount = 0;
     const poll = setInterval(async () => {
+      pollCount++;
+      if (pollCount > 100) {
+        clearInterval(poll);
+        document.getElementById('score-total-area').innerHTML = `<p style="color:var(--err)">Scoring timed out</p>`;
+        btn.disabled = false; btn.textContent = 'Score';
+        return;
+      }
       try {
         const res = await fetch(`${API}/api/runs/${runId}/score`);
         if (res.ok) {
