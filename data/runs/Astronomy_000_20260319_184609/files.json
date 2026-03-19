@@ -1,0 +1,197 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "__pycache__",
+    "path": "code/__pycache__",
+    "type": "directory"
+  },
+  {
+    "name": "superradiance.cpython-311.pyc",
+    "path": "code/__pycache__/superradiance.cpython-311.pyc",
+    "type": "file",
+    "size": 13655,
+    "mtime": 1773917563.2204857,
+    "exported": false
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 21451,
+    "mtime": 1773917549.8684793,
+    "exported": true
+  },
+  {
+    "name": "superradiance.py",
+    "path": "code/superradiance.py",
+    "type": "file",
+    "size": 14353,
+    "mtime": 1773917450.5822062,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "IRAS_09149-6206_samples.dat",
+    "path": "data/IRAS_09149-6206_samples.dat",
+    "type": "file",
+    "size": 320220,
+    "mtime": 1770794836.0,
+    "exported": true
+  },
+  {
+    "name": "M33_X-7_samples.dat",
+    "path": "data/M33_X-7_samples.dat",
+    "type": "file",
+    "size": 58949,
+    "mtime": 1770794838.0,
+    "exported": true
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 579,
+    "mtime": 1773917594.5881913,
+    "exported": true
+  },
+  {
+    "name": "exclusion_2d_m33.npz",
+    "path": "outputs/exclusion_2d_m33.npz",
+    "type": "file",
+    "size": 10920,
+    "mtime": 1773917593.6366675,
+    "exported": false
+  },
+  {
+    "name": "exclusion_curves.npz",
+    "path": "outputs/exclusion_curves.npz",
+    "type": "file",
+    "size": 4218,
+    "mtime": 1773917567.5314956,
+    "exported": false
+  },
+  {
+    "name": "self_interaction_constraints.npz",
+    "path": "outputs/self_interaction_constraints.npz",
+    "type": "file",
+    "size": 2032,
+    "mtime": 1773917570.0596573,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2112232,
+    "mtime": 1770794804.0,
+    "exported": true
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_posteriors.png",
+    "path": "report/images/fig1_posteriors.png",
+    "type": "file",
+    "size": 214201,
+    "mtime": 1773917564.3345857,
+    "exported": true
+  },
+  {
+    "name": "fig2_regge_plane.png",
+    "path": "report/images/fig2_regge_plane.png",
+    "type": "file",
+    "size": 284188,
+    "mtime": 1773917564.796606,
+    "exported": true
+  },
+  {
+    "name": "fig3_timescales.png",
+    "path": "report/images/fig3_timescales.png",
+    "type": "file",
+    "size": 136715,
+    "mtime": 1773917565.3665826,
+    "exported": true
+  },
+  {
+    "name": "fig4_exclusion_curves.png",
+    "path": "report/images/fig4_exclusion_curves.png",
+    "type": "file",
+    "size": 90579,
+    "mtime": 1773917567.9776773,
+    "exported": true
+  },
+  {
+    "name": "fig5_combined_exclusion.png",
+    "path": "report/images/fig5_combined_exclusion.png",
+    "type": "file",
+    "size": 87937,
+    "mtime": 1773917568.2475727,
+    "exported": true
+  },
+  {
+    "name": "fig6_self_interaction.png",
+    "path": "report/images/fig6_self_interaction.png",
+    "type": "file",
+    "size": 70010,
+    "mtime": 1773917570.2526805,
+    "exported": true
+  },
+  {
+    "name": "fig7_2d_exclusion.png",
+    "path": "report/images/fig7_2d_exclusion.png",
+    "type": "file",
+    "size": 61823,
+    "mtime": 1773917594.007354,
+    "exported": true
+  },
+  {
+    "name": "fig8_validation.png",
+    "path": "report/images/fig8_validation.png",
+    "type": "file",
+    "size": 157011,
+    "mtime": 1773917594.485348,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 17831,
+    "mtime": 1773917714.9343,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 2327,
+    "mtime": 1773917169.877733,
+    "exported": true
+  }
+]

@@ -3,9 +3,16 @@
     "Astronomy_000"
   ],
   "agents": [
+    "Claude Code",
     "Codex CLI"
   ],
   "scores": {
+    "Claude Code": {
+      "Astronomy_000": {
+        "score": 44.1,
+        "run_id": "Astronomy_000_20260319_184609"
+      }
+    },
     "Codex CLI": {
       "Astronomy_000": {
         "score": 40.5,
@@ -14,6 +21,6 @@
     }
   },
   "frontier": {
-    "Astronomy_000": 40.5
+    "Astronomy_000": 44.1
   }
 }

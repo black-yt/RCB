@@ -1,5 +1,14 @@
 [
   {
+    "run_id": "Astronomy_000_20260319_184609",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260319_184609",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-opus-4-6[1m]",
+    "total_score": 44.1
+  },
+  {
     "run_id": "Astronomy_000_20260319_145223",
     "task_id": "Astronomy_000",
     "timestamp": "20260319_145223",
