@@ -30,7 +30,7 @@
     "type": "file",
     "size": 1991,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "north_asia_combined_Huss_Huss_et_al.csv",
@@ -38,7 +38,7 @@
     "type": "file",
     "size": 1489,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "north_asia_demdiff_ETH_Hugonnet_et_al.csv",
@@ -46,7 +46,7 @@
     "type": "file",
     "size": 223,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "north_asia_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -54,7 +54,7 @@
     "type": "file",
     "size": 26329,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "north_asia_glaciological_WGMS-beta_WGMS.csv",
@@ -62,7 +62,7 @@
     "type": "file",
     "size": 1520,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "north_asia_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -70,7 +70,7 @@
     "type": "file",
     "size": 102,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "north_asia_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -78,7 +78,7 @@
     "type": "file",
     "size": 21060,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "north_asia_gravimetry_Wouters_Wouters_et_al.csv",
@@ -86,7 +86,7 @@
     "type": "file",
     "size": 20257,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "11_central_europe",
@@ -99,7 +99,7 @@
     "type": "file",
     "size": 1988,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_europe_combined_Huss_Huss_et_al.csv",
@@ -107,7 +107,7 @@
     "type": "file",
     "size": 1495,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_europe_demdiff_ETH_Hugonnet_et_al.csv",
@@ -115,7 +115,7 @@
     "type": "file",
     "size": 223,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_europe_demdiff_FAU-GLACIER_Braun_et_al.csv",
@@ -123,7 +123,7 @@
     "type": "file",
     "size": 112,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_europe_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -139,7 +139,7 @@
     "type": "file",
     "size": 1591,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_europe_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -147,7 +147,7 @@
     "type": "file",
     "size": 104,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_europe_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -163,7 +163,7 @@
     "type": "file",
     "size": 20255,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "12_caucasus_middle_east",
@@ -184,7 +184,7 @@
     "type": "file",
     "size": 1495,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "caucasus_middle_east_demdiff_ETH_Hugonnet_et_al.csv",
@@ -192,7 +192,7 @@
     "type": "file",
     "size": 221,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "caucasus_middle_east_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -208,7 +208,7 @@
     "type": "file",
     "size": 1310,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "caucasus_middle_east_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -237,7 +237,7 @@
     "type": "file",
     "size": 8562,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_altimetry_Ke_Ke_et_al.csv",
@@ -245,7 +245,7 @@
     "type": "file",
     "size": 113,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_altimetry_Treichler_ICESat_Treichler_et_al.csv",
@@ -253,7 +253,7 @@
     "type": "file",
     "size": 143,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_altimetry_Treichler_snowfall_Treichler_et_al.csv",
@@ -261,7 +261,7 @@
     "type": "file",
     "size": 143,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_combined_DUS-combined_Dussaillant_et_al.csv",
@@ -269,7 +269,7 @@
     "type": "file",
     "size": 1986,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_combined_Huss_Huss_et_al.csv",
@@ -277,7 +277,7 @@
     "type": "file",
     "size": 1487,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_combined_Miles2021_Miles_et_al.csv",
@@ -285,7 +285,7 @@
     "type": "file",
     "size": 91,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_demdiff_Brun_et_al_2017_Brun_et_al.csv",
@@ -293,7 +293,7 @@
     "type": "file",
     "size": 111,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_demdiff_ETH_Hugonnet_et_al.csv",
@@ -301,7 +301,7 @@
     "type": "file",
     "size": 223,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -309,7 +309,7 @@
     "type": "file",
     "size": 26193,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_glaciological_WGMS-beta_WGMS.csv",
@@ -317,7 +317,7 @@
     "type": "file",
     "size": 1476,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -325,7 +325,7 @@
     "type": "file",
     "size": 20656,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -333,7 +333,7 @@
     "type": "file",
     "size": 104,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -341,7 +341,7 @@
     "type": "file",
     "size": 21028,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "central_asia_gravimetry_Wouters_Wouters_et_al.csv",
@@ -349,7 +349,7 @@
     "type": "file",
     "size": 20222,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "14_south_asia_west",
@@ -362,7 +362,7 @@
     "type": "file",
     "size": 8507,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_west_altimetry_Ke_Ke_et_al.csv",
@@ -370,7 +370,7 @@
     "type": "file",
     "size": 114,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_west_altimetry_Treichler_ICESat_Treichler_et_al.csv",
@@ -402,7 +402,7 @@
     "type": "file",
     "size": 1488,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_west_combined_Miles2021_Miles_et_al.csv",
@@ -410,7 +410,7 @@
     "type": "file",
     "size": 91,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_west_demdiff_Brun_et_al_2017_Brun_et_al.csv",
@@ -418,7 +418,7 @@
     "type": "file",
     "size": 112,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_west_demdiff_ETH_Hugonnet_et_al.csv",
@@ -426,7 +426,7 @@
     "type": "file",
     "size": 223,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_west_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -442,7 +442,7 @@
     "type": "file",
     "size": 1487,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_west_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -450,7 +450,7 @@
     "type": "file",
     "size": 103,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_west_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -466,7 +466,7 @@
     "type": "file",
     "size": 20287,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "15_south_asia_east",
@@ -479,7 +479,7 @@
     "type": "file",
     "size": 8451,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_east_altimetry_Ke_Ke_et_al.csv",
@@ -487,7 +487,7 @@
     "type": "file",
     "size": 115,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_east_altimetry_Treichler_ICESat_Treichler_et_al.csv",
@@ -519,7 +519,7 @@
     "type": "file",
     "size": 1497,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_east_combined_Miles2021_Miles_et_al.csv",
@@ -527,7 +527,7 @@
     "type": "file",
     "size": 91,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_east_demdiff_Brun_et_al_2017_Brun_et_al.csv",
@@ -535,7 +535,7 @@
     "type": "file",
     "size": 112,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_east_demdiff_ETH_Hugonnet_et_al.csv",
@@ -543,7 +543,7 @@
     "type": "file",
     "size": 224,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_east_demdiff_MountCryo_King_et_al.csv",
@@ -551,7 +551,7 @@
     "type": "file",
     "size": 100,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_east_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -567,7 +567,7 @@
     "type": "file",
     "size": 1374,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_east_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -575,7 +575,7 @@
     "type": "file",
     "size": 103,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "south_asia_east_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -591,7 +591,7 @@
     "type": "file",
     "size": 20229,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "16_low_latitudes",
@@ -604,7 +604,7 @@
     "type": "file",
     "size": 1526,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "low_latitudes_combined_Huss_Huss_et_al.csv",
@@ -612,7 +612,7 @@
     "type": "file",
     "size": 1488,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "low_latitudes_demdiff_Dussaillant2019_Dussaillant_et_al.csv",
@@ -620,7 +620,7 @@
     "type": "file",
     "size": 95,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "low_latitudes_demdiff_ETH_Hugonnet_et_al.csv",
@@ -628,7 +628,7 @@
     "type": "file",
     "size": 224,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "low_latitudes_demdiff_FAU-GLACIER_Braun_et_al.csv",
@@ -636,7 +636,7 @@
     "type": "file",
     "size": 112,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "low_latitudes_demdiff_Seehaus_Seehaus_et_al.csv",
@@ -644,7 +644,7 @@
     "type": "file",
     "size": 104,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "low_latitudes_glaciological_WGMS-beta_WGMS.csv",
@@ -652,7 +652,7 @@
     "type": "file",
     "size": 1388,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "low_latitudes_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -660,7 +660,7 @@
     "type": "file",
     "size": 102,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "low_latitudes_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -676,7 +676,7 @@
     "type": "file",
     "size": 20301,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "17_southern_andes",
@@ -689,7 +689,7 @@
     "type": "file",
     "size": 10111,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_combined_DUS-combined_Dussaillant_et_al.csv",
@@ -697,7 +697,7 @@
     "type": "file",
     "size": 1989,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_combined_Huss_Huss_et_al.csv",
@@ -705,7 +705,7 @@
     "type": "file",
     "size": 1491,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_demdiff_DLR-IMF_Krieger_et_al.csv",
@@ -713,7 +713,7 @@
     "type": "file",
     "size": 235,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_demdiff_Dussaillant2019_Dussaillant_et_al.csv",
@@ -729,7 +729,7 @@
     "type": "file",
     "size": 221,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_demdiff_FAU-GLACIER_Braun_et_al.csv",
@@ -737,7 +737,7 @@
     "type": "file",
     "size": 99,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -753,7 +753,7 @@
     "type": "file",
     "size": 1308,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -761,7 +761,7 @@
     "type": "file",
     "size": 20515,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -769,7 +769,7 @@
     "type": "file",
     "size": 105,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_gravimetry_Richter_Richter_et_al.csv",
@@ -777,7 +777,7 @@
     "type": "file",
     "size": 15808,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -793,7 +793,7 @@
     "type": "file",
     "size": 21958,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "southern_andes_gravimetry_Wouters_Wouters_et_al.csv",
@@ -801,7 +801,7 @@
     "type": "file",
     "size": 20206,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "18_new_zealand",
@@ -814,7 +814,7 @@
     "type": "file",
     "size": 1986,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "new_zealand_combined_Huss_Huss_et_al.csv",
@@ -822,7 +822,7 @@
     "type": "file",
     "size": 1493,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "new_zealand_demdiff_ETH_Hugonnet_et_al.csv",
@@ -830,7 +830,7 @@
     "type": "file",
     "size": 221,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "new_zealand_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -838,7 +838,7 @@
     "type": "file",
     "size": 25848,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "new_zealand_glaciological_WGMS-beta_WGMS.csv",
@@ -846,7 +846,7 @@
     "type": "file",
     "size": 1154,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "new_zealand_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -854,7 +854,7 @@
     "type": "file",
     "size": 20644,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "new_zealand_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -862,7 +862,7 @@
     "type": "file",
     "size": 103,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "new_zealand_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -870,7 +870,7 @@
     "type": "file",
     "size": 21092,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "new_zealand_gravimetry_Wouters_Wouters_et_al.csv",
@@ -878,7 +878,7 @@
     "type": "file",
     "size": 20249,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "19_antarctic_and_subantarctic",
@@ -960,7 +960,7 @@
     "type": "file",
     "size": 10200,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_combined_ArcticInSituvGRACE_Box_et_al.csv",
@@ -968,7 +968,7 @@
     "type": "file",
     "size": 2277,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_combined_Box2018_Box_et_al.csv",
@@ -976,7 +976,7 @@
     "type": "file",
     "size": 606,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_combined_DUS-combined_Dussaillant_et_al.csv",
@@ -984,7 +984,7 @@
     "type": "file",
     "size": 1985,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_combined_Huss_Huss_et_al.csv",
@@ -992,7 +992,7 @@
     "type": "file",
     "size": 1493,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_demdiff_ETH_Hugonnet_et_al.csv",
@@ -1000,7 +1000,7 @@
     "type": "file",
     "size": 221,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -1008,7 +1008,7 @@
     "type": "file",
     "size": 25875,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_glaciological_WGMS-beta_WGMS.csv",
@@ -1016,7 +1016,7 @@
     "type": "file",
     "size": 1322,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -1024,7 +1024,7 @@
     "type": "file",
     "size": 20565,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -1032,7 +1032,7 @@
     "type": "file",
     "size": 105,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -1040,7 +1040,7 @@
     "type": "file",
     "size": 21076,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_gravimetry_Velicogna_Sutterley_et_al.csv",
@@ -1048,7 +1048,7 @@
     "type": "file",
     "size": 21913,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "alaska_gravimetry_Wouters_Wouters_et_al.csv",
@@ -1056,7 +1056,7 @@
     "type": "file",
     "size": 20203,
     "mtime": 1770280492.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "2_western_canada_us",
@@ -1093,7 +1093,7 @@
     "type": "file",
     "size": 1493,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "western_canada_us_demdiff_ETH_Hugonnet_et_al.csv",
@@ -1101,7 +1101,7 @@
     "type": "file",
     "size": 223,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "western_canada_us_glaciological_Menounos_WNA_glac_Menounos_et_al.csv",
@@ -1125,7 +1125,7 @@
     "type": "file",
     "size": 1612,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "western_canada_us_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -1133,7 +1133,7 @@
     "type": "file",
     "size": 20555,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "western_canada_us_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -1157,7 +1157,7 @@
     "type": "file",
     "size": 20211,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "3_arctic_canada_north",
@@ -1186,7 +1186,7 @@
     "type": "file",
     "size": 206,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_north_altimetry_Tepes_Tepes_et_al.csv",
@@ -1194,7 +1194,7 @@
     "type": "file",
     "size": 102,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_north_combined_ArcticInSituvGRACE_Box_et_al.csv",
@@ -1210,7 +1210,7 @@
     "type": "file",
     "size": 601,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_north_combined_Colgan2015_Colgan_et_al.csv",
@@ -1234,7 +1234,7 @@
     "type": "file",
     "size": 1496,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_north_demdiff_ETH_Hugonnet_et_al.csv",
@@ -1242,7 +1242,7 @@
     "type": "file",
     "size": 221,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_north_demdiff_Zheng et al._Zheng_et_al.csv",
@@ -1266,7 +1266,7 @@
     "type": "file",
     "size": 1365,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_north_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -1351,7 +1351,7 @@
     "type": "file",
     "size": 206,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_south_altimetry_Tepes_Tepes_et_al.csv",
@@ -1359,7 +1359,7 @@
     "type": "file",
     "size": 99,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_south_combined_ArcticInSituvGRACE_Box_et_al.csv",
@@ -1375,7 +1375,7 @@
     "type": "file",
     "size": 599,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_south_combined_Colgan2015_Colgan_et_al.csv",
@@ -1399,7 +1399,7 @@
     "type": "file",
     "size": 1502,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_south_demdiff_ETH_Hugonnet_et_al.csv",
@@ -1407,7 +1407,7 @@
     "type": "file",
     "size": 223,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_south_demdiff_Zheng et al._Zheng_et_al.csv",
@@ -1431,7 +1431,7 @@
     "type": "file",
     "size": 1365,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "arctic_canada_south_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -1524,7 +1524,7 @@
     "type": "file",
     "size": 204,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "greenland_periphery_altimetry_Nilsson_Gardner_Nilsson_et_al.csv",
@@ -1556,7 +1556,7 @@
     "type": "file",
     "size": 1493,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "greenland_periphery_demdiff_DLR_Abdullahi_et_al.csv",
@@ -1564,7 +1564,7 @@
     "type": "file",
     "size": 110,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "greenland_periphery_demdiff_ETH_Hugonnet_et_al.csv",
@@ -1572,7 +1572,7 @@
     "type": "file",
     "size": 223,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "greenland_periphery_demdiff_Zheng et al._Zheng_et_al.csv",
@@ -1596,7 +1596,7 @@
     "type": "file",
     "size": 1445,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "6_iceland",
@@ -1609,7 +1609,7 @@
     "type": "file",
     "size": 103,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_altimetry_Jakob_Gourmelen_Jakob_et_al.csv",
@@ -1617,7 +1617,7 @@
     "type": "file",
     "size": 10202,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_altimetry_Tepes_Tepes_et_al.csv",
@@ -1625,7 +1625,7 @@
     "type": "file",
     "size": 102,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_combined_ArcticInSituvGRACE_Box_et_al.csv",
@@ -1633,7 +1633,7 @@
     "type": "file",
     "size": 1448,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_combined_Box2018_Box_et_al.csv",
@@ -1641,7 +1641,7 @@
     "type": "file",
     "size": 584,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_combined_DUS-combined_Dussaillant_et_al.csv",
@@ -1649,7 +1649,7 @@
     "type": "file",
     "size": 1993,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_combined_Huss_Huss_et_al.csv",
@@ -1657,7 +1657,7 @@
     "type": "file",
     "size": 1501,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_combined_Iceland-mb-group_smb_Palsson_et_al.csv",
@@ -1665,7 +1665,7 @@
     "type": "file",
     "size": 1987,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_combined_Iceland-mb-group_tot_Palsson_et_al.csv",
@@ -1673,7 +1673,7 @@
     "type": "file",
     "size": 1986,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_demdiff_ETH_Hugonnet_et_al.csv",
@@ -1681,7 +1681,7 @@
     "type": "file",
     "size": 223,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_demdiff_UIO_ASTER_Piermattei_et_al.csv",
@@ -1689,7 +1689,7 @@
     "type": "file",
     "size": 170,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_demdiff_UIO_SPOT5ArticDEM_Piermattei_et_al.csv",
@@ -1697,7 +1697,7 @@
     "type": "file",
     "size": 170,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_demdiff_Zheng et al._Zheng_et_al.csv",
@@ -1705,7 +1705,7 @@
     "type": "file",
     "size": 117,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -1713,7 +1713,7 @@
     "type": "file",
     "size": 25917,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_glaciological_WGMS-beta_WGMS.csv",
@@ -1721,7 +1721,7 @@
     "type": "file",
     "size": 1574,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -1729,7 +1729,7 @@
     "type": "file",
     "size": 20655,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -1737,7 +1737,7 @@
     "type": "file",
     "size": 104,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_gravimetry_LEGOS-MAGELLIUM-bis_Pfeffer_et_al.csv",
@@ -1745,7 +1745,7 @@
     "type": "file",
     "size": 21058,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_gravimetry_LEGOS-MAGELLIUM_Pfeffer_et_al.csv",
@@ -1753,7 +1753,7 @@
     "type": "file",
     "size": 21091,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -1761,7 +1761,7 @@
     "type": "file",
     "size": 21123,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_gravimetry_Velicogna_Sutterley_et_al.csv",
@@ -1769,7 +1769,7 @@
     "type": "file",
     "size": 22167,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "iceland_gravimetry_Wouters_Wouters_et_al.csv",
@@ -1777,7 +1777,7 @@
     "type": "file",
     "size": 20319,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "7_svalbard",
@@ -1790,7 +1790,7 @@
     "type": "file",
     "size": 92,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_altimetry_Jakob_Gourmelen_Jakob_et_al.csv",
@@ -1798,7 +1798,7 @@
     "type": "file",
     "size": 10302,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_altimetry_Tepes_Tepes_et_al.csv",
@@ -1806,7 +1806,7 @@
     "type": "file",
     "size": 101,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_combined_ArcticInSituvGRACE_Box_et_al.csv",
@@ -1814,7 +1814,7 @@
     "type": "file",
     "size": 2196,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_combined_Box2018_Box_et_al.csv",
@@ -1822,7 +1822,7 @@
     "type": "file",
     "size": 587,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_combined_DUS-combined_Dussaillant_et_al.csv",
@@ -1830,7 +1830,7 @@
     "type": "file",
     "size": 1990,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_combined_Huss_Huss_et_al.csv",
@@ -1838,7 +1838,7 @@
     "type": "file",
     "size": 1499,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_demdiff_ETH_Hugonnet_et_al.csv",
@@ -1846,7 +1846,7 @@
     "type": "file",
     "size": 224,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_demdiff_Zheng et al._Zheng_et_al.csv",
@@ -1854,7 +1854,7 @@
     "type": "file",
     "size": 94,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -1862,7 +1862,7 @@
     "type": "file",
     "size": 26152,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_glaciological_WGMS-beta_WGMS.csv",
@@ -1870,7 +1870,7 @@
     "type": "file",
     "size": 1495,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -1878,7 +1878,7 @@
     "type": "file",
     "size": 20605,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -1886,7 +1886,7 @@
     "type": "file",
     "size": 104,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_gravimetry_LEGOS-MAGELLIUM-bis_Pfeffer_et_al.csv",
@@ -1894,7 +1894,7 @@
     "type": "file",
     "size": 21103,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_gravimetry_LEGOS-MAGELLIUM_Pfeffer_et_al.csv",
@@ -1902,7 +1902,7 @@
     "type": "file",
     "size": 21095,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -1910,7 +1910,7 @@
     "type": "file",
     "size": 21027,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_gravimetry_Velicogna_Sutterley_et_al.csv",
@@ -1918,7 +1918,7 @@
     "type": "file",
     "size": 22145,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "svalbard_gravimetry_Wouters_Wouters_et_al.csv",
@@ -1926,7 +1926,7 @@
     "type": "file",
     "size": 20340,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "8_scandinavia",
@@ -1939,7 +1939,7 @@
     "type": "file",
     "size": 1984,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "scandinavia_combined_Huss_Huss_et_al.csv",
@@ -1947,7 +1947,7 @@
     "type": "file",
     "size": 1489,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "scandinavia_demdiff_Andreassen_Andreassen_et_al.csv",
@@ -1955,7 +1955,7 @@
     "type": "file",
     "size": 95,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "scandinavia_demdiff_ETH_Hugonnet_et_al.csv",
@@ -1963,7 +1963,7 @@
     "type": "file",
     "size": 222,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "scandinavia_demdiff_Zheng et al._Zheng_et_al.csv",
@@ -1971,7 +1971,7 @@
     "type": "file",
     "size": 117,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "scandinavia_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -1979,7 +1979,7 @@
     "type": "file",
     "size": 25905,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "scandinavia_glaciological_WGMS-beta_WGMS.csv",
@@ -1987,7 +1987,7 @@
     "type": "file",
     "size": 1579,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "scandinavia_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -1995,7 +1995,7 @@
     "type": "file",
     "size": 103,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "scandinavia_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -2003,7 +2003,7 @@
     "type": "file",
     "size": 21105,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "scandinavia_gravimetry_Wouters_Wouters_et_al.csv",
@@ -2011,7 +2011,7 @@
     "type": "file",
     "size": 20274,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "9_russian_arctic",
@@ -2032,7 +2032,7 @@
     "type": "file",
     "size": 10468,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_altimetry_Tepes_Tepes_et_al.csv",
@@ -2040,7 +2040,7 @@
     "type": "file",
     "size": 102,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_combined_ArcticInSituvGRACE_Box_et_al.csv",
@@ -2048,7 +2048,7 @@
     "type": "file",
     "size": 2140,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_combined_Box2018_Box_et_al.csv",
@@ -2056,7 +2056,7 @@
     "type": "file",
     "size": 544,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_combined_DUS-combined_Dussaillant_et_al.csv",
@@ -2064,7 +2064,7 @@
     "type": "file",
     "size": 1982,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_combined_Huss_Huss_et_al.csv",
@@ -2072,7 +2072,7 @@
     "type": "file",
     "size": 1494,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_demdiff_ETH_Hugonnet_et_al.csv",
@@ -2080,7 +2080,7 @@
     "type": "file",
     "size": 222,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_demdiff_FAU-GLACIER_Braun_et_al.csv",
@@ -2088,7 +2088,7 @@
     "type": "file",
     "size": 101,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_demdiff_Zheng et al._Zheng_et_al.csv",
@@ -2096,7 +2096,7 @@
     "type": "file",
     "size": 104,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_glaciological_UZH_GlaciolSineWave_Zemp_et_al.csv",
@@ -2112,7 +2112,7 @@
     "type": "file",
     "size": 1495,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_gravimetry_Harig_Group_Harig_et_al.csv",
@@ -2120,7 +2120,7 @@
     "type": "file",
     "size": 20591,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_gravimetry_Jacob_2012_dmdt_Jacob_et_al.csv",
@@ -2128,7 +2128,7 @@
     "type": "file",
     "size": 105,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_gravimetry_LEGOS-MAGELLIUM-bis_Pfeffer_et_al.csv",
@@ -2144,7 +2144,7 @@
     "type": "file",
     "size": 21096,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_gravimetry_Sasgen_AWIarc_RL01_2_Sasgen_et_al.csv",
@@ -2160,7 +2160,7 @@
     "type": "file",
     "size": 21982,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "russian_arctic_gravimetry_Wouters_Wouters_et_al.csv",
@@ -2168,7 +2168,7 @@
     "type": "file",
     "size": 20312,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "GlaMBIE_INPUT_DATASETS_INFO.md",
@@ -2210,7 +2210,7 @@
     "type": "file",
     "size": 2926,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "12_caucasus_middle_east.csv",
@@ -2218,7 +2218,7 @@
     "type": "file",
     "size": 3068,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "13_central_asia.csv",
@@ -2234,7 +2234,7 @@
     "type": "file",
     "size": 2894,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "15_south_asia_east.csv",
@@ -2242,7 +2242,7 @@
     "type": "file",
     "size": 2934,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "16_low_latitudes.csv",
@@ -2258,7 +2258,7 @@
     "type": "file",
     "size": 2886,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "18_new_zealand.csv",
@@ -2274,7 +2274,7 @@
     "type": "file",
     "size": 3236,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "1_alaska.csv",
@@ -2290,7 +2290,7 @@
     "type": "file",
     "size": 2963,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "3_arctic_canada_north.csv",
@@ -2298,7 +2298,7 @@
     "type": "file",
     "size": 3066,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "4_arctic_canada_south.csv",
@@ -2306,7 +2306,7 @@
     "type": "file",
     "size": 2997,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "5_greenland_periphery.csv",
@@ -2314,7 +2314,7 @@
     "type": "file",
     "size": 3015,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "6_iceland.csv",
@@ -2359,7 +2359,7 @@
     "type": "file",
     "size": 5371,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "11_central_europe.csv",
@@ -2367,7 +2367,7 @@
     "type": "file",
     "size": 5500,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "12_caucasus_middle_east.csv",
@@ -2375,7 +2375,7 @@
     "type": "file",
     "size": 5675,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "13_central_asia.csv",
@@ -2383,7 +2383,7 @@
     "type": "file",
     "size": 6925,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "14_south_asia_west.csv",
@@ -2391,7 +2391,7 @@
     "type": "file",
     "size": 6951,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "15_south_asia_east.csv",
@@ -2399,7 +2399,7 @@
     "type": "file",
     "size": 7045,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "16_low_latitudes.csv",
@@ -2407,7 +2407,7 @@
     "type": "file",
     "size": 5447,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "17_southern_andes.csv",
@@ -2415,7 +2415,7 @@
     "type": "file",
     "size": 7417,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "18_new_zealand.csv",
@@ -2423,7 +2423,7 @@
     "type": "file",
     "size": 5224,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "19_antarctic_and_subantarctic.csv",
@@ -2431,7 +2431,7 @@
     "type": "file",
     "size": 7022,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "1_alaska.csv",
@@ -2447,7 +2447,7 @@
     "type": "file",
     "size": 6231,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "3_arctic_canada_north.csv",
@@ -2455,7 +2455,7 @@
     "type": "file",
     "size": 8655,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "4_arctic_canada_south.csv",
@@ -2463,7 +2463,7 @@
     "type": "file",
     "size": 8549,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "5_greenland_periphery.csv",
@@ -2471,7 +2471,7 @@
     "type": "file",
     "size": 7180,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "6_iceland.csv",
@@ -2495,7 +2495,7 @@
     "type": "file",
     "size": 5422,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "9_russian_arctic.csv",
@@ -2503,7 +2503,7 @@
     "type": "file",
     "size": 8026,
     "mtime": 1770280494.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "GlaMBIE_RESULT_DATASETS_INFO.md",
