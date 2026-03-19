@@ -601,7 +601,10 @@ async function selectRun(runId) {
       }
       const prevFollow = state.autoFollow;
       state.autoFollow = false;
-      for (const line of toRender) { try { appendMsg(JSON.parse(line)); } catch (_) {} }
+      for (const line of toRender) {
+        try { appendMsg(JSON.parse(line)); }
+        catch (_) { if (line.trim()) appendLine(line.trim(), ''); }
+      }
       state.autoFollow = prevFollow;
       if (prevFollow) termBody.scrollTop = termBody.scrollHeight;
     } else { termBody.innerHTML = '<div class="placeholder">No agent output</div>'; }
