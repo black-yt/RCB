@@ -1,0 +1,62 @@
+{
+  "Astronomy": [
+    "Astronomy_000",
+    "Astronomy_001",
+    "Astronomy_002",
+    "Astronomy_003"
+  ],
+  "Chemistry": [
+    "Chemistry_000",
+    "Chemistry_001",
+    "Chemistry_002",
+    "Chemistry_003"
+  ],
+  "Earth": [
+    "Earth_000",
+    "Earth_001",
+    "Earth_002",
+    "Earth_003"
+  ],
+  "Energy": [
+    "Energy_000",
+    "Energy_001",
+    "Energy_002",
+    "Energy_003"
+  ],
+  "Information": [
+    "Information_000",
+    "Information_001",
+    "Information_002",
+    "Information_003"
+  ],
+  "Life": [
+    "Life_000",
+    "Life_001",
+    "Life_002",
+    "Life_003"
+  ],
+  "Material": [
+    "Material_000",
+    "Material_001",
+    "Material_002",
+    "Material_003"
+  ],
+  "Math": [
+    "Math_000",
+    "Math_001",
+    "Math_002",
+    "Math_003"
+  ],
+  "Neuroscience": [
+    "Neuroscience_000",
+    "Neuroscience_001",
+    "Neuroscience_002",
+    "Neuroscience_003"
+  ],
+  "Physics": [
+    "Physics_000",
+    "Physics_001",
+    "Physics_002",
+    "Physics_003"
+  ]
+}

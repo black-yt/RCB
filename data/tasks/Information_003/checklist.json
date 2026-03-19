@@ -1,0 +1,57 @@
+[
+  {
+    "type": "image",
+    "content": "Entangled feature distributions are the root cause of inconsistent NIDS performance across attacks and drastic few\u2011shot degradation \u2013 quantitatively verified by Fig.\u202f2 (SVM/E\u2011GraphSAGE performance gaps), Fig.\u202f4 (t\u2011SNE/heatmap of BSNet vs. DIDS), and Fig.\u202f3 (performance drop under few\u2011shot settings).",
+    "path": "images/Fig.2.png",
+    "keywords": [
+      "Inconsistent Attack Detection \u2013 Large F1-score variance across attack types (e.g., MITM: 18% vs. DDoS: 93% in E\u2011GraphSAGE),      quantified in Fig.\u202f2(d).",
+      "Entangled Feature Distributions \u2013 Overlapped statistical feature distributions (Fig.\u202f2b,c) and high representation correlation in      heatmaps (Fig.\u202f2e,f).",
+      "Few\u2011Shot Degradation \u2013 Severe F1 drop from supervised (91%) to few\u2011shot (36%) settings, visualized in Fig.\u202f3(a)."
+    ],
+    "weight": 0.15
+  },
+  {
+    "type": "image",
+    "content": "DIDS\u2011MFL framework integrates statistical disentanglement, representational disentanglement, and multi\u2011layer graph diffusion to learn dynamic, attack\u2011specific representations, effectively addressing both known and unknown attacks (Fig.\u202f7,\u202f8,\u202f9, Table\u202fI,\u202fIII).",
+    "path": "images/fig.7.png",
+    "keywords": [
+      "Statistical Disentanglement \u2013 Non\u2011parametric optimization minimizes mutual information between feature elements and             enforces order\u2011preserving constraints (Eq.\u202f3\u20137), producing distinguishable feature distributions (Fig.\u202f7).",
+      "Representational Disentanglement \u2013 Orthogonal regularization (Eq.11) encourages low\u2011correlation node embeddings, highlighting attack\u2011specific dimensions (Fig.\u202f8).",
+      "Multi\u2011Layer Graph Diffusion \u2013 PM\u2011inspired nonlinear diffusion with spatial\u2011temporal coefficients SS (Eq.\u202f14\u201316) fuses topology and time, enabling fine\u2011grained dynamic aggregation (Fig.\u202f9)."
+    ],
+    "weight": 0.2
+  },
+  {
+    "type": "text",
+    "content": "State\u2011of\u2011the\u2011art few\u2011shot intrusion detection \u2013 DIDS\u2011MFL achieves 71.91%\u2013125.19% F1 improvement and 71.95%\u2013144.07% NMI improvement over 14 baselines on five benchmarks, with reproducible high scores (F1\u202f96.00%, NMI\u202f92.04% on NF\u2011UNSW\u2011NB15\u2011v2) and consistent superiority across all tasks (Table\u202fII).",
+    "path": null,
+    "keywords": [
+      "F1\u2011Score Improvement Range \u2013 DIDS\u2011MFL achieves 71.91%\u2013125.19% relative gain over 14 baselines, demonstrating strong few\u2011shot effectiveness (Table\u202fII).",
+      "NMI Improvement Range \u2013 NMI is improved by 71.95%\u2013144.07% , confirming better clustering quality of learned embeddings.",
+      "Reproducible High Performance \u2013 On NF\u2011UNSW\u2011NB15\u2011v2, DIDS\u2011MFL attains F1 96.00% \u00b1 1.12 and NMI 92.04% \u00b1 1.36 over 10 runs, with low variance indicating stable generalization (Table\u202fII)."
+    ],
+    "weight": 0.3
+  },
+  {
+    "type": "image",
+    "content": "Ablation and visualization studies confirm the necessity of every component (SD, RD, MLGRAND, multi\u2011scale transform, disentanglement regularizer) \u2013 removing any module causes significant performance drop (Table\u202fIV,\u202fV). t\u2011SNE and correlation heatmaps (Fig.\u202f10,\u202f11) show that DIDS\u2011MFL produces well\u2011separated, low\u2011correlation embeddings, while statistical disentanglement reduces feature overlap (Fig.\u202f7) and representational disentanglement highlights attack\u2011specific features (Fig.\u202f8)",
+    "path": "images/result-image4.png",
+    "keywords": [
+      "Ablation\u2011driven necessity \u2013 Removing statistical disentanglement (SD), representational disentanglement (RD), or multi\u2011layer graph diffusion (MLGRAND) degrades F1/AUC by >10 points (Table\u202fIV); omitting multi\u2011scale transformation or the disentanglement regularizer in MFL significantly drops F1/NMI (Table\u202fV).",
+      "t\u2011SNE cluster separation \u2013 DIDS\u2011MFL produces well\u2011separated, distinguishable attack clusters in latent space, while DIDS alone exhibits mixed boundaries, confirming the discriminative power of multi\u2011scale learning (Fig.\u202f10).",
+      "Correlation heatmap disentanglement \u2013 DIDS\u2011MFL yields a block\u2011diagonal correlation structure with extremely low off\u2011diagonal coefficients, demonstrating effective element\u2011wise disentanglement and attack\u2011specific feature isolation (Fig.\u202f11)."
+    ],
+    "weight": 0.2
+  },
+  {
+    "type": "text",
+    "content": "Superiority over large language models \u2013 On the same traffic samples, DIDS\u2011MFL outperforms GPT\u20113.5/4 in both accuracy (99.52% vs. 66.67% F1) and speed (6.41s vs. 13.88s) , demonstrating practical deployability (Table\u202fVIII).",
+    "path": null,
+    "keywords": [
+      "F1\u2011Score Superiority \u2013 DIDS\u2011MFL achieves 99.52% F1 vs. 66.67% for GPT\u20113.5/4 on the same 100 traffic samples, demonstrating substantially higher detection accuracy (Table\u202fVIII).",
+      "Inference Speed Advantage \u2013 DIDS\u2011MFL processes the samples in 6.41s, 2.2\u00d7 faster than LLM (13.88s), confirming its suitability for real\u2011time NIDS deployment.",
+      "Practical Deployability \u2013 The combination of superior accuracy and lower latency validates that specialized disentanglement\u2011based models outperform general\u2011purpose LLMs on structured traffic data, highlighting the infeasibility of direct LLM substitution in production NIDS."
+    ],
+    "weight": 0.15
+  }
+]

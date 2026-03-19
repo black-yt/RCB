@@ -1,0 +1,60 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "IRAS_09149-6206_samples.dat",
+    "path": "data/IRAS_09149-6206_samples.dat",
+    "type": "file",
+    "size": 320220,
+    "mtime": 1770794836.0
+  },
+  {
+    "name": "M33_X-7_samples.dat",
+    "path": "data/M33_X-7_samples.dat",
+    "type": "file",
+    "size": 58949,
+    "mtime": 1770794838.0
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2112232,
+    "mtime": 1770794804.0
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 2327,
+    "mtime": 1773896362.6223185
+  }
+]

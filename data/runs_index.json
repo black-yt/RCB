@@ -1,0 +1,56 @@
+[
+  {
+    "run_id": "Astronomy_000_20260319_130441",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260319_130441",
+    "status": "failed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.2",
+    "total_score": null
+  },
+  {
+    "run_id": "Astronomy_000_20260319_130241",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260319_130241",
+    "status": "failed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.2",
+    "total_score": null
+  },
+  {
+    "run_id": "Astronomy_000_20260319_125922",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260319_125922",
+    "status": "failed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.2",
+    "total_score": null
+  },
+  {
+    "run_id": "Astronomy_000_20260319_125456",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260319_125456",
+    "status": "failed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.2",
+    "total_score": null
+  },
+  {
+    "run_id": "Astronomy_000_20260319_124921",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260319_124921",
+    "status": "failed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.2",
+    "total_score": null
+  },
+  {
+    "run_id": "Astronomy_000_20260319_124229",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260319_124229",
+    "status": "failed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.2",
+    "total_score": null
+  }
+]

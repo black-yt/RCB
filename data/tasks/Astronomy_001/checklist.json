@@ -1,0 +1,35 @@
+[
+  {
+    "type": "text",
+    "content": "By generating simulated MCMC chains based on the best-fit parameters and their 1\u03c3 errors from Tables II and III of the paper, this step successfully constructs the parameter sample space for the \u039bCDM, EDE, and w\u2080w\u2090 models, providing foundational data for the subsequent visualization of parameter constraints. This ensures that the triangle and distance plots accurately reflect the central values and dispersions reported in the paper. ",
+    "path": null,
+    "keywords": [
+      "The simulated chains assume independent Gaussian distributions, with means and 1\u03c3 errors strictly matching the best-fit values under the CMB+BAO combination from Tables II and III (e.g., \u03a9\u2098=0.3037\u00b10.0037, H\u2080=68.12\u00b10.28), ensuring fidelity to the original data.",
+      "Each model is sampled with 20,000 points, sufficient for generating smooth posterior contours and mimicking the statistical properties of MCMC sampling.",
+      "The generated chain files are compatible with GetDist, providing standardized input for subsequent triangle plotting and distance calculations, serving as the data foundation for the reproduction."
+    ],
+    "weight": 0.2
+  },
+  {
+    "type": "image",
+    "content": "The reproduced triangle plot (figure3_triangle.png) clearly displays the 2D posterior distributions of key cosmological parameters (\u03a9\u2098, H\u2080, \u03c3\u2088, n\u209b, etc.) for the \u039bCDM, EDE, and w\u2080w\u2090 models, qualitatively consistent with Figure 3 of the paper. The EDE model shows higher H\u2080 and \u03c3\u2088 and slightly lower \u03a9\u2098 compared to \u039bCDM, while the w\u2080w\u2090 model exhibits opposite trends (lower H\u2080, higher \u03a9\u2098), confirming the different mechanisms by which each model responds to the acoustic tension. ",
+    "path": "images/figure3_triangle.png",
+    "keywords": [
+      "The best-fit region for the EDE model shows H\u2080\u224870.9 km/s/Mpc, higher than \u039bCDM\u2019s 68.1 km/s/Mpc, and \u03c3\u2088\u22480.828, higher than \u039bCDM\u2019s 0.810, consistent with the parameter shifts reported in Table II.",
+      "The w\u2080w\u2090 model yields H\u2080\u224863.5 km/s/Mpc and \u03a9\u2098\u22480.353, sharply contrasting with \u039bCDM and EDE, validating the distinct directions in which late-time and early-time dark energy affect parameter space.",
+      "The slightly higher n\u209b (\u22480.982) in the EDE model reflects the compensation mechanism for EDE\u2019s impact on CMB acoustic peaks, aligning with the paper\u2019s discussion on the increase in n\u209b."
+    ],
+    "weight": 0.4
+  },
+  {
+    "type": "image",
+    "content": "The reproduced distance comparison plot (figure6_distance.png) compares the predictions of the \u039bCDM, EDE, and w\u2080w\u2090 models for low-redshift residuals in distance modulus, D_V/r_d, and F_AP with DESI BAO and Union3 SNe data points. The results show that the EDE model\u2019s theoretical curves better match the DESI BAO data at z<1, whereas the \u039bCDM model exhibits systematic negative offsets, and the w\u2080w\u2090 model aligns more closely with SNe trends but deviates slightly from BAO. This directly validates that the EDE model better alleviates the acoustic tension between CMB and BAO while highlighting the discriminative power of the different models.  ",
+    "path": "images/figure6_distance.png",
+    "keywords": [
+      "In the redshift range z\u22480.3-0.9, the relative deviation in D_V/r_d predicted by the EDE model (relative to the reference \u039bCDM) falls within the error bars of DESI data points (e.g., \u0394\u2248-0.02 at z=0.295), while the \u039bCDM model itself shows a systematic negative offset, indicating that EDE improves the fit.",
+      "The w\u2080w\u2090 model predicts a shallower decline in D_V/r_d at z<0.5 but aligns with the negative trend in the SNe distance modulus (\u0394\u03bc), reflecting its ability to adjust late-time expansion.",
+      "The predictions for F_AP show little variation among the three models, consistent with the large errors in the DESI data points, indicating that this quantity currently lacks discriminative power, though both EDE and \u039bCDM are generally compatible with the data."
+    ],
+    "weight": 0.4
+  }
+]

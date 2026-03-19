@@ -1,0 +1,11 @@
+{
+  "task": "The scientific goal of this paper is to investigate whether an early dark energy (EDE) model can alleviate the acoustic tension between measurements from the cosmic microwave background (CMB) and baryon acoustic oscillations (BAO).  \r\nInputs: BAO data from DESI DR2, CMB data from Planck and ACT (including temperature and polarization power spectra and lensing), and Union3 supernova data (in some analyses).  \r\nOutputs: Constraints on cosmological parameters (\u03a9m, H\u2080, \u03c3\u2088, etc.) from model fitting, comparison of goodness-of-fit (\u0394\u03c7\u00b2) for \u039bCDM, EDE, and w\u2080w\u2090 models, and posterior distributions of EDE parameters (f_EDE, log\u2081\u2080a_c). The results show that EDE can partially relieve the tension but leads to different parameter shifts compared to late-time dark energy models.",
+  "data": [
+    {
+      "name": "DESI_EDE_Repro_Data.txt",
+      "path": "./tasks/Astronomy_002/data/DESI_EDE_Repro_Data.txt",
+      "type": "structure_data",
+      "description": "This dataset contains the best-fit parameters with 1\u03c3 errors for \u039bCDM, EDE, and w\u2080w\u2090 models from Tables II/III of the paper, along with manually extracted DESI BAO and Union3 SNe data points from Figure 6, used to reproduce the paper's key parameter constraints and distance comparison results."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "run_id": "Astronomy_000_20260319_124229",
+  "task_id": "Astronomy_000",
+  "timestamp": "20260319_124229",
+  "status": "failed",
+  "agent_name": "Codex CLI",
+  "model": "gpt-5.2"
+}
