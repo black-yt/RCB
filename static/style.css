@@ -129,10 +129,13 @@ body { height: 100vh; font-family: var(--font); font-size: 17px; line-height: 1.
     background: var(--bg-sidebar);
     color: var(--text-sidebar);
     display: flex; flex-direction: column;
-    overflow-y: auto;
+    overflow: hidden;
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border-right: 1px solid var(--border);
     transition: background var(--transition);
+}
+#sidebar-scroll {
+    flex: 1; overflow-y: auto; min-height: 0;
 }
 
 .sidebar-header {
