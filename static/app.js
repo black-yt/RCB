@@ -478,9 +478,32 @@ async function selectTask(taskId) {
 
   const paperIframe = document.getElementById('paper-iframe');
   if (paperIframe) {
-    paperIframe.src = STATIC_MODE
-      ? `data/tasks/${taskId}/paper.pdf`
-      : `${API}/api/tasks/${taskId}/paper`;
+    if (STATIC_MODE) {
+      // Check if paper was exported by trying to load it
+      const paperUrl = `data/tasks/${taskId}/paper.pdf`;
+      const paperContainer = paperIframe.parentElement;
+      try {
+        const resp = await fetch(paperUrl);
+        const ct = resp.headers.get('content-type') || '';
+        if (resp.ok && ct.includes('pdf')) {
+          paperIframe.style.display = 'block';
+          paperIframe.src = paperUrl;
+          // Remove any fallback message
+          const old = paperContainer.querySelector('.placeholder');
+          if (old) old.remove();
+        } else {
+          paperIframe.style.display = 'none';
+          if (!paperContainer.querySelector('.placeholder')) {
+            paperContainer.innerHTML = '<div class="placeholder" style="padding:20px">Paper PDF too large for GitHub Pages.<br><br>View on <a href="https://github.com/black-yt/ResearchClawBench" target="_blank" style="color:var(--accent)">GitHub</a></div>';
+          }
+        }
+      } catch (_) {
+        paperIframe.style.display = 'none';
+        paperContainer.innerHTML = '<div class="placeholder" style="padding:20px">Paper PDF not available.<br><br>View on <a href="https://github.com/black-yt/ResearchClawBench" target="_blank" style="color:var(--accent)">GitHub</a></div>';
+      }
+    } else {
+      paperIframe.src = `${API}/api/tasks/${taskId}/paper`;
+    }
   }
   await loadRuns(taskId);
   document.getElementById('terminal-body').innerHTML = '<div class="placeholder">Select a run to see agent output</div>';
