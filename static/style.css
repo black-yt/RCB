@@ -702,12 +702,12 @@ body { height: 100vh; font-family: var(--font); font-size: 17px; line-height: 1.
 }
 #footer-links a {
     display: flex; align-items: center; justify-content: center;
-    width: 36px; height: 36px;
+    width: 29px; height: 29px;
     color: var(--text-sidebar-dim); text-decoration: none;
     transition: color 0.15s;
 }
 #footer-links a:hover { color: var(--text-sidebar); }
-#footer-links svg { width: 24px; height: 24px; fill: currentColor; }
+#footer-links svg { width: 19px; height: 19px; fill: currentColor; }
 
 /* --- Scrollbar ------------------------------------------------------- */
 ::-webkit-scrollbar { width: 5px; height: 5px; }
