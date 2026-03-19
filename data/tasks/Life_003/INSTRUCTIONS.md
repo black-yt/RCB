@@ -1,8 +1,8 @@
 # Research Task
 
 ## Task Description
-Input: Raw nanopore electrical signal (FAST5/POD5), basecalled reads, reference genome/transcriptome sequences, and k-mer pore models.
-Output: Signal-to-reference alignments in BAM format, nucleotide modification calls (e.g., m6A sites), performance benchmarks, and trained pore models.
+Input: Raw nanopore electrical signal (FAST5/POD5), basecalled reads, reference genome/transcriptome sequences, and k-mer pore models.
+Output: Signal-to-reference alignments in BAM format, nucleotide modification calls (e.g., m6A sites), performance benchmarks, and trained pore models.
 Scientific Objective: To develop Uncalled4, a fast and accurate toolkit for nanopore signal alignment, enabling more sensitive and comprehensive detection of DNA and RNA modifications, while overcoming limitations of existing tools in speed, file format, and compatibility with new sequencing chemistries.
 
 ## Available Data Files

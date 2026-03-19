@@ -6,6 +6,7 @@
     "status": "completed",
     "agent_name": "Claude Code",
     "model": "claude-opus-4-6[1m]",
+    "duration_seconds": 563,
     "total_score": 44.1
   },
   {
@@ -15,6 +16,7 @@
     "status": "completed",
     "agent_name": "Codex CLI",
     "model": "gpt-5.4",
+    "duration_seconds": 978,
     "total_score": 40.5
   }
 ]

@@ -1,8 +1,8 @@
 # Research Task
 
 ## Task Description
-Input: Formal statements of olympiad-level geometry problems (e.g., IMO diagrams and premises).
-Output: Machine-verifiable, human-readable proofs for Euclidean geometry theorems.
+Input: Formal statements of olympiad-level geometry problems (e.g., IMO diagrams and premises).
+Output: Machine-verifiable, human-readable proofs for Euclidean geometry theorems.
 Scientific Goal: To develop an AI system that autonomously solves complex geometry problems without human demonstrations, advancing neuro-symbolic reasoning in mathematics.
 
 ## Available Data Files

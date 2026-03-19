@@ -1,13 +1,13 @@
 # Research Task
 
 ## Task Description
-Input:
-Multimodal materials data: atomic structures, chemical compositions, crystal graphs, microscopy images, spectral data (XRD, FTIR, etc.), text from scientific literature, material property databases, synthesis conditions, and experimental parameters.  
-
-Output:
-Predicted material properties (mechanical, electronic, catalytic, etc.), generated novel material structures/microstructures, optimized synthesis/processing parameters, and classification/segmentation results for material characterization.  
-
-Scientific Objective:
+Input:
+Multimodal materials data: atomic structures, chemical compositions, crystal graphs, microscopy images, spectral data (XRD, FTIR, etc.), text from scientific literature, material property databases, synthesis conditions, and experimental parameters.  
+
+Output:
+Predicted material properties (mechanical, electronic, catalytic, etc.), generated novel material structures/microstructures, optimized synthesis/processing parameters, and classification/segmentation results for material characterization.  
+
+Scientific Objective:
 To accelerate the discovery, development, and optimization of advanced materials by integrating multimodal data through AI/ML models, enabling data-driven inverse design and reducing reliance on traditional trial-and-error approaches.
 
 ## Available Data Files
