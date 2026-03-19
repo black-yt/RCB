@@ -491,6 +491,10 @@ async function selectTask(taskId) {
   } else {
     state.currentRunId = null;
     if (!STATIC_MODE) await loadTaskFiles(taskId);
+    // Clear all panels
+    document.getElementById('file-tree').innerHTML = STATIC_MODE
+      ? '<div class="placeholder" style="padding:8px">No runs yet</div>'
+      : '';
     document.getElementById('file-content-header').textContent = 'No file selected';
     document.getElementById('file-content-body').innerHTML = '<div class="placeholder">Select a file from the explorer</div>';
     document.getElementById('terminal-body').innerHTML = '<div class="placeholder">No runs yet</div>';
@@ -1217,6 +1221,7 @@ function backToDashboard() {
   document.getElementById('welcome-screen').style.display = 'block';
   state.currentTaskId = null; state.currentRunId = null;
   document.querySelectorAll('.task-item').forEach(el => el.classList.remove('active'));
+  document.getElementById('run-history').innerHTML = '';
   loadDashboard();
 }
 
