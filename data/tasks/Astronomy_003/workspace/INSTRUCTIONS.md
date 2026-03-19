@@ -1,8 +1,8 @@
 # Research Task
 
 ## Task Description
-Input: Initial parameters of binary black hole systems, including mass ratio, spin vectors, orbital eccentricity, etc.
-Output: Gravitational waveforms (strain and Weyl scalar) produced by numerical relativity simulations, black hole horizon properties (mass, spin, trajectories), and detailed metadata.
+Input: Initial parameters of binary black hole systems, including mass ratio, spin vectors, orbital eccentricity, etc.
+Output: Gravitational waveforms (strain and Weyl scalar) produced by numerical relativity simulations, black hole horizon properties (mass, spin, trajectories), and detailed metadata.
 Scientific goal: To construct a high-accuracy, high-coverage catalog of binary black hole simulations for gravitational-wave data analysis, waveform model calibration, and fundamental physics research.
 
 ## Available Data Files
