@@ -200,7 +200,7 @@
     "type": "file",
     "size": 25891,
     "mtime": 1770280494.0,
-    "exported": false
+    "exported": true
   },
   {
     "name": "caucasus_middle_east_glaciological_WGMS-beta_WGMS.csv",
@@ -891,7 +891,7 @@
     "type": "file",
     "size": 91,
     "mtime": 1770280494.0,
-    "exported": false
+    "exported": true
   },
   {
     "name": "antarctic_and_subantarctic_altimetry_Jakob_Gourmelen_Jakob_et_al.csv",
@@ -899,7 +899,7 @@
     "type": "file",
     "size": 10352,
     "mtime": 1770280494.0,
-    "exported": false
+    "exported": true
   },
   {
     "name": "antarctic_and_subantarctic_altimetry_Khan_Khan_et_al.csv",
@@ -915,7 +915,7 @@
     "type": "file",
     "size": 1985,
     "mtime": 1770280494.0,
-    "exported": false
+    "exported": true
   },
   {
     "name": "antarctic_and_subantarctic_combined_Huss_Huss_et_al.csv",
@@ -939,7 +939,7 @@
     "type": "file",
     "size": 26202,
     "mtime": 1770280494.0,
-    "exported": false
+    "exported": true
   },
   {
     "name": "antarctic_and_subantarctic_glaciological_WGMS-beta_WGMS.csv",

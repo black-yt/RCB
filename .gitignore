@@ -3,8 +3,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-# Local sync script
-sync.py
+# (dev scripts like sync.py, export_static.py, check_consistency.py are tracked)
 
 # C extensions
 *.so
