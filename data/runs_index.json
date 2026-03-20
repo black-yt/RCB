@@ -7,7 +7,7 @@
     "agent_name": "Claude Code",
     "model": "claude-opus-4-6[1m]",
     "duration_seconds": 604,
-    "total_score": 21.2
+    "total_score": 24.6
   },
   {
     "run_id": "Astronomy_000_20260319_184609",
@@ -17,7 +17,7 @@
     "agent_name": "Claude Code",
     "model": "claude-opus-4-6[1m]",
     "duration_seconds": 563,
-    "total_score": 28.6
+    "total_score": 23.5
   },
   {
     "run_id": "Astronomy_000_20260319_145223",
@@ -27,6 +27,6 @@
     "agent_name": "Codex CLI",
     "model": "gpt-5.4",
     "duration_seconds": 978,
-    "total_score": 26.5
+    "total_score": 29.4
   }
 ]

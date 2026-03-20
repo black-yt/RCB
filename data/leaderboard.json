@@ -10,23 +10,23 @@
   "scores": {
     "Claude Code": {
       "Astronomy_000": {
-        "score": 28.6,
+        "score": 23.5,
         "run_id": "Astronomy_000_20260319_184609"
       },
       "Earth_000": {
-        "score": 21.2,
+        "score": 24.6,
         "run_id": "Earth_000_20260320_014954"
       }
     },
     "Codex CLI": {
       "Astronomy_000": {
-        "score": 26.5,
+        "score": 29.4,
         "run_id": "Astronomy_000_20260319_145223"
       }
     }
   },
   "frontier": {
-    "Astronomy_000": 28.6,
-    "Earth_000": 21.2
+    "Astronomy_000": 29.4,
+    "Earth_000": 24.6
   }
 }
