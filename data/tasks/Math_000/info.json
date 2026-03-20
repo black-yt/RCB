@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "simulated_sequence.json",
-      "path": "./tasks/Math_000/data/simulated_sequence.json",
+      "path": "./data/simulated_sequence.json",
       "type": "structured_data",
       "description": "This dataset contains a simulated multi-object video sequence generated with controlled parameters (40 frames, 20 objects, 85% detection rate, 20% occlusion overlap threshold) to evaluate tracking performance under dense occlusion scenarios. It includes ground truth trajectories and detection boxes with confidence scores and occlusion labels, enabling reproducible comparison of SparseTrack and ByteTrack as presented in the paper."
     }

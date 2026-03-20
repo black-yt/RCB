@@ -3,13 +3,13 @@
   "data": [
     {
       "name": "7xg4.pdb",
-      "path": "./tasks/Life_003/data/7xg4.pdb",
+      "path": "./data/7xg4.pdb",
       "type": "structure_data",
       "description": "Query complex structure from PDB ID 7xg4 (Pseudomonas aeruginosa type IV\u2011A CRISPR\u2013Cas system). Used in the paper as a known structural hit against an environmental Sulfitobacter sp. JL08 complex."
     },
     {
       "name": "6n40.pdb",
-      "path": "./tasks/Life_003/data/6n40.pdb",
+      "path": "./data/6n40.pdb",
       "type": "structure_data",
       "description": "Target complex structure from PDB ID 6n40. Used for pairwise structural alignment with 7xg4 to test Foldseek\u2011Multimer\u2019s alignment capability."
     }

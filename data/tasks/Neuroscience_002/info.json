@@ -3,13 +3,13 @@
   "data": [
     {
       "name": "test_simulated.csv",
-      "path": "./tasks/Neuroscience_002/data/test_simulated.csv",
+      "path": "./data/test_simulated.csv",
       "type": "structure_data",
       "description": "Contains approximately 3600 samples (30% of total). Identical structure to the training set: 20 features, label, and degradation type. Used for evaluating model performance on unseen data."
     },
     {
       "name": "train_simulated.csv",
-      "path": "./tasks/Neuroscience_002/data/train_simulated.csv",
+      "path": "./data/train_simulated.csv",
       "type": "structure_data",
       "description": "Contains approximately 8400 samples (70% of total). Each sample has 20 feature columns (0\u201119) representing morphology, intensity, and embedding modalities, a binary label (1 for same neuron, 0 otherwise), and a degradation type (Misalignment, Missing Sections, Mixed, or Average). The data is stratified by degradation to ensure balanced representation."
     }

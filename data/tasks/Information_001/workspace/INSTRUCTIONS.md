@@ -4,7 +4,7 @@
 The paper introduces a training-free framework designed to improve the fine-grained perception of MLLMs. The Scientific Objective is to mitigate the information loss caused by fixed-resolution vision encoders (like CLIP) when processing small objects. By using a task-guided cropping strategy, the model autonomously identifies regions of interest, 'zooms' into them, and integrates this local detail back into the global context to generate more accurate visual reasoning.
 
 ## Available Data Files
-- **demo_imgs** (`data/demo_imgs`): Two Demo pictures used in experiment 1
+- **demo_imgs** [sequence_data] (`data/demo_imgs`): Two Demo pictures used in experiment 1
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

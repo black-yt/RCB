@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "flow",
-      "path": "./tasks/Neuroscience_001/data/flow",
+      "path": "./data/flow",
       "type": "sequence_data",
       "description": "the complete ensemble of 50 pre-trained deep mechanistic network (DMN) models, along with all necessary configuration files, synapse count matrices, and cell\u2011type annotations. These models are constrained by the fly connectome and optimized for optic flow estimation, allowing users to directly simulate neural responses, reproduce key analyses from the paper, and generate experimentally testable hypotheses without retraining."
     }

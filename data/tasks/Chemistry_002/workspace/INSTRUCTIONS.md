@@ -4,8 +4,8 @@
 The input to HADDOCK3 consists of atomic coordinates of biomolecules (proteins, glycans, etc.) in PDB format, along with optional experimental restraints (e.g., ambiguous interaction restraints) and user-defined workflows. The output is an ensemble of modeled three-dimensional structures of biomolecular complexes, ranked and clustered according to various scoring functions. The scientific goal is to provide a versatile, modular platform for integrative modeling that leverages experimental data to predict accurate structures of biomolecular complexes, complementing machine learning approaches.
 
 ## Available Data Files
-- **1brs_AD.pdb** (`data/1brs_AD.pdb`): Processed structure of barnase-barstar complex (chains A and D) without water, used as input for HADDOCK3 analysis.
-- **skempi_v2.csv** (`data/skempi_v2.csv`): SKEMPI 2.0 database containing experimental binding affinity changes upon mutation, used for validation.
+- **1brs_AD.pdb** [structure_data] (`data/1brs_AD.pdb`): Processed structure of barnase-barstar complex (chains A and D) without water, used as input for HADDOCK3 analysis.
+- **skempi_v2.csv** [feature_data] (`data/skempi_v2.csv`): SKEMPI 2.0 database containing experimental binding affinity changes upon mutation, used for validation.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

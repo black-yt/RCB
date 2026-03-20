@@ -4,8 +4,8 @@
 The input is the three-dimensional structure of a protein complex (represented in PDB/mmCIF format or Foldseek database format), and the output is the structural alignment result between the complexes, including the correspondence between chains, superimposition vectors, and the TM score used to quantify similarity. Its scientific goal is to achieve efficient search and similarity detection in large-scale protein complex structure databases (such as those containing millions of structures) through ultra-fast and sensitive alignment algorithms.
 
 ## Available Data Files
-- **7xg4.pdb** (`data/7xg4.pdb`): Query complex structure from PDB ID 7xg4 (Pseudomonas aeruginosa type IV‑A CRISPR–Cas system). Used in the paper as a known structural hit against an environmental Sulfitobacter sp. JL08 complex.
-- **6n40.pdb** (`data/6n40.pdb`): Target complex structure from PDB ID 6n40. Used for pairwise structural alignment with 7xg4 to test Foldseek‑Multimer’s alignment capability.
+- **7xg4.pdb** [structure_data] (`data/7xg4.pdb`): Query complex structure from PDB ID 7xg4 (Pseudomonas aeruginosa type IV‑A CRISPR–Cas system). Used in the paper as a known structural hit against an environmental Sulfitobacter sp. JL08 complex.
+- **6n40.pdb** [structure_data] (`data/6n40.pdb`): Target complex structure from PDB ID 6n40. Used for pairwise structural alignment with 7xg4 to test Foldseek‑Multimer’s alignment capability.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

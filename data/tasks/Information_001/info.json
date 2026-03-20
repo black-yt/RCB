@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "demo_imgs",
-      "path": "./tasks/Information_001/data/demo_imgs",
+      "path": "./data/demo_imgs",
       "type": "sequence_data",
       "description": "Two Demo pictures used in experiment 1"
     }

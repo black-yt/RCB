@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "2111.01152",
-      "path": "./tasks/Information_002/data/2111.01152",
+      "path": "./data/2111.01152",
       "type": "feature_data",
       "description": "The target scientific paper defining the AB-stacked MoTe2/WSe2 moir\u00e9 system and its Hamiltonian parameters."
     }

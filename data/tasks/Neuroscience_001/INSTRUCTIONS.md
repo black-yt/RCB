@@ -8,7 +8,7 @@ To demonstrate that the activity of each neuron in a neural circuit can be accur
 Construct a connectome-constrained and task-optimized deep mechanistic network that can perform optical flow estimation tasks, and reveal the computational role of each neuron in the Drosophila visual system in motion detection through model predictions.
 
 ## Available Data Files
-- **flow** (`data/flow`): the complete ensemble of 50 pre-trained deep mechanistic network (DMN) models, along with all necessary configuration files, synapse count matrices, and cell‑type annotations. These models are constrained by the fly connectome and optimized for optic flow estimation, allowing users to directly simulate neural responses, reproduce key analyses from the paper, and generate experimentally testable hypotheses without retraining.
+- **flow** [sequence_data] (`data/flow`): the complete ensemble of 50 pre-trained deep mechanistic network (DMN) models, along with all necessary configuration files, synapse count matrices, and cell‑type annotations. These models are constrained by the fly connectome and optimized for optic flow estimation, allowing users to directly simulate neural responses, reproduce key analyses from the paper, and generate experimentally testable hypotheses without retraining.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

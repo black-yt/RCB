@@ -8,14 +8,14 @@ Output: A solution path set P, consisting of collision-free paths for all agents
 Scientific Goal (Task): To solve the Multi-Agent Path Finding problem by developing a hybrid algorithm that integrates Multi-Agent Reinforcement Learning into the Large Neighborhood Search framework. The specific objective is to balance solution quality (reducing collisions via MARL in early stages) and computational efficiency (using Prioritized Planning in later stages) to achieve higher success rates in complex environments compared to existing methods.
 
 ## Available Data Files
-- **maps_60_10_10_0.175** (`data/maps_60_10_10_0.175`): The task set consists of static 2D grid maps )and multi-agent task configurations defined by preset parameters such as agent count, start positions, and target positions.
-- **empty** (`data/empty`): Dataset of empty 2D grid maps (likely 25x25) with no static obstacles, containing multi-agent task configurations to evaluate navigation in high-density open spaces without structural blockages.
-- **maze** (`data/maze`): Dataset of maze-structured 2D grid maps (25x25) characterized by complex corridors and dead-ends, containing task configurations designed to test pathfinding algorithms in highly constrained environments.
-- **random_large** (`data/random_large`): Dataset of large-scale (50x50) 2D grid maps with randomly generated obstacles (17.5% density), containing task configurations serving as a benchmark for algorithm scalability in unstructured environments.
-- **random_medium** (`data/random_medium`): Dataset of medium-sized (25x25) 2D grid maps with randomly distributed obstacles (17.5% density), containing task configurations that balance map complexity and computational load for standard evaluation.
-- **random_small** (`data/random_small`): Dataset of small-scale (10x10) 2D grid maps with random obstacles (17.5% density), containing task configurations primarily used for rapid testing and analyzing algorithm behavior in tight spaces.
-- **room** (`data/room`): Dataset of room-structured 2D grid maps (25x25) simulating indoor environments with connected chambers and narrow doorways, containing task configurations for analyzing bottleneck traversal.
-- **warehouse** (`data/warehouse`): Dataset of warehouse-style 2D grid maps (25x25) with organized shelf layouts, containing task configurations specifically designed to simulate automated logistics and retrieval scenarios.
+- **maps_60_10_10_0.175** [structure_data] (`data/maps_60_10_10_0.175`): The task set consists of static 2D grid maps )and multi-agent task configurations defined by preset parameters such as agent count, start positions, and target positions.
+- **empty** [structure_data] (`data/empty`): Dataset of empty 2D grid maps (likely 25x25) with no static obstacles, containing multi-agent task configurations to evaluate navigation in high-density open spaces without structural blockages.
+- **maze** [structure_data] (`data/maze`): Dataset of maze-structured 2D grid maps (25x25) characterized by complex corridors and dead-ends, containing task configurations designed to test pathfinding algorithms in highly constrained environments.
+- **random_large** [structure_data] (`data/random_large`): Dataset of large-scale (50x50) 2D grid maps with randomly generated obstacles (17.5% density), containing task configurations serving as a benchmark for algorithm scalability in unstructured environments.
+- **random_medium** [structure_data] (`data/random_medium`): Dataset of medium-sized (25x25) 2D grid maps with randomly distributed obstacles (17.5% density), containing task configurations that balance map complexity and computational load for standard evaluation.
+- **random_small** [structure_data] (`data/random_small`): Dataset of small-scale (10x10) 2D grid maps with random obstacles (17.5% density), containing task configurations primarily used for rapid testing and analyzing algorithm behavior in tight spaces.
+- **room** [structure_data] (`data/room`): Dataset of room-structured 2D grid maps (25x25) simulating indoor environments with connected chambers and narrow doorways, containing task configurations for analyzing bottleneck traversal.
+- **warehouse** [structure_data] (`data/warehouse`): Dataset of warehouse-style 2D grid maps (25x25) with organized shelf layouts, containing task configurations specifically designed to simulate automated logistics and retrieval scenarios.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

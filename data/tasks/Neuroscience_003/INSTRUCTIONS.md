@@ -4,7 +4,7 @@
 The input is single-cell readouts (such as scRNA-seq or protein imaging), and the output is a selected subset of dynamically expressed molecular features that best preserves continuous cellular trajectories. This setup supports analyses of neural lineage progression, glial activation, and neurodegeneration-related state transitions while reducing confounding variation.
 
 ## Available Data Files
-- **adata_RPE.h5ad** (`data/adata_RPE.h5ad`): A preprocessed single-cell dataset (protein iterative indirect immunofluorescence imaging) showcasing cellular state transitions in a retina-related context that is compatible with neuroscience-adjacent analysis.
+- **adata_RPE.h5ad** [feature_data] (`data/adata_RPE.h5ad`): A preprocessed single-cell dataset (protein iterative indirect immunofluorescence imaging) showcasing cellular state transitions in a retina-related context that is compatible with neuroscience-adjacent analysis.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

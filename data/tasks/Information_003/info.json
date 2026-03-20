@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "NF-UNSW-NB15-v2_3d.pt",
-      "path": "./tasks/Information_004/data/NF-UNSW-NB15-v2_3d.pt",
+      "path": "./data/NF-UNSW-NB15-v2_3d.pt",
       "type": "feature_data",
       "description": "NF-UNSW-NB15 is a NetFlow\u2011based feature dataset where each row represents a single network flow described by 8 to 53 statistical features (e.g., timestamp, duration, bytes, packet rates, inter\u2011arrival times), extracted from packet headers and stored in CSV format for binary/multi\u2011class intrusion detection."
     }

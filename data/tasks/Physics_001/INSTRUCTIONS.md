@@ -11,7 +11,7 @@ Scientific Goal
 To directly measure the superfluid stiffness of MATBG, test whether it significantly exceeds predictions of conventional Fermi liquid theory, investigate its power-law temperature dependence to reveal the nature of unconventional pairing (anisotropic gap), and verify the crucial role of quantum geometric effects in flat-band superconductivity.
 
 ## Available Data Files
-- **MATBG Superfluid Stiffness Core Dataset.txt** (`data/MATBG Superfluid Stiffness Core Dataset.txt`): This dataset fully contains all simulated data required to reproduce the three core experiments of the target study, covering carrier density dependence, temperature dependence, and current dependence. It can be directly used to independently verify key conclusions such as quantum geometry-dominated enhancement of superfluid stiffness, power-law behavior of anisotropic gaps, and quadratic current relationships.
+- **MATBG Superfluid Stiffness Core Dataset.txt** [feature_data] (`data/MATBG Superfluid Stiffness Core Dataset.txt`): This dataset fully contains all simulated data required to reproduce the three core experiments of the target study, covering carrier density dependence, temperature dependence, and current dependence. It can be directly used to independently verify key conclusions such as quantum geometry-dominated enhancement of superfluid stiffness, power-law behavior of anisotropic gaps, and quadratic current relationships.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

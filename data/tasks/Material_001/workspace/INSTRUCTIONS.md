@@ -11,7 +11,7 @@ Scientific Objective:
 To accelerate the discovery, development, and optimization of advanced materials by integrating multimodal data through AI/ML models, enabling data-driven inverse design and reducing reliance on traditional trial-and-error approaches.
 
 ## Available Data Files
-- **M-AI-Synth__Materials_AI_Dataset_.txt** (`data/M-AI-Synth__Materials_AI_Dataset_.txt`): This dataset is designed for rapid validation of three core AI application workflows in materials science—property prediction, structure generation, and experimental optimization—supporting code prototyping and fundamental algorithm testing.
+- **M-AI-Synth__Materials_AI_Dataset_.txt** [structure_data] (`data/M-AI-Synth__Materials_AI_Dataset_.txt`): This dataset is designed for rapid validation of three core AI application workflows in materials science—property prediction, structure generation, and experimental optimization—supporting code prototyping and fundamental algorithm testing.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

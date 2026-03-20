@@ -11,7 +11,7 @@ Scientific Goal:
 To develop and validate a universal foundation model for atomistic simulations that covers the periodic table, stably simulates diverse material systems, and achieves quantitative accuracy with minimal fine-tuning.
 
 ## Available Data Files
-- **MACE-MP-0_Reproduction Dataset.txt** (`data/MACE-MP-0_Reproduction_Dataset.txt`): This dataset contains all parameters and structural information needed to reproduce the performance of the MACE-MP-0 foundation model on three key tests: liquid water structure, adsorption energy scaling relations on transition metal surfaces, and CRBH20 reaction barriers.
+- **MACE-MP-0_Reproduction Dataset.txt** [structure_data] (`data/MACE-MP-0_Reproduction_Dataset.txt`): This dataset contains all parameters and structural information needed to reproduce the performance of the MACE-MP-0 foundation model on three key tests: liquid water structure, adsorption energy scaling relations on transition metal surfaces, and CRBH20 reaction barriers.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

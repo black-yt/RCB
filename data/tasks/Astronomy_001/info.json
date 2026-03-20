@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "DESI_EDE_Repro_Data.txt",
-      "path": "./tasks/Astronomy_002/data/DESI_EDE_Repro_Data.txt",
+      "path": "./data/DESI_EDE_Repro_Data.txt",
       "type": "structure_data",
       "description": "This dataset contains the best-fit parameters with 1\u03c3 errors for \u039bCDM, EDE, and w\u2080w\u2090 models from Tables II/III of the paper, along with manually extracted DESI BAO and Union3 SNe data points from Figure 6, used to reproduce the paper's key parameter constraints and distance comparison results."
     }

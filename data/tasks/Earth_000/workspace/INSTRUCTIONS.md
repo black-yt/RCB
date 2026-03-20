@@ -6,7 +6,7 @@ Output: 2000–2023 regional and global glacial mass change time series (annual 
 Scientific Objective: Reconcile diverse observational methods to deliver a consistent and high-confidence assessment of global glacial mass change, and establish an observational benchmark for IPCC reports and climate model calibration.
 
 ## Available Data Files
-- **glambie** (`data/glambie`): This dataset is the result of collecting, homogenizing, combining, and analyzing regional estimates derived from four primary observation methods (in situ glaciological measurements, digital elevation model differencing, satellite altimetry, and gravimetry) as well as integrated methods. It incorporates 233 regional estimates of glacier mass change contributed by 35 research teams and approximately 450 data contributors.
+- **glambie** [sequence_data] (`data/glambie`): This dataset is the result of collecting, homogenizing, combining, and analyzing regional estimates derived from four primary observation methods (in situ glaciological measurements, digital elevation model differencing, satellite altimetry, and gravimetry) as well as integrated methods. It incorporates 233 regional estimates of glacier mass change contributed by 35 research teams and approximately 450 data contributors.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

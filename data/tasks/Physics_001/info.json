@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "MATBG Superfluid Stiffness Core Dataset.txt",
-      "path": "./tasks/Physics_001/data/MATBG Superfluid Stiffness Core Dataset.txt",
+      "path": "./data/MATBG Superfluid Stiffness Core Dataset.txt",
       "type": "feature_data",
       "description": "This dataset fully contains all simulated data required to reproduce the three core experiments of the target study, covering carrier density dependence, temperature dependence, and current dependence. It can be directly used to independently verify key conclusions such as quantum geometry-dominated enhancement of superfluid stiffness, power-law behavior of anisotropic gaps, and quadratic current relationships."
     }

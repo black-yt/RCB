@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "adata_RPE.h5ad",
-      "path": "./tasks/Neuroscience_004/data/adata_RPE.h5ad",
+      "path": "./data/adata_RPE.h5ad",
       "type": "feature_data",
       "description": "A preprocessed single-cell dataset (protein iterative indirect immunofluorescence imaging) showcasing cellular state transitions in a retina-related context that is compatible with neuroscience-adjacent analysis."
     }

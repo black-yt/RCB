@@ -7,7 +7,7 @@ Complete trajectories for each target, i.e., identity labels (IDs) and correspon
 To effectively handle occlusions and improve multi-object tracking performance in crowded scenes by decomposing dense target sets into sparse subsets via pseudo-depth estimation and performing hierarchical association. 
 
 ## Available Data Files
-- **simulated_sequence.json** (`data/simulated_sequence.json`): This dataset contains a simulated multi-object video sequence generated with controlled parameters (40 frames, 20 objects, 85% detection rate, 20% occlusion overlap threshold) to evaluate tracking performance under dense occlusion scenarios. It includes ground truth trajectories and detection boxes with confidence scores and occlusion labels, enabling reproducible comparison of SparseTrack and ByteTrack as presented in the paper.
+- **simulated_sequence.json** [structured_data] (`data/simulated_sequence.json`): This dataset contains a simulated multi-object video sequence generated with controlled parameters (40 frames, 20 objects, 85% detection rate, 20% occlusion overlap threshold) to evaluate tracking performance under dense occlusion scenarios. It includes ground truth trajectories and detection boxes with confidence scores and occlusion labels, enabling reproducible comparison of SparseTrack and ByteTrack as presented in the paper.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

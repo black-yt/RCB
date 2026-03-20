@@ -4,12 +4,12 @@
 Build a transparent geospatial levelized-cost model to estimate the delivered cost of African green hydrogen to Europe (via ammonia shipping and reconversion) by 2030 under multiple financing and policy scenarios, identify least-cost/competitive locations, and quantify how de-risking and the interest-rate environment change cost competitiveness relative to producing green hydrogen in Europe.
 
 ## Available Data Files
-- **hex_final_NA_min.csv** (`./tasks/Energy_003/Data/hex_final_NA_min.csv`): Simulated dataset for African hydrogen production sites, including latitude, longitude, PV potential, wind potential, and distances to road, grid, ocean, and water infrastructure. Used as input for LCOH calculations.
-- **ne_10m_admin_0_countries.shp** (`data/africa_map/ne_10m_admin_0_countries.shp`): Main shapefile containing country boundary geometries for Africa and the world at 1:10m scale. Used as basemap for spatial visualizations.
-- **ne_10m_admin_0_countries.shx** (`data/africa_map/ne_10m_admin_0_countries.shx`): Shape index file required for reading the shapefile geometry data efficiently.
-- **ne_10m_admin_0_countries.dbf** (`data/africa_map/ne_10m_admin_0_countries.dbf`): Attribute database file containing tabular information (country names, codes, etc.) associated with each geometry.
-- **ne_10m_admin_0_countries.prj** (`data/africa_map/ne_10m_admin_0_countries.prj`): Projection file that defines the coordinate system and map projection of the shapefile data.
-- **ne_10m_admin_0_countries.cpg** (`data/africa_map/ne_10m_admin_0_countries.cpg`): Code page file specifying the character encoding used in the .dbf attribute file (typically UTF-8 or Latin-1).
+- **hex_final_NA_min.csv** [feature_data] (`data/hex_final_NA_min.csv`): Simulated dataset for African hydrogen production sites, including latitude, longitude, PV potential, wind potential, and distances to road, grid, ocean, and water infrastructure. Used as input for LCOH calculations.
+- **ne_10m_admin_0_countries.shp** [vector_data] (`data/africa_map/ne_10m_admin_0_countries.shp`): Main shapefile containing country boundary geometries for Africa and the world at 1:10m scale. Used as basemap for spatial visualizations.
+- **ne_10m_admin_0_countries.shx** [vector_data] (`data/africa_map/ne_10m_admin_0_countries.shx`): Shape index file required for reading the shapefile geometry data efficiently.
+- **ne_10m_admin_0_countries.dbf** [vector_data] (`data/africa_map/ne_10m_admin_0_countries.dbf`): Attribute database file containing tabular information (country names, codes, etc.) associated with each geometry.
+- **ne_10m_admin_0_countries.prj** [vector_data] (`data/africa_map/ne_10m_admin_0_countries.prj`): Projection file that defines the coordinate system and map projection of the shapefile data.
+- **ne_10m_admin_0_countries.cpg** [vector_data] (`data/africa_map/ne_10m_admin_0_countries.cpg`): Code page file specifying the character encoding used in the .dbf attribute file (typically UTF-8 or Latin-1).
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

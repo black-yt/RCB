@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "Multi-component Icosahedral Reproduction Data.txt",
-      "path": "./tasks/Physics_000/data/Multi-component Icosahedral Reproduction Data.txt",
+      "path": "./data/Multi-component Icosahedral Reproduction Data.txt",
       "type": "sequence_data",
       "description": "This dataset contains complete parameters and result data for reproducing all simulation experiments from the paper \"General theory for packing icosahedral shells into multi-component aggregates\", enabling full reproduction of theoretical calculations, experimental verification, and dynamic growth simulations in any computational environment."
     }

@@ -6,8 +6,8 @@ Output: A binary prediction (0 or 1) indicating whether the two given segments b
 Scientific Goal: To automate the proofreading process in large-scale connectomics by accurately predicting connectivity between over-segmented neuron fragments, thereby reducing the massive manual workload required to reconstruct complete neurons from petascale EM data.
 
 ## Available Data Files
-- **test_simulated.csv** (`data/test_simulated.csv`): Contains approximately 3600 samples (30% of total). Identical structure to the training set: 20 features, label, and degradation type. Used for evaluating model performance on unseen data.
-- **train_simulated.csv** (`data/train_simulated.csv`): Contains approximately 8400 samples (70% of total). Each sample has 20 feature columns (0‑19) representing morphology, intensity, and embedding modalities, a binary label (1 for same neuron, 0 otherwise), and a degradation type (Misalignment, Missing Sections, Mixed, or Average). The data is stratified by degradation to ensure balanced representation.
+- **test_simulated.csv** [structure_data] (`data/test_simulated.csv`): Contains approximately 3600 samples (30% of total). Identical structure to the training set: 20 features, label, and degradation type. Used for evaluating model performance on unseen data.
+- **train_simulated.csv** [structure_data] (`data/train_simulated.csv`): Contains approximately 8400 samples (70% of total). Each sample has 20 feature columns (0‑19) representing morphology, intensity, and embedding modalities, a binary label (1 for same neuron, 0 otherwise), and a degradation type (Misalignment, Missing Sections, Mixed, or Average). The data is stratified by degradation to ensure balanced representation.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

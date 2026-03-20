@@ -6,7 +6,7 @@ Output: Machine-verifiable, human-readable proofs for Euclidean geometry theorem
 Scientific Goal: To develop an AI system that autonomously solves complex geometry problems without human demonstrations, advancing neuro-symbolic reasoning in mathematics.
 
 ## Available Data Files
-- **imo_ag_30.txt** (`data/imo_ag_30.txt`): A curated benchmark of 30 geometry problems from the International Mathematical Olympiad (since 2000), used for final evaluation.
+- **imo_ag_30.txt** [structure_data] (`data/imo_ag_30.txt`): A curated benchmark of 30 geometry problems from the International Mathematical Olympiad (since 2000), used for final evaluation.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

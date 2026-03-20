@@ -4,8 +4,8 @@
 Input: Global atmospheric reanalysis data (ERA5) at 0.25° resolution, including 5 upper-air variables (geopotential, temperature, u-wind, v-wind, relative humidity) at 13 pressure levels and 5 surface variables (2m temperature, 10m u-wind, 10m v-wind, mean sea level pressure, total precipitation), from two consecutive 6-hour time steps. Output: 15-day global weather forecasts at 6-hour temporal resolution. Scientific Goal: Develop a cascade machine learning forecasting system using three specialized U-Transformer models to mitigate forecast error accumulation and extend skillful weather prediction to 15 days, achieving performance comparable to the ECMWF ensemble mean.
 
 ## Available Data Files
-- **20231012-06_input_netcdf.nc** (`data/20231012-06_input_netcdf.nc`): Pre-processed input data (20231012-06_input_netcdf.nc) with shape (2, 70, 721, 1440) representing two consecutive 6-hour atmospheric states at 0.25° resolution with 70 variables/channels
-- **006.nc** (`data/006.nc`): FuXi output forecasts (006.nc) at 6-hour intervals up to 15 days.
+- **20231012-06_input_netcdf.nc** [sequence_data] (`data/20231012-06_input_netcdf.nc`): Pre-processed input data (20231012-06_input_netcdf.nc) with shape (2, 70, 721, 1440) representing two consecutive 6-hour atmospheric states at 0.25° resolution with 70 variables/channels
+- **006.nc** [sequence_data] (`data/006.nc`): FuXi output forecasts (006.nc) at 6-hour intervals up to 15 days.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

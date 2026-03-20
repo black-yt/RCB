@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "MACE-MP-0_Reproduction Dataset.txt",
-      "path": "./tasks/Material_003/data/MACE-MP-0_Reproduction_Dataset.txt",
+      "path": "./data/MACE-MP-0_Reproduction_Dataset.txt",
       "type": "structure_data",
       "description": "This dataset contains all parameters and structural information needed to reproduce the performance of the MACE-MP-0 foundation model on three key tests: liquid water structure, adsorption energy scaling relations on transition metal surfaces, and CRBH20 reaction barriers."
     }

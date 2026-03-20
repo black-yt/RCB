@@ -4,8 +4,8 @@
 Build a unified autoregressive framework that decouples visual encoding to perform both multimodal understanding (e.g., visual question answering) and visual generation (e.g., text-to-image generation) within a single Transformer architecture.
 
 ## Available Data Files
-- **equation.png** (`data/equation.png`): An image containing a mathematical equation used to evaluate the model's optical character recognition (OCR) and formula-to-LaTeX conversion capabilities.
-- **doge.jpg** (`data/doge.png`): A specific meme image ("Swole Doge vs. Cheems") used in Figure 5 of the paper. It contains embedded text ("Decoupling Visual Encoding" vs. "Single Visual Encoder") and visual metaphors to evaluate the model's high-level semantic understanding of humor.
+- **equation.png** [sequence_data] (`data/equation.png`): An image containing a mathematical equation used to evaluate the model's optical character recognition (OCR) and formula-to-LaTeX conversion capabilities.
+- **doge.jpg** [sequence_data] (`data/doge.png`): A specific meme image ("Swole Doge vs. Cheems") used in Figure 5 of the paper. It contains embedded text ("Decoupling Visual Encoding" vs. "Single Visual Encoder") and visual metaphors to evaluate the model's high-level semantic understanding of humor.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

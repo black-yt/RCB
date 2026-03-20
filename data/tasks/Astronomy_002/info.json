@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "H0DN_MinimalDataset.txt",
-      "path": "./tasks/Astronomy_003/data/H0DN_MinimalDataset.txt",
+      "path": "./data/H0DN_MinimalDataset.txt",
       "type": "feature_data",
       "description": "A minimal dataset to reproduce the Hubble constant measurement using the generalized least squares framework of the Distance Network, including geometric anchors, primary distance indicator measurements, secondary calibrations, and Hubble flow observations."
     }

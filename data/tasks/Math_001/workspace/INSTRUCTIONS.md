@@ -6,7 +6,7 @@ Output: The optimal solution x* that minimizes the global objective function wit
 Scientific Goal: To establish a unified Variable and Operator Splitting (VOS) framework that derives Nesterov's accelerated method and ADMM from a continuous-time dynamical system perspective, proving linear convergence using strong Lyapunov functions.
 
 ## Available Data Files
-- **complex_optimization_data.npy** (`data/complex_optimization_data.npy`): A synthetic, ill-conditioned dataset generated for high-dimensional Lasso regression. It contains the design matrix A (1000x2000), response vector b, and ground truth sparse coefficients x_true, stored in .npy format to verify algorithm convergence.
+- **complex_optimization_data.npy** [structure_data] (`data/complex_optimization_data.npy`): A synthetic, ill-conditioned dataset generated for high-dimensional Lasso regression. It contains the design matrix A (1000x2000), response vector b, and ground truth sparse coefficients x_true, stored in .npy format to verify algorithm convergence.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

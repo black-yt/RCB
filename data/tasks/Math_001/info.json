@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "complex_optimization_data.npy",
-      "path": "./tasks/Math_001/data/complex_optimization_data.npy",
+      "path": "./data/complex_optimization_data.npy",
       "type": "structure_data",
       "description": "A synthetic, ill-conditioned dataset generated for high-dimensional Lasso regression. It contains the design matrix A (1000x2000), response vector b, and ground truth sparse coefficients x_true, stored in .npy format to verify algorithm convergence."
     }

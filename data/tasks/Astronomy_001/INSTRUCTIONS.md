@@ -6,7 +6,7 @@ Inputs: BAO data from DESI DR2, CMB data from Planck and ACT (including temperat
 Outputs: Constraints on cosmological parameters (Ωm, H₀, σ₈, etc.) from model fitting, comparison of goodness-of-fit (Δχ²) for ΛCDM, EDE, and w₀wₐ models, and posterior distributions of EDE parameters (f_EDE, log₁₀a_c). The results show that EDE can partially relieve the tension but leads to different parameter shifts compared to late-time dark energy models.
 
 ## Available Data Files
-- **DESI_EDE_Repro_Data.txt** (`data/DESI_EDE_Repro_Data.txt`): This dataset contains the best-fit parameters with 1σ errors for ΛCDM, EDE, and w₀wₐ models from Tables II/III of the paper, along with manually extracted DESI BAO and Union3 SNe data points from Figure 6, used to reproduce the paper's key parameter constraints and distance comparison results.
+- **DESI_EDE_Repro_Data.txt** [structure_data] (`data/DESI_EDE_Repro_Data.txt`): This dataset contains the best-fit parameters with 1σ errors for ΛCDM, EDE, and w₀wₐ models from Tables II/III of the paper, along with manually extracted DESI BAO and Union3 SNe data points from Figure 6, used to reproduce the paper's key parameter constraints and distance comparison results.
 
 ## Workspace Layout
 - `data/` — Input datasets (read-only, do not modify)

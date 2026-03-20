@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "imo_ag_30.txt",
-      "path": "./tasks/Math_004/data/imo_ag_30.txt",
+      "path": "./data/imo_ag_30.txt",
       "type": "structure_data",
       "description": "A curated benchmark of 30 geometry problems from the International Mathematical Olympiad (since 2000), used for final evaluation."
     }

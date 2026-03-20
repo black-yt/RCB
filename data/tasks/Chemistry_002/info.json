@@ -3,13 +3,13 @@
   "data": [
     {
       "name": "1brs_AD.pdb",
-      "path": "./tasks/Chemistry_003/data/1brs_AD.pdb",
+      "path": "./data/1brs_AD.pdb",
       "type": "structure_data",
       "description": "Processed structure of barnase-barstar complex (chains A and D) without water, used as input for HADDOCK3 analysis."
     },
     {
       "name": "skempi_v2.csv",
-      "path": "./tasks/Chemistry_003/data/skempi_v2.csv",
+      "path": "./data/skempi_v2.csv",
       "type": "feature_data",
       "description": "SKEMPI 2.0 database containing experimental binding affinity changes upon mutation, used for validation."
     }
