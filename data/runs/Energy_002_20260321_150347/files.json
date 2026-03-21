@@ -1,0 +1,237 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_hydrogen_costs.py",
+    "path": "code/analyze_hydrogen_costs.py",
+    "type": "file",
+    "size": 23511,
+    "mtime": 1774076784.2684674,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "africa_map",
+    "path": "data/africa_map",
+    "type": "directory"
+  },
+  {
+    "name": "ne_10m_admin_0_countries.cpg",
+    "path": "data/africa_map/ne_10m_admin_0_countries.cpg",
+    "type": "file",
+    "size": 5,
+    "mtime": 1627838618.0,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.dbf",
+    "path": "data/africa_map/ne_10m_admin_0_countries.dbf",
+    "type": "file",
+    "size": 878482,
+    "mtime": 1652071512.0,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.prj",
+    "path": "data/africa_map/ne_10m_admin_0_countries.prj",
+    "type": "file",
+    "size": 145,
+    "mtime": 1652071512.0,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.README.html",
+    "path": "data/africa_map/ne_10m_admin_0_countries.README.html",
+    "type": "file",
+    "size": 39383,
+    "mtime": 1773928992.0,
+    "exported": true
+  },
+  {
+    "name": "ne_10m_admin_0_countries.shp",
+    "path": "data/africa_map/ne_10m_admin_0_countries.shp",
+    "type": "file",
+    "size": 8806224,
+    "mtime": 1652071512.0,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.shx",
+    "path": "data/africa_map/ne_10m_admin_0_countries.shx",
+    "type": "file",
+    "size": 2164,
+    "mtime": 1652071512.0,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.VERSION.txt",
+    "path": "data/africa_map/ne_10m_admin_0_countries.VERSION.txt",
+    "type": "file",
+    "size": 7,
+    "mtime": 1652071740.0,
+    "exported": true
+  },
+  {
+    "name": "hex_final_NA_min.csv",
+    "path": "data/hex_final_NA_min.csv",
+    "type": "file",
+    "size": 4837,
+    "mtime": 1772437760.0,
+    "exported": true
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "europe_benchmark.csv",
+    "path": "outputs/europe_benchmark.csv",
+    "type": "file",
+    "size": 105,
+    "mtime": 1774076793.1744015,
+    "exported": true
+  },
+  {
+    "name": "site_costs.csv",
+    "path": "outputs/site_costs.csv",
+    "type": "file",
+    "size": 11946,
+    "mtime": 1774076792.3313124,
+    "exported": true
+  },
+  {
+    "name": "summary.json",
+    "path": "outputs/summary.json",
+    "type": "file",
+    "size": 5174,
+    "mtime": 1774076792.3353329,
+    "exported": true
+  },
+  {
+    "name": "top_sites_by_scenario.csv",
+    "path": "outputs/top_sites_by_scenario.csv",
+    "type": "file",
+    "size": 2214,
+    "mtime": 1774076793.1790743,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 846927,
+    "mtime": 1773914894.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 3211431,
+    "mtime": 1773914894.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1517737,
+    "mtime": 1773914894.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 566476,
+    "mtime": 1773914894.0,
+    "exported": true
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_1_resource_histogram.svg",
+    "path": "report/images/figure_1_resource_histogram.svg",
+    "type": "file",
+    "size": 1248,
+    "mtime": 1774076792.3403902,
+    "exported": true
+  },
+  {
+    "name": "figure_2_scenario_boxplot.svg",
+    "path": "report/images/figure_2_scenario_boxplot.svg",
+    "type": "file",
+    "size": 1553,
+    "mtime": 1774076792.3463852,
+    "exported": true
+  },
+  {
+    "name": "figure_3_resource_vs_cost.svg",
+    "path": "report/images/figure_3_resource_vs_cost.svg",
+    "type": "file",
+    "size": 2867,
+    "mtime": 1774076792.352088,
+    "exported": true
+  },
+  {
+    "name": "figure_4_europe_benchmark.svg",
+    "path": "report/images/figure_4_europe_benchmark.svg",
+    "type": "file",
+    "size": 1411,
+    "mtime": 1774076792.3557644,
+    "exported": true
+  },
+  {
+    "name": "figure_5_cost_map.svg",
+    "path": "report/images/figure_5_cost_map.svg",
+    "type": "file",
+    "size": 4249,
+    "mtime": 1774076793.1643298,
+    "exported": true
+  },
+  {
+    "name": "figure_6_top_sites.svg",
+    "path": "report/images/figure_6_top_sites.svg",
+    "type": "file",
+    "size": 2822,
+    "mtime": 1774076793.1693292,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15958,
+    "mtime": 1774076855.407348,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4896,
+    "mtime": 1774076628.4331229,
+    "exported": true
+  }
+]

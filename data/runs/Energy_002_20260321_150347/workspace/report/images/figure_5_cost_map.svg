@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="780" viewBox="0 0 1000 780">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="30" font-size="22" text-anchor="middle" font-family="Arial">African candidate sites: delivered cost map (base / low-rate scenario)</text>
+<rect x="50" y="50" width="900" height="680" fill="#eef6fb" stroke="#ccc"/>
+<circle cx="547.1" cy="572.1" r="5.5" fill="rgb(228,84,86)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="584.5" cy="609.0" r="5.5" fill="rgb(202,95,91)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="476.7" cy="563.0" r="5.5" fill="rgb(122,128,105)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="484.2" cy="580.5" r="5.5" fill="rgb(137,121,102)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="500.9" cy="648.2" r="5.5" fill="rgb(153,115,100)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="453.8" cy="550.4" r="5.5" fill="rgb(172,107,96)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="443.8" cy="573.5" r="5.5" fill="rgb(126,126,105)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="501.9" cy="570.8" r="5.5" fill="rgb(60,153,117)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="460.1" cy="644.3" r="5.5" fill="rgb(215,89,88)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="534.5" cy="607.8" r="5.5" fill="rgb(162,111,98)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="495.4" cy="616.7" r="5.5" fill="rgb(145,118,101)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="561.9" cy="555.6" r="5.5" fill="rgb(165,110,97)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="539.6" cy="586.3" r="5.5" fill="rgb(126,126,105)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="474.5" cy="566.8" r="5.5" fill="rgb(178,104,95)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="561.8" cy="608.5" r="5.5" fill="rgb(116,130,106)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="557.2" cy="632.9" r="5.5" fill="rgb(44,160,120)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="487.1" cy="596.2" r="5.5" fill="rgb(207,93,90)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="470.4" cy="651.7" r="5.5" fill="rgb(198,96,91)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="536.7" cy="566.3" r="5.5" fill="rgb(145,118,101)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="445.5" cy="587.7" r="5.5" fill="rgb(95,138,110)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="455.6" cy="573.9" r="5.5" fill="rgb(144,119,101)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="423.2" cy="618.5" r="5.5" fill="rgb(264,70,80)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="554.2" cy="550.9" r="5.5" fill="rgb(172,107,96)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="533.7" cy="559.2" r="5.5" fill="rgb(112,131,107)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="540.5" cy="571.6" r="5.5" fill="rgb(92,140,111)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="553.2" cy="636.7" r="5.5" fill="rgb(125,126,105)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="499.1" cy="605.9" r="5.5" fill="rgb(92,140,111)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="517.5" cy="654.1" r="5.5" fill="rgb(197,97,92)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="445.5" cy="641.3" r="5.5" fill="rgb(76,146,114)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<circle cx="441.2" cy="582.0" r="5.5" fill="rgb(107,134,108)" fill-opacity="0.88" stroke="white" stroke-width="0.6"/>
+<text x="780" y="730" font-size="12" font-family="Arial">Low cost</text>
+<rect x="845" y="719" width="20" height="10" fill="rgb(44,160,120)"/>
+<rect x="865" y="719" width="20" height="10" fill="rgb(154,115,100)"/>
+<rect x="885" y="719" width="20" height="10" fill="rgb(264,70,80)"/>
+<text x="912" y="730" font-size="12" font-family="Arial">High cost</text>
+</svg>

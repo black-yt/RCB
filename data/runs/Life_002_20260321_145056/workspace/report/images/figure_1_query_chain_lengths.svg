@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650">
+<rect width="100%" height="100%" fill="white"/>
+<text x="550.0" y="35" font-size="24" text-anchor="middle" font-family="Arial">Protein chain lengths in the 7xg4 query complex</text>
+<line x1="110" y1="70" x2="110" y2="500" stroke="black"/>
+<line x1="110" y1="500" x2="1070" y2="500" stroke="black"/>
+<line x1="105" y1="500.0" x2="110" y2="500.0" stroke="black"/>
+<line x1="110" y1="500.0" x2="1070" y2="500.0" stroke="#ddd"/>
+<text x="100" y="504.0" font-size="12" text-anchor="end" font-family="Arial">0.00</text>
+<line x1="105" y1="414.0" x2="110" y2="414.0" stroke="black"/>
+<line x1="110" y1="414.0" x2="1070" y2="414.0" stroke="#ddd"/>
+<text x="100" y="418.0" font-size="12" text-anchor="end" font-family="Arial">118.80</text>
+<line x1="105" y1="328.0" x2="110" y2="328.0" stroke="black"/>
+<line x1="110" y1="328.0" x2="1070" y2="328.0" stroke="#ddd"/>
+<text x="100" y="332.0" font-size="12" text-anchor="end" font-family="Arial">237.60</text>
+<line x1="105" y1="242.0" x2="110" y2="242.0" stroke="black"/>
+<line x1="110" y1="242.0" x2="1070" y2="242.0" stroke="#ddd"/>
+<text x="100" y="246.0" font-size="12" text-anchor="end" font-family="Arial">356.40</text>
+<line x1="105" y1="156.00000000000006" x2="110" y2="156.00000000000006" stroke="black"/>
+<line x1="110" y1="156.00000000000006" x2="1070" y2="156.00000000000006" stroke="#ddd"/>
+<text x="100" y="160.00000000000006" font-size="12" text-anchor="end" font-family="Arial">475.20</text>
+<line x1="105" y1="70.0" x2="110" y2="70.0" stroke="black"/>
+<line x1="110" y1="70.0" x2="1070" y2="70.0" stroke="#ddd"/>
+<text x="100" y="74.0" font-size="12" text-anchor="end" font-family="Arial">594.00</text>
+<rect x="126.0" y="325.5" width="74.7" height="174.5" fill="#4C78A8"/>
+<text transform="translate(163.3,518) rotate(55)" font-size="12" text-anchor="start" font-family="Arial">A</text>
+<rect x="232.7" y="341.5" width="74.7" height="158.5" fill="#4C78A8"/>
+<text transform="translate(270.0,518) rotate(55)" font-size="12" text-anchor="start" font-family="Arial">B</text>
+<rect x="339.3" y="261.8" width="74.7" height="238.2" fill="#4C78A8"/>
+<text transform="translate(376.7,518) rotate(55)" font-size="12" text-anchor="start" font-family="Arial">C</text>
+<rect x="446.0" y="260.4" width="74.7" height="239.6" fill="#4C78A8"/>
+<text transform="translate(483.3,518) rotate(55)" font-size="12" text-anchor="start" font-family="Arial">D</text>
+<rect x="552.7" y="265.5" width="74.7" height="234.5" fill="#4C78A8"/>
+<text transform="translate(590.0,518) rotate(55)" font-size="12" text-anchor="start" font-family="Arial">E</text>
+<rect x="659.3" y="265.5" width="74.7" height="234.5" fill="#4C78A8"/>
+<text transform="translate(696.7,518) rotate(55)" font-size="12" text-anchor="start" font-family="Arial">F</text>
+<rect x="766.0" y="297.3" width="74.7" height="202.7" fill="#4C78A8"/>
+<text transform="translate(803.3,518) rotate(55)" font-size="12" text-anchor="start" font-family="Arial">G</text>
+<rect x="872.7" y="330.6" width="74.7" height="169.4" fill="#4C78A8"/>
+<text transform="translate(910.0,518) rotate(55)" font-size="12" text-anchor="start" font-family="Arial">H</text>
+<rect x="979.3" y="70.0" width="74.7" height="430.0" fill="#4C78A8"/>
+<text transform="translate(1016.7,518) rotate(55)" font-size="12" text-anchor="start" font-family="Arial">L</text>
+<text x="550.0" y="625" font-size="16" text-anchor="middle" font-family="Arial">7xg4 protein chains</text>
+<text transform="translate(25,325.0) rotate(-90)" font-size="16" text-anchor="middle" font-family="Arial">Cα residue count</text>
+</svg>

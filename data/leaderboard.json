@@ -5,8 +5,10 @@
     "Earth_000",
     "Earth_002",
     "Energy_000",
+    "Energy_002",
     "Information_000",
     "Life_000",
+    "Life_002",
     "Material_000",
     "Math_000",
     "Neuroscience_000",
@@ -16,7 +18,8 @@
   "agents": [
     "Claude Code",
     "Codex CLI",
-    "Nanobot"
+    "Nanobot",
+    "OpenClaw"
   ],
   "scores": {
     "Claude Code": {
@@ -76,6 +79,16 @@
         "score": 23.0,
         "run_id": "Material_000_20260321_132712"
       }
+    },
+    "OpenClaw": {
+      "Energy_002": {
+        "score": 31.0,
+        "run_id": "Energy_002_20260321_150347"
+      },
+      "Life_002": {
+        "score": 9.7,
+        "run_id": "Life_002_20260321_145056"
+      }
     }
   },
   "frontier": {
@@ -84,8 +97,10 @@
     "Earth_000": 24.6,
     "Earth_002": 22.6,
     "Energy_000": 11.3,
+    "Energy_002": 31.0,
     "Information_000": 10.0,
     "Life_000": 7.55,
+    "Life_002": 9.7,
     "Material_000": 23.0,
     "Math_000": 26.65,
     "Neuroscience_000": 8.6,

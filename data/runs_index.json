@@ -50,6 +50,16 @@
     "total_score": 23.0
   },
   {
+    "run_id": "Life_002_20260321_145056",
+    "task_id": "Life_002",
+    "timestamp": "20260321_145056",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 438,
+    "total_score": 9.7
+  },
+  {
     "run_id": "Life_000_20260320_211701",
     "task_id": "Life_000",
     "timestamp": "20260320_211701",
@@ -68,6 +78,16 @@
     "model": "gpt-5.4",
     "duration_seconds": 633,
     "total_score": 10.0
+  },
+  {
+    "run_id": "Energy_002_20260321_150347",
+    "task_id": "Energy_002",
+    "timestamp": "20260321_150347",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 334,
+    "total_score": 31.0
   },
   {
     "run_id": "Energy_000_20260320_205623",

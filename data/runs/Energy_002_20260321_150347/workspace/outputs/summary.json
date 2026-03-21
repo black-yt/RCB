@@ -1,0 +1,160 @@
+{
+  "n_sites": 30,
+  "scenarios": {
+    "Base_low_rate": {
+      "min_delivered": 3.0318841778027243,
+      "p25_delivered": 3.3809150659489173,
+      "median_delivered": 3.5375250268102523,
+      "p75_delivered": 3.700412023763146,
+      "max_delivered": 4.135180148244917,
+      "competitive_vs_europe_count": 0,
+      "top5": [
+        {
+          "hex_id": "hex_015",
+          "lat": -26.273135338582676,
+          "lon": 22.266701004955227,
+          "delivered_cost": 3.0318841778027243,
+          "production_cost": 1.2809007527509344,
+          "export_chain_cost": 1.75098342505179
+        },
+        {
+          "hex_id": "hex_007",
+          "lat": -19.567228336676553,
+          "lon": 17.65986896716307,
+          "delivered_cost": 3.113223890452274,
+          "production_cost": 1.4193289295132625,
+          "export_chain_cost": 1.693894960939012
+        },
+        {
+          "hex_id": "hex_028",
+          "lat": -27.148526095189425,
+          "lon": 12.957157973787204,
+          "delivered_cost": 3.192763830376665,
+          "production_cost": 1.4804461882607378,
+          "export_chain_cost": 1.7123176421159272
+        },
+        {
+          "hex_id": "hex_024",
+          "lat": -19.659398035114858,
+          "lon": 20.87231530076869,
+          "delivered_cost": 3.2750792348475732,
+          "production_cost": 1.635397325962412,
+          "export_chain_cost": 1.6396819088851613
+        },
+        {
+          "hex_id": "hex_026",
+          "lat": -23.39934795527559,
+          "lon": 17.42482085753676,
+          "delivered_cost": 3.2761810709793373,
+          "production_cost": 1.5571383539654513,
+          "export_chain_cost": 1.719042717013886
+        }
+      ]
+    },
+    "High_rate": {
+      "min_delivered": 3.4744067121110214,
+      "p25_delivered": 3.899777204828643,
+      "median_delivered": 4.023454740440917,
+      "p75_delivered": 4.192429974436601,
+      "max_delivered": 4.740071429202522,
+      "competitive_vs_europe_count": 10,
+      "top5": [
+        {
+          "hex_id": "hex_015",
+          "lat": -26.273135338582676,
+          "lon": 22.266701004955227,
+          "delivered_cost": 3.4744067121110214,
+          "production_cost": 1.7234232870592314,
+          "export_chain_cost": 1.75098342505179
+        },
+        {
+          "hex_id": "hex_007",
+          "lat": -19.567228336676553,
+          "lon": 17.65986896716307,
+          "delivered_cost": 3.638603064007702,
+          "production_cost": 1.94470810306869,
+          "export_chain_cost": 1.693894960939012
+        },
+        {
+          "hex_id": "hex_028",
+          "lat": -27.148526095189425,
+          "lon": 12.957157973787204,
+          "delivered_cost": 3.6919419467536327,
+          "production_cost": 1.9796243046377056,
+          "export_chain_cost": 1.7123176421159272
+        },
+        {
+          "hex_id": "hex_019",
+          "lat": -21.420027210535224,
+          "lon": 12.956534770530338,
+          "delivered_cost": 3.789220983049914,
+          "production_cost": 1.8700110864535702,
+          "export_chain_cost": 1.919209896596344
+        },
+        {
+          "hex_id": "hex_024",
+          "lat": -19.659398035114858,
+          "lon": 20.87231530076869,
+          "delivered_cost": 3.811990263596996,
+          "production_cost": 2.1723083547118347,
+          "export_chain_cost": 1.6396819088851613
+        }
+      ]
+    },
+    "De_risked": {
+      "min_delivered": 2.6218647586694175,
+      "p25_delivered": 2.9437145387787567,
+      "median_delivered": 3.108326209827602,
+      "p75_delivered": 3.2801488656960602,
+      "max_delivered": 3.666941124444904,
+      "competitive_vs_europe_count": 1,
+      "top5": [
+        {
+          "hex_id": "hex_015",
+          "lat": -26.273135338582676,
+          "lon": 22.266701004955227,
+          "delivered_cost": 2.6218647586694175,
+          "production_cost": 1.1208813336176273,
+          "export_chain_cost": 1.50098342505179
+        },
+        {
+          "hex_id": "hex_007",
+          "lat": -19.567228336676553,
+          "lon": 17.65986896716307,
+          "delivered_cost": 2.6736720791249926,
+          "production_cost": 1.2297771181859807,
+          "export_chain_cost": 1.443894960939012
+        },
+        {
+          "hex_id": "hex_028",
+          "lat": -27.148526095189425,
+          "lon": 12.957157973787204,
+          "delivered_cost": 2.762665111400298,
+          "production_cost": 1.300347469284371,
+          "export_chain_cost": 1.4623176421159272
+        },
+        {
+          "hex_id": "hex_026",
+          "lat": -23.39934795527559,
+          "lon": 17.42482085753676,
+          "delivered_cost": 2.8304303384885023,
+          "production_cost": 1.3613876214746163,
+          "export_chain_cost": 1.469042717013886
+        },
+        {
+          "hex_id": "hex_024",
+          "lat": -19.659398035114858,
+          "lon": 20.87231530076869,
+          "delivered_cost": 2.8313668397933176,
+          "production_cost": 1.4416849309081563,
+          "export_chain_cost": 1.3896819088851613
+        }
+      ]
+    }
+  },
+  "europe_costs": {
+    "Base_low_rate": 2.9421212217930686,
+    "High_rate": 3.9672518623992366,
+    "De_risked": 2.645429580178768
+  }
+}
