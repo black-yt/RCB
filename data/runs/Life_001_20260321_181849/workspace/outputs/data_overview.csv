@@ -1,0 +1,2 @@
+n_repetitions,avg_cells_per_rep,n_unique_mutations,n_unique_peptides,n_unique_hlas,vaccine_elements
+10,99.5,11,164,1,"['mut11', 'mut12', 'mut15', 'mut19', 'mut20', 'mut26', 'mut28', 'mut33', 'mut39', 'mut44']"

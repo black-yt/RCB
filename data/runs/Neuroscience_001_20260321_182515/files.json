@@ -1,0 +1,1035 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_dmn.py",
+    "path": "code/analyze_dmn.py",
+    "type": "file",
+    "size": 33684,
+    "mtime": 1774089258.966471,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "flow",
+    "path": "data/flow",
+    "type": "directory"
+  },
+  {
+    "name": "0000",
+    "path": "data/flow/0000",
+    "type": "directory"
+  },
+  {
+    "name": "000",
+    "path": "data/flow/0000/000",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/000/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/000/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/000/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/000/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/000/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "001",
+    "path": "data/flow/0000/001",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/001/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/001/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/001/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/001/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/001/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "002",
+    "path": "data/flow/0000/002",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/002/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/002/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/002/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/002/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/002/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "003",
+    "path": "data/flow/0000/003",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/003/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/003/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/003/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/003/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/003/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "004",
+    "path": "data/flow/0000/004",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/004/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/004/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/004/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/004/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/004/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "005",
+    "path": "data/flow/0000/005",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/005/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/005/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/005/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/005/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/005/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "006",
+    "path": "data/flow/0000/006",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/006/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/006/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/006/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/006/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/006/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "007",
+    "path": "data/flow/0000/007",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/007/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/007/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/007/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/007/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/007/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "008",
+    "path": "data/flow/0000/008",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/008/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/008/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/008/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/008/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/008/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "009",
+    "path": "data/flow/0000/009",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/009/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/009/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/009/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/009/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/009/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "010",
+    "path": "data/flow/0000/010",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/010/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/010/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/010/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/010/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/010/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "011",
+    "path": "data/flow/0000/011",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/011/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/011/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/011/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/011/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/011/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "012",
+    "path": "data/flow/0000/012",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/012/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/012/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/012/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/012/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/012/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "013",
+    "path": "data/flow/0000/013",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/013/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/013/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/013/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/013/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/013/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "014",
+    "path": "data/flow/0000/014",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/014/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/014/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/014/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/014/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/014/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "015",
+    "path": "data/flow/0000/015",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/015/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/015/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/015/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/015/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/015/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "016",
+    "path": "data/flow/0000/016",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/016/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/016/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/016/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/016/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/016/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "017",
+    "path": "data/flow/0000/017",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/017/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/017/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/017/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/017/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/017/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "018",
+    "path": "data/flow/0000/018",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/018/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/018/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/018/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/018/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/018/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "019",
+    "path": "data/flow/0000/019",
+    "type": "directory"
+  },
+  {
+    "name": "chkpts",
+    "path": "data/flow/0000/019/chkpts",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "validation",
+    "path": "data/flow/0000/019/validation",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "_meta.yaml",
+    "path": "data/flow/0000/019/_meta.yaml",
+    "type": "file",
+    "size": 2222,
+    "mtime": 1772009002.0,
+    "exported": true
+  },
+  {
+    "name": "best_chkpt",
+    "path": "data/flow/0000/019/best_chkpt",
+    "type": "file",
+    "size": 49378,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "validation_loss.h5",
+    "path": "data/flow/0000/019/validation_loss.h5",
+    "type": "file",
+    "size": 2056,
+    "mtime": 1772009002.0,
+    "exported": false
+  },
+  {
+    "name": "\u2026 31 more items",
+    "path": "data/flow/0000/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "ensemble_params.npz",
+    "path": "outputs/ensemble_params.npz",
+    "type": "file",
+    "size": 740508,
+    "mtime": 1774088978.122801,
+    "exported": false
+  },
+  {
+    "name": "summary_stats.json",
+    "path": "outputs/summary_stats.json",
+    "type": "file",
+    "size": 395,
+    "mtime": 1774089281.772933,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 892356,
+    "mtime": 1773914909.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1263727,
+    "mtime": 1773914909.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 6544746,
+    "mtime": 1773914909.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6955532,
+    "mtime": 1773914909.0,
+    "exported": true
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 6957184,
+    "mtime": 1773914909.0,
+    "exported": true
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig10_clustering_summary.png",
+    "path": "report/images/fig10_clustering_summary.png",
+    "type": "file",
+    "size": 92239,
+    "mtime": 1774089281.3446245,
+    "exported": true
+  },
+  {
+    "name": "fig11_network_scale.png",
+    "path": "report/images/fig11_network_scale.png",
+    "type": "file",
+    "size": 136647,
+    "mtime": 1774089281.7185214,
+    "exported": true
+  },
+  {
+    "name": "fig1_connectome_matrix.png",
+    "path": "report/images/fig1_connectome_matrix.png",
+    "type": "file",
+    "size": 98146,
+    "mtime": 1774089269.5384815,
+    "exported": true
+  },
+  {
+    "name": "fig2_cell_type_overview.png",
+    "path": "report/images/fig2_cell_type_overview.png",
+    "type": "file",
+    "size": 141807,
+    "mtime": 1774089270.5039346,
+    "exported": true
+  },
+  {
+    "name": "fig3_ensemble_parameters.png",
+    "path": "report/images/fig3_ensemble_parameters.png",
+    "type": "file",
+    "size": 186793,
+    "mtime": 1774089271.8542478,
+    "exported": true
+  },
+  {
+    "name": "fig4_validation_performance.png",
+    "path": "report/images/fig4_validation_performance.png",
+    "type": "file",
+    "size": 132584,
+    "mtime": 1774089272.5266168,
+    "exported": true
+  },
+  {
+    "name": "fig5_motion_pathway.png",
+    "path": "report/images/fig5_motion_pathway.png",
+    "type": "file",
+    "size": 123824,
+    "mtime": 1774089273.237864,
+    "exported": true
+  },
+  {
+    "name": "fig6_ei_balance.png",
+    "path": "report/images/fig6_ei_balance.png",
+    "type": "file",
+    "size": 96337,
+    "mtime": 1774089274.0338323,
+    "exported": true
+  },
+  {
+    "name": "fig7_network_architecture.png",
+    "path": "report/images/fig7_network_architecture.png",
+    "type": "file",
+    "size": 915075,
+    "mtime": 1774089277.8957603,
+    "exported": true
+  },
+  {
+    "name": "fig8_parameter_correlations.png",
+    "path": "report/images/fig8_parameter_correlations.png",
+    "type": "file",
+    "size": 188112,
+    "mtime": 1774089279.5673788,
+    "exported": true
+  },
+  {
+    "name": "fig9_umap_clustering.png",
+    "path": "report/images/fig9_umap_clustering.png",
+    "type": "file",
+    "size": 105073,
+    "mtime": 1774089280.7048798,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 19903,
+    "mtime": 1774089387.7830198,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4876,
+    "mtime": 1774088743.2557309,
+    "exported": true
+  }
+]

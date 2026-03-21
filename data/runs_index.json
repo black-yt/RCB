@@ -20,6 +20,16 @@
     "total_score": 32.1
   },
   {
+    "run_id": "Neuroscience_001_20260321_182515",
+    "task_id": "Neuroscience_001",
+    "timestamp": "20260321_182515",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-opus-4-6[1m]",
+    "duration_seconds": 669,
+    "total_score": 4.95
+  },
+  {
     "run_id": "Neuroscience_000_20260321_010354",
     "task_id": "Neuroscience_000",
     "timestamp": "20260321_010354",
@@ -58,6 +68,16 @@
     "model": "",
     "duration_seconds": 438,
     "total_score": 9.7
+  },
+  {
+    "run_id": "Life_001_20260321_181849",
+    "task_id": "Life_001",
+    "timestamp": "20260321_181849",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-opus-4-6[1m]",
+    "duration_seconds": 318,
+    "total_score": 19.55
   },
   {
     "run_id": "Life_000_20260320_211701",
@@ -128,6 +148,16 @@
     "model": "",
     "duration_seconds": 2033,
     "total_score": 16.85
+  },
+  {
+    "run_id": "Astronomy_002_20260321_184042",
+    "task_id": "Astronomy_002",
+    "timestamp": "20260321_184042",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 242,
+    "total_score": 11.6
   },
   {
     "run_id": "Astronomy_000_20260319_184609",

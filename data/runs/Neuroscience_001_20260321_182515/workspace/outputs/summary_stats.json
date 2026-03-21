@@ -1,0 +1,16 @@
+{
+  "n_cell_types": 65,
+  "n_edges": 605,
+  "n_excitatory": 377,
+  "n_inhibitory": 228,
+  "n_input_types": 8,
+  "n_output_types": 34,
+  "n_ensemble_models": 50,
+  "val_loss_mean": 5.314309535159006,
+  "val_loss_std": 0.0744531644362538,
+  "val_loss_best": 5.136557016107771,
+  "val_loss_worst": 5.677851685219341,
+  "n_columns": 721,
+  "approx_total_neurons": 46865,
+  "n_clustering_types": 65
+}

@@ -1,6 +1,7 @@
 {
   "tasks": [
     "Astronomy_000",
+    "Astronomy_002",
     "Chemistry_000",
     "Earth_000",
     "Earth_002",
@@ -8,10 +9,12 @@
     "Energy_002",
     "Information_000",
     "Life_000",
+    "Life_001",
     "Life_002",
     "Material_000",
     "Math_000",
     "Neuroscience_000",
+    "Neuroscience_001",
     "Physics_000",
     "Physics_003"
   ],
@@ -35,9 +38,17 @@
         "score": 11.3,
         "run_id": "Energy_000_20260320_205623"
       },
+      "Life_001": {
+        "score": 19.55,
+        "run_id": "Life_001_20260321_181849"
+      },
       "Neuroscience_000": {
         "score": 8.6,
         "run_id": "Neuroscience_000_20260321_010354"
+      },
+      "Neuroscience_001": {
+        "score": 4.95,
+        "run_id": "Neuroscience_001_20260321_182515"
       },
       "Physics_003": {
         "score": 46.5,
@@ -81,6 +92,10 @@
       }
     },
     "OpenClaw": {
+      "Astronomy_002": {
+        "score": 11.6,
+        "run_id": "Astronomy_002_20260321_184042"
+      },
       "Energy_002": {
         "score": 31.0,
         "run_id": "Energy_002_20260321_150347"
@@ -93,6 +108,7 @@
   },
   "frontier": {
     "Astronomy_000": 29.4,
+    "Astronomy_002": 11.6,
     "Chemistry_000": 16.85,
     "Earth_000": 24.6,
     "Earth_002": 22.6,
@@ -100,10 +116,12 @@
     "Energy_002": 31.0,
     "Information_000": 10.0,
     "Life_000": 7.55,
+    "Life_001": 19.55,
     "Life_002": 9.7,
     "Material_000": 23.0,
     "Math_000": 26.65,
     "Neuroscience_000": 8.6,
+    "Neuroscience_001": 4.95,
     "Physics_000": 32.1,
     "Physics_003": 46.5
   }

@@ -1,0 +1,316 @@
+{
+  "target_baseline": {
+    "H0": 73.5,
+    "err": 0.81
+  },
+  "consensus": {
+    "H0": 73.50000000000018,
+    "err": 31.43479759356324,
+    "tension_vs_cmb_sigma": 0.19402792340304564
+  },
+  "sn_branch": {
+    "H0": 73.5000000000002,
+    "err": 32.824275206481595,
+    "stat_component": 32.800276302809124,
+    "zeropoint_component": 1.2549570870035207,
+    "Tsn": -47.26774335937463,
+    "eTsn": 0.03707625296911202,
+    "delta_conv": 26.943923495036344,
+    "zero_point": -20.323819864338283,
+    "zero_err": 0.03707625296911202
+  },
+  "sbf_branch": {
+    "H0": 73.50000000000001,
+    "err": 109.19752855305103,
+    "stat_component": 109.14990381398377,
+    "zeropoint_component": 3.224707660003661,
+    "zero_point": -4.444496836378549,
+    "zero_err": 0.09527025122407284
+  },
+  "host_distances": {
+    "NGC1309": {
+      "mu": 56.640212213740455,
+      "err": 0.08087862548948704,
+      "chi2": 4543.0572519084,
+      "dof": 1,
+      "n": 2
+    },
+    "NGC1365": {
+      "mu": 56.521392624240235,
+      "err": 0.060741812469415145,
+      "chi2": 7636.017988403927,
+      "dof": 2,
+      "n": 3
+    },
+    "NGC1448": {
+      "mu": 60.706999999999994,
+      "err": 0.10355674772799695,
+      "chi2": 0.0,
+      "dof": 1,
+      "n": 1
+    },
+    "NGC1559": {
+      "mu": 60.817,
+      "err": 0.08674099376880576,
+      "chi2": 0.0,
+      "dof": 1,
+      "n": 1
+    },
+    "M101": {
+      "mu": 58.520854347287575,
+      "err": 0.06184702295344629,
+      "chi2": 0.006192717364385826,
+      "dof": 1,
+      "n": 2
+    },
+    "NGC1316": {
+      "mu": 60.78700000000001,
+      "err": 0.11629273408085306,
+      "chi2": 1.4932593296109064e-26,
+      "dof": 1,
+      "n": 1
+    },
+    "NGC5643": {
+      "mu": 59.92700000000001,
+      "err": 0.10781465577554844,
+      "chi2": 4.343349787865171e-27,
+      "dof": 1,
+      "n": 1
+    }
+  },
+  "host_measurement_rows": [
+    {
+      "host": "NGC1309",
+      "method": "Cepheid",
+      "anchor": "N4258",
+      "mu_abs": 61.897,
+      "sigma_total": 0.11235657524150514,
+      "sigma_measurement": 0.1,
+      "host_mu": 56.640212213740455,
+      "host_mu_err": 0.08087862548948704
+    },
+    {
+      "host": "NGC1309",
+      "method": "Cepheid",
+      "anchor": "LMC",
+      "mu_abs": 50.986999999999995,
+      "sigma_total": 0.11651609330903606,
+      "sigma_measurement": 0.11,
+      "host_mu": 56.640212213740455,
+      "host_mu_err": 0.08087862548948704
+    },
+    {
+      "host": "NGC1365",
+      "method": "Cepheid",
+      "anchor": "N4258",
+      "mu_abs": 60.727,
+      "sigma_total": 0.09499473669630334,
+      "sigma_measurement": 0.08,
+      "host_mu": 56.521392624240235,
+      "host_mu_err": 0.060741812469415145
+    },
+    {
+      "host": "NGC1365",
+      "method": "TRGB",
+      "anchor": "N4258",
+      "mu_abs": 60.717,
+      "sigma_total": 0.1338805437694365,
+      "sigma_measurement": 0.12,
+      "host_mu": 56.521392624240235,
+      "host_mu_err": 0.060741812469415145
+    },
+    {
+      "host": "NGC1365",
+      "method": "Cepheid",
+      "anchor": "LMC",
+      "mu_abs": 49.817,
+      "sigma_total": 0.09785703858180055,
+      "sigma_measurement": 0.09,
+      "host_mu": 56.521392624240235,
+      "host_mu_err": 0.060741812469415145
+    },
+    {
+      "host": "NGC1448",
+      "method": "Cepheid",
+      "anchor": "N4258",
+      "mu_abs": 60.706999999999994,
+      "sigma_total": 0.10355674772799695,
+      "sigma_measurement": 0.09,
+      "host_mu": 60.706999999999994,
+      "host_mu_err": 0.10355674772799695
+    },
+    {
+      "host": "NGC1559",
+      "method": "Cepheid",
+      "anchor": "N4258",
+      "mu_abs": 60.817,
+      "sigma_total": 0.08674099376880576,
+      "sigma_measurement": 0.07,
+      "host_mu": 60.817,
+      "host_mu_err": 0.08674099376880576
+    },
+    {
+      "host": "M101",
+      "method": "Cepheid",
+      "anchor": "N4258",
+      "mu_abs": 58.516999999999996,
+      "sigma_total": 0.07889233169326408,
+      "sigma_measurement": 0.06,
+      "host_mu": 58.520854347287575,
+      "host_mu_err": 0.06184702295344629
+    },
+    {
+      "host": "M101",
+      "method": "TRGB",
+      "anchor": "N4258",
+      "mu_abs": 58.527,
+      "sigma_total": 0.09961927524329818,
+      "sigma_measurement": 0.08,
+      "host_mu": 58.520854347287575,
+      "host_mu_err": 0.06184702295344629
+    },
+    {
+      "host": "NGC1316",
+      "method": "TRGB",
+      "anchor": "N4258",
+      "mu_abs": 60.787,
+      "sigma_total": 0.11629273408085306,
+      "sigma_measurement": 0.1,
+      "host_mu": 60.78700000000001,
+      "host_mu_err": 0.11629273408085306
+    },
+    {
+      "host": "NGC5643",
+      "method": "TRGB",
+      "anchor": "N4258",
+      "mu_abs": 59.927,
+      "sigma_total": 0.10781465577554844,
+      "sigma_measurement": 0.09,
+      "host_mu": 59.92700000000001,
+      "host_mu_err": 0.10781465577554844
+    }
+  ],
+  "sn_calibrator_rows": [
+    {
+      "host": "NGC1309",
+      "mB": 12.1,
+      "err_mB": 0.05,
+      "mu_host": 56.640212213740455,
+      "err_mu_host": 0.08087862548948704,
+      "transfer": -44.54021221374045,
+      "transfer_err": 0.0950860245307832
+    },
+    {
+      "host": "NGC1365",
+      "mB": 11.93,
+      "err_mB": 0.06,
+      "mu_host": 56.521392624240235,
+      "err_mu_host": 0.060741812469415145,
+      "transfer": -44.591392624240235,
+      "transfer_err": 0.08537896568868468
+    },
+    {
+      "host": "NGC1448",
+      "mB": 11.9,
+      "err_mB": 0.05,
+      "mu_host": 60.706999999999994,
+      "err_mu_host": 0.10355674772799695,
+      "transfer": -48.806999999999995,
+      "transfer_err": 0.11499565209172041
+    },
+    {
+      "host": "NGC1559",
+      "mB": 12.22,
+      "err_mB": 0.05,
+      "mu_host": 60.817,
+      "err_mu_host": 0.08674099376880576,
+      "transfer": -48.597,
+      "transfer_err": 0.10011992808627061
+    },
+    {
+      "host": "M101",
+      "mB": 9.85,
+      "err_mB": 0.04,
+      "mu_host": 58.520854347287575,
+      "err_mu_host": 0.06184702295344629,
+      "transfer": -48.67085434728757,
+      "transfer_err": 0.07365496757316585
+    },
+    {
+      "host": "NGC1316",
+      "mB": 11.88,
+      "err_mB": 0.07,
+      "mu_host": 60.78700000000001,
+      "err_mu_host": 0.11629273408085306,
+      "transfer": -48.90700000000001,
+      "transfer_err": 0.1357350360076572
+    },
+    {
+      "host": "NGC5643",
+      "mB": 11.56,
+      "err_mB": 0.06,
+      "mu_host": 59.92700000000001,
+      "err_mu_host": 0.10781465577554844,
+      "transfer": -48.367000000000004,
+      "transfer_err": 0.12338557452149745
+    }
+  ],
+  "variants": [
+    {
+      "name": "Baseline consensus",
+      "H0": 73.50000000000018,
+      "err": 31.43479759356324
+    },
+    {
+      "name": "SN Ia branch only",
+      "H0": 73.5000000000002,
+      "err": 32.824275206481595
+    },
+    {
+      "name": "SBF branch only",
+      "H0": 73.50000000000001,
+      "err": 109.19752855305103
+    },
+    {
+      "name": "Cepheid-calibrated SN Ia",
+      "H0": 83.05215480120712,
+      "err": 41.90854197006993
+    },
+    {
+      "name": "TRGB-calibrated SN Ia",
+      "H0": 69.57093995500718,
+      "err": 29.426757237026536
+    },
+    {
+      "name": "SN Ia without lowest-z object",
+      "H0": 72.19666676353121,
+      "err": 33.900202146429656
+    }
+  ],
+  "fit_diagnostics": {
+    "sn_calibrator_chi2_dof": [
+      2748.993807188439,
+      6
+    ],
+    "sn_flow_intercept_chi2_dof": [
+      39.78105847240103,
+      4
+    ],
+    "sbf_flow_intercept_chi2_dof": [
+      0.12559392264706531,
+      2
+    ],
+    "consensus_chi2_dof": [
+      2.626240849025491e-30,
+      1
+    ]
+  },
+  "dataset_counts": {
+    "anchors": 3,
+    "host_measurements": 11,
+    "sneia_calibrators": 7,
+    "sbf_calibrators": 3,
+    "hubble_flow_sneia": 5,
+    "hubble_flow_sbf": 3
+  }
+}

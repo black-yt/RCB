@@ -1,0 +1,144 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_h0dn.py",
+    "path": "code/analyze_h0dn.py",
+    "type": "file",
+    "size": 31601,
+    "mtime": 1774089857.8840184,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "H0DN_MinimalDataset.txt",
+    "path": "data/H0DN_MinimalDataset.txt",
+    "type": "file",
+    "size": 2212,
+    "mtime": 1772000208.0,
+    "exported": true
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "host_distances.csv",
+    "path": "outputs/host_distances.csv",
+    "type": "file",
+    "size": 480,
+    "mtime": 1774089863.8566635,
+    "exported": true
+  },
+  {
+    "name": "results.json",
+    "path": "outputs/results.json",
+    "type": "file",
+    "size": 7688,
+    "mtime": 1774089863.8667586,
+    "exported": true
+  },
+  {
+    "name": "variants.csv",
+    "path": "outputs/variants.csv",
+    "type": "file",
+    "size": 368,
+    "mtime": 1774089863.8618438,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 5970082,
+    "mtime": 1773914884.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2772955,
+    "mtime": 1773914884.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 6327976,
+    "mtime": 1773914884.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3331484,
+    "mtime": 1773914884.0,
+    "exported": true
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_host_distances.png",
+    "path": "report/images/figure_host_distances.png",
+    "type": "file",
+    "size": 6012,
+    "mtime": 1774089863.9346535,
+    "exported": true
+  },
+  {
+    "name": "figure_hubble_flow.png",
+    "path": "report/images/figure_hubble_flow.png",
+    "type": "file",
+    "size": 6071,
+    "mtime": 1774089864.0109224,
+    "exported": true
+  },
+  {
+    "name": "figure_variants.png",
+    "path": "report/images/figure_variants.png",
+    "type": "file",
+    "size": 8676,
+    "mtime": 1774089864.2302997,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 9135,
+    "mtime": 1774089864.2365797,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4342,
+    "mtime": 1774089642.9505894,
+    "exported": true
+  }
+]
