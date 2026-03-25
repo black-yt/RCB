@@ -76,6 +76,10 @@
         "score": 22.6,
         "run_id": "Earth_002_20260321_014305"
       },
+      "Energy_000": {
+        "score": 13.2,
+        "run_id": "Energy_000_20260325_145840"
+      },
       "Information_000": {
         "score": 10.0,
         "run_id": "Information_000_20260321_012226"
@@ -106,6 +110,10 @@
         "score": 21.5,
         "run_id": "Earth_000_20260325_135520"
       },
+      "Energy_000": {
+        "score": 9.5,
+        "run_id": "Energy_000_20260325_151836"
+      },
       "Material_000": {
         "score": 23.0,
         "run_id": "Material_000_20260321_132712"
@@ -128,6 +136,10 @@
         "score": 20.1,
         "run_id": "Earth_000_20260325_144124"
       },
+      "Energy_000": {
+        "score": 16.0,
+        "run_id": "Energy_000_20260325_151822"
+      },
       "Energy_002": {
         "score": 31.0,
         "run_id": "Energy_002_20260321_150347"
@@ -144,7 +156,7 @@
     "Chemistry_000": 16.85,
     "Earth_000": 25.3,
     "Earth_002": 22.6,
-    "Energy_000": 11.3,
+    "Energy_000": 16.0,
     "Energy_002": 31.0,
     "Information_000": 10.0,
     "Life_000": 7.55,

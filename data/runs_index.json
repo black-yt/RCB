@@ -110,6 +110,36 @@
     "total_score": 31.0
   },
   {
+    "run_id": "Energy_000_20260325_151836",
+    "task_id": "Energy_000",
+    "timestamp": "20260325_151836",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 483,
+    "total_score": 9.5
+  },
+  {
+    "run_id": "Energy_000_20260325_151822",
+    "task_id": "Energy_000",
+    "timestamp": "20260325_151822",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 363,
+    "total_score": 16.0
+  },
+  {
+    "run_id": "Energy_000_20260325_145840",
+    "task_id": "Energy_000",
+    "timestamp": "20260325_145840",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 747,
+    "total_score": 13.2
+  },
+  {
     "run_id": "Energy_000_20260320_205623",
     "task_id": "Energy_000",
     "timestamp": "20260320_205623",

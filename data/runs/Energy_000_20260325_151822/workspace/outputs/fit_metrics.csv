@@ -1,0 +1,6 @@
+metric,value
+meta_feature_rmse,0.07457971473831795
+voltage_rmse,1.0555033710467507
+temperature_rmse,4.691497049854816
+capacity_mape,908.1059427145644
+objective,2.742673126882868

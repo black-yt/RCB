@@ -632,9 +632,17 @@ async function selectRun(runId) {
   if (stopBtn) stopBtn.style.display = 'none';
   document.querySelectorAll('.run-item').forEach(el => el.classList.toggle('active', el.dataset.runId === runId));
   document.getElementById('file-content-header').textContent = 'No file selected';
-  document.getElementById('file-content-body').innerHTML = '<div class="placeholder">Select a file from the explorer</div>';
+  document.getElementById('file-content-body').innerHTML = '<div class="placeholder">Loading...</div>';
   document.getElementById('terminal-status').textContent = 'Agent Output';
   document.getElementById('terminal-status').className = 'terminal-status';
+  document.getElementById('terminal-body').innerHTML = '<div class="placeholder">Loading...</div>';
+  document.getElementById('file-tree').innerHTML = '<div class="placeholder" style="padding:8px;opacity:.6">Loading...</div>';
+  // Immediately clear eval tab to avoid stale content during load
+  document.getElementById('report-content').innerHTML = '<div class="placeholder">Loading...</div>';
+  document.getElementById('score-total-area').innerHTML = '';
+  document.querySelectorAll('.checklist-score-slot').forEach(el => el.innerHTML = '');
+  document.querySelectorAll('.score-item-reasoning').forEach(el => el.remove());
+  document.getElementById('btn-score').textContent = 'Score';
 
   const isStale = () => state.currentRunId !== runId;
 

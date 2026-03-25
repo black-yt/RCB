@@ -1,0 +1,52 @@
+{
+  "related_work_summary": {
+    "paper_001": "Systematic data-driven identification for electrochemical models; emphasizes sensitivity analysis, multi-objective optimization, and risk of overfitting.",
+    "paper_003": "Heuristic divide-and-conquer parameter identification for P2D batteries; identifies physical and dynamic parameter groups to reduce search time."
+  },
+  "dataset_overview": {
+    "cs2_num_curves": 200,
+    "nasa_num_records": 636,
+    "oxford_dynamic_samples": 3145
+  },
+  "target_summary": {
+    "capacity_grid_Ah": "array",
+    "voltage_curve_V": "array",
+    "nominal_capacity_Ah": 0.6411439508878103,
+    "capacity_retention_150cyc": 0.6941822560868037,
+    "nasa_temp_rise_C": 15.67195227606167,
+    "oxford_current_rms_A": 1.2085450168475327,
+    "oxford_temp_rise_C": 1.1608000000000018
+  },
+  "ann_metrics": {
+    "train_rmse": 0.04874748580889571,
+    "test_rmse": 0.06792744303034216,
+    "train_r2": -4.089674027977871,
+    "test_r2": -9.079892587470926
+  },
+  "identified_parameters": {
+    "particle_radius_um": 9.09251235915311,
+    "exchange_current_scale": 0.9181407966385464,
+    "electrolyte_diff_scale": 1.3363239430550782,
+    "solid_diff_scale": 1.3603039064216933,
+    "thermal_resistance_KW": 2.7314815312872183,
+    "heat_capacity_scale": 1.01819303575931,
+    "aging_resistance_growth": 0.9004341342135683,
+    "active_material_frac": 0.8981557097686419
+  },
+  "validation": {
+    "voltage_rmse_V": 0.008032044508807866,
+    "temp_error_C": 0.3565080571563719,
+    "retention_error": 0.04016191482876563,
+    "dynamic_error_V": 0.007703572317321716
+  },
+  "true_params_reference": {
+    "particle_radius_um": 8.8,
+    "exchange_current_scale": 1.15,
+    "electrolyte_diff_scale": 1.02,
+    "solid_diff_scale": 0.92,
+    "thermal_resistance_KW": 2.55,
+    "heat_capacity_scale": 1.05,
+    "aging_resistance_growth": 1.12,
+    "active_material_frac": 0.935
+  }
+}

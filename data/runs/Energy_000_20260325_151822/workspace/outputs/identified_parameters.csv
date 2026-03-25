@@ -1,0 +1,8 @@
+parameter,value
+R_p_um,4.0
+k_rxn,0.9608817772755084
+D_s_scale,1.4833188334450813
+R_ohm,0.06
+h_therm,6.0
+Q_ah,2.4
+aging_rate,0.020000000000000004

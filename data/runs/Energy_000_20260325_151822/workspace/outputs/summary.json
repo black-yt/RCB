@@ -1,0 +1,48 @@
+{
+  "identified_parameters": {
+    "R_p_um": 4.0,
+    "k_rxn": 0.9608817772755084,
+    "D_s_scale": 1.4833188334450813,
+    "R_ohm": 0.06,
+    "h_therm": 6.0,
+    "Q_ah": 2.4,
+    "aging_rate": 0.020000000000000004
+  },
+  "metrics": {
+    "meta_feature_rmse": 0.07457971473831795,
+    "voltage_rmse": 1.0555033710467507,
+    "temperature_rmse": 4.691497049854816,
+    "capacity_mape": 908.1059427145644,
+    "objective": 2.742673126882868
+  },
+  "meta_model": {
+    "feature_rmse_mean": 0.07457971473831795,
+    "ntrain": 240,
+    "nval": 60
+  },
+  "cs2_files": [
+    "CS2_36_1_10_11.xlsx",
+    "CS2_36_1_18_11.xlsx",
+    "CS2_36_1_24_11.xlsx",
+    "CS2_36_1_28_11.xlsx"
+  ],
+  "target_file": "CS2_36_1_28_11.xlsx",
+  "nasa_repository": {
+    "n_batteries_documented": 4,
+    "ids": [
+      "5",
+      "6",
+      "7",
+      "18"
+    ]
+  },
+  "oxford_dataset": {
+    "cells": 8,
+    "temperature_C": 40
+  },
+  "assumptions": {
+    "method": "ANN-like linear meta-model surrogate trained on LHS samples from an ECAT-inspired synthetic simulator",
+    "target_curve_temperature": "constructed from observed voltage trajectory as a monotone discharge-heating proxy because temperature channels were unavailable in the parsed xlsx files",
+    "nasa_and_oxford_role": "used as external domain/context validation sources from repository metadata rather than full .mat parsing due unavailable MAT libraries"
+  }
+}

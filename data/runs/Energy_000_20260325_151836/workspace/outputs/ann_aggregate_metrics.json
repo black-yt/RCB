@@ -1,0 +1,10 @@
+{
+  "voltage_curve_rmse_train": 0.0428585042523008,
+  "voltage_curve_rmse_test": 0.06037676248173929,
+  "temp_r2_test": 0.9967422575409517,
+  "retention_r2_test": 0.4334604765860782,
+  "dynamic_r2_test": 0.46782691295472933,
+  "temp_rmse_test": 0.35742082379284124,
+  "retention_rmse_test": 0.03377196821060201,
+  "dynamic_rmse_test": 0.03473196936587794
+}

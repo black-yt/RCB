@@ -1,0 +1,57 @@
+{
+  "surrogate_metrics": {
+    "rmse": 1.1795050314919324,
+    "mae": 0.61408086815625,
+    "r2": 0.7128781027649271
+  },
+  "identified_metrics": [
+    {
+      "dataset": "CS2_36_cycle2_step7",
+      "voltage_rmse_v": 0.1236813380547254,
+      "voltage_mae_v": 0.06246632189343728,
+      "capacity_est_ah": 0.8166095569523077,
+      "objective": 0.1236813380547254,
+      "temperature_rmse_c": NaN,
+      "temperature_mae_c": NaN,
+      "rmse": NaN,
+      "mae": NaN,
+      "r2": NaN
+    },
+    {
+      "dataset": "NASA_B0005_cycle1",
+      "voltage_rmse_v": 0.11367250529337206,
+      "voltage_mae_v": 0.06743308706056748,
+      "capacity_est_ah": 1.8762715393341358,
+      "objective": 0.22213355638996657,
+      "temperature_rmse_c": 0.7230736739772968,
+      "temperature_mae_c": 0.6344269033609476,
+      "rmse": NaN,
+      "mae": NaN,
+      "r2": NaN
+    },
+    {
+      "dataset": "Oxford_ExampleDC_C1",
+      "voltage_rmse_v": 0.12522465611610287,
+      "voltage_mae_v": 0.07267103196369842,
+      "capacity_est_ah": 0.638946276949663,
+      "objective": 0.16846174300303632,
+      "temperature_rmse_c": 0.28824724591288975,
+      "temperature_mae_c": 0.24637147343407773,
+      "rmse": NaN,
+      "mae": NaN,
+      "r2": NaN
+    },
+    {
+      "dataset": "surrogate_validation",
+      "voltage_rmse_v": NaN,
+      "voltage_mae_v": NaN,
+      "capacity_est_ah": NaN,
+      "objective": NaN,
+      "temperature_rmse_c": NaN,
+      "temperature_mae_c": NaN,
+      "rmse": 1.1795050314919324,
+      "mae": 0.61408086815625,
+      "r2": 0.7128781027649271
+    }
+  ]
+}
