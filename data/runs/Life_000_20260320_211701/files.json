@@ -23,6 +23,7 @@
     "type": "file",
     "size": 48460,
     "mtime": 1768140248.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -31,6 +32,7 @@
     "type": "file",
     "size": 33054,
     "mtime": 1768140248.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -39,6 +41,7 @@
     "type": "file",
     "size": 24483,
     "mtime": 1768140248.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -47,6 +50,7 @@
     "type": "file",
     "size": 29700,
     "mtime": 1768140248.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -55,6 +59,7 @@
     "type": "file",
     "size": 41010,
     "mtime": 1768140248.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -63,6 +68,7 @@
     "type": "file",
     "size": 53883,
     "mtime": 1768140248.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -71,7 +77,8 @@
     "type": "file",
     "size": 6356,
     "mtime": 1773979159.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "outputs",
@@ -169,7 +176,8 @@
     "type": "file",
     "size": 11482350,
     "mtime": 1773914899.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_001.pdf",
@@ -177,7 +185,8 @@
     "type": "file",
     "size": 2193592,
     "mtime": 1773914899.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -185,7 +194,8 @@
     "type": "file",
     "size": 3296951,
     "mtime": 1773914899.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "report",

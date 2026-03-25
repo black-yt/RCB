@@ -95,28 +95,9 @@
     "exported": true
   },
   {
-    "name": "CN01_energy.csv",
-    "path": "data/HEEW_Mini-Dataset/CN01_energy.csv",
-    "type": "file",
-    "size": 861583,
-    "mtime": 1772637052.0,
-    "exported": true
-  },
-  {
-    "name": "Total_energy.csv",
-    "path": "data/HEEW_Mini-Dataset/Total_energy.csv",
-    "type": "file",
-    "size": 861583,
-    "mtime": 1772637052.0,
-    "exported": true
-  },
-  {
-    "name": "Total_weather.csv",
-    "path": "data/HEEW_Mini-Dataset/Total_weather.csv",
-    "type": "file",
-    "size": 1181366,
-    "mtime": 1772637052.0,
-    "exported": true
+    "name": "\u2026 3 more items",
+    "path": "data/HEEW_Mini-Dataset/_more",
+    "type": "truncated"
   },
   {
     "name": "outputs",

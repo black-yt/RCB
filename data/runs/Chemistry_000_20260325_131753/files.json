@@ -47,7 +47,8 @@
     "type": "file",
     "size": 117291,
     "mtime": 1772508972.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "bbbp.csv",
@@ -55,7 +56,8 @@
     "type": "file",
     "size": 146001,
     "mtime": 1772508974.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "clintox.csv",
@@ -63,7 +65,8 @@
     "type": "file",
     "size": 104029,
     "mtime": 1772508974.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "hiv.csv",
@@ -71,6 +74,7 @@
     "type": "file",
     "size": 2347242,
     "mtime": 1772508976.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -79,6 +83,7 @@
     "type": "file",
     "size": 6726446,
     "mtime": 1772508978.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -105,7 +110,8 @@
     "type": "file",
     "size": 8094211,
     "mtime": 1773914886.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_001.pdf",
@@ -113,7 +119,8 @@
     "type": "file",
     "size": 873897,
     "mtime": 1773914886.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -121,7 +128,8 @@
     "type": "file",
     "size": 1637828,
     "mtime": 1773914886.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_003.pdf",
@@ -129,7 +137,8 @@
     "type": "file",
     "size": 1856793,
     "mtime": 1773914886.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "report",

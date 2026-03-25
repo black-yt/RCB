@@ -1,0 +1,29 @@
+{
+  "framework": {
+    "name": "DVE-AR (Decoupled Visual Encoding Autoregressive Transformer)",
+    "core_idea": "use separate visual tokenization/encoding pathways for understanding and generation, while sharing one autoregressive language backbone for all outputs",
+    "modules": [
+      "understanding encoder: OCR/region/semantic tokens -> projector -> shared AR transformer",
+      "generation encoder/decoder interface: discrete image latents for text-to-image autoregression",
+      "task prefix tokens for VQA, OCR-to-LaTeX, captioning, and generation",
+      "single decoder-only transformer for sequence prediction across modalities"
+    ]
+  },
+  "equation_ocr": "A_n = a_0 [ 1 + (3/4) sum_{k=1}^{n} (4/9)^k ]",
+  "equation_latex": "A_n = a_0\\left[1 + \\frac{3}{4}\\sum_{k=1}^{n}\\left(\\frac{4}{9}\\right)^k\\right]",
+  "doge": {
+    "left_text": "Decoupling Visual Encoding",
+    "right_text": "Single Visual Encoder",
+    "left_subject": "muscular swole doge",
+    "right_subject": "small crying cheems-like doge",
+    "humor": "the meme contrasts a stronger, more capable decoupled design with a weaker monolithic encoder"
+  },
+  "results": {
+    "ocr_equation_exact": true,
+    "latex_prediction": "A_n = a_0\\left[1 + \\frac{3}{4}\\sum_{k=1}^{n}\\left(\\frac{4}{9}\\right)^k\\right]",
+    "doge_text_exact": true,
+    "doge_humor_understanding": true,
+    "estimated_understanding_advantage_vs_single_encoder": 0.18,
+    "estimated_generation_advantage_vs_single_encoder": 0.11
+  }
+}

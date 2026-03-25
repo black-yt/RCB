@@ -31,7 +31,8 @@
     "type": "file",
     "size": 910871,
     "mtime": 1773033714.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "Together_1_machine_results_reference.csv",
@@ -39,7 +40,8 @@
     "type": "file",
     "size": 1790428,
     "mtime": 1773033716.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "Together_1_targets_inserted.csv",
@@ -47,7 +49,8 @@
     "type": "file",
     "size": 765692,
     "mtime": 1773033716.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "outputs",
@@ -145,7 +148,8 @@
     "type": "file",
     "size": 3024514,
     "mtime": 1773914908.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_001.pdf",
@@ -153,7 +157,8 @@
     "type": "file",
     "size": 9125934,
     "mtime": 1773914908.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -161,7 +166,8 @@
     "type": "file",
     "size": 4320154,
     "mtime": 1773914908.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_003.pdf",
@@ -169,7 +175,8 @@
     "type": "file",
     "size": 3464361,
     "mtime": 1773914909.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_004.pdf",
@@ -177,7 +184,8 @@
     "type": "file",
     "size": 9435744,
     "mtime": 1773914909.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "report",

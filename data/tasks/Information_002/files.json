@@ -95,12 +95,9 @@
     "exported": true
   },
   {
-    "name": "Prompt_template.md",
-    "path": "data/2111.01152/Prompt_template.md",
-    "type": "file",
-    "size": 52317,
-    "mtime": 1773928992.9430723,
-    "exported": true
+    "name": "\u2026 1 more items",
+    "path": "data/2111.01152/_more",
+    "type": "truncated"
   },
   {
     "name": "outputs",
@@ -118,7 +115,7 @@
     "type": "file",
     "size": 10295148,
     "mtime": 1773914897.4192777,
-    "exported": true
+    "exported": false
   },
   {
     "name": "paper_001.pdf",
@@ -150,7 +147,7 @@
     "type": "file",
     "size": 6004349,
     "mtime": 1773914897.386442,
-    "exported": true
+    "exported": false
   },
   {
     "name": "report",

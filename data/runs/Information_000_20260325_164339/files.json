@@ -1,0 +1,174 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_unified_ar.py",
+    "path": "code/analyze_unified_ar.py",
+    "type": "file",
+    "size": 8759,
+    "mtime": 1774428357.0144255,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "doge.png",
+    "path": "data/doge.png",
+    "type": "file",
+    "size": 275391,
+    "mtime": 1769962486.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "equation.png",
+    "path": "data/equation.png",
+    "type": "file",
+    "size": 31548,
+    "mtime": 1769962486.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_metrics.json",
+    "path": "outputs/analysis_metrics.json",
+    "type": "file",
+    "size": 571,
+    "mtime": 1774428363.6950688,
+    "exported": true
+  },
+  {
+    "name": "doge_preview.png",
+    "path": "outputs/doge_preview.png",
+    "type": "file",
+    "size": 179550,
+    "mtime": 1774428245.2000246,
+    "exported": true
+  },
+  {
+    "name": "equation_preview.png",
+    "path": "outputs/equation_preview.png",
+    "type": "file",
+    "size": 68352,
+    "mtime": 1774428245.4215026,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 573341,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 5894130,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 921896,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3289161,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "case_studies.png",
+    "path": "report/images/case_studies.png",
+    "type": "file",
+    "size": 332462,
+    "mtime": 1774428364.8782272,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 357073,
+    "mtime": 1774428285.434752,
+    "exported": true
+  },
+  {
+    "name": "decoupled_ar_architecture.png",
+    "path": "report/images/decoupled_ar_architecture.png",
+    "type": "file",
+    "size": 98009,
+    "mtime": 1774428364.395347,
+    "exported": true
+  },
+  {
+    "name": "framework_comparison.png",
+    "path": "report/images/framework_comparison.png",
+    "type": "file",
+    "size": 53950,
+    "mtime": 1774428364.2088027,
+    "exported": true
+  },
+  {
+    "name": "measured_properties.png",
+    "path": "report/images/measured_properties.png",
+    "type": "file",
+    "size": 56840,
+    "mtime": 1774428363.9751432,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14521,
+    "mtime": 1774428480.004008,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5011,
+    "mtime": 1774428220.4592361,
+    "exported": true
+  }
+]

@@ -1,0 +1,198 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "generate_figures.py",
+    "path": "code/generate_figures.py",
+    "type": "file",
+    "size": 52013,
+    "mtime": 1774426001.7457783,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "doge.png",
+    "path": "data/doge.png",
+    "type": "file",
+    "size": 275391,
+    "mtime": 1769962486.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "equation.png",
+    "path": "data/equation.png",
+    "type": "file",
+    "size": 31548,
+    "mtime": 1769962486.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 712,
+    "mtime": 1774426014.3394504,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 573341,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 5894130,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 921896,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3289161,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig10_scaling.png",
+    "path": "report/images/fig10_scaling.png",
+    "type": "file",
+    "size": 138661,
+    "mtime": 1774426014.2439725,
+    "exported": true
+  },
+  {
+    "name": "fig1_architecture.png",
+    "path": "report/images/fig1_architecture.png",
+    "type": "file",
+    "size": 176088,
+    "mtime": 1774426009.968808,
+    "exported": true
+  },
+  {
+    "name": "fig2_encoding_comparison.png",
+    "path": "report/images/fig2_encoding_comparison.png",
+    "type": "file",
+    "size": 279890,
+    "mtime": 1774426010.4651403,
+    "exported": true
+  },
+  {
+    "name": "fig3_understanding_benchmarks.png",
+    "path": "report/images/fig3_understanding_benchmarks.png",
+    "type": "file",
+    "size": 111206,
+    "mtime": 1774426010.8692963,
+    "exported": true
+  },
+  {
+    "name": "fig4_generation_benchmarks.png",
+    "path": "report/images/fig4_generation_benchmarks.png",
+    "type": "file",
+    "size": 106074,
+    "mtime": 1774426011.2548943,
+    "exported": true
+  },
+  {
+    "name": "fig5_equation_analysis.png",
+    "path": "report/images/fig5_equation_analysis.png",
+    "type": "file",
+    "size": 204601,
+    "mtime": 1774426011.8061323,
+    "exported": true
+  },
+  {
+    "name": "fig6_training_pipeline.png",
+    "path": "report/images/fig6_training_pipeline.png",
+    "type": "file",
+    "size": 212678,
+    "mtime": 1774426012.216978,
+    "exported": true
+  },
+  {
+    "name": "fig7_doge_analysis.png",
+    "path": "report/images/fig7_doge_analysis.png",
+    "type": "file",
+    "size": 445588,
+    "mtime": 1774426012.6785734,
+    "exported": true
+  },
+  {
+    "name": "fig8_ablation.png",
+    "path": "report/images/fig8_ablation.png",
+    "type": "file",
+    "size": 245193,
+    "mtime": 1774426013.1869886,
+    "exported": true
+  },
+  {
+    "name": "fig9_token_representation.png",
+    "path": "report/images/fig9_token_representation.png",
+    "type": "file",
+    "size": 198768,
+    "mtime": 1774426013.7422912,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 27148,
+    "mtime": 1774426166.6504755,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5011,
+    "mtime": 1774425468.6603243,
+    "exported": true
+  }
+]

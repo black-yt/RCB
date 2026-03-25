@@ -1,0 +1,22 @@
+{
+  "equation": {
+    "width": 1050,
+    "height": 344,
+    "entropy": 0.6929468878219851,
+    "edge_density": 2.470089912414551,
+    "patch_repetition": 0.9831501831501831,
+    "ocr": 1.9582559199148144,
+    "generation": 4.491766251448558,
+    "understanding": 6.225481652278184
+  },
+  "doge_meme": {
+    "width": 1200,
+    "height": 799,
+    "entropy": 1.998805471641267,
+    "edge_density": 1.7930610179901123,
+    "patch_repetition": 0.9472108843537415,
+    "ocr": 2.6677813735188343,
+    "generation": 5.241799198103556,
+    "understanding": 6.518648715138758
+  }
+}

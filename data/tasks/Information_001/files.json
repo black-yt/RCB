@@ -36,7 +36,7 @@
     "type": "file",
     "size": 1626509,
     "mtime": 1770297040.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "outputs",
@@ -62,7 +62,7 @@
     "type": "file",
     "size": 8166173,
     "mtime": 1773914896.6160743,
-    "exported": true
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -70,7 +70,7 @@
     "type": "file",
     "size": 6663910,
     "mtime": 1773914896.6420176,
-    "exported": true
+    "exported": false
   },
   {
     "name": "paper_003.pdf",
@@ -78,7 +78,7 @@
     "type": "file",
     "size": 7823571,
     "mtime": 1773914896.666495,
-    "exported": true
+    "exported": false
   },
   {
     "name": "report",

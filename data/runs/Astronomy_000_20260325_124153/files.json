@@ -23,7 +23,8 @@
     "type": "file",
     "size": 320220,
     "mtime": 1770794836.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "M33_X-7_samples.dat",
@@ -31,7 +32,8 @@
     "type": "file",
     "size": 58949,
     "mtime": 1770794838.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "outputs",
@@ -65,7 +67,8 @@
     "type": "file",
     "size": 2112232,
     "mtime": 1773914882.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_001.pdf",
@@ -73,7 +76,8 @@
     "type": "file",
     "size": 3670587,
     "mtime": 1773914882.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -81,7 +85,8 @@
     "type": "file",
     "size": 1510057,
     "mtime": 1773914882.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_003.pdf",
@@ -89,7 +94,8 @@
     "type": "file",
     "size": 2337811,
     "mtime": 1773914882.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "report",

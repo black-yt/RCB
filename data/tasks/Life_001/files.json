@@ -15,7 +15,7 @@
     "type": "file",
     "size": 1162727,
     "mtime": 1713518802.0,
-    "exported": true
+    "exported": false
   },
   {
     "name": "final-response-likelihoods.csv",
@@ -90,52 +90,9 @@
     "exported": true
   },
   {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-5.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-5.csv",
-    "type": "file",
-    "size": 109301,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-6.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-6.csv",
-    "type": "file",
-    "size": 109207,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-7.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-7.csv",
-    "type": "file",
-    "size": 109147,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-8.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-8.csv",
-    "type": "file",
-    "size": 109344,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-9.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-9.csv",
-    "type": "file",
-    "size": 109171,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine.budget-10.minsum.adaptive.csv",
-    "path": "data/vaccine.budget-10.minsum.adaptive.csv",
-    "type": "file",
-    "size": 132,
-    "mtime": 1713518802.0,
-    "exported": true
+    "name": "\u2026 6 more items",
+    "path": "data/_more",
+    "type": "truncated"
   },
   {
     "name": "outputs",
@@ -161,7 +118,7 @@
     "type": "file",
     "size": 5699298,
     "mtime": 1773914900.8312404,
-    "exported": true
+    "exported": false
   },
   {
     "name": "paper_002.pdf",

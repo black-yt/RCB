@@ -23,7 +23,8 @@
     "type": "file",
     "size": 275391,
     "mtime": 1769962486.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "equation.png",
@@ -31,7 +32,8 @@
     "type": "file",
     "size": 31548,
     "mtime": 1769962486.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "outputs",
@@ -119,12 +121,9 @@
     "exported": true
   },
   {
-    "name": "token_metrics.csv",
-    "path": "outputs/token_metrics.csv",
-    "type": "file",
-    "size": 2459,
-    "mtime": 1774027824.7406876,
-    "exported": true
+    "name": "\u2026 1 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
   },
   {
     "name": "related_work",
@@ -137,7 +136,8 @@
     "type": "file",
     "size": 573341,
     "mtime": 1773914895.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_001.pdf",
@@ -145,7 +145,8 @@
     "type": "file",
     "size": 5894130,
     "mtime": 1773914895.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -153,7 +154,8 @@
     "type": "file",
     "size": 921896,
     "mtime": 1773914895.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_003.pdf",
@@ -161,7 +163,8 @@
     "type": "file",
     "size": 3289161,
     "mtime": 1773914895.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "report",

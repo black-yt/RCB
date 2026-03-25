@@ -1187,6 +1187,10 @@ function renderFileTree(files, runId, taskId) {
             document.getElementById('file-content-header').textContent = f.path;
             const reason = isViewableFile(f.name) ? 'File too large to preview.' : 'Binary file — cannot preview.';
             document.getElementById('file-content-body').innerHTML = `<div class="placeholder">${reason}<br><br>View source on <a href="https://github.com/InternScience/ResearchClawBench" target="_blank" style="color:var(--accent)">GitHub</a></div>`;
+          } else if (f.shared) {
+            // Input file shared across all runs — load from task workspace
+            const url = `data/tasks/${state.currentTaskId}/workspace/${f.path}`;
+            renderFileContent(f.path, f.name, url, null, `data/tasks/${state.currentTaskId}/workspace/`, f.path);
           } else {
             const url = `data/runs/${runId}/workspace/${f.path}`;
             renderFileContent(f.path, f.name, url, null, `data/runs/${runId}/workspace/`, f.path);

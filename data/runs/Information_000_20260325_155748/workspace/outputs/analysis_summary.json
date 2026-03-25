@@ -1,0 +1,22 @@
+{
+  "figures_generated": [
+    "fig1_architecture.png",
+    "fig2_encoding_comparison.png",
+    "fig3_understanding_benchmarks.png",
+    "fig4_generation_benchmarks.png",
+    "fig5_equation_analysis.png",
+    "fig6_training_pipeline.png",
+    "fig7_doge_analysis.png",
+    "fig8_ablation.png",
+    "fig9_token_representation.png",
+    "fig10_scaling.png"
+  ],
+  "key_findings": {
+    "equation_ocr": "A_n = a_0 * [1 + (3/4) * sum_{k=1}^{n} (4/9)^k]",
+    "equation_identity": "Koch Snowflake area formula; converges to 8/5 * a_0",
+    "doge_meme_message": "Decoupling Visual Encoding (buff) > Single Visual Encoder (weak)",
+    "janus_mmb_score": 77.3,
+    "janus_geneval_score": 67.0,
+    "janus_fid": 7.5
+  }
+}

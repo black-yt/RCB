@@ -97,7 +97,7 @@
     "type": "file",
     "size": 11834529,
     "mtime": 1773914901.8021173,
-    "exported": true
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -113,7 +113,7 @@
     "type": "file",
     "size": 11844346,
     "mtime": 1773914901.7699883,
-    "exported": true
+    "exported": false
   },
   {
     "name": "report",

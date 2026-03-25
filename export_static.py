@@ -24,7 +24,7 @@ STATIC_SRC = RCB_SOURCE / "evaluation" / "static"
 # Viewable text extensions (must match app.js)
 TEXT_EXTS = {
     '.txt', '.md', '.py', '.js', '.json', '.jsonl', '.csv', '.tsv',
-    '.yml', '.yaml', '.sh', '.bash', '.r', '.html', '.css', '.xml',
+    '.yml', '.yaml', '.sh', '.bash', '.r', '.R', '.html', '.css', '.xml',
     '.ini', '.cfg', '.conf', '.toml', '.log', '.dat', '.tex', '.bib',
     '.sql', '.c', '.cpp', '.h', '.java', '.go', '.rs', '.jl', '.m', '.ipynb',
 }
@@ -213,7 +213,7 @@ def export_tasks():
             # Copy target paper PDF (skip if > 10MB)
             target_study = TASKS_DIR / task_id / "target_study"
             for pdf in target_study.glob("paper*.pdf"):
-                if pdf.stat().st_size < 10 * 1024 * 1024:
+                if pdf.stat().st_size < 5 * 1024 * 1024:
                     shutil.copy2(pdf, task_dir / "paper.pdf")
                     break
 
@@ -226,7 +226,7 @@ def export_tasks():
             for subdir in ["data", "related_work"]:
                 sub_path = src_task / subdir
                 if sub_path.exists():
-                    top_dirs[subdir] = _build_file_tree(sub_path, subdir, max_per_dir=20, max_depth=4)
+                    top_dirs[subdir] = _build_file_tree(sub_path, subdir, max_per_dir=10, max_depth=3)
             for d in ["code", "outputs", "report"]:
                 if d not in top_dirs:
                     top_dirs[d] = []
@@ -262,7 +262,7 @@ def export_tasks():
                 if not src_file.exists():
                     continue
                 ext = src_file.suffix.lower()
-                max_size = 15 * 1024 * 1024 if ext == '.pdf' else 2 * 1024 * 1024
+                max_size = 5 * 1024 * 1024 if ext == '.pdf' else 1 * 1024 * 1024
                 if (ext in TEXT_EXTS or ext in IMG_EXTS or ext == '.pdf') and src_file.stat().st_size < max_size:
                     dst_file = workspace_dst / item["path"]
                     dst_file.parent.mkdir(parents=True, exist_ok=True)
@@ -359,10 +359,11 @@ def export_runs():
                     json.dump(exported_lines, f)
                 break
 
-        # File tree — only export known directories + INSTRUCTIONS.md
+        # File tree — agent output dirs copied; input dirs shown as shared (loaded from task workspace)
         EXPORT_DIRS = ["code", "data", "outputs", "related_work", "report"]
-        INPUT_DIRS = {"data", "related_work"}
+        INPUT_DIRS = {"data", "related_work"}   # shared across all runs of same task — not copied
         NO_LIMIT_DIRS = {"report"}
+        MAX_PER_DIR, MAX_DEPTH = 10, 3  # applies to all non-report dirs
         tree = []
         for subdir in EXPORT_DIRS:
             sub = ws / subdir
@@ -371,16 +372,24 @@ def export_runs():
                 if subdir in NO_LIMIT_DIRS:
                     tree.extend(_build_file_tree(sub, subdir))
                 else:
-                    depth = 4 if subdir in INPUT_DIRS else 3
-                    tree.extend(_build_file_tree(sub, subdir, max_per_dir=20, max_depth=depth))
+                    tree.extend(_build_file_tree(sub, subdir, max_per_dir=MAX_PER_DIR, max_depth=MAX_DEPTH))
         instr = ws / "INSTRUCTIONS.md"
         if instr.exists():
             st = instr.stat()
             tree.append({"name": "INSTRUCTIONS.md", "path": "INSTRUCTIONS.md", "type": "file", "size": st.st_size, "mtime": st.st_mtime})
+
+        # Mark input files as shared (served from task workspace, not copied per-run)
+        task_id = meta.get("task_id", "")
+        for item in tree:
+            if item["type"] == "file":
+                top = item["path"].split("/")[0]
+                if top in INPUT_DIRS:
+                    item["shared"] = True  # frontend loads from data/tasks/{task_id}/workspace/
+
         with open(run_out_dir / "files.json", "w", encoding="utf-8") as f:
             json.dump(tree, f, indent=2)
 
-        # Copy viewable files preserving directory structure
+        # Copy viewable files — skip input dirs (shared from task workspace)
         files_dst = run_out_dir / "workspace"
         if files_dst.exists():
             shutil.rmtree(files_dst)
@@ -388,12 +397,14 @@ def export_runs():
         for item in tree:
             if item["type"] != "file":
                 continue
+            if item.get("shared"):
+                continue  # don't copy — served from task workspace
             src = ws / item["path"]
             if not src.exists():
                 continue
             ext = src.suffix.lower()
             if ext in TEXT_EXTS or ext in IMG_EXTS or ext == '.pdf':
-                max_size = 15 * 1024 * 1024 if ext == '.pdf' else 2 * 1024 * 1024
+                max_size = 5 * 1024 * 1024 if ext == '.pdf' else 1 * 1024 * 1024
                 if src.stat().st_size > max_size:
                     continue
                 dst = files_dst / item["path"]

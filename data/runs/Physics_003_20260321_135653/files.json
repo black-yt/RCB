@@ -23,7 +23,8 @@
     "type": "file",
     "size": 211842,
     "mtime": 1770710438.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "polarization_dependence_data.csv",
@@ -31,7 +32,8 @@
     "type": "file",
     "size": 632,
     "mtime": 1770710442.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "processed_band_data.json",
@@ -39,7 +41,8 @@
     "type": "file",
     "size": 35473,
     "mtime": 1770710438.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "raw_trARPES_data.h5",
@@ -47,6 +50,7 @@
     "type": "file",
     "size": 1933136,
     "mtime": 1770709552.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -73,7 +77,8 @@
     "type": "file",
     "size": 239854,
     "mtime": 1773914915.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_001.pdf",
@@ -81,7 +86,8 @@
     "type": "file",
     "size": 1630751,
     "mtime": 1773914915.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -89,7 +95,8 @@
     "type": "file",
     "size": 1078918,
     "mtime": 1773914915.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_003.pdf",
@@ -97,7 +104,8 @@
     "type": "file",
     "size": 752873,
     "mtime": 1773914915.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "report",

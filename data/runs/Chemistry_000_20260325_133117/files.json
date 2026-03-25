@@ -23,7 +23,8 @@
     "type": "file",
     "size": 117291,
     "mtime": 1772508972.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "bbbp.csv",
@@ -31,7 +32,8 @@
     "type": "file",
     "size": 146001,
     "mtime": 1772508974.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "clintox.csv",
@@ -39,7 +41,8 @@
     "type": "file",
     "size": 104029,
     "mtime": 1772508974.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "hiv.csv",
@@ -47,6 +50,7 @@
     "type": "file",
     "size": 2347242,
     "mtime": 1772508976.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -55,6 +59,7 @@
     "type": "file",
     "size": 6726446,
     "mtime": 1772508978.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -143,87 +148,7 @@
     "exported": false
   },
   {
-    "name": "bbbp_gin_mlp_history.csv",
-    "path": "outputs/bbbp_gin_mlp_history.csv",
-    "type": "file",
-    "size": 750,
-    "mtime": 1774418261.3706632,
-    "exported": true
-  },
-  {
-    "name": "bbbp_graphs_v3_n1600.pt",
-    "path": "outputs/bbbp_graphs_v3_n1600.pt",
-    "type": "file",
-    "size": 31709591,
-    "mtime": 1774417670.296525,
-    "exported": false
-  },
-  {
-    "name": "bbbp_ka_gnn.pt",
-    "path": "outputs/bbbp_ka_gnn.pt",
-    "type": "file",
-    "size": 1552959,
-    "mtime": 1774418301.6847517,
-    "exported": false
-  },
-  {
-    "name": "bbbp_ka_gnn_history.csv",
-    "path": "outputs/bbbp_ka_gnn_history.csv",
-    "type": "file",
-    "size": 848,
-    "mtime": 1774418301.693885,
-    "exported": true
-  },
-  {
-    "name": "benchmark_results.csv",
-    "path": "outputs/benchmark_results.csv",
-    "type": "file",
-    "size": 3978,
-    "mtime": 1774418588.372309,
-    "exported": true
-  },
-  {
-    "name": "clintox_gin_mlp.pt",
-    "path": "outputs/clintox_gin_mlp.pt",
-    "type": "file",
-    "size": 253953,
-    "mtime": 1774418307.5971737,
-    "exported": false
-  },
-  {
-    "name": "clintox_gin_mlp_history.csv",
-    "path": "outputs/clintox_gin_mlp_history.csv",
-    "type": "file",
-    "size": 1075,
-    "mtime": 1774418307.6058671,
-    "exported": true
-  },
-  {
-    "name": "clintox_graphs_v3_n1200.pt",
-    "path": "outputs/clintox_graphs_v3_n1200.pt",
-    "type": "file",
-    "size": 25044391,
-    "mtime": 1774417778.440859,
-    "exported": false
-  },
-  {
-    "name": "clintox_ka_gnn.pt",
-    "path": "outputs/clintox_ka_gnn.pt",
-    "type": "file",
-    "size": 1553151,
-    "mtime": 1774418325.577166,
-    "exported": false
-  },
-  {
-    "name": "clintox_ka_gnn_history.csv",
-    "path": "outputs/clintox_ka_gnn_history.csv",
-    "type": "file",
-    "size": 782,
-    "mtime": 1774418325.584828,
-    "exported": true
-  },
-  {
-    "name": "\u2026 12 more items",
+    "name": "\u2026 22 more items",
     "path": "outputs/_more",
     "type": "truncated"
   },
@@ -238,7 +163,8 @@
     "type": "file",
     "size": 8094211,
     "mtime": 1773914886.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_001.pdf",
@@ -246,7 +172,8 @@
     "type": "file",
     "size": 873897,
     "mtime": 1773914886.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -254,7 +181,8 @@
     "type": "file",
     "size": 1637828,
     "mtime": 1773914886.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_003.pdf",
@@ -262,7 +190,8 @@
     "type": "file",
     "size": 1856793,
     "mtime": 1773914886.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "report",

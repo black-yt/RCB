@@ -23,7 +23,8 @@
     "type": "file",
     "size": 1162727,
     "mtime": 1713518802.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "final-response-likelihoods.csv",
@@ -31,7 +32,8 @@
     "type": "file",
     "size": 91166,
     "mtime": 1713518802.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "optimization_runtime_data.csv",
@@ -39,7 +41,8 @@
     "type": "file",
     "size": 587,
     "mtime": 1773033824.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "selected-vaccine-elements.budget-10.minsum.adaptive.csv",
@@ -47,7 +50,8 @@
     "type": "file",
     "size": 4561,
     "mtime": 1713518802.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "sim-specific-response-likelihoods.csv",
@@ -55,7 +59,8 @@
     "type": "file",
     "size": 111165,
     "mtime": 1713518802.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "vaccine-elements.scores.100-cells.10x.rep-0.csv",
@@ -63,7 +68,8 @@
     "type": "file",
     "size": 109196,
     "mtime": 1713518802.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "vaccine-elements.scores.100-cells.10x.rep-1.csv",
@@ -71,7 +77,8 @@
     "type": "file",
     "size": 109083,
     "mtime": 1713518802.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "vaccine-elements.scores.100-cells.10x.rep-2.csv",
@@ -79,7 +86,8 @@
     "type": "file",
     "size": 109371,
     "mtime": 1713518802.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "vaccine-elements.scores.100-cells.10x.rep-3.csv",
@@ -87,7 +95,8 @@
     "type": "file",
     "size": 109188,
     "mtime": 1713518802.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "vaccine-elements.scores.100-cells.10x.rep-4.csv",
@@ -95,55 +104,13 @@
     "type": "file",
     "size": 109232,
     "mtime": 1713518802.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-5.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-5.csv",
-    "type": "file",
-    "size": 109301,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-6.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-6.csv",
-    "type": "file",
-    "size": 109207,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-7.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-7.csv",
-    "type": "file",
-    "size": 109147,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-8.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-8.csv",
-    "type": "file",
-    "size": 109344,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine-elements.scores.100-cells.10x.rep-9.csv",
-    "path": "data/vaccine-elements.scores.100-cells.10x.rep-9.csv",
-    "type": "file",
-    "size": 109171,
-    "mtime": 1713518802.0,
-    "exported": true
-  },
-  {
-    "name": "vaccine.budget-10.minsum.adaptive.csv",
-    "path": "data/vaccine.budget-10.minsum.adaptive.csv",
-    "type": "file",
-    "size": 132,
-    "mtime": 1713518802.0,
-    "exported": true
+    "name": "\u2026 6 more items",
+    "path": "data/_more",
+    "type": "truncated"
   },
   {
     "name": "outputs",
@@ -209,7 +176,8 @@
     "type": "file",
     "size": 435620,
     "mtime": 1773914900.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_001.pdf",
@@ -217,7 +185,8 @@
     "type": "file",
     "size": 5699298,
     "mtime": 1773914900.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "paper_002.pdf",
@@ -225,6 +194,7 @@
     "type": "file",
     "size": 18502062,
     "mtime": 1773914900.0,
+    "shared": true,
     "exported": false
   },
   {
@@ -233,7 +203,8 @@
     "type": "file",
     "size": 1562817,
     "mtime": 1773914900.0,
-    "exported": true
+    "shared": true,
+    "exported": false
   },
   {
     "name": "report",

@@ -90,6 +90,36 @@
     "total_score": 7.55
   },
   {
+    "run_id": "Information_000_20260325_164339",
+    "task_id": "Information_000",
+    "timestamp": "20260325_164339",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 271,
+    "total_score": 22.7
+  },
+  {
+    "run_id": "Information_000_20260325_163554",
+    "task_id": "Information_000",
+    "timestamp": "20260325_163554",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 228,
+    "total_score": 35.1
+  },
+  {
+    "run_id": "Information_000_20260325_155748",
+    "task_id": "Information_000",
+    "timestamp": "20260325_155748",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6[1m]",
+    "duration_seconds": 747,
+    "total_score": 48.0
+  },
+  {
     "run_id": "Information_000_20260321_012226",
     "task_id": "Information_000",
     "timestamp": "20260321_012226",
