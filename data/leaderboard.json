@@ -30,6 +30,10 @@
         "score": 23.5,
         "run_id": "Astronomy_000_20260319_184609"
       },
+      "Chemistry_000": {
+        "score": 14.75,
+        "run_id": "Chemistry_000_20260325_131753"
+      },
       "Earth_000": {
         "score": 24.6,
         "run_id": "Earth_000_20260320_014954"
@@ -59,6 +63,14 @@
       "Astronomy_000": {
         "score": 29.4,
         "run_id": "Astronomy_000_20260319_145223"
+      },
+      "Chemistry_000": {
+        "score": 11.0,
+        "run_id": "Chemistry_000_20260325_133117"
+      },
+      "Earth_000": {
+        "score": 25.3,
+        "run_id": "Earth_000_20260325_142223"
       },
       "Earth_002": {
         "score": 22.6,
@@ -90,6 +102,10 @@
         "score": 16.85,
         "run_id": "Chemistry_000_20260320_193804"
       },
+      "Earth_000": {
+        "score": 21.5,
+        "run_id": "Earth_000_20260325_135520"
+      },
       "Material_000": {
         "score": 23.0,
         "run_id": "Material_000_20260321_132712"
@@ -103,6 +119,14 @@
       "Astronomy_002": {
         "score": 11.6,
         "run_id": "Astronomy_002_20260321_184042"
+      },
+      "Chemistry_000": {
+        "score": 12.85,
+        "run_id": "Chemistry_000_20260325_142150"
+      },
+      "Earth_000": {
+        "score": 20.1,
+        "run_id": "Earth_000_20260325_144124"
       },
       "Energy_002": {
         "score": 31.0,
@@ -118,7 +142,7 @@
     "Astronomy_000": 29.4,
     "Astronomy_002": 11.6,
     "Chemistry_000": 16.85,
-    "Earth_000": 24.6,
+    "Earth_000": 25.3,
     "Earth_002": 22.6,
     "Energy_000": 11.3,
     "Energy_002": 31.0,

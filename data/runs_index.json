@@ -130,6 +130,36 @@
     "total_score": 22.6
   },
   {
+    "run_id": "Earth_000_20260325_144124",
+    "task_id": "Earth_000",
+    "timestamp": "20260325_144124",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 281,
+    "total_score": 20.1
+  },
+  {
+    "run_id": "Earth_000_20260325_142223",
+    "task_id": "Earth_000",
+    "timestamp": "20260325_142223",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 622,
+    "total_score": 25.3
+  },
+  {
+    "run_id": "Earth_000_20260325_135520",
+    "task_id": "Earth_000",
+    "timestamp": "20260325_135520",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 441,
+    "total_score": 21.5
+  },
+  {
     "run_id": "Earth_000_20260320_014954",
     "task_id": "Earth_000",
     "timestamp": "20260320_014954",
@@ -138,6 +168,36 @@
     "model": "claude-opus-4-6[1m]",
     "duration_seconds": 604,
     "total_score": 24.6
+  },
+  {
+    "run_id": "Chemistry_000_20260325_142150",
+    "task_id": "Chemistry_000",
+    "timestamp": "20260325_142150",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 461,
+    "total_score": 12.85
+  },
+  {
+    "run_id": "Chemistry_000_20260325_133117",
+    "task_id": "Chemistry_000",
+    "timestamp": "20260325_133117",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 2038,
+    "total_score": 11.0
+  },
+  {
+    "run_id": "Chemistry_000_20260325_131753",
+    "task_id": "Chemistry_000",
+    "timestamp": "20260325_131753",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6[1m]",
+    "duration_seconds": 2560,
+    "total_score": 14.75
   },
   {
     "run_id": "Chemistry_000_20260320_193804",

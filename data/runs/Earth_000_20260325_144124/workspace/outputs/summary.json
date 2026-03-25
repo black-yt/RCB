@@ -1,0 +1,668 @@
+{
+  "global": {
+    "n_years": 24,
+    "total_gt_2000_2023": -6542.470628027883,
+    "cumulative_error_gt_quadrature": 387.01623948507046,
+    "mean_annual_gt": -272.60294283449514,
+    "total_mwe_2000_2023": -9.74279749179814,
+    "mean_annual_mwe": -0.40594989549158916,
+    "peak_loss_year_start": 2023.0,
+    "peak_loss_gt": -548.025110248126,
+    "least_loss_year_start": 2000.0,
+    "least_loss_gt": -78.04414729402814,
+    "area_2000": 704082.6956499998,
+    "area_2023": 651707.1669499998
+  },
+  "regions_ranked_by_total_gt": [
+    {
+      "region_key": "1_alaska",
+      "region": "Alaska",
+      "total_gt": -1473.8598965717972,
+      "mean_annual_gt": -61.41082902382488,
+      "mean_annual_mwe": -0.7320277166261931,
+      "last5_mean_gt": -78.21128023405913,
+      "n_years": 24,
+      "area_2000": 89847.1,
+      "area_2023": 80272.66,
+      "input_estimates": 13
+    },
+    {
+      "region_key": "5_greenland_periphery",
+      "region": "Greenland Periphery",
+      "total_gt": -850.4780845137108,
+      "mean_annual_gt": -35.436586854737946,
+      "mean_annual_mwe": -0.4466051923613572,
+      "last5_mean_gt": -59.47372604182634,
+      "n_years": 24,
+      "area_2000": 89349.1603,
+      "area_2023": 72428.5341,
+      "input_estimates": 13
+    },
+    {
+      "region_key": "3_arctic_canada_north",
+      "region": "Arctic Canada North",
+      "total_gt": -730.2377194967462,
+      "mean_annual_gt": -30.42657164569776,
+      "mean_annual_mwe": -0.2930927604783487,
+      "last5_mean_gt": -39.438538183812064,
+      "n_years": 24,
+      "area_2000": 105000.63345,
+      "area_2023": 103308.34635,
+      "input_estimates": 20
+    },
+    {
+      "region_key": "17_southern_andes",
+      "region": "Southern Andes",
+      "total_gt": -630.7891720171691,
+      "mean_annual_gt": -26.282882167382045,
+      "mean_annual_mwe": -0.9192548379252353,
+      "last5_mean_gt": -34.318514977773035,
+      "n_years": 24,
+      "area_2000": 29402.5139,
+      "area_2023": 28184.1533,
+      "input_estimates": 15
+    },
+    {
+      "region_key": "4_arctic_canada_south",
+      "region": "Arctic Canada South",
+      "total_gt": -552.2424313440208,
+      "mean_annual_gt": -23.010101306000866,
+      "mean_annual_mwe": -0.5700617959389733,
+      "last5_mean_gt": -27.102594085321403,
+      "n_years": 24,
+      "area_2000": 40871.6448,
+      "area_2023": 40119.3056,
+      "input_estimates": 20
+    },
+    {
+      "region_key": "19_antarctic_and_subantarctic",
+      "region": "Antarctic & Subantarctic",
+      "total_gt": -427.65968769654876,
+      "mean_annual_gt": -17.819153654022866,
+      "mean_annual_mwe": -0.14547475060075707,
+      "last5_mean_gt": -34.28447405784742,
+      "n_years": 24,
+      "area_2000": 127665.25695,
+      "area_2023": 119414.21625,
+      "input_estimates": 8
+    },
+    {
+      "region_key": "9_russian_arctic",
+      "region": "Russian Arctic",
+      "total_gt": -384.42767456889004,
+      "mean_annual_gt": -16.017819773703753,
+      "mean_annual_mwe": -0.3151662062045248,
+      "last5_mean_gt": -33.302864452748786,
+      "n_years": 24,
+      "area_2000": 51612.6368,
+      "area_2023": 50663.344,
+      "input_estimates": 19
+    },
+    {
+      "region_key": "7_svalbard",
+      "region": "Svalbard",
+      "total_gt": -331.08363639456326,
+      "mean_annual_gt": -13.795151516440136,
+      "mean_annual_mwe": -0.4181794988022909,
+      "last5_mean_gt": -26.7156388538535,
+      "n_years": 24,
+      "area_2000": 34444.6137,
+      "area_2023": 32413.8655,
+      "input_estimates": 18
+    },
+    {
+      "region_key": "13_central_asia",
+      "region": "Central Asia",
+      "total_gt": -251.6272739530213,
+      "mean_annual_gt": -10.484469748042555,
+      "mean_annual_mwe": -0.2178055248383941,
+      "last5_mean_gt": -21.734125979752967,
+      "n_years": 24,
+      "area_2000": 49702.3543,
+      "area_2023": 47661.2101,
+      "input_estimates": 15
+    },
+    {
+      "region_key": "2_western_canada_us",
+      "region": "Western Canada & US",
+      "total_gt": -221.84715123127054,
+      "mean_annual_gt": -9.243631301302939,
+      "mean_annual_mwe": -0.6947335348602119,
+      "last5_mean_gt": -18.273718304766525,
+      "n_years": 24,
+      "area_2000": 14563.2148,
+      "area_2023": 12759.333999999999,
+      "input_estimates": 12
+    },
+    {
+      "region_key": "6_iceland",
+      "region": "Iceland",
+      "total_gt": -199.07746929543939,
+      "mean_annual_gt": -8.294894553976642,
+      "mean_annual_mwe": -0.7840805613867668,
+      "last5_mean_gt": -8.025952760671487,
+      "n_years": 24,
+      "area_2000": 11000.276,
+      "area_2023": 10084.508,
+      "input_estimates": 22
+    },
+    {
+      "region_key": "15_south_asia_east",
+      "region": "South Asia East",
+      "total_gt": -176.52050865588853,
+      "mean_annual_gt": -7.355021193995356,
+      "mean_annual_mwe": -0.5269353933080532,
+      "last5_mean_gt": -10.315488974992821,
+      "n_years": 24,
+      "area_2000": 14907.1245,
+      "area_2023": 13314.3791,
+      "input_estimates": 15
+    },
+    {
+      "region_key": "14_south_asia_west",
+      "region": "South Asia West",
+      "total_gt": -134.66267933090631,
+      "mean_annual_gt": -5.610944972121096,
+      "mean_annual_mwe": -0.17631171148007532,
+      "last5_mean_gt": -8.490529845827199,
+      "n_years": 24,
+      "area_2000": 33507.5776,
+      "area_2023": 30728.1472,
+      "input_estimates": 14
+    },
+    {
+      "region_key": "11_central_europe",
+      "region": "Central Europe",
+      "total_gt": -47.32990613943336,
+      "mean_annual_gt": -1.97207942247639,
+      "mean_annual_mwe": -1.061529869356995,
+      "last5_mean_gt": -3.0780452064092256,
+      "n_years": 24,
+      "area_2000": 2140.639,
+      "area_2023": 1693.1602,
+      "input_estimates": 9
+    },
+    {
+      "region_key": "8_scandinavia",
+      "region": "Scandinavia",
+      "total_gt": -40.03250661957987,
+      "mean_annual_gt": -1.6680211091491612,
+      "mean_annual_mwe": -0.5826021493223924,
+      "last5_mean_gt": -1.5990732769002043,
+      "n_years": 24,
+      "area_2000": 2960.94345,
+      "area_2023": 2777.81055,
+      "input_estimates": 10
+    },
+    {
+      "region_key": "10_north_asia",
+      "region": "North Asia",
+      "total_gt": -32.52444754937645,
+      "mean_annual_gt": -1.355185314557352,
+      "mean_annual_mwe": -0.5764891663859191,
+      "last5_mean_gt": -1.518257042197638,
+      "n_years": 24,
+      "area_2000": 2487.7225,
+      "area_2023": 2249.3735,
+      "input_estimates": 8
+    },
+    {
+      "region_key": "16_low_latitudes",
+      "region": "Low Latitudes",
+      "total_gt": -20.40100296290808,
+      "mean_annual_gt": -0.85004179012117,
+      "mean_annual_mwe": -0.4207200030056206,
+      "last5_mean_gt": -0.7330231773612923,
+      "n_years": 24,
+      "area_2000": 2354.92895,
+      "area_2023": 1714.1972500000002,
+      "input_estimates": 10
+    },
+    {
+      "region_key": "18_new_zealand",
+      "region": "New Zealand",
+      "total_gt": -19.990888860633756,
+      "mean_annual_gt": -0.8329537025264065,
+      "mean_annual_mwe": -0.960771550950061,
+      "last5_mean_gt": -1.2887569370416476,
+      "n_years": 24,
+      "area_2000": 981.5995,
+      "area_2023": 797.1901,
+      "input_estimates": 9
+    },
+    {
+      "region_key": "12_caucasus_middle_east",
+      "region": "Caucasus & Middle East",
+      "total_gt": -17.67849082597917,
+      "mean_annual_gt": -0.7366037844157988,
+      "mean_annual_mwe": -0.6219138378128549,
+      "last5_mean_gt": -0.9042722011721747,
+      "n_years": 24,
+      "area_2000": 1282.75515,
+      "area_2023": 1123.43185,
+      "input_estimates": 7
+    }
+  ],
+  "method_stats_sample": [
+    {
+      "region_key": "10_north_asia",
+      "method": "altimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "10_north_asia",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "10_north_asia",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -1.290998361299724,
+      "weighted_mean_gt_error": 0.12140496089810275
+    },
+    {
+      "region_key": "11_central_europe",
+      "method": "altimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "11_central_europe",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "11_central_europe",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -1.7018955931991138,
+      "weighted_mean_gt_error": 0.07954908522871595
+    },
+    {
+      "region_key": "12_caucasus_middle_east",
+      "method": "altimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "12_caucasus_middle_east",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "12_caucasus_middle_east",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -0.6499813988020342,
+      "weighted_mean_gt_error": 0.05041731820112112
+    },
+    {
+      "region_key": "13_central_asia",
+      "method": "altimetry",
+      "available_years": 21,
+      "weighted_mean_gt": -5.716645631378387,
+      "weighted_mean_gt_error": 1.6420381060592104
+    },
+    {
+      "region_key": "13_central_asia",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "13_central_asia",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -10.217678753090834,
+      "weighted_mean_gt_error": 1.0149290108778983
+    },
+    {
+      "region_key": "14_south_asia_west",
+      "method": "altimetry",
+      "available_years": 21,
+      "weighted_mean_gt": -4.633604209243055,
+      "weighted_mean_gt_error": 1.363560163465986
+    },
+    {
+      "region_key": "14_south_asia_west",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "14_south_asia_west",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -4.219633306917526,
+      "weighted_mean_gt_error": 1.1577638141809246
+    },
+    {
+      "region_key": "15_south_asia_east",
+      "method": "altimetry",
+      "available_years": 21,
+      "weighted_mean_gt": -5.372413608139916,
+      "weighted_mean_gt_error": 0.48129683767270065
+    },
+    {
+      "region_key": "15_south_asia_east",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "15_south_asia_east",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -6.4709132342402285,
+      "weighted_mean_gt_error": 0.4878548990393594
+    },
+    {
+      "region_key": "16_low_latitudes",
+      "method": "altimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "16_low_latitudes",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "16_low_latitudes",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -0.8565312855927847,
+      "weighted_mean_gt_error": 0.10927186682646035
+    },
+    {
+      "region_key": "17_southern_andes",
+      "method": "altimetry",
+      "available_years": 9,
+      "weighted_mean_gt": -18.629117422949015,
+      "weighted_mean_gt_error": 4.183365079267955
+    },
+    {
+      "region_key": "17_southern_andes",
+      "method": "gravimetry",
+      "available_years": 20,
+      "weighted_mean_gt": -36.55608728453651,
+      "weighted_mean_gt_error": 4.583448207287652
+    },
+    {
+      "region_key": "17_southern_andes",
+      "method": "demdiff_and_glaciological",
+      "available_years": 23,
+      "weighted_mean_gt": -23.470140454663923,
+      "weighted_mean_gt_error": 1.972984014490745
+    },
+    {
+      "region_key": "18_new_zealand",
+      "method": "altimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "18_new_zealand",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "18_new_zealand",
+      "method": "demdiff_and_glaciological",
+      "available_years": 23,
+      "weighted_mean_gt": -0.7609919292146358,
+      "weighted_mean_gt_error": 0.09058560705602946
+    },
+    {
+      "region_key": "19_antarctic_and_subantarctic",
+      "method": "altimetry",
+      "available_years": 20,
+      "weighted_mean_gt": -4.4789517978993585,
+      "weighted_mean_gt_error": 3.546299548930456
+    },
+    {
+      "region_key": "19_antarctic_and_subantarctic",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "19_antarctic_and_subantarctic",
+      "method": "demdiff_and_glaciological",
+      "available_years": 23,
+      "weighted_mean_gt": -20.82790022073128,
+      "weighted_mean_gt_error": 4.406071152969969
+    },
+    {
+      "region_key": "1_alaska",
+      "method": "altimetry",
+      "available_years": 9,
+      "weighted_mean_gt": -73.85793772468395,
+      "weighted_mean_gt_error": 10.017394881317681
+    },
+    {
+      "region_key": "1_alaska",
+      "method": "gravimetry",
+      "available_years": 20,
+      "weighted_mean_gt": -60.99160129597154,
+      "weighted_mean_gt_error": 3.8896588009328443
+    },
+    {
+      "region_key": "1_alaska",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -69.53261043229998,
+      "weighted_mean_gt_error": 3.758182943048293
+    },
+    {
+      "region_key": "2_western_canada_us",
+      "method": "altimetry",
+      "available_years": 10,
+      "weighted_mean_gt": -12.356489209562017,
+      "weighted_mean_gt_error": 1.0282615870580598
+    },
+    {
+      "region_key": "2_western_canada_us",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "2_western_canada_us",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -9.611472987997791,
+      "weighted_mean_gt_error": 0.8895919329539884
+    },
+    {
+      "region_key": "3_arctic_canada_north",
+      "method": "altimetry",
+      "available_years": 21,
+      "weighted_mean_gt": -20.671744061120485,
+      "weighted_mean_gt_error": 1.740724019140723
+    },
+    {
+      "region_key": "3_arctic_canada_north",
+      "method": "gravimetry",
+      "available_years": 20,
+      "weighted_mean_gt": -26.74829436207541,
+      "weighted_mean_gt_error": 1.1937434047545565
+    },
+    {
+      "region_key": "3_arctic_canada_north",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -27.97171045404982,
+      "weighted_mean_gt_error": 2.2656042327377035
+    },
+    {
+      "region_key": "4_arctic_canada_south",
+      "method": "altimetry",
+      "available_years": 21,
+      "weighted_mean_gt": -16.979154335791453,
+      "weighted_mean_gt_error": 1.333814683087763
+    },
+    {
+      "region_key": "4_arctic_canada_south",
+      "method": "gravimetry",
+      "available_years": 20,
+      "weighted_mean_gt": -22.625752174897283,
+      "weighted_mean_gt_error": 1.6560509045444889
+    },
+    {
+      "region_key": "4_arctic_canada_south",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -23.836780813102717,
+      "weighted_mean_gt_error": 1.5929227021562158
+    },
+    {
+      "region_key": "5_greenland_periphery",
+      "method": "altimetry",
+      "available_years": 21,
+      "weighted_mean_gt": -26.549841680242306,
+      "weighted_mean_gt_error": 3.14316156370415
+    },
+    {
+      "region_key": "5_greenland_periphery",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "5_greenland_periphery",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -35.21572201370175,
+      "weighted_mean_gt_error": 4.0880770899697
+    },
+    {
+      "region_key": "6_iceland",
+      "method": "altimetry",
+      "available_years": 9,
+      "weighted_mean_gt": -1.3999375969052381,
+      "weighted_mean_gt_error": 0.8847452948767472
+    },
+    {
+      "region_key": "6_iceland",
+      "method": "gravimetry",
+      "available_years": 20,
+      "weighted_mean_gt": -7.067067403008158,
+      "weighted_mean_gt_error": 0.588631499825043
+    },
+    {
+      "region_key": "6_iceland",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -7.832035765700339,
+      "weighted_mean_gt_error": 0.38816883012061204
+    },
+    {
+      "region_key": "7_svalbard",
+      "method": "altimetry",
+      "available_years": 15,
+      "weighted_mean_gt": -6.788836659985668,
+      "weighted_mean_gt_error": 1.2917997655708648
+    },
+    {
+      "region_key": "7_svalbard",
+      "method": "gravimetry",
+      "available_years": 20,
+      "weighted_mean_gt": -14.551136193706663,
+      "weighted_mean_gt_error": 0.668229987810419
+    },
+    {
+      "region_key": "7_svalbard",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -11.995094933356501,
+      "weighted_mean_gt_error": 0.6628539280313792
+    },
+    {
+      "region_key": "8_scandinavia",
+      "method": "altimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "8_scandinavia",
+      "method": "gravimetry",
+      "available_years": 0,
+      "weighted_mean_gt": null,
+      "weighted_mean_gt_error": null
+    },
+    {
+      "region_key": "8_scandinavia",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -1.4952457611175043,
+      "weighted_mean_gt_error": 0.08413812838362991
+    },
+    {
+      "region_key": "9_russian_arctic",
+      "method": "altimetry",
+      "available_years": 15,
+      "weighted_mean_gt": -8.92085875702336,
+      "weighted_mean_gt_error": 1.1392403202097943
+    },
+    {
+      "region_key": "9_russian_arctic",
+      "method": "gravimetry",
+      "available_years": 20,
+      "weighted_mean_gt": -17.18984482714121,
+      "weighted_mean_gt_error": 1.130293224348517
+    },
+    {
+      "region_key": "9_russian_arctic",
+      "method": "demdiff_and_glaciological",
+      "available_years": 24,
+      "weighted_mean_gt": -13.68577303416724,
+      "weighted_mean_gt_error": 1.0698860144233318
+    }
+  ],
+  "inventory_counts": {
+    "10_north_asia": 8,
+    "11_central_europe": 9,
+    "12_caucasus_middle_east": 7,
+    "13_central_asia": 15,
+    "14_south_asia_west": 14,
+    "15_south_asia_east": 15,
+    "16_low_latitudes": 10,
+    "17_southern_andes": 15,
+    "18_new_zealand": 9,
+    "19_antarctic_and_subantarctic": 8,
+    "1_alaska": 13,
+    "2_western_canada_us": 12,
+    "3_arctic_canada_north": 20,
+    "4_arctic_canada_south": 20,
+    "5_greenland_periphery": 13,
+    "6_iceland": 22,
+    "7_svalbard": 18,
+    "8_scandinavia": 10,
+    "9_russian_arctic": 19
+  }
+}

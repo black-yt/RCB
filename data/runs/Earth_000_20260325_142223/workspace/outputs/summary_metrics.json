@@ -1,0 +1,19 @@
+{
+  "global_metrics": {
+    "mean_annual_gt_2000_2023": -272.6029428344951,
+    "mean_annual_mwe_2000_2023": -0.40594989549158916,
+    "cumulative_gt_2000_2023": -6542.470628027882,
+    "cumulative_gt_sigma_2000_2023": 387.01623948507046,
+    "record_loss_year": 2023,
+    "record_loss_gt": -548.025110248126,
+    "first_decade_mean_gt": -230.7247075480138,
+    "last_decade_mean_gt": -314.4811781209765,
+    "relative_change_last_vs_first_decade_pct": -36.30147436877039
+  },
+  "global_validation_metrics": {
+    "max_abs_gt_difference": 1.1368683772161603e-13,
+    "mean_abs_gt_difference": 3.2566542055671256e-14,
+    "max_abs_mwe_difference": 3.3306690738754696e-16,
+    "mean_abs_mwe_difference": 6.938893903907228e-17
+  }
+}

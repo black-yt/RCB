@@ -1,0 +1,62 @@
+{
+  "n_input_files": 257,
+  "n_regions": 19,
+  "n_calendar_years_global": 24,
+  "method_counts": {
+    "gravimetry": 78,
+    "combined": 58,
+    "dem_differencing": 42,
+    "altimetry": 41,
+    "glaciological": 38
+  },
+  "unit_counts": {
+    "m": 86,
+    "Gt": 83,
+    "mwe": 81,
+    "gt": 7
+  },
+  "top_5_cumulative_loss_regions": [
+    {
+      "region": "alaska",
+      "cumulative_gt_2000_2023": -1473.859896571797
+    },
+    {
+      "region": "greenland_periphery",
+      "cumulative_gt_2000_2023": -850.4780845137108
+    },
+    {
+      "region": "arctic_canada_north",
+      "cumulative_gt_2000_2023": -730.2377194967462
+    },
+    {
+      "region": "southern_andes",
+      "cumulative_gt_2000_2023": -630.7891720171691
+    },
+    {
+      "region": "arctic_canada_south",
+      "cumulative_gt_2000_2023": -552.2424313440208
+    }
+  ],
+  "least_negative_regions_by_gt": [
+    {
+      "region": "scandinavia",
+      "cumulative_gt_2000_2023": -40.03250661957988
+    },
+    {
+      "region": "north_asia",
+      "cumulative_gt_2000_2023": -32.52444754937645
+    },
+    {
+      "region": "low_latitudes",
+      "cumulative_gt_2000_2023": -20.40100296290808
+    },
+    {
+      "region": "new_zealand",
+      "cumulative_gt_2000_2023": -19.990888860633756
+    },
+    {
+      "region": "caucasus_middle_east",
+      "cumulative_gt_2000_2023": -17.678490825979168
+    }
+  ]
+}

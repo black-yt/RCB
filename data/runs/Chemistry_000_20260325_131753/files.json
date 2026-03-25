@@ -1,0 +1,224 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "featurise.py",
+    "path": "code/featurise.py",
+    "type": "file",
+    "size": 9501,
+    "mtime": 1774416106.6371782,
+    "exported": true
+  },
+  {
+    "name": "kagnn.py",
+    "path": "code/kagnn.py",
+    "type": "file",
+    "size": 9786,
+    "mtime": 1774416839.804366,
+    "exported": true
+  },
+  {
+    "name": "plot.py",
+    "path": "code/plot.py",
+    "type": "file",
+    "size": 16567,
+    "mtime": 1774418266.2854493,
+    "exported": true
+  },
+  {
+    "name": "train.py",
+    "path": "code/train.py",
+    "type": "file",
+    "size": 7994,
+    "mtime": 1774416873.4227705,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "bace.csv",
+    "path": "data/bace.csv",
+    "type": "file",
+    "size": 117291,
+    "mtime": 1772508972.0,
+    "exported": true
+  },
+  {
+    "name": "bbbp.csv",
+    "path": "data/bbbp.csv",
+    "type": "file",
+    "size": 146001,
+    "mtime": 1772508974.0,
+    "exported": true
+  },
+  {
+    "name": "clintox.csv",
+    "path": "data/clintox.csv",
+    "type": "file",
+    "size": 104029,
+    "mtime": 1772508974.0,
+    "exported": true
+  },
+  {
+    "name": "hiv.csv",
+    "path": "data/hiv.csv",
+    "type": "file",
+    "size": 2347242,
+    "mtime": 1772508976.0,
+    "exported": false
+  },
+  {
+    "name": "muv.csv",
+    "path": "data/muv.csv",
+    "type": "file",
+    "size": 6726446,
+    "mtime": 1772508978.0,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "training_results.json",
+    "path": "outputs/training_results.json",
+    "type": "file",
+    "size": 39508,
+    "mtime": 1774418192.6341598,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 8094211,
+    "mtime": 1773914886.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 873897,
+    "mtime": 1773914886.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1637828,
+    "mtime": 1773914886.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1856793,
+    "mtime": 1773914886.0,
+    "exported": true
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_architecture.png",
+    "path": "report/images/fig1_architecture.png",
+    "type": "file",
+    "size": 66949,
+    "mtime": 1774418278.7374895,
+    "exported": true
+  },
+  {
+    "name": "fig2_main_results.png",
+    "path": "report/images/fig2_main_results.png",
+    "type": "file",
+    "size": 62500,
+    "mtime": 1774418279.3086672,
+    "exported": true
+  },
+  {
+    "name": "fig3_training_curves.png",
+    "path": "report/images/fig3_training_curves.png",
+    "type": "file",
+    "size": 185208,
+    "mtime": 1774418280.916544,
+    "exported": true
+  },
+  {
+    "name": "fig4_parameter_efficiency.png",
+    "path": "report/images/fig4_parameter_efficiency.png",
+    "type": "file",
+    "size": 61907,
+    "mtime": 1774418281.6223607,
+    "exported": true
+  },
+  {
+    "name": "fig5_training_time.png",
+    "path": "report/images/fig5_training_time.png",
+    "type": "file",
+    "size": 49040,
+    "mtime": 1774418282.0408576,
+    "exported": true
+  },
+  {
+    "name": "fig6_kan_functions.png",
+    "path": "report/images/fig6_kan_functions.png",
+    "type": "file",
+    "size": 195355,
+    "mtime": 1774418288.858095,
+    "exported": true
+  },
+  {
+    "name": "fig7_radar.png",
+    "path": "report/images/fig7_radar.png",
+    "type": "file",
+    "size": 126816,
+    "mtime": 1774418289.396418,
+    "exported": true
+  },
+  {
+    "name": "fig8_delta_auc.png",
+    "path": "report/images/fig8_delta_auc.png",
+    "type": "file",
+    "size": 50567,
+    "mtime": 1774418290.0858018,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 19955,
+    "mtime": 1774418410.3369777,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 7233,
+    "mtime": 1774415874.6410632,
+    "exported": true
+  }
+]

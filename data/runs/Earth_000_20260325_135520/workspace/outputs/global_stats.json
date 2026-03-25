@@ -1,0 +1,17 @@
+{
+  "period": "2000-2023",
+  "mean_annual_gt": -272.6029428344951,
+  "mean_annual_gt_unc_mean": 77.61671182125637,
+  "mean_annual_mwe": -0.40594989549158916,
+  "cumulative_gt": -6542.470628027882,
+  "cumulative_gt_rss_error": 387.01623948507046,
+  "cumulative_mwe": -9.74279749179814,
+  "cumulative_mwe_rss_error": 0.5421653709793623,
+  "annual_gt_trend_per_year": -9.976678260033886,
+  "annual_gt_trend_pvalue": 0.0007423777321710008,
+  "max_loss_year": 2023,
+  "max_loss_gt": -548.025110248126,
+  "least_loss_year": 2000,
+  "least_loss_gt": -78.04414729402814,
+  "area_change_pct": -7.438831975787679
+}
