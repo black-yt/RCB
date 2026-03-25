@@ -7,6 +7,7 @@ Configure RCB_SOURCE below to point to your ResearchClawBench repo root.
 import json
 import re
 import shutil
+import sys
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -28,6 +29,23 @@ TEXT_EXTS = {
     '.sql', '.c', '.cpp', '.h', '.java', '.go', '.rs', '.jl', '.m', '.ipynb',
 }
 IMG_EXTS = {'.png', '.jpg', '.jpeg', '.gif', '.bmp', '.webp', '.svg'}
+
+
+# ---------------------------------------------------------------------------
+# Load INSTRUCTIONS_TEMPLATE dynamically from RCB source (always up to date)
+# ---------------------------------------------------------------------------
+
+def _load_instructions_template():
+    """Load INSTRUCTIONS_TEMPLATE from ResearchClawBench/evaluation/instructions_tmpl.py."""
+    tmpl_path = RCB_SOURCE / "evaluation" / "instructions_tmpl.py"
+    if not tmpl_path.exists():
+        raise FileNotFoundError(f"instructions_tmpl.py not found: {tmpl_path}")
+    ns = {}
+    exec(tmpl_path.read_text(encoding="utf-8"), ns)
+    return ns["INSTRUCTIONS_TEMPLATE"]
+
+
+INSTRUCTIONS_TEMPLATE = _load_instructions_template()
 
 
 # ---------------------------------------------------------------------------
@@ -100,7 +118,13 @@ def _get_run_workspace(run_id):
 
 def _build_file_tree(root, prefix="", max_per_dir=0, max_depth=0):
     """Build flat file tree list for a directory."""
-    skip_names = {"_meta.json", "_agent_output.jsonl", "_score.json", ".claude", "__pycache__"}
+    skip_names = {
+        "_meta.json", "_agent_output.jsonl", "_score.json",
+        ".claude", "__pycache__",
+        # nanobot internal files
+        "AGENTS.md", "HEARTBEAT.md", "SOUL.md", "TOOLS.md", "USER.md",
+        "sessions", "memory", "skills",
+    }
     tree = []
 
     def _walk(root, prefix, depth):
@@ -138,9 +162,8 @@ def _build_file_tree(root, prefix="", max_per_dir=0, max_depth=0):
     return tree
 
 
-def _build_instructions(task_info):
-    """Build INSTRUCTIONS.md content from task_info dict.
-    Must stay in sync with evaluation/instructions_tmpl.py in ResearchClawBench."""
+def _build_instructions(task_info, workspace="<workspace>"):
+    """Build INSTRUCTIONS.md content using the live template from ResearchClawBench."""
     task_desc = task_info.get("task", "")
     data_parts = []
     for d in task_info.get("data", []):
@@ -149,67 +172,11 @@ def _build_instructions(task_info):
         type_str = f" [{data_type}]" if data_type else ""
         data_parts.append(f"- **{d['name']}**{type_str} (`{ws_path}`): {d.get('description', '')}")
     data_text = "\n".join(data_parts) if data_parts else "No specific data files."
-
-    return f"""\
-## Role
-
-You are an autonomous scientific research agent. Your mission is to independently complete a research task from start to finish:
-
-1. **Read & Understand** — Study the related work and data to build domain context.
-2. **Think & Design** — Formulate your research idea, hypothesis, and analysis plan.
-3. **Code & Execute** — Implement the analysis, generate figures, and iterate until results are solid.
-4. **Analyze & Report** — Interpret the results and produce a publication-quality research report.
-
----
-
-## Research Task
-
-### Task Description
-{task_desc}
-
-### Available Data Files
-{data_text}
-
----
-
-## Core Principles
-
-1. **Fully Autonomous Execution**: You must complete the entire task without asking any questions, requesting clarification, or waiting for confirmation. If something is ambiguous, make a reasonable assumption and proceed. There is no human on the other end — no one will answer your questions, grant permissions, or provide feedback. You are on your own.
-
-2. **Scientific Rigor**: Approach the task like a real researcher. Understand the data before analyzing it. Validate your results. Discuss limitations. Write clearly and precisely.
-
-3. **Technical Guidelines**:
-   - Install any needed Python packages via `pip install` before using them.
-   - Use matplotlib, seaborn, or other visualization packages for plotting. All figures must be saved as image files.
-   - Ensure all code is reproducible — another researcher should be able to re-run your scripts and get the same results.
-   - If a script fails, debug it and fix it. Do not give up or ask for help.
-
----
-
-## Workspace
-
-### Layout
-- `data/` — Input datasets (read-only, do not modify)
-- `related_work/` — Reference papers and materials (read-only, do not modify)
-- `code/` — Write your analysis code here
-- `outputs/` — Save intermediate results
-- `report/` — Write your final research report here
-- `report/images/` — Save all report figures here
-
-### Deliverables
-1. Write analysis code in `code/` that processes the data
-2. Save intermediate outputs to `outputs/`
-3. Write a comprehensive research report as `report/report.md`
-   - Include methodology, results, and discussion
-   - Use proper academic writing style
-   - **You MUST include figures in your report.** Generate plots, charts, and visualizations that support your analysis
-   - Save all report figures to `report/images/` and reference them in the report using relative paths: `images/figure_name.png`
-   - Include at least: data overview plots, main result figures, and comparison/validation plots
-
----
-
-Begin working immediately.
-"""
+    return INSTRUCTIONS_TEMPLATE.format(
+        workspace=workspace,
+        task_desc=task_desc,
+        data_text=data_text,
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -319,6 +286,7 @@ def export_runs():
     runs_dir.mkdir(parents=True, exist_ok=True)
 
     exported = []
+    skipped = 0
     for run in runs:
         ws = _get_run_workspace(run["run_id"])
         if not ws:
@@ -329,8 +297,26 @@ def export_runs():
         with open(meta_path, "r", encoding="utf-8") as f:
             meta = json.load(f)
 
-        # Only export completed runs
+        # Strict 3-condition filter: completed + report exists + score exists
         if meta.get("status") != "completed":
+            skipped += 1
+            continue
+        report_path = ws / "report" / "report.md"
+        if not report_path.exists():
+            skipped += 1
+            continue
+        score_path = ws / "_score.json"
+        if not score_path.exists():
+            skipped += 1
+            continue
+        try:
+            with open(score_path, "r", encoding="utf-8") as f:
+                score_data = json.load(f)
+            if "total_score" not in score_data:
+                skipped += 1
+                continue
+        except (json.JSONDecodeError, OSError):
+            skipped += 1
             continue
 
         run_out_dir = runs_dir / run["run_id"]
@@ -344,18 +330,9 @@ def export_runs():
             "agent_name": meta.get("agent_name", ""),
             "model": meta.get("model", ""),
             "duration_seconds": meta.get("duration_seconds"),
+            "score": score_data,
+            "report": report_path.read_text(encoding="utf-8", errors="replace"),
         }
-
-        # Score
-        score_path = ws / "_score.json"
-        if score_path.exists():
-            with open(score_path, "r", encoding="utf-8") as f:
-                run_data["score"] = json.load(f)
-
-        # Report text
-        report_path = ws / "report" / "report.md"
-        if report_path.exists():
-            run_data["report"] = report_path.read_text(encoding="utf-8", errors="replace")
 
         # Agent output (last 500 lines; prefer JSON lines if available)
         MAX_OUTPUT_LINES = 500
@@ -451,7 +428,7 @@ def export_runs():
     with open(DATA_DIR / "runs_index.json", "w", encoding="utf-8") as f:
         json.dump(index, f, indent=2)
 
-    print(f"Exported {len(exported)} runs")
+    print(f"Exported {len(exported)} runs (skipped {skipped})")
 
 
 def export_leaderboard():
@@ -461,6 +438,19 @@ def export_leaderboard():
         ws = _get_run_workspace(run["run_id"])
         if not ws:
             continue
+        # Require all 3 conditions: completed + report + score
+        meta_path = ws / "_meta.json"
+        if not meta_path.exists():
+            continue
+        try:
+            with open(meta_path) as f:
+                meta = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            continue
+        if meta.get("status") != "completed":
+            continue
+        if not (ws / "report" / "report.md").exists():
+            continue
         score_path = ws / "_score.json"
         if not score_path.exists():
             continue
@@ -469,6 +459,9 @@ def export_leaderboard():
                 score_data = json.load(f)
         except (json.JSONDecodeError, OSError):
             continue
+        if "total_score" not in score_data:
+            continue
+
         task_id = run["task_id"]
         agent = score_data.get("agent_name", run.get("agent_name", "Unknown"))
         total = score_data.get("total_score", 0)
@@ -490,13 +483,18 @@ def export_leaderboard():
 
 
 def copy_static():
+    """Sync frontend assets from ResearchClawBench."""
     dst = HOME_DIR / "static"
+    # logos and favicon
     for d in ["logos"]:
         (dst / d).mkdir(parents=True, exist_ok=True)
         for f in (STATIC_SRC / d).iterdir():
             shutil.copy2(f, dst / d / f.name)
     shutil.copy2(STATIC_SRC / "favicon.svg", dst / "favicon.svg")
-    print("Copied static assets")
+    # frontend JS and CSS (must stay in sync)
+    shutil.copy2(STATIC_SRC / "app.js", dst / "app.js")
+    shutil.copy2(STATIC_SRC / "style.css", dst / "style.css")
+    print("Copied static assets (logos, favicon, app.js, style.css)")
 
 
 if __name__ == "__main__":
