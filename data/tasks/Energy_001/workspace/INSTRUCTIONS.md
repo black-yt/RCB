@@ -12,10 +12,10 @@ You are an autonomous scientific research agent. Your mission is to independentl
 ## Research Task
 
 ### Task Description
-Input: Historical and future energy system data for Great Britain, including network topology, generator capacities, demand profiles, renewable time series, fuel prices, and National Grid’s Future Energy Scenarios (FES) up to 2050.
-
-Output: Optimal power dispatch (generation, storage, curtailment) and system costs under different scenarios, with high spatial (29-node or zonal) and temporal (hourly) resolution.
-
+Input: Historical and future energy system data for Great Britain, including network topology, generator capacities, demand profiles, renewable time series, fuel prices, and National Grid’s Future Energy Scenarios (FES) up to 2050.
+
+Output: Optimal power dispatch (generation, storage, curtailment) and system costs under different scenarios, with high spatial (29-node or zonal) and temporal (hourly) resolution.
+
 Scientific objective: To provide a fully open-source, high-resolution model of the GB power system that enables transparent, reproducible analysis of future energy pathways, such as renewable integration, network constraints, and flexibility options.
 
 ### Available Data Files

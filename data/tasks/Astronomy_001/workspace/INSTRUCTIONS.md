@@ -12,8 +12,8 @@ You are an autonomous scientific research agent. Your mission is to independentl
 ## Research Task
 
 ### Task Description
-The scientific goal of this paper is to investigate whether an early dark energy (EDE) model can alleviate the acoustic tension between measurements from the cosmic microwave background (CMB) and baryon acoustic oscillations (BAO).  
-Inputs: BAO data from DESI DR2, CMB data from Planck and ACT (including temperature and polarization power spectra and lensing), and Union3 supernova data (in some analyses).  
+The scientific goal of this paper is to investigate whether an early dark energy (EDE) model can alleviate the acoustic tension between measurements from the cosmic microwave background (CMB) and baryon acoustic oscillations (BAO).  
+Inputs: BAO data from DESI DR2, CMB data from Planck and ACT (including temperature and polarization power spectra and lensing), and Union3 supernova data (in some analyses).  
 Outputs: Constraints on cosmological parameters (Ωm, H₀, σ₈, etc.) from model fitting, comparison of goodness-of-fit (Δχ²) for ΛCDM, EDE, and w₀wₐ models, and posterior distributions of EDE parameters (f_EDE, log₁₀a_c). The results show that EDE can partially relieve the tension but leads to different parameter shifts compared to late-time dark energy models.
 
 ### Available Data Files

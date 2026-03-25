@@ -160,6 +160,26 @@
     "total_score": 11.6
   },
   {
+    "run_id": "Astronomy_000_20260325_124221",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260325_124221",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 259,
+    "total_score": 14.5
+  },
+  {
+    "run_id": "Astronomy_000_20260325_124153",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260325_124153",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 186,
+    "total_score": 18.6
+  },
+  {
     "run_id": "Astronomy_000_20260319_184609",
     "task_id": "Astronomy_000",
     "timestamp": "20260319_184609",

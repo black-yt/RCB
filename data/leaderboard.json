@@ -82,6 +82,10 @@
       }
     },
     "Nanobot": {
+      "Astronomy_000": {
+        "score": 14.5,
+        "run_id": "Astronomy_000_20260325_124221"
+      },
       "Chemistry_000": {
         "score": 16.85,
         "run_id": "Chemistry_000_20260320_193804"
@@ -92,6 +96,10 @@
       }
     },
     "OpenClaw": {
+      "Astronomy_000": {
+        "score": 18.6,
+        "run_id": "Astronomy_000_20260325_124153"
+      },
       "Astronomy_002": {
         "score": 11.6,
         "run_id": "Astronomy_002_20260321_184042"

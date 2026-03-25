@@ -12,10 +12,10 @@ You are an autonomous scientific research agent. Your mission is to independentl
 ## Research Task
 
 ### Task Description
-Input: Raw data sourced from sensor measurements (electricity, heat, cooling loads, PV generation of 147 buildings) of the Arizona State University Campus Metabolism Project and meteorological observations (temperature, humidity, wind speed, pressure, precipitation) from the U.S. National Weather Service.
-
-Output: A multi-source, hierarchical time-series dataset (HEEW) comprising 11,987,328 records with 13 hourly variables (electricity, heat, cooling loads, PV generation, GHG emissions, and 7 weather attributes) from 2014 to 2022, along with data cleaning algorithms.
-
+Input: Raw data sourced from sensor measurements (electricity, heat, cooling loads, PV generation of 147 buildings) of the Arizona State University Campus Metabolism Project and meteorological observations (temperature, humidity, wind speed, pressure, precipitation) from the U.S. National Weather Service.
+
+Output: A multi-source, hierarchical time-series dataset (HEEW) comprising 11,987,328 records with 13 hourly variables (electricity, heat, cooling loads, PV generation, GHG emissions, and 7 weather attributes) from 2014 to 2022, along with data cleaning algorithms.
+
 Scientific Goal: To provide a publicly available, comprehensive, and hierarchical benchmark dataset for energy system management, machine learning, and data-driven optimization (e.g., load forecasting, anomaly detection, clustering, imputation), addressing the gaps in existing multi-energy datasets regarding thermal loads, PV generation, emissions, and long-term coverage.
 
 ### Available Data Files

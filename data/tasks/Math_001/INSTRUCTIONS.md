@@ -12,8 +12,8 @@ You are an autonomous scientific research agent. Your mission is to independentl
 ## Research Task
 
 ### Task Description
-Input: A smooth convex objective function f(x) (potentially with a non-smooth regularization term) and an initial starting point x_0.
-Output: The optimal solution x* that minimizes the global objective function with an accelerated convergence rate.
+Input: A smooth convex objective function f(x) (potentially with a non-smooth regularization term) and an initial starting point x_0.
+Output: The optimal solution x* that minimizes the global objective function with an accelerated convergence rate.
 Scientific Goal: To establish a unified Variable and Operator Splitting (VOS) framework that derives Nesterov's accelerated method and ADMM from a continuous-time dynamical system perspective, proving linear convergence using strong Lyapunov functions.
 
 ### Available Data Files
