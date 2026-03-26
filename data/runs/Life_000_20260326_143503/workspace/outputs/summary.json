@@ -1,0 +1,12 @@
+{
+  "n_training": 184,
+  "max_training_kpa": 304.60014154281674,
+  "mean_training_kpa": 50.97736340605353,
+  "top_model": "GaussianProcess",
+  "top_model_r2": 0.7923154671933574,
+  "top_model_rmse": 20.891893124909032,
+  "optimization_max_best_model_kpa": 311.9895768728663,
+  "optimization_max_file_value_kpa": 353.2908704883227,
+  "fraction_of_training_above_100_kpa": 0.10869565217391304,
+  "fraction_of_training_above_200_kpa": 0.016304347826086956
+}

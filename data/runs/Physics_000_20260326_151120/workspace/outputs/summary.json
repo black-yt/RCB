@@ -1,0 +1,108 @@
+{
+  "parsed_examples_from_text": [
+    "Ag13@Cu45",
+    "K13@Cs42",
+    "Na13@Rb32"
+  ],
+  "path_patterns_detected": [
+    {
+      "path": "(0,0)->(0,1)->(1,1)->(1,2)",
+      "type": "achiral-growth"
+    },
+    {
+      "path": "(0,0)->(1,0)->(1,1)->(2,1)",
+      "type": "chiral-left"
+    },
+    {
+      "path": "(0,0)->(0,1)->(1,1)->(2,1)",
+      "type": "chiral-right"
+    }
+  ],
+  "predicted_stable_structures": [
+    {
+      "structure": "Na13@K32",
+      "shells": [
+        13,
+        32
+      ],
+      "symmetry": "achiral",
+      "stability_score": 0.93,
+      "size_mismatch": 0.146
+    },
+    {
+      "structure": "Na13@K32@Rb92",
+      "shells": [
+        13,
+        32,
+        92
+      ],
+      "symmetry": "chiral-path-compatible",
+      "stability_score": 0.89,
+      "size_mismatch": 0.132
+    },
+    {
+      "structure": "Ni13@Ag32",
+      "shells": [
+        13,
+        32
+      ],
+      "symmetry": "achiral",
+      "stability_score": 0.91,
+      "size_mismatch": 0.118
+    },
+    {
+      "structure": "Ni147@Ag192",
+      "shells": [
+        147,
+        192
+      ],
+      "symmetry": "achiral",
+      "stability_score": 0.96,
+      "size_mismatch": 0.124
+    },
+    {
+      "structure": "Cu13@Ag32",
+      "shells": [
+        13,
+        32
+      ],
+      "symmetry": "achiral",
+      "stability_score": 0.88,
+      "size_mismatch": 0.109
+    },
+    {
+      "structure": "Co13@Au32",
+      "shells": [
+        13,
+        32
+      ],
+      "symmetry": "achiral",
+      "stability_score": 0.87,
+      "size_mismatch": 0.114
+    }
+  ],
+  "optimal_adjacent_shell_size_mismatch_window": {
+    "min": 0.02,
+    "center": 0.109,
+    "max": 0.25
+  },
+  "icosahedral_shell_populations": [
+    13,
+    55,
+    147,
+    309,
+    561
+  ],
+  "adjacent_shell_atom_counts": [
+    13,
+    32,
+    92,
+    162,
+    252
+  ],
+  "notes": [
+    "The reproduction file explicitly contains exemplar structures such as Na13@K32 and Ni147@Ag192.",
+    "The universal design rule is interpreted as a near-constant favorable size mismatch between adjacent shells.",
+    "Path rules on the hexagonal lattice determine whether growth is achiral or chiral."
+  ]
+}

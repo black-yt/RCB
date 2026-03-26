@@ -1,0 +1,10 @@
+{
+  "n_coords":36,
+  "n_candidate_pairs":630,
+  "best_candidate":"K13@Rb30",
+  "best_shell_type":"BG",
+  "best_mismatch":0.0925110132,
+  "best_error":0.0025110132,
+  "growth_final_type":"Ch4",
+  "growth_final_mismatch":0.0205751386
+}

@@ -1,0 +1,189 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_icosahedral.py",
+    "path": "code/analyze_icosahedral.py",
+    "type": "file",
+    "size": 10235,
+    "mtime": 1774509272.4267545,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "Multi-component Icosahedral Reproduction Data.txt",
+    "path": "data/Multi-component Icosahedral Reproduction Data.txt",
+    "type": "file",
+    "size": 4446,
+    "mtime": 1770187999.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "atomic_pair_analysis.csv",
+    "path": "outputs/atomic_pair_analysis.csv",
+    "type": "file",
+    "size": 259,
+    "mtime": 1774509283.531982,
+    "exported": true
+  },
+  {
+    "name": "growth_simulation.csv",
+    "path": "outputs/growth_simulation.csv",
+    "type": "file",
+    "size": 37821,
+    "mtime": 1774509283.5751667,
+    "exported": true
+  },
+  {
+    "name": "pdf_extracts.txt",
+    "path": "outputs/pdf_extracts.txt",
+    "type": "file",
+    "size": 48456,
+    "mtime": 1774509124.0209174,
+    "exported": true
+  },
+  {
+    "name": "predicted_candidates.csv",
+    "path": "outputs/predicted_candidates.csv",
+    "type": "file",
+    "size": 60456,
+    "mtime": 1774509283.5529191,
+    "exported": true
+  },
+  {
+    "name": "shell_path_sequence.csv",
+    "path": "outputs/shell_path_sequence.csv",
+    "type": "file",
+    "size": 590,
+    "mtime": 1774509283.5802293,
+    "exported": true
+  },
+  {
+    "name": "summary.json",
+    "path": "outputs/summary.json",
+    "type": "file",
+    "size": 233,
+    "mtime": 1774509283.5913424,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2317246,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 14876105,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 647192,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4836605,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "atomic_radii.png",
+    "path": "report/images/atomic_radii.png",
+    "type": "file",
+    "size": 64554,
+    "mtime": 1774509284.1145656,
+    "exported": true
+  },
+  {
+    "name": "experimental_comparison.png",
+    "path": "report/images/experimental_comparison.png",
+    "type": "file",
+    "size": 89877,
+    "mtime": 1774509285.6470313,
+    "exported": true
+  },
+  {
+    "name": "growth_trajectory.png",
+    "path": "report/images/growth_trajectory.png",
+    "type": "file",
+    "size": 132700,
+    "mtime": 1774509285.3475373,
+    "exported": true
+  },
+  {
+    "name": "mismatch_validation.png",
+    "path": "report/images/mismatch_validation.png",
+    "type": "file",
+    "size": 100596,
+    "mtime": 1774509284.5920715,
+    "exported": true
+  },
+  {
+    "name": "top_candidates.png",
+    "path": "report/images/top_candidates.png",
+    "type": "file",
+    "size": 105056,
+    "mtime": 1774509284.988984,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13068,
+    "mtime": 1774509408.6374023,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5790,
+    "mtime": 1774509084.8707702,
+    "exported": true
+  }
+]

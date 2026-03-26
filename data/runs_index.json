@@ -10,6 +10,36 @@
     "total_score": 46.5
   },
   {
+    "run_id": "Physics_000_20260326_151123",
+    "task_id": "Physics_000",
+    "timestamp": "20260326_151123",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 345,
+    "total_score": 7.8
+  },
+  {
+    "run_id": "Physics_000_20260326_151120",
+    "task_id": "Physics_000",
+    "timestamp": "20260326_151120",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 272,
+    "total_score": 7.5
+  },
+  {
+    "run_id": "Physics_000_20260326_150535",
+    "task_id": "Physics_000",
+    "timestamp": "20260326_150535",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6[1m]",
+    "duration_seconds": 333,
+    "total_score": 27.4
+  },
+  {
     "run_id": "Physics_000_20260321_011953",
     "task_id": "Physics_000",
     "timestamp": "20260321_011953",
@@ -50,6 +80,36 @@
     "total_score": 26.65
   },
   {
+    "run_id": "Material_000_20260326_151955",
+    "task_id": "Material_000",
+    "timestamp": "20260326_151955",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 608,
+    "total_score": 17.5
+  },
+  {
+    "run_id": "Material_000_20260326_145735",
+    "task_id": "Material_000",
+    "timestamp": "20260326_145735",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 374,
+    "total_score": 12.0
+  },
+  {
+    "run_id": "Material_000_20260326_144303",
+    "task_id": "Material_000",
+    "timestamp": "20260326_144303",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6[1m]",
+    "duration_seconds": 12684,
+    "total_score": 14.5
+  },
+  {
     "run_id": "Material_000_20260321_132712",
     "task_id": "Material_000",
     "timestamp": "20260321_132712",
@@ -78,6 +138,36 @@
     "model": "claude-opus-4-6[1m]",
     "duration_seconds": 318,
     "total_score": 19.55
+  },
+  {
+    "run_id": "Life_000_20260326_143503",
+    "task_id": "Life_000",
+    "timestamp": "20260326_143503",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 405,
+    "total_score": 7.35
+  },
+  {
+    "run_id": "Life_000_20260326_142858",
+    "task_id": "Life_000",
+    "timestamp": "20260326_142858",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "",
+    "duration_seconds": 361,
+    "total_score": 5.4
+  },
+  {
+    "run_id": "Life_000_20260326_142039",
+    "task_id": "Life_000",
+    "timestamp": "20260326_142039",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6[1m]",
+    "duration_seconds": 455,
+    "total_score": 8.2
   },
   {
     "run_id": "Life_000_20260320_211701",

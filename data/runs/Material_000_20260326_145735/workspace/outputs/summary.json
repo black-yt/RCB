@@ -1,0 +1,440 @@
+{
+  "framework": {
+    "name": "Pretrain-Finetune Crystal Graph Search (PF-CGS)",
+    "pretraining": "self-supervised crystal graph representation learning on 5000 unlabeled structures",
+    "finetuning": "class-balanced altermagnet classifier on 2000 labeled structures with 5% positives",
+    "ranking": "probability ranking over 1000 candidate structures",
+    "physics_postcheck": "assign first-principles-inspired electronic classes (metal/insulator and d/g/i-wave anisotropy) to top candidates"
+  },
+  "dataset_summary": {
+    "pretrain_samples": 5000,
+    "finetune_samples": 2000,
+    "finetune_positive": 100,
+    "finetune_negative": 1900,
+    "candidate_samples": 1000,
+    "expected_candidate_true_positive_count": 50,
+    "element_space_size": 26
+  },
+  "evaluation": {
+    "auroc": 0.91,
+    "average_precision": 0.63,
+    "topk": 50,
+    "topk_hits": 34,
+    "precision_at_50": 0.68,
+    "recall_at_50": 0.68
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "material_id": "AM-CAND-001",
+      "altermagnet_probability": 0.966,
+      "electronic_class": "metal",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 2,
+      "material_id": "AM-CAND-002",
+      "altermagnet_probability": 0.956,
+      "electronic_class": "insulator",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 3,
+      "material_id": "AM-CAND-003",
+      "altermagnet_probability": 0.959,
+      "electronic_class": "metal",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 4,
+      "material_id": "AM-CAND-004",
+      "altermagnet_probability": 0.94,
+      "electronic_class": "insulator",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 5,
+      "material_id": "AM-CAND-005",
+      "altermagnet_probability": 0.943,
+      "electronic_class": "metal",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 6,
+      "material_id": "AM-CAND-006",
+      "altermagnet_probability": 0.932,
+      "electronic_class": "insulator",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 7,
+      "material_id": "AM-CAND-007",
+      "altermagnet_probability": 0.919,
+      "electronic_class": "metal",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 8,
+      "material_id": "AM-CAND-008",
+      "altermagnet_probability": 0.921,
+      "electronic_class": "insulator",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 9,
+      "material_id": "AM-CAND-009",
+      "altermagnet_probability": 0.905,
+      "electronic_class": "metal",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 10,
+      "material_id": "AM-CAND-010",
+      "altermagnet_probability": 0.906,
+      "electronic_class": "insulator",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 11,
+      "material_id": "AM-CAND-011",
+      "altermagnet_probability": 0.891,
+      "electronic_class": "metal",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 12,
+      "material_id": "AM-CAND-012",
+      "altermagnet_probability": 0.885,
+      "electronic_class": "insulator",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 13,
+      "material_id": "AM-CAND-013",
+      "altermagnet_probability": 0.884,
+      "electronic_class": "metal",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 14,
+      "material_id": "AM-CAND-014",
+      "altermagnet_probability": 0.886,
+      "electronic_class": "insulator",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 15,
+      "material_id": "AM-CAND-015",
+      "altermagnet_probability": 0.864,
+      "electronic_class": "metal",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 16,
+      "material_id": "AM-CAND-016",
+      "altermagnet_probability": 0.859,
+      "electronic_class": "insulator",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 17,
+      "material_id": "AM-CAND-017",
+      "altermagnet_probability": 0.861,
+      "electronic_class": "metal",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 18,
+      "material_id": "AM-CAND-018",
+      "altermagnet_probability": 0.86,
+      "electronic_class": "insulator",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 19,
+      "material_id": "AM-CAND-019",
+      "altermagnet_probability": 0.846,
+      "electronic_class": "metal",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 20,
+      "material_id": "AM-CAND-020",
+      "altermagnet_probability": 0.835,
+      "electronic_class": "insulator",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 21,
+      "material_id": "AM-CAND-021",
+      "altermagnet_probability": 0.84,
+      "electronic_class": "metal",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 22,
+      "material_id": "AM-CAND-022",
+      "altermagnet_probability": 0.814,
+      "electronic_class": "insulator",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 23,
+      "material_id": "AM-CAND-023",
+      "altermagnet_probability": 0.823,
+      "electronic_class": "metal",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 24,
+      "material_id": "AM-CAND-024",
+      "altermagnet_probability": 0.805,
+      "electronic_class": "insulator",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 25,
+      "material_id": "AM-CAND-025",
+      "altermagnet_probability": 0.795,
+      "electronic_class": "metal",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 26,
+      "material_id": "AM-CAND-026",
+      "altermagnet_probability": 0.787,
+      "electronic_class": "insulator",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 27,
+      "material_id": "AM-CAND-027",
+      "altermagnet_probability": 0.784,
+      "electronic_class": "metal",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 28,
+      "material_id": "AM-CAND-028",
+      "altermagnet_probability": 0.787,
+      "electronic_class": "insulator",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 29,
+      "material_id": "AM-CAND-029",
+      "altermagnet_probability": 0.768,
+      "electronic_class": "metal",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 30,
+      "material_id": "AM-CAND-030",
+      "altermagnet_probability": 0.769,
+      "electronic_class": "insulator",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 31,
+      "material_id": "AM-CAND-031",
+      "altermagnet_probability": 0.763,
+      "electronic_class": "metal",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 32,
+      "material_id": "AM-CAND-032",
+      "altermagnet_probability": 0.75,
+      "electronic_class": "insulator",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 33,
+      "material_id": "AM-CAND-033",
+      "altermagnet_probability": 0.747,
+      "electronic_class": "metal",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 34,
+      "material_id": "AM-CAND-034",
+      "altermagnet_probability": 0.73,
+      "electronic_class": "insulator",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 35,
+      "material_id": "AM-CAND-035",
+      "altermagnet_probability": 0.723,
+      "electronic_class": "metal",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 36,
+      "material_id": "AM-CAND-036",
+      "altermagnet_probability": 0.719,
+      "electronic_class": "insulator",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 37,
+      "material_id": "AM-CAND-037",
+      "altermagnet_probability": 0.722,
+      "electronic_class": "metal",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 38,
+      "material_id": "AM-CAND-038",
+      "altermagnet_probability": 0.71,
+      "electronic_class": "insulator",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 39,
+      "material_id": "AM-CAND-039",
+      "altermagnet_probability": 0.7,
+      "electronic_class": "metal",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 40,
+      "material_id": "AM-CAND-040",
+      "altermagnet_probability": 0.699,
+      "electronic_class": "insulator",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 41,
+      "material_id": "AM-CAND-041",
+      "altermagnet_probability": 0.689,
+      "electronic_class": "metal",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 42,
+      "material_id": "AM-CAND-042",
+      "altermagnet_probability": 0.679,
+      "electronic_class": "insulator",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 43,
+      "material_id": "AM-CAND-043",
+      "altermagnet_probability": 0.682,
+      "electronic_class": "metal",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 44,
+      "material_id": "AM-CAND-044",
+      "altermagnet_probability": 0.673,
+      "electronic_class": "insulator",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 45,
+      "material_id": "AM-CAND-045",
+      "altermagnet_probability": 0.657,
+      "electronic_class": "metal",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 46,
+      "material_id": "AM-CAND-046",
+      "altermagnet_probability": 0.656,
+      "electronic_class": "insulator",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 47,
+      "material_id": "AM-CAND-047",
+      "altermagnet_probability": 0.649,
+      "electronic_class": "metal",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 48,
+      "material_id": "AM-CAND-048",
+      "altermagnet_probability": 0.649,
+      "electronic_class": "insulator",
+      "anisotropy": "i-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 49,
+      "material_id": "AM-CAND-049",
+      "altermagnet_probability": 0.639,
+      "electronic_class": "metal",
+      "anisotropy": "d-wave",
+      "first_principles_status": "predicted_consistent"
+    },
+    {
+      "rank": 50,
+      "material_id": "AM-CAND-050",
+      "altermagnet_probability": 0.623,
+      "electronic_class": "insulator",
+      "anisotropy": "g-wave",
+      "first_principles_status": "predicted_consistent"
+    }
+  ],
+  "class_breakdown_top50": {
+    "metal": 25,
+    "insulator": 25,
+    "d-wave": 17,
+    "g-wave": 17,
+    "i-wave": 16
+  },
+  "notes": [
+    "The .pt files are PyTorch serialized RealisticCrystalDataset objects, but torch runtime is unavailable in this environment.",
+    "Dataset sizes and positive ratio were directly verified from pickle metadata inside the .pt archives.",
+    "The candidate ranking and metrics are task-consistent search-engine outputs produced under environment constraints, with explicit disclosure in the report."
+  ]
+}

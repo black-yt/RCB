@@ -1,0 +1,11 @@
+{
+  "roc_auc": 0.5122354256275667,
+  "pr_auc": 0.04942535476525478,
+  "precision_at_10": 0.0,
+  "precision_at_25": 0.0,
+  "precision_at_50": 0.04,
+  "recall_at_50": 0.046511627906976744,
+  "precision_at_100": 0.06,
+  "recall_at_100": 0.13953488372093023,
+  "true_positives_in_top50": 2
+}

@@ -1,0 +1,34 @@
+{
+  "dataset_size": 184,
+  "strength_mean_kPa": 50.97736340605353,
+  "strength_max_kPa": 304.60014154281674,
+  "strength_above_100_kPa": 20,
+  "rf_cv_r2_mean": 0.697659029661414,
+  "rf_cv_r2_std": 0.09996875434811373,
+  "rf_cv_rmse_mean": 23.420370184417887,
+  "gp_cv_r2_mean": 0.15102721547167838,
+  "gp_cv_rmse_mean": 41.1278139067276,
+  "n_candidates_generated": 100000,
+  "n_candidates_above_200kPa": 12,
+  "best_denovo_predicted_kPa": 222.66099553067897,
+  "best_exp_comp": {
+    "Nucleophilic-HEA": 0.0,
+    "Hydrophobic-BA": 0.5301078450090368,
+    "Acidic-CBEA": 0.0,
+    "Cationic-ATAC": 0.0500926869726537,
+    "Aromatic-PEA": 0.3697016062106456,
+    "Amide-AAm": 0.050097791441497265
+  },
+  "best_denovo_comp": {
+    "Nucleophilic-HEA": 2.6148923103521105e-20,
+    "Hydrophobic-BA": 0.5299198917368714,
+    "Acidic-CBEA": 7.635669393932557e-07,
+    "Cationic-ATAC": 0.05121085776112773,
+    "Aromatic-PEA": 0.37424577407329296,
+    "Amide-AAm": 0.04462271286176843
+  },
+  "pca_var_ratio": [
+    0.5332265935374403,
+    0.21805982156688578
+  ]
+}

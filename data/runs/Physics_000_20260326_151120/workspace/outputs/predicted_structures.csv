@@ -1,0 +1,7 @@
+structure,shells,symmetry,stability_score,size_mismatch
+Na13@K32,"13-32",achiral,0.93,0.146
+Na13@K32@Rb92,"13-32-92",chiral-path-compatible,0.89,0.132
+Ni13@Ag32,"13-32",achiral,0.91,0.118
+Ni147@Ag192,"147-192",achiral,0.96,0.124
+Cu13@Ag32,"13-32",achiral,0.88,0.109
+Co13@Au32,"13-32",achiral,0.87,0.114

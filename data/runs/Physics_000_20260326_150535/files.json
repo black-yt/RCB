@@ -1,0 +1,165 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 27286,
+    "mtime": 1774508919.5828807,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "Multi-component Icosahedral Reproduction Data.txt",
+    "path": "data/Multi-component Icosahedral Reproduction Data.txt",
+    "type": "file",
+    "size": 4446,
+    "mtime": 1770187999.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_results.json",
+    "path": "outputs/analysis_results.json",
+    "type": "file",
+    "size": 1967,
+    "mtime": 1774508934.3519318,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2317246,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 14876105,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 647192,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4836605,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_hexagonal_lattice_shells.png",
+    "path": "report/images/fig1_hexagonal_lattice_shells.png",
+    "type": "file",
+    "size": 261361,
+    "mtime": 1774508929.7781863,
+    "exported": true
+  },
+  {
+    "name": "fig2_magic_numbers.png",
+    "path": "report/images/fig2_magic_numbers.png",
+    "type": "file",
+    "size": 91473,
+    "mtime": 1774508930.8250244,
+    "exported": true
+  },
+  {
+    "name": "fig3_size_mismatch.png",
+    "path": "report/images/fig3_size_mismatch.png",
+    "type": "file",
+    "size": 153165,
+    "mtime": 1774508931.9408865,
+    "exported": true
+  },
+  {
+    "name": "fig4_cluster_energetics.png",
+    "path": "report/images/fig4_cluster_energetics.png",
+    "type": "file",
+    "size": 88484,
+    "mtime": 1774508932.6942055,
+    "exported": true
+  },
+  {
+    "name": "fig5_growth_simulation.png",
+    "path": "report/images/fig5_growth_simulation.png",
+    "type": "file",
+    "size": 202271,
+    "mtime": 1774508933.5318067,
+    "exported": true
+  },
+  {
+    "name": "fig6_phase_diagram.png",
+    "path": "report/images/fig6_phase_diagram.png",
+    "type": "file",
+    "size": 104663,
+    "mtime": 1774508934.023718,
+    "exported": true
+  },
+  {
+    "name": "fig7_predicted_clusters.png",
+    "path": "report/images/fig7_predicted_clusters.png",
+    "type": "file",
+    "size": 97473,
+    "mtime": 1774508934.3456218,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 18430,
+    "mtime": 1774509049.828457,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5790,
+    "mtime": 1774508737.118924,
+    "exported": true
+  }
+]

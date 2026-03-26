@@ -1,0 +1,777 @@
+===== paper_000.pdf =====
+ARTICLE
+Structural puzzles in virology solved with an
+overarching icosahedral design principle
+Reidun Twarock1* & Antoni Luque2*
+Viruses have evolved protein containers with a wide spectrum of icosahedral architectures to
+protect their genetic material. The geometric constraints de ﬁning these container designs,
+and their implications for viral evolution, are open problems in virology. The principle ofquasi-equivalence is currently used to predict virus architecture, but improved imagingtechniques have revealed increasing numbers of viral outliers. We show that this theory is aspecial case of an overarching design principle for icosahedral, as well as octahedral, archi-tectures that can be formulated in terms of the Archimedean lattices and their duals. Thesesurface structures encompass different blueprints for capsids with the same number ofstructural proteins, as well as for capsid architectures formed from a combination of minorand major capsid proteins, and are recurrent within viral lineages. They also apply to othericosahedral structures in nature, and offer alternative designs for man-made materials andnanocontainers in bionanotechnology.https://doi.org/10.1038/s41467-019-12367-3 OPEN
+1Departments of Mathematics and Biology, York Cross-disciplinary Centre for Systems Analysis, University of York, York YO10 5GE, UK.2Department of
+Mathematics and Statistics, Viral Information Institute, and Computational Science Research Center, San Diego State University, 5500 Campanile D rive, San
+Diego, CA 92182-7720, USA. *email: reidun.twarock@york.ac.uk ;aluque@sdsu.edu
+NATURE COMMUNICATIONS |         (2019) 10:4414 | https://doi.org/10.1038/s41467-019-12367-3 | www.nature.com/naturecommunications 11234567890():,;
+Polyhedral designs are ubiquitous in nature. They are fun-
+damental for our understanding of molecular architectures
+in chemistry and physics1, and occur at different length
+scales, from marine organisms2to protein nanocontainers with
+different biological functions3,4. Prominent examples are viruses,
+the most abundant biological entities on the planet5and the
+causative agents of some of the most devastating diseases known.
+Viruses store and protect their genetic material in protein con-
+tainers called capsids6, that vary in size and structural complexity.
+They range from 20 nm to 800 nm and consist of only a few
+dozen to thousands of coat proteins (CPs). The majority of
+viruses adopt polyhedral designs with icosahedral symmetry7,8,
+that is, their CP positions conform to polyhedral blueprints that
+exhibit the characteristic arrangement of the rotational symmetry
+axes of an icosahedron (Fig. 1a).
+Viruses exhibit this high degree of symmetry as a consequence
+of a principle that Crick and Watson termed genetic economy,
+namely, the limited capacity in the viral genome to code for the
+CPs forming its surrounding capsid9. This favours such sym-
+metric architectures, because icosahedral symmetry has 60 dif-
+ferent symmetry operations10, reducing the cost of coding for the
+capsid by 1/60th, whilst creating a container with suf ﬁcient
+volume to store the viral genetic material. Caspar and Klug
+extended this idea by introducing the principle of quasi-
+equivalence11, which explains how proteins can adopt locally
+equivalent, or quasiequivalent, positions in a capsid, by repeating
+this local con ﬁguration across the capsid surface. This allows
+larger viruses to form, requiring even smaller relative portions of
+their genomic sequences to code for their capsids, thus generating
+coding capacity for other viral components that are not present in
+smaller viruses and enabling more complex infection scenarios.
+These two principles have dominated structural virology over
+the last 60 years. The in ﬁnite series of icosahedral blueprints
+introduced by Caspar and Klug is currently the major tool for the
+classi ﬁcation of virus structures12. However, increasing numbers
+of virus structures exhibit capsid protein numbers and layouts
+that fall outside the CK description, as discussed below for a widerange of examples. This indicates that there are fundamental
+design principles underpinning virus architecture, and implied
+geometric constraints on viral evolution, that are still not fully
+understood.
+To address this, we revisit the construction of icosahedral
+architectures using the Archimedean lattices classi ﬁed by Kepler
+in his classical Harmonices Mundi
+13. With these lattices, we are
+able to derive eight families of icosahedral polyhedra (derived
+from the lattices and their duals) that explain the outliers to the
+current classi ﬁcation scheme and at the same time provide an
+overarching design principle that encompasses the current
+models of virus architecture in Caspar-Klug theory. Using viruses
+from different families, we demonstrate that the icosahedral
+designs embodied by the polyhedral families derived here corre-
+spond to previously unsuspected capsid layouts in the virosphere
+and provide a different perspective on viral evolution. As we
+discuss below, this discovery also sheds new light on the many
+areas of science where icosahedral structures play an important
+role, and also provides designs for applications in
+bionanotechnology.
+Results
+Polyhedral models of icosahedral architecture . Virus structures
+are prominent examples of icosahedral symmetry in biology.
+Their architectures are currently modelled and classi ﬁed in terms
+of the series of Goldberg polyhedra14—three dimensional solids
+with pentagonal and hexagonal faces —that provide a reference
+frame for the positions of the capsid proteins (Fig. 1a). Inparticular, the polyhedral faces indicate the positions of penta-
+gonal and hexagonal protein clusters called pentamers and hex-
+amers, respectively. The same polyhedra also provide blueprints
+for the atomic positions of the fullerene cages in carbon chem-istry, in particular the Buckminster fullerene known as the
+buckyball
+1. They also provide blueprints for the structural orga-
+nisation of a wide range of both man-made and natural protein
+nanocontainers. Their duals, the geodesic polyhedra15, are the
+architectural designs of the geodesic domes by Buckminster
+Fuller.
+Goldberg polyhedra can be constructed from a hexagonal grid
+(lattice) by replacing 12 hexagons by pentagons (Fig. 1b), as
+required by Euler ’s Theorem to generate a closed polyhedral
+shape16. The distance Dbetween the pentagons at neighbouring
+ﬁvefold vertices is the only degree of freedom in this construction,
+and can therefore be used to label the different geometric options
+in this in ﬁnite series of polyhedra. Dcan only take on speci ﬁc
+values that are constrained by the underlying hexagonal lattice
+geometry. In particular, using the hexagonal coordinates handk,
+which take on any integer values or zero to navigate between
+midpoints of neighbouring hexagons in the lattice, one obtains
+the following geometric restriction11:
+Tðh;kÞ:¼D2ðh;kÞ=A0¼h2þhkþk2/C0/C1
+: ð1Þ
+Here, A0corresponds to the area of the smallest triangle between
+any hexagonal midpoints, that is, the case h¼1 and k¼0—or
+equivalently, h¼0 and k¼1. A similar formula has been
+derived for elongated capsid structures17.
+Tis called the triangulation number (Fig. 1c) owing to its
+geometric interpretation in terms of the icosahedral triangula-
+tions obtained by connecting midpoints of neighbouringpentagons and hexagons, i.e., in terms of the dual (geodesic)
+polyhedra. Tindicates the numbers of triangular faces, called
+facets, in the triangulation that cover a triangular face of the
+icosahedron by area. The association of a protein subunit with
+each corner of such a triangular facet translates this in ﬁnite series
+of triangulations into the capsid layouts in quasiequivalence
+theory (Fig. 1d). Such blueprints only permit capsid layouts with
+60TCPs, organised into 12 pentamers and 10 ðT/C01Þhexamers
+11.
+The condition expressed by Eq. 1is therefore a geometric
+restriction on the possible values of Tand the possible CP
+numbers in the CK geometries. The initial elements of the series
+areT¼1, 3, 4, and 7, and therefore the number of CPs contained
+in small icosahedral capsids are 60, 180, 240, and 420, respectively
+(Supplementary Table 1).
+However, this is only one way in which an icosahedral
+structure can be built from repeats of the same (asymmetric) unit,
+and excludes geometries built from proteins of different sizes
+(such as a major and minor capsid protein) or capsids built from
+a protein in which one or several domains play distinguished
+roles. Such capsid layouts must be constructed from lattices in
+which every vertex is identical in terms of the lengths, numbers
+and relative angles of its protruding edges, but the relative angles
+between different edges at the same vertex can vary, re ﬂecting
+occupation by different types of proteins or protein domains.
+From a geometric point of view, there are only 11 lattices
+(Chapter 2 in Grünbaum and Shephard18) that satisfy this
+generalised quasi-equivalence principle, which are the Archime-
+dean lattices —also known as uniform lattices13,16. Among these
+lattices, only four contain a hexagonal sublattice (Fig. 2a). One of
+them is the hexagonal lattice itself on which the CK classi ﬁcation
+scheme is based. This lattice is labelled ð6;6;6Þaccording to the
+types of regular polygons surrounding each vertex, in this
+case three hexagons. However, the hexagonal lattice is only
+the simplest grid that enables this construction. Other lattices
+containing hexagons at appropriate distances, that is, as aARTICLE NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-12367-3
+2 NATURE COMMUNICATIONS |         (2019) 10:4414 | https://doi.org/10.1038/s41467-019-12367-3 | www.nature.com/naturecommunications
+hexagonal sublattice, are equally amenable to the CK construc-
+tion, but have until now been ignored. These are the trihexagonal
+tiling ð3;6;3;6Þ, the snub hexagonal tiling ð34;6Þ, and the
+rhombitrihexagonal tiling ð3;4;6;4Þ(Fig. 2a). These lattices are
+also called hexadeltille, snub hextille, and the truncated
+hexadeltille lattice, respectively16.
+By analogy to Caspar and Klug ’s construction, we classify the
+icosahedral polyhedra that can be constructed from these tilings
+via replacement of 12 hexagons by pentagons (Fig. 2b). Replace-
+ment of nearest neighbour hexagons results in each case in an
+icosahedrally symmetric Archimedean solid (Fig. 2c) that
+corresponds to the start of an in ﬁnite series of polyhedra,
+constructed by spacing the pentagonal insertions further apart. As
+a means to characterise different polyhedral structures in the
+series, we again use the hexagonal coordinates hand k, now
+indicating steps between hexagonal midpoints in the hexagonal
+sublattice, to indicate the possible distances between the
+pentagonal insertions. In the three additional lattices, the
+midpoints of neighbouring hexagons are more distal than in
+the hexagonal lattice. Thus, the area covered by a triangular facet
+connecting midpoints of neighbouring hexagons (that is, the case
+h¼0 and k¼1, or vice versa) is larger than in the CK
+construction by a factor αt¼4=3/C251:33 for the ð3;6;3;6Þ
+lattice, αs¼7=3/C252:33 for the ð34;6Þlattice, and αr¼4=3þ
+2=ﬃﬃﬃ
+3p
+/C252:49 for the ð3;4;6;3Þlattice, i.e., by factors correspond-
+ing to the relative sizes of the asymmetric lattice units (see
+coloured highlights in Fig. 2a). The T-number in the CK
+construction can therefore be scaled accordingly for the new
+lattices as follows
+Tjðh;kÞ:¼αjh2þhkþk2/C0/C1
+¼αjTðh;kÞ; ð2Þ
+where j¼t;s;rindicates the lattice type used in the construction,
+denoting the trihexagonal, the snub hexagonal, and therhombitrihexagonal lattice, respectively. In particular, a polyhe-
+dron labelled Tjðh;kÞhas the same number of pentagons and
+hexagons as a Tðh;kÞCaspar Klug lattice, but the surface area
+covered by its faces is larger due to the additional polygons
+(triangles, squares) between the hexagons and pentagons. This is
+indicated by the scaling factor αjthat refers to the gain in surface
+
+
+===== paper_001.pdf =====
+REVIEW SUMMARY◥
+NANOMATERIALS
+High-entropy nanoparticles: Synthesis-structure-
+property relationships and data-driven discovery
+Yonggang Yao †, Qi Dong †, Alexandra Brozena, Jian Luo, Jianwei Miao, Miaofang Chi,
+Chao Wang, Ioannis G. Kevrekidis, Zhiyong Jason Ren, Jeffrey Greeley, Guofeng Wang,
+Abraham Anapolsky, Liangbing Hu *
+BACKGROUND: High-entropy nano particles con-
+tain more than four elements uniformly mixed
+into a solid-solution structure, offering oppor-
+tunities for materials discovery, property op-timization, and advanced applications. For
+example, the compositional flexibility of high-
+entropy nanoparticles enables fine-tuning of
+the catalytic activity and selectivity, and high-
+entropy mixing offers structural stability under
+harsh operating conditions. In addition, the
+multielemental synergy in high-entropy nano-
+particles provides a diverse range of adsorp-
+tion sites, which is ide al for multistep tandem
+reactions or reactions that require multi-
+functional catalysts. However, the wide range
+of possible compositions and complex atomic
+arrangements also create grand challenges
+in synthesizing, characterizing, understand-
+ing, and applying high-entropy nanoparticles.
+For example, controllable synthesis is chal-lenging given the different physicochemical
+properties within the multielemental com-
+positions combined with the small size and
+large surface area. Moreover, random multi-elemental mixing can make it difficult to
+precisely characterize the individual nanopar-
+ticles and their statistical variations. Without
+rational understanding and guidance, efficient
+compositional design and performance opti-
+mization within the huge multielemental space
+is nearly impossible.
+ADVANCES: The comprehensive study of high-
+entropy nanoparticles has become feasible
+because of the rapid development of synthetic
+approaches, high-resolution characterization,
+high-throughput experimentation, and data-
+driven discovery. A diverse range of compositions
+and material libraries have been developed,
+many by using nonequilibrium “shock ”–basedmethods designed to induce single-phase mix-
+ing even for traditionally immiscible elemen-
+tal combinations. The nanomaterial types have
+also rapidly evolved from crystalline metallic
+alloys to metallic glasses, oxides, sulfides,
+phosphates, and others. Advanced characteri-
+zation tools have been used to uncover the
+structural complexities of high-entropy nano-
+particles. For example, a tomic electron tomog-
+raphy has been used for single-atom-level
+resolution of the three-d imensional positions
+of the elements and their chemical environ-
+ments. Finally, high-entropy nanoparticles
+have already shown promise in a wide rangeof catalysis and energy te chnologies because of
+their atomic structure and tunable electronic
+states. The development of high-throughput
+computational and expe rimental methods can
+accelerate the material exploration rate and
+enable machine-learning tools that are ideal
+for performance prediction and guided opti-
+mization. Materials discovery platforms, such
+as high-throughput exploration and data
+mining, may disruptively supplant con-
+ventional trial-and-error approaches for de-
+veloping next-generation catalysts based on
+high-entropy nanoparticles.
+OUTLOOK: High-entropy nanoparticles provide
+an enticing material platform for different ap-
+plications. Being at an initial stage, enormous
+opportunities and grand challenges exist for
+these intrinsically comp lex materials. For the
+next stage of research and applications, we
+need (i) the controlled synthesis of high-
+entropy nanoparticles with targeted sur-
+face compositions and atomic arrangements;
+(ii) fundamental studies of surfaces, order-
+ing, defects, and the dynamic evolution of
+high-entropy nanoparticles under catalytic
+conditions through precise structural char-
+acterization; (iii) identification and under-
+standing of the active sites and performance
+origin (especially the enhanced stability) of
+high-entropy nanoparticles; and (iv) high-
+throughput computational and experimen-
+tal techniques for rapid screening and datamining toward accelerated exploration of
+high-entropy nanopart icles in a multiele-
+mental space. We expect that discoveries
+about the synthesis-structure-property rela-
+tionships of high-entropy nanoparticles and
+their guided discovery will greatly benefit
+a range of applications for catalysis, energy,
+and sustainability.▪RESEARCH
+Yao et al .,Science 376, 151 (2022) 8 April 2022 1o f1
+The list of author affiliations is available in the full article online.
+*Corresponding author. Email: binghu@umd.edu
+†These authors contributed equally to this work.
+Cite this article as Y. Yao et al. ,Science 376, eabn3103
+(2022). DOI: 10.1126/science.abn3103
+READ THE FULL ARTICLE AT
+https://doi.org/10.1126/science.abn3103
+Diverse applicationsMultidimensional space
+(composition/structure)
+High-throughput screening 
+and machine learningAdvanced 
+characterization
+NH3 *NHx
+*NN2 + H2
+High-entropy nanoparticles and data-driven discovery. Emerging high-entropy nanoparticles feature
+multielemental mixing within a large compositional space and can be used for diverse applications,
+particularly for catalysis. High-throughput and machine-learning tools, coupled with advanced characteriza-
+tion techniques, can substantially accelerate the optimization of these high-entropy nanoparticles, forming a
+closed-loop paradigm toward data-driven discovery.CREDITS: TOP RIGHT: YANG ET AL. ,NATURE 592,6 0–64 (2021); CENTER: JIAQI DAI; BOTTOM RIGHT: XIE ET AL. ,NAT. COMMUN. 10, 4011 (2019)
+
+REVIEW◥
+NANOMATERIALS
+High-entropy nanoparticles: Synthesis-structure-
+property relationships and data-driven discovery
+Yonggang Yao1†, Qi Dong1†, Alexandra Brozena1, Jian Luo2, Jianwei Miao3, Miaofang Chi4,
+Chao Wang5, Ioannis G. Kevrekidis5, Zhiyong Jason Ren6, Jeffrey Greeley7, Guofeng Wang8,
+Abraham Anapolsky9, Liangbing Hu1,10*
+High-entropy nanoparticles have become a rapidly growing area of research in recent years. Because of
+their multielemental compositions and unique high-entropy mixing states (i.e., solid-solution) that
+can lead to tunable activity and enhanced stability, these nanoparticles have received notable attention
+for catalyst design and exploration. However, this strong potential is also accompanied by grandchallenges originating from their vast compositional space and complex atomic structure, which hinder
+comprehensive exploration and fundamental understanding. Through a multidisciplinary view of
+synthesis, characterization, catalytic applications, high-throughput screening, and data-driven materials
+discovery, this review is dedicated to discussing the important progress of high-entropy nanoparticles and
+unveiling the critical needs for their future development for catalysis, energy, and sustainability applications.
+High-entropy nanoparticles have received
+a great amount of attention in recent
+years because of their multielemental
+composition (typically five or more
+elements) and homogeneously mixed
+solid-solution state, providing not only anenormous number of combinations for ma-
+t e r i a l sd i s c o v e r yb u ta l s oau n i q u em i c r o -
+structure for property optimization (Fig. 1A)
+(1–3). Early reports of multielemental (five
+or more) alloy nanoparticles suggested the
+potential of these unique materials ( 4–6) but
+did not provide detailed structural understand-
+ing or reveal a general synthesis route for
+different compositions. In 2016, Mirkin and
+colleagues made a substantial advance in
+synthesizing various compositions of multi-
+elemental nanoparticles using confined nano-
+reactors ( 7). However, these materials featured
+heterogeneous structures with phase separa-
+tion due to elemental immiscibility. Recentadvances in ultrafast synthetic methodologies,
+such as nonequilibrium thermal-shock-based
+approaches, have since enabled a variety of
+high-entropy nanopart icles without phase
+separation, even among immiscible elemental
+combinations (Fig. 1B) ( 8). In a typical thermal
+shock process (e.g., 2000 K in 55 ms), the rapid
+heating of precursors to a high temperature
+induces multielemental mixing and alloying
+to achieve a solid-solution state, whereas the
+short heating duration a nd subsequent rapid
+quenching help to retain and freeze the uni-
+form structure and small particle size ( 8). Since
+then, various high-entro py nanomaterials, in-
+cluding alloys (e.g., PtPdFeCoNiAuCuSn)
+(9–14), metallic glasses (e.g., amorphous
+CoCrMnNiV) ( 15,16), intermetallics [e.g., L1
+0
+type (Pt 0.8Pd0.1Au0.1)(Fe 0.6Co0.1Ni0.1Cu0.1Sn0.1)]
+(17,18), oxides, fluorides, sulfides, carbides,
+MXenes ( 19–25), and van der Waals materials
+(e.g., dichalcogenides, halides, and phospho-
+rus trisulfide) ( 26), have all been successfully
+demonstrated using thermal shock and other
+nonequilibrium approaches.
+Despite having been developed only recent-
+ly, high-entropy nanoparticles have already
+shown great promise for a range of emerging
+energy-related processes and applications,
+particularly in catalysis (Fig. 1C) ( 27–36). The
+compositional flexibili ty of high-entropy nano-
+particles enables fine-tuning of the catalytic
+activity, whereas the high-entropy solid-
+solution mixing potentially offers structural
+stability 1that is critical for operation under
+harsh conditions. For example, non-noble
+(Co xMo0.7-x)Fe0.1Ni0.1Cu0.1nanoparticles have
+been shown to overcome the immiscibility of
+Co–Mo, allowing for robust tuning of the Co –Mo
+ratios and associated surface adsorption proper-ties. As a result, (Co
+0.25Mo 0.45)Fe0.1Ni0.1Cu0.1nanoparticles have demonstrated a fourfoldimprovement in ammonia decomposition com-
+pared with noble Ru and are stable at 500°C
+for 50 hours without noticeable degradation
+(36). In another example, Pt
+18Ni26Fe15Co14Cu27
+nanoparticles were developed for electro-
+chemical hydrogen evolution and showed a
+lower onset potential (11 versus 84 mV), a
+higher activity (10.98 versus 0.83 A/mg Pt), and
+excellent stability compared with commercial
+Pt–C catalysts ( 11). These examples epitomize
+the strong potential of high-entropy nano-
+particles as highly efficient and cost-effective
+catalysts ( 9,11,12,20,36–39).
+Compared with material s having relatively
+simple compositions (i.e., one to three elements),
+high-entropy nanoparticles have two distinct
+features: (i) a vast compositional space that
+derives from the multielemental combinations
+and (ii) complex atomic configurations due
+to the random multielemental mixing. The
+former provides huge compositional choices
+for catalyst design and development, and the
+latter makes these materials fundamentally
+different from conventional catalysts in that
+they feature a diverse range of adsorption
+sites and a near-continuous binding energy
+distribution pattern ( 40,41). These qualities
+a r ep a r t i c u l a r l ya t t r a c t i v ef o rc o m p l e xo r
+tandem reactions that involve numerous
+intermediate steps and require multifunction-
+ality ( 28,38,40,42–44).
+However, along with these opportunities,
+the vast number of possible compositions and
+complex atomic arrangements create grand
+challenges in the design, synthesis, charac-
+terization, and application of these unique
+nanomaterials. First, considering the wide
+span of physicochemical properties (e.g., atomic
+size and electronic structure) among the dif-
+ferent constituent elements, synthesizing high-
+entropy nanoparticles in a highly controllable
+manner is difficult. Moreover, characterizing
+the detailed structure of high-entropy nano-
+particles, such as the reactive surfaces and
+defects, is challenging or still lacking because
+of the complex atomic configurations andmultiple elements of simi lar electron contrasts.
+Additionally, we have very limited knowledge
+of how elemental composition and synthesis
+methods affect the structure and properties
+of high-entropy nanoparticles. Although iden-
+tifying these relationships for such complex
+materials is a daunting task, understanding
+them is critical to guidi
+
+===== paper_002.pdf =====
+RESEARCHARTICLE PHYSICS
+Design strategies for the self-assembly of polyhedral shells
+DiogoE.P.Pintoa,PetrŠulcb,cID,FrancescoSciortinoaID,andJohnRussoa,1ID
+EditedbyChadMirkin,NorthwesternUniversity,Evanston, IL;receivedNovember14,2022;acceptedMarch16,2023
+Thecontrolovertheself-assemblyofcomplexstructuresisalong-standingchallengeof
+materialscience,especiallyatthecolloidalscale,asthedesiredassemblypathwayisoften
+kineticallyderailedbytheformationofamorphousaggregates.Here,weinvestigatein
+detailtheproblemoftheself-assemblyofthethreeArchimedeanshellswithﬁvecontact
+pointspervertex,i.e.,theicosahedron,thesnubcube,andthesnubdodecahedron.We
+use patchy particles with ﬁve interaction sites (or patches) as model for the building
+blocksandrecasttheassemblyproblemasaBooleansatisﬁabilityproblem(SAT)forthe
+patch–patch interactions. This allows us to ﬁnd effective designs for all targets and to
+selectively suppress unwanted structures. By tuning the geometrical arrangement and
+the speciﬁc interactions of the patches, we demonstrate that lowering the symmetry
+of the building blocks reduces the number of competing structures, which in turn
+can considerably increase the yield of the target structure. These results cement SAT-
+assemblyasaninvaluabletooltosolveinversedesignproblems.
+nanotechnology |capsids |self-assembly |SAT
+Self-assembly encompasses a large array of phenomena through which materials are
+formedusingsimplemicroscopicbuildingblocks(1).Innature,manystrikingexamples
+of self-assembly are found, from virus capsids to lipid bilayers (2–6), but assembling
+new synthetic materials has proved to be very challenging. Successful examples of
+artiﬁcial self-assembly have required a large dose of educated guesses (7–24). One
+of the main difﬁculties resides in how to optimize the geometrical properties or the
+interactions between the building blocks without leading to competing or kinetically
+arrestedconﬁgurations(25–28).
+Here, we focus on the self-assembly of ﬁnite-size structures and in particular on
+speciﬁc polyhedral shells. From an application standpoint, the potential of closed shells
+to act as a drug delivery system has been a widely researched topic, where a given drug
+is encapsulated within a closed shell and then driven to a speciﬁc diseased area where
+the drug is locally released such that the least amount of nondiseased tissue is affected
+(29,30).Forthis,theshellneedstoclosearoundaspeciﬁcreagentandthenopenwhen
+externalconditionsaremet.Recently,therehavebeensuitableexperimentalrealizations,
+for example, using DNA-origami, where selective interactions can be introduced to
+mimic patchy particles(31–35).
+When focusing on ﬁnite-size shells, additional challenges arise compared to the ones
+encountered in the self-assembly of crystal structures. First, the self-assembly occurs
+exclusively from the gas phase, which rules out the possibility to use (critical point
+induced)densityﬂuctuationstoacceleratetherateofaggregation(36),asfrequentlydone
+in the case of crystals. On the contrary, the formation of ﬁnite-size aggregates stabilizes
+the gas phase to high densities with respect to the liquid phase, possibly introducing a
+densitydependenceoftheaggregationpathway.Second,thesmallsizeoftheaggregates,
+compared to the inﬁnitely repeating units of a crystal, can stabilize kinetic traps, i.e.,
+structures whose free energy is not as low as the one of the target structure but that
+require an exceedingly long waiting time to break. Lastly, the formation of ﬁnite-size
+aggregates is a continuous process and is not accompanied by a phase transition as in
+crystals. The absence of a critical size of formation (i.e., the critical nucleus) means that
+it is not sufﬁcient to suppress a handful of competing structures at one length scale but
+that the assembly process has to proceed without defects at every stage. This problem is
+reﬂected inthedifﬁculty ofperfectly closinglarge-size aggregates, such as capsids(31).
+Here, we show how to successfully tackle these challenges by transforming the self-
+assembly problem into a Boolean satisﬁability problem. This technique, named SAT-
+assembly, was recently introduced by some of us to successfully assemble challenging
+crystalline structures, with an emphasis on structures that have photonic applications,
+suchasthetetrastack(37)anddiamondcubiccrystal(37–39),andstructureswithahigh
+number of atoms in the unit cells, such as clathrate crystals (37). The SAT-assemblySigniﬁcance
+Natureisabletoself-assemble
+complexsupramolecular
+structuresfromelementary
+buildingblocksrarelymaking
+mistakes.Forexample,
+adenovirusnucleocapsidsare
+formedfromdiﬀerentproteins
+thatassembleandfoldintoa
+regularicosahedralshell.Oneof
+thegoalsofnanotechnologyisto
+emulatethesestrategiesto
+producenewsyntheticmaterials.
+Unfortunately,mostartificial
+designsfailbecausetheunits
+misassembleintoincorrect,and
+oftenirregular,structures.We
+hereproposeadesignstrategy
+forself-assemblingfinite-size
+shellswheretheinteraction
+betweentheunitsisobtained
+fromthesolutiontoaBoolean
+satisfiabilityproblem(SAT).We
+demonstratethatthisquite
+generalapproachexcelsin
+self-assemblingdiﬀerent
+Archimedeanpolyhedralshells
+withhighyield,revealingsome
+generalrulesguidingthedesign
+ofsuccessfulassembles.
+Authorcontributions:D.E.P.P.,P.Š.,F.S.,andJ.R.designed
+research;D.E.P.P.performedresearch;D.E.P.P.analyzed
+data;andD.E.P.P.,P.Š.,F.S.,andJ.R.wrotethepaper.
+Theauthorsdeclarenocompetinginterest.
+ThisarticleisaPNASDirectSubmission.
+Copyright ©2023theAuthor(s).PublishedbyPNAS.
+This article is distributed under Creative Commons
+Attribution-NonCommercial-NoDerivatives License 4.0
+(CCBY-NC-ND).
+1Towhomcorrespondencemaybeaddressed.Email:
+john.russo@uniroma1.it.
+This article contains supporting information online
+athttp://www.pnas.org/lookup/suppl/doi:10.1073/pnas.
+2219458120/-/DCSupplemental .
+PublishedApril11,2023.
+PNAS2023 Vol.120 No.16 e2219458120 https://doi.org/10.1073/pnas.2219 4581201of10
+designpipelineallowsforafastsearchofdesignspaceforsolutions
+thatcanformdesiredtargetstructuresand—equallyimportant—
+avoid undesired alternative assemblies or kinetic traps. In this
+article, we will demonstrate a successful application of the SAT-
+assemblyframeworktotheassemblyofcomplexpolyhedralshells.
+Wefocusonthethreepolyhedrathatcanassemblefrombuilding
+blockswithacoordinationnumberofﬁve,i.e.,theicosahedron,
+the snub cube, and the snub dodecahedron. As building blocks
+we use patchy particles, which are a model of hard spheres with
+attractive patches on their surface (22, 40–45). These represent
+a coarse-grained approach to describe multiple systems, e.g.,
+colloids, proteins, polymers, DNA origami (14, 15, 39, 46, 47).
+By associating to each patch a color, we can translate the self-
+assembly problem into the problem of ﬁnding how patch colors
+shouldinteracttoformthetargetstructure,whileatthesametime
+avoidingcompetingstructures.Itispossiblethatdifferentnatural
+structuresfollowsimilarstrategiestotheexamplesexploredhere,
+with focus on selectivity. For example, adenoviruses are known
+for their icosahedral nucleocapsid which is assembled by two
+main proteins and three minor ones that mostly inﬂuence the
+interactions (48). As such, these processes evolved to require
+a minimum level of speciﬁcity in the building blocks and
+interactions inorderto form regular shells.
+In the manuscript, we will ﬁrst show that, except for the
+smalleststructure(theicosahedron),theseshellsdonotassemble
+correctly if only the geometrical information about the target
+structure(the“educatedguess”)isused.Instead,wewillintroduce
+multicolored designs, i.e., designs where more than one patch
+type is present. As the number of patch types increases, so does
+the complexity of the design, making SAT a necessary tool to
+beabletoﬁndthedesiredinteractionsbetweenpatchcolorsthat
+canformthetargetshellandavoidalternativeassemblies.Wewill
+showthattheyieldofthedifferentstructuresdependssensitively,
+in addition to the particular geometrical patch arrangement, on
+the number of colors used but that the different results can be
+rationalized by looking at the symmetry of the designs: Less
+symmetrical building blocks self-assemble with the highest yield
+in the target structures. In particular, chiraldesigns, i.e., not
+having a mirror-plane symmetry, are found to be very effective
+building blocks regardless of the chirality of the target structure.
+We also explore the role of geometrical frustration, where the
+angle between the patches does not match the angle between
+the particles in the target structure, to create designs where
+the target structure depends on external conditions (in our case
+the concentration of building blocks). We also emphasize how
+SAT is crucial to assemble a given structure while excluding
+competingones.Weﬁndthatmutualexclusionrequirescomplex
+designs,withmultiplepatchcolorsandparticlespecies(different
+patch color arrangement in different particles), which lead to
+higher yields and assemblies that are more robust to geometrical
+frustrations. Lastly, we discuss how increasing the number of
+colors and species can slow down the short-time kinetics of
+the assembly process, which emphasizes the design principles
+discussedhere to reachoptimalresults.
+1. Models
+Weconsiderasystemcomposedof Npatchyparticlesinacubic
+boxoflength L.Theparticlesarecharacterizedbyahardcoreof
+diameter σwithﬁvepatchesonitssurfacelocatedononesideof
+theparticleformingastar-likeshapewithmirrorsymmetryalong
+one of the patches (as seen in the center of Fig. 1). We follow
+the same SAT formulation as the one in ref. 38. We consider
+that each patch can have a given color xcbetween 1 ≤xc≤Nc,
+Fig.1.SchematicrepresentationofthethreeArchimedeanstructureswith
+fivecontactpointspervertexandofavalence-fiveparticlewithtwotypesof
+patches(greenandred)whichaccordingtotheSATalgorithmcanassemble
+intothethreediﬀerentpolyhedronshells.Notethat,inthisspecificdesign,
+thegreenpatchesonlyinteractwithgreenwhiletheredpatchesonlyinteract
+withred. /u1D6FEindicatesthein-planeanglebetweenthetworedpatches.
+whereNcisthetotalnumberofdistinctcolors.Thesecolorscan
+be distributed onto the patches in speciﬁc arrangements, each
+unique sequence can be considered a particles species xp, thus
+1≤xp≤Np, whereNpis the total number of distinct species.
+SATisthenusedtoﬁndifagivencombinationof NpandNccan
+satisfy a given polyhedral shell, e.g., if it satisﬁes the topological
+constraints of the target structure, and to ﬁnd how the colors
+are arranged on the different species. In SI Appendix , we go into
+moredetailon thedifferentconstraints(clauses)usedinSAT.
+We study the self-assembly outcome of our designs focusing
+on the static yield, deﬁned as the ratio of the number of fully
+formed target structures over the total number of aggregates.
+Thisquantityismeasuredoncethebondprobabilityhasreached
+a (metastable) equilibrium state, that in our case is obtained
+via Monte Carlo simulations using aggregation-biased moves
+and using the Kern–Frenkel potential (49, 50) to describe the
+interaction between patches ( Methods). In Section 3D, we also
+consider the short-time aggregation kinetics of our designs, i.e.,
+the rate at which particles form aggregates from the solution.
+To study this we use Molecular Dynamics simulations using a
+continuous versionoftheKern–Frenkel potential ( Methods).
+Our self-assembly problem is represented schematically in
+Fig. 1. Starting with patchy particles of valence ﬁve, we wish
+to selectively assemble three Archimedean polyhedral shells: the
+12-particle icosahedron , the 24-particle snub cube, and the 60-
+particlesnub dodecahedron . In the ideal structure, three contact
+points (patches 1, 2, and 3) are in the same location in all three
+polyhedral shells, making an in-plane angle with the center of
+the particle of 60◦, while the other two contact points differ for
+the in-plane angle that patches 4 and 5 make with the center of
+the particle, which we call γ. Note that in the ideal structure,
+γ=60◦for the icosahedron, γ=90◦for the snub cube,
+andγ=108◦for 
+
+===== paper_003.pdf =====
+Minimal Design Principles for Icosahedral
+Virus Capsids
+Manuel Mart ín-Bravo, Jose M. Gomez Llorente, *Javier Hern ández-Rojas, *and David J. Wales
+Cite This: ACS Nano 2021, 15, 14873 −14884 Read Online
+ACCESS Metrics & More Article Recommendations
+ABSTRACT: The geometrical structures of single- and multi-
+ple-shell icosahedral virus capsids are reproduced as the targetsthat minimize the cost corresponding to relatively simple designfunctions. Capsid subunits are ﬁrst identi ﬁed as building blocks
+at a given coarse-grained scale and then represented in these
+functions as point particles located on an appropriate numberof concentric spherical surfaces. Minimal design cost is assignedto optimal spherical packings of the particles. The costfunctions are inspired by the packings favored for the Thomsonproblem, which minimize the electrostatic potential energy between identical charged particles. In some cases, icosahedralsymmetry constraints are incorporated as external ﬁelds acting on the particles. The simplest cost functions can be obtained by
+separating particles in disjoint nonequivalent sets with distinct interactions, or by introducing interacting holes (the absence ofparticles). These functions can be adapted to reproduce any capsid structure found in real viruses. Structures absent in Naturerequire signi ﬁcantly more complex designs. Measures of information content and complexity are assigned to both the cost
+functions and the capsid geometries. In terms of these measures, icosahedral structures and the corresponding cost functionsare the simplest solutions.
+KEYWORDS: virus capsids, icosahedral shells, optimal packing, cost functions, basin-hopping
+Viruses are perhaps the simplest natural organisms
+capable of self-assembly, self-replication, and other
+biological functions, always within a host living cell.
+Their structure and behavior are encoded in the virion genetic
+material (DNA or RNA), which is enclosed in a protein coatknown as a capsid. In most viruses, this capsid is approximately
+icosahedral. The corresponding point group symmetries are I
+andI
+h, the latter having an inversion center of symmetry. Iis
+the highest symmetry that a system composed of a ﬁnite
+number of asymmetric constituent elements, such as proteins,
+can have, and therefore represents the approximate symmetry
+of icosahedral viral capsids at the atomic scale. However, when
+the structure is coarse-grained, both Iand Ihsymmetries are
+possible.
+It is well-known that the icosahedral design has many
+advantages, such as high stability, maximal storage capacity,
+and minimal information coding requirements.1This informa-
+tion simplicity has led to general principles to geometrically
+classify icosahedral capsids. Among these rules, the quasi-
+equivalence principle of Caspar and Klug (CK)2laid the
+foundations for modern structural virology. These authors
+proposed a geometrical model of the capsid in terms of
+repeating subunits (capsomers, both pentamers and hexam-
+ers), by folding a 2D hexagonal lattice, where the sites areidenti ﬁed by a pair of non-negative integers ( hand k). The
+resulting icosahedral shell is made of 20 equilateral triangular
+faces, whose area, expressed in units of the smallest
+icosahedron that can be built, is given by the triangulation
+number T=h2+k2+kh. Thus, the possible values for Tare
+discretized, i.e., T = 1, 3, 4, 7, ..., and are used as a structural
+classiﬁcation for most icosahedral viruses. Within this scheme,
+an icosahedral shell with triangulation number Tcomprises 12
+pentamers and 10( T−1) hexamers, yielding a total of 10 T+2
+capsomers and 60 Tcapsid proteins. The 12 pentamers
+correspond to the 12 dislocations required to form a convex
+icosahedral cage. These r ules have been adapted to
+accommodate prolate nonicosahedral capsids.3−6
+Generalizations of CK geome trical construction have
+recently been provided to account for other anomalous
+icosahedral viral structures.7,8By applying the CK construction
+to the other three 2D Archimedean hexagonal lattices, namely
+Received: June 10, 2021
+Published: September 7, 2021
+Article
+www.acsnano.org
+© 2021 American Chemical Society
+14873https://doi.org/10.1021/acsnano.1c04952
+ACS Nano 2021, 15, 14873 −14884
+Downloaded via 123.101.241.29 on January 31, 2026 at 04:08:19 (UTC).
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+trihexagonal, snub hexagonal, and rhombitrihexagonal and
+their duals, Twarock and Luque8were able to represent
+anomalous capsid architectures. These structures combinemajor and minor coat proteins to produce totals excluded bythe CK construction. Viruses in the HK97 lineage provideexamples of this construction from the trihexagonal lattice.
+This scheme provides an explanation for alternative capsid
+layouts with identical stoichiometry in other viral lineages.However, examples corresponding to the regular rhombitrihex-agonal and snub hexagonal lattices are currently unknown.
+8
+The scheme of Rochal and co-workers7uses the same CK
+map from the 2D hexagonal lattice onto the icosahedron and
+deﬁnes a corresponding spherical lattice, which is denoted as
+⟨h,k⟩in terms of the CK indices. The protein positions in the
+planar structure are chosen by analyzing compatibility with thespherical lattice positions, which may be di ﬀerent from those
+chosen in the original CK model. Speci ﬁcally, the nodes in the
+icosahedral spherical lattice are classi ﬁed according to their
+local symmetry as trivial (a multiple of 60), 2-fold (just 30), 5-fold (just 12), and 3-fold (just 20), respectively. Proteins, asasymmetric units, can only be assigned to trivial nodes withoutlocal symmetry. Symmetric nodes require compatible sym-
+metric subunits made of several proteins. This model adds
+other capsid structures to those provided by the CK model.The approach can also be used to account for complex double-shelled capsids by introducing a notion of commensurabil-ity.
+7,9−12The Landau theory of crystallization applied to
+spherical icosahedral lattices in a previous publication byLorman and Rochal9was also considered for the anomalous
+structures. This scheme uses an expansion of the criticaldensity deviation in a reduced basis set of spherical harmonicsadapted to the icosahedral symmetry (icosahedral harmonics).
+Further details of all these geometrical construction schemes
+are summarized and analyzed in recent reviews by Zandi et
+al.
+13and S ̌iber.14
+The 2D hexagonal lattice is ubiquitous in Nature, exhibiting
+maximal symmetry, optimal packing, and optimal covering. A
+functional of any of these properties may be designed so that,
+when minimized, it will provide as its target the hexagonalpacking. In this work, we will refer to such functionals asdesign or cost functions. Hence, cost functions whose targetsare the 2D hexagonal lattice are the simplest ones to de ﬁne for
+periodic structures in two dimensions. On the other hand, 2Dpackings, such as square close-packing, will require morecomplex designs. This situation highlights a direct relationshipbetween the complexity of the cost function and the relativeabundance of their targets in nature. The present contribution
+extends this idea to icosahedral viral capsids. We will design
+cost functions whose targets are the structures observed inknown viral capsids. Each target structure will be reproducedas the global minimum of the corresponding cost function.These functions must satisfy the principle of minimalcomplexity, i.e., minimal information requirements in the
+mathematical formulation. The diversity of icosahedral capsidsthen leads to a variety of minimal cost functions. The relativecomplexity of these functions contains relevant physicalinformation about the corresponding capsid architectures.
+The long-range order that underpins the designs must be
+encoded in the relatively (at the virion scale) short-rangemolecular interactions that drive the self-assembly of suchordered structures. There are many examples in theoreticalvirology that demonstrate a direct connection between order inthe target structures and the minimal information required todesign short-range models for the interaction between coarse-
+grained capsid subunits, which reproduce the target geo-metries.
+4,6,15−50Hence, an important connection can be made
+between the complexity of the minimal cost functions and theessential components of the interaction potential required tosupport these target structures, preferably as global minima on
+the energy landscape. Some examples that illustrate this
+connection will be provided in this work.
+Another relevant connection may be made between the
+complexity of cost functions and the relative abundance of thecorresponding target structures in Nature: an increase incomplexity corresponds to a lower probability of self-assembly
+for the target structure. The relative abundance of T= 3 and
+T= 4 structures and other observations will illustrate this
+connection.
+The targets of our cost functions will correspond to
+particular distributions of given numbers of building blockson a spherical surface. The building blocks can be structured or
+point particles. The CK construction scheme and the
+generalizations discussed above fold the 2D hexagonal latticeonto the icosahedral shells, providing optimal covering andpacking. Optimal packings, coverings, and maximal convex-hullvolumes on the sphere correspond to well-de ﬁned classes of
+optimization problem.
+51Another way to distribute a ﬁxed
+number of point particles Non a sphere can be derived from
+the well-known Thomson problem.52,53In this case, the cost
+function corresponds to the electrostatic potential energy whena unit charge is associated with each particle. After scaling, thiscost function has no adjustable parameters and, therefore,
+represents a scheme with minimal information requirements
+and thus minimal complexity. When compared with the otherthree optimization problems on the sphere, the Thomsonproblem is the one that provides the most icosahedralpackings. This situation occurs for N= 12, 32, 72, 122, 132,
+192, 212, 272, ...,
+54−56and the minimal cost structures, when
+these numbers refer to capsomers, correspond to icosahedralviral capsids with T= 1, 3, 7, 12, 13, 19, 21, 27, ..., respectively.
+Therefore, these capsids can be classi ﬁed straightforwardly at
+the capsomer coarse-graining scale. There are missing Tvalues,
+namely T= 4, 9, 16, 25, 28, .... Furthermore, if particles are
+meant to represent single proteins, the Thomson problem failsto provide the right structures.
+Our design generalizes the Thomson form to increase its
+predictive power and to account for more complex icosahedralstructures. The symmetry constraint is incorporated through
+interaction of the particles with an external ﬁeld, which is
+expanded in the symmetry adapted basis set of icosahedralharmonics (IH).
+57The smaller the number of basis functions
+required to produce a given structure, the lower is itsinformation content and complexity. The general form canalso account for the structure of double-shell capsids andcapsids with protruding decorations. Interestingly, complexitycan be reduced by a suitable choice for the building blocksdistributed on the sphere and thus depends on the coarse-grained scale applied, with monomers, dimers, trimers,
+pentamers, or hexamers as possible choices. Moreover, these
+building blocks can be holes instead of particles. Once the
+required terms and particle types are included in the costfunction and its parameters ﬁxed, the positions are optimized
+toﬁnd the global minimum.
+Cost functions can be designed to reproduce practically any
+capsid structure, including those supported by the models of
+Caspar and Klug,
+2Twarock and Luque,8and Rochal and co-ACS Nano www.acsnano.org Article
+https://doi.org/10.1021/acsnano.1c04952
+ACS Nano 2021, 15, 14873 −1488414874
+
+workers,7,9−12along with many other anomalous structures.
+Moreover, by increasing its complexity, the model allows ﬁner
+control over the posit

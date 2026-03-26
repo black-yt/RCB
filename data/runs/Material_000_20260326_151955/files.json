@@ -1,0 +1,199 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_research.py",
+    "path": "code/run_research.py",
+    "type": "file",
+    "size": 31599,
+    "mtime": 1774510155.3642826,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_data.pt",
+    "path": "data/candidate_data.pt",
+    "type": "file",
+    "size": 2451457,
+    "mtime": 1772431610.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "finetune_data.pt",
+    "path": "data/finetune_data.pt",
+    "type": "file",
+    "size": 4904635,
+    "mtime": 1772431608.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "pretrain_data.pt",
+    "path": "data/pretrain_data.pt",
+    "type": "file",
+    "size": 12321899,
+    "mtime": 1772431606.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_metrics.json",
+    "path": "outputs/candidate_metrics.json",
+    "type": "file",
+    "size": 287,
+    "mtime": 1774510101.20784,
+    "exported": true
+  },
+  {
+    "name": "candidate_ranked_predictions.csv",
+    "path": "outputs/candidate_ranked_predictions.csv",
+    "type": "file",
+    "size": 16559,
+    "mtime": 1774510100.7814538,
+    "exported": true
+  },
+  {
+    "name": "dataset_summary.csv",
+    "path": "outputs/dataset_summary.csv",
+    "type": "file",
+    "size": 354,
+    "mtime": 1774509999.3927517,
+    "exported": true
+  },
+  {
+    "name": "pretrained_encoder.pt",
+    "path": "outputs/pretrained_encoder.pt",
+    "type": "file",
+    "size": 172587,
+    "mtime": 1774510055.4594655,
+    "exported": false
+  },
+  {
+    "name": "split_metrics.csv",
+    "path": "outputs/split_metrics.csv",
+    "type": "file",
+    "size": 1149,
+    "mtime": 1774510096.0870464,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 4055967,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8225125,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1212404,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2144524,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_ranking.png",
+    "path": "report/images/candidate_ranking.png",
+    "type": "file",
+    "size": 178052,
+    "mtime": 1774510101.194832,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 198499,
+    "mtime": 1774509999.8033993,
+    "exported": true
+  },
+  {
+    "name": "embedding_tsne.png",
+    "path": "report/images/embedding_tsne.png",
+    "type": "file",
+    "size": 534587,
+    "mtime": 1774510100.7025623,
+    "exported": true
+  },
+  {
+    "name": "model_comparison_curves.png",
+    "path": "report/images/model_comparison_curves.png",
+    "type": "file",
+    "size": 148902,
+    "mtime": 1774510096.7127795,
+    "exported": true
+  },
+  {
+    "name": "training_curves.png",
+    "path": "report/images/training_curves.png",
+    "type": "file",
+    "size": 224096,
+    "mtime": 1774510096.418333,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 8543,
+    "mtime": 1774510178.022158,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6168,
+    "mtime": 1774509595.9768493,
+    "exported": true
+  }
+]

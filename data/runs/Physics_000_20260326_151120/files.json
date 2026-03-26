@@ -1,0 +1,157 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "icosahedral_analysis.py",
+    "path": "code/icosahedral_analysis.py",
+    "type": "file",
+    "size": 7097,
+    "mtime": 1774509233.4895983,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "Multi-component Icosahedral Reproduction Data.txt",
+    "path": "data/Multi-component Icosahedral Reproduction Data.txt",
+    "type": "file",
+    "size": 4446,
+    "mtime": 1770187999.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "predicted_structures.csv",
+    "path": "outputs/predicted_structures.csv",
+    "type": "file",
+    "size": 303,
+    "mtime": 1774509233.718197,
+    "exported": true
+  },
+  {
+    "name": "summary.json",
+    "path": "outputs/summary.json",
+    "type": "file",
+    "size": 2159,
+    "mtime": 1774509233.7030153,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2317246,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 14876105,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 647192,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4836605,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 5532,
+    "mtime": 1774509233.873602,
+    "exported": true
+  },
+  {
+    "name": "main_results.png",
+    "path": "report/images/main_results.png",
+    "type": "file",
+    "size": 4273,
+    "mtime": 1774509233.972583,
+    "exported": true
+  },
+  {
+    "name": "path_rules.png",
+    "path": "report/images/path_rules.png",
+    "type": "file",
+    "size": 3481,
+    "mtime": 1774509234.239878,
+    "exported": true
+  },
+  {
+    "name": "shell_populations.png",
+    "path": "report/images/shell_populations.png",
+    "type": "file",
+    "size": 4957,
+    "mtime": 1774509234.102795,
+    "exported": true
+  },
+  {
+    "name": "validation_comparison.png",
+    "path": "report/images/validation_comparison.png",
+    "type": "file",
+    "size": 6172,
+    "mtime": 1774509234.4315202,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12453,
+    "mtime": 1774509299.1056557,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5790,
+    "mtime": 1774509081.794638,
+    "exported": true
+  }
+]

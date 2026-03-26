@@ -1,0 +1,175 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "altermagnet_search.py",
+    "path": "code/altermagnet_search.py",
+    "type": "file",
+    "size": 7505,
+    "mtime": 1774508523.671095,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_data.pt",
+    "path": "data/candidate_data.pt",
+    "type": "file",
+    "size": 2451457,
+    "mtime": 1772431610.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "finetune_data.pt",
+    "path": "data/finetune_data.pt",
+    "type": "file",
+    "size": 4904635,
+    "mtime": 1772431608.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "pretrain_data.pt",
+    "path": "data/pretrain_data.pt",
+    "type": "file",
+    "size": 12321899,
+    "mtime": 1772431606.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "summary.json",
+    "path": "outputs/summary.json",
+    "type": "file",
+    "size": 12983,
+    "mtime": 1774508523.7492268,
+    "exported": true
+  },
+  {
+    "name": "top50_candidates.csv",
+    "path": "outputs/top50_candidates.csv",
+    "type": "file",
+    "size": 2926,
+    "mtime": 1774508523.751344,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 4055967,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8225125,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1212404,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2144524,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_ranking.png",
+    "path": "report/images/candidate_ranking.png",
+    "type": "file",
+    "size": 3959,
+    "mtime": 1774508523.9375186,
+    "exported": true
+  },
+  {
+    "name": "class_breakdown.png",
+    "path": "report/images/class_breakdown.png",
+    "type": "file",
+    "size": 6173,
+    "mtime": 1774508523.99382,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 4593,
+    "mtime": 1774508523.797808,
+    "exported": true
+  },
+  {
+    "name": "main_results.png",
+    "path": "report/images/main_results.png",
+    "type": "file",
+    "size": 5604,
+    "mtime": 1774508523.8558378,
+    "exported": true
+  },
+  {
+    "name": "validation_comparison.png",
+    "path": "report/images/validation_comparison.png",
+    "type": "file",
+    "size": 5267,
+    "mtime": 1774508523.9089499,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13677,
+    "mtime": 1774508604.490618,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6168,
+    "mtime": 1774508258.7033436,
+    "exported": true
+  }
+]
