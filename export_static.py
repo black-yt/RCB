@@ -185,7 +185,10 @@ def _build_instructions(task_info, workspace="<workspace>"):
 
 def export_tasks():
     grouped = _list_tasks_grouped()
-    (DATA_DIR / "tasks").mkdir(parents=True, exist_ok=True)
+    tasks_root = DATA_DIR / "tasks"
+    if tasks_root.exists():
+        shutil.rmtree(tasks_root)
+    tasks_root.mkdir(parents=True, exist_ok=True)
     with open(DATA_DIR / "tasks.json", "w", encoding="utf-8") as f:
         json.dump(grouped, f, indent=2)
 
@@ -210,7 +213,7 @@ def export_tasks():
                     shutil.rmtree(dst)
                 shutil.copytree(images_dir, dst)
 
-            # Copy target paper PDF (skip if > 10MB)
+            # Copy target paper PDF (skip if > 5MB)
             target_study = TASKS_DIR / task_id / "target_study"
             for pdf in target_study.glob("paper*.pdf"):
                 if pdf.stat().st_size < 5 * 1024 * 1024:
@@ -283,6 +286,8 @@ def export_tasks():
 def export_runs():
     runs = _list_runs()
     runs_dir = DATA_DIR / "runs"
+    if runs_dir.exists():
+        shutil.rmtree(runs_dir)
     runs_dir.mkdir(parents=True, exist_ok=True)
 
     exported = []

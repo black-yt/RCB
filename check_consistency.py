@@ -23,6 +23,7 @@ HOME_DATA = HOME / "data"
 
 errors = []
 warnings = []
+SECRET_RE = re.compile(r"(?<![A-Za-z0-9])sk-[A-Za-z0-9]{10,}")
 
 
 def err(msg): errors.append(msg); print(f"  X {msg}")
@@ -414,12 +415,26 @@ def main():
             files_json = run_dir / "files.json"
             if not files_json.exists():
                 continue
+            run_task_id = None
+            data_json = run_dir / "data.json"
+            if data_json.exists():
+                try:
+                    with open(data_json, encoding="utf-8") as f:
+                        run_task_id = json.load(f).get("task_id")
+                except (json.JSONDecodeError, OSError):
+                    pass
             with open(files_json, encoding="utf-8") as f:
                 tree = json.load(f)
             for item in tree:
                 if item.get("type") == "file" and item.get("exported"):
                     run_export_checked += 1
-                    ws_file = run_dir / "workspace" / item["path"]
+                    if item.get("shared"):
+                        if not run_task_id:
+                            run_export_issues += 1
+                            continue
+                        ws_file = HOME_DATA / "tasks" / run_task_id / "workspace" / item["path"]
+                    else:
+                        ws_file = run_dir / "workspace" / item["path"]
                     if not ws_file.exists():
                         run_export_issues += 1
         if run_export_issues == 0:
@@ -467,11 +482,12 @@ def main():
             stripped = line.strip()
             if stripped.startswith("#"):
                 continue
-            if "sk-" in stripped and "sk-xxx" not in stripped and len(stripped) > 20:
-                if "example" not in stripped.lower():
-                    err(f"Possible API key in {pyf}")
-                    key_found = True
-                    break
+            if "sk-xxx" in stripped.lower() or "example" in stripped.lower():
+                continue
+            if SECRET_RE.search(stripped):
+                err(f"Possible API key in {pyf}")
+                key_found = True
+                break
     if not key_found:
         ok("No API keys in tracked Python files")
 
