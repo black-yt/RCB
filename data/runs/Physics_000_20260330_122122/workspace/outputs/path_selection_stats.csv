@@ -1,0 +1,5 @@
+path_type,count,fraction
+Conservative path,325,0.5416666666666666
+Mismatch-driven path,125,0.20833333333333334
+Random path,50,0.08333333333333333
+Reverse step,100,0.16666666666666666

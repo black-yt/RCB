@@ -1,0 +1,66 @@
+{
+  "n_input_datasets": 257,
+  "n_regions": 19,
+  "years": [
+    2000,
+    2023
+  ],
+  "global_total_2000_2023_gt": -6542.470628027882,
+  "mean_global_annual_gt": -272.6029428344951,
+  "mean_global_specific_mwe": -0.40594989549158916,
+  "max_abs_global_consistency_gap_gt": 1.1368683772161603e-13,
+  "best_years_by_mass_change_gt": [
+    {
+      "year": 2000,
+      "mass_change_gt": -78.04414729402814
+    },
+    {
+      "year": 2002,
+      "mass_change_gt": -128.46636738674923
+    },
+    {
+      "year": 2014,
+      "mass_change_gt": -149.889416279315
+    }
+  ],
+  "worst_years_by_mass_change_gt": [
+    {
+      "year": 2023,
+      "mass_change_gt": -548.025110248126
+    },
+    {
+      "year": 2022,
+      "mass_change_gt": -460.2989143829609
+    },
+    {
+      "year": 2019,
+      "mass_change_gt": -412.9645781490086
+    }
+  ],
+  "method_agreement": [
+    {
+      "method_group": "demdiff_and_glaciological",
+      "n_region_year": 453,
+      "mean_abs_diff_gt": 4.871428531149539,
+      "median_abs_diff_gt": 1.3244104022247196,
+      "rmse_gt": 9.466790269035409,
+      "native_annual_variability_share": 1.0
+    },
+    {
+      "method_group": "altimetry",
+      "n_region_year": 213,
+      "mean_abs_diff_gt": 7.48559372971645,
+      "median_abs_diff_gt": 3.8988675021794243,
+      "rmse_gt": 12.087032813150756,
+      "native_annual_variability_share": 1.0
+    },
+    {
+      "method_group": "gravimetry",
+      "n_region_year": 140,
+      "mean_abs_diff_gt": 8.477255730918209,
+      "median_abs_diff_gt": 4.934791611866597,
+      "rmse_gt": 12.686478452922437,
+      "native_annual_variability_share": 1.0
+    }
+  ]
+}

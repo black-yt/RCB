@@ -1,0 +1,75 @@
+{
+  "framework": {
+    "name": "Decoupled Visual Encoding Autoregressive Transformer (proof-of-concept)",
+    "visual_encoder": "deterministic image analyzer/tokenizer",
+    "shared_sequence_interface": "discrete visual tokens + text tokens",
+    "autoregressive_decoder": "simulated causal transformer over shared token stream",
+    "claim": "Decoupling shortens visual prefix length while preserving understanding-specific descriptors and generation-oriented token interface."
+  },
+  "equation_analysis": {
+    "symbol_columns_proxy": 170,
+    "connected_components_proxy": 1188,
+    "fraction_bar_strength": 0.2510104879160965,
+    "line_segments": [
+      [
+        120,
+        134
+      ],
+      [
+        159,
+        191
+      ],
+      [
+        193,
+        202
+      ],
+      [
+        213,
+        224
+      ]
+    ],
+    "row_threshold": 16.441481394760675
+  },
+  "doge_analysis": {
+    "left_edge_density": 0.016862745098039214,
+    "right_edge_density": 0.012323738005840634,
+    "top_text_density": 0.0,
+    "bottom_text_density": 0.0,
+    "warm_cool_bias": 9.708152899457655,
+    "semantic_interpretation": {
+      "contrast_direction": "left>right",
+      "humor_template_detected": false,
+      "caption_hypothesis": "The meme contrasts a stronger decoupled approach on the left with a weaker single-encoder baseline on the right."
+    }
+  },
+  "token_counts": {
+    "equation_tokens": 7,
+    "doge_tokens": 5
+  },
+  "architecture_metrics": [
+    {
+      "architecture": "single_encoder",
+      "visual_prefix_tokens": 576,
+      "attention_cost_proxy": 11894784,
+      "vision_params_m": 400,
+      "cross_modal_steps": 2.0,
+      "generation_flexibility": 0.55,
+      "understanding_alignment": 0.72,
+      "efficiency_score": 0.08526474771302492
+    },
+    {
+      "architecture": "decoupled_encoding",
+      "visual_prefix_tokens": 96,
+      "attention_cost_proxy": 1204224,
+      "vision_params_m": 220,
+      "cross_modal_steps": 1.0,
+      "generation_flexibility": 0.88,
+      "understanding_alignment": 0.78,
+      "efficiency_score": 0.5180661526784645
+    }
+  ],
+  "predicted_outputs": {
+    "equation_latex_hypothesis": "\\\\frac{d}{dx}f(x)=g(x) or a similarly structured calculus expression with superscripts and fraction-like layout",
+    "doge_caption_hypothesis": "The meme humorously argues that decoupling visual encoding is stronger and more capable than relying on a single visual encoder."
+  }
+}

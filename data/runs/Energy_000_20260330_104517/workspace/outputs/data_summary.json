@@ -1,0 +1,34 @@
+{
+  "CS2": {
+    "dataset": "CS2",
+    "n_points": 83,
+    "duration_s": 2451.7841897058843,
+    "voltage_min_v": 2.699855327606201,
+    "voltage_max_v": 4.017177581787109,
+    "capacity_max_ah": 0.7491565870911311,
+    "temperature_min_c": null,
+    "temperature_max_c": null
+  },
+  "NASA": {
+    "dataset": "NASA",
+    "n_points": 197,
+    "duration_s": 3690.234,
+    "voltage_min_v": 2.612467347907089,
+    "voltage_max_v": 4.191491807505295,
+    "capacity_max_ah": 1.8564874208181574,
+    "temperature_min_c": 24.325993424022467,
+    "temperature_max_c": 38.98218133148803
+  },
+  "Oxford": {
+    "dataset": "Oxford",
+    "n_points": 3145,
+    "duration_s": 3144.0,
+    "voltage_min_v": 3.60439,
+    "voltage_max_v": 4.18354,
+    "capacity_max_ah": 0.48344,
+    "temperature_min_c": 39.9266,
+    "temperature_max_c": 41.0874
+  },
+  "n_cs2_cycles": 200,
+  "n_nasa_discharge_cycles": 168
+}

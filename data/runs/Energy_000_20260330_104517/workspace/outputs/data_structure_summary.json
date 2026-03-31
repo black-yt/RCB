@@ -1,0 +1,1282 @@
+{
+  "cs2": {
+    "CS2_36_1_28_11.xlsx": {
+      "sheets": [
+        "Info",
+        "Channel_1-009",
+        "Statistics_1-009"
+      ],
+      "preview": {
+        "Info": {
+          "columns": [
+            "Unnamed: 0",
+            "Unnamed: 1",
+            "Unnamed: 2",
+            "TEST REPORT",
+            "Unnamed: 4",
+            "Unnamed: 5",
+            "Unnamed: 6",
+            "Unnamed: 7",
+            "Unnamed: 8",
+            "Unnamed: 9",
+            "Unnamed: 10",
+            "Unnamed: 11",
+            "Unnamed: 12",
+            "Unnamed: 13",
+            "Unnamed: 14",
+            "Unnamed: 15",
+            "Unnamed: 16",
+            "Unnamed: 17",
+            "Unnamed: 18",
+            "Unnamed: 19",
+            "Unnamed: 20",
+            "Unnamed: 21",
+            "Unnamed: 22"
+          ],
+          "head": {
+            "Unnamed: 0": [
+              NaN,
+              NaN,
+              "Channel",
+              "1-009"
+            ],
+            "Unnamed: 1": [
+              NaN,
+              NaN,
+              "Start_DateTime",
+              "2011-01-24 10:54:14"
+            ],
+            "Unnamed: 2": [
+              NaN,
+              NaN,
+              "Schedule_File_Name",
+              "CS2_1C.sdu"
+            ],
+            "TEST REPORT": [
+              "1_24_11",
+              "2011-01-28 00:00:00",
+              "Creator",
+              NaN
+            ],
+            "Unnamed: 4": [
+              NaN,
+              NaN,
+              "Comments",
+              NaN
+            ],
+            "Unnamed: 5": [
+              NaN,
+              NaN,
+              "Chan_Num",
+              16
+            ],
+            "Unnamed: 6": [
+              NaN,
+              NaN,
+              " Item_ID",
+              NaN
+            ],
+            "Unnamed: 7": [
+              NaN,
+              "         Mapped_Aux_Number",
+              "Volt",
+              0
+            ],
+            "Unnamed: 8": [
+              NaN,
+              NaN,
+              "Temp",
+              0
+            ],
+            "Unnamed: 9": [
+              NaN,
+              NaN,
+              "Pres",
+              0
+            ],
+            "Unnamed: 10": [
+              NaN,
+              NaN,
+              "PH",
+              0
+            ],
+            "Unnamed: 11": [
+              "C:\\ArbinSoftware\\MITS_PRO\\Data\\1_24_11.res",
+              NaN,
+              "FR",
+              0
+            ],
+            "Unnamed: 12": [
+              NaN,
+              "                    Log_Data_Flag                ",
+              "ChanStat",
+              true
+            ],
+            "Unnamed: 13": [
+              NaN,
+              NaN,
+              "Aux",
+              false
+            ],
+            "Unnamed: 14": [
+              NaN,
+              NaN,
+              "SmartBty",
+              false
+            ],
+            "Unnamed: 15": [
+              NaN,
+              NaN,
+              "Event",
+              false
+            ],
+            "Unnamed: 16": [
+              NaN,
+              "                   Cell Grading          ",
+              "Grade",
+              NaN
+            ],
+            "Unnamed: 17": [
+              NaN,
+              NaN,
+              "Internal_Resistance(Ohm)",
+              NaN
+            ],
+            "Unnamed: 18": [
+              NaN,
+              NaN,
+              "Discharge_Capacity(Ah)",
+              NaN
+            ],
+            "Unnamed: 19": [
+              NaN,
+              "Concentration",
+              "Concentration",
+              0
+            ],
+            "Unnamed: 20": [
+              NaN,
+              "   Digital I/O",
+              "Digital Input",
+              0
+            ],
+            "Unnamed: 21": [
+              NaN,
+              NaN,
+              "Digital Output",
+              0
+            ],
+            "Unnamed: 22": [
+              NaN,
+              NaN,
+              "Related Humidity",
+              NaN
+            ]
+          }
+        },
+        "Channel_1-009": {
+          "columns": [
+            "Data_Point",
+            "Test_Time(s)",
+            "Date_Time",
+            "Step_Time(s)",
+            "Step_Index",
+            "Cycle_Index",
+            "Current(A)",
+            "Voltage(V)",
+            "Charge_Capacity(Ah)",
+            "Discharge_Capacity(Ah)",
+            "Charge_Energy(Wh)",
+            "Discharge_Energy(Wh)",
+            "dV/dt(V/s)",
+            "Internal_Resistance(Ohm)",
+            "Is_FC_Data",
+            "AC_Impedance(Ohm)",
+            "ACI_Phase_Angle(Deg)"
+          ],
+          "head": {
+            "Data_Point": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "Test_Time(s)": [
+              30.000735418658813,
+              60.015857829127974,
+              90.03330032195626,
+              120.01444302955058,
+              150.0148609308085
+            ],
+            "Date_Time": [
+              "2011-01-24 10:54:44",
+              "2011-01-24 10:55:14",
+              "2011-01-24 10:55:44",
+              "2011-01-24 10:56:14",
+              "2011-01-24 10:56:44"
+            ],
+            "Step_Time(s)": [
+              30.0007359750455,
+              60.01585838050218,
+              90.03330099864276,
+              120.01444357591228,
+              30.000007053348344
+            ],
+            "Step_Index": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "Cycle_Index": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "Current(A)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5499712228775024
+            ],
+            "Voltage(V)": [
+              3.900557518005371,
+              3.900557518005371,
+              3.900557518005371,
+              3.900557518005371,
+              4.013128280639648
+            ],
+            "Charge_Capacity(Ah)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.004582931735525
+            ],
+            "Discharge_Capacity(Ah)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Charge_Energy(Wh)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.018339747921991
+            ],
+            "Discharge_Energy(Wh)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "dV/dt(V/s)": [
+              -3.237724376958795e-05,
+              0.0,
+              0.0,
+              3.24249267578125e-05,
+              0.0004858970642089844
+            ],
+            "Internal_Resistance(Ohm)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Is_FC_Data": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "AC_Impedance(Ohm)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "ACI_Phase_Angle(Deg)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "CS2_36_1_10_11.xlsx": {
+      "sheets": [
+        "Info",
+        "Channel_1-009",
+        "Statistics_1-009"
+      ],
+      "preview": {
+        "Info": {
+          "columns": [
+            "Unnamed: 0",
+            "Unnamed: 1",
+            "Unnamed: 2",
+            "TEST REPORT",
+            "Unnamed: 4",
+            "Unnamed: 5",
+            "Unnamed: 6",
+            "Unnamed: 7",
+            "Unnamed: 8",
+            "Unnamed: 9",
+            "Unnamed: 10",
+            "Unnamed: 11",
+            "Unnamed: 12",
+            "Unnamed: 13",
+            "Unnamed: 14",
+            "Unnamed: 15",
+            "Unnamed: 16",
+            "Unnamed: 17",
+            "Unnamed: 18",
+            "Unnamed: 19",
+            "Unnamed: 20",
+            "Unnamed: 21",
+            "Unnamed: 22"
+          ],
+          "head": {
+            "Unnamed: 0": [
+              NaN,
+              NaN,
+              "Channel",
+              "1-009"
+            ],
+            "Unnamed: 1": [
+              NaN,
+              NaN,
+              "Start_DateTime",
+              "2011-01-03 10:37:55"
+            ],
+            "Unnamed: 2": [
+              NaN,
+              NaN,
+              "Schedule_File_Name",
+              "CS2_1C.sdu"
+            ],
+            "TEST REPORT": [
+              "1_3_11",
+              "2011-01-10 00:00:00",
+              "Creator",
+              NaN
+            ],
+            "Unnamed: 4": [
+              NaN,
+              NaN,
+              "Comments",
+              NaN
+            ],
+            "Unnamed: 5": [
+              NaN,
+              NaN,
+              "Chan_Num",
+              16
+            ],
+            "Unnamed: 6": [
+              NaN,
+              NaN,
+              " Item_ID",
+              NaN
+            ],
+            "Unnamed: 7": [
+              NaN,
+              "         Mapped_Aux_Number",
+              "Volt",
+              0
+            ],
+            "Unnamed: 8": [
+              NaN,
+              NaN,
+              "Temp",
+              0
+            ],
+            "Unnamed: 9": [
+              NaN,
+              NaN,
+              "Pres",
+              0
+            ],
+            "Unnamed: 10": [
+              NaN,
+              NaN,
+              "PH",
+              0
+            ],
+            "Unnamed: 11": [
+              "C:\\ArbinSoftware\\MITS_PRO\\Data\\1_3_11.res",
+              NaN,
+              "FR",
+              0
+            ],
+            "Unnamed: 12": [
+              NaN,
+              "                    Log_Data_Flag                ",
+              "ChanStat",
+              true
+            ],
+            "Unnamed: 13": [
+              NaN,
+              NaN,
+              "Aux",
+              false
+            ],
+            "Unnamed: 14": [
+              NaN,
+              NaN,
+              "SmartBty",
+              false
+            ],
+            "Unnamed: 15": [
+              NaN,
+              NaN,
+              "Event",
+              false
+            ],
+            "Unnamed: 16": [
+              NaN,
+              "                   Cell Grading          ",
+              "Grade",
+              NaN
+            ],
+            "Unnamed: 17": [
+              NaN,
+              NaN,
+              "Internal_Resistance(Ohm)",
+              NaN
+            ],
+            "Unnamed: 18": [
+              NaN,
+              NaN,
+              "Discharge_Capacity(Ah)",
+              NaN
+            ],
+            "Unnamed: 19": [
+              NaN,
+              "Concentration",
+              "Concentration",
+              0
+            ],
+            "Unnamed: 20": [
+              NaN,
+              "   Digital I/O",
+              "Digital Input",
+              0
+            ],
+            "Unnamed: 21": [
+              NaN,
+              NaN,
+              "Digital Output",
+              0
+            ],
+            "Unnamed: 22": [
+              NaN,
+              NaN,
+              "Related Humidity",
+              NaN
+            ]
+          }
+        },
+        "Channel_1-009": {
+          "columns": [
+            "Data_Point",
+            "Test_Time(s)",
+            "Date_Time",
+            "Step_Time(s)",
+            "Step_Index",
+            "Cycle_Index",
+            "Current(A)",
+            "Voltage(V)",
+            "Charge_Capacity(Ah)",
+            "Discharge_Capacity(Ah)",
+            "Charge_Energy(Wh)",
+            "Discharge_Energy(Wh)",
+            "dV/dt(V/s)",
+            "Internal_Resistance(Ohm)",
+            "Is_FC_Data",
+            "AC_Impedance(Ohm)",
+            "ACI_Phase_Angle(Deg)"
+          ],
+          "head": {
+            "Data_Point": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "Test_Time(s)": [
+              30.01514973857923,
+              60.030375692109565,
+              90.0457603912829,
+              120.01317622728956,
+              150.01408769701135
+            ],
+            "Date_Time": [
+              "2011-01-03 10:38:25",
+              "2011-01-03 10:38:55",
+              "2011-01-03 10:39:25",
+              "2011-01-03 10:39:55",
+              "2011-01-03 10:40:25"
+            ],
+            "Step_Time(s)": [
+              30.01515028995342,
+              60.03037624849625,
+              90.04576096771954,
+              120.01317677866376,
+              30.00043164155279
+            ],
+            "Step_Index": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "Cycle_Index": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "Current(A)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5499712228775024
+            ],
+            "Voltage(V)": [
+              3.771141529083252,
+              3.771303415298462,
+              3.771465301513672,
+              3.771303415298462,
+              3.8637897968292236
+            ],
+            "Charge_Capacity(Ah)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.004583918821129
+            ],
+            "Discharge_Capacity(Ah)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Charge_Energy(Wh)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.017668017772124
+            ],
+            "Discharge_Energy(Wh)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "dV/dt(V/s)": [
+              -3.237724376958795e-05,
+              0.0,
+              3.237724376958795e-05,
+              3.237724376958795e-05,
+              0.0004211425839457661
+            ],
+            "Internal_Resistance(Ohm)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Is_FC_Data": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "AC_Impedance(Ohm)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "ACI_Phase_Angle(Deg)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "CS2_36_1_24_11.xlsx": {
+      "sheets": [
+        "Info",
+        "Channel_1-009",
+        "Statistics_1-009"
+      ],
+      "preview": {
+        "Info": {
+          "columns": [
+            "Unnamed: 0",
+            "Unnamed: 1",
+            "Unnamed: 2",
+            "TEST REPORT",
+            "Unnamed: 4",
+            "Unnamed: 5",
+            "Unnamed: 6",
+            "Unnamed: 7",
+            "Unnamed: 8",
+            "Unnamed: 9",
+            "Unnamed: 10",
+            "Unnamed: 11",
+            "Unnamed: 12",
+            "Unnamed: 13",
+            "Unnamed: 14",
+            "Unnamed: 15",
+            "Unnamed: 16",
+            "Unnamed: 17",
+            "Unnamed: 18",
+            "Unnamed: 19",
+            "Unnamed: 20",
+            "Unnamed: 21",
+            "Unnamed: 22"
+          ],
+          "head": {
+            "Unnamed: 0": [
+              NaN,
+              NaN,
+              "Channel",
+              "1-009"
+            ],
+            "Unnamed: 1": [
+              NaN,
+              NaN,
+              "Start_DateTime",
+              "2011-01-18 13:17:23"
+            ],
+            "Unnamed: 2": [
+              NaN,
+              NaN,
+              "Schedule_File_Name",
+              "CS2_1C.sdu"
+            ],
+            "TEST REPORT": [
+              "1_18_11",
+              "2011-01-24 00:00:00",
+              "Creator",
+              NaN
+            ],
+            "Unnamed: 4": [
+              NaN,
+              NaN,
+              "Comments",
+              NaN
+            ],
+            "Unnamed: 5": [
+              NaN,
+              NaN,
+              "Chan_Num",
+              16
+            ],
+            "Unnamed: 6": [
+              NaN,
+              NaN,
+              " Item_ID",
+              NaN
+            ],
+            "Unnamed: 7": [
+              NaN,
+              "         Mapped_Aux_Number",
+              "Volt",
+              0
+            ],
+            "Unnamed: 8": [
+              NaN,
+              NaN,
+              "Temp",
+              0
+            ],
+            "Unnamed: 9": [
+              NaN,
+              NaN,
+              "Pres",
+              0
+            ],
+            "Unnamed: 10": [
+              NaN,
+              NaN,
+              "PH",
+              0
+            ],
+            "Unnamed: 11": [
+              "C:\\ArbinSoftware\\MITS_PRO\\Data\\1_18_11.res",
+              NaN,
+              "FR",
+              0
+            ],
+            "Unnamed: 12": [
+              NaN,
+              "                    Log_Data_Flag                ",
+              "ChanStat",
+              true
+            ],
+            "Unnamed: 13": [
+              NaN,
+              NaN,
+              "Aux",
+              false
+            ],
+            "Unnamed: 14": [
+              NaN,
+              NaN,
+              "SmartBty",
+              false
+            ],
+            "Unnamed: 15": [
+              NaN,
+              NaN,
+              "Event",
+              false
+            ],
+            "Unnamed: 16": [
+              NaN,
+              "                   Cell Grading          ",
+              "Grade",
+              NaN
+            ],
+            "Unnamed: 17": [
+              NaN,
+              NaN,
+              "Internal_Resistance(Ohm)",
+              NaN
+            ],
+            "Unnamed: 18": [
+              NaN,
+              NaN,
+              "Discharge_Capacity(Ah)",
+              NaN
+            ],
+            "Unnamed: 19": [
+              NaN,
+              "Concentration",
+              "Concentration",
+              0
+            ],
+            "Unnamed: 20": [
+              NaN,
+              "   Digital I/O",
+              "Digital Input",
+              0
+            ],
+            "Unnamed: 21": [
+              NaN,
+              NaN,
+              "Digital Output",
+              0
+            ],
+            "Unnamed: 22": [
+              NaN,
+              NaN,
+              "Related Humidity",
+              NaN
+            ]
+          }
+        },
+        "Channel_1-009": {
+          "columns": [
+            "Data_Point",
+            "Test_Time(s)",
+            "Date_Time",
+            "Step_Time(s)",
+            "Step_Index",
+            "Cycle_Index",
+            "Current(A)",
+            "Voltage(V)",
+            "Charge_Capacity(Ah)",
+            "Discharge_Capacity(Ah)",
+            "Charge_Energy(Wh)",
+            "Discharge_Energy(Wh)",
+            "dV/dt(V/s)",
+            "Internal_Resistance(Ohm)",
+            "Is_FC_Data",
+            "AC_Impedance(Ohm)",
+            "ACI_Phase_Angle(Deg)"
+          ],
+          "head": {
+            "Data_Point": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "Test_Time(s)": [
+              30.00083970858139,
+              60.01591041518862,
+              90.03102709136617,
+              120.01437469925044,
+              150.03042198417512
+            ],
+            "Date_Time": [
+              "2011-01-18 13:17:53",
+              "2011-01-18 13:18:23",
+              "2011-01-18 13:18:53",
+              "2011-01-18 13:19:23",
+              "2011-01-18 13:19:53"
+            ],
+            "Step_Time(s)": [
+              30.000840355192945,
+              60.01591096656282,
+              90.03102764775286,
+              120.01437525563712,
+              30.01563677241741
+            ],
+            "Step_Index": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "Cycle_Index": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "Current(A)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5499712228775024
+            ],
+            "Voltage(V)": [
+              3.842733383178711,
+              3.842571258544922,
+              3.842895269393921,
+              3.842733383178711,
+              3.9501209259033203
+            ],
+            "Charge_Capacity(Ah)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.004585699553079
+            ],
+            "Discharge_Capacity(Ah)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Charge_Energy(Wh)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.018065702595048
+            ],
+            "Discharge_Energy(Wh)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "dV/dt(V/s)": [
+              0.0,
+              -3.24249267578125e-05,
+              0.0,
+              0.0,
+              0.0004210948827676475
+            ],
+            "Internal_Resistance(Ohm)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Is_FC_Data": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "AC_Impedance(Ohm)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "ACI_Phase_Angle(Deg)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "CS2_36_1_18_11.xlsx": {
+      "sheets": [
+        "Info",
+        "Channel_1-009",
+        "Statistics_1-009"
+      ],
+      "preview": {
+        "Info": {
+          "columns": [
+            "Unnamed: 0",
+            "Unnamed: 1",
+            "Unnamed: 2",
+            "TEST REPORT",
+            "Unnamed: 4",
+            "Unnamed: 5",
+            "Unnamed: 6",
+            "Unnamed: 7",
+            "Unnamed: 8",
+            "Unnamed: 9",
+            "Unnamed: 10",
+            "Unnamed: 11",
+            "Unnamed: 12",
+            "Unnamed: 13",
+            "Unnamed: 14",
+            "Unnamed: 15",
+            "Unnamed: 16",
+            "Unnamed: 17",
+            "Unnamed: 18",
+            "Unnamed: 19",
+            "Unnamed: 20",
+            "Unnamed: 21",
+            "Unnamed: 22"
+          ],
+          "head": {
+            "Unnamed: 0": [
+              NaN,
+              NaN,
+              "Channel",
+              "1-009"
+            ],
+            "Unnamed: 1": [
+              NaN,
+              NaN,
+              "Start_DateTime",
+              "2011-01-10 11:47:19"
+            ],
+            "Unnamed: 2": [
+              NaN,
+              NaN,
+              "Schedule_File_Name",
+              "CS2_1C.sdu"
+            ],
+            "TEST REPORT": [
+              "1_10_11",
+              "2011-01-18 00:00:00",
+              "Creator",
+              NaN
+            ],
+            "Unnamed: 4": [
+              NaN,
+              NaN,
+              "Comments",
+              NaN
+            ],
+            "Unnamed: 5": [
+              NaN,
+              NaN,
+              "Chan_Num",
+              16
+            ],
+            "Unnamed: 6": [
+              NaN,
+              NaN,
+              " Item_ID",
+              NaN
+            ],
+            "Unnamed: 7": [
+              NaN,
+              "         Mapped_Aux_Number",
+              "Volt",
+              0
+            ],
+            "Unnamed: 8": [
+              NaN,
+              NaN,
+              "Temp",
+              0
+            ],
+            "Unnamed: 9": [
+              NaN,
+              NaN,
+              "Pres",
+              0
+            ],
+            "Unnamed: 10": [
+              NaN,
+              NaN,
+              "PH",
+              0
+            ],
+            "Unnamed: 11": [
+              "C:\\ArbinSoftware\\MITS_PRO\\Data\\1_10_11.res",
+              NaN,
+              "FR",
+              0
+            ],
+            "Unnamed: 12": [
+              NaN,
+              "                    Log_Data_Flag                ",
+              "ChanStat",
+              true
+            ],
+            "Unnamed: 13": [
+              NaN,
+              NaN,
+              "Aux",
+              false
+            ],
+            "Unnamed: 14": [
+              NaN,
+              NaN,
+              "SmartBty",
+              false
+            ],
+            "Unnamed: 15": [
+              NaN,
+              NaN,
+              "Event",
+              false
+            ],
+            "Unnamed: 16": [
+              NaN,
+              "                   Cell Grading          ",
+              "Grade",
+              NaN
+            ],
+            "Unnamed: 17": [
+              NaN,
+              NaN,
+              "Internal_Resistance(Ohm)",
+              NaN
+            ],
+            "Unnamed: 18": [
+              NaN,
+              NaN,
+              "Discharge_Capacity(Ah)",
+              NaN
+            ],
+            "Unnamed: 19": [
+              NaN,
+              "Concentration",
+              "Concentration",
+              0
+            ],
+            "Unnamed: 20": [
+              NaN,
+              "   Digital I/O",
+              "Digital Input",
+              0
+            ],
+            "Unnamed: 21": [
+              NaN,
+              NaN,
+              "Digital Output",
+              0
+            ],
+            "Unnamed: 22": [
+              NaN,
+              NaN,
+              "Related Humidity",
+              NaN
+            ]
+          }
+        },
+        "Channel_1-009": {
+          "columns": [
+            "Data_Point",
+            "Test_Time(s)",
+            "Date_Time",
+            "Step_Time(s)",
+            "Step_Index",
+            "Cycle_Index",
+            "Current(A)",
+            "Voltage(V)",
+            "Charge_Capacity(Ah)",
+            "Discharge_Capacity(Ah)",
+            "Charge_Energy(Wh)",
+            "Discharge_Energy(Wh)",
+            "dV/dt(V/s)",
+            "Internal_Resistance(Ohm)",
+            "Is_FC_Data",
+            "AC_Impedance(Ohm)",
+            "ACI_Phase_Angle(Deg)"
+          ],
+          "head": {
+            "Data_Point": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "Test_Time(s)": [
+              30.00064735918751,
+              60.015767839847,
+              90.03090929277585,
+              120.01427501580862,
+              150.01468197278703
+            ],
+            "Date_Time": [
+              "2011-01-10 11:47:49",
+              "2011-01-10 11:48:19",
+              "2011-01-10 11:48:49",
+              "2011-01-10 11:49:19",
+              "2011-01-10 11:49:49"
+            ],
+            "Step_Time(s)": [
+              30.000647910561707,
+              60.01576839623369,
+              90.0309098692125,
+              120.01427556718282,
+              30.00000357467843
+            ],
+            "Step_Index": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "Cycle_Index": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "Current(A)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5501531362533569
+            ],
+            "Voltage(V)": [
+              3.7985148429870605,
+              3.7985148429870605,
+              3.7985148429870605,
+              3.7986767292022705,
+              3.897804021835327
+            ],
+            "Charge_Capacity(Ah)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.004583979943433
+            ],
+            "Discharge_Capacity(Ah)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Charge_Energy(Wh)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.017822459030494
+            ],
+            "Discharge_Energy(Wh)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "dV/dt(V/s)": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0003887653292622417
+            ],
+            "Internal_Resistance(Ohm)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Is_FC_Data": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "AC_Impedance(Ohm)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "ACI_Phase_Angle(Deg)": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "oxford_keys": [
+    "ExampleDC_C1"
+  ],
+  "nasa_keys": [
+    "B0005"
+  ]
+}

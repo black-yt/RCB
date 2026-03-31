@@ -1,0 +1,30 @@
+{
+  "seed": 0,
+  "mode": "pretrained",
+  "val_metrics": {
+    "pr_auc": 0.059388519533409116,
+    "roc_auc": 0.5540789473684211,
+    "precision_at_20": 0.0,
+    "recall_at_20": 0.0,
+    "enrichment_at_20": 0.0,
+    "precision_at_50": 0.06,
+    "recall_at_50": 0.15,
+    "enrichment_at_50": 1.2,
+    "precision_at_100": 0.06,
+    "recall_at_100": 0.3,
+    "enrichment_at_100": 1.2
+  },
+  "candidate_metrics": {
+    "pr_auc": 0.040947476979112635,
+    "roc_auc": 0.49332944521396804,
+    "precision_at_20": 0.0,
+    "recall_at_20": 0.0,
+    "enrichment_at_20": 0.0,
+    "precision_at_50": 0.02,
+    "recall_at_50": 0.023255813953488372,
+    "enrichment_at_50": 0.4651162790697675,
+    "precision_at_100": 0.02,
+    "recall_at_100": 0.046511627906976744,
+    "enrichment_at_100": 0.4651162790697675
+  }
+}

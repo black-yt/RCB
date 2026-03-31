@@ -1,0 +1,336 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_experiments.py",
+    "path": "code/run_experiments.py",
+    "type": "file",
+    "size": 25743,
+    "mtime": 1774864266.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "bace.csv",
+    "path": "data/bace.csv",
+    "type": "file",
+    "size": 117291,
+    "mtime": 1772508972.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "bbbp.csv",
+    "path": "data/bbbp.csv",
+    "type": "file",
+    "size": 146001,
+    "mtime": 1772508974.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "clintox.csv",
+    "path": "data/clintox.csv",
+    "type": "file",
+    "size": 104029,
+    "mtime": 1772508974.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "hiv.csv",
+    "path": "data/hiv.csv",
+    "type": "file",
+    "size": 2347242,
+    "mtime": 1772508976.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "muv.csv",
+    "path": "data/muv.csv",
+    "type": "file",
+    "size": 6726446,
+    "mtime": 1772508978.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "run_logs",
+    "path": "outputs/run_logs",
+    "type": "directory"
+  },
+  {
+    "name": "bace_baseline_gnn_seed0_history.json",
+    "path": "outputs/run_logs/bace_baseline_gnn_seed0_history.json",
+    "type": "file",
+    "size": 263,
+    "mtime": 1774864010.0,
+    "exported": true
+  },
+  {
+    "name": "bace_baseline_gnn_seed0_preds.json",
+    "path": "outputs/run_logs/bace_baseline_gnn_seed0_preds.json",
+    "type": "file",
+    "size": 10896,
+    "mtime": 1774864010.0,
+    "exported": true
+  },
+  {
+    "name": "bace_baseline_gnn_seed0_summary.json",
+    "path": "outputs/run_logs/bace_baseline_gnn_seed0_summary.json",
+    "type": "file",
+    "size": 439,
+    "mtime": 1774864008.0,
+    "exported": true
+  },
+  {
+    "name": "bace_baseline_gnn_seed1_history.json",
+    "path": "outputs/run_logs/bace_baseline_gnn_seed1_history.json",
+    "type": "file",
+    "size": 261,
+    "mtime": 1774864008.0,
+    "exported": true
+  },
+  {
+    "name": "bace_baseline_gnn_seed1_preds.json",
+    "path": "outputs/run_logs/bace_baseline_gnn_seed1_preds.json",
+    "type": "file",
+    "size": 10917,
+    "mtime": 1774864006.0,
+    "exported": true
+  },
+  {
+    "name": "bace_baseline_gnn_seed1_summary.json",
+    "path": "outputs/run_logs/bace_baseline_gnn_seed1_summary.json",
+    "type": "file",
+    "size": 436,
+    "mtime": 1774864008.0,
+    "exported": true
+  },
+  {
+    "name": "bace_baseline_gnn_seed2_history.json",
+    "path": "outputs/run_logs/bace_baseline_gnn_seed2_history.json",
+    "type": "file",
+    "size": 262,
+    "mtime": 1774864006.0,
+    "exported": true
+  },
+  {
+    "name": "bace_baseline_gnn_seed2_preds.json",
+    "path": "outputs/run_logs/bace_baseline_gnn_seed2_preds.json",
+    "type": "file",
+    "size": 10899,
+    "mtime": 1774864010.0,
+    "exported": true
+  },
+  {
+    "name": "bace_baseline_gnn_seed2_summary.json",
+    "path": "outputs/run_logs/bace_baseline_gnn_seed2_summary.json",
+    "type": "file",
+    "size": 438,
+    "mtime": 1774864008.0,
+    "exported": true
+  },
+  {
+    "name": "bace_ka_gnn_seed0_history.json",
+    "path": "outputs/run_logs/bace_ka_gnn_seed0_history.json",
+    "type": "file",
+    "size": 135,
+    "mtime": 1774864010.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 62 more items",
+    "path": "outputs/run_logs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "all_results.csv",
+    "path": "outputs/all_results.csv",
+    "type": "file",
+    "size": 1994,
+    "mtime": 1774864266.0,
+    "exported": true
+  },
+  {
+    "name": "baseline_train.log",
+    "path": "outputs/baseline_train.log",
+    "type": "file",
+    "size": 4909,
+    "mtime": 1774864036.0,
+    "exported": true
+  },
+  {
+    "name": "baseline_train2.log",
+    "path": "outputs/baseline_train2.log",
+    "type": "file",
+    "size": 910,
+    "mtime": 1774864266.0,
+    "exported": true
+  },
+  {
+    "name": "cache_bace.json",
+    "path": "outputs/cache_bace.json",
+    "type": "file",
+    "size": 143615827,
+    "mtime": 1774864036.0,
+    "exported": false
+  },
+  {
+    "name": "cache_bbbp.json",
+    "path": "outputs/cache_bbbp.json",
+    "type": "file",
+    "size": 139960786,
+    "mtime": 1774864246.0,
+    "exported": false
+  },
+  {
+    "name": "cache_clintox.json",
+    "path": "outputs/cache_clintox.json",
+    "type": "file",
+    "size": 110565026,
+    "mtime": 1774864266.0,
+    "exported": false
+  },
+  {
+    "name": "cache_hiv.json",
+    "path": "outputs/cache_hiv.json",
+    "type": "file",
+    "size": 1095499590,
+    "mtime": 1774864222.0,
+    "exported": false
+  },
+  {
+    "name": "clintox_baseline.log",
+    "path": "outputs/clintox_baseline.log",
+    "type": "file",
+    "size": 1228,
+    "mtime": 1774864266.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_summary.csv",
+    "path": "outputs/dataset_summary.csv",
+    "type": "file",
+    "size": 482,
+    "mtime": 1774864036.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 12 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 8094211,
+    "mtime": 1773914886.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 873897,
+    "mtime": 1773914886.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1637828,
+    "mtime": 1773914886.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1856793,
+    "mtime": 1773914886.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 133374,
+    "mtime": 1774864266.0,
+    "exported": true
+  },
+  {
+    "name": "model_comparison.png",
+    "path": "report/images/model_comparison.png",
+    "type": "file",
+    "size": 84262,
+    "mtime": 1774864266.0,
+    "exported": true
+  },
+  {
+    "name": "runtime_comparison.png",
+    "path": "report/images/runtime_comparison.png",
+    "type": "file",
+    "size": 55912,
+    "mtime": 1774864266.0,
+    "exported": true
+  },
+  {
+    "name": "validation_plot.png",
+    "path": "report/images/validation_plot.png",
+    "type": "file",
+    "size": 67426,
+    "mtime": 1774864266.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12452,
+    "mtime": 1774872154.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 7233,
+    "mtime": 1774835731.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "equation_tokens": [
+    "EQ_symbol_columns_proxy_0_170.0",
+    "EQ_connected_components_proxy_0_1188.0",
+    "EQ_fraction_bar_strength_0_0.251",
+    "EQ_line_segments_0_(120, 134)",
+    "EQ_line_segments_1_(159, 191)",
+    "EQ_line_segments_2_(193, 202)",
+    "EQ_row_threshold_0_16.4415"
+  ],
+  "doge_tokens": [
+    "DOGE_left_edge_density_0_0.0169",
+    "DOGE_right_edge_density_0_0.0123",
+    "DOGE_top_text_density_0_0.0",
+    "DOGE_bottom_text_density_0_0.0",
+    "DOGE_warm_cool_bias_0_9.7082"
+  ]
+}

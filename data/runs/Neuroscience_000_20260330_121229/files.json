@@ -1,0 +1,277 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_simba_behavior_analysis.py",
+    "path": "code/run_simba_behavior_analysis.py",
+    "type": "file",
+    "size": 21403,
+    "mtime": 1774864484.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "Together_1_features_extracted.csv",
+    "path": "data/Together_1_features_extracted.csv",
+    "type": "file",
+    "size": 910871,
+    "mtime": 1773033714.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Together_1_machine_results_reference.csv",
+    "path": "data/Together_1_machine_results_reference.csv",
+    "type": "file",
+    "size": 1790428,
+    "mtime": 1773033716.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Together_1_targets_inserted.csv",
+    "path": "data/Together_1_targets_inserted.csv",
+    "type": "file",
+    "size": 765692,
+    "mtime": 1773033716.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "average_precision_summary.png",
+    "path": "outputs/average_precision_summary.png",
+    "type": "file",
+    "size": 153908,
+    "mtime": 1774864482.0,
+    "exported": true
+  },
+  {
+    "name": "baseline_metrics_by_fold.csv",
+    "path": "outputs/baseline_metrics_by_fold.csv",
+    "type": "file",
+    "size": 2915,
+    "mtime": 1774864482.0,
+    "exported": true
+  },
+  {
+    "name": "baseline_summary.csv",
+    "path": "outputs/baseline_summary.csv",
+    "type": "file",
+    "size": 910,
+    "mtime": 1774864482.0,
+    "exported": true
+  },
+  {
+    "name": "block_manifest.csv",
+    "path": "outputs/block_manifest.csv",
+    "type": "file",
+    "size": 240,
+    "mtime": 1774864482.0,
+    "exported": true
+  },
+  {
+    "name": "bout_level_summary.csv",
+    "path": "outputs/bout_level_summary.csv",
+    "type": "file",
+    "size": 197,
+    "mtime": 1774864480.0,
+    "exported": true
+  },
+  {
+    "name": "confusion_matrices.png",
+    "path": "outputs/confusion_matrices.png",
+    "type": "file",
+    "size": 76520,
+    "mtime": 1774864482.0,
+    "exported": true
+  },
+  {
+    "name": "data_audit.json",
+    "path": "outputs/data_audit.json",
+    "type": "file",
+    "size": 238,
+    "mtime": 1774864482.0,
+    "exported": true
+  },
+  {
+    "name": "data_audit.md",
+    "path": "outputs/data_audit.md",
+    "type": "file",
+    "size": 258,
+    "mtime": 1774864482.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "outputs/data_overview.png",
+    "type": "file",
+    "size": 168369,
+    "mtime": 1774864482.0,
+    "exported": true
+  },
+  {
+    "name": "environment.txt",
+    "path": "outputs/environment.txt",
+    "type": "file",
+    "size": 222,
+    "mtime": 1774864482.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 16 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3024514,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 9125934,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 4320154,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3464361,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 9435744,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "average_precision_summary.png",
+    "path": "report/images/average_precision_summary.png",
+    "type": "file",
+    "size": 153908,
+    "mtime": 1774864484.0,
+    "exported": true
+  },
+  {
+    "name": "confusion_matrices.png",
+    "path": "report/images/confusion_matrices.png",
+    "type": "file",
+    "size": 76520,
+    "mtime": 1774864484.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 168369,
+    "mtime": 1774864484.0,
+    "exported": true
+  },
+  {
+    "name": "feature_importance_attack.png",
+    "path": "report/images/feature_importance_attack.png",
+    "type": "file",
+    "size": 214137,
+    "mtime": 1774864484.0,
+    "exported": true
+  },
+  {
+    "name": "feature_importance_sniffing.png",
+    "path": "report/images/feature_importance_sniffing.png",
+    "type": "file",
+    "size": 232998,
+    "mtime": 1774864484.0,
+    "exported": true
+  },
+  {
+    "name": "pr_curves.png",
+    "path": "report/images/pr_curves.png",
+    "type": "file",
+    "size": 159875,
+    "mtime": 1774864484.0,
+    "exported": true
+  },
+  {
+    "name": "split_diagram.png",
+    "path": "report/images/split_diagram.png",
+    "type": "file",
+    "size": 70914,
+    "mtime": 1774864484.0,
+    "exported": true
+  },
+  {
+    "name": "timeline_examples.png",
+    "path": "report/images/timeline_examples.png",
+    "type": "file",
+    "size": 496233,
+    "mtime": 1774864484.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14071,
+    "mtime": 1774871514.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5525,
+    "mtime": 1774843949.0,
+    "exported": true
+  }
+]

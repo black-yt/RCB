@@ -1,0 +1,9 @@
+{
+  "n_samples": 184,
+  "duplicates_all_columns": 0,
+  "duplicates_features_only": 0,
+  "feature_sum_min": 0.9999997550742286,
+  "feature_sum_max": 1.0000001720930307,
+  "high_strength_count": 20,
+  "high_strength_rate": 0.10869565217391304
+}

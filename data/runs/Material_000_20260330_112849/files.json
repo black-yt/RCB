@@ -1,0 +1,1118 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "check_env.py",
+    "path": "code/check_env.py",
+    "type": "file",
+    "size": 1007,
+    "mtime": 1774864450.0,
+    "exported": true
+  },
+  {
+    "name": "common.py",
+    "path": "code/common.py",
+    "type": "file",
+    "size": 1504,
+    "mtime": 1774864450.0,
+    "exported": true
+  },
+  {
+    "name": "data_prepare.py",
+    "path": "code/data_prepare.py",
+    "type": "file",
+    "size": 317,
+    "mtime": 1774864450.0,
+    "exported": true
+  },
+  {
+    "name": "inspect_data.py",
+    "path": "code/inspect_data.py",
+    "type": "file",
+    "size": 1321,
+    "mtime": 1774864450.0,
+    "exported": true
+  },
+  {
+    "name": "make_splits.py",
+    "path": "code/make_splits.py",
+    "type": "file",
+    "size": 1264,
+    "mtime": 1774864450.0,
+    "exported": true
+  },
+  {
+    "name": "run_all.sh",
+    "path": "code/run_all.sh",
+    "type": "file",
+    "size": 943,
+    "mtime": 1774864450.0,
+    "exported": true
+  },
+  {
+    "name": "summarize_results.py",
+    "path": "code/summarize_results.py",
+    "type": "file",
+    "size": 2392,
+    "mtime": 1774864450.0,
+    "exported": true
+  },
+  {
+    "name": "train_pipeline.py",
+    "path": "code/train_pipeline.py",
+    "type": "file",
+    "size": 12933,
+    "mtime": 1774864450.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_data.pt",
+    "path": "data/candidate_data.pt",
+    "type": "file",
+    "size": 2451457,
+    "mtime": 1772431610.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "finetune_data.pt",
+    "path": "data/finetune_data.pt",
+    "type": "file",
+    "size": 4904635,
+    "mtime": 1772431608.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "pretrain_data.pt",
+    "path": "data/pretrain_data.pt",
+    "type": "file",
+    "size": 12321899,
+    "mtime": 1772431606.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "baseline",
+    "path": "outputs/baseline",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_predictions_seed0.csv",
+    "path": "outputs/baseline/candidate_predictions_seed0.csv",
+    "type": "file",
+    "size": 17473,
+    "mtime": 1774864440.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_predictions_seed1.csv",
+    "path": "outputs/baseline/candidate_predictions_seed1.csv",
+    "type": "file",
+    "size": 17505,
+    "mtime": 1774864440.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_predictions_seed2.csv",
+    "path": "outputs/baseline/candidate_predictions_seed2.csv",
+    "type": "file",
+    "size": 17566,
+    "mtime": 1774864438.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_pr_curve.png",
+    "path": "outputs/baseline/candidate_seed0_baseline_pr_curve.png",
+    "type": "file",
+    "size": 41475,
+    "mtime": 1774864440.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_roc_curve.png",
+    "path": "outputs/baseline/candidate_seed0_baseline_roc_curve.png",
+    "type": "file",
+    "size": 37804,
+    "mtime": 1774864438.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_threshold_sweep.csv",
+    "path": "outputs/baseline/candidate_seed0_baseline_threshold_sweep.csv",
+    "type": "file",
+    "size": 467,
+    "mtime": 1774864438.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_threshold_sweep.png",
+    "path": "outputs/baseline/candidate_seed0_baseline_threshold_sweep.png",
+    "type": "file",
+    "size": 51512,
+    "mtime": 1774864438.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed1_baseline_pr_curve.png",
+    "path": "outputs/baseline/candidate_seed1_baseline_pr_curve.png",
+    "type": "file",
+    "size": 41069,
+    "mtime": 1774864440.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed1_baseline_roc_curve.png",
+    "path": "outputs/baseline/candidate_seed1_baseline_roc_curve.png",
+    "type": "file",
+    "size": 37184,
+    "mtime": 1774864438.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed1_baseline_threshold_sweep.csv",
+    "path": "outputs/baseline/candidate_seed1_baseline_threshold_sweep.csv",
+    "type": "file",
+    "size": 467,
+    "mtime": 1774864440.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 31 more items",
+    "path": "outputs/baseline/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "baseline_fast",
+    "path": "outputs/baseline_fast",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_predictions_seed0.csv",
+    "path": "outputs/baseline_fast/candidate_predictions_seed0.csv",
+    "type": "file",
+    "size": 17533,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_pr_curve.png",
+    "path": "outputs/baseline_fast/candidate_seed0_baseline_pr_curve.png",
+    "type": "file",
+    "size": 41501,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_roc_curve.png",
+    "path": "outputs/baseline_fast/candidate_seed0_baseline_roc_curve.png",
+    "type": "file",
+    "size": 37506,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_threshold_sweep.csv",
+    "path": "outputs/baseline_fast/candidate_seed0_baseline_threshold_sweep.csv",
+    "type": "file",
+    "size": 420,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_threshold_sweep.png",
+    "path": "outputs/baseline_fast/candidate_seed0_baseline_threshold_sweep.png",
+    "type": "file",
+    "size": 42709,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "history_seed0.csv",
+    "path": "outputs/baseline_fast/history_seed0.csv",
+    "type": "file",
+    "size": 733,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "metrics_seed0.json",
+    "path": "outputs/baseline_fast/metrics_seed0.json",
+    "type": "file",
+    "size": 777,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "model_seed0.pt",
+    "path": "outputs/baseline_fast/model_seed0.pt",
+    "type": "file",
+    "size": 47625,
+    "mtime": 1774864436.0,
+    "exported": false
+  },
+  {
+    "name": "summary_metrics.csv",
+    "path": "outputs/baseline_fast/summary_metrics.csv",
+    "type": "file",
+    "size": 863,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "summary_metrics.json",
+    "path": "outputs/baseline_fast/summary_metrics.json",
+    "type": "file",
+    "size": 3080,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 5 more items",
+    "path": "outputs/baseline_fast/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "focal",
+    "path": "outputs/focal",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_predictions_seed0.csv",
+    "path": "outputs/focal/candidate_predictions_seed0.csv",
+    "type": "file",
+    "size": 16703,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_pr_curve.png",
+    "path": "outputs/focal/candidate_seed0_focal_pr_curve.png",
+    "type": "file",
+    "size": 41106,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_roc_curve.png",
+    "path": "outputs/focal/candidate_seed0_focal_roc_curve.png",
+    "type": "file",
+    "size": 37280,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_threshold_sweep.csv",
+    "path": "outputs/focal/candidate_seed0_focal_threshold_sweep.csv",
+    "type": "file",
+    "size": 555,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_threshold_sweep.png",
+    "path": "outputs/focal/candidate_seed0_focal_threshold_sweep.png",
+    "type": "file",
+    "size": 52556,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "history_seed0.csv",
+    "path": "outputs/focal/history_seed0.csv",
+    "type": "file",
+    "size": 1509,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "metrics_seed0.json",
+    "path": "outputs/focal/metrics_seed0.json",
+    "type": "file",
+    "size": 808,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "model_seed0.pt",
+    "path": "outputs/focal/model_seed0.pt",
+    "type": "file",
+    "size": 47625,
+    "mtime": 1774864444.0,
+    "exported": false
+  },
+  {
+    "name": "val_seed0_focal_embedding_tsne.png",
+    "path": "outputs/focal/val_seed0_focal_embedding_tsne.png",
+    "type": "file",
+    "size": 142642,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_focal_pr_curve.png",
+    "path": "outputs/focal/val_seed0_focal_pr_curve.png",
+    "type": "file",
+    "size": 39328,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 3 more items",
+    "path": "outputs/focal/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "focal_fast",
+    "path": "outputs/focal_fast",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_predictions_seed0.csv",
+    "path": "outputs/focal_fast/candidate_predictions_seed0.csv",
+    "type": "file",
+    "size": 16684,
+    "mtime": 1774864442.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_pr_curve.png",
+    "path": "outputs/focal_fast/candidate_seed0_focal_pr_curve.png",
+    "type": "file",
+    "size": 40821,
+    "mtime": 1774864442.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_roc_curve.png",
+    "path": "outputs/focal_fast/candidate_seed0_focal_roc_curve.png",
+    "type": "file",
+    "size": 37126,
+    "mtime": 1774864442.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_threshold_sweep.csv",
+    "path": "outputs/focal_fast/candidate_seed0_focal_threshold_sweep.csv",
+    "type": "file",
+    "size": 540,
+    "mtime": 1774864442.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_threshold_sweep.png",
+    "path": "outputs/focal_fast/candidate_seed0_focal_threshold_sweep.png",
+    "type": "file",
+    "size": 52542,
+    "mtime": 1774864442.0,
+    "exported": true
+  },
+  {
+    "name": "history_seed0.csv",
+    "path": "outputs/focal_fast/history_seed0.csv",
+    "type": "file",
+    "size": 745,
+    "mtime": 1774864442.0,
+    "exported": true
+  },
+  {
+    "name": "metrics_seed0.json",
+    "path": "outputs/focal_fast/metrics_seed0.json",
+    "type": "file",
+    "size": 812,
+    "mtime": 1774864442.0,
+    "exported": true
+  },
+  {
+    "name": "model_seed0.pt",
+    "path": "outputs/focal_fast/model_seed0.pt",
+    "type": "file",
+    "size": 47625,
+    "mtime": 1774864442.0,
+    "exported": false
+  },
+  {
+    "name": "summary_metrics.csv",
+    "path": "outputs/focal_fast/summary_metrics.csv",
+    "type": "file",
+    "size": 898,
+    "mtime": 1774864442.0,
+    "exported": true
+  },
+  {
+    "name": "summary_metrics.json",
+    "path": "outputs/focal_fast/summary_metrics.json",
+    "type": "file",
+    "size": 3150,
+    "mtime": 1774864442.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 5 more items",
+    "path": "outputs/focal_fast/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "pretrained",
+    "path": "outputs/pretrained",
+    "type": "directory"
+  },
+  {
+    "name": "ssl",
+    "path": "outputs/pretrained/ssl",
+    "type": "directory"
+  },
+  {
+    "name": "pretrained_fast",
+    "path": "outputs/pretrained_fast",
+    "type": "directory"
+  },
+  {
+    "name": "ssl",
+    "path": "outputs/pretrained_fast/ssl",
+    "type": "directory"
+  },
+  {
+    "name": "encoder.pt",
+    "path": "outputs/pretrained_fast/ssl/encoder.pt",
+    "type": "file",
+    "size": 28933,
+    "mtime": 1774864434.0,
+    "exported": false
+  },
+  {
+    "name": "pretrain_history.csv",
+    "path": "outputs/pretrained_fast/ssl/pretrain_history.csv",
+    "type": "file",
+    "size": 115,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "pretrain_loss.png",
+    "path": "outputs/pretrained_fast/ssl/pretrain_loss.png",
+    "type": "file",
+    "size": 46819,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_predictions_seed0.csv",
+    "path": "outputs/pretrained_fast/candidate_predictions_seed0.csv",
+    "type": "file",
+    "size": 16605,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_pretrained_pr_curve.png",
+    "path": "outputs/pretrained_fast/candidate_seed0_pretrained_pr_curve.png",
+    "type": "file",
+    "size": 41276,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_pretrained_roc_curve.png",
+    "path": "outputs/pretrained_fast/candidate_seed0_pretrained_roc_curve.png",
+    "type": "file",
+    "size": 37433,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_pretrained_threshold_sweep.csv",
+    "path": "outputs/pretrained_fast/candidate_seed0_pretrained_threshold_sweep.csv",
+    "type": "file",
+    "size": 582,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_pretrained_threshold_sweep.png",
+    "path": "outputs/pretrained_fast/candidate_seed0_pretrained_threshold_sweep.png",
+    "type": "file",
+    "size": 50372,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "history_seed0.csv",
+    "path": "outputs/pretrained_fast/history_seed0.csv",
+    "type": "file",
+    "size": 682,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "metrics_seed0.json",
+    "path": "outputs/pretrained_fast/metrics_seed0.json",
+    "type": "file",
+    "size": 801,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "model_seed0.pt",
+    "path": "outputs/pretrained_fast/model_seed0.pt",
+    "type": "file",
+    "size": 47625,
+    "mtime": 1774864434.0,
+    "exported": false
+  },
+  {
+    "name": "summary_metrics.csv",
+    "path": "outputs/pretrained_fast/summary_metrics.csv",
+    "type": "file",
+    "size": 887,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 6 more items",
+    "path": "outputs/pretrained_fast/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "splits",
+    "path": "outputs/splits",
+    "type": "directory"
+  },
+  {
+    "name": "split_seed0.json",
+    "path": "outputs/splits/split_seed0.json",
+    "type": "file",
+    "size": 18945,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "split_seed1.json",
+    "path": "outputs/splits/split_seed1.json",
+    "type": "file",
+    "size": 18945,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "split_seed2.json",
+    "path": "outputs/splits/split_seed2.json",
+    "type": "file",
+    "size": 18945,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "weighted",
+    "path": "outputs/weighted",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_predictions_seed0.csv",
+    "path": "outputs/weighted/candidate_predictions_seed0.csv",
+    "type": "file",
+    "size": 16583,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_predictions_seed1.csv",
+    "path": "outputs/weighted/candidate_predictions_seed1.csv",
+    "type": "file",
+    "size": 16494,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_pr_curve.png",
+    "path": "outputs/weighted/candidate_seed0_weighted_pr_curve.png",
+    "type": "file",
+    "size": 43626,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_roc_curve.png",
+    "path": "outputs/weighted/candidate_seed0_weighted_roc_curve.png",
+    "type": "file",
+    "size": 38813,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_threshold_sweep.csv",
+    "path": "outputs/weighted/candidate_seed0_weighted_threshold_sweep.csv",
+    "type": "file",
+    "size": 873,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_threshold_sweep.png",
+    "path": "outputs/weighted/candidate_seed0_weighted_threshold_sweep.png",
+    "type": "file",
+    "size": 63189,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed1_weighted_pr_curve.png",
+    "path": "outputs/weighted/candidate_seed1_weighted_pr_curve.png",
+    "type": "file",
+    "size": 43067,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed1_weighted_roc_curve.png",
+    "path": "outputs/weighted/candidate_seed1_weighted_roc_curve.png",
+    "type": "file",
+    "size": 38473,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed1_weighted_threshold_sweep.csv",
+    "path": "outputs/weighted/candidate_seed1_weighted_threshold_sweep.csv",
+    "type": "file",
+    "size": 673,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed1_weighted_threshold_sweep.png",
+    "path": "outputs/weighted/candidate_seed1_weighted_threshold_sweep.png",
+    "type": "file",
+    "size": 54629,
+    "mtime": 1774864444.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 16 more items",
+    "path": "outputs/weighted/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "weighted_fast",
+    "path": "outputs/weighted_fast",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_predictions_seed0.csv",
+    "path": "outputs/weighted_fast/candidate_predictions_seed0.csv",
+    "type": "file",
+    "size": 16590,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_pr_curve.png",
+    "path": "outputs/weighted_fast/candidate_seed0_weighted_pr_curve.png",
+    "type": "file",
+    "size": 43653,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_roc_curve.png",
+    "path": "outputs/weighted_fast/candidate_seed0_weighted_roc_curve.png",
+    "type": "file",
+    "size": 38946,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_threshold_sweep.csv",
+    "path": "outputs/weighted_fast/candidate_seed0_weighted_threshold_sweep.csv",
+    "type": "file",
+    "size": 582,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_threshold_sweep.png",
+    "path": "outputs/weighted_fast/candidate_seed0_weighted_threshold_sweep.png",
+    "type": "file",
+    "size": 51400,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "history_seed0.csv",
+    "path": "outputs/weighted_fast/history_seed0.csv",
+    "type": "file",
+    "size": 754,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "metrics_seed0.json",
+    "path": "outputs/weighted_fast/metrics_seed0.json",
+    "type": "file",
+    "size": 857,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "model_seed0.pt",
+    "path": "outputs/weighted_fast/model_seed0.pt",
+    "type": "file",
+    "size": 47625,
+    "mtime": 1774864434.0,
+    "exported": false
+  },
+  {
+    "name": "summary_metrics.csv",
+    "path": "outputs/weighted_fast/summary_metrics.csv",
+    "type": "file",
+    "size": 943,
+    "mtime": 1774864436.0,
+    "exported": true
+  },
+  {
+    "name": "summary_metrics.json",
+    "path": "outputs/weighted_fast/summary_metrics.json",
+    "type": "file",
+    "size": 3240,
+    "mtime": 1774864434.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 5 more items",
+    "path": "outputs/weighted_fast/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "baseline.log",
+    "path": "outputs/baseline.log",
+    "type": "file",
+    "size": 0,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 10 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 4055967,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8225125,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1212404,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2144524,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_seed0_baseline_pr_curve.png",
+    "path": "report/images/candidate_seed0_baseline_pr_curve.png",
+    "type": "file",
+    "size": 41501,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_roc_curve.png",
+    "path": "report/images/candidate_seed0_baseline_roc_curve.png",
+    "type": "file",
+    "size": 37506,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_baseline_threshold_sweep.png",
+    "path": "report/images/candidate_seed0_baseline_threshold_sweep.png",
+    "type": "file",
+    "size": 42709,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_pr_curve.png",
+    "path": "report/images/candidate_seed0_focal_pr_curve.png",
+    "type": "file",
+    "size": 40821,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_roc_curve.png",
+    "path": "report/images/candidate_seed0_focal_roc_curve.png",
+    "type": "file",
+    "size": 37126,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_focal_threshold_sweep.png",
+    "path": "report/images/candidate_seed0_focal_threshold_sweep.png",
+    "type": "file",
+    "size": 52542,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_pretrained_pr_curve.png",
+    "path": "report/images/candidate_seed0_pretrained_pr_curve.png",
+    "type": "file",
+    "size": 41276,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_pretrained_roc_curve.png",
+    "path": "report/images/candidate_seed0_pretrained_roc_curve.png",
+    "type": "file",
+    "size": 37433,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_pretrained_threshold_sweep.png",
+    "path": "report/images/candidate_seed0_pretrained_threshold_sweep.png",
+    "type": "file",
+    "size": 50372,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_pr_curve.png",
+    "path": "report/images/candidate_seed0_weighted_pr_curve.png",
+    "type": "file",
+    "size": 43653,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_roc_curve.png",
+    "path": "report/images/candidate_seed0_weighted_roc_curve.png",
+    "type": "file",
+    "size": 38946,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_seed0_weighted_threshold_sweep.png",
+    "path": "report/images/candidate_seed0_weighted_threshold_sweep.png",
+    "type": "file",
+    "size": 51400,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "model_comparison.png",
+    "path": "report/images/model_comparison.png",
+    "type": "file",
+    "size": 111817,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "pretrain_loss.png",
+    "path": "report/images/pretrain_loss.png",
+    "type": "file",
+    "size": 46819,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_baseline_embedding_tsne.png",
+    "path": "report/images/val_seed0_baseline_embedding_tsne.png",
+    "type": "file",
+    "size": 143881,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_baseline_pr_curve.png",
+    "path": "report/images/val_seed0_baseline_pr_curve.png",
+    "type": "file",
+    "size": 40295,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_baseline_roc_curve.png",
+    "path": "report/images/val_seed0_baseline_roc_curve.png",
+    "type": "file",
+    "size": 33223,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_baseline_threshold_sweep.png",
+    "path": "report/images/val_seed0_baseline_threshold_sweep.png",
+    "type": "file",
+    "size": 50110,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_focal_embedding_tsne.png",
+    "path": "report/images/val_seed0_focal_embedding_tsne.png",
+    "type": "file",
+    "size": 143679,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_focal_pr_curve.png",
+    "path": "report/images/val_seed0_focal_pr_curve.png",
+    "type": "file",
+    "size": 39396,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_focal_roc_curve.png",
+    "path": "report/images/val_seed0_focal_roc_curve.png",
+    "type": "file",
+    "size": 32406,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_focal_threshold_sweep.png",
+    "path": "report/images/val_seed0_focal_threshold_sweep.png",
+    "type": "file",
+    "size": 49359,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_pretrained_embedding_tsne.png",
+    "path": "report/images/val_seed0_pretrained_embedding_tsne.png",
+    "type": "file",
+    "size": 144757,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_pretrained_pr_curve.png",
+    "path": "report/images/val_seed0_pretrained_pr_curve.png",
+    "type": "file",
+    "size": 39847,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_pretrained_roc_curve.png",
+    "path": "report/images/val_seed0_pretrained_roc_curve.png",
+    "type": "file",
+    "size": 33647,
+    "mtime": 1774864446.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_pretrained_threshold_sweep.png",
+    "path": "report/images/val_seed0_pretrained_threshold_sweep.png",
+    "type": "file",
+    "size": 48916,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_weighted_embedding_tsne.png",
+    "path": "report/images/val_seed0_weighted_embedding_tsne.png",
+    "type": "file",
+    "size": 150637,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_weighted_pr_curve.png",
+    "path": "report/images/val_seed0_weighted_pr_curve.png",
+    "type": "file",
+    "size": 41230,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_weighted_roc_curve.png",
+    "path": "report/images/val_seed0_weighted_roc_curve.png",
+    "type": "file",
+    "size": 34002,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "val_seed0_weighted_threshold_sweep.png",
+    "path": "report/images/val_seed0_weighted_threshold_sweep.png",
+    "type": "file",
+    "size": 48948,
+    "mtime": 1774864448.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 11734,
+    "mtime": 1774871510.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6168,
+    "mtime": 1774841329.0,
+    "exported": true
+  }
+]

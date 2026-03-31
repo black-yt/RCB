@@ -1,0 +1,30 @@
+{
+  "seed": 0,
+  "mode": "focal",
+  "val_metrics": {
+    "pr_auc": 0.0621166471276282,
+    "roc_auc": 0.48907894736842106,
+    "precision_at_20": 0.05,
+    "recall_at_20": 0.05,
+    "enrichment_at_20": 1.0,
+    "precision_at_50": 0.08,
+    "recall_at_50": 0.2,
+    "enrichment_at_50": 1.5999999999999999,
+    "precision_at_100": 0.06,
+    "recall_at_100": 0.3,
+    "enrichment_at_100": 1.2
+  },
+  "candidate_metrics": {
+    "pr_auc": 0.03740420649922242,
+    "roc_auc": 0.41393890792447335,
+    "precision_at_20": 0.0,
+    "recall_at_20": 0.0,
+    "enrichment_at_20": 0.0,
+    "precision_at_50": 0.04,
+    "recall_at_50": 0.046511627906976744,
+    "enrichment_at_50": 0.930232558139535,
+    "precision_at_100": 0.03,
+    "recall_at_100": 0.06976744186046512,
+    "enrichment_at_100": 0.6976744186046512
+  }
+}

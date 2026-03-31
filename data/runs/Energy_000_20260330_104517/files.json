@@ -1,0 +1,307 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_mmga_proxy.py",
+    "path": "code/run_mmga_proxy.py",
+    "type": "file",
+    "size": 19785,
+    "mtime": 1774864336.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "CS2_36",
+    "path": "data/CS2_36",
+    "type": "directory"
+  },
+  {
+    "name": "CS2_36_1_10_11.xlsx",
+    "path": "data/CS2_36/CS2_36_1_10_11.xlsx",
+    "type": "file",
+    "size": 1634449,
+    "mtime": 1294634606.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "CS2_36_1_18_11.xlsx",
+    "path": "data/CS2_36/CS2_36_1_18_11.xlsx",
+    "type": "file",
+    "size": 1420355,
+    "mtime": 1295330966.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "CS2_36_1_24_11.xlsx",
+    "path": "data/CS2_36/CS2_36_1_24_11.xlsx",
+    "type": "file",
+    "size": 1070274,
+    "mtime": 1295840828.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "CS2_36_1_28_11.xlsx",
+    "path": "data/CS2_36/CS2_36_1_28_11.xlsx",
+    "type": "file",
+    "size": 883480,
+    "mtime": 1296191806.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "NASA PCoE Dataset Repository",
+    "path": "data/NASA PCoE Dataset Repository",
+    "type": "directory"
+  },
+  {
+    "name": "1. BatteryAgingARC-FY08Q4",
+    "path": "data/NASA PCoE Dataset Repository/1. BatteryAgingARC-FY08Q4",
+    "type": "directory"
+  },
+  {
+    "name": "B0005.mat",
+    "path": "data/NASA PCoE Dataset Repository/1. BatteryAgingARC-FY08Q4/B0005.mat",
+    "type": "file",
+    "size": 15956874,
+    "mtime": 1222847416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "B0006.mat",
+    "path": "data/NASA PCoE Dataset Repository/1. BatteryAgingARC-FY08Q4/B0006.mat",
+    "type": "file",
+    "size": 16028159,
+    "mtime": 1222847424.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "B0007.mat",
+    "path": "data/NASA PCoE Dataset Repository/1. BatteryAgingARC-FY08Q4/B0007.mat",
+    "type": "file",
+    "size": 16049460,
+    "mtime": 1222847430.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "B0018.mat",
+    "path": "data/NASA PCoE Dataset Repository/1. BatteryAgingARC-FY08Q4/B0018.mat",
+    "type": "file",
+    "size": 8502218,
+    "mtime": 1222847432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "README.txt",
+    "path": "data/NASA PCoE Dataset Repository/1. BatteryAgingARC-FY08Q4/README.txt",
+    "type": "file",
+    "size": 2834,
+    "mtime": 1222782888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Oxford Battery Degradation Dataset",
+    "path": "data/Oxford Battery Degradation Dataset",
+    "type": "directory"
+  },
+  {
+    "name": "ExampleDC_C1.mat",
+    "path": "data/Oxford Battery Degradation Dataset/ExampleDC_C1.mat",
+    "type": "file",
+    "size": 72593,
+    "mtime": 1770297188.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Readme.txt",
+    "path": "data/Oxford Battery Degradation Dataset/Readme.txt",
+    "type": "file",
+    "size": 5643,
+    "mtime": 1770297180.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "data_structure_summary.json",
+    "path": "outputs/data_structure_summary.json",
+    "type": "file",
+    "size": 29443,
+    "mtime": 1774864334.0,
+    "exported": true
+  },
+  {
+    "name": "data_summary.json",
+    "path": "outputs/data_summary.json",
+    "type": "file",
+    "size": 890,
+    "mtime": 1774864334.0,
+    "exported": true
+  },
+  {
+    "name": "fit_metrics.json",
+    "path": "outputs/fit_metrics.json",
+    "type": "file",
+    "size": 442,
+    "mtime": 1774864334.0,
+    "exported": true
+  },
+  {
+    "name": "identified_parameters.csv",
+    "path": "outputs/identified_parameters.csv",
+    "type": "file",
+    "size": 711,
+    "mtime": 1774864334.0,
+    "exported": true
+  },
+  {
+    "name": "lhs_samples.csv",
+    "path": "outputs/lhs_samples.csv",
+    "type": "file",
+    "size": 426735,
+    "mtime": 1774864334.0,
+    "exported": true
+  },
+  {
+    "name": "run.log",
+    "path": "outputs/run.log",
+    "type": "file",
+    "size": 0,
+    "mtime": 1774864334.0,
+    "exported": true
+  },
+  {
+    "name": "surrogate_metrics.json",
+    "path": "outputs/surrogate_metrics.json",
+    "type": "file",
+    "size": 1716,
+    "mtime": 1774864334.0,
+    "exported": true
+  },
+  {
+    "name": "synthetic_library.npz",
+    "path": "outputs/synthetic_library.npz",
+    "type": "file",
+    "size": 3457010,
+    "mtime": 1774864334.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1370166,
+    "mtime": 1773914892.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 4818478,
+    "mtime": 1773914892.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 888768,
+    "mtime": 1773914892.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 613167,
+    "mtime": 1773914892.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "cs2_fit.png",
+    "path": "report/images/cs2_fit.png",
+    "type": "file",
+    "size": 162117,
+    "mtime": 1774864336.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 266360,
+    "mtime": 1774864336.0,
+    "exported": true
+  },
+  {
+    "name": "external_validation.png",
+    "path": "report/images/external_validation.png",
+    "type": "file",
+    "size": 344154,
+    "mtime": 1774864336.0,
+    "exported": true
+  },
+  {
+    "name": "surrogate_parity.png",
+    "path": "report/images/surrogate_parity.png",
+    "type": "file",
+    "size": 219293,
+    "mtime": 1774864336.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 11425,
+    "mtime": 1774871497.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6114,
+    "mtime": 1774838717.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 11674,
+    "mtime": 1774864784.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "doge.png",
+    "path": "data/doge.png",
+    "type": "file",
+    "size": 275391,
+    "mtime": 1769962486.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "equation.png",
+    "path": "data/equation.png",
+    "type": "file",
+    "size": 31548,
+    "mtime": 1769962486.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "architecture_comparison.csv",
+    "path": "outputs/architecture_comparison.csv",
+    "type": "file",
+    "size": 286,
+    "mtime": 1774864782.0,
+    "exported": true
+  },
+  {
+    "name": "data_summary.json",
+    "path": "outputs/data_summary.json",
+    "type": "file",
+    "size": 828,
+    "mtime": 1774864782.0,
+    "exported": true
+  },
+  {
+    "name": "equation_row_profile.json",
+    "path": "outputs/equation_row_profile.json",
+    "type": "file",
+    "size": 6421,
+    "mtime": 1774864784.0,
+    "exported": true
+  },
+  {
+    "name": "prototype_results.json",
+    "path": "outputs/prototype_results.json",
+    "type": "file",
+    "size": 2433,
+    "mtime": 1774864782.0,
+    "exported": true
+  },
+  {
+    "name": "related_work_notes.json",
+    "path": "outputs/related_work_notes.json",
+    "type": "file",
+    "size": 512,
+    "mtime": 1774864782.0,
+    "exported": true
+  },
+  {
+    "name": "token_sequences.json",
+    "path": "outputs/token_sequences.json",
+    "type": "file",
+    "size": 510,
+    "mtime": 1774864782.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 573341,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 5894130,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 921896,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3289161,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "architecture_comparison.png",
+    "path": "report/images/architecture_comparison.png",
+    "type": "file",
+    "size": 120199,
+    "mtime": 1774864784.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 392022,
+    "mtime": 1774864784.0,
+    "exported": true
+  },
+  {
+    "name": "validation_summary.png",
+    "path": "report/images/validation_summary.png",
+    "type": "file",
+    "size": 146216,
+    "mtime": 1774864784.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13856,
+    "mtime": 1774871498.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5011,
+    "mtime": 1774840206.0,
+    "exported": true
+  }
+]

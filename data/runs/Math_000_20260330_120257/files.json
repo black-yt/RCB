@@ -1,0 +1,218 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_tracking_experiments.py",
+    "path": "code/run_tracking_experiments.py",
+    "type": "file",
+    "size": 20954,
+    "mtime": 1774864298.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "simulated_sequence.json",
+    "path": "data/simulated_sequence.json",
+    "type": "file",
+    "size": 6512395,
+    "mtime": 1772429302.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "ablation_nohierarchy_association_log.csv",
+    "path": "outputs/ablation_nohierarchy_association_log.csv",
+    "type": "file",
+    "size": 1650,
+    "mtime": 1774864290.0,
+    "exported": true
+  },
+  {
+    "name": "ablation_nohierarchy_metrics.json",
+    "path": "outputs/ablation_nohierarchy_metrics.json",
+    "type": "file",
+    "size": 575,
+    "mtime": 1774864290.0,
+    "exported": true
+  },
+  {
+    "name": "ablation_nohierarchy_tracks.json",
+    "path": "outputs/ablation_nohierarchy_tracks.json",
+    "type": "file",
+    "size": 256898,
+    "mtime": 1774864290.0,
+    "exported": true
+  },
+  {
+    "name": "baseline_threshold_sweep.csv",
+    "path": "outputs/baseline_threshold_sweep.csv",
+    "type": "file",
+    "size": 349,
+    "mtime": 1774864290.0,
+    "exported": true
+  },
+  {
+    "name": "bytetrack_like_association_log.csv",
+    "path": "outputs/bytetrack_like_association_log.csv",
+    "type": "file",
+    "size": 1685,
+    "mtime": 1774864290.0,
+    "exported": true
+  },
+  {
+    "name": "bytetrack_like_metrics.json",
+    "path": "outputs/bytetrack_like_metrics.json",
+    "type": "file",
+    "size": 561,
+    "mtime": 1774864292.0,
+    "exported": true
+  },
+  {
+    "name": "bytetrack_like_tracks.json",
+    "path": "outputs/bytetrack_like_tracks.json",
+    "type": "file",
+    "size": 329904,
+    "mtime": 1774864292.0,
+    "exported": true
+  },
+  {
+    "name": "comparison_table.csv",
+    "path": "outputs/comparison_table.csv",
+    "type": "file",
+    "size": 869,
+    "mtime": 1774864292.0,
+    "exported": true
+  },
+  {
+    "name": "data_summary.json",
+    "path": "outputs/data_summary.json",
+    "type": "file",
+    "size": 455,
+    "mtime": 1774864292.0,
+    "exported": true
+  },
+  {
+    "name": "frame_stats.csv",
+    "path": "outputs/frame_stats.csv",
+    "type": "file",
+    "size": 7614,
+    "mtime": 1774864292.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 5 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 115276,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8638055,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 2800126,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 871604,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 120076,
+    "mtime": 1774864296.0,
+    "exported": true
+  },
+  {
+    "name": "main_comparison.png",
+    "path": "report/images/main_comparison.png",
+    "type": "file",
+    "size": 62162,
+    "mtime": 1774864296.0,
+    "exported": true
+  },
+  {
+    "name": "occlusion_analysis.png",
+    "path": "report/images/occlusion_analysis.png",
+    "type": "file",
+    "size": 108023,
+    "mtime": 1774864296.0,
+    "exported": true
+  },
+  {
+    "name": "per_frame_matches.png",
+    "path": "report/images/per_frame_matches.png",
+    "type": "file",
+    "size": 153918,
+    "mtime": 1774864296.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 10296,
+    "mtime": 1774871511.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5260,
+    "mtime": 1774843377.0,
+    "exported": true
+  }
+]

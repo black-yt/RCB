@@ -1,0 +1,32 @@
+{
+  "n_csv_files": 296,
+  "top_level_counts": {
+    "input": 257,
+    "results": 39
+  },
+  "input_regions": [
+    "10_north_asia",
+    "11_central_europe",
+    "12_caucasus_middle_east",
+    "13_central_asia",
+    "14_south_asia_west",
+    "15_south_asia_east",
+    "16_low_latitudes",
+    "17_southern_andes",
+    "18_new_zealand",
+    "19_antarctic_and_subantarctic",
+    "1_alaska",
+    "2_western_canada_us",
+    "3_arctic_canada_north",
+    "4_arctic_canada_south",
+    "5_greenland_periphery",
+    "6_iceland",
+    "7_svalbard",
+    "8_scandinavia",
+    "9_russian_arctic"
+  ],
+  "result_files_calendar": 20,
+  "result_files_hydrological": 19,
+  "unique_input_column_sets": 1,
+  "unique_result_column_sets": 2
+}

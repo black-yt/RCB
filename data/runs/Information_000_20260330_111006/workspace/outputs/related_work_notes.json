@@ -1,0 +1,6 @@
+{
+  "paper_000": "Chameleon argues for token-based early fusion across image/text but highlights optimization difficulty.",
+  "paper_001": "LLaVA uses a dedicated vision encoder connected to an LLM for multimodal understanding, not unified generation.",
+  "paper_002": "SigLIP shows decoupled image-text alignment can be efficient and scalable with simpler objectives.",
+  "paper_003": "LlamaGen demonstrates that autoregressive next-token prediction can scale to image generation with discrete visual tokens."
+}

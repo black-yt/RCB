@@ -1,0 +1,17 @@
+{
+  "dataset": "bace",
+  "model": "baseline_gnn",
+  "seed": 2,
+  "train_roc_auc": 0.7023123376288216,
+  "train_pr_auc": 0.6628300666767734,
+  "val_roc_auc": 0.6810398184443986,
+  "val_pr_auc": 0.6292346234391205,
+  "test_roc_auc": 0.750417215634607,
+  "test_pr_auc": 0.7315137647131779,
+  "best_epoch": 1,
+  "runtime_sec": 151.59716248512268,
+  "mean_rep_norm": 404.0959777832031,
+  "num_train": 968,
+  "num_val": 242,
+  "num_test": 303
+}

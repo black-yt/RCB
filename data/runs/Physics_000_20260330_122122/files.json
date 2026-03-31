@@ -1,0 +1,242 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_icosahedral_data.py",
+    "path": "code/analyze_icosahedral_data.py",
+    "type": "file",
+    "size": 14256,
+    "mtime": 1774863998.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "Multi-component Icosahedral Reproduction Data.txt",
+    "path": "data/Multi-component Icosahedral Reproduction Data.txt",
+    "type": "file",
+    "size": 4446,
+    "mtime": 1770187999.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "atomic_pair_compatibility_analysis.csv",
+    "path": "outputs/atomic_pair_compatibility_analysis.csv",
+    "type": "file",
+    "size": 284,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "atomic_radii.csv",
+    "path": "outputs/atomic_radii.csv",
+    "type": "file",
+    "size": 70,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_shell_pairings_ranked.csv",
+    "path": "outputs/candidate_shell_pairings_ranked.csv",
+    "type": "file",
+    "size": 16669,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "experimental_validation.csv",
+    "path": "outputs/experimental_validation.csv",
+    "type": "file",
+    "size": 295,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "growth_parameters.csv",
+    "path": "outputs/growth_parameters.csv",
+    "type": "file",
+    "size": 127,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "growth_results_annotated.csv",
+    "path": "outputs/growth_results_annotated.csv",
+    "type": "file",
+    "size": 279,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "mismatch_params.csv",
+    "path": "outputs/mismatch_params.csv",
+    "type": "file",
+    "size": 148,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "optimal_mismatch_ranges.csv",
+    "path": "outputs/optimal_mismatch_ranges.csv",
+    "type": "file",
+    "size": 151,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "path_selection_stats.csv",
+    "path": "outputs/path_selection_stats.csv",
+    "type": "file",
+    "size": 183,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "shell_energies.csv",
+    "path": "outputs/shell_energies.csv",
+    "type": "file",
+    "size": 103,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 3 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2317246,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 14876105,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 647192,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4836605,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "atomic_radii_overview.png",
+    "path": "report/images/atomic_radii_overview.png",
+    "type": "file",
+    "size": 105786,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "experimental_validation.png",
+    "path": "report/images/experimental_validation.png",
+    "type": "file",
+    "size": 166322,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "growth_trajectories.png",
+    "path": "report/images/growth_trajectories.png",
+    "type": "file",
+    "size": 219147,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "path_selection_statistics.png",
+    "path": "report/images/path_selection_statistics.png",
+    "type": "file",
+    "size": 224595,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "reported_vs_computed_mismatch.png",
+    "path": "report/images/reported_vs_computed_mismatch.png",
+    "type": "file",
+    "size": 195418,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "top_predicted_pairs.png",
+    "path": "report/images/top_predicted_pairs.png",
+    "type": "file",
+    "size": 219258,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "validated_clusters_mismatch.png",
+    "path": "report/images/validated_clusters_mismatch.png",
+    "type": "file",
+    "size": 228112,
+    "mtime": 1774863996.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15867,
+    "mtime": 1774871516.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5790,
+    "mtime": 1774844482.0,
+    "exported": true
+  }
+]

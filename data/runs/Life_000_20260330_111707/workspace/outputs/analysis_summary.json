@@ -1,0 +1,9 @@
+{
+  "primary_target": "Glass (kPa)_10s",
+  "secondary_target": "Steel (kPa)_10s",
+  "high_strength_threshold_kpa": 100.0,
+  "best_regression_model": "gbr",
+  "best_classification_model": "logreg",
+  "n_training_samples": 184,
+  "n_high_strength": 20
+}

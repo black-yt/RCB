@@ -1,0 +1,227 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_ulb_analysis.py",
+    "path": "code/run_ulb_analysis.py",
+    "type": "file",
+    "size": 11797,
+    "mtime": 1774864774.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "IRAS_09149-6206_samples.dat",
+    "path": "data/IRAS_09149-6206_samples.dat",
+    "type": "file",
+    "size": 320220,
+    "mtime": 1770794836.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "M33_X-7_samples.dat",
+    "path": "data/M33_X-7_samples.dat",
+    "type": "file",
+    "size": 58949,
+    "mtime": 1770794838.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "pdf_extracts",
+    "path": "outputs/pdf_extracts",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.txt",
+    "path": "outputs/pdf_extracts/paper_000.txt",
+    "type": "file",
+    "size": 49388,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.txt",
+    "path": "outputs/pdf_extracts/paper_001.txt",
+    "type": "file",
+    "size": 12015,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.txt",
+    "path": "outputs/pdf_extracts/paper_002.txt",
+    "type": "file",
+    "size": 27291,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.txt",
+    "path": "outputs/pdf_extracts/paper_003.txt",
+    "type": "file",
+    "size": 68315,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 385,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "data_summary.csv",
+    "path": "outputs/data_summary.csv",
+    "type": "file",
+    "size": 535,
+    "mtime": 1774864770.0,
+    "exported": true
+  },
+  {
+    "name": "mass_grid_results.csv",
+    "path": "outputs/mass_grid_results.csv",
+    "type": "file",
+    "size": 94610,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "self_interaction_results.csv",
+    "path": "outputs/self_interaction_results.csv",
+    "type": "file",
+    "size": 624019,
+    "mtime": 1774864770.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2112232,
+    "mtime": 1773914882.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 3670587,
+    "mtime": 1773914882.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1510057,
+    "mtime": 1773914882.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2337811,
+    "mtime": 1773914882.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "critical_spin_boundaries.png",
+    "path": "report/images/critical_spin_boundaries.png",
+    "type": "file",
+    "size": 309720,
+    "mtime": 1774864774.0,
+    "exported": true
+  },
+  {
+    "name": "exclusion_probability.png",
+    "path": "report/images/exclusion_probability.png",
+    "type": "file",
+    "size": 118897,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "model_validation.png",
+    "path": "report/images/model_validation.png",
+    "type": "file",
+    "size": 90497,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "posterior_correlation.png",
+    "path": "report/images/posterior_correlation.png",
+    "type": "file",
+    "size": 821412,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "posterior_overview.png",
+    "path": "report/images/posterior_overview.png",
+    "type": "file",
+    "size": 206410,
+    "mtime": 1774864772.0,
+    "exported": true
+  },
+  {
+    "name": "self_interaction_sensitivity.png",
+    "path": "report/images/self_interaction_sensitivity.png",
+    "type": "file",
+    "size": 138602,
+    "mtime": 1774864774.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13906,
+    "mtime": 1774871473.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5421,
+    "mtime": 1774835048.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,7 @@
+parameter,value
+temperature,300.0
+deposition_rate,0.01
+simulation_steps,1000.0
+beta_factor,1.0
+delta_opt,0.04
+random_seed,42.0

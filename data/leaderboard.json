@@ -21,6 +21,7 @@
   "agents": [
     "Claude Code",
     "Codex CLI",
+    "EvoScientist",
     "Nanobot",
     "OpenClaw"
   ],
@@ -115,6 +116,48 @@
       "Physics_000": {
         "score": 32.1,
         "run_id": "Physics_000_20260321_011953"
+      }
+    },
+    "EvoScientist": {
+      "Astronomy_000": {
+        "score": 11.5,
+        "run_id": "Astronomy_000_20260330_094408"
+      },
+      "Chemistry_000": {
+        "score": 7.5,
+        "run_id": "Chemistry_000_20260330_095531"
+      },
+      "Earth_000": {
+        "score": 12.8,
+        "run_id": "Earth_000_20260330_104037"
+      },
+      "Energy_000": {
+        "score": 12.4,
+        "run_id": "Energy_000_20260330_104517"
+      },
+      "Information_000": {
+        "score": 7.2,
+        "run_id": "Information_000_20260330_111006"
+      },
+      "Life_000": {
+        "score": 7.05,
+        "run_id": "Life_000_20260330_111707"
+      },
+      "Material_000": {
+        "score": 17.5,
+        "run_id": "Material_000_20260330_112849"
+      },
+      "Math_000": {
+        "score": 8.0,
+        "run_id": "Math_000_20260330_120257"
+      },
+      "Neuroscience_000": {
+        "score": 13.6,
+        "run_id": "Neuroscience_000_20260330_121229"
+      },
+      "Physics_000": {
+        "score": 19.2,
+        "run_id": "Physics_000_20260330_122122"
       }
     },
     "Nanobot": {
@@ -212,7 +255,7 @@
     "Life_002": 9.7,
     "Material_000": 23.0,
     "Math_000": 26.65,
-    "Neuroscience_000": 8.6,
+    "Neuroscience_000": 13.6,
     "Neuroscience_001": 4.95,
     "Physics_000": 32.1,
     "Physics_003": 46.5

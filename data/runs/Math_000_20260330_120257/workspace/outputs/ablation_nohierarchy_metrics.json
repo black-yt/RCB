@@ -1,0 +1,24 @@
+{
+  "overall": {
+    "idf1": 0.057514354861671335,
+    "idp": 0.5647716682199441,
+    "idr": 0.0303,
+    "mota": 0.050449999999999995,
+    "motp": 0.23518269324892024,
+    "num_switches": 62.0,
+    "num_false_positives": 1.0,
+    "num_misses": 18928.0,
+    "mostly_tracked": 0.0,
+    "partially_tracked": 22.0,
+    "mostly_lost": 178.0,
+    "num_fragmentations": 183.0
+  },
+  "crowded": {
+    "idf1": 0.023940345368916798,
+    "mota": 0.01859999999999995,
+    "num_switches": 1.0,
+    "num_false_positives": 1.0,
+    "num_misses": 4905.0,
+    "num_fragmentations": 12.0
+  }
+}

@@ -10,6 +10,16 @@
     "total_score": 46.5
   },
   {
+    "run_id": "Physics_000_20260330_122122",
+    "task_id": "Physics_000",
+    "timestamp": "20260330_122122",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 390,
+    "total_score": 19.2
+  },
+  {
     "run_id": "Physics_000_20260326_151123",
     "task_id": "Physics_000",
     "timestamp": "20260326_151123",
@@ -60,6 +70,16 @@
     "total_score": 4.95
   },
   {
+    "run_id": "Neuroscience_000_20260330_121229",
+    "task_id": "Neuroscience_000",
+    "timestamp": "20260330_121229",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 533,
+    "total_score": 13.6
+  },
+  {
     "run_id": "Neuroscience_000_20260321_010354",
     "task_id": "Neuroscience_000",
     "timestamp": "20260321_010354",
@@ -70,6 +90,16 @@
     "total_score": 8.6
   },
   {
+    "run_id": "Math_000_20260330_120257",
+    "task_id": "Math_000",
+    "timestamp": "20260330_120257",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 572,
+    "total_score": 8.0
+  },
+  {
     "run_id": "Math_000_20260321_013909",
     "task_id": "Math_000",
     "timestamp": "20260321_013909",
@@ -78,6 +108,16 @@
     "model": "gpt-5.4",
     "duration_seconds": 498,
     "total_score": 26.65
+  },
+  {
+    "run_id": "Material_000_20260330_112849",
+    "task_id": "Material_000",
+    "timestamp": "20260330_112849",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 2047,
+    "total_score": 17.5
   },
   {
     "run_id": "Material_000_20260326_151955",
@@ -140,6 +180,16 @@
     "total_score": 19.55
   },
   {
+    "run_id": "Life_000_20260330_111707",
+    "task_id": "Life_000",
+    "timestamp": "20260330_111707",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 702,
+    "total_score": 7.05
+  },
+  {
     "run_id": "Life_000_20260326_143503",
     "task_id": "Life_000",
     "timestamp": "20260326_143503",
@@ -178,6 +228,16 @@
     "model": "gpt-5.4",
     "duration_seconds": 871,
     "total_score": 7.55
+  },
+  {
+    "run_id": "Information_000_20260330_111006",
+    "task_id": "Information_000",
+    "timestamp": "20260330_111006",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 421,
+    "total_score": 7.2
   },
   {
     "run_id": "Information_000_20260325_164339",
@@ -230,6 +290,16 @@
     "total_score": 31.0
   },
   {
+    "run_id": "Energy_000_20260330_104517",
+    "task_id": "Energy_000",
+    "timestamp": "20260330_104517",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 1488,
+    "total_score": 12.4
+  },
+  {
     "run_id": "Energy_000_20260325_151836",
     "task_id": "Energy_000",
     "timestamp": "20260325_151836",
@@ -280,6 +350,16 @@
     "total_score": 22.6
   },
   {
+    "run_id": "Earth_000_20260330_104037",
+    "task_id": "Earth_000",
+    "timestamp": "20260330_104037",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 279,
+    "total_score": 12.8
+  },
+  {
     "run_id": "Earth_000_20260325_144124",
     "task_id": "Earth_000",
     "timestamp": "20260325_144124",
@@ -318,6 +398,16 @@
     "model": "claude-opus-4-6[1m]",
     "duration_seconds": 604,
     "total_score": 24.6
+  },
+  {
+    "run_id": "Chemistry_000_20260330_095531",
+    "task_id": "Chemistry_000",
+    "timestamp": "20260330_095531",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 2706,
+    "total_score": 7.5
   },
   {
     "run_id": "Chemistry_000_20260325_142150",
@@ -368,6 +458,16 @@
     "model": "",
     "duration_seconds": 242,
     "total_score": 11.6
+  },
+  {
+    "run_id": "Astronomy_000_20260330_094408",
+    "task_id": "Astronomy_000",
+    "timestamp": "20260330_094408",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "gpt-5.4",
+    "duration_seconds": 683,
+    "total_score": 11.5
   },
   {
     "run_id": "Astronomy_000_20260325_124221",

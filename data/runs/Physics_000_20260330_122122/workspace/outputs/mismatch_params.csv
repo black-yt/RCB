@@ -1,0 +1,6 @@
+shell_i,shell_j,inner_category,outer_category,theoretical_mismatch
+1,2,MC,MC,0.04
+1,2,MC,Ch1,0.14
+2,3,MC,MC,0.038
+2,3,MC,Ch1,0.136
+2,3,Ch1,Ch2,0.21

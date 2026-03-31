@@ -1,0 +1,121 @@
+{
+  "mode": "focal",
+  "per_seed": [
+    {
+      "seed": 0,
+      "mode": "focal",
+      "val_metrics_pr_auc": 0.06128879838813277,
+      "val_metrics_roc_auc": 0.47776315789473683,
+      "val_metrics_precision_at_20": 0.05,
+      "val_metrics_recall_at_20": 0.05,
+      "val_metrics_enrichment_at_20": 1.0,
+      "val_metrics_precision_at_50": 0.08,
+      "val_metrics_recall_at_50": 0.2,
+      "val_metrics_enrichment_at_50": 1.5999999999999999,
+      "val_metrics_precision_at_100": 0.05,
+      "val_metrics_recall_at_100": 0.25,
+      "val_metrics_enrichment_at_100": 1.0,
+      "candidate_metrics_pr_auc": 0.03644160953672056,
+      "candidate_metrics_roc_auc": 0.41269956987679524,
+      "candidate_metrics_precision_at_20": 0.0,
+      "candidate_metrics_recall_at_20": 0.0,
+      "candidate_metrics_enrichment_at_20": 0.0,
+      "candidate_metrics_precision_at_50": 0.02,
+      "candidate_metrics_recall_at_50": 0.023255813953488372,
+      "candidate_metrics_enrichment_at_50": 0.4651162790697675,
+      "candidate_metrics_precision_at_100": 0.02,
+      "candidate_metrics_recall_at_100": 0.046511627906976744,
+      "candidate_metrics_enrichment_at_100": 0.4651162790697675
+    }
+  ],
+  "aggregate": {
+    "val_metrics_pr_auc": {
+      "mean": 0.06128879838813277,
+      "std": NaN
+    },
+    "val_metrics_roc_auc": {
+      "mean": 0.47776315789473683,
+      "std": NaN
+    },
+    "val_metrics_precision_at_20": {
+      "mean": 0.05,
+      "std": NaN
+    },
+    "val_metrics_recall_at_20": {
+      "mean": 0.05,
+      "std": NaN
+    },
+    "val_metrics_enrichment_at_20": {
+      "mean": 1.0,
+      "std": NaN
+    },
+    "val_metrics_precision_at_50": {
+      "mean": 0.08,
+      "std": NaN
+    },
+    "val_metrics_recall_at_50": {
+      "mean": 0.2,
+      "std": NaN
+    },
+    "val_metrics_enrichment_at_50": {
+      "mean": 1.5999999999999999,
+      "std": NaN
+    },
+    "val_metrics_precision_at_100": {
+      "mean": 0.05,
+      "std": NaN
+    },
+    "val_metrics_recall_at_100": {
+      "mean": 0.25,
+      "std": NaN
+    },
+    "val_metrics_enrichment_at_100": {
+      "mean": 1.0,
+      "std": NaN
+    },
+    "candidate_metrics_pr_auc": {
+      "mean": 0.03644160953672056,
+      "std": NaN
+    },
+    "candidate_metrics_roc_auc": {
+      "mean": 0.41269956987679524,
+      "std": NaN
+    },
+    "candidate_metrics_precision_at_20": {
+      "mean": 0.0,
+      "std": NaN
+    },
+    "candidate_metrics_recall_at_20": {
+      "mean": 0.0,
+      "std": NaN
+    },
+    "candidate_metrics_enrichment_at_20": {
+      "mean": 0.0,
+      "std": NaN
+    },
+    "candidate_metrics_precision_at_50": {
+      "mean": 0.02,
+      "std": NaN
+    },
+    "candidate_metrics_recall_at_50": {
+      "mean": 0.023255813953488372,
+      "std": NaN
+    },
+    "candidate_metrics_enrichment_at_50": {
+      "mean": 0.4651162790697675,
+      "std": NaN
+    },
+    "candidate_metrics_precision_at_100": {
+      "mean": 0.02,
+      "std": NaN
+    },
+    "candidate_metrics_recall_at_100": {
+      "mean": 0.046511627906976744,
+      "std": NaN
+    },
+    "candidate_metrics_enrichment_at_100": {
+      "mean": 0.4651162790697675,
+      "std": NaN
+    }
+  }
+}
