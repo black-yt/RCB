@@ -1,0 +1,27 @@
+Execution summary:
+- Ran the main analysis entry point: python code/run_analysis.py
+- The script completed successfully and reported that analysis outputs were written to outputs/ and figures were written to report/images/.
+
+Verification of generated artifacts:
+- Substantive tabular outputs were produced, including:
+  - outputs/skempi_with_ddg.csv (1,964,293 bytes): SKEMPI 2.0 dataset with parsed temperatures, single/multi-mutation flags, and computed ΔΔG values.
+  - outputs/interface_residue_pairs.csv (698,799 bytes): full barnase–barstar inter-chain residue-pair distance table derived from data/1brs_AD.pdb.
+  - outputs/barnase_barstar_skempi_annotated.csv (33,588 bytes): 1BRS-specific SKEMPI subset annotated with structure-based interface and distance features.
+  - outputs/interface_residue_summary.csv (12,426 bytes): per-residue interface summary for chains A and D.
+  - outputs/top_interface_residues.csv and JSON summary/statistics files.
+- Figure files were also produced under report/images/, including:
+  - report/images/skempi_ddg_distribution.png
+  - report/images/interface_contact_profile.png
+  - report/images/interface_distance_heatmap.png
+  - report/images/barnase_barstar_ddg_vs_distance.png
+  - report/images/barnase_barstar_ddg_by_chain.png
+
+Task-specific analysis completed:
+- Parsed the 1BRS barnase–barstar structure.
+- Computed residue-level inter-chain contacts and interface descriptors.
+- Processed SKEMPI mutation-affinity data and calculated ΔΔG values.
+- Annotated barnase–barstar mutations with native-structure proximity/interface features.
+- Generated report-ready figures and saved reproducible outputs for later reporting.
+
+Note:
+- report/report.md was not created or modified in this step, per instruction.

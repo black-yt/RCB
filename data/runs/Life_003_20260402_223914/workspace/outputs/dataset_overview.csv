@@ -1,0 +1,9 @@
+dataset,type,rows,columns,missing_values,notes
+DNA r9.4.1 6-mer,pore_model,4096,17,0,k=6
+DNA r10.4.1 9-mer,pore_model,262144,17,0,k=9
+RNA r9.4.1 5-mer,pore_model,1024,17,0,k=5
+RNA004 9-mer,pore_model,262144,17,0,k=9
+performance_summary,benchmark,16,4,8,"tools=4, chemistries=4"
+m6a_labels,labels,5000,2,0,positive_rate=0.2048
+m6a_predictions_uncalled4,predictions,5000,2,0,probability scores
+m6a_predictions_nanopolish,predictions,5000,2,0,probability scores

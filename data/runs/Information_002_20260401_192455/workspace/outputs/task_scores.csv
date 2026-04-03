@@ -1,0 +1,18 @@
+task_index,task_name,in_paper,prompt_quality,follow_instructions,physics_logic,math_derivation,final_answer_accuracy,total_score,n_scored_dims
+0,Task 1,,,,,,,0,0
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",1.0,1.0,1.0,2.0,2.0,1.0,8,6
+2,Define each term in Kinetic Hamiltonian (continuum version),2.0,2.0,1.0,2.0,2.0,1.0,10,6
+3,Construct Potential Hamiltonian (continuum version),1.0,2.0,2.0,2.0,2.0,2.0,11,6
+4,Define each term in Potential Hamiltonian (continuum version),2.0,2.0,2.0,2.0,2.0,2.0,12,6
+5,"Convert from single-particle to second-quantized form, return in matrix",2.0,2.0,2.0,2.0,2.0,2.0,12,6
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",2.0,2.0,2.0,2.0,1.0,1.0,10,6
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),2.0,2.0,2.0,2.0,2.0,1.0,11,6
+8,Particle-hole transformation,0.0,2.0,2.0,2.0,2.0,2.0,10,6
+9,Simplify the Hamiltonian in the particle-hole basis,2.0,1.0,2.0,2.0,2.0,2.0,11,6
+10,Construct interaction Hamiltonian (momentum space),2.0,2.0,2.0,2.0,2.0,2.0,12,6
+11,Wick's theorem,0.0,2.0,2.0,2.0,2.0,2.0,10,6
+12,Extract quadratic term,0.0,2.0,2.0,2.0,2.0,2.0,10,6
+13,Swap the index to combine Hartree and Fock terms,2.0,1.0,2.0,2.0,2.0,2.0,11,6
+14,Reduce momentum in Hartree term (momentum in BZ + reciprocal lattice),2.0,2.0,2.0,2.0,1.0,2.0,11,6
+15,Reduce momentum in Fock term (momentum in BZ + reciprocal lattice),2.0,2.0,2.0,2.0,2.0,2.0,12,6
+16,Combine the Hartree and Fock term,2.0,2.0,2.0,2.0,2.0,2.0,12,6

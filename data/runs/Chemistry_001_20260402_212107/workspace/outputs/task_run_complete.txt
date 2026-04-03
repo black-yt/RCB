@@ -1,0 +1,19 @@
+Executed: `python code/run_analysis.py` from the workspace root.
+
+Verification: the analysis script completed successfully (exit code 0) and printed `Analysis complete. Outputs written to outputs/ and report/images/.`
+
+Artifacts produced under outputs/:
+- outputs/analysis_notes.txt
+- outputs/analysis_summary.json
+- outputs/diffusion_metrics.json
+- outputs/framework_specification.json
+- outputs/protein_ligand_contacts.csv
+- outputs/task_understanding.txt
+
+Artifacts produced under report/images/:
+- report/images/contact_profile.png
+- report/images/data_overview.png
+- report/images/diffusion_validation.png
+- report/images/protein_ligand_distance_map.png
+
+Substantive generated files were confirmed, including structured analysis summaries (`analysis_summary.json`, `framework_specification.json`), evaluation outputs (`diffusion_metrics.json`, `protein_ligand_contacts.csv`), and multiple report-ready figures in `report/images/`.

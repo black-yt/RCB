@@ -1,0 +1,266 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "autonomous_optimization.py",
+    "path": "code/autonomous_optimization.py",
+    "type": "file",
+    "size": 13219,
+    "mtime": 1775131790.0,
+    "exported": true
+  },
+  {
+    "name": "data_exploration.py",
+    "path": "code/data_exploration.py",
+    "type": "file",
+    "size": 10475,
+    "mtime": 1775131790.0,
+    "exported": true
+  },
+  {
+    "name": "multimodal_integration.py",
+    "path": "code/multimodal_integration.py",
+    "type": "file",
+    "size": 15080,
+    "mtime": 1775131790.0,
+    "exported": true
+  },
+  {
+    "name": "property_prediction.py",
+    "path": "code/property_prediction.py",
+    "type": "file",
+    "size": 11205,
+    "mtime": 1775131790.0,
+    "exported": true
+  },
+  {
+    "name": "structure_generation.py",
+    "path": "code/structure_generation.py",
+    "type": "file",
+    "size": 11057,
+    "mtime": 1775131790.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "M-AI-Synth__Materials_AI_Dataset_.txt",
+    "path": "data/M-AI-Synth__Materials_AI_Dataset_.txt",
+    "type": "file",
+    "size": 3970,
+    "mtime": 1770620672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "a_gen.npy",
+    "path": "outputs/a_gen.npy",
+    "type": "file",
+    "size": 2128,
+    "mtime": 1775131786.0,
+    "exported": false
+  },
+  {
+    "name": "atom_features.npy",
+    "path": "outputs/atom_features.npy",
+    "type": "file",
+    "size": 928,
+    "mtime": 1775131784.0,
+    "exported": false
+  },
+  {
+    "name": "b_gen.npy",
+    "path": "outputs/b_gen.npy",
+    "type": "file",
+    "size": 2128,
+    "mtime": 1775131786.0,
+    "exported": false
+  },
+  {
+    "name": "best_so_far.npy",
+    "path": "outputs/best_so_far.npy",
+    "type": "file",
+    "size": 456,
+    "mtime": 1775131786.0,
+    "exported": false
+  },
+  {
+    "name": "dataset_summary.json",
+    "path": "outputs/dataset_summary.json",
+    "type": "file",
+    "size": 420,
+    "mtime": 1775131784.0,
+    "exported": true
+  },
+  {
+    "name": "E_f.npy",
+    "path": "outputs/E_f.npy",
+    "type": "file",
+    "size": 936,
+    "mtime": 1775131786.0,
+    "exported": false
+  },
+  {
+    "name": "E_g.npy",
+    "path": "outputs/E_g.npy",
+    "type": "file",
+    "size": 936,
+    "mtime": 1775131786.0,
+    "exported": false
+  },
+  {
+    "name": "edge_features.npy",
+    "path": "outputs/edge_features.npy",
+    "type": "file",
+    "size": 904,
+    "mtime": 1775131786.0,
+    "exported": false
+  },
+  {
+    "name": "edges.npy",
+    "path": "outputs/edges.npy",
+    "type": "file",
+    "size": 288,
+    "mtime": 1775131786.0,
+    "exported": false
+  },
+  {
+    "name": "fusion_comparison.json",
+    "path": "outputs/fusion_comparison.json",
+    "type": "file",
+    "size": 1079,
+    "mtime": 1775131786.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 16 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2155763,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2638490,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 891813,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 510141,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_data_overview.png",
+    "path": "report/images/fig1_data_overview.png",
+    "type": "file",
+    "size": 410478,
+    "mtime": 1775131788.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_property_prediction.png",
+    "path": "report/images/fig2_property_prediction.png",
+    "type": "file",
+    "size": 401845,
+    "mtime": 1775131788.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_structure_generation.png",
+    "path": "report/images/fig3_structure_generation.png",
+    "type": "file",
+    "size": 434178,
+    "mtime": 1775131788.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_bayesian_optimization.png",
+    "path": "report/images/fig4_bayesian_optimization.png",
+    "type": "file",
+    "size": 338955,
+    "mtime": 1775131788.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_multimodal_integration.png",
+    "path": "report/images/fig5_multimodal_integration.png",
+    "type": "file",
+    "size": 259284,
+    "mtime": 1775131788.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_summary_benchmark.png",
+    "path": "report/images/fig6_summary_benchmark.png",
+    "type": "file",
+    "size": 119690,
+    "mtime": 1775131788.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 25190,
+    "mtime": 1775131791.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5377,
+    "mtime": 1775054632.0,
+    "exported": true
+  }
+]

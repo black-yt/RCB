@@ -1,0 +1,181 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_carrier.py",
+    "path": "code/analysis_carrier.py",
+    "type": "file",
+    "size": 1935,
+    "mtime": 1775139886.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_current.py",
+    "path": "code/analysis_current.py",
+    "type": "file",
+    "size": 7180,
+    "mtime": 1775139886.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_temperature.py",
+    "path": "code/analysis_temperature.py",
+    "type": "file",
+    "size": 11966,
+    "mtime": 1775139886.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "MATBG Superfluid Stiffness Core Dataset.txt",
+    "path": "data/MATBG Superfluid Stiffness Core Dataset.txt",
+    "type": "file",
+    "size": 19467,
+    "mtime": 1770189695.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "carrier_dependence_analysis.npz",
+    "path": "outputs/carrier_dependence_analysis.npz",
+    "type": "file",
+    "size": 4544,
+    "mtime": 1775139884.0,
+    "exported": false
+  },
+  {
+    "name": "current_dependence_analysis.npz",
+    "path": "outputs/current_dependence_analysis.npz",
+    "type": "file",
+    "size": 3140,
+    "mtime": 1775139884.0,
+    "exported": false
+  },
+  {
+    "name": "T_dependence_analysis.npz",
+    "path": "outputs/T_dependence_analysis.npz",
+    "type": "file",
+    "size": 2178,
+    "mtime": 1775139884.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3666801,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 225641,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3542674,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 17317606,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "carrier_dependence.png",
+    "path": "report/images/carrier_dependence.png",
+    "type": "file",
+    "size": 58284,
+    "mtime": 1775139884.0,
+    "exported": true
+  },
+  {
+    "name": "current_dependence_dc.png",
+    "path": "report/images/current_dependence_dc.png",
+    "type": "file",
+    "size": 76283,
+    "mtime": 1775139884.0,
+    "exported": true
+  },
+  {
+    "name": "current_dependence_mw.png",
+    "path": "report/images/current_dependence_mw.png",
+    "type": "file",
+    "size": 38522,
+    "mtime": 1775139884.0,
+    "exported": true
+  },
+  {
+    "name": "T_dependence_overview.png",
+    "path": "report/images/T_dependence_overview.png",
+    "type": "file",
+    "size": 71392,
+    "mtime": 1775139884.0,
+    "exported": true
+  },
+  {
+    "name": "T_powerlaw_compare.png",
+    "path": "report/images/T_powerlaw_compare.png",
+    "type": "file",
+    "size": 77938,
+    "mtime": 1775139886.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 8698,
+    "mtime": 1775139887.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5571,
+    "mtime": 1775019680.0,
+    "exported": true
+  }
+]

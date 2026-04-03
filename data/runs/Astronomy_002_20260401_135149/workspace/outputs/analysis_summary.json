@@ -1,0 +1,23 @@
+{
+  "published_target_h0": 73.5,
+  "published_target_err": 0.81,
+  "early_universe_reference_h0": 67.4,
+  "early_universe_reference_err": 0.5,
+  "baseline_variant": {
+    "h0": 115.5,
+    "h0_err_low": 9.349999999999994,
+    "h0_err_high": 10.150000000000006,
+    "m_abs": -19.457518801484728,
+    "m_abs_err": 0.0710412450781495,
+    "sigma_cal": 0.4174684730588497,
+    "sigma_flow": 0.16309947475556164
+  },
+  "sbf_rank_diagnostic": {
+    "n_sbf_calibrators": 3,
+    "n_group_parameters": 2,
+    "design_rank": 2,
+    "n_parameters": 3,
+    "min_singular_value": 3.4645420954370374e-17,
+    "max_singular_value": 2.175327747161075
+  }
+}

@@ -1,0 +1,148 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_cropping_framework.py",
+    "path": "code/analyze_cropping_framework.py",
+    "type": "file",
+    "size": 2292,
+    "mtime": 1775133724.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "demo_imgs",
+    "path": "data/demo_imgs",
+    "type": "directory"
+  },
+  {
+    "name": "demo1.png",
+    "path": "data/demo_imgs/demo1.png",
+    "type": "file",
+    "size": 179505,
+    "mtime": 1770297040.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "demo2.png",
+    "path": "data/demo_imgs/demo2.png",
+    "type": "file",
+    "size": 2121327,
+    "mtime": 1770297040.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "method_case.png",
+    "path": "data/demo_imgs/method_case.png",
+    "type": "file",
+    "size": 1626509,
+    "mtime": 1770297040.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "image_summary.csv",
+    "path": "outputs/image_summary.csv",
+    "type": "file",
+    "size": 141,
+    "mtime": 1775133718.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 4558893,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8166173,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 6663910,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 7823571,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "demo_images_overview.png",
+    "path": "report/images/demo_images_overview.png",
+    "type": "file",
+    "size": 4555568,
+    "mtime": 1775133722.0,
+    "exported": false
+  },
+  {
+    "name": "image_resolutions.png",
+    "path": "report/images/image_resolutions.png",
+    "type": "file",
+    "size": 91912,
+    "mtime": 1775133722.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 10672,
+    "mtime": 1775133725.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4815,
+    "mtime": 1774959697.0,
+    "exported": true
+  }
+]

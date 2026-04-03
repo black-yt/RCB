@@ -1,0 +1,237 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_experiments.py",
+    "path": "code/run_experiments.py",
+    "type": "file",
+    "size": 15549,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "NF-UNSW-NB15-v2_3d.pt",
+    "path": "data/NF-UNSW-NB15-v2_3d.pt",
+    "type": "file",
+    "size": 32733515,
+    "mtime": 1757405180.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "data_meta.json",
+    "path": "outputs/data_meta.json",
+    "type": "file",
+    "size": 261,
+    "mtime": 1775139694.0,
+    "exported": true
+  },
+  {
+    "name": "gcn_metrics.json",
+    "path": "outputs/gcn_metrics.json",
+    "type": "file",
+    "size": 11892,
+    "mtime": 1775139694.0,
+    "exported": true
+  },
+  {
+    "name": "gcn_node_embeddings.pt",
+    "path": "outputs/gcn_node_embeddings.pt",
+    "type": "file",
+    "size": 63796957,
+    "mtime": 1775139714.0,
+    "exported": false
+  },
+  {
+    "name": "logreg_metrics.json",
+    "path": "outputs/logreg_metrics.json",
+    "type": "file",
+    "size": 12380,
+    "mtime": 1775139694.0,
+    "exported": true
+  },
+  {
+    "name": "mlp_metrics.json",
+    "path": "outputs/mlp_metrics.json",
+    "type": "file",
+    "size": 11734,
+    "mtime": 1775139694.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2630694,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2581990,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 993448,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3459382,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_attack_distribution.png",
+    "path": "report/images/data_attack_distribution.png",
+    "type": "file",
+    "size": 45471,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "data_temporal_distribution.png",
+    "path": "report/images/data_temporal_distribution.png",
+    "type": "file",
+    "size": 41557,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "data_tsne_node_features.png",
+    "path": "report/images/data_tsne_node_features.png",
+    "type": "file",
+    "size": 118553,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "gcn_test_cm.png",
+    "path": "report/images/gcn_test_cm.png",
+    "type": "file",
+    "size": 79808,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "gcn_train_cm.png",
+    "path": "report/images/gcn_train_cm.png",
+    "type": "file",
+    "size": 56386,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "gcn_val_cm.png",
+    "path": "report/images/gcn_val_cm.png",
+    "type": "file",
+    "size": 73549,
+    "mtime": 1775139714.0,
+    "exported": true
+  },
+  {
+    "name": "logreg_test_cm.png",
+    "path": "report/images/logreg_test_cm.png",
+    "type": "file",
+    "size": 74194,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "logreg_train_cm.png",
+    "path": "report/images/logreg_train_cm.png",
+    "type": "file",
+    "size": 57373,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "logreg_val_cm.png",
+    "path": "report/images/logreg_val_cm.png",
+    "type": "file",
+    "size": 75797,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "mlp_test_cm.png",
+    "path": "report/images/mlp_test_cm.png",
+    "type": "file",
+    "size": 65404,
+    "mtime": 1775139714.0,
+    "exported": true
+  },
+  {
+    "name": "mlp_train_cm.png",
+    "path": "report/images/mlp_train_cm.png",
+    "type": "file",
+    "size": 49995,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "mlp_val_cm.png",
+    "path": "report/images/mlp_val_cm.png",
+    "type": "file",
+    "size": 72030,
+    "mtime": 1775139716.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 17347,
+    "mtime": 1775139717.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5658,
+    "mtime": 1774960064.0,
+    "exported": true
+  }
+]

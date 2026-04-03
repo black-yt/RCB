@@ -1,0 +1,1047 @@
+MethodsX 12 (2024) 102660
+
+Contents lists available at ScienceDirect
+
+MethodsX
+journal homepage: www.elsevier.com/locate/methodsx
+
+GeoH2 model: Geospatial cost optimization of green hydrogen
+production including storage and transportation ✩
+Claire Halloran, Alycia Leonard∗, Nicholas Salmon, Leander Müller1,
+Stephanie Hirmer
+Department of Engineering Science, University of Oxford, Parks Road, OX1 3PJ, United Kingdom
+
+a r t i c l e
+
+i n f o
+
+Method name:
+GeoH2
+Keywords:
+GIS
+Ammonia
+Levelized cost of hydrogen
+Renewable energy
+Power-to-X
+
+a b s t r a c t
+This paper presents GeoH2, a geospatial model that optimizes the cost of green hydrogen production, storage, transport, and conversion. This model calculates the cost of producing green
+hydrogen in a speciﬁed location to meet demand in another location by:
+• Optimizing hydrogen conversion and transport from production site to demand site
+• Optimizing green hydrogen production and storage based on spatially-speciﬁc wind and solar
+generation temporal availability
+This method allows users to map production costs throughout a region to identify the lowest-cost
+location of green hydrogen production to meet demand using a speciﬁed end-state for transportation and storage (i.e., pressurized hydrogen, ammonia, or liqueﬁed hydrogen). These modeled
+costs can be compared to current or projected prices for energy and chemical feedstock in the
+region to assess the cost-competitiveness of green hydrogen. The model is designed to run at a
+country or regional scale. A case study application is provided for the context of Namibia.
+
+Speciﬁcations table
+
+Subject area:
+More speciﬁc subject area:
+Name of your method:
+Name and reference of original method:
+
+Resource availability:
+
+Energy
+Energy system modelling
+GeoH2
+This method is an improved and adapted iteration upon work by Müller et al [1]. Müller, L. A., Leonard, A.,
+Trotter, P. A., & Hirmer, S. (2023). Green hydrogen production and use in low-and middle-income countries: A
+least-cost geospatial modelling approach applied to Kenya. Applied Energy, 343, 121219.
+This method is implemented open-source in Python at the project GitHub repository:
+https://github.com/ClimateCompatibleGrowth/GeoH2. The spatial data pre-processing toolkit for this method is
+available at https://github.com/ClimateCompatibleGrowth/GeoH2- data- prep.
+
+✩
+
+Related research article: Forthcoming - to be added following publication.
+Corresponding author.
+E-mail address: alycia.leonard@eng.ox.ac.uk (A. Leonard).
+Social media:
+@ClaireEHalloran (C. Halloran),
+@alycialeonard (A. Leonard),
+1
+For Leander Müller: Independent consultant.
+∗
+
+@StephiHi (S. Hirmer)
+
+https://doi.org/10.1016/j.mex.2024.102660
+Received 9 February 2024; Accepted 11 March 2024
+Available online 12 March 2024
+2215-0161/© 2024 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY license
+(http://creativecommons.org/licenses/by/4.0/)
+
+C. Halloran, A. Leonard, N. Salmon et al.
+
+MethodsX 12 (2024) 102660
+
+Motivation
+This paper presents GeoH2, a geospatial green hydrogen model which optimizes the production, storage, transport, and conversion
+of green hydrogen while accounting for the location of production and demand. It allows users to identify the lowest-cost location to
+construct greenﬁeld, non-grid-tied hydrogen production plants to meet a deﬁned temporal demand proﬁle using an optimised mix of
+wind, solar, battery storage, and hydrogen storage.
+Unlike existing commercial models, which do not account for storage and assume that demand is either completely ﬂexible [2] or
+can be co-optimised with production [3], this model integrates the practical constraints of storage and consistent supply necessary to
+facilitate industrial use of hydrogen. As many industrial processes require a consistent hydrogen input, this creates a far more realistic
+cost estimate than models which assume ﬂexible loading.
+This model builds upon a preliminary implementation in Kenya produced by Müller et al [1] in two key ways. First, whereas the
+original selected either wind or solar only, this version optimises both solar and wind in combination. It allows for hybrid system
+conﬁgurations and also co-optimises all other plant equipment and storage in this process. Second, whereas the ﬁrst iteration was
+purpose-built for Kenya, this version is made location-agnostic. Indeed, GeoH2 is now built for global applicability. It can be utilised
+in any user-speciﬁed area of interest (AOI) so long as input data for the speciﬁed location are added to the user-friendly input data
+sheets before running the model, and spatial data ﬁles for the area of interest are pre-processed. Spatial data for any area of interest
+can be downloaded and prepared as described in the ‘Method details’ section.
+The GeoH2 model, including input data sheet templates, is made open source at the following Github repository: https://github.
+com/ClimateCompatibleGrowth/GeoH2. A helper toolkit for spatial data pre-processing is available at https://github.com/Climate
+CompatibleGrowth/GeoH2- data- prep.
+Method details
+This section presents the basic workﬂow of steps to apply the GeoH2 model. It then goes through the theory behind each stage in
+detail.
+Workﬂow summary
+To use the GeoH2 model, the user can take the following steps. While this list is intended as a quick-reference for model usage,
+the full details are presented on each attribute are presented in the following subsections; please refer to these as needed. Step 1 uses
+the GeoH2-data-prep library, and steps 2-9 use the GeoH2 library. Both libraries are openly available under a CC-BY-4.0 license.
+1. Pre-process spatial data: Run the spatial_data_prep.py to convert raw data to common coordinate reference systems,
+ﬁle types, and naming conventions. Then, use the workflow.py script to interface with the GLAES package to constrain land
+availability in the AOI. Next, use the Country_config.yml ﬁle to interface with the SPIDER package to aggregate spatial
+data into H3 hexagons. Finally, combine the GLAES and SPIDER results using combine_glaes_spider.py. This generates
+a hexagon ﬁle ready for use in GeoH2. More details are available in the README.md ﬁle of the GeoH2-data-prep library. See
+Section ‘Spatial pre-processing’ for further details on this step.
+2. Specify input parameters: Specify input parameters in the Excel ﬁles found in the Parameters folder. These include technology
+availability, demand magnitude and location, country-speciﬁc costs and interest rates, transport, conversion, and weather data.
+See Section ‘Parameter speciﬁcation’ for further details on this step.
+3. Assign country to hexagons: Run the assign_country.py script to assign country-speciﬁc interest rates, technology lifetimes, and heat and electricity prices from country_parameters.xlsx to the input hexagons.
+4. Download weather data: Run the get_weather_data.py script to download historical weather data for the AOI and time
+period of interest speciﬁed in the weather parameters ﬁle weather_parameters.xlsx. See Section ‘Download weather data’
+for further details on this step.
+5. Optimize transport and conversion: Run the optimize_transport_and_conversion.py script to calculate the
+cost of the optimal hydrogen transportation and conversion strategy from each hexagon to each demand center using road
+transport and pipelines based on parameters from technology_parameters.xlsx, demand_parameters.xlsx, and
+country_parameters.xlsx. See Section ‘Optimize transport and conversion’ for further details on this step.
+6. Optimize green hydrogen plant: Run the optimize_hydrogen_plant.py script to design a green hydrogen plant to meet
+hydrogen demand for each demand center and for each transportation mode. Parameters are speciﬁed in the Basic_H2_plant
+folder, investment_parameters.xlsx, and demand_parameters.xlsx. See Section ‘Optimize green hydrogen plant’
+for further details on this step.
+7. Calculate water costs Run the water_cost.py script to calculate ocean and freshwater water costs for hydrogen production
+in each hexagon using technology_parameters.xlsx and country_parameters.xlsx. See Section ‘Water costs’ for
+further details on this step.
+8. Calculate and visualise total hydrogen costs: Run the total_hydrogen_cost.py script to ﬁnd the lowest-cost method
+of producing, transporting, and converting hydrogen in each hexagon for each demand center by combining the results of
+the optimize_transport_and_conversion.py, optimize_hydrogen_plant.py, and water_cost.py scripts.
+The costs_by_component.py script can be run after total_hydrogen_cost.py to split the levelized cost of hydrogen
+2
+
+C. Halloran, A. Leonard, N. Salmon et al.
+
+MethodsX 12 (2024) 102660
+
+Table 1
+Key spatial data inputs and recommended sources for GeoH2.
+Data
+
+Source
+
+Coastlines
+Country boundaries
+Land cover
+Water bodies
+Waterways
+Roads
+Protected areas
+
+Global Oceans and Seas [5]
+Natural Earth [6]
+Corine Land Cover (CLC) [7]
+OpenStreetMap [8]
+OpenStreetMap [8]
+OpenStreetMap [8]
+OpenStreetMap [8]
+
+(LCOH) into cost components associated to diﬀerent technologies (e.g., electrolyzer, wind, solar). Run the map_costs.py script
+to produce maps illustrating the results over the AOI. See Section ‘Total hydrogen costs’ for further details on this step.
+Spatial pre-processing
+Before running GeoH2, spatial input data for the AOI must be processed into a single GeoJSON ﬁle following the H3 hexagon
+standard [4]. Spatial input data are required to (1) constrain land availability for renewable energy infrastructure, and (2) calculate
+costs associated with transport and water supply in each hexagon. While the land availability constraints can be customized (i.e.,
+more or less constraints can be included based on the user’s preference), ﬁnal hexagons must include a distance to water bodies,
+waterways, and road networks to enable the transport and water calculations. As such, the essential spatial input data are: country
+boundaries, coastlines, waterways, water bodies, and roads. We also suggest including land availability constraints based on land
+cover classiﬁcations and protected areas, though these can be omitted or changed if desired. These data can be downloaded from the
+sources suggested in Table 1.
+The GeoH2-data-prep library facilitates spatial input data preparation [9]. Alongside performing conversions to common coordinate reference systems, ﬁle types, and naming conventions, this library interfaces with the Geospatial Land Availability for Energy
+Systems (GLAES) [10] and Spatially Integrated Development of Energy and Resources (SPIDER) [11] packages.
+The GLAES library is used to constrain land availability throughout the AOI in order to determine the maximum number of wind
+and solar installations which are theoretically possible in each hexagon. An example GLAES script (i.e., workflow.py) is provided
+in GeoH2-data-prep. This example constrains land availability based on land cover types obtained from Corine Land Cover (CLC)
+and distance from the coast and protected areas using 100 m resolution. It allocates 4 MW National Renewable Energy Laboratory
+reference turbines [12] and 100 MWp solar photovoltaic (PV) plants in the available area. For wind installations, this example
+excludes coastlines, protected areas, herbaceous wetlands, and permanent water bodies. For solar PV, it also excludes agricultural
+areas. It furthermore excludes a 250 m buﬀer around coastlines and protected areas. Note that this is just an example to illustrate
+GLAES usage. The resolution, turbine size, solar plant size, exclusion types, and buﬀers are project speciﬁc. The sample ﬁle must be
+customized to match the types of infrastructure available and the land constraints which are necessary in the AOI.
+The script saves the wind turbine and PV plant placements as.SHP ﬁles, and the excluded area for both wind and PV as.TIF ﬁles.
+The constraints on land availability can be customized by editing the workflow.py script based on user preferences.
+Next, the SPIDER library is used to generate H3 hexagons which tile across the AOI. These are the basis for the GeoH2 input
+spatial dataset. SPIDER is run using its own command line interface (CLI) – the user provides a conﬁguration ﬁle in the CLI which
+speciﬁes the features of the hexagons to be created. Details on running the CLI are available in the SPIDER documentation [13]. The
+GeoH2-data-prep library provides a SPIDER conﬁguration ﬁle (Country_config.yml) which can be used with the SPIDER
+CLI to generate the hexagons required for GeoH2. This conﬁguration speciﬁes level four H3 resolution and includes the distance from
+each hexagon to the nearest ocean, waterway, water body, and road as attributes. While the distance attributes must not be changed,
+as they are essential to processes in GeoH2, the H3 resolution can be changed to suit the user’s needs. Note that if a smaller hexagon
+size is used, this will increase the GeoH2 run-time.
+Finally, the results of GLAES and SPIDER (i.e., the theoretical turbine/PV placements and the hexagons with distance attributes) are
+combined to form the ﬁnal GeoH2 input ﬁle. The combine_glaes_spider.py script counts the number of turbines and the number of PV plants per hexagon and appends this number to each hexagon, producing a ﬁnal GeoJSON ready for use in the GeoH2 model.
+Parameter speciﬁcation
+Along with the spatial input ﬁle, a number of technical and economic parameters are inputs for the GeoH2 model. Input parameters
+include annual hydrogen demand, infrastructure prices, and the cost of capital for a snapshot in time. These parameters are speciﬁed
+in a set of Excel ﬁles in the Parameters folder in the GeoH2 library.
+The demand parameters ﬁle (demand_parameters.xlsx) deﬁnes a list of demand centers. The latitude and longitude of
+each demand center and the annual demand (in terms of hydrogen mass) and desired hydrogen state (i.e., 500 bar H2 , liquid H2 ,
+or NH3 ) must be speciﬁed. If multiple forms of hydrogen are demanded in one location, the demand center name must be diﬀerent
+(e.g., Nairobi H2 and Nairobi NH3 ), as duplicate demand center names will cause problems in the model.
+The country parameters ﬁle (country_parameters.xlsx) includes country- and technology-speciﬁc interest rates, heat and
+electricity costs, and asset lifetimes. These must be added for all countries in the AOI.
+3
+
+C. Halloran, A. Leonard, N. Salmon et al.
+
+MethodsX 12 (2024) 102660
+
+The weather parameters ﬁle (weather_parameters.xlsx) includes the geographic area, deﬁned with a latitude-longitude
+bounding box, and temporal range to download historical weather data from the European Centre for Medium-Range Weather Forecasts Reanalysis v5 (ERA5). This dataset is used to calculate wind and solar generation potential across the AOI. At least a year
+is recommended for the temporal range to capture seasonal variation in renewable potential, but longer time periods will increase
+computation time for optimizing the hydrogen plant design.
+The other parameters ﬁles specify the water, transport, and conversion requirements. The technology parameters
+ﬁle (technology_parameters.xlsx) speciﬁes costs and energy densities for water processing and road infrastructure, water demand, and whether road and hydrogen pipeline construction is allowed. The pipeline parameters ﬁle
+(pipeline_parameters.xlsx) includes the price, capacity, and lifetime data for diﬀerent sizes of hydrogen pipelines. The
+transport parameters ﬁle (transport_parameters.xlsx) includes the parameters related to road transport of hydrogen, including truck speed, cost, lifetime, and capacity. The conversion parameters ﬁle (conversion_parameters.xlsx) includes
+parameters related to converting between states of hydrogen.
+Additionally, in the Basic H2 plant folder, there are several comma-separated values (CSV) ﬁles containing the global parameters for optimizing the hydrogen plant design. All power units are MW and all energy units are MWh. For more information on
+these parameters, refer to the PyPSA documentation [14].
+Download weather data
+The get_weather_data.py script downloads weather data for the AOI from the ERA5 dataset [15] using the atlite [16] library. These data are used to model historical wind and solar generation potential and inform the hydrogen plant optimization.
+The ERA5 dataset is available at an hourly time resolution from 1940 to present and approximately 30 by 30 km spatial resolution.
+It is freely available to download for registered users. As such, GeoH2 users will need to register at the Copernicus Climate Data Store
+and set up their API key before running this script.
+Optimize transport and conversion
+The optimize_transport_and_conversion.py script calculates the lowest-cost hydrogen transport strategy from every
+hexagon to every demand center. The transport strategy includes whether to transport the hydrogen by truck or by pipeline, and what
+form of hydrogen (i.e., 500 bar hydrogen, liquid hydrogen, liquid organic hydrogen carriers (LOHC), or ammonia) to transport. Total
+transportation and conversion costs include road or pipeline construction, transportation operating costs, conversion to the form used
+for transportation, and conversion of the transported form of hydrogen to the form required at the demand center.
+First, the transport distance is calculated. For each hexagon, the distance from the centroid of the hexagon to each demand center is
+calculated. If the demand center is within the hexagon, only conversion costs to the ﬁnal demand state are included in transportation
+and conversion costs. If the demand center is outside the hexagon, this distance is used to calculate transport costs.
+Next, road transport costs are calculated. If road construction is allowed, the cost of extending the nearest road is calculated for
+each oﬀ-road hexagon based on the distance to the nearest road. Otherwise, trucking is not an option for transportation for hexagons
+which do not have access to roads. The number of trucks and trailers needed is calculated based on total hydrogen demand, distance
+to the demand center, and average truck speed assuming full-time truck use. The model calculates trucking costs assuming that the
+trucks travel on the shortest possible path to the demand center, rather than calculating road distance. Trucking costs include diesel
+price, driver wages, truck capital and operational expenses, and trailer capital and operational expenses.
+Finally, if pipeline construction is allowed, the cost of pipeline construction from every hexagon to each demand center is calculated. Otherwise, pipeline transportation is not an option for any hexagon. Pipeline costs per kilometer and compressor costs are
+deﬁned for three sizes of pipeline based on their capacity: small (up to 1.2 GW), medium (1.2 to 4.7 GW), and large (4.7 to 13 GW).
+Optimize green hydrogen plant
+The optimize_hydrogen_plant.py script optimizes investment and operation of an oﬀ-grid green hydrogen plant to meet
+a speciﬁc demand. The PyPSA library [14] is used to optimize the capacity of solar PV, onshore wind, electrolyzer, lithium-ion
+batteries, and compressed hydrogen storage to produce green hydrogen to meet the speciﬁed demand. Note that a solver which is
+compatible with PyPSA (e.g., Cbc, Gurobi) must be installed to complete this step.
+Weather data is converted to hourly onshore wind and solar PV potential using atlite [16]. Onshore wind generation potential is
+calculated using 100 m wind speed, and forecast surface roughness, the aerodynamic roughness length. Publicly-available wind power
+curves can be used within atlite or custom power curves can be speciﬁed. Solar PV potential is calculated using top of atmosphere
+incident solar radiation, direct and diﬀuse inﬂux, albedo, and air temperature at 2 m height to calculate panel eﬃciency. Crystalline
+silicon solar panels are assumed.
+Annual hydrogen demand is converted to hourly demand schedules based on the transport methods considered. For pipeline
+transport, constant hourly demand is assumed. For trucking transport, an hourly demand proﬁle is created based on the number of
+trucks arriving at the plant each hour to achieve a roughly constant delivery schedule at the demand center. The trucking demand
+schedule is designed to achieve no wait time for trucks to ﬁll with hydrogen.
+For each hexagon and demand center pair, hydrogen production costs to meet the pipeline and trucking transportation demand
+proﬁles and the optimal capacity of several key components are saved.
+4
+
+C. Halloran, A. Leonard, N. Salmon et al.
+
+MethodsX 12 (2024) 102660
+
+2.7 Water costs
+Water costs for the optimised hydrogen plant are calculated using the water_cost.py script. Both freshwater and ocean water
+options are considered. Treatment costs for each are deﬁned based on the diﬀerent energy requirements for each source (e.g., to
+account for desalination in the ocean case). The cost to transport the required demand of water to each hexagon from the nearest
+available source of each type is also considered in the total water cost. The lowest of the two options is taken as the ﬁnal water cost,
+and this is exported as a GeoJSON ﬁle (hex_water.geojson).
+Total hydrogen costs
+The optimized total hydrogen cost is determined in the total_hydrogen_cost.py script. This total includes production
+costs, transport costs (including infrastructure construction costs if needed), conversion costs, and water costs. Costs are calculated
+for both trucking and pipeline transport options. Both are saved, and the lowest of the two is stored as the ﬁnal optimal lowest
+cost. All results are saved to a GeoJSON ﬁle (hex_total_cost.GeoJSON). Using the cost_by_component.py script, these
+results can be broken down by technology component. This script provides a ﬁle hex_cost_components.geojson with the
+capacities, capital costs, and overall contribution of each technology towards LCOH for each hexagon.
+The results can be visualized using map_costs.py. This script produces heatmaps for each cost component saved to the GeoJSON hex_total_cost.GeoJSON for quick visualisation.
+Case study
+This model is demonstrated using a case study of green hydrogen production in Namibia. This case study simulates a hydrogen
+demand of 60.6 kT/year to be delivered to Lüderitz port (-26.64, 15.14) as green ammonia for export. The demand level is the median
+planned capacity of those planned projects in the IEA hydrogen database which are: (a) located in continental sub-Saharan Africa,
+(b) plan to use wind or solar to produce hydrogen via electrolysis, and (c) are intended to go online by 2030 [17]. Interest rates
+for both production plant technologies and infrastructures are set at 6% for comparability with the IEA levelised cost of hydrogen
+maps [18]. The case study uses 481 H4-level hexagons. Wetland, built-up areas, and water bodies are excluded from available land
+for generation/plant construction. The area within 250 m of coastlines or protected areas is also excluded. PV is excluded from
+agricultural areas. All input ﬁles used in this case study, including capital cost assumptions and technical parameters, are made
+available in the Appendix.
+The LCOH to meet this demand in diﬀerent locations throughout Namibia is shown in Fig. 1. The costs range between € 5.43 and
+€ 9.21 per kilogram of green hydrogen arriving at Lüderitz. In all hexagons, pipeline transport is the lowest-cost option.
+The LCOH for the lowest- and highest-cost production locations are broken down into cost components in Fig. 2. In the lowestcost location, wind turbines produce all the electricity for electrolysis and very little battery storage is necessary. In the highest-cost
+location, a large capacity of solar PV as well as wind turbines are needed to produce electricity, and additional battery storage is
+required because of diurnal variation in solar generation.
+
+Fig. 1. The levelized cost of hydrogen (LCOH) in € /kg for the case study in Namibia.
+5
+
+C. Halloran, A. Leonard, N. Salmon et al.
+
+MethodsX 12 (2024) 102660
+
+Fig. 2. Cost breakdown for the lowest- and highest-cost hexagons for green hydrogen production in Namibia. Note that the costs of transport and
+water processing are included in the ”Other” segment.
+
+Method validation
+Comparing the results of the GeoH2 model with other green hydrogen costs projections validates that the model produces high-end
+but reasonable cost estimates. The lowest LCOH in the Namibian case study as presented in this paper (i.e., € 5.43 per kg) closely
+aligns with the estimated LCOH of € 5.13 per kg reported in [19]. Additionally, the Jülich Forschungszentrum projects a marginally
+lower minmum LCOH of € 4.17 per kg, with an average € 5.04 per kg. This again aligns well with the estimates produced in this case.
+However, more optimistic estimates for the future also exist. For instance, the Fraunhofer Institute for Solar Energy Systems
+projects € 1.13 per kg for 2030 [3]. Similarly, the International Energy Agency projects low-end costs of $2.50 per kg in Namibia by
+2030 [18]. Finally, the Namibia Investment Promotion and Development Board, an organization focused on driving investment into
+Namibia, estimates that $1.50 per kg will be feasible [20]. However, the assumptions underlying these optimistic estimates remain
+largely unclear.
+This points to the larger problem of opaqueness in current hydrogen modelling, for both models which align with GeoH2 results
+and those which are more optimistic. While the authors would be interested in assessing the inﬂuence of diﬀerent cost and technical
+assumption in causing the cost variation across models, this is not possible as other models largely do not make their methods and
+assumptions transparent and accessible.
+The strong spatial variation and generally high-end cost projections resulting from the GeoH2 model presented in this paper are
+unsurprising, as the model is programmed to require a constant hydrogen supply by default. This approach was adopted because
+many industrial processes necessitate a consistent supply of hydrogen, leading to the assumption of constant hourly demand and
+resulting in a realistic, albeit high-end, estimate of hydrogen costs. This assumption therefore increases the costs of battery storage,
+compressed hydrogen storage, and renewable oversizing which enable the consistent supply over time. In contrast, other models
+make the liberal assumption of fully ﬂexible hydrogen production [2] or leverage genetic algorithms to co-optimise the production
+proﬁle for least costs [3]. They thus provide a lower bound of hydrogen costs that excludes storage and renewable overcapacity costs.
+The conservative estimates from the GeoH2 model therefore complement analysis by the Hydrogen Council and other to provide a
+fuller picture of total hydrogen costs accounting for practical constraints and spatial variability.
+Ethics statements
+This work does not involve human subjects, animal experiments, or data collected from social media platforms. Ethical best
+practices were followed in all cases.
+Declaration of competing interest
+The authors declare that they have no known competing ﬁnancial interests or personal relationships that could have appeared to
+inﬂuence the work reported in this paper.
+CRediT authorship contribution statement
+Claire Halloran: Methodology, Software, Data curation, Writing – original draft, Writing – review & editing. Alycia Leonard:
+Methodology, Validation, Data curation, Writing – original draft, Writing – review & editing. Nicholas Salmon: Methodology, Resources, Writing – review & editing. Leander Müller: Methodology, Software. Stephanie Hirmer: Conceptualization, Resources,
+Writing – review & editing, Supervision, Project administration, Funding acquisition.
+6
+
+C. Halloran, A. Leonard, N. Salmon et al.
+
+MethodsX 12 (2024) 102660
+
+Data availability
+All data used is available in the appendix and/or the Github repositories linked in-text.
+
+Acknowledgments
+This material has been produced with support from the Climate Compatible Growth (CCG) programme, which brings together
+leading research organizations and is led out of the STEER centre, Loughborough University. CCG is funded by UK aid from the UK
+government. However, the views expressed herein do not necessarily reﬂect the UK governments oﬃcial policies. Many thanks to
+Leander Müller for his work on the initial model that this paper adapts.
+
+Appendix A. Case study parameter values
+Green hydrogen plant
+Hardware
+
+Parameter
+
+Value
+
+Units
+
+Ref.
+
+Solar photovoltaic
+Wind turbines
+Hydrogen electrolysis
+Hydrogen electrolysis
+Hydrogen compression
+Hydrogen storage unloading
+Battery
+Hydrogen storage
+
+Capex
+Capex
+Capex
+Eﬃciency
+Isentropic eﬃciency
+Eﬃciency
+Capex
+Capex
+
+1,470,000
+1,580,000
+1,250,000
+0.59
+0.051
+1
+95,000
+21,700
+
+€ /MW
+€ /MW
+€ /MW
+MWhH2 /MWhel
+MWhel /MWhH2
+MWhH2 /MWhH2-stored
+€ /MW
+€ /MWh
+
+[21]
+[21]
+[1]
+[22]
+[1]
+Assumption
+[23]
+[1]
+
+Conversion parameters
+Process
+
+Parameter
+
+Value
+
+Units
+
+Ref.
+
+500 bar compression
+500 bar compression
+500 bar compression
+500 bar compression
+500 bar compression
+500 bar compression
+500 bar compression
+500 bar compression
+Hydrogen liquiﬁcation
+Hydrogen liquiﬁcation
+Hydrogen liquiﬁcation
+Hydrogen liquiﬁcation
+Hydrogen liquiﬁcation
+Hydrogen liquiﬁcation
+LOHC hydrogenation
+LOHC hydrogenation
+LOHC hydrogenation
+LOHC hydrogenation
+LOHC hydrogenation
+LOHC hydrogenation
+LOHC hydrogenation
+LOHC dehydrogenation
+LOHC dehydrogenation
+LOHC dehydrogenation
+LOHC dehydrogenation
+LOHC dehydrogenation
+Ammonia synthesis
+Ammonia synthesis
+Ammonia synthesis
+Ammonia synthesis
+Ammonia cracking
+Ammonia cracking
+Ammonia cracking
+Ammonia cracking
+
+Heat capacity
+Input temperature
+Input pressure
+Isentropic exponent
+Isentropic eﬃciency
+Compressor lifetime
+Compressor capex coeﬃcient
+Compressor opex
+Electricity demand
+Capex quadratic coeﬃcient
+Capex linear coeﬃcient
+Capex constant
+Opex
+Plant lifetime
+Electricity demand
+Heat demand
+Capex coeﬃcient
+Opex
+Plant lifetime
+Carrier costs
+Carrier ratio
+Electricity demand
+Heat demand
+Capex coeﬃcient
+Opex
+Plant lifetime
+Electricity demand
+Capex coeﬃcient
+Opex
+Plant lifetime
+Heat demand
+Capex coeﬃcient
+Opex
+Plant lifetime
+
+0.0039444
+298.15
+25
+1.402
+0.8
+15
+40,035
+4
+9.93
+-0.0002
+1,781.9
+300,000,000
+8
+20
+0.35
+-9
+0.84
+4
+25
+2
+16.1
+0.35
+12
+2.46
+4
+25
+2.809
+0.75717
+1.5
+25
+4.2
+17,262,450
+2
+25
+
+kWh/kg/K
+K
+bar
+
+[24]
+[1]
+[1]
+[24]
+[1]
+[25]
+[25]
+[25]
+[26]
+[1]
+[1]
+[1]
+[25]
+[25]
+[27]
+[28]
+[29]
+[29]
+[29]
+[30]
+[31]
+[27]
+[28]
+[29]
+[29]
+[29]
+[32]
+[32]
+[29]
+[29]
+[27]
+[33]
+[1]
+[1]
+
+7
+
+years
+€ /kgH2 /day
+% capex/year
+kWh/kgH2
+€ /(kgH2 )2
+€ /kgH2
+€
+% capex/year
+years
+kWh/kgH2
+kWh/kgH2
+kWh/kgH2 /year
+% capex/year
+years
+€ /kgcarrier
+kgcarrier /kgH2
+kWh/kgH2
+kWh/kg H2
+kWh/kgH2
+% capex/year
+years
+kWh/kgH2
+kWh/gH2 /year
+% capex/year
+years
+kWh/kgH2
+kWh/gH2 /hour
+% capex/year
+years
+
+C. Halloran, A. Leonard, N. Salmon et al.
+
+MethodsX 12 (2024) 102660
+
+Trucking
+Hardware
+
+Parameter
+
+Value
+
+Units
+
+Ref.
+
+All trucks
+All trucks
+All trucks
+All trucks
+All trucks
+All trucks
+All trucks
+All trucks
+All trucks
+All trucks
+All trucks
+500 bar hydrogen trailer
+500 bar hydrogen trailer
+500 bar hydrogen trailer
+500 bar hydrogen trailer
+Liquid hydrogen trailer
+Liquid hydrogen trailer
+Liquid hydrogen trailer
+Liquid hydrogen trailer
+LOHC trailer
+LOHC trailer
+LOHC trailer
+LOHC trailer
+Ammonia trailer
+Ammonia trailer
+Ammonia trailer
+Ammonia trailer
+
+Average truck speed
+Working hours
+Diesel price
+Driver wage
+Working days
+Max driving distance
+Truck capex
+Truck Opex
+Diesel consumption
+Truck lifetime
+Trailer lifetime
+Trailer capex
+Trailer opex
+Trailer capacity
+Loading and unloading time
+Trailer capex
+Trailer opex
+Trailer capacity
+Loading and unloading time
+Trailer capex
+Trailer opex
+Trailer capacity
+Loading and unloading time
+Trailer capex
+Trailer opex
+Trailer capacity
+Loading and unloading time
+
+70
+24
+1.5
+2.85
+365
+160,000
+160,000
+12
+35
+8
+12
+660,000
+2
+1,100
+1.5
+860,000
+2
+4,300
+3
+660,000
+2
+1,800
+1.5
+210,000
+2
+2,600
+1.5
+
+km/h
+h/day
+€ /L
+€ /h
+days/year
+km/year
+€
+% capex/year
+L/100 km
+years
+years
+€
+% capex/year
+kgH2
+hours
+€
+% capex/year
+kgH2
+hours
+€
+% capex/year
+kgH2
+hours
+€
+% capex/year
+kgH2
+hours
+
+Assumption
+Assumption
+Assumption
+[1]
+Assumption
+[1]
+[34]
+[34]
+[34]
+[34]
+[34]
+[25]
+[25]
+[25]
+[25]
+[34]
+[34]
+[34]
+[34]
+[29]
+[34]
+[34]
+[34]
+[29]
+[29]
+[29]
+[29]
+
+Roads
+Road length
+
+Parameter
+
+Value
+
+Units
+
+Ref.
+
+Short road (<10 km)
+Long road (>10 km)
+All roads
+
+Capex
+Capex
+Opex
+
+626,478.45
+481,866.6
+7,149.7
+
+€ /km
+€ /km
+€ /km/year
+
+[1]
+[1]
+[1]
+
+Pipelines
+Pipeline size
+
+Parameter
+
+Value
+
+Units
+
+Ref.
+
+All pipelines
+All pipelines
+All pipelines
+All pipelines
+All pipelines
+Large pipeline
+Large pipeline
+Large pipeline
+Medium pipeline
+Medium pipeline
+Medium pipeline
+Small pipeline
+Small pipeline
+Small pipeline
+
+Opex
+Availability
+Pipeline lifetime
+Compressor lifetime
+Electricity demand
+Maximum capacity
+Pipeline capex
+Compressor capex
+Maximum capacity
+Pipeline capex
+Compressor capex
+Maximum capacity
+Pipeline capex
+Compressor capex
+
+1.25
+95
+42.5
+24
+0.000614
+13
+2,800,000
+620,000
+4.7
+2,200,000
+310,000
+1.2
+90,000
+90,000
+
+% capex/year
+%
+years
+years
+kWh/kgH2 /km
+GW
+€ /km
+€ /km
+GW
+€ /km
+€ /km
+GW
+€ /km
+€ /km
+
+[35]
+[1]
+[35]
+[35]
+[35]
+[35]
+[35]
+[35]
+[35]
+[35]
+[35]
+[35]
+[35]
+[35]
+
+Water
+Type
+Freshwater
+Ocean water
+All water
+All water
+All water
+
+Parameter
+
+Value
+
+Treatment electricity demand
+Treatment electricity demand
+Transport cost
+Water speciﬁc cost
+Water demand
+
+0.4
+3.7
+0.1
+1.25
+21
+
+8
+
+Units
+
+Ref.
+3
+
+kWh/m water
+kWh/m3 water
+€ /100 km/m3 water
+€ /m3 water
+L water/kgH2
+
+[36]
+[37]
+[38]
+[39]
+[22]
+
+C. Halloran, A. Leonard, N. Salmon et al.
+
+MethodsX 12 (2024) 102660
+
+Country-speciﬁc parameters
+Country
+
+Parameter
+
+Value
+
+Units
+
+Ref.
+
+Namibia
+Namibia
+Namibia
+Namibia
+Namibia
+Namibia
+Namibia
+Namibia
+Namibia
+Namibia
+
+Electricity price
+Heat price
+Solar interest rate
+Solar lifetime
+Wind interest rate
+Wind lifetime
+Plant interest rate
+Plant lifetime
+Infrastructure interest rate
+Infrastructure lifetime
+
+0.10465
+0.02
+6
+20
+6
+20
+6
+20
+6
+50
+
+€ /kWh
+€ /kWh
+%
+years
+%
+years
+%
+years
+%
+years
+
+[40]
+Assumption
+Assumption
+Assumption
+Assumption
+Assumption
+Assumption
+Assumption
+Assumption
+[1]
+
+References
+[1] L.A. Müller, A. Leonard, P.A. Trotter, S. Hirmer, Green hydrogen production and use in low-and middle-income countries: a least-cost geospatial modelling
+approach applied to kenya, Appl. Energy 343 (2023) 121219.
+[2] Hydrogen Council, McKinsey and Company, Hydrogen Insights: a perspective on hydrogen investment, market development and cost competitiveness, 2021,.
+https://hydrogencouncil.com/wp-content/uploads/2021/02/Hydrogen-Insights-2021.pdf.
+[3] C. Hank, M. Holst, C. Thelen, C. Kost, S. Längle, A. Schaadt, T. Smolinka, Site-Speciﬁc, Comparative Analysis for Suitable Power-to-X Pathways and Products in
+Developing and Emerging Countries, Technical Report, Faunhofer ISE, 2023.
+[4] Uber Technologies, H3: Hexagonal hierarchical geospatial indexing system, 2023, https://h3geo.org/.
+[5] MarineRegions.org, Global oceans and seas v01, 2021,. https://www.marineregions.org/downloads.php.
+[6] Natural Earth, Admin 0 – countries, 2023,. https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/.
+[7] M. Buchhorn, B. Smets, L. Bertels, B. De Roo, M. Lesiv, N.-E. Tsendbazar, M. Herold, S. Fritz, Copernicus global land service: land cover 100m: collection 3:
+epoch 2019: Globe, Version V3. 0.1, Zenodo (2020).
+[8] Geofabrik GmbH and OpenStreetMap Contributors, Openstreetmap data excerpts, 2018,. https://download.geofabrik.de/.
+[9] A. Leonard, C. Halloran, Geoh2-data-prep, 2023. https://github.com/alycialeonard/GeoH2- data- prep.
+[10] D. Ryberg, M. Robinius, D. Stolten, Evaluating land eligibility constraints of renewable energy sources in Europe, Energies 11 (5) (2018) 1246,
+doi:10.3390/en11051246.
+[11] C. Arderne, ccg-spider, 2022. https://github.com/carderne/ccg-spider/.
+[12] Alliance for Sustainable Energy, LLC, 2020ATB_NREL_reference_4MW_150, 2020. https://nrel.github.io/turbine-models/2020ATB_NREL_Reference_4MW_
+150.html.
+[13] C. Arderne, spider-prep, 2022. https://github.com/carderne/ccg-spider/tree/main/prep.
+[14] PyPSA Developers, PyPSA: Python for power system analysis, 2023. https://pypsa.readthedocs.io/en/latest/.
+[15] Copernicus European Centre for Medium-Range Weather Forecasts, ERA5 dataset, 2022. https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5.
+[16] F. Hofmann, J. Hampp, F. Neumann, T. Brown, J. Horsch, atlite: A lightweight python package for calculating renewable power potentials and time series, J.
+Open Source Softw. 6 (62) (2021) 3294, doi:10.21105/joss.03294.
+[17] International Energy Agency, Hydrogen production and infrastructure projects database, 2023a, https://www.iea.org/data-and-statistics/data-product/hydrogenproduction-and-infrastructure-projects-database.
+[18] International Energy Agency, Levelised cost of hydrogen maps, 2023b, https://www.iea.org/data-and-statistics/data-tools/levelised-cost-of-hydrogen-maps.
+[19] N. Srettiwat, M. Safari, H. Olcay, R. Malina, A techno-economic evaluation of solar-powered green hydrogen production for sustainable energy consumption in
+Belgium, Int. J. Hydrogen Energy 48 (100) (2023) 39731–39746.
+[20] S. O’Farrell, Explainer | How green hydrogen put Namibia on the map, 2023, https://www.fdiintelligence.com/content/news/explainer-how-green-hydrogen-putnamibia-on-the-map-83146.
+[21] L. Allington, C. Cannone, I. Pappis, C. Halloran, S. Hirmer, K.C. Barron, W. Usher, S. Pye, E. Brown, M. Howells, et al., Selected ‘starter kit’ energy system
+modelling data for benin (# CCG) (2021).
+[22] E. Taibi, H. Blanco, R. Miranda, M. Carmo, Green Hydrogen Cost Reduction:, Technical Report, International Renewable Energy Agency (IRENA), 2020.
+[23] V. Henze, Lithium-ion battery pack prices rise for ﬁrst time to an average of $151/kWh, 2022, https://about.bnef.com/blog/lithium-ion-battery-pack-prices-risefor-ﬁrst-time-to-an-average-of-151-kwh/.
+[24] P. Kurzweil, O.K. Dietlmeier, Electrochemical Storage: Supercapacitors, Batteries, Electrolysis Hydrogen, Legal Basis, Springer-Verlag, 2016.
+[25] S. Cerniauskas, Introduction Strategies for Hydrogen Infrastructure, Technoökonomische Systemanalyse, 2021. https://juser.fz-juelich.de/record/906356
+[26] F. Ausfelder, H. Dura, TECHNISCHER ANHANG - Transformation - Anwendung - Potenziale, https://dechema.de/dechema_media/Downloads/Positionspapiere/
+2021_DEC_P2X_III_Technischer_Anhang.pdf.
+[27] J. Andersson, S. Grönkvist, Large-scale storage of hydrogen, Int. J. Hydrogen Energy 44 (23) (2019) 11901–11919.
+[28] B. Friedrich, Hydrogenious LOHC Technology - the basics and the operating mode’, Hydrogenious LOHC Technologies, https://www.hydrogenious.net/
+index.php/en/hydrogenious-3/lohc-technology/.
+[29] International Energy Agency, Iea g20 hydrogen report: Assumptions, 2020, https://iea.blob.core.windows.net/assets/29b027e5-fefc-47df-aed0-456b1bb38844/
+IEA-The-Future-of-Hydrogen-Assumptions-Annex_CORR.pdf.
+[30] C. Clark, Unlocking the Global Hydrogen Opportunity, https://hydrogenious.net/lohc-global-hydrogen-opportunity/.
+[31] W. Arlt, J. Obermeier, Feasibility Study-Hydrogen and Storage in Heavy Truck Transport, Techn. Ber., Friedrich-Alexander-Universität Erlangen-Nürnberg, 2017.
+[32] I.E. Agency, Ammonia Technology Roadmap: Towards More Sustainable Nitrogen Fertiliser Production, OECD Publishing, 2021.
+[33] Z. Cesaro, M. Ives, R. Nayak-Luke, M. Mason, R. Bañares Alcántara, Ammonia to power: forecasting the levelized cost of electricity from green ammonia in
+large-scale power plants, Appl. Energy 282 (2021) 116009.
+[34] M. Reuß, T. Grube, M. Robinius, P. Preuster, P. Wasserscheid, D. Stolten, Seasonal storage and alternative carriers: a ﬂexible hydrogen supply chain model, Appl.
+Energy 200 (2017) 290–302.
+[35] J. Jens, A. Wang, K. von der Leun, D. Peters, M. Buseman, Extending the European hydrogen backbone: a EUROPEAN hydrogen INFRASTRUCTURE VISION
+covering 21 countries. 2021, 2021. https://ehb.eu/ﬁles/downloads/European-Hydrogen-Backbone-April-2021-V3.pdf.
+[36] U. D. of Energy, Primer on energy eﬃciency for water and wastewater treatment, 2016. https://betterbuildingssolutioncenter.energy.gov/sites/default/ﬁles/
+Primer%20on%20energy%20eﬃciency%20in%20water%20and%20wastewater%20plants_0.pdf
+[37] B.D. Patterson, F. Mo, A. Borgschulte, M. Hillestad, F. Joos, T. Kristiansen, S. Sunde, J.A. Van Bokhoven, Renewable CO2 recycling and synthetic fuel production
+in a marine environment, Proc. Natl. Acad. Sci. 116 (25) (2019) 12212–12219.
+[38] Y. Zhou, R.S.J. Tol, Evaluating the costs of desalination and water transport, Water Resources Res. 41 (3) (2005).
+[39] WASREB, Gazetted tariﬀs, 2019,. https://wasreb.go.ke/wasrebsystems/tariﬀs/about-us.html.
+[40] GlobalPetrolPrices.com, Electricity prices, 2023, https://www.globalpetrolprices.com/electricity_prices/.
+
+9
+
+

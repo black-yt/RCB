@@ -1,0 +1,7991 @@
+[
+  {
+    "id": "translated_imo_2000_p1",
+    "spec": "a b = segment a b; g1 = on_tline g1 a a b; g2 = on_tline g2 b b a; m = on_circle m g1 a, on_circle m g2 b; n = on_circle n g1 a, on_circle n g2 b; c = on_pline c m a b, on_circle c g1 a; d = on_pline d m a b, on_circle d g2 b; e = on_line e a c, on_line e b d; p = on_line p a n, on_line p c d; q = on_line q b n, on_line q c d ? cong e p e q",
+    "premises_text": "a b = segment a b; g1 = on_tline g1 a a b; g2 = on_tline g2 b b a; m = on_circle m g1 a, on_circle m g2 b; n = on_circle n g1 a, on_circle n g2 b; c = on_pline c m a b, on_circle c g1 a; d = on_pline d m a b, on_circle d g2 b; e = on_line e a c, on_line e b d; p = on_line p a n, on_line p c d; q = on_line q b n, on_line q c d",
+    "goal_text": "cong e p e q",
+    "num_premise_clauses": 10,
+    "num_constraint_atoms": 17,
+    "primitive_counter": {
+      "segment": 1,
+      "on_tline": 2,
+      "on_circle": 6,
+      "on_pline": 2,
+      "on_line": 6
+    },
+    "num_unique_primitives": 5,
+    "primitive_arguments": [
+      {
+        "primitive": "segment",
+        "arity": 2,
+        "args": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "g1",
+          "a",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "g2",
+          "b",
+          "b",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "m",
+          "g1",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "m",
+          "g2",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "n",
+          "g1",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "n",
+          "g2",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_pline",
+        "arity": 4,
+        "args": [
+          "c",
+          "m",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "c",
+          "g1",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_pline",
+        "arity": 4,
+        "args": [
+          "d",
+          "m",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "d",
+          "g2",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "e",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "e",
+          "b",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "p",
+          "a",
+          "n"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "p",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "q",
+          "b",
+          "n"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "q",
+          "c",
+          "d"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 3,
+      "multi_constraint_clause": 7
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "e",
+      "p",
+      "e",
+      "q"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b"
+        ],
+        "rhs_parts": [
+          "segment a b"
+        ],
+        "primitives": [
+          "segment"
+        ]
+      },
+      {
+        "lhs": [
+          "g1"
+        ],
+        "rhs_parts": [
+          "on_tline g1 a a b"
+        ],
+        "primitives": [
+          "on_tline"
+        ]
+      },
+      {
+        "lhs": [
+          "g2"
+        ],
+        "rhs_parts": [
+          "on_tline g2 b b a"
+        ],
+        "primitives": [
+          "on_tline"
+        ]
+      },
+      {
+        "lhs": [
+          "m"
+        ],
+        "rhs_parts": [
+          "on_circle m g1 a",
+          "on_circle m g2 b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "n"
+        ],
+        "rhs_parts": [
+          "on_circle n g1 a",
+          "on_circle n g2 b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "c"
+        ],
+        "rhs_parts": [
+          "on_pline c m a b",
+          "on_circle c g1 a"
+        ],
+        "primitives": [
+          "on_pline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_pline d m a b",
+          "on_circle d g2 b"
+        ],
+        "primitives": [
+          "on_pline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "on_line e a c",
+          "on_line e b d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_line p a n",
+          "on_line p c d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_line q b n",
+          "on_line q c d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2000_p6",
+    "spec": "a b c = triangle a b c; h = orthocenter h a b c; t1 t2 t3 i = incenter2 t1 t2 t3 i a b c; h1 = foot h1 a b c; h2 = foot h2 b c a; h3 = foot h3 c a b; x1 = reflect x1 h1 t1 t2; x2 = reflect x2 h2 t1 t2; y2 = reflect y2 h2 t2 t3; y3 = reflect y3 h3 t2 t3; z = on_line z x1 x2, on_line z y2 y3 ? cong i z i t1",
+    "premises_text": "a b c = triangle a b c; h = orthocenter h a b c; t1 t2 t3 i = incenter2 t1 t2 t3 i a b c; h1 = foot h1 a b c; h2 = foot h2 b c a; h3 = foot h3 c a b; x1 = reflect x1 h1 t1 t2; x2 = reflect x2 h2 t1 t2; y2 = reflect y2 h2 t2 t3; y3 = reflect y3 h3 t2 t3; z = on_line z x1 x2, on_line z y2 y3",
+    "goal_text": "cong i z i t1",
+    "num_premise_clauses": 11,
+    "num_constraint_atoms": 12,
+    "primitive_counter": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "incenter2": 1,
+      "foot": 3,
+      "reflect": 4,
+      "on_line": 2
+    },
+    "num_unique_primitives": 6,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "orthocenter",
+        "arity": 4,
+        "args": [
+          "h",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "incenter2",
+        "arity": 7,
+        "args": [
+          "t1",
+          "t2",
+          "t3",
+          "i",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "h1",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "h2",
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "h3",
+          "c",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "x1",
+          "h1",
+          "t1",
+          "t2"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "x2",
+          "h2",
+          "t1",
+          "t2"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "y2",
+          "h2",
+          "t2",
+          "t3"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "y3",
+          "h3",
+          "t2",
+          "t3"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "z",
+          "x1",
+          "x2"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "z",
+          "y2",
+          "y3"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      4,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 10,
+      "multi_constraint_clause": 1
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "i",
+      "z",
+      "i",
+      "t1"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "h"
+        ],
+        "rhs_parts": [
+          "orthocenter h a b c"
+        ],
+        "primitives": [
+          "orthocenter"
+        ]
+      },
+      {
+        "lhs": [
+          "t1",
+          "t2",
+          "t3",
+          "i"
+        ],
+        "rhs_parts": [
+          "incenter2 t1 t2 t3 i a b c"
+        ],
+        "primitives": [
+          "incenter2"
+        ]
+      },
+      {
+        "lhs": [
+          "h1"
+        ],
+        "rhs_parts": [
+          "foot h1 a b c"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      },
+      {
+        "lhs": [
+          "h2"
+        ],
+        "rhs_parts": [
+          "foot h2 b c a"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      },
+      {
+        "lhs": [
+          "h3"
+        ],
+        "rhs_parts": [
+          "foot h3 c a b"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      },
+      {
+        "lhs": [
+          "x1"
+        ],
+        "rhs_parts": [
+          "reflect x1 h1 t1 t2"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "x2"
+        ],
+        "rhs_parts": [
+          "reflect x2 h2 t1 t2"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "y2"
+        ],
+        "rhs_parts": [
+          "reflect y2 h2 t2 t3"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "y3"
+        ],
+        "rhs_parts": [
+          "reflect y3 h3 t2 t3"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "z"
+        ],
+        "rhs_parts": [
+          "on_line z x1 x2",
+          "on_line z y2 y3"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2002_p2a",
+    "spec": "b c = segment b c; o = midpoint o b c; a = on_circle a o b; d = on_circle d o b, on_bline d a b; e = on_bline e o a, on_circle e o b; f = on_bline f o a, on_circle f o b; j = on_pline j o a d, on_line j a c ? eqangle e c e j e j e f",
+    "premises_text": "b c = segment b c; o = midpoint o b c; a = on_circle a o b; d = on_circle d o b, on_bline d a b; e = on_bline e o a, on_circle e o b; f = on_bline f o a, on_circle f o b; j = on_pline j o a d, on_line j a c",
+    "goal_text": "eqangle e c e j e j e f",
+    "num_premise_clauses": 7,
+    "num_constraint_atoms": 11,
+    "primitive_counter": {
+      "segment": 1,
+      "midpoint": 1,
+      "on_circle": 4,
+      "on_bline": 3,
+      "on_pline": 1,
+      "on_line": 1
+    },
+    "num_unique_primitives": 6,
+    "primitive_arguments": [
+      {
+        "primitive": "segment",
+        "arity": 2,
+        "args": [
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "o",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "a",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "d",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "d",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "e",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "e",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "f",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "f",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_pline",
+        "arity": 4,
+        "args": [
+          "j",
+          "o",
+          "a",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "j",
+          "a",
+          "c"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 3,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "eqangle",
+    "goal_arity": 8,
+    "goal_tokens": [
+      "eqangle",
+      "e",
+      "c",
+      "e",
+      "j",
+      "e",
+      "j",
+      "e",
+      "f"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "segment b c"
+        ],
+        "primitives": [
+          "segment"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "midpoint o b c"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "a"
+        ],
+        "rhs_parts": [
+          "on_circle a o b"
+        ],
+        "primitives": [
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_circle d o b",
+          "on_bline d a b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "on_bline e o a",
+          "on_circle e o b"
+        ],
+        "primitives": [
+          "on_bline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "on_bline f o a",
+          "on_circle f o b"
+        ],
+        "primitives": [
+          "on_bline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "j"
+        ],
+        "rhs_parts": [
+          "on_pline j o a d",
+          "on_line j a c"
+        ],
+        "primitives": [
+          "on_pline",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2002_p2b",
+    "spec": "b c = segment b c; o = midpoint o b c; a = on_circle a o b; d = on_circle d o b, on_bline d a b; e = on_bline e o a, on_circle e o b; f = on_bline f o a, on_circle f o b; j = on_pline j o a d, on_line j a c ? eqangle c e c j c j c f",
+    "premises_text": "b c = segment b c; o = midpoint o b c; a = on_circle a o b; d = on_circle d o b, on_bline d a b; e = on_bline e o a, on_circle e o b; f = on_bline f o a, on_circle f o b; j = on_pline j o a d, on_line j a c",
+    "goal_text": "eqangle c e c j c j c f",
+    "num_premise_clauses": 7,
+    "num_constraint_atoms": 11,
+    "primitive_counter": {
+      "segment": 1,
+      "midpoint": 1,
+      "on_circle": 4,
+      "on_bline": 3,
+      "on_pline": 1,
+      "on_line": 1
+    },
+    "num_unique_primitives": 6,
+    "primitive_arguments": [
+      {
+        "primitive": "segment",
+        "arity": 2,
+        "args": [
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "o",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "a",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "d",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "d",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "e",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "e",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "f",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "f",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_pline",
+        "arity": 4,
+        "args": [
+          "j",
+          "o",
+          "a",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "j",
+          "a",
+          "c"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 3,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "eqangle",
+    "goal_arity": 8,
+    "goal_tokens": [
+      "eqangle",
+      "c",
+      "e",
+      "c",
+      "j",
+      "c",
+      "j",
+      "c",
+      "f"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "segment b c"
+        ],
+        "primitives": [
+          "segment"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "midpoint o b c"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "a"
+        ],
+        "rhs_parts": [
+          "on_circle a o b"
+        ],
+        "primitives": [
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_circle d o b",
+          "on_bline d a b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "on_bline e o a",
+          "on_circle e o b"
+        ],
+        "primitives": [
+          "on_bline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "on_bline f o a",
+          "on_circle f o b"
+        ],
+        "primitives": [
+          "on_bline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "j"
+        ],
+        "rhs_parts": [
+          "on_pline j o a d",
+          "on_line j a c"
+        ],
+        "primitives": [
+          "on_pline",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2003_p4",
+    "spec": "a b c = triangle a b c; o = circle o a b c; b1 = on_circle b1 o a, on_bline b1 c a; d1 = on_circle d1 o a, on_bline d1 c a; x = on_line x b b1, on_line x a c; d = on_line d d1 x, on_circle d o a; p = foot p d b c; q = foot q d c a; r = foot r d a b ? cong p q q r",
+    "premises_text": "a b c = triangle a b c; o = circle o a b c; b1 = on_circle b1 o a, on_bline b1 c a; d1 = on_circle d1 o a, on_bline d1 c a; x = on_line x b b1, on_line x a c; d = on_line d d1 x, on_circle d o a; p = foot p d b c; q = foot q d c a; r = foot r d a b",
+    "goal_text": "cong p q q r",
+    "num_premise_clauses": 9,
+    "num_constraint_atoms": 13,
+    "primitive_counter": {
+      "triangle": 1,
+      "circle": 1,
+      "on_circle": 3,
+      "on_bline": 2,
+      "on_line": 3,
+      "foot": 3
+    },
+    "num_unique_primitives": 6,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "b1",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "b1",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "d1",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "d1",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "x",
+          "b",
+          "b1"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "x",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "d",
+          "d1",
+          "x"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "d",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "p",
+          "d",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "q",
+          "d",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "r",
+          "d",
+          "a",
+          "b"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 5,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "p",
+      "q",
+      "q",
+      "r"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "b1"
+        ],
+        "rhs_parts": [
+          "on_circle b1 o a",
+          "on_bline b1 c a"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "d1"
+        ],
+        "rhs_parts": [
+          "on_circle d1 o a",
+          "on_bline d1 c a"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "x"
+        ],
+        "rhs_parts": [
+          "on_line x b b1",
+          "on_line x a c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_line d d1 x",
+          "on_circle d o a"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "foot p d b c"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "foot q d c a"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      },
+      {
+        "lhs": [
+          "r"
+        ],
+        "rhs_parts": [
+          "foot r d a b"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2004_p1",
+    "spec": "a b c = triangle a b c; o = midpoint o b c; m = on_circle m o b, on_line m a b; n = on_circle n o b, on_line n a c; r = angle_bisector r b a c, angle_bisector r m o n; o1 = circle o1 b m r; o2 = circle o2 c n r; p = on_circle p o1 r, on_circle p o2 r ? coll p b c",
+    "premises_text": "a b c = triangle a b c; o = midpoint o b c; m = on_circle m o b, on_line m a b; n = on_circle n o b, on_line n a c; r = angle_bisector r b a c, angle_bisector r m o n; o1 = circle o1 b m r; o2 = circle o2 c n r; p = on_circle p o1 r, on_circle p o2 r",
+    "goal_text": "coll p b c",
+    "num_premise_clauses": 8,
+    "num_constraint_atoms": 12,
+    "primitive_counter": {
+      "triangle": 1,
+      "midpoint": 1,
+      "on_circle": 4,
+      "on_line": 2,
+      "angle_bisector": 2,
+      "circle": 2
+    },
+    "num_unique_primitives": 6,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "o",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "m",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "m",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "n",
+          "o",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "n",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "angle_bisector",
+        "arity": 4,
+        "args": [
+          "r",
+          "b",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "angle_bisector",
+        "arity": 4,
+        "args": [
+          "r",
+          "m",
+          "o",
+          "n"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o1",
+          "b",
+          "m",
+          "r"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o2",
+          "c",
+          "n",
+          "r"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "p",
+          "o1",
+          "r"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "p",
+          "o2",
+          "r"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 4,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "coll",
+    "goal_arity": 3,
+    "goal_tokens": [
+      "coll",
+      "p",
+      "b",
+      "c"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "midpoint o b c"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "m"
+        ],
+        "rhs_parts": [
+          "on_circle m o b",
+          "on_line m a b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "n"
+        ],
+        "rhs_parts": [
+          "on_circle n o b",
+          "on_line n a c"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "r"
+        ],
+        "rhs_parts": [
+          "angle_bisector r b a c",
+          "angle_bisector r m o n"
+        ],
+        "primitives": [
+          "angle_bisector",
+          "angle_bisector"
+        ]
+      },
+      {
+        "lhs": [
+          "o1"
+        ],
+        "rhs_parts": [
+          "circle o1 b m r"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o2"
+        ],
+        "rhs_parts": [
+          "circle o2 c n r"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_circle p o1 r",
+          "on_circle p o2 r"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2004_p5",
+    "spec": "a b c = triangle a b c; o = circle o a b c; d = on_circle d o a; p = on_aline p b c a b d, on_aline p d c a d b ? cong a p c p",
+    "premises_text": "a b c = triangle a b c; o = circle o a b c; d = on_circle d o a; p = on_aline p b c a b d, on_aline p d c a d b",
+    "goal_text": "cong a p c p",
+    "num_premise_clauses": 4,
+    "num_constraint_atoms": 5,
+    "primitive_counter": {
+      "triangle": 1,
+      "circle": 1,
+      "on_circle": 1,
+      "on_aline": 2
+    },
+    "num_unique_primitives": 4,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "d",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "p",
+          "b",
+          "c",
+          "a",
+          "b",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "p",
+          "d",
+          "c",
+          "a",
+          "d",
+          "b"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 3,
+      "multi_constraint_clause": 1
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "a",
+      "p",
+      "c",
+      "p"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_circle d o a"
+        ],
+        "primitives": [
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_aline p b c a b d",
+          "on_aline p d c a d b"
+        ],
+        "primitives": [
+          "on_aline",
+          "on_aline"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2005_p5",
+    "spec": "a b c = triangle a b c; d = eqdistance d a b c; e = on_line e b c; f = on_line f a d, eqdistance f d e b; p = on_line p a c, on_line p b d; q = on_line q e f, on_line q b d; r = on_line r e f, on_line r a c; o1 = circle o1 a p d; o2 = circle o2 b p c; m = on_circle m o1 p, on_circle m o2 p ? cyclic p q r m",
+    "premises_text": "a b c = triangle a b c; d = eqdistance d a b c; e = on_line e b c; f = on_line f a d, eqdistance f d e b; p = on_line p a c, on_line p b d; q = on_line q e f, on_line q b d; r = on_line r e f, on_line r a c; o1 = circle o1 a p d; o2 = circle o2 b p c; m = on_circle m o1 p, on_circle m o2 p",
+    "goal_text": "cyclic p q r m",
+    "num_premise_clauses": 10,
+    "num_constraint_atoms": 15,
+    "primitive_counter": {
+      "triangle": 1,
+      "eqdistance": 2,
+      "on_line": 8,
+      "circle": 2,
+      "on_circle": 2
+    },
+    "num_unique_primitives": 5,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "eqdistance",
+        "arity": 4,
+        "args": [
+          "d",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "e",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "f",
+          "a",
+          "d"
+        ]
+      },
+      {
+        "primitive": "eqdistance",
+        "arity": 4,
+        "args": [
+          "f",
+          "d",
+          "e",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "p",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "p",
+          "b",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "q",
+          "e",
+          "f"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "q",
+          "b",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "r",
+          "e",
+          "f"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "r",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o1",
+          "a",
+          "p",
+          "d"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o2",
+          "b",
+          "p",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "m",
+          "o1",
+          "p"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "m",
+          "o2",
+          "p"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 5,
+      "multi_constraint_clause": 5
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cyclic",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cyclic",
+      "p",
+      "q",
+      "r",
+      "m"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "eqdistance d a b c"
+        ],
+        "primitives": [
+          "eqdistance"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "on_line e b c"
+        ],
+        "primitives": [
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "on_line f a d",
+          "eqdistance f d e b"
+        ],
+        "primitives": [
+          "on_line",
+          "eqdistance"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_line p a c",
+          "on_line p b d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_line q e f",
+          "on_line q b d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "r"
+        ],
+        "rhs_parts": [
+          "on_line r e f",
+          "on_line r a c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "o1"
+        ],
+        "rhs_parts": [
+          "circle o1 a p d"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o2"
+        ],
+        "rhs_parts": [
+          "circle o2 b p c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "m"
+        ],
+        "rhs_parts": [
+          "on_circle m o1 p",
+          "on_circle m o2 p"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2007_p4",
+    "spec": "a b c = triangle a b c; o = circle o a b c; r = on_circle r o a, on_bline r a b; l = midpoint l c a; k = midpoint k c b; p = on_line p o k, on_line p c r; q = on_line q o l, on_line q c r; l1 = foot l1 l c r; k1 = foot k1 k c r ? eqratio k k1 l l1 r q r p",
+    "premises_text": "a b c = triangle a b c; o = circle o a b c; r = on_circle r o a, on_bline r a b; l = midpoint l c a; k = midpoint k c b; p = on_line p o k, on_line p c r; q = on_line q o l, on_line q c r; l1 = foot l1 l c r; k1 = foot k1 k c r",
+    "goal_text": "eqratio k k1 l l1 r q r p",
+    "num_premise_clauses": 9,
+    "num_constraint_atoms": 12,
+    "primitive_counter": {
+      "triangle": 1,
+      "circle": 1,
+      "on_circle": 1,
+      "on_bline": 1,
+      "midpoint": 2,
+      "on_line": 4,
+      "foot": 2
+    },
+    "num_unique_primitives": 7,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "r",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "r",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "l",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "k",
+          "c",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "p",
+          "o",
+          "k"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "p",
+          "c",
+          "r"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "q",
+          "o",
+          "l"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "q",
+          "c",
+          "r"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "l1",
+          "l",
+          "c",
+          "r"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "k1",
+          "k",
+          "c",
+          "r"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 6,
+      "multi_constraint_clause": 3
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "eqratio",
+    "goal_arity": 8,
+    "goal_tokens": [
+      "eqratio",
+      "k",
+      "k1",
+      "l",
+      "l1",
+      "r",
+      "q",
+      "r",
+      "p"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "r"
+        ],
+        "rhs_parts": [
+          "on_circle r o a",
+          "on_bline r a b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "l"
+        ],
+        "rhs_parts": [
+          "midpoint l c a"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "k"
+        ],
+        "rhs_parts": [
+          "midpoint k c b"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_line p o k",
+          "on_line p c r"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_line q o l",
+          "on_line q c r"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "l1"
+        ],
+        "rhs_parts": [
+          "foot l1 l c r"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      },
+      {
+        "lhs": [
+          "k1"
+        ],
+        "rhs_parts": [
+          "foot k1 k c r"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2008_p1a",
+    "spec": "a b c = triangle a b c; h = orthocenter h a b c; d = midpoint d b c; e = midpoint e a c; f = midpoint f a b; a1 = on_circle a1 d h, on_line a1 b c; a2 = on_circle a2 d h, on_line a2 b c; b1 = on_circle b1 e h, on_line b1 c a; b2 = on_circle b2 e h, on_line b2 c a; c1 = on_circle c1 f h, on_line c1 a b; c2 = on_circle c2 f h, on_line c2 a b ? cyclic c1 c2 b1 b2",
+    "premises_text": "a b c = triangle a b c; h = orthocenter h a b c; d = midpoint d b c; e = midpoint e a c; f = midpoint f a b; a1 = on_circle a1 d h, on_line a1 b c; a2 = on_circle a2 d h, on_line a2 b c; b1 = on_circle b1 e h, on_line b1 c a; b2 = on_circle b2 e h, on_line b2 c a; c1 = on_circle c1 f h, on_line c1 a b; c2 = on_circle c2 f h, on_line c2 a b",
+    "goal_text": "cyclic c1 c2 b1 b2",
+    "num_premise_clauses": 11,
+    "num_constraint_atoms": 17,
+    "primitive_counter": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "midpoint": 3,
+      "on_circle": 6,
+      "on_line": 6
+    },
+    "num_unique_primitives": 5,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "orthocenter",
+        "arity": 4,
+        "args": [
+          "h",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "d",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "e",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "f",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "a1",
+          "d",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "a1",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "a2",
+          "d",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "a2",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "b1",
+          "e",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "b1",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "b2",
+          "e",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "b2",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "c1",
+          "f",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "c1",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "c2",
+          "f",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "c2",
+          "a",
+          "b"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 5,
+      "multi_constraint_clause": 6
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cyclic",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cyclic",
+      "c1",
+      "c2",
+      "b1",
+      "b2"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "h"
+        ],
+        "rhs_parts": [
+          "orthocenter h a b c"
+        ],
+        "primitives": [
+          "orthocenter"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "midpoint d b c"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "midpoint e a c"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "midpoint f a b"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "a1"
+        ],
+        "rhs_parts": [
+          "on_circle a1 d h",
+          "on_line a1 b c"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "a2"
+        ],
+        "rhs_parts": [
+          "on_circle a2 d h",
+          "on_line a2 b c"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "b1"
+        ],
+        "rhs_parts": [
+          "on_circle b1 e h",
+          "on_line b1 c a"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "b2"
+        ],
+        "rhs_parts": [
+          "on_circle b2 e h",
+          "on_line b2 c a"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "c1"
+        ],
+        "rhs_parts": [
+          "on_circle c1 f h",
+          "on_line c1 a b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "c2"
+        ],
+        "rhs_parts": [
+          "on_circle c2 f h",
+          "on_line c2 a b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2008_p1b",
+    "spec": "a b c = triangle a b c; h = orthocenter h a b c; d = midpoint d b c; e = midpoint e a c; f = midpoint f a b; a1 = on_circle a1 d h, on_line a1 b c; a2 = on_circle a2 d h, on_line a2 b c; b1 = on_circle b1 e h, on_line b1 c a; b2 = on_circle b2 e h, on_line b2 c a; c1 = on_circle c1 f h, on_line c1 a b; c2 = on_circle c2 f h, on_line c2 a b ? cyclic c1 c2 b1 a1",
+    "premises_text": "a b c = triangle a b c; h = orthocenter h a b c; d = midpoint d b c; e = midpoint e a c; f = midpoint f a b; a1 = on_circle a1 d h, on_line a1 b c; a2 = on_circle a2 d h, on_line a2 b c; b1 = on_circle b1 e h, on_line b1 c a; b2 = on_circle b2 e h, on_line b2 c a; c1 = on_circle c1 f h, on_line c1 a b; c2 = on_circle c2 f h, on_line c2 a b",
+    "goal_text": "cyclic c1 c2 b1 a1",
+    "num_premise_clauses": 11,
+    "num_constraint_atoms": 17,
+    "primitive_counter": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "midpoint": 3,
+      "on_circle": 6,
+      "on_line": 6
+    },
+    "num_unique_primitives": 5,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "orthocenter",
+        "arity": 4,
+        "args": [
+          "h",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "d",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "e",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "f",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "a1",
+          "d",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "a1",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "a2",
+          "d",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "a2",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "b1",
+          "e",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "b1",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "b2",
+          "e",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "b2",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "c1",
+          "f",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "c1",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "c2",
+          "f",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "c2",
+          "a",
+          "b"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 5,
+      "multi_constraint_clause": 6
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cyclic",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cyclic",
+      "c1",
+      "c2",
+      "b1",
+      "a1"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "h"
+        ],
+        "rhs_parts": [
+          "orthocenter h a b c"
+        ],
+        "primitives": [
+          "orthocenter"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "midpoint d b c"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "midpoint e a c"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "midpoint f a b"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "a1"
+        ],
+        "rhs_parts": [
+          "on_circle a1 d h",
+          "on_line a1 b c"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "a2"
+        ],
+        "rhs_parts": [
+          "on_circle a2 d h",
+          "on_line a2 b c"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "b1"
+        ],
+        "rhs_parts": [
+          "on_circle b1 e h",
+          "on_line b1 c a"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "b2"
+        ],
+        "rhs_parts": [
+          "on_circle b2 e h",
+          "on_line b2 c a"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "c1"
+        ],
+        "rhs_parts": [
+          "on_circle c1 f h",
+          "on_line c1 a b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "c2"
+        ],
+        "rhs_parts": [
+          "on_circle c2 f h",
+          "on_line c2 a b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2008_p6",
+    "spec": "x@4.96_-0.13 y@-1.0068968328888160_-1.2534881080682770 z@-2.8402847238575120_-4.9117762734006830 = triangle x y z; o = circle o x y z; w@6.9090049230038776_-1.3884003936987552 = on_circle w o x; a = on_tline a z o z, on_tline a x o x; b = on_tline b z o z, on_tline b w o w; c = on_tline c y o y, on_tline c w o w; d = on_tline d x o x, on_tline d y o y; i1 = incenter i1 a b c; i2 = incenter i2 a c d; f1 = foot f1 i1 a c; f2 = foot f2 i2 a c; q t p s = cc_tangent q t p s i1 f1 i2 f2; k = on_line k q t, on_line k p s ? cong o k o x",
+    "premises_text": "x@4.96_-0.13 y@-1.0068968328888160_-1.2534881080682770 z@-2.8402847238575120_-4.9117762734006830 = triangle x y z; o = circle o x y z; w@6.9090049230038776_-1.3884003936987552 = on_circle w o x; a = on_tline a z o z, on_tline a x o x; b = on_tline b z o z, on_tline b w o w; c = on_tline c y o y, on_tline c w o w; d = on_tline d x o x, on_tline d y o y; i1 = incenter i1 a b c; i2 = incenter i2 a c d; f1 = foot f1 i1 a c; f2 = foot f2 i2 a c; q t p s = cc_tangent q t p s i1 f1 i2 f2; k = on_line k q t, on_line k p s",
+    "goal_text": "cong o k o x",
+    "num_premise_clauses": 13,
+    "num_constraint_atoms": 18,
+    "primitive_counter": {
+      "triangle": 1,
+      "circle": 1,
+      "on_circle": 1,
+      "on_tline": 8,
+      "incenter": 2,
+      "foot": 2,
+      "cc_tangent": 1,
+      "on_line": 2
+    },
+    "num_unique_primitives": 8,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "w",
+          "o",
+          "x"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "a",
+          "z",
+          "o",
+          "z"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "a",
+          "x",
+          "o",
+          "x"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "b",
+          "z",
+          "o",
+          "z"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "b",
+          "w",
+          "o",
+          "w"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "c",
+          "y",
+          "o",
+          "y"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "c",
+          "w",
+          "o",
+          "w"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "d",
+          "x",
+          "o",
+          "x"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "d",
+          "y",
+          "o",
+          "y"
+        ]
+      },
+      {
+        "primitive": "incenter",
+        "arity": 4,
+        "args": [
+          "i1",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "incenter",
+        "arity": 4,
+        "args": [
+          "i2",
+          "a",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "f1",
+          "i1",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "f2",
+          "i2",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "cc_tangent",
+        "arity": 8,
+        "args": [
+          "q",
+          "t",
+          "p",
+          "s",
+          "i1",
+          "f1",
+          "i2",
+          "f2"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "k",
+          "q",
+          "t"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "k",
+          "p",
+          "s"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      4,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 8,
+      "multi_constraint_clause": 5
+    },
+    "coordinates_present": 1,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "o",
+      "k",
+      "o",
+      "x"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "x@4.96_-0.13",
+          "y@-1.0068968328888160_-1.2534881080682770",
+          "z@-2.8402847238575120_-4.9117762734006830"
+        ],
+        "rhs_parts": [
+          "triangle x y z"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o x y z"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "w@6.9090049230038776_-1.3884003936987552"
+        ],
+        "rhs_parts": [
+          "on_circle w o x"
+        ],
+        "primitives": [
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "a"
+        ],
+        "rhs_parts": [
+          "on_tline a z o z",
+          "on_tline a x o x"
+        ],
+        "primitives": [
+          "on_tline",
+          "on_tline"
+        ]
+      },
+      {
+        "lhs": [
+          "b"
+        ],
+        "rhs_parts": [
+          "on_tline b z o z",
+          "on_tline b w o w"
+        ],
+        "primitives": [
+          "on_tline",
+          "on_tline"
+        ]
+      },
+      {
+        "lhs": [
+          "c"
+        ],
+        "rhs_parts": [
+          "on_tline c y o y",
+          "on_tline c w o w"
+        ],
+        "primitives": [
+          "on_tline",
+          "on_tline"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_tline d x o x",
+          "on_tline d y o y"
+        ],
+        "primitives": [
+          "on_tline",
+          "on_tline"
+        ]
+      },
+      {
+        "lhs": [
+          "i1"
+        ],
+        "rhs_parts": [
+          "incenter i1 a b c"
+        ],
+        "primitives": [
+          "incenter"
+        ]
+      },
+      {
+        "lhs": [
+          "i2"
+        ],
+        "rhs_parts": [
+          "incenter i2 a c d"
+        ],
+        "primitives": [
+          "incenter"
+        ]
+      },
+      {
+        "lhs": [
+          "f1"
+        ],
+        "rhs_parts": [
+          "foot f1 i1 a c"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      },
+      {
+        "lhs": [
+          "f2"
+        ],
+        "rhs_parts": [
+          "foot f2 i2 a c"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      },
+      {
+        "lhs": [
+          "q",
+          "t",
+          "p",
+          "s"
+        ],
+        "rhs_parts": [
+          "cc_tangent q t p s i1 f1 i2 f2"
+        ],
+        "primitives": [
+          "cc_tangent"
+        ]
+      },
+      {
+        "lhs": [
+          "k"
+        ],
+        "rhs_parts": [
+          "on_line k q t",
+          "on_line k p s"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2009_p2",
+    "spec": "m l k = triangle m l k; w = circle w m l k; q = on_tline q m w m; p = mirror p q m; b = mirror b p k; c = mirror c q l; a = on_line a b q, on_line a c p; o = circle o a b c ? cong o p o q",
+    "premises_text": "m l k = triangle m l k; w = circle w m l k; q = on_tline q m w m; p = mirror p q m; b = mirror b p k; c = mirror c q l; a = on_line a b q, on_line a c p; o = circle o a b c",
+    "goal_text": "cong o p o q",
+    "num_premise_clauses": 8,
+    "num_constraint_atoms": 9,
+    "primitive_counter": {
+      "triangle": 1,
+      "circle": 2,
+      "on_tline": 1,
+      "mirror": 3,
+      "on_line": 2
+    },
+    "num_unique_primitives": 5,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "m",
+          "l",
+          "k"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "w",
+          "m",
+          "l",
+          "k"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "q",
+          "m",
+          "w",
+          "m"
+        ]
+      },
+      {
+        "primitive": "mirror",
+        "arity": 3,
+        "args": [
+          "p",
+          "q",
+          "m"
+        ]
+      },
+      {
+        "primitive": "mirror",
+        "arity": 3,
+        "args": [
+          "b",
+          "p",
+          "k"
+        ]
+      },
+      {
+        "primitive": "mirror",
+        "arity": 3,
+        "args": [
+          "c",
+          "q",
+          "l"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "q"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "a",
+          "c",
+          "p"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 7,
+      "multi_constraint_clause": 1
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "o",
+      "p",
+      "o",
+      "q"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "m",
+          "l",
+          "k"
+        ],
+        "rhs_parts": [
+          "triangle m l k"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "w"
+        ],
+        "rhs_parts": [
+          "circle w m l k"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_tline q m w m"
+        ],
+        "primitives": [
+          "on_tline"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "mirror p q m"
+        ],
+        "primitives": [
+          "mirror"
+        ]
+      },
+      {
+        "lhs": [
+          "b"
+        ],
+        "rhs_parts": [
+          "mirror b p k"
+        ],
+        "primitives": [
+          "mirror"
+        ]
+      },
+      {
+        "lhs": [
+          "c"
+        ],
+        "rhs_parts": [
+          "mirror c q l"
+        ],
+        "primitives": [
+          "mirror"
+        ]
+      },
+      {
+        "lhs": [
+          "a"
+        ],
+        "rhs_parts": [
+          "on_line a b q",
+          "on_line a c p"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2010_p2",
+    "spec": "a b c = triangle a b c; o = circle o a b c; i = incenter i a b c; d = on_line d a i, on_circle d o a; f = on_line f b c; e = on_aline e a c b a f, on_circle e o a; g = midpoint g i f; k = on_line k d g, on_line k e i ? cong o a o k",
+    "premises_text": "a b c = triangle a b c; o = circle o a b c; i = incenter i a b c; d = on_line d a i, on_circle d o a; f = on_line f b c; e = on_aline e a c b a f, on_circle e o a; g = midpoint g i f; k = on_line k d g, on_line k e i",
+    "goal_text": "cong o a o k",
+    "num_premise_clauses": 8,
+    "num_constraint_atoms": 11,
+    "primitive_counter": {
+      "triangle": 1,
+      "circle": 1,
+      "incenter": 1,
+      "on_line": 4,
+      "on_circle": 2,
+      "on_aline": 1,
+      "midpoint": 1
+    },
+    "num_unique_primitives": 7,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "incenter",
+        "arity": 4,
+        "args": [
+          "i",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "d",
+          "a",
+          "i"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "d",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "f",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "e",
+          "a",
+          "c",
+          "b",
+          "a",
+          "f"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "e",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "g",
+          "i",
+          "f"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "k",
+          "d",
+          "g"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "k",
+          "e",
+          "i"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 5,
+      "multi_constraint_clause": 3
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "o",
+      "a",
+      "o",
+      "k"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "i"
+        ],
+        "rhs_parts": [
+          "incenter i a b c"
+        ],
+        "primitives": [
+          "incenter"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_line d a i",
+          "on_circle d o a"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "on_line f b c"
+        ],
+        "primitives": [
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "on_aline e a c b a f",
+          "on_circle e o a"
+        ],
+        "primitives": [
+          "on_aline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "g"
+        ],
+        "rhs_parts": [
+          "midpoint g i f"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "k"
+        ],
+        "rhs_parts": [
+          "on_line k d g",
+          "on_line k e i"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2010_p4",
+    "spec": "s c p = iso_triangle s c p; o = on_tline o c s c; a = on_circle a o c; b = on_circle b o c, on_line b s a; m = on_line m c p, on_circle m o c; l = on_line l b p, on_circle l o c; k = on_line k a p, on_circle k o c ? cong m k m l",
+    "premises_text": "s c p = iso_triangle s c p; o = on_tline o c s c; a = on_circle a o c; b = on_circle b o c, on_line b s a; m = on_line m c p, on_circle m o c; l = on_line l b p, on_circle l o c; k = on_line k a p, on_circle k o c",
+    "goal_text": "cong m k m l",
+    "num_premise_clauses": 7,
+    "num_constraint_atoms": 11,
+    "primitive_counter": {
+      "iso_triangle": 1,
+      "on_tline": 1,
+      "on_circle": 5,
+      "on_line": 4
+    },
+    "num_unique_primitives": 4,
+    "primitive_arguments": [
+      {
+        "primitive": "iso_triangle",
+        "arity": 3,
+        "args": [
+          "s",
+          "c",
+          "p"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "o",
+          "c",
+          "s",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "a",
+          "o",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "b",
+          "o",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "b",
+          "s",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "m",
+          "c",
+          "p"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "m",
+          "o",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "l",
+          "b",
+          "p"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "l",
+          "o",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "k",
+          "a",
+          "p"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "k",
+          "o",
+          "c"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 3,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "m",
+      "k",
+      "m",
+      "l"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "s",
+          "c",
+          "p"
+        ],
+        "rhs_parts": [
+          "iso_triangle s c p"
+        ],
+        "primitives": [
+          "iso_triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "on_tline o c s c"
+        ],
+        "primitives": [
+          "on_tline"
+        ]
+      },
+      {
+        "lhs": [
+          "a"
+        ],
+        "rhs_parts": [
+          "on_circle a o c"
+        ],
+        "primitives": [
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "b"
+        ],
+        "rhs_parts": [
+          "on_circle b o c",
+          "on_line b s a"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "m"
+        ],
+        "rhs_parts": [
+          "on_line m c p",
+          "on_circle m o c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "l"
+        ],
+        "rhs_parts": [
+          "on_line l b p",
+          "on_circle l o c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "k"
+        ],
+        "rhs_parts": [
+          "on_line k a p",
+          "on_circle k o c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2011_p6",
+    "spec": "a b c = triangle a b c; o = circle o a b c; p = on_circle p o a; q = on_tline q p o p; pa = reflect pa p b c; pb = reflect pb p c a; pc = reflect pc p a b; qa = reflect qa q b c; qb = reflect qb q c a; qc = reflect qc q a b; a1 = on_line a1 pb qb, on_line a1 pc qc; b1 = on_line b1 pa qa, on_line b1 pc qc; c1 = on_line c1 pa qa, on_line c1 pb qb; o1 = circle o1 a1 b1 c1; x = on_circle x o a, on_circle x o1 a1 ? coll x o o1",
+    "premises_text": "a b c = triangle a b c; o = circle o a b c; p = on_circle p o a; q = on_tline q p o p; pa = reflect pa p b c; pb = reflect pb p c a; pc = reflect pc p a b; qa = reflect qa q b c; qb = reflect qb q c a; qc = reflect qc q a b; a1 = on_line a1 pb qb, on_line a1 pc qc; b1 = on_line b1 pa qa, on_line b1 pc qc; c1 = on_line c1 pa qa, on_line c1 pb qb; o1 = circle o1 a1 b1 c1; x = on_circle x o a, on_circle x o1 a1",
+    "goal_text": "coll x o o1",
+    "num_premise_clauses": 15,
+    "num_constraint_atoms": 19,
+    "primitive_counter": {
+      "triangle": 1,
+      "circle": 2,
+      "on_circle": 3,
+      "on_tline": 1,
+      "reflect": 6,
+      "on_line": 6
+    },
+    "num_unique_primitives": 6,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "p",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "q",
+          "p",
+          "o",
+          "p"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "pa",
+          "p",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "pb",
+          "p",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "pc",
+          "p",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "qa",
+          "q",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "qb",
+          "q",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "reflect",
+        "arity": 4,
+        "args": [
+          "qc",
+          "q",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "a1",
+          "pb",
+          "qb"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "a1",
+          "pc",
+          "qc"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "b1",
+          "pa",
+          "qa"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "b1",
+          "pc",
+          "qc"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "c1",
+          "pa",
+          "qa"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "c1",
+          "pb",
+          "qb"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o1",
+          "a1",
+          "b1",
+          "c1"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "x",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "x",
+          "o1",
+          "a1"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 11,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "coll",
+    "goal_arity": 3,
+    "goal_tokens": [
+      "coll",
+      "x",
+      "o",
+      "o1"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_circle p o a"
+        ],
+        "primitives": [
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_tline q p o p"
+        ],
+        "primitives": [
+          "on_tline"
+        ]
+      },
+      {
+        "lhs": [
+          "pa"
+        ],
+        "rhs_parts": [
+          "reflect pa p b c"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "pb"
+        ],
+        "rhs_parts": [
+          "reflect pb p c a"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "pc"
+        ],
+        "rhs_parts": [
+          "reflect pc p a b"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "qa"
+        ],
+        "rhs_parts": [
+          "reflect qa q b c"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "qb"
+        ],
+        "rhs_parts": [
+          "reflect qb q c a"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "qc"
+        ],
+        "rhs_parts": [
+          "reflect qc q a b"
+        ],
+        "primitives": [
+          "reflect"
+        ]
+      },
+      {
+        "lhs": [
+          "a1"
+        ],
+        "rhs_parts": [
+          "on_line a1 pb qb",
+          "on_line a1 pc qc"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "b1"
+        ],
+        "rhs_parts": [
+          "on_line b1 pa qa",
+          "on_line b1 pc qc"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "c1"
+        ],
+        "rhs_parts": [
+          "on_line c1 pa qa",
+          "on_line c1 pb qb"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "o1"
+        ],
+        "rhs_parts": [
+          "circle o1 a1 b1 c1"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "x"
+        ],
+        "rhs_parts": [
+          "on_circle x o a",
+          "on_circle x o1 a1"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2012_p1",
+    "spec": "a b c = triangle a b c; m l k j = excenter2 m l k j a b c; f = on_line f m l, on_line f b j; g = on_line g m k, on_line g c j; s = on_line s f a, on_line s b c; t = on_line t g a, on_line t c b ? cong m s m t",
+    "premises_text": "a b c = triangle a b c; m l k j = excenter2 m l k j a b c; f = on_line f m l, on_line f b j; g = on_line g m k, on_line g c j; s = on_line s f a, on_line s b c; t = on_line t g a, on_line t c b",
+    "goal_text": "cong m s m t",
+    "num_premise_clauses": 6,
+    "num_constraint_atoms": 10,
+    "primitive_counter": {
+      "triangle": 1,
+      "excenter2": 1,
+      "on_line": 8
+    },
+    "num_unique_primitives": 3,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "excenter2",
+        "arity": 7,
+        "args": [
+          "m",
+          "l",
+          "k",
+          "j",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "f",
+          "m",
+          "l"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "f",
+          "b",
+          "j"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "g",
+          "m",
+          "k"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "g",
+          "c",
+          "j"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "s",
+          "f",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "s",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "t",
+          "g",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "t",
+          "c",
+          "b"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      4,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 2,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "m",
+      "s",
+      "m",
+      "t"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "m",
+          "l",
+          "k",
+          "j"
+        ],
+        "rhs_parts": [
+          "excenter2 m l k j a b c"
+        ],
+        "primitives": [
+          "excenter2"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "on_line f m l",
+          "on_line f b j"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "g"
+        ],
+        "rhs_parts": [
+          "on_line g m k",
+          "on_line g c j"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "s"
+        ],
+        "rhs_parts": [
+          "on_line s f a",
+          "on_line s b c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "t"
+        ],
+        "rhs_parts": [
+          "on_line t g a",
+          "on_line t c b"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2012_p5",
+    "spec": "c a b = r_triangle c a b; d = foot d c a b; x = on_line x c d; k = on_line k a x, on_circle k b c; l = on_line l b x, on_circle l a c; m = on_line m a l, on_line m b k ? cong m k m l",
+    "premises_text": "c a b = r_triangle c a b; d = foot d c a b; x = on_line x c d; k = on_line k a x, on_circle k b c; l = on_line l b x, on_circle l a c; m = on_line m a l, on_line m b k",
+    "goal_text": "cong m k m l",
+    "num_premise_clauses": 6,
+    "num_constraint_atoms": 9,
+    "primitive_counter": {
+      "r_triangle": 1,
+      "foot": 1,
+      "on_line": 5,
+      "on_circle": 2
+    },
+    "num_unique_primitives": 4,
+    "primitive_arguments": [
+      {
+        "primitive": "r_triangle",
+        "arity": 3,
+        "args": [
+          "c",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "foot",
+        "arity": 4,
+        "args": [
+          "d",
+          "c",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "x",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "k",
+          "a",
+          "x"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "k",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "l",
+          "b",
+          "x"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "l",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "m",
+          "a",
+          "l"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "m",
+          "b",
+          "k"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 3,
+      "multi_constraint_clause": 3
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "m",
+      "k",
+      "m",
+      "l"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "c",
+          "a",
+          "b"
+        ],
+        "rhs_parts": [
+          "r_triangle c a b"
+        ],
+        "primitives": [
+          "r_triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "foot d c a b"
+        ],
+        "primitives": [
+          "foot"
+        ]
+      },
+      {
+        "lhs": [
+          "x"
+        ],
+        "rhs_parts": [
+          "on_line x c d"
+        ],
+        "primitives": [
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "k"
+        ],
+        "rhs_parts": [
+          "on_line k a x",
+          "on_circle k b c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "l"
+        ],
+        "rhs_parts": [
+          "on_line l b x",
+          "on_circle l a c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "m"
+        ],
+        "rhs_parts": [
+          "on_line m a l",
+          "on_line m b k"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2013_p4",
+    "spec": "a b c = triangle a b c; h = orthocenter h a b c; m = on_line m h b, on_line m a c; n = on_line n h c, on_line n a b; w = on_line w b c; o1 = circle o1 b n w; o2 = circle o2 c m w; x = on_line x o1 w, on_circle x o1 w; y = on_line y o2 w, on_circle y o2 w ? coll x h y",
+    "premises_text": "a b c = triangle a b c; h = orthocenter h a b c; m = on_line m h b, on_line m a c; n = on_line n h c, on_line n a b; w = on_line w b c; o1 = circle o1 b n w; o2 = circle o2 c m w; x = on_line x o1 w, on_circle x o1 w; y = on_line y o2 w, on_circle y o2 w",
+    "goal_text": "coll x h y",
+    "num_premise_clauses": 9,
+    "num_constraint_atoms": 13,
+    "primitive_counter": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "on_line": 7,
+      "circle": 2,
+      "on_circle": 2
+    },
+    "num_unique_primitives": 5,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "orthocenter",
+        "arity": 4,
+        "args": [
+          "h",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "m",
+          "h",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "m",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "n",
+          "h",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "n",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "w",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o1",
+          "b",
+          "n",
+          "w"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o2",
+          "c",
+          "m",
+          "w"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "x",
+          "o1",
+          "w"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "x",
+          "o1",
+          "w"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "y",
+          "o2",
+          "w"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "y",
+          "o2",
+          "w"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 5,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "coll",
+    "goal_arity": 3,
+    "goal_tokens": [
+      "coll",
+      "x",
+      "h",
+      "y"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "h"
+        ],
+        "rhs_parts": [
+          "orthocenter h a b c"
+        ],
+        "primitives": [
+          "orthocenter"
+        ]
+      },
+      {
+        "lhs": [
+          "m"
+        ],
+        "rhs_parts": [
+          "on_line m h b",
+          "on_line m a c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "n"
+        ],
+        "rhs_parts": [
+          "on_line n h c",
+          "on_line n a b"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "w"
+        ],
+        "rhs_parts": [
+          "on_line w b c"
+        ],
+        "primitives": [
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "o1"
+        ],
+        "rhs_parts": [
+          "circle o1 b n w"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o2"
+        ],
+        "rhs_parts": [
+          "circle o2 c m w"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "x"
+        ],
+        "rhs_parts": [
+          "on_line x o1 w",
+          "on_circle x o1 w"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "y"
+        ],
+        "rhs_parts": [
+          "on_line y o2 w",
+          "on_circle y o2 w"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2014_p4",
+    "spec": "a b c = triangle a b c; p = on_line p b c, on_aline p a b b c a; q = on_line q b c, on_aline q a c c b a; m = mirror m a p; n = mirror n a q; x = on_line x b m, on_line x c n; o = circle o a b c ? cong o x o a",
+    "premises_text": "a b c = triangle a b c; p = on_line p b c, on_aline p a b b c a; q = on_line q b c, on_aline q a c c b a; m = mirror m a p; n = mirror n a q; x = on_line x b m, on_line x c n; o = circle o a b c",
+    "goal_text": "cong o x o a",
+    "num_premise_clauses": 7,
+    "num_constraint_atoms": 10,
+    "primitive_counter": {
+      "triangle": 1,
+      "on_line": 4,
+      "on_aline": 2,
+      "mirror": 2,
+      "circle": 1
+    },
+    "num_unique_primitives": 5,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "p",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "p",
+          "a",
+          "b",
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "q",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "q",
+          "a",
+          "c",
+          "c",
+          "b",
+          "a"
+        ]
+      },
+      {
+        "primitive": "mirror",
+        "arity": 3,
+        "args": [
+          "m",
+          "a",
+          "p"
+        ]
+      },
+      {
+        "primitive": "mirror",
+        "arity": 3,
+        "args": [
+          "n",
+          "a",
+          "q"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "x",
+          "b",
+          "m"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "x",
+          "c",
+          "n"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 4,
+      "multi_constraint_clause": 3
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "o",
+      "x",
+      "o",
+      "a"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_line p b c",
+          "on_aline p a b b c a"
+        ],
+        "primitives": [
+          "on_line",
+          "on_aline"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_line q b c",
+          "on_aline q a c c b a"
+        ],
+        "primitives": [
+          "on_line",
+          "on_aline"
+        ]
+      },
+      {
+        "lhs": [
+          "m"
+        ],
+        "rhs_parts": [
+          "mirror m a p"
+        ],
+        "primitives": [
+          "mirror"
+        ]
+      },
+      {
+        "lhs": [
+          "n"
+        ],
+        "rhs_parts": [
+          "mirror n a q"
+        ],
+        "primitives": [
+          "mirror"
+        ]
+      },
+      {
+        "lhs": [
+          "x"
+        ],
+        "rhs_parts": [
+          "on_line x b m",
+          "on_line x c n"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2015_p3",
+    "spec": "a b c = triangle a b c; h = orthocenter h a b c; f = on_line f h a, on_line f b c; m = midpoint m b c; o = circle o a b c; q = on_dia q a h, on_circle q o a; k = on_dia k h q, on_circle k o a; o1 = circle o1 k q h; o2 = circle o2 f k m ? coll o1 o2 k",
+    "premises_text": "a b c = triangle a b c; h = orthocenter h a b c; f = on_line f h a, on_line f b c; m = midpoint m b c; o = circle o a b c; q = on_dia q a h, on_circle q o a; k = on_dia k h q, on_circle k o a; o1 = circle o1 k q h; o2 = circle o2 f k m",
+    "goal_text": "coll o1 o2 k",
+    "num_premise_clauses": 9,
+    "num_constraint_atoms": 12,
+    "primitive_counter": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "on_line": 2,
+      "midpoint": 1,
+      "circle": 3,
+      "on_dia": 2,
+      "on_circle": 2
+    },
+    "num_unique_primitives": 7,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "orthocenter",
+        "arity": 4,
+        "args": [
+          "h",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "f",
+          "h",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "f",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "m",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_dia",
+        "arity": 3,
+        "args": [
+          "q",
+          "a",
+          "h"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "q",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_dia",
+        "arity": 3,
+        "args": [
+          "k",
+          "h",
+          "q"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "k",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o1",
+          "k",
+          "q",
+          "h"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o2",
+          "f",
+          "k",
+          "m"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 6,
+      "multi_constraint_clause": 3
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "coll",
+    "goal_arity": 3,
+    "goal_tokens": [
+      "coll",
+      "o1",
+      "o2",
+      "k"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "h"
+        ],
+        "rhs_parts": [
+          "orthocenter h a b c"
+        ],
+        "primitives": [
+          "orthocenter"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "on_line f h a",
+          "on_line f b c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "m"
+        ],
+        "rhs_parts": [
+          "midpoint m b c"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_dia q a h",
+          "on_circle q o a"
+        ],
+        "primitives": [
+          "on_dia",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "k"
+        ],
+        "rhs_parts": [
+          "on_dia k h q",
+          "on_circle k o a"
+        ],
+        "primitives": [
+          "on_dia",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o1"
+        ],
+        "rhs_parts": [
+          "circle o1 k q h"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o2"
+        ],
+        "rhs_parts": [
+          "circle o2 f k m"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2015_p4",
+    "spec": "a b c = triangle a b c; o = circle o a b c; d = on_line d b c; e = on_line e b c, on_circle e a d; f = on_circle f o a, on_circle f a d; g = on_circle g o a, on_circle g a d; o1 = circle o1 f b d; o2 = circle o2 g c e; k = on_circle k o1 b, on_line k a b; l = on_circle l o2 c, on_line l a c; x = on_line x f k, on_line x l g ? coll x o a",
+    "premises_text": "a b c = triangle a b c; o = circle o a b c; d = on_line d b c; e = on_line e b c, on_circle e a d; f = on_circle f o a, on_circle f a d; g = on_circle g o a, on_circle g a d; o1 = circle o1 f b d; o2 = circle o2 g c e; k = on_circle k o1 b, on_line k a b; l = on_circle l o2 c, on_line l a c; x = on_line x f k, on_line x l g",
+    "goal_text": "coll x o a",
+    "num_premise_clauses": 11,
+    "num_constraint_atoms": 17,
+    "primitive_counter": {
+      "triangle": 1,
+      "circle": 3,
+      "on_line": 6,
+      "on_circle": 7
+    },
+    "num_unique_primitives": 4,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "d",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "e",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "e",
+          "a",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "f",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "f",
+          "a",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "g",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "g",
+          "a",
+          "d"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o1",
+          "f",
+          "b",
+          "d"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o2",
+          "g",
+          "c",
+          "e"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "k",
+          "o1",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "k",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "l",
+          "o2",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "l",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "x",
+          "f",
+          "k"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "x",
+          "l",
+          "g"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 5,
+      "multi_constraint_clause": 6
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "coll",
+    "goal_arity": 3,
+    "goal_tokens": [
+      "coll",
+      "x",
+      "o",
+      "a"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_line d b c"
+        ],
+        "primitives": [
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "on_line e b c",
+          "on_circle e a d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "on_circle f o a",
+          "on_circle f a d"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "g"
+        ],
+        "rhs_parts": [
+          "on_circle g o a",
+          "on_circle g a d"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o1"
+        ],
+        "rhs_parts": [
+          "circle o1 f b d"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o2"
+        ],
+        "rhs_parts": [
+          "circle o2 g c e"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "k"
+        ],
+        "rhs_parts": [
+          "on_circle k o1 b",
+          "on_line k a b"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "l"
+        ],
+        "rhs_parts": [
+          "on_circle l o2 c",
+          "on_line l a c"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "x"
+        ],
+        "rhs_parts": [
+          "on_line x f k",
+          "on_line x l g"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2016_p1",
+    "spec": "a b z = triangle a b z; f = angle_bisector f b a z, on_bline f a b; c = on_tline c b f b, on_line c a f; d = on_line d a z, on_bline d a c; e = angle_mirror e c a d, on_bline e a d; m = midpoint m c f; x = parallelogram e a m x; y = on_line y f x, on_line y e m ? coll y b d",
+    "premises_text": "a b z = triangle a b z; f = angle_bisector f b a z, on_bline f a b; c = on_tline c b f b, on_line c a f; d = on_line d a z, on_bline d a c; e = angle_mirror e c a d, on_bline e a d; m = midpoint m c f; x = parallelogram e a m x; y = on_line y f x, on_line y e m",
+    "goal_text": "coll y b d",
+    "num_premise_clauses": 8,
+    "num_constraint_atoms": 13,
+    "primitive_counter": {
+      "triangle": 1,
+      "angle_bisector": 1,
+      "on_bline": 3,
+      "on_tline": 1,
+      "on_line": 4,
+      "angle_mirror": 1,
+      "midpoint": 1,
+      "parallelogram": 1
+    },
+    "num_unique_primitives": 8,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "z"
+        ]
+      },
+      {
+        "primitive": "angle_bisector",
+        "arity": 4,
+        "args": [
+          "f",
+          "b",
+          "a",
+          "z"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "f",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "c",
+          "b",
+          "f",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "c",
+          "a",
+          "f"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "d",
+          "a",
+          "z"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "d",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "angle_mirror",
+        "arity": 4,
+        "args": [
+          "e",
+          "c",
+          "a",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "e",
+          "a",
+          "d"
+        ]
+      },
+      {
+        "primitive": "midpoint",
+        "arity": 3,
+        "args": [
+          "m",
+          "c",
+          "f"
+        ]
+      },
+      {
+        "primitive": "parallelogram",
+        "arity": 4,
+        "args": [
+          "e",
+          "a",
+          "m",
+          "x"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "y",
+          "f",
+          "x"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "y",
+          "e",
+          "m"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 3,
+      "multi_constraint_clause": 5
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "coll",
+    "goal_arity": 3,
+    "goal_tokens": [
+      "coll",
+      "y",
+      "b",
+      "d"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "z"
+        ],
+        "rhs_parts": [
+          "triangle a b z"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "angle_bisector f b a z",
+          "on_bline f a b"
+        ],
+        "primitives": [
+          "angle_bisector",
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "c"
+        ],
+        "rhs_parts": [
+          "on_tline c b f b",
+          "on_line c a f"
+        ],
+        "primitives": [
+          "on_tline",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_line d a z",
+          "on_bline d a c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "angle_mirror e c a d",
+          "on_bline e a d"
+        ],
+        "primitives": [
+          "angle_mirror",
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "m"
+        ],
+        "rhs_parts": [
+          "midpoint m c f"
+        ],
+        "primitives": [
+          "midpoint"
+        ]
+      },
+      {
+        "lhs": [
+          "x"
+        ],
+        "rhs_parts": [
+          "parallelogram e a m x"
+        ],
+        "primitives": [
+          "parallelogram"
+        ]
+      },
+      {
+        "lhs": [
+          "y"
+        ],
+        "rhs_parts": [
+          "on_line y f x",
+          "on_line y e m"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2017_p4",
+    "spec": "r s = segment r s; t = mirror t r s; o = on_bline o r s; j = on_circle j o s; o1 = circle o1 j s t; a = on_tline a r o r, on_circle a o1 s; b = on_tline b r o r, on_circle b o1 s; k = on_line k j a, on_circle k o s ? perp k t o1 t",
+    "premises_text": "r s = segment r s; t = mirror t r s; o = on_bline o r s; j = on_circle j o s; o1 = circle o1 j s t; a = on_tline a r o r, on_circle a o1 s; b = on_tline b r o r, on_circle b o1 s; k = on_line k j a, on_circle k o s",
+    "goal_text": "perp k t o1 t",
+    "num_premise_clauses": 8,
+    "num_constraint_atoms": 11,
+    "primitive_counter": {
+      "segment": 1,
+      "mirror": 1,
+      "on_bline": 1,
+      "on_circle": 4,
+      "circle": 1,
+      "on_tline": 2,
+      "on_line": 1
+    },
+    "num_unique_primitives": 7,
+    "primitive_arguments": [
+      {
+        "primitive": "segment",
+        "arity": 2,
+        "args": [
+          "r",
+          "s"
+        ]
+      },
+      {
+        "primitive": "mirror",
+        "arity": 3,
+        "args": [
+          "t",
+          "r",
+          "s"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "o",
+          "r",
+          "s"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "j",
+          "o",
+          "s"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o1",
+          "j",
+          "s",
+          "t"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "a",
+          "r",
+          "o",
+          "r"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "a",
+          "o1",
+          "s"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "b",
+          "r",
+          "o",
+          "r"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "b",
+          "o1",
+          "s"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "k",
+          "j",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "k",
+          "o",
+          "s"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 5,
+      "multi_constraint_clause": 3
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "perp",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "perp",
+      "k",
+      "t",
+      "o1",
+      "t"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "r",
+          "s"
+        ],
+        "rhs_parts": [
+          "segment r s"
+        ],
+        "primitives": [
+          "segment"
+        ]
+      },
+      {
+        "lhs": [
+          "t"
+        ],
+        "rhs_parts": [
+          "mirror t r s"
+        ],
+        "primitives": [
+          "mirror"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "on_bline o r s"
+        ],
+        "primitives": [
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "j"
+        ],
+        "rhs_parts": [
+          "on_circle j o s"
+        ],
+        "primitives": [
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o1"
+        ],
+        "rhs_parts": [
+          "circle o1 j s t"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "a"
+        ],
+        "rhs_parts": [
+          "on_tline a r o r",
+          "on_circle a o1 s"
+        ],
+        "primitives": [
+          "on_tline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "b"
+        ],
+        "rhs_parts": [
+          "on_tline b r o r",
+          "on_circle b o1 s"
+        ],
+        "primitives": [
+          "on_tline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "k"
+        ],
+        "rhs_parts": [
+          "on_line k j a",
+          "on_circle k o s"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2018_p1",
+    "spec": "a b c = triangle a b c; o = circle o a b c; d = on_line d a b; e = on_line e a c, on_circle e a d; f = on_bline f b d, on_circle f o a; g = on_bline g e c, on_circle g o a ? para d e f g",
+    "premises_text": "a b c = triangle a b c; o = circle o a b c; d = on_line d a b; e = on_line e a c, on_circle e a d; f = on_bline f b d, on_circle f o a; g = on_bline g e c, on_circle g o a",
+    "goal_text": "para d e f g",
+    "num_premise_clauses": 6,
+    "num_constraint_atoms": 9,
+    "primitive_counter": {
+      "triangle": 1,
+      "circle": 1,
+      "on_line": 2,
+      "on_circle": 3,
+      "on_bline": 2
+    },
+    "num_unique_primitives": 5,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "d",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "e",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "e",
+          "a",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "f",
+          "b",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "f",
+          "o",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 3,
+        "args": [
+          "g",
+          "e",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "g",
+          "o",
+          "a"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 3,
+      "multi_constraint_clause": 3
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "para",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "para",
+      "d",
+      "e",
+      "f",
+      "g"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "circle o a b c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_line d a b"
+        ],
+        "primitives": [
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "on_line e a c",
+          "on_circle e a d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "on_bline f b d",
+          "on_circle f o a"
+        ],
+        "primitives": [
+          "on_bline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "g"
+        ],
+        "rhs_parts": [
+          "on_bline g e c",
+          "on_circle g o a"
+        ],
+        "primitives": [
+          "on_bline",
+          "on_circle"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2019_p2",
+    "spec": "a b c = triangle; a1 = on_line b c; b1 = on_line a c; p = on_line a a1; q = on_line b b1, on_pline p a b; p1 = on_line p b1, eqangle3 p c a b c; q1 = on_line q a1, eqangle3 c q b c a ? cyclic p q p1 q1",
+    "premises_text": "a b c = triangle; a1 = on_line b c; b1 = on_line a c; p = on_line a a1; q = on_line b b1, on_pline p a b; p1 = on_line p b1, eqangle3 p c a b c; q1 = on_line q a1, eqangle3 c q b c a",
+    "goal_text": "cyclic p q p1 q1",
+    "num_premise_clauses": 7,
+    "num_constraint_atoms": 10,
+    "primitive_counter": {
+      "triangle": 1,
+      "on_line": 6,
+      "on_pline": 1,
+      "eqangle3": 2
+    },
+    "num_unique_primitives": 4,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 0,
+        "args": []
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "a1"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "b",
+          "b1"
+        ]
+      },
+      {
+        "primitive": "on_pline",
+        "arity": 3,
+        "args": [
+          "p",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "p",
+          "b1"
+        ]
+      },
+      {
+        "primitive": "eqangle3",
+        "arity": 5,
+        "args": [
+          "p",
+          "c",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "q",
+          "a1"
+        ]
+      },
+      {
+        "primitive": "eqangle3",
+        "arity": 5,
+        "args": [
+          "c",
+          "q",
+          "b",
+          "c",
+          "a"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 4,
+      "multi_constraint_clause": 3
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cyclic",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cyclic",
+      "p",
+      "q",
+      "p1",
+      "q1"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "a1"
+        ],
+        "rhs_parts": [
+          "on_line b c"
+        ],
+        "primitives": [
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "b1"
+        ],
+        "rhs_parts": [
+          "on_line a c"
+        ],
+        "primitives": [
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_line a a1"
+        ],
+        "primitives": [
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_line b b1",
+          "on_pline p a b"
+        ],
+        "primitives": [
+          "on_line",
+          "on_pline"
+        ]
+      },
+      {
+        "lhs": [
+          "p1"
+        ],
+        "rhs_parts": [
+          "on_line p b1",
+          "eqangle3 p c a b c"
+        ],
+        "primitives": [
+          "on_line",
+          "eqangle3"
+        ]
+      },
+      {
+        "lhs": [
+          "q1"
+        ],
+        "rhs_parts": [
+          "on_line q a1",
+          "eqangle3 c q b c a"
+        ],
+        "primitives": [
+          "on_line",
+          "eqangle3"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2019_p6",
+    "spec": "a b c = triangle a b c; d e f i = incenter2 d e f i a b c; r = on_tline r d e f, on_circle r i d; p = on_line p r a, on_circle p i d; o1 = circle o1 p c e; o2 = circle o2 p b f; q = on_circle q o1 p, on_circle q o2 p; t = on_line t p q, on_line t i d ? perp a t a i",
+    "premises_text": "a b c = triangle a b c; d e f i = incenter2 d e f i a b c; r = on_tline r d e f, on_circle r i d; p = on_line p r a, on_circle p i d; o1 = circle o1 p c e; o2 = circle o2 p b f; q = on_circle q o1 p, on_circle q o2 p; t = on_line t p q, on_line t i d",
+    "goal_text": "perp a t a i",
+    "num_premise_clauses": 8,
+    "num_constraint_atoms": 12,
+    "primitive_counter": {
+      "triangle": 1,
+      "incenter2": 1,
+      "on_tline": 1,
+      "on_circle": 4,
+      "on_line": 3,
+      "circle": 2
+    },
+    "num_unique_primitives": 6,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "incenter2",
+        "arity": 7,
+        "args": [
+          "d",
+          "e",
+          "f",
+          "i",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_tline",
+        "arity": 4,
+        "args": [
+          "r",
+          "d",
+          "e",
+          "f"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "r",
+          "i",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "p",
+          "r",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "p",
+          "i",
+          "d"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o1",
+          "p",
+          "c",
+          "e"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 4,
+        "args": [
+          "o2",
+          "p",
+          "b",
+          "f"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "q",
+          "o1",
+          "p"
+        ]
+      },
+      {
+        "primitive": "on_circle",
+        "arity": 3,
+        "args": [
+          "q",
+          "o2",
+          "p"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "t",
+          "p",
+          "q"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 3,
+        "args": [
+          "t",
+          "i",
+          "d"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      4,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 4,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "perp",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "perp",
+      "a",
+      "t",
+      "a",
+      "i"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle a b c"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "d",
+          "e",
+          "f",
+          "i"
+        ],
+        "rhs_parts": [
+          "incenter2 d e f i a b c"
+        ],
+        "primitives": [
+          "incenter2"
+        ]
+      },
+      {
+        "lhs": [
+          "r"
+        ],
+        "rhs_parts": [
+          "on_tline r d e f",
+          "on_circle r i d"
+        ],
+        "primitives": [
+          "on_tline",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_line p r a",
+          "on_circle p i d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o1"
+        ],
+        "rhs_parts": [
+          "circle o1 p c e"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o2"
+        ],
+        "rhs_parts": [
+          "circle o2 p b f"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_circle q o1 p",
+          "on_circle q o2 p"
+        ],
+        "primitives": [
+          "on_circle",
+          "on_circle"
+        ]
+      },
+      {
+        "lhs": [
+          "t"
+        ],
+        "rhs_parts": [
+          "on_line t p q",
+          "on_line t i d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2020_p1",
+    "spec": "p a b = triangle p a b; x = angle_bisector p b a; y = angle_bisector p a b; z = on_aline z a p a b x; t = on_aline t p a p a z; d = on_aline d p t p b a, on_line a z; u = on_aline u b p b a y; v = on_aline v p b p b u; c = on_aline c p v p a b, on_line b u; o = angle_bisector a d p, angle_bisector p c b ? cong o a o b",
+    "premises_text": "p a b = triangle p a b; x = angle_bisector p b a; y = angle_bisector p a b; z = on_aline z a p a b x; t = on_aline t p a p a z; d = on_aline d p t p b a, on_line a z; u = on_aline u b p b a y; v = on_aline v p b p b u; c = on_aline c p v p a b, on_line b u; o = angle_bisector a d p, angle_bisector p c b",
+    "goal_text": "cong o a o b",
+    "num_premise_clauses": 10,
+    "num_constraint_atoms": 13,
+    "primitive_counter": {
+      "triangle": 1,
+      "angle_bisector": 4,
+      "on_aline": 6,
+      "on_line": 2
+    },
+    "num_unique_primitives": 4,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 3,
+        "args": [
+          "p",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "angle_bisector",
+        "arity": 3,
+        "args": [
+          "p",
+          "b",
+          "a"
+        ]
+      },
+      {
+        "primitive": "angle_bisector",
+        "arity": 3,
+        "args": [
+          "p",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "z",
+          "a",
+          "p",
+          "a",
+          "b",
+          "x"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "t",
+          "p",
+          "a",
+          "p",
+          "a",
+          "z"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "d",
+          "p",
+          "t",
+          "p",
+          "b",
+          "a"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "z"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "u",
+          "b",
+          "p",
+          "b",
+          "a",
+          "y"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "v",
+          "p",
+          "b",
+          "p",
+          "b",
+          "u"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 6,
+        "args": [
+          "c",
+          "p",
+          "v",
+          "p",
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "b",
+          "u"
+        ]
+      },
+      {
+        "primitive": "angle_bisector",
+        "arity": 3,
+        "args": [
+          "a",
+          "d",
+          "p"
+        ]
+      },
+      {
+        "primitive": "angle_bisector",
+        "arity": 3,
+        "args": [
+          "p",
+          "c",
+          "b"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 7,
+      "multi_constraint_clause": 3
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cong",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cong",
+      "o",
+      "a",
+      "o",
+      "b"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "p",
+          "a",
+          "b"
+        ],
+        "rhs_parts": [
+          "triangle p a b"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "x"
+        ],
+        "rhs_parts": [
+          "angle_bisector p b a"
+        ],
+        "primitives": [
+          "angle_bisector"
+        ]
+      },
+      {
+        "lhs": [
+          "y"
+        ],
+        "rhs_parts": [
+          "angle_bisector p a b"
+        ],
+        "primitives": [
+          "angle_bisector"
+        ]
+      },
+      {
+        "lhs": [
+          "z"
+        ],
+        "rhs_parts": [
+          "on_aline z a p a b x"
+        ],
+        "primitives": [
+          "on_aline"
+        ]
+      },
+      {
+        "lhs": [
+          "t"
+        ],
+        "rhs_parts": [
+          "on_aline t p a p a z"
+        ],
+        "primitives": [
+          "on_aline"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "on_aline d p t p b a",
+          "on_line a z"
+        ],
+        "primitives": [
+          "on_aline",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "u"
+        ],
+        "rhs_parts": [
+          "on_aline u b p b a y"
+        ],
+        "primitives": [
+          "on_aline"
+        ]
+      },
+      {
+        "lhs": [
+          "v"
+        ],
+        "rhs_parts": [
+          "on_aline v p b p b u"
+        ],
+        "primitives": [
+          "on_aline"
+        ]
+      },
+      {
+        "lhs": [
+          "c"
+        ],
+        "rhs_parts": [
+          "on_aline c p v p a b",
+          "on_line b u"
+        ],
+        "primitives": [
+          "on_aline",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "o"
+        ],
+        "rhs_parts": [
+          "angle_bisector a d p",
+          "angle_bisector p c b"
+        ],
+        "primitives": [
+          "angle_bisector",
+          "angle_bisector"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2021_p3",
+    "spec": "a b c = triangle; d = angle_bisector b a c; e = on_aline d a d c b, on_line a c; f = on_aline d a d b c, on_line a b; x = on_bline b c, on_line a c; o1 = circle a d c; o2 = circle e x d; y = on_line e f, on_line b c ? coll o1 o2 y",
+    "premises_text": "a b c = triangle; d = angle_bisector b a c; e = on_aline d a d c b, on_line a c; f = on_aline d a d b c, on_line a b; x = on_bline b c, on_line a c; o1 = circle a d c; o2 = circle e x d; y = on_line e f, on_line b c",
+    "goal_text": "coll o1 o2 y",
+    "num_premise_clauses": 8,
+    "num_constraint_atoms": 12,
+    "primitive_counter": {
+      "triangle": 1,
+      "angle_bisector": 1,
+      "on_aline": 2,
+      "on_line": 5,
+      "on_bline": 1,
+      "circle": 2
+    },
+    "num_unique_primitives": 6,
+    "primitive_arguments": [
+      {
+        "primitive": "triangle",
+        "arity": 0,
+        "args": []
+      },
+      {
+        "primitive": "angle_bisector",
+        "arity": 3,
+        "args": [
+          "b",
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 5,
+        "args": [
+          "d",
+          "a",
+          "d",
+          "c",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_aline",
+        "arity": 5,
+        "args": [
+          "d",
+          "a",
+          "d",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 2,
+        "args": [
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 3,
+        "args": [
+          "a",
+          "d",
+          "c"
+        ]
+      },
+      {
+        "primitive": "circle",
+        "arity": 3,
+        "args": [
+          "e",
+          "x",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "e",
+          "f"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "b",
+          "c"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 4,
+      "multi_constraint_clause": 4
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "coll",
+    "goal_arity": 3,
+    "goal_tokens": [
+      "coll",
+      "o1",
+      "o2",
+      "y"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "triangle"
+        ],
+        "primitives": [
+          "triangle"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "angle_bisector b a c"
+        ],
+        "primitives": [
+          "angle_bisector"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "on_aline d a d c b",
+          "on_line a c"
+        ],
+        "primitives": [
+          "on_aline",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "f"
+        ],
+        "rhs_parts": [
+          "on_aline d a d b c",
+          "on_line a b"
+        ],
+        "primitives": [
+          "on_aline",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "x"
+        ],
+        "rhs_parts": [
+          "on_bline b c",
+          "on_line a c"
+        ],
+        "primitives": [
+          "on_bline",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "o1"
+        ],
+        "rhs_parts": [
+          "circle a d c"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "o2"
+        ],
+        "rhs_parts": [
+          "circle e x d"
+        ],
+        "primitives": [
+          "circle"
+        ]
+      },
+      {
+        "lhs": [
+          "y"
+        ],
+        "rhs_parts": [
+          "on_line e f",
+          "on_line b c"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "translated_imo_2022_p4",
+    "spec": "b c = segment; d = free; e = eqdistance d b c; t = on_bline b d, on_bline c e; a = eqangle2 b t e; p = on_line a b, on_line c d; q = on_line a b, on_line c t; r = on_line a e, on_line c d; s = on_line a e, on_line d t ? cyclic p q r s",
+    "premises_text": "b c = segment; d = free; e = eqdistance d b c; t = on_bline b d, on_bline c e; a = eqangle2 b t e; p = on_line a b, on_line c d; q = on_line a b, on_line c t; r = on_line a e, on_line c d; s = on_line a e, on_line d t",
+    "goal_text": "cyclic p q r s",
+    "num_premise_clauses": 9,
+    "num_constraint_atoms": 14,
+    "primitive_counter": {
+      "segment": 1,
+      "free": 1,
+      "eqdistance": 1,
+      "on_bline": 2,
+      "eqangle2": 1,
+      "on_line": 8
+    },
+    "num_unique_primitives": 6,
+    "primitive_arguments": [
+      {
+        "primitive": "segment",
+        "arity": 0,
+        "args": []
+      },
+      {
+        "primitive": "free",
+        "arity": 0,
+        "args": []
+      },
+      {
+        "primitive": "eqdistance",
+        "arity": 3,
+        "args": [
+          "d",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 2,
+        "args": [
+          "b",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_bline",
+        "arity": 2,
+        "args": [
+          "c",
+          "e"
+        ]
+      },
+      {
+        "primitive": "eqangle2",
+        "arity": 3,
+        "args": [
+          "b",
+          "t",
+          "e"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "c",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "c",
+          "t"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "e"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "c",
+          "d"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "a",
+          "e"
+        ]
+      },
+      {
+        "primitive": "on_line",
+        "arity": 2,
+        "args": [
+          "d",
+          "t"
+        ]
+      }
+    ],
+    "assignment_lhs_sizes": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clause_type_counter": {
+      "single_constraint_clause": 4,
+      "multi_constraint_clause": 5
+    },
+    "coordinates_present": 0,
+    "goal_predicate": "cyclic",
+    "goal_arity": 4,
+    "goal_tokens": [
+      "cyclic",
+      "p",
+      "q",
+      "r",
+      "s"
+    ],
+    "constructions": [
+      {
+        "lhs": [
+          "b",
+          "c"
+        ],
+        "rhs_parts": [
+          "segment"
+        ],
+        "primitives": [
+          "segment"
+        ]
+      },
+      {
+        "lhs": [
+          "d"
+        ],
+        "rhs_parts": [
+          "free"
+        ],
+        "primitives": [
+          "free"
+        ]
+      },
+      {
+        "lhs": [
+          "e"
+        ],
+        "rhs_parts": [
+          "eqdistance d b c"
+        ],
+        "primitives": [
+          "eqdistance"
+        ]
+      },
+      {
+        "lhs": [
+          "t"
+        ],
+        "rhs_parts": [
+          "on_bline b d",
+          "on_bline c e"
+        ],
+        "primitives": [
+          "on_bline",
+          "on_bline"
+        ]
+      },
+      {
+        "lhs": [
+          "a"
+        ],
+        "rhs_parts": [
+          "eqangle2 b t e"
+        ],
+        "primitives": [
+          "eqangle2"
+        ]
+      },
+      {
+        "lhs": [
+          "p"
+        ],
+        "rhs_parts": [
+          "on_line a b",
+          "on_line c d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "q"
+        ],
+        "rhs_parts": [
+          "on_line a b",
+          "on_line c t"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "r"
+        ],
+        "rhs_parts": [
+          "on_line a e",
+          "on_line c d"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      },
+      {
+        "lhs": [
+          "s"
+        ],
+        "rhs_parts": [
+          "on_line a e",
+          "on_line d t"
+        ],
+        "primitives": [
+          "on_line",
+          "on_line"
+        ]
+      }
+    ]
+  }
+]

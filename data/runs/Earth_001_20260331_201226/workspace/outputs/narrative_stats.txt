@@ -1,0 +1,9 @@
+Total records: 832
+Time span: 2000–2025
+Number of states: 13
+Median projects per year: 31.5
+Max projects in a year: 49 (year 2003)
+Top state: california (215 projects)
+Top 3 purposes: augment snowpack (326), increase precipitation (221), augment snowpack, increase precipitation (118)
+Top 3 agents: silver iodide (521), silver iodide, sodium iodide (108), silver iodide, ammonium iodide (59)
+Top 3 apparatus types: ground (461), airborne (236), ground, airborne (131)

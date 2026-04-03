@@ -1,0 +1,71 @@
+{
+  "cone_fit": {
+    "slope_abs_k_per_e": 0.19313463877728793,
+    "intercept_abs_k": -0.006374854023328134,
+    "v_fermi_eva": 5.177735109200914,
+    "rmse_abs_k": 0.0019083002917806844,
+    "dirac_energy_ev": -0.0025125628140703626,
+    "dirac_kx_a_inv": 0.00201342281879191
+  },
+  "polarization_fit": {
+    "baseline_intensity": 0.4998068135936925,
+    "fourfold_amplitude": 0.005994952985982626,
+    "phase_radians": 0.002004848575630821,
+    "phase_degrees": 0.11486936194646066,
+    "r2": 0.9999501740416455,
+    "amplitude_fraction_of_baseline": 0.011994540336250994,
+    "parameter_std": [
+      1.599456039853501e-05,
+      2.1159013453241263e-05,
+      0.0010004883955905181
+    ]
+  },
+  "replica_geometry": {
+    "pump_photon_energy_ev": 0.2479683968,
+    "predicted_sideband_crossing_kx_a_inv": 0.04151643272082306,
+    "angle0_peak_locations": {
+      "crossing_E0_plusk": {
+        "peak_difference_intensity": 17.193788339496503,
+        "peak_energy_ev": -0.0025125628140703626,
+        "peak_kx_a_inv": 0.042281879194630834
+      },
+      "crossing_E0_minusk": {
+        "peak_difference_intensity": 17.211757914155314,
+        "peak_energy_ev": 0.007537688442211032,
+        "peak_kx_a_inv": -0.04228187919463089
+      },
+      "replica_plus": {
+        "peak_difference_intensity": 17.16406659611537,
+        "peak_energy_ev": 0.24371859296482412,
+        "peak_kx_a_inv": 0.00201342281879191
+      },
+      "replica_minus": {
+        "peak_difference_intensity": 17.148574797908502,
+        "peak_energy_ev": -0.2386934673366834,
+        "peak_kx_a_inv": -0.0020134228187919656
+      }
+    }
+  },
+  "processed_metadata_comparison": {
+    "json_pump_energy_ev": 0.248,
+    "wavelength_inferred_photon_energy_ev": 0.2479683968,
+    "csv_target_energy_ev": 0.2487437185929648,
+    "csv_target_kx_a_inv": 0.0422818791946308,
+    "raw_dirac_energy_ev": -0.0025125628140703626,
+    "raw_dirac_kx_a_inv": 0.00201342281879191,
+    "json_dirac_point_raw": [
+      -0.3,
+      -0.042713567839196
+    ],
+    "note": "Replica energies and target momentum in the helper files are internally consistent with the raw spectra, but the absolute dirac_point coordinates in processed_band_data.json do not match the raw HDF5 apex and were not used as the primary quantitative reference."
+  },
+  "raw_vs_tabulated_polarization_correlation": 0.9996614419339703,
+  "available_time_delays_fs": [
+    -0.5,
+    0.0,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "analysis_note": "The HDF5 file provides equilibrium and polarization-resolved pump-on spectra plus a delay axis metadata vector, but not a full spectrum at every delay. The present analysis is therefore energy-momentum resolved and polarization resolved, with timing information limited to the available pump-on/off snapshots."
+}

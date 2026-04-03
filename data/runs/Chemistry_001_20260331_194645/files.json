@@ -1,0 +1,224 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_complex.py",
+    "path": "code/analyze_complex.py",
+    "type": "file",
+    "size": 5436,
+    "mtime": 1775139544.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "sample",
+    "path": "data/sample",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r",
+    "path": "data/sample/2l3r",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r_ligand.sdf",
+    "path": "data/sample/2l3r/2l3r_ligand.sdf",
+    "type": "file",
+    "size": 13842,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2l3r_protein.pdb",
+    "path": "data/sample/2l3r/2l3r_protein.pdb",
+    "type": "file",
+    "size": 211329,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "ligand_atomic_nums.npy",
+    "path": "outputs/ligand_atomic_nums.npy",
+    "type": "file",
+    "size": 1680,
+    "mtime": 1775139542.0,
+    "exported": false
+  },
+  {
+    "name": "ligand_composition.json",
+    "path": "outputs/ligand_composition.json",
+    "type": "file",
+    "size": 118,
+    "mtime": 1775139542.0,
+    "exported": true
+  },
+  {
+    "name": "ligand_coords.npy",
+    "path": "outputs/ligand_coords.npy",
+    "type": "file",
+    "size": 4784,
+    "mtime": 1775139542.0,
+    "exported": false
+  },
+  {
+    "name": "ligand_diffusion_traj.npy",
+    "path": "outputs/ligand_diffusion_traj.npy",
+    "type": "file",
+    "size": 237584,
+    "mtime": 1775139542.0,
+    "exported": false
+  },
+  {
+    "name": "plan.json",
+    "path": "outputs/plan.json",
+    "type": "file",
+    "size": 863,
+    "mtime": 1775139542.0,
+    "exported": true
+  },
+  {
+    "name": "protein_ca_coords.npy",
+    "path": "outputs/protein_ca_coords.npy",
+    "type": "file",
+    "size": 3992,
+    "mtime": 1775139542.0,
+    "exported": false
+  },
+  {
+    "name": "protein_ca_dists.npy",
+    "path": "outputs/protein_ca_dists.npy",
+    "type": "file",
+    "size": 207496,
+    "mtime": 1775139542.0,
+    "exported": false
+  },
+  {
+    "name": "protein_ligand_min_dists.npy",
+    "path": "outputs/protein_ligand_min_dists.npy",
+    "type": "file",
+    "size": 1416,
+    "mtime": 1775139542.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3651992,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 3634495,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5515632,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 569417,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "ligand_diffusion_rmsd.png",
+    "path": "report/images/ligand_diffusion_rmsd.png",
+    "type": "file",
+    "size": 45659,
+    "mtime": 1775139544.0,
+    "exported": true
+  },
+  {
+    "name": "ligand_pca_scatter.png",
+    "path": "report/images/ligand_pca_scatter.png",
+    "type": "file",
+    "size": 86185,
+    "mtime": 1775139544.0,
+    "exported": true
+  },
+  {
+    "name": "protein_ca_distance_hist.png",
+    "path": "report/images/protein_ca_distance_hist.png",
+    "type": "file",
+    "size": 40889,
+    "mtime": 1775139544.0,
+    "exported": true
+  },
+  {
+    "name": "protein_ca_distance_matrix.png",
+    "path": "report/images/protein_ca_distance_matrix.png",
+    "type": "file",
+    "size": 131622,
+    "mtime": 1775139544.0,
+    "exported": true
+  },
+  {
+    "name": "protein_ligand_min_distance_profile.png",
+    "path": "report/images/protein_ligand_min_distance_profile.png",
+    "type": "file",
+    "size": 74570,
+    "mtime": 1775139544.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 17879,
+    "mtime": 1775139545.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5562,
+    "mtime": 1774957605.0,
+    "exported": true
+  }
+]

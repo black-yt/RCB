@@ -1,0 +1,261 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 22510,
+    "mtime": 1775133532.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "Together_1_features_extracted.csv",
+    "path": "data/Together_1_features_extracted.csv",
+    "type": "file",
+    "size": 910871,
+    "mtime": 1773033714.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Together_1_machine_results_reference.csv",
+    "path": "data/Together_1_machine_results_reference.csv",
+    "type": "file",
+    "size": 1790428,
+    "mtime": 1773033716.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Together_1_targets_inserted.csv",
+    "path": "data/Together_1_targets_inserted.csv",
+    "type": "file",
+    "size": 765692,
+    "mtime": 1773033716.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 2618,
+    "mtime": 1775133516.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_attack_random_split_dummy.csv",
+    "path": "outputs/classification_report_attack_random_split_dummy.csv",
+    "type": "file",
+    "size": 324,
+    "mtime": 1775133524.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_attack_random_split_logistic_regression.csv",
+    "path": "outputs/classification_report_attack_random_split_logistic_regression.csv",
+    "type": "file",
+    "size": 398,
+    "mtime": 1775133526.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_attack_random_split_random_forest.csv",
+    "path": "outputs/classification_report_attack_random_split_random_forest.csv",
+    "type": "file",
+    "size": 398,
+    "mtime": 1775133526.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_attack_temporal_split_dummy.csv",
+    "path": "outputs/classification_report_attack_temporal_split_dummy.csv",
+    "type": "file",
+    "size": 326,
+    "mtime": 1775133526.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_attack_temporal_split_logistic_regression.csv",
+    "path": "outputs/classification_report_attack_temporal_split_logistic_regression.csv",
+    "type": "file",
+    "size": 407,
+    "mtime": 1775133526.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_attack_temporal_split_random_forest.csv",
+    "path": "outputs/classification_report_attack_temporal_split_random_forest.csv",
+    "type": "file",
+    "size": 395,
+    "mtime": 1775133514.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_sniffing_random_split_dummy.csv",
+    "path": "outputs/classification_report_sniffing_random_split_dummy.csv",
+    "type": "file",
+    "size": 324,
+    "mtime": 1775133526.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_sniffing_random_split_logistic_regression.csv",
+    "path": "outputs/classification_report_sniffing_random_split_logistic_regression.csv",
+    "type": "file",
+    "size": 399,
+    "mtime": 1775133526.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_sniffing_random_split_random_forest.csv",
+    "path": "outputs/classification_report_sniffing_random_split_random_forest.csv",
+    "type": "file",
+    "size": 398,
+    "mtime": 1775133516.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 60 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3024514,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 9125934,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 4320154,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3464361,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 9435744,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "confusion_matrices.png",
+    "path": "report/images/confusion_matrices.png",
+    "type": "file",
+    "size": 73267,
+    "mtime": 1775133532.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 87450,
+    "mtime": 1775133532.0,
+    "exported": true
+  },
+  {
+    "name": "feature_importance.png",
+    "path": "report/images/feature_importance.png",
+    "type": "file",
+    "size": 184338,
+    "mtime": 1775133532.0,
+    "exported": true
+  },
+  {
+    "name": "metric_comparison.png",
+    "path": "report/images/metric_comparison.png",
+    "type": "file",
+    "size": 80076,
+    "mtime": 1775133532.0,
+    "exported": true
+  },
+  {
+    "name": "precision_recall_curves.png",
+    "path": "report/images/precision_recall_curves.png",
+    "type": "file",
+    "size": 229323,
+    "mtime": 1775133532.0,
+    "exported": true
+  },
+  {
+    "name": "temporal_probability_trace.png",
+    "path": "report/images/temporal_probability_trace.png",
+    "type": "file",
+    "size": 231648,
+    "mtime": 1775133532.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13819,
+    "mtime": 1775133533.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5524,
+    "mtime": 1775104107.0,
+    "exported": true
+  }
+]

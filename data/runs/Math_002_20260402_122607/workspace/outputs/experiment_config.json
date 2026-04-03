@@ -1,0 +1,46 @@
+{
+  "global_seed": 7,
+  "train_episodes": 700,
+  "train_horizon": 40,
+  "family_map_limits": {
+    "empty": 4,
+    "maze": 4,
+    "random_small": 4,
+    "random_medium": 4,
+    "random_large": 2,
+    "warehouse": 4
+  },
+  "families": [
+    "empty",
+    "maze",
+    "random_small",
+    "random_medium",
+    "random_large",
+    "warehouse"
+  ],
+  "family_agent_counts": {
+    "empty": [
+      20,
+      32
+    ],
+    "maze": [
+      10,
+      16
+    ],
+    "random_small": [
+      6,
+      9
+    ],
+    "random_medium": [
+      16,
+      24
+    ],
+    "random_large": [
+      20
+    ],
+    "warehouse": [
+      14,
+      22
+    ]
+  }
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 1786,
+    "mtime": 1775133632.0,
+    "exported": true
+  },
+  {
+    "name": "model.py",
+    "path": "code/model.py",
+    "type": "file",
+    "size": 2709,
+    "mtime": 1775133632.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "buses.csv",
+    "path": "data/buses.csv",
+    "type": "file",
+    "size": 1086,
+    "mtime": 1773033844.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "demand.csv",
+    "path": "data/demand.csv",
+    "type": "file",
+    "size": 60915,
+    "mtime": 1773033844.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "generators.csv",
+    "path": "data/generators.csv",
+    "type": "file",
+    "size": 1386,
+    "mtime": 1773033846.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "links.csv",
+    "path": "data/links.csv",
+    "type": "file",
+    "size": 565,
+    "mtime": 1773033844.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "storage.csv",
+    "path": "data/storage.csv",
+    "type": "file",
+    "size": 109,
+    "mtime": 1773033848.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "wind_cf.csv",
+    "path": "data/wind_cf.csv",
+    "type": "file",
+    "size": 63972,
+    "mtime": 1773033846.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "generators_p.csv",
+    "path": "outputs/generators_p.csv",
+    "type": "file",
+    "size": 3369,
+    "mtime": 1775133630.0,
+    "exported": true
+  },
+  {
+    "name": "loads_p.csv",
+    "path": "outputs/loads_p.csv",
+    "type": "file",
+    "size": 3369,
+    "mtime": 1775133630.0,
+    "exported": true
+  },
+  {
+    "name": "nodal_prices.csv",
+    "path": "outputs/nodal_prices.csv",
+    "type": "file",
+    "size": 3369,
+    "mtime": 1775133630.0,
+    "exported": true
+  },
+  {
+    "name": "storage_p.csv",
+    "path": "outputs/storage_p.csv",
+    "type": "file",
+    "size": 3369,
+    "mtime": 1775133630.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1296584,
+    "mtime": 1773914893.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 193879,
+    "mtime": 1773914893.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 406113,
+    "mtime": 1773914893.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6282024,
+    "mtime": 1773914893.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "demand_total.png",
+    "path": "report/images/demand_total.png",
+    "type": "file",
+    "size": 61924,
+    "mtime": 1775133630.0,
+    "exported": true
+  },
+  {
+    "name": "wind_cf_avg.png",
+    "path": "report/images/wind_cf_avg.png",
+    "type": "file",
+    "size": 76796,
+    "mtime": 1775133630.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 8569,
+    "mtime": 1775133633.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6355,
+    "mtime": 1774958612.0,
+    "exported": true
+  }
+]

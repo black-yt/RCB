@@ -1,0 +1,29 @@
+{
+  "random_charges": {
+    "charge_mae_mean": 0.0,
+    "charge_mae_std": 0.0,
+    "charge_corr_mean": 1.0,
+    "dipole_abs_error_mean": 0.0,
+    "num_structures": 10
+  },
+  "charged_dimer": {
+    "short_range": {
+      "energy_mae": 0.06438996722992144,
+      "force_mae_component": 1.1649703019751554
+    },
+    "long_range": {
+      "energy_mae": 0.028804843936721416,
+      "force_mae_component": 1.1908127601274463
+    }
+  },
+  "ag3": {
+    "geometry_only": {
+      "energy_mae": 0.015474421006872777,
+      "force_mae_component": 0.15873474003106633
+    },
+    "charge_aware": {
+      "energy_mae": 0.07877613058301193,
+      "force_mae_component": 0.3065974653947117
+    }
+  }
+}

@@ -1,0 +1,166 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "align_complexes.py",
+    "path": "code/align_complexes.py",
+    "type": "file",
+    "size": 6965,
+    "mtime": 1775133706.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "6n40.pdb",
+    "path": "data/6n40.pdb",
+    "type": "file",
+    "size": 483975,
+    "mtime": 1772677396.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "7xg4.pdb",
+    "path": "data/7xg4.pdb",
+    "type": "file",
+    "size": 2481678,
+    "mtime": 1772677394.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "best_chain_superposition.png",
+    "path": "outputs/best_chain_superposition.png",
+    "type": "file",
+    "size": 717611,
+    "mtime": 1775133702.0,
+    "exported": true
+  },
+  {
+    "name": "chain_alignment_results.csv",
+    "path": "outputs/chain_alignment_results.csv",
+    "type": "file",
+    "size": 257,
+    "mtime": 1775133702.0,
+    "exported": true
+  },
+  {
+    "name": "chain_lengths_7xg4.png",
+    "path": "outputs/chain_lengths_7xg4.png",
+    "type": "file",
+    "size": 72371,
+    "mtime": 1775133702.0,
+    "exported": true
+  },
+  {
+    "name": "tm_vs_coverage.png",
+    "path": "outputs/tm_vs_coverage.png",
+    "type": "file",
+    "size": 105780,
+    "mtime": 1775133702.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 7106522,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2048789,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 2470674,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4291826,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "best_chain_superposition.png",
+    "path": "report/images/best_chain_superposition.png",
+    "type": "file",
+    "size": 717611,
+    "mtime": 1775133704.0,
+    "exported": true
+  },
+  {
+    "name": "chain_lengths_7xg4.png",
+    "path": "report/images/chain_lengths_7xg4.png",
+    "type": "file",
+    "size": 72371,
+    "mtime": 1775133704.0,
+    "exported": true
+  },
+  {
+    "name": "tm_vs_coverage.png",
+    "path": "report/images/tm_vs_coverage.png",
+    "type": "file",
+    "size": 105780,
+    "mtime": 1775133704.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12904,
+    "mtime": 1775133707.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5241,
+    "mtime": 1775013739.0,
+    "exported": true
+  }
+]

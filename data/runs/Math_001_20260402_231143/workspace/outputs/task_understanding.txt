@@ -1,0 +1,27 @@
+Task objective:
+Develop and validate a unified Variable and Operator Splitting (VOS) optimization framework for solving a smooth convex objective with possible non-smooth regularization, targeting accelerated convergence to the global minimizer x*. The task specifically emphasizes connecting continuous-time dynamics to Nesterov-style acceleration and ADMM-like splitting, with convergence analysis supported by strong Lyapunov arguments and empirical verification on a high-dimensional Lasso problem.
+
+Available data and inputs in this workspace:
+- INSTRUCTIONS.md: defines the research goal, workspace constraints, and required deliverables.
+- data/complex_optimization_data.npy: dictionary-like .npy file with keys A, b, x_true, meta.
+  - A: design matrix of shape (1000, 2000)
+  - b: response vector of shape (1000,)
+  - x_true: sparse ground-truth coefficient vector of shape (2000,) with about 100 nonzeros
+  - meta: "Lasso Regression Problem with Condition Number 10"
+- related_work/paper_000.pdf ... paper_003.pdf: reference papers to consult as needed for the VOS / accelerated optimization / splitting-method framing.
+
+Main planned analysis steps:
+1. Load and inspect the dataset; confirm dimensions, sparsity, scaling, and conditioning.
+2. Formulate the Lasso objective and choose a regularization setting for recovery and convergence experiments.
+3. Derive/implement baseline and proposed methods in code, likely including proximal gradient / ISTA, accelerated proximal gradient / FISTA (Nesterov-style), and a splitting method such as ADMM under a unified operator-splitting interpretation.
+4. Connect the implemented updates to a continuous-time dynamical-system perspective and define Lyapunov-style energy quantities to monitor convergence behavior.
+5. Run reproducible experiments comparing objective decrease, iterate error, sparsity recovery, and convergence speed.
+6. Generate publication-quality figures for data overview, optimization trajectories, and method comparisons.
+7. Write the final report summarizing methodology, theoretical framing, empirical results, limitations, and conclusions.
+
+Expected deliverables:
+- code/: reproducible analysis and experiment scripts
+- outputs/: intermediate numerical results, logs, and this task-understanding summary
+- report/report.md: final research report in academic style
+- report/images/: figures referenced from the report using relative paths such as images/figure_name.png
+- The report should include at least data overview plots, main result figures, and comparison/validation plots.

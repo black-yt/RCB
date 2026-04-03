@@ -1,0 +1,4 @@
+dataset,rows,cols,expected_rows,expected_cols,shape_matches_expected,columns_match_expected,min_value,max_value,nonpositive_entries,missing_entries
+fig6,1500,1,1500,1,True,True,8.182058252102732e-06,0.04073090157875922,0,0
+fig7,1500,7,1500,7,True,True,3.8881815590205794e-05,0.09859433472149347,0,0
+fig8,1200,2,1200,2,True,True,1.2371023632642287e-06,0.0030616693304919935,0,0

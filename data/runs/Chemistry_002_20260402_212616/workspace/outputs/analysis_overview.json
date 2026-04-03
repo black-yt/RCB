@@ -1,0 +1,26 @@
+{
+  "structure": {
+    "pdb_file": "data/1brs_AD.pdb",
+    "chains": {
+      "A": 108,
+      "D": 87
+    },
+    "interface_residues_5A": {
+      "A": 22,
+      "D": 19
+    },
+    "interface_residues_8A": {
+      "A": 39,
+      "D": 35
+    },
+    "contact_pairs_5A": 55,
+    "contact_pairs_8A": 210
+  },
+  "skempi": {
+    "total_rows": 7085,
+    "single_mutation_rows": 5112,
+    "complexes": 348,
+    "barnase_barstar_rows": 94,
+    "barnase_barstar_single_mutation_rows": 49
+  }
+}

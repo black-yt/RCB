@@ -1,0 +1,3067 @@
+ARTICLE
+
+doi:10.1038/nature16961
+
+Mastering the game of Go with deep
+neural networks and tree search
+
+David Silver1*, Aja Huang1*, Chris J. Maddison1, Arthur Guez1, Laurent Sifre1, George van den Driessche1,
+Julian Schrittwieser1, Ioannis Antonoglou1, Veda Panneershelvam1, Marc Lanctot1, Sander Dieleman1, Dominik Grewe1,
+John Nham2, Nal Kalchbrenner1, Ilya Sutskever2, Timothy Lillicrap1, Madeleine Leach1, Koray Kavukcuoglu1,
+Thore Graepel1 & Demis Hassabis1
+
+The game of Go has long been viewed as the most challenging of classic games for artificial intelligence owing to its
+enormous search space and the difficulty of evaluating board positions and moves. Here we introduce a new approach
+to computer Go that uses ‘value networks’ to evaluate board positions and ‘policy networks’ to select moves. These deep
+neural networks are trained by a novel combination of supervised learning from human expert games, and reinforcement
+learning from games of self-play. Without any lookahead search, the neural networks play Go at the level of stateof-the-art Monte Carlo tree search programs that simulate thousands of random games of self-play. We also introduce a
+new search algorithm that combines Monte Carlo simulation with value and policy networks. Using this search algorithm,
+our program AlphaGo achieved a 99.8% winning rate against other Go programs, and defeated the human European Go
+champion by 5 games to 0. This is the first time that a computer program has defeated a human professional player in the
+full-sized game of Go, a feat previously thought to be at least a decade away.
+All games of perfect information have an optimal value function, v*(s),
+which determines the outcome of the game, from every board position
+or state s, under perfect play by all players. These games may be solved
+by recursively computing the optimal value function in a search tree
+containing approximately bd possible sequences of moves, where b is
+the game’s breadth (number of legal moves per position) and d is its
+depth (game length). In large games, such as chess (b ≈ 35, d ≈ 80)1 and
+especially Go (b ≈ 250, d ≈ 150)1, exhaustive search is infeasible2,3, but
+the effective search space can be reduced by two general principles.
+First, the depth of the search may be reduced by position evaluation:
+truncating the search tree at state s and replacing the subtree below s
+by an approximate value function v(s) ≈ v*(s) that predicts the outcome
+from state s. This approach has led to superhuman performance in
+chess4, checkers5 and othello6, but it was believed to be intractable in Go
+due to the complexity of the game7. Second, the breadth of the search
+may be reduced by sampling actions from a policy p(a|s) that is a probability distribution over possible moves a in position s. For example,
+Monte Carlo rollouts8 search to maximum depth without branching
+at all, by sampling long sequences of actions for both players from a
+policy p. Averaging over such rollouts can provide an effective position
+evaluation, achieving superhuman performance in backgammon8 and
+Scrabble9, and weak amateur level play in Go10.
+Monte Carlo tree search (MCTS)11,12 uses Monte Carlo rollouts
+to estimate the value of each state in a search tree. As more simulations are executed, the search tree grows larger and the relevant
+values become more accurate. The policy used to select actions during
+search is also improved over time, by selecting children with higher
+values. Asymptotically, this policy converges to optimal play, and the
+evaluations converge to the optimal value function12. The strongest
+current Go programs are based on MCTS, enhanced by policies that
+are trained to predict human expert moves13. These policies are used
+to narrow the search to a beam of high-probability actions, and to
+sample actions during rollouts. This approach has achieved strong
+amateur play13–15. However, prior work has been limited to shallow
+
+policies13–15 or value functions16 based on a linear combination of
+input features.
+Recently, deep convolutional neural networks have achieved unprecedented performance in visual domains: for example, image classification17, face recognition18, and playing Atari games19. They use many
+layers of neurons, each arranged in overlapping tiles, to construct
+increasingly abstract, localized representations of an image20. We
+employ a similar architecture for the game of Go. We pass in the board
+position as a 19 × 19 image and use convolutional layers to construct a
+representation of the position. We use these neural networks to reduce
+the effective depth and breadth of the search tree: evaluating positions
+using a value network, and sampling actions using a policy network.
+We train the neural networks using a pipeline consisting of several
+stages of machine learning (Fig. 1). We begin by training a supervised
+learning (SL) policy network pσ directly from expert human moves.
+This provides fast, efficient learning updates with immediate feedback
+and high-quality gradients. Similar to prior work13,15, we also train a
+fast policy pπ that can rapidly sample actions during rollouts. Next, we
+train a reinforcement learning (RL) policy network pρ that improves
+the SL policy network by optimizing the final outcome of games of selfplay. This adjusts the policy towards the correct goal of winning games,
+rather than maximizing predictive accuracy. Finally, we train a value
+network vθ that predicts the winner of games played by the RL policy
+network against itself. Our program AlphaGo efficiently combines the
+policy and value networks with MCTS.
+
+Supervised learning of policy networks
+
+For the first stage of the training pipeline, we build on prior work
+on predicting expert moves in the game of Go using supervised
+learning13,21–24. The SL policy network pσ(a| s) alternates between convolutional layers with weights σ, and rectifier nonlinearities. A final softmax layer outputs a probability distribution over all legal moves a. The
+input s to the policy network is a simple representation of the board state
+(see Extended Data Table 2). The policy network is trained on randomly
+
+1
+
+Google DeepMind, 5 New Street Square, London EC4A 3TW, UK. 2Google, 1600 Amphitheatre Parkway, Mountain View, California 94043, USA.
+*These authors contributed equally to this work.
+
+4 8 4 | N AT U R E | VO L 5 2 9 | 2 8 JA N UA RY 2 0 1 6
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+ARTICLE RESEARCH
+a
+
+b
+SL policy network
+
+pS
+
+pV
+
+RL policy network
+
+Value network
+
+pU
+
+Policy network
+Neural network
+
+Rollout policy
+
+QT
+
+pVU (a⎪s)
+
+QT (s′)
+
+lay
+
+lf P
+
+Re
+gre
+ssi
+on
+
+Se
+
+on
+ati
+
+fic
+ssi
+
+Cla
+ssi
+fic
+ati
+o
+
+Cla
+
+n
+
+Policy gradient
+
+Value network
+
+Data
+
+Human expert positions
+
+s′
+
+s
+
+Self-play positions
+
+Figure 1 | Neural network training pipeline and architecture. a, A fast
+rollout policy pπ and supervised learning (SL) policy network pσ are
+trained to predict human expert moves in a data set of positions.
+A reinforcement learning (RL) policy network pρ is initialized to the SL
+policy network, and is then improved by policy gradient learning to
+maximize the outcome (that is, winning more games) against previous
+versions of the policy network. A new data set is generated by playing
+games of self-play with the RL policy network. Finally, a value network vθ
+is trained by regression to predict the expected outcome (that is, whether
+
+the current player wins) in positions from the self-play data set.
+b, Schematic representation of the neural network architecture used in
+AlphaGo. The policy network takes a representation of the board position
+s as its input, passes it through many convolutional layers with parameters
+σ (SL policy network) or ρ (RL policy network), and outputs a probability
+distribution pσ (a | s) or pρ (a | s) over legal moves a, represented by a
+probability map over the board. The value network similarly uses many
+convolutional layers with parameters θ, but outputs a scalar value vθ(s′)
+that predicts the expected outcome in position s′.
+
+sampled state-action pairs (s, a), using stochastic gradient ascent to
+maximize the likelihood of the human move a selected in state s
+
+and its weights ρ are initialized to the same values, ρ = σ. We play
+games between the current policy network pρ and a randomly selected
+previous iteration of the policy network. Randomizing from a pool
+of opponents in this way stabilizes training by preventing overfitting
+to the current policy. We use a reward function r(s) that is zero for all
+non-terminal time steps t < T. The outcome zt = ± r(sT) is the terminal reward at the end of the game from the perspective of the current
+player at time step t: +1 for winning and −1 for losing. Weights are
+then updated at each time step t by stochastic gradient ascent in the
+direction that maximizes expected outcome25
+
+∆σ ∝
+
+∂log pσ (a | s )
+∂σ
+
+We trained a 13-layer policy network, which we call the SL policy
+network, from 30 million positions from the KGS Go Server. The network predicted expert moves on a held out test set with an accuracy of
+57.0% using all input features, and 55.7% using only raw board position and move history as inputs, compared to the state-of-the-art from
+other research groups of 44.4% at date of submission24 (full results in
+Extended Data Table 3). Small improvements in accuracy led to large
+improvements in playing strength (Fig. 2a); larger networks achieve
+better accuracy but are slower to evaluate during search. We also
+trained a faster but less accurate rollout policy pπ(a|s), using a linear
+softmax of small pattern features (see Extended Data Table 4) with
+weights π; this achieved an accuracy of 24.2%, using just 2 μs to select
+an action, rather than 3 ms for the policy network.
+
+Reinforcement learning of policy networks
+
+The second stage of the training pipeline aims at improving the policy
+network by policy gradient reinforcement learning (RL)25,26. The RL
+policy network pρ is identical in structure to the SL policy network,
+a
+
+∂log pρ (a t | s t )
+∂ρ
+
+zt
+
+We evaluated the performance of the RL policy network in game
+play, sampling each move a t ~ pρ (⋅|s t ) from its output probability
+distribution over actions. When played head-to-head, the RL policy
+network won more than 80% of games against the SL policy network.
+We also tested against the strongest open-source Go program, Pachi14,
+a sophisticated Monte Carlo search program, ranked at 2 amateur dan
+on KGS, that executes 100,000 simulations per move. Using no search
+at all, the RL policy network won 85% of games against Pachi. In comparison, the previous state-of-the-art, based only on supervised
+b
+
+60
+50
+
+0.50
+
+128 filters
+192 filters
+256 filters
+384 filters
+
+0.45
+Mean squared error
+on expert games
+
+70
+AlphaGo win rate (%)
+
+∆ρ ∝
+
+40
+30
+20
+10
+0
+50
+
+51
+
+52
+53
+54
+55
+56
+57
+Training accuracy on KGS dataset (%)
+
+58
+
+59
+
+Figure 2 | Strength and accuracy of policy and value networks.
+a, Plot showing the playing strength of policy networks as a function
+of their training accuracy. Policy networks with 128, 192, 256 and 384
+convolutional filters per layer were evaluated periodically during training;
+the plot shows the winning rate of AlphaGo using that policy network
+against the match version of AlphaGo. b, Comparison of evaluation
+accuracy between the value network and rollouts with different policies.
+
+0.40
+0.35
+
+Uniform random
+rollout policy
+Fast rollout policy
+Value network
+SL policy network
+RL policy network
+
+0.30
+0.25
+0.20
+0.15
+0.10
+
+15
+
+45
+
+75
+
+105 135 165
+Move number
+
+195
+
+225
+
+255 >285
+
+Positions and outcomes were sampled from human expert games. Each
+position was evaluated by a single forward pass of the value network vθ,
+or by the mean outcome of 100 rollouts, played out using either uniform
+random rollouts, the fast rollout policy pπ, the SL policy network pσ or
+the RL policy network pρ. The mean squared error between the predicted
+value and the actual game outcome is plotted against the stage of the game
+(how many moves had been played in the given position).
+2 8 JA N UA RY 2 0 1 6 | VO L 5 2 9 | N AT U R E | 4 8 5
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+RESEARCH ARTICLE
+a
+
+b
+
+Selection
+
+c
+
+Expansion
+
+d
+
+Evaluation
+
+Backup
+QT
+
+Q + u(P)
+
+max
+
+P
+
+Q + u(P)
+
+P
+
+Q
+
+Q
+
+QT
+
+QT
+Q + u(P)
+
+max
+
+P
+
+Q + u(P)
+
+Q
+
+P
+QT
+
+pV
+P
+
+P
+
+Q
+
+QT
+
+QT
+
+r
+
+r
+
+pS
+r
+
+r
+
+Figure 3 | Monte Carlo tree search in AlphaGo. a, Each simulation
+traverses the tree by selecting the edge with maximum action value Q,
+plus a bonus u(P) that depends on a stored prior probability P for that
+edge. b, The leaf node may be expanded; the new node is processed once
+by the policy network pσ and the output probabilities are stored as prior
+probabilities P for each action. c, At the end of a simulation, the leaf node
+
+is evaluated in two ways: using the value network vθ; and by running
+a rollout to the end of the game with the fast rollout policy pπ, then
+computing the winner with function r. d, Action values Q are updated to
+track the mean value of all evaluations r(·) and vθ(·) in the subtree below
+that action.
+
+learning of convolutional networks, won 11% of games against Pachi23
+and 12% against a slightly weaker program, Fuego24.
+
+(s, a) of the search tree stores an action value Q(s, a), visit count N(s, a),
+and prior probability P(s, a). The tree is traversed by simulation (that
+is, descending the tree in complete games without backup), starting
+from the root state. At each time step t of each simulation, an action at
+is selected from state st
+
+Reinforcement learning of value networks
+
+The final stage of the training pipeline focuses on position evaluation,
+estimating a value function vp(s) that predicts the outcome from position s of games played by using policy p for both players28–30
+v p(s ) = E[z t|s t = s, a t … T ~ p]
+
+Ideally, we would like to know the optimal value function under
+perfect play v*(s); in practice, we instead estimate the value function
+v pρ for our strongest policy, using the RL policy network pρ. We approximate the value function using a value network vθ(s) with weights θ,
+vθ(s ) ≈ v pρ(s ) ≈ v ⁎(s ) . This neural network has a similar architecture
+to the policy network, but outputs a single prediction instead of a probability distribution. We train the weights of the value network by regression on state-outcome pairs (s, z), using stochastic gradient descent to
+minimize the mean squared error (MSE) between the predicted value
+vθ(s), and the corresponding outcome z
+∆θ ∝
+
+∂vθ(s )
+(z − vθ(s ))
+∂θ
+
+The naive approach of predicting game outcomes from data consisting of complete games leads to overfitting. The problem is that
+successive positions are strongly correlated, differing by just one stone,
+but the regression target is shared for the entire game. When trained
+on the KGS data set in this way, the value network memorized the
+game outcomes rather than generalizing to new positions, achieving a
+minimum MSE of 0.37 on the test set, compared to 0.19 on the training
+set. To mitigate this problem, we generated a new self-play data set
+consisting of 30 million distinct positions, each sampled from a separate game. Each game was played between the RL policy network and
+itself until the game terminated. Training on this data set led to MSEs
+of 0.226 and 0.234 on the training and test set respectively, indicating
+minimal overfitting. Figure 2b shows the position evaluation accuracy
+of the value network, compared to Monte Carlo rollouts using the fast
+rollout policy pπ; the value function was consistently more accurate.
+A single evaluation of vθ(s) also approached the accuracy of Monte
+Carlo rollouts using the RL policy network pρ, but using 15,000 times
+less computation.
+
+Searching with policy and value networks
+
+AlphaGo combines the policy and value networks in an MCTS algorithm (Fig. 3) that selects actions by lookahead search. Each edge
+
+a t = argmax(Q(s t , a ) + u(s t , a ))
+a
+
+so as to maximize action value plus a bonus
+u(s, a ) ∝
+
+P(s, a )
+1 + N (s, a )
+
+that is proportional to the prior probability but decays with
+repeated visits to encourage exploration. When the traversal reaches a
+leaf node sL at step L, the leaf node may be expanded. The leaf position
+sL is processed just once by the SL policy network pσ. The output probabilities are stored as prior probabilities P for each legal action a,
+P(s, a ) = pσ (a|s ) . The leaf node is evaluated in two very different ways:
+first, by the value network vθ(sL); and second, by the outcome zL of a
+random rollout played out until terminal step T using the fast rollout
+policy pπ; these evaluations are combined, using a mixing parameter
+λ, into a leaf evaluation V(sL)
+V (sL ) = (1 − λ )vθ(sL ) + λzL
+
+At the end of simulation, the action values and visit counts of all
+traversed edges are updated. Each edge accumulates the visit count and
+mean evaluation of all simulations passing through that edge
+n
+
+N (s, a ) = ∑ 1(s, a, i )
+i=1
+
+Q(s, a ) =
+
+n
+1
+1(s, a, i )V (s iL)
+∑
+N (s, a ) i =1
+
+where s iL is the leaf node from the ith simulation, and 1(s, a, i) indicates
+whether an edge (s, a) was traversed during the ith simulation. Once
+the search is complete, the algorithm chooses the most visited move
+from the root position.
+It is worth noting that the SL policy network pσ performed better in
+AlphaGo than the stronger RL policy network pρ, presumably because
+humans select a diverse beam of promising moves, whereas RL optimizes for the single best move. However, the value function
+vθ(s ) ≈ v pρ(s ) derived from the stronger RL policy network performed
+
+4 8 6 | N AT U R E | VO L 5 2 9 | 2 8 JA N UA RY 2 0 1 6
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+ARTICLE RESEARCH
+a
+3,000
+
+9d
+7d
+
+2,000
+
+5d
+1,500
+
+3d
+
+1,000
+
+1d
+1k
+
+500
+
+5k
+7k
+
+0
+
+Beginner
+kyu (k)
+
+3k
+
+Amateur
+dan (d)
+
+Elo Rating
+
+2,500
+
+Professional
+dan (p)
+
+9p
+7p
+5p
+3p
+1p
+
+3,500
+
+b
+
+c
+
+3,500
+
+3,500
+
+3,000
+
+3,000
+
+2,500
+
+2,500
+
+2,000
+
+2,000
+
+1,500
+
+1,500
+
+1,000
+
+1,000
+
+500
+
+500
+
+GnuGo
+
+Fuego
+
+Pachi
+
+=HQ
+
+Crazy Stone
+
+Fan Hui
+
+AlphaGo
+
+AlphaGo
+distributed
+
+0
+Threads 1 2 4 8 16 32 40
+
+0
+Rollouts
+
+GPUs
+
+Value network
+
+8
+
+12 24 40 64
+
+40
+1
+
+2 4
+
+8
+
+64 112 176 280
+
+Policy network
+Single machine
+
+Distributed
+
+Figure 4 | Tournament evaluation of AlphaGo. a, Results of a
+tournament between different Go programs (see Extended Data Tables
+6–11). Each program used approximately 5 s computation time per move.
+To provide a greater challenge to AlphaGo, some programs (pale upper
+bars) were given four handicap stones (that is, free moves at the start of
+every game) against all opponents. Programs were evaluated on an
+Elo scale37: a 230 point gap corresponds to a 79% probability of winning,
+which roughly corresponds to one amateur dan rank advantage on
+KGS38; an approximate correspondence to human ranks is also shown,
+
+horizontal lines show KGS ranks achieved online by that program. Games
+against the human European champion Fan Hui were also included;
+these games used longer time controls. 95% confidence intervals are
+shown. b, Performance of AlphaGo, on a single machine, for different
+combinations of components. The version solely using the policy network
+does not perform any search. c, Scalability study of MCTS in AlphaGo
+with search threads and GPUs, using asynchronous search (light blue) or
+distributed search (dark blue), for 2 s per move.
+
+better in AlphaGo than a value function vθ(s ) ≈ v pσ(s ) derived from the
+SL policy network.
+Evaluating policy and value networks requires several orders of
+magnitude more computation than traditional search heuristics. To
+efficiently combine MCTS with deep neural networks, AlphaGo uses
+an asynchronous multi-threaded search that executes simulations on
+CPUs, and computes policy and value networks in parallel on GPUs.
+The final version of AlphaGo used 40 search threads, 48 CPUs, and
+8 GPUs. We also implemented a distributed version of AlphaGo that
+
+exploited multiple machines, 40 search threads, 1,202 CPUs and
+176 GPUs. The Methods section provides full details of asynchronous
+and distributed MCTS.
+
+Evaluating the playing strength of AlphaGo
+
+To evaluate AlphaGo, we ran an internal tournament among variants
+of AlphaGo and several other Go programs, including the strongest
+commercial programs Crazy Stone13 and Zen, and the strongest open
+source programs Pachi14 and Fuego15. All of these programs are based
+
+a
+
+Value network
+
+b Tree evaluation from value net
+
+c Tree evaluation from rollouts
+
+d
+
+Policy network
+
+e
+
+f
+
+Percentage
+g of simulations
+
+Figure 5 | How AlphaGo (black, to play) selected its move in an
+informal game against Fan Hui. For each of the following statistics,
+the location of the maximum value is indicated by an orange circle.
+a, Evaluation of all successors s′ of the root position s, using the value
+network vθ(s′); estimated winning percentages are shown for the top
+evaluations. b, Action values Q(s, a) for each edge (s, a) in the tree from
+root position s; averaged over value network evaluations only (λ = 0).
+c, Action values Q(s, a), averaged over rollout evaluations only (λ = 1).
+
+Principal variation
+
+d, Move probabilities directly from the SL policy network, pσ (a | s);
+reported as a percentage (if above 0.1%). e, Percentage frequency with
+which actions were selected from the root during simulations. f, The
+principal variation (path with maximum visit count) from AlphaGo’s
+search tree. The moves are presented in a numbered sequence. AlphaGo
+selected the move indicated by the red circle; Fan Hui responded with the
+move indicated by the white square; in his post-game commentary he
+preferred the move (labelled 1) predicted by AlphaGo.
+2 8 JA N UA RY 2 0 1 6 | VO L 5 2 9 | N AT U R E | 4 8 7
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+RESEARCH ARTICLE
+Game 2
+AlphaGo (Black), Fan Hui (White)
+AlphaGo wins by resignation
+
+Game 1
+Fan Hui (Black), AlphaGo (White)
+AlphaGo wins by 2.5 points
+165
+
+203
+93 92 201 151 57 49
+
+53
+
+51 164 33
+
+156 154 205 35 202 34 152 50 10 47 43 45 221 220 4 223 9
+155 157 3 204 85 149 150
+
+48 44 46
+
+87 84 186 184
+
+229
+
+228 39 31 169 271 86 183 58
+
+82
+
+61 52 49 50 51
+
+30 20 14 16 19
+
+71 68 66 83 85
+
+47 45 48 43 41
+
+25
+
+8 222 231 160 161
+
+67
+
+236 232 235 5
+
+196
+
+82 81 224 79 83
+
+69
+
+3
+
+7 268 153 199
+
+38 40 96 90 167 189 187 264 70 238 251 67 63
+
+6 192 175 197
+
+242 269 270 145 143 146 255 191 227 237 253 65 64
+
+178 198
+
+70
+
+79 76 77
+86 84 80
+144
+
+42 267 99 98
+
+226 225 213 209 214 266 71 72 77 76
+
+143 142 141
+
+256 174 136 212 140 260 73 114 75 12
+
+139 140
+
+211
+
+135 1 132 128
+
+216 137 206 233 118 74 13 108 2 249 107 159
+
+133 126 1 124
+
+29 134
+
+138 30 179 200 20 105 109 126 17 19
+
+22
+
+239 272
+
+163 147 162
+
+244 243 123 122 125
+
+246 247
+
+245 at 122
+
+250 at 59
+
+63 22
+
+58 56
+
+3
+
+52
+
+60 61
+
+50
+74
+
+64 84 81 87 10 91
+23
+
+48
+
+114
+
+55 11 13 82
+
+112
+96 at 10
+
+150
+
+41 39 42
+
+163 162 165
+
+54 59
+
+37 38 40
+
+164
+
+58 11 13 27 36
+
+92
+
+9
+
+10 15 26
+
+67 120 69 70
+
+8
+
+12 24 34
+
+65
+
+68 72
+71
+
+2 104 102
+
+25 91 30 74 75 79
+80 14 31
+
+84 83
+
+1
+
+96 81 82
+
+88 85 18 32 95 16
+
+107 108 87 112
+
+86
+
+161
+
+145 144
+
+160 159
+
+143 102
+
+158 157 154 141
+153 156 155 137 112 142
+
+149 146 140 138
+101 151 99 114 116
+
+78
+
+90 87 89 98 17 94 76
+
+6
+147 148
+
+93 150 152 139 111 110
+
+19 20 29 28 73 66 77
+
+155 154 106 110
+
+4 106
+166
+
+43 44 46 50
+
+21 23 64 33 35
+
+98 97 99
+
+104 103 108
+
+47 51
+
+56 53 52
+
+164 36
+
+127
+
+117 115 118
+
+128 124 125
+
+97 135 2 121 122
+
+126 119 131
+
+113 132 100 136
+
+130 129
+
+133 123 134
+
+137 136
+
+146 124 142
+
+143 145 153 2
+
+100 99
+
+144 147 14 154
+
+148
+
+149
+
+202 92
+
+10 15 80 161 162
+
+81
+
+8
+
+12 78 79 84
+
+14 29
+
+156 155 75 157
+
+101
+
+35 193 194
+5 197
+
+78 115
+
+75
+
+6
+122 156 132
+
+117 116 120
+93
+95
+
+155
+115
+
+180 182
+
+114 118 119
+
+168 179
+
+91
+
+190 181
+124 188 189
+
+100 102 103 107
+
+210 131 129
+
+105 104 159 158
+
+172 170
+
+101 213 123 173 214 167 191
+
+209 17 130
+
+94 21
+
+1 208 128 31 33 211
+
+18 22
+
+178 177 192
+
+149 98 112 99 106 109
+
+74
+
+116 158
+
+36 196
+
+207 65 121 72 67 125 126
+
+9
+
+30 24 23
+
+12 163
+
+131 141
+
+62 71 70 66
+
+201 206
+
+73 54
+
+27 19 20 25
+
+76 165 164
+
+139 138
+
+7
+
+69 133
+
+83 28 89 26 53 85 88 150 111 108 110 113 175 174
+
+13 77 11
+
+16 105 103
+
+61 57 55
+
+22
+
+34 29
+
+149 156
+
+204 205
+
+133
+
+135 134
+
+86 96
+
+129 9
+
+140
+
+102 108 107 110 111 104
+
+45
+
+3
+
+58 59 76 37 64 68 134 4
+
+43 41 56
+
+51 164 200 166 87 97
+
+45
+
+20
+
+3
+
+203
+
+128
+
+35
+
+71
+
+106
+
+163
+
+63
+
+5
+
+195
+
+42 39 38 46 199 60
+
+52
+
+4 122 121
+
+49 15 40 46 42 43
+
+1
+
+28 27 39
+
+109 113 111 114
+
+44 50 40 45 47 57 61 63 77
+
+7 125
+
+34 31
+
+113 109
+
+115
+
+6
+
+94
+
+132 127
+
+17
+
+26 18 23
+
+170 169 168 171
+
+135
+
+5
+
+90
+
+33 39 30 26 117
+
+51 44
+
+181 146 167 175
+
+152 147 148 95 91 101 105 37
+
+119 117
+
+8
+
+130
+
+38 41 47
+
+178 12 17 21 38
+
+157 150 151 159 160 100 93 88 94 103
+
+86 88 93 92 98
+
+28 27 29
+
+32 36 37
+
+72 73
+
+179 180
+
+49
+
+120
+
+83 82 85 89 97 95 118 119 126
+
+24 25
+
+62 19
+
+31
+
+7
+
+Game 5
+Fan Hui (Black), AlphaGo (White)
+AlphaGo wins by resignation
+
+123
+
+69 66 67 48
+21 18 70 65
+
+57 54 53
+
+6
+
+62 49 48
+
+182 at 169
+
+79 80 68
+59
+
+137 183 33 177 5
+
+162
+
+118 116
+
+136 130 128 132 134
+
+Game 4
+AlphaGo (Black), Fan Hui (White)
+AlphaGo wins by resignation
+55
+
+24 32
+
+158 153 96 92 90 89 35
+
+129 123 122 131
+
+106 124 21 127
+
+180
+
+8
+
+166
+
+120
+
+127 125
+
+61 24 166
+
+234 at 179
+
+121
+
+130 131 103 104 259 217 129 215 218 117 62 120 28 18 26 111
+
+210 55
+
+7
+
+165 161 173
+
+190 171 172 257 141 219 115 116 15 16 112 158
+
+133 101 102 258 173 262 121 263 119 110 27 14 11 25 113
+
+59 54 23
+
+13 15
+
+172
+
+60 56 240 97 94
+208 52 53 241 91 100
+
+138
+
+105 109 107
+
+60
+
+4
+
+145 40 176 174 11 10 22
+
+73 72 59
+81 75 74 78
+
+194 193 207 95 139 142 144 261 265 254 170 252 69 66 248 78
+
+9
+
+64 58 54 55 46 44 42
+
+62 65 63 57 56 60
+
+88 195 89 80 68 32 176 177
+
+230 148 36 37 41 168 185 181 182 188
+
+Game 3
+Fan Hui (Black), AlphaGo (White)
+AlphaGo wins by resignation
+
+171
+142 165
+
+186 187
+
+143 2 136 141 146
+
+16 32 198 34 212 184 185
+
+144 138 137 135 148 147
+
+176 183 169
+
+151 152 159 161 162
+
+140 139 152 153 145
+
+160
+90 at 15
+
+127 at 37
+
+151 at 141
+
+154 at 148
+
+157 at 141
+
+160 at 148
+
+163 at 141
+
+Figure 6 | Games from the match between AlphaGo and the European
+champion, Fan Hui. Moves are shown in a numbered sequence
+corresponding to the order in which they were played. Repeated moves
+on the same intersection are shown in pairs below the board. The first
+
+move number in each pair indicates when the repeat move was played, at
+an intersection identified by the second move number (see Supplementary
+Information).
+
+on high-performance MCTS algorithms. In addition, we included the
+open source program GnuGo, a Go program using state-of-the-art
+search methods that preceded MCTS. All programs were allowed 5 s
+of computation time per move.
+The results of the tournament (see Fig. 4a) suggest that singlemachine AlphaGo is many dan ranks stronger than any previous
+Go program, winning 494 out of 495 games (99.8%) against other
+Go programs. To provide a greater challenge to AlphaGo, we also
+played games with four handicap stones (that is, free moves for the
+opponent); AlphaGo won 77%, 86%, and 99% of handicap games
+against Crazy Stone, Zen and Pachi, respectively. The distributed version of AlphaGo was significantly stronger, winning 77% of games
+against single-machine AlphaGo and 100% of its games against other
+programs.
+We also assessed variants of AlphaGo that evaluated positions
+using just the value network (λ = 0) or just rollouts (λ = 1) (see
+Fig. 4b). Even without rollouts AlphaGo exceeded the performance
+of all other Go programs, demonstrating that value networks provide
+a viable alternative to Monte Carlo evaluation in Go. However, the
+mixed evaluation (λ = 0.5) performed best, winning ≥95% of games
+against other variants. This suggests that the two position-evaluation
+
+mechanisms are complementary: the value network approximates the
+outcome of games played by the strong but impractically slow pρ, while
+the rollouts can precisely score and evaluate the outcome of games
+played by the weaker but faster rollout policy pπ. Figure 5 visualizes
+the evaluation of a real game position by AlphaGo.
+Finally, we evaluated the distributed version of AlphaGo against Fan
+Hui, a professional 2 dan, and the winner of the 2013, 2014 and 2015
+European Go championships. Over 5–9 October 2015 AlphaGo and
+Fan Hui competed in a formal five-game match. AlphaGo won the
+match 5 games to 0 (Fig. 6 and Extended Data Table 1). This is the
+first time that a computer Go program has defeated a human professional player, without handicap, in the full game of Go—a feat that was
+previously believed to be at least a decade away3,7,31.
+
+Discussion
+
+In this work we have developed a Go program, based on a combination of deep neural networks and tree search, that plays at the level of
+the strongest human players, thereby achieving one of artificial intelligence’s “grand challenges”31–33. We have developed, for the first time,
+effective move selection and position evaluation functions for Go,
+based on deep neural networks that are trained by a novel combination
+
+4 8 8 | N AT U R E | VO L 5 2 9 | 2 8 JA N UA RY 2 0 1 6
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+ARTICLE RESEARCH
+of supervised and reinforcement learning. We have introduced a new
+search algorithm that successfully combines neural network evaluations with Monte Carlo rollouts. Our program AlphaGo integrates
+these components together, at scale, in a high-performance tree search
+engine.
+During the match against Fan Hui, AlphaGo evaluated thousands
+of times fewer positions than Deep Blue did in its chess match against
+Kasparov4; compensating by selecting those positions more intelligently, using the policy network, and evaluating them more precisely,
+using the value network—an approach that is perhaps closer to how
+humans play. Furthermore, while Deep Blue relied on a handcrafted
+evaluation function, the neural networks of AlphaGo are trained
+directly from gameplay purely through general-purpose supervised
+and reinforcement learning methods.
+Go is exemplary in many ways of the difficulties faced by artificial
+intelligence33,34: a challenging decision-making task, an intractable
+search space, and an optimal solution so complex it appears infeasible
+to directly approximate using a policy or value function. The previous
+major breakthrough in computer Go, the introduction of MCTS, led to
+corresponding advances in many other domains; for example, general
+game-playing, classical planning, partially observed planning, scheduling, and constraint satisfaction35,36. By combining tree search with
+policy and value networks, AlphaGo has finally reached a professional
+level in Go, providing hope that human-level performance can now be
+achieved in other seemingly intractable artificial intelligence domains.
+Online Content Methods, along with any additional Extended Data display items and
+Source Data, are available in the online version of the paper; references unique to
+these sections appear only in the online paper.
+Received 11 November 2015; accepted 5 January 2016.
+1.
+
+Allis, L. V. Searching for Solutions in Games and Artificial Intelligence. PhD thesis,
+Univ. Limburg, Maastricht, The Netherlands (1994).
+2. van den Herik, H., Uiterwijk, J. W. & van Rijswijck, J. Games solved: now and in
+the future. Artif. Intell. 134, 277–311 (2002).
+3. Schaeffer, J. The games computers (and people) play. Advances in Computers
+52, 189–266 (2000).
+4. Campbell, M., Hoane, A. & Hsu, F. Deep Blue. Artif. Intell. 134, 57–83 (2002).
+5. Schaeffer, J. et al. A world championship caliber checkers program. Artif. Intell.
+53, 273–289 (1992).
+6. Buro, M. From simple features to sophisticated evaluation functions.
+In 1st International Conference on Computers and Games, 126–145 (1999).
+7. Müller, M. Computer Go. Artif. Intell. 134, 145–179 (2002).
+8. Tesauro, G. & Galperin, G. On-line policy improvement using Monte-Carlo
+search. In Advances in Neural Information Processing, 1068–1074 (1996).
+9. Sheppard, B. World-championship-caliber Scrabble. Artif. Intell. 134, 241–275
+(2002).
+10. Bouzy, B. & Helmstetter, B. Monte-Carlo Go developments. In 10th International
+Conference on Advances in Computer Games, 159–174 (2003).
+11. Coulom, R. Efficient selectivity and backup operators in Monte-Carlo tree
+search. In 5th International Conference on Computers and Games, 72–83
+(2006).
+12. Kocsis, L. & Szepesvári, C. Bandit based Monte-Carlo planning.
+In 15th European Conference on Machine Learning, 282–293 (2006).
+13. Coulom, R. Computing Elo ratings of move patterns in the game of Go. ICGA J.
+30, 198–208 (2007).
+14. Baudiš, P. & Gailly, J.-L. Pachi: State of the art open source Go program.
+In Advances in Computer Games, 24–38 (Springer, 2012).
+15. Müller, M., Enzenberger, M., Arneson, B. & Segal, R. Fuego – an open-source
+framework for board games and Go engine based on Monte-Carlo tree search.
+IEEE Trans. Comput. Intell. AI in Games 2, 259–270 (2010).
+16. Gelly, S. & Silver, D. Combining online and offline learning in UCT.
+In 17th International Conference on Machine Learning, 273–280 (2007).
+
+17. Krizhevsky, A., Sutskever, I. & Hinton, G. ImageNet classification with deep
+convolutional neural networks. In Advances in Neural Information Processing
+Systems, 1097–1105 (2012).
+18. Lawrence, S., Giles, C. L., Tsoi, A. C. & Back, A. D. Face recognition:
+a convolutional neural-network approach. IEEE Trans. Neural Netw. 8,
+98–113 (1997).
+19. Mnih, V. et al. Human-level control through deep reinforcement learning.
+Nature 518, 529–533 (2015).
+20. LeCun, Y., Bengio, Y. & Hinton, G. Deep learning. Nature 521, 436–444 (2015).
+21. Stern, D., Herbrich, R. & Graepel, T. Bayesian pattern ranking for move
+prediction in the game of Go. In International Conference of Machine Learning,
+873–880 (2006).
+22. Sutskever, I. & Nair, V. Mimicking Go experts with convolutional neural
+networks. In International Conference on Artificial Neural Networks, 101–110
+(2008).
+23. Maddison, C. J., Huang, A., Sutskever, I. & Silver, D. Move evaluation in Go using
+deep convolutional neural networks. 3rd International Conference on Learning
+Representations (2015).
+24. Clark, C. & Storkey, A. J. Training deep convolutional neural networks to
+play go. In 32nd International Conference on Machine Learning, 1766–1774
+(2015).
+25. Williams, R. J. Simple statistical gradient-following algorithms for connectionist
+reinforcement learning. Mach. Learn. 8, 229–256 (1992).
+26. Sutton, R., McAllester, D., Singh, S. & Mansour, Y. Policy gradient methods for
+reinforcement learning with function approximation. In Advances in Neural
+Information Processing Systems, 1057–1063 (2000).
+27. Sutton, R. & Barto, A. Reinforcement Learning: an Introduction (MIT Press, 1998).
+28. Schraudolph, N. N., Dayan, P. & Sejnowski, T. J. Temporal difference learning
+of position evaluation in the game of Go. Adv. Neural Inf. Process. Syst. 6,
+817–824 (1994).
+29. Enzenberger, M. Evaluation in Go by a neural network using soft segmentation.
+In 10th Advances in Computer Games Conference, 97–108 (2003). 267.
+30. Silver, D., Sutton, R. & Müller, M. Temporal-difference search in computer Go.
+Mach. Learn. 87, 183–219 (2012).
+31. Levinovitz, A. The mystery of Go, the ancient game that computers still can’t
+win. Wired Magazine (2014).
+32. Mechner, D. All Systems Go. The Sciences 38, 32–37 (1998).
+33. Mandziuk, J. Computational intelligence in mind games. In Challenges for
+Computational Intelligence, 407–442 (2007).
+34. Berliner, H. A chronology of computer chess and its literature. Artif. Intell. 10,
+201–214 (1978).
+35. Browne, C. et al. A survey of Monte-Carlo tree search methods. IEEE Trans.
+Comput. Intell. AI in Games 4, 1–43 (2012).
+36. Gelly, S. et al. The grand challenge of computer Go: Monte Carlo tree search
+and extensions. Commun. ACM 55, 106–113 (2012).
+37. Coulom, R. Whole-history rating: A Bayesian rating system for players of
+time-varying strength. In International Conference on Computers and Games,
+113–124 (2008).
+38. KGS. Rating system math. http://www.gokgs.com/help/rmath.html.
+Supplementary Information is available in the online version of the paper.
+Acknowledgements We thank Fan Hui for agreeing to play against AlphaGo;
+T. Manning for refereeing the match; R. Munos and T. Schaul for helpful
+discussions and advice; A. Cain and M. Cant for work on the visuals; P. Dayan,
+G. Wayne, D. Kumaran, D. Purves, H. van Hasselt, A. Barreto and G. Ostrovski for
+reviewing the paper; and the rest of the DeepMind team for their support, ideas
+and encouragement.
+Author Contributions A.H., G.v.d.D., J.S., I.A., M.La., A.G., T.G. and D.S. designed
+and implemented the search in AlphaGo. C.J.M., A.G., L.S., A.H., I.A., V.P., S.D.,
+D.G., N.K., I.S., K.K. and D.S. designed and trained the neural networks in
+AlphaGo. J.S., J.N., A.H. and D.S. designed and implemented the evaluation
+framework for AlphaGo. D.S., M.Le., T.L., T.G., K.K. and D.H. managed and advised
+on the project. D.S., T.G., A.G. and D.H. wrote the paper.
+Author Information Reprints and permissions information is available at
+www.nature.com/reprints. The authors declare no competing financial
+interests. Readers are welcome to comment on the online version of the
+paper. Correspondence and requests for materials should be addressed to
+D.S. (davidsilver@google.com) or D.H. (demishassabis@google.com).
+
+2 8 JA N UA RY 2 0 1 6 | VO L 5 2 9 | N AT U R E | 4 8 9
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+RESEARCH ARTICLE
+METHODS
+
+Problem setting. Many games of perfect information, such as chess, checkers,
+othello, backgammon and Go, may be defined as alternating Markov games39. In
+these games, there is a state space S (where state includes an indication of the
+current player to play); an action space A(s) defining the legal actions in any given
+state s ∈ S ; a state transition function f(s, a, ξ) defining the successor state after
+selecting action a in state s and random input ξ (for example, dice); and finally a
+reward function ri(s) describing the reward received by player i in state s. We
+restrict our attention to two-player zero-sum games, r1(s) = −r2(s) = r(s), with
+deterministic state transitions, f(s, a, ξ) = f(s, a), and zero rewards except at a terminal time step T. The outcome of the game zt = ±r(sT) is the terminal reward at
+the end of the game from the perspective of the current player at time step t.
+A policy p(a|s) is a probability distribution over legal actions a ∈ A(s).
+A value function is the expected outcome if all actions for both players are selected
+according to policy p, that is, v p(s) = E[z t|st = s, a t ...T ~ p]  . Zero-sum games have
+a unique optimal value function v*(s) that determines the outcome from state s
+following perfect play by both players,
+
+if s = sT ,
+ zT
+v ⁎(s) =  max − v ⁎( f (s, a)) otherwise
+ a
+
+Prior work. The optimal value function can be computed recursively by minimax
+(or equivalently negamax) search40. Most games are too large for exhaustive minimax tree search; instead, the game is truncated by using an approximate value
+function v(s) ≈ v*(s) in place of terminal rewards. Depth-first minimax search with
+alpha–beta pruning40 has achieved superhuman performance in chess4, checkers5
+and othello6, but it has not been effective in Go7.
+Reinforcement learning can learn to approximate the optimal value function
+directly from games of self-play39. The majority of prior work has focused on a
+linear combination vθ(s) = ϕ(s) · θ of features ϕ(s) with weights θ. Weights were
+trained using temporal-difference learning41 in chess42,43, checkers44,45 and Go30;
+or using linear regression in othello6 and Scrabble9. Temporal-difference learning
+has also been used to train a neural network to approximate the optimal value
+function, achieving superhuman performance in backgammon46; and achieving weak kyu-level performance in small-board Go28,29,47 using convolutional
+networks.
+An alternative approach to minimax search is Monte Carlo tree search
+(MCTS)11,12, which estimates the optimal value of interior nodes by a double
+n
+n
+approximation, V n(s) ≈ v P (s) ≈ v ⁎(s). The first approximation, V n(s) ≈ v P (s),
+uses n Monte Carlo simulations to estimate the value function of a simulation
+n
+policy Pn. The second approximation, v P (s) ≈ v ⁎(s), uses a simulation policy Pn
+in place of minimax optimal actions. The simulation policy selects actions according to a search control function argmaxa (Q n(s, a) + u(s, a)), such as UCT12, that
+selects children with higher action values, Qn(s, a) = −Vn(f(s, a)), plus a bonus
+u(s, a) that encourages exploration; or in the absence of a search tree at state s, it
+samples actions from a fast rollout policy pπ(a | s). As more simulations are executed
+and the search tree grows deeper, the simulation policy becomes informed by
+increasingly accurate statistics. In the limit, both approximations become exact
+and MCTS (for example, with UCT) converges12 to the optimal value function
+n
+lim n →∞V n(s) = lim n →∞v P (s) = v ⁎(s). The strongest current Go programs are
+based on MCTS13–15,36.
+MCTS has previously been combined with a policy that is used to narrow the
+beam of the search tree to high-probability moves13; or to bias the bonus term
+towards high-probability moves48. MCTS has also been combined with a value
+function that is used to initialize action values in newly expanded nodes16, or to
+mix Monte Carlo evaluation with minimax evaluation49. By contrast, AlphaGo’s use
+of value functions is based on truncated Monte Carlo search algorithms8,9, which
+terminate rollouts before the end of the game and use a value function in place of
+the terminal reward. AlphaGo’s position evaluation mixes full rollouts with truncated rollouts, resembling in some respects the well-known temporal-difference
+learning algorithm TD(λ). AlphaGo also differs from prior work by using slower
+but more powerful representations of the policy and value function; evaluating
+deep neural networks is several orders of magnitude slower than linear representations and must therefore occur asynchronously.
+The performance of MCTS is to a large degree determined by the quality of the
+rollout policy. Prior work has focused on handcrafted patterns50 or learning rollout
+policies by supervised learning13, reinforcement learning16, simulation balancing51,52 or online adaptation30,53; however, it is known that rollout-based position
+evaluation is frequently inaccurate54. AlphaGo uses relatively simple rollouts, and
+instead addresses the challenging problem of position evaluation more directly
+using value networks.
+
+Search algorithm. To efficiently integrate large neural networks into AlphaGo, we
+implemented an asynchronous policy and value MCTS algorithm (APV-MCTS).
+Each node s in the search tree contains edges (s, a) for all legal actions a ∈ A(s).
+Each edge stores a set of statistics,
+
+{P(s, a), Nv(s, a), Nr(s, a), Wv(s, a), Wr(s, a), Q(s, a)}
+where P(s, a) is the prior probability, Wv(s, a) and Wr(s, a) are Monte Carlo estimates of total action value, accumulated over Nv(s, a) and Nr(s, a) leaf evaluations
+and rollout rewards, respectively, and Q(s, a) is the combined mean action value for
+that edge. Multiple simulations are executed in parallel on separate search threads.
+The APV-MCTS algorithm proceeds in the four stages outlined in Fig. 3.
+Selection (Fig. 3a). The first in-tree phase of each simulation begins at the root of
+the search tree and finishes when the simulation reaches a leaf node at time step
+L. At each of these time steps, t < L, an action is selected according to the statistics
+in the search tree, a t = argmaxa (Q(st , a) + u(st , a)) using a variant of the PUCT
+algorithm48, u(s, a) = cpuct P(s, a)
+
+∑ b N r(s, b)
+1 + N r(s, a)
+
+, where cpuct is a constant determining
+
+the level of exploration; this search control strategy initially prefers actions with
+high prior probability and low visit count, but asymptotically prefers actions with
+high action value.
+Evaluation (Fig. 3c). The leaf position sL is added to a queue for evaluation vθ(sL)
+by the value network, unless it has previously been evaluated. The second rollout
+phase of each simulation begins at leaf node sL and continues until the end of the
+game. At each of these time-steps, t ≥ L, actions are selected by both players according to the rollout policy, a t ~ pπ (⋅|st ). When the game reaches a terminal state, the
+outcome z t = ± r(sT ) is computed from the final score.
+Backup (Fig. 3d). At each in-tree step t ≤ L of the simulation, the rollout statistics
+are updated as if it has lost nvl games, Nr(st, at) ← Nr(st, at) + nvl; Wr(st, at) ← Wr(st,
+at) −nvl; this virtual loss55 discourages other threads from simultaneously exploring the identical variation. At the end of the simulation, t he rollout statistics are
+updated in a backward pass through each step t ≤ L, replacing the virtual losses by
+the outcome, Nr(st, at) ← Nr(st, at) −nvl + 1; Wr(st, at) ← Wr(st, at) + nvl + zt.
+Asynchronously, a separate backward pass is initiated when the evaluation
+of the leaf position sL completes. The output of the value network vθ(sL) is used to
+update value statistics in a second backward pass through each step t ≤ L,
+Nv(st, at) ← Nv(st, at) + 1, Wv(st, at) ← Wv(st, at) + vθ(sL). The overall evaluation of
+each state action is a weighted average of the Monte Carlo estimates,
+W (s, a)
+W (s , a)
+, that mixes together the value network and
+Q (s , a ) = (1 − λ ) v
++λ r
+N v (s, a)
+
+N r(s, a)
+
+rollout evaluations with weighting parameter λ. All updates are performed
+lock-free56.
+Expansion (Fig. 3b). When the visit count exceeds a threshold, Nr(s, a) > nthr  , the
+successor state s′ = f(s, a) is added to the search tree. The new node is initialized
+to {N(s′, a) = Nr(s′, a) = 0, W(s′, a) = Wr(s′, a) = 0, P(s′,a) = pσ(a|s′)}, using a tree
+policy pτ(a|s′) (similar to the rollout policy but with more features, see Extended
+Data Table 4) to provide placeholder prior probabilities for action selection. The
+position s′ is also inserted into a queue for asynchronous GPU evaluation by the
+policy network. Prior probabilities are computed by the SL policy network pβσ (⋅|s′)
+with a softmax temperature set to β; these replace the placeholder prior probabilities, P(s′, a) ← pβσ (a|s′) , using an atomic update. The threshold nthr is adjusted
+dynamically to ensure that the rate at which positions are added to the policy queue
+matches the rate at which the GPUs evaluate the policy network. Positions are
+evaluated by both the policy network and the value network using a mini-batch
+size of 1 to minimize end-to-end evaluation time.
+We also implemented a distributed APV-MCTS algorithm. This architecture
+consists of a single master machine that executes the main search, many remote
+worker CPUs that execute asynchronous rollouts, and many remote worker GPUs
+that execute asynchronous policy and value network evaluations. The entire search
+tree is stored on the master, which only executes the in-tree phase of each simulation. The leaf positions are communicated to the worker CPUs, which execute
+the rollout phase of simulation, and to the worker GPUs, which compute network
+features and evaluate the policy and value networks. The prior probabilities of the
+policy network are returned to the master, where they replace placeholder prior
+probabilities at the newly expanded node. The rewards from rollouts and the value
+network outputs are each returned to the master, and backed up the originating
+search path.
+At the end of search AlphaGo selects the action with maximum visit count; this
+is less sensitive to outliers than maximizing action value15. The search tree is reused
+at subsequent time steps: the child node corresponding to the played action
+becomes the new root node; the subtree below this child is retained along with all
+its statistics, while the remainder of the tree is discarded. The match version of
+AlphaGo continues searching during the opponent’s move. It extends the search
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+ARTICLE RESEARCH
+if the action maximizing visit count and the action maximizing action value disagree. Time controls were otherwise shaped to use most time in the middle-game57.
+AlphaGo resigns when its overall evaluation drops below an estimated 10% probability of winning the game, that is, max a Q(s, a) < − 0.8.
+AlphaGo does not employ the all-moves-as-first10 or rapid action value estimation58 heuristics used in the majority of Monte Carlo Go programs; when using
+policy networks as prior knowledge, these biased heuristics do not appear to give
+any additional benefit. In addition AlphaGo does not use progressive widening13,
+dynamic komi59 or an opening book60. The parameters used by AlphaGo in the
+Fan Hui match are listed in Extended Data Table 5.
+Rollout policy. The rollout policy pπ (a | s) is a linear softmax policy based on fast,
+incrementally computed, local pattern-based features consisting of both ‘response’
+patterns around the previous move that led to state s, and ‘non-response’ patterns
+around the candidate move a in state s. Each non-response pattern is a binary
+feature matching a specific 3 × 3 pattern centred on a, defined by the colour (black,
+white, empty) and liberty count (1, 2, ≥3) for each adjacent intersection. Each
+response pattern is a binary feature matching the colour and liberty count in a
+12-point diamond-shaped pattern 21 centred around the previous move.
+Additionally, a small number of handcrafted local features encode common-sense
+Go rules (see Extended Data Table 4). Similar to the policy network, the weights
+π of the rollout policy are trained from 8 million positions from human games on
+the Tygem server to maximize log likelihood by stochastic gradient descent.
+Rollouts execute at approximately 1,000 simulations per second per CPU thread
+on an empty board.
+Our rollout policy pπ(a|s) contains less handcrafted knowledge than stateof-the-art Go programs13. Instead, we exploit the higher-quality action selection
+within MCTS, which is informed both by the search tree and the policy network.
+We introduce a new technique that caches all moves from the search tree and
+then plays similar moves during rollouts; a generalization of the ‘last good reply’
+heuristic53. At every step of the tree traversal, the most probable action is inserted
+into a hash table, along with the 3 × 3 pattern context (colour, liberty and stone
+counts) around both the previous move and the current move. At each step of the
+rollout, the pattern context is matched against the hash table; if a match is found
+then the stored move is played with high probability.
+Symmetries. In previous work, the symmetries of Go have been exploited by using
+rotationally and reflectionally invariant filters in the convolutional layers24,28,29.
+Although this may be effective in small neural networks, it actually hurts performance in larger networks, as it prevents the intermediate filters from identifying
+specific asymmetric patterns23. Instead, we exploit symmetries at run-time by
+dynamically transforming each position s using the dihedral group of eight reflections and rotations, d1(s), …, d8(s). In an explicit symmetry ensemble, a mini-batch
+of all 8 positions is passed into the policy network or value network and computed
+in parallel. For the value network, the output values are simply averaged,
+vθ(s) = 1 ∑8j=1 vθ(dj(s)). For the policy network, the planes of output probabilities
+8
+are rotated/reflected back into the original orientation, and averaged together to
+provide an ensemble prediction, pσ (⋅|s) = 1 ∑8j=1 d−j 1(pσ (⋅|dj(s))); this approach
+8
+was used in our raw network evaluation (see Extended Data Table 3). Instead,
+APV-MCTS makes use of an implicit symmetry ensemble that randomly selects a
+single rotation/reflection j ∈ [1, 8] for each evaluation. We compute exactly one
+evaluation for that orientation only; in each simulation we compute the value
+of leaf node sL by vθ(dj(sL)), and allow the search procedure to average over
+these evaluations. Similarly, we compute the policy network for a single,
+randomly selected rotation/reflection, d−j 1(pσ (⋅|dj(s))).
+Policy network: classification. We trained the policy network pσ to classify positions according to expert moves played in the KGS data set. This data set contains
+29.4 million positions from 160,000 games played by KGS 6 to 9 dan human players; 35.4% of the games are handicap games. The data set was split into a test set
+(the first million positions) and a training set (the remaining 28.4 million positions). Pass moves were excluded from the data set. Each position consisted of a
+raw board description s and the move a selected by the human. We augmented the
+data set to include all eight reflections and rotations of each position. Symmetry
+augmentation and input features were pre-computed for each position. For each
+training step, we sampled a randomly selected mini-batch of m samples from
+m
+the augmented KGS data set, {s k, a k}k=1 and applied an asynchronous stochastic
+gradient descent update to maximize the log likelihood of the action,
+∂ log p (a k|s k)
+
+α
+σ
+. The step size α was initialized to 0.003 and was halved
+∆σ = m
+∑m
+k =1
+∂σ
+every 80 million training steps, without momentum terms, and a mini-batch size
+of m = 16. Updates were applied asynchronously on 50 GPUs using DistBelief 61;
+gradients older than 100 steps were discarded. Training took around 3 weeks for
+340 million training steps.
+
+Policy network: reinforcement learning. We further trained the policy network
+by policy gradient reinforcement learning25,26. Each iteration consisted of a minibatch of n games played in parallel, between the current policy network pρ that is
+being trained, and an opponent p ρ− that uses parameters ρ− from a previous iteration, randomly sampled from a pool of opponents, so as to increase the stability
+of training. Weights were initialized to ρ = ρ− = σ. Every 500 iterations, we added
+the current parameters ρ to the opponent pool. Each game i in the mini-batch was
+played out until termination at step Ti, and then scored to determine the outcome
+z it = ± r(sT i) from each player’s perspective. The games were then replayed to
+i
+
+∂ log p (a i|si )
+
+ρ t t
+determine the policy gradient update, ∆ρ = α ∑ni=1 ∑Tt =1
+(z it − v(sit ))  ,
+n
+∂ρ
+i
+25
+using the REINFORCE algorithm with baseline v(st ) for variance reduction. On
+the first pass through the training pipeline, the baseline was set to zero; on the
+second pass we used the value network vθ(s) as a baseline; this provided a small
+performance boost. The policy network was trained in this way for 10,000 minibatches of 128 games, using 50 GPUs, for one day.
+Value network: regression. We trained a value network vθ(s) ≈ v pρ(s) to approximate the value function of the RL policy network pρ. To avoid overfitting to the
+strongly correlated positions within games, we constructed a new data set of uncorrelated self-play positions. This data set consisted of over 30 million positions, each
+drawn from a unique game of self-play. Each game was generated in three phases
+by randomly sampling a time step U ~ unif{1, 450}, and sampling the first t = 1,…
+U − 1 moves from the SL policy network, at ~ pσ(·|st); then sampling one move
+uniformly at random from available moves, aU ~ unif{1, 361} (repeatedly until
+aU is legal); then sampling the remaining sequence of moves until the game terminates, t = U + 1, … T, from the RL policy network, at ~ pρ(·|st). Finally, the game
+is scored to determine the outcome zt = ±r(sT). Only a single training example
+(sU+1, zU+1) is added to the data set from each game. This data provides unbiased
+samples of the value function v pρ(sU + 1) = E[zU + 1|sU + 1, aU + 1,...T ~ pρ ] . During
+the first two phases of generation we sample from noisier distributions so as
+to increase the diversity of the data set. The training method was identical
+to SL policy network training, except that the parameter update was based on
+mean squared error between the predicted values and the observed rewards,
+
+∂ v ( s k)
+
+α
+θ
+k
+k
+∆θ = m
+∑m
+k =1(z − vθ(s )) ∂θ   . The value network was trained for 50 million
+mini-batches of 32 positions, using 50 GPUs, for one week.
+Features for policy/value network. Each position s was pre-processed into a set
+of 19 × 19 feature planes. The features that we use come directly from the raw
+representation of the game rules, indicating the status of each intersection of the
+Go board: stone colour, liberties (adjacent empty points of stone’s chain), captures,
+legality, turns since stone was played, and (for the value network only) the current
+colour to play. In addition, we use one simple tactical feature that computes the
+outcome of a ladder search7. All features were computed relative to the current
+colour to play; for example, the stone colour at each intersection was represented
+as either player or opponent rather than black or white. Each integer feature value
+is split into multiple 19 × 19 planes of binary values (one-hot encoding). For example, separate binary feature planes are used to represent whether an intersection
+has 1 liberty, 2 liberties,…, ≥8 liberties. The full set of feature planes are listed in
+Extended Data Table 2.
+Neural network architecture. The input to the policy network is a 19 × 19 × 48
+image stack consisting of 48 feature planes. The first hidden layer zero pads the
+input into a 23 × 23 image, then convolves k filters of kernel size 5 × 5 with stride
+1 with the input image and applies a rectifier nonlinearity. Each of the subsequent
+hidden layers 2 to 12 zero pads the respective previous hidden layer into a 21 × 21
+image, then convolves k filters of kernel size 3 × 3 with stride 1, again followed
+by a rectifier nonlinearity. The final layer convolves 1 filter of kernel size 1 × 1
+with stride 1, with a different bias for each position, and applies a softmax function. The match version of AlphaGo used k = 192 filters; Fig. 2b and Extended
+Data Table 3 additionally show the results of training with k = 128, 256 and
+384 filters.
+The input to the value network is also a 19 × 19 × 48 image stack, with an additional binary feature plane describing the current colour to play. Hidden layers 2 to
+11 are identical to the policy network, hidden layer 12 is an additional convolution
+layer, hidden layer 13 convolves 1 filter of kernel size 1 × 1 with stride 1, and hidden
+layer 14 is a fully connected linear layer with 256 rectifier units. The output layer
+is a fully connected linear layer with a single tanh unit.
+Evaluation. We evaluated the relative strength of computer Go programs by running an internal tournament and measuring the Elo rating of each program. We
+estimate the probability that program a will beat program b by a logistic function
+1
+, and estimate the ratings e(·) by Bayesian
+p(a beats b) =
+1 + exp(c elo(e(b) − e(a))
+
+logistic regression, computed by the BayesElo program37 using the standard
+constant celo = 1/400. The scale was anchored to the BayesElo rating of professional
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+RESEARCH ARTICLE
+Go player Fan Hui (2,908 at date of submission)62. All programs received a maximum of 5 s computation time per move; games were scored using Chinese rules
+with a komi of 7.5 points (extra points to compensate white for playing second).
+We also played handicap games where AlphaGo played white against existing Go
+programs; for these games we used a non-standard handicap system in which komi
+was retained but black was given additional stones on the usual handicap points.
+Using these rules, a handicap of K stones is equivalent to giving K − 1 free moves
+to black, rather than K − 1/2 free moves using standard no-komi handicap rules.
+We used these handicap rules because AlphaGo’s value network was trained specifically to use a komi of 7.5.
+With the exception of distributed AlphaGo, each computer Go program was
+executed on its own single machine, with identical specifications, using the latest
+available version and the best hardware configuration supported by that program
+(see Extended Data Table 6). In Fig. 4, approximate ranks of computer programs
+are based on the highest KGS rank achieved by that program; however, the KGS
+version may differ from the publicly available version.
+The match against Fan Hui was arbitrated by an impartial referee. Five
+formal games and five informal games were played with 7.5 komi, no handicap, and Chinese rules. AlphaGo won these games 5–0 and 3–2 respectively
+(Fig. 6 and Extended Data Table 1). Time controls for formal games were 1 h main
+time plus three periods of 30 s byoyomi. Time controls for informal games were
+three periods of 30 s byoyomi. Time controls and playing conditions were chosen
+by Fan Hui in advance of the match; it was also agreed that the overall match
+outcome would be determined solely by the formal games. To approximately
+assess the relative rating of Fan Hui to computer Go programs, we appended the
+results of all ten games to our internal tournament results, ignoring differences
+in time controls.
+39. Littman, M. L. Markov games as a framework for multi-agent reinforcement
+learning. In 11th International Conference on Machine Learning, 157–163
+(1994).
+40. Knuth, D. E. & Moore, R. W. An analysis of alpha-beta pruning. Artif. Intell. 6,
+293–326 (1975).
+41. Sutton, R. Learning to predict by the method of temporal differences.
+Mach. Learn. 3, 9–44 (1988).
+42. Baxter, J., Tridgell, A. & Weaver, L. Learning to play chess using temporal
+differences. Mach. Learn. 40, 243–263 (2000).
+43. Veness, J., Silver, D., Blair, A. & Uther, W. Bootstrapping from game tree search.
+In Advances in Neural Information Processing Systems (2009).
+
+44. Samuel, A. L. Some studies in machine learning using the game of checkers
+II - recent progress. IBM J. Res. Develop. 11, 601–617 (1967).
+45. Schaeffer, J., Hlynka, M. & Jussila, V. Temporal difference learning applied to a
+high-performance game-playing program. In 17th International Joint
+Conference on Artificial Intelligence, 529–534 (2001).
+46. Tesauro, G. TD-gammon, a self-teaching backgammon program, achieves
+master-level play. Neural Comput. 6, 215–219 (1994).
+47. Dahl, F. Honte, a Go-playing program using neural nets. In Machines that learn
+to play games, 205–223 (Nova Science, 1999).
+48. Rosin, C. D. Multi-armed bandits with episode context. Ann. Math. Artif. Intell.
+61, 203–230 (2011).
+49. Lanctot, M., Winands, M. H. M., Pepels, T. & Sturtevant, N. R. Monte Carlo tree
+search with heuristic evaluations using implicit minimax backups. In IEEE
+Conference on Computational Intelligence and Games, 1–8 (2014).
+50. Gelly, S., Wang, Y., Munos, R. & Teytaud, O. Modification of UCT with patterns in
+Monte-Carlo Go. Tech. Rep. 6062, INRIA (2006).
+51. Silver, D. & Tesauro, G. Monte-Carlo simulation balancing. In 26th International
+Conference on Machine Learning, 119 (2009).
+52. Huang, S.-C., Coulom, R. & Lin, S.-S. Monte-Carlo simulation balancing in
+practice. In 7th International Conference on Computers and Games, 81–92
+(Springer-Verlag, 2011).
+53. Baier, H. & Drake, P. D. The power of forgetting: improving the last-good-reply
+policy in Monte Carlo Go. IEEE Trans. Comput. Intell. AI in Games 2, 303–309
+(2010).
+54. Huang, S. & Müller, M. Investigating the limits of Monte-Carlo tree search
+methods in computer Go. In 8th International Conference on Computers and
+Games, 39–48 (2013).
+55. Segal, R. B. On the scalability of parallel UCT. Computers and Games 6515,
+36–47 (2011).
+56. Enzenberger, M. & Müller, M. A lock-free multithreaded Monte-Carlo tree
+search algorithm. In 12th Advances in Computer Games Conference, 14–20
+(2009).
+57. Huang, S.-C., Coulom, R. & Lin, S.-S. Time management for Monte-Carlo tree
+search applied to the game of Go. In International Conference on Technologies
+and Applications of Artificial Intelligence, 462–466 (2010).
+58. Gelly, S. & Silver, D. Monte-Carlo tree search and rapid action value estimation
+in computer Go. Artif. Intell. 175, 1856–1875 (2011).
+59. Baudiš, P. Balancing MCTS by dynamically adjusting the komi value. ICGA J.
+34, 131 (2011).
+60. Baier, H. & Winands, M. H. Active opening book application for Monte-Carlo
+tree search in 19×19 Go. In Benelux Conference on Artificial Intelligence,
+3–10 (2011).
+61. Dean, J. et al. Large scale distributed deep networks. In Advances in Neural
+Information Processing Systems, 1223–1231 (2012).
+62. Go ratings. http://www.goratings.org.
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+ARTICLE RESEARCH
+Extended Data Table 1 | Details of match between AlphaGo and Fan Hui
+
+Date
+5/10/15
+5/10/15
+6/10/15
+6/10/15
+7/10/15
+7/10/15
+8/10/15
+8/10/15
+9/10/15
+9/10/15
+
+Black
+Fan Hui
+Fan Hui
+AlphaGo
+AlphaGo
+Fan Hui
+Fan Hui
+AlphaGo
+AlphaGo
+Fan Hui
+AlphaGo
+
+White
+AlphaGo
+AlphaGo
+Fan Hui
+Fan Hui
+AlphaGo
+AlphaGo
+Fan Hui
+Fan Hui
+AlphaGo
+Fan Hui
+
+Category
+Formal
+Informal
+Formal
+Informal
+Formal
+Informal
+Formal
+Informal
+Formal
+Informal
+
+Result
+AlphaGo wins by 2.5 points
+Fan Hui wins by resignation
+AlphaGo wins by resignation
+AlphaGo wins by resignation
+AlphaGo wins by resignation
+AlphaGo wins by resignation
+AlphaGo wins by resignation
+AlphaGo wins by resignation
+AlphaGo wins by resignation
+Fan Hui wins by resignation
+
+The match consisted of five formal games with longer time controls, and five informal games with shorter time controls.
+Time controls and playing conditions were chosen by Fan Hui in advance of the match.
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+RESEARCH ARTICLE
+Extended Data Table 2 | Input features for neural networks
+
+Feature
+
+# of planes
+
+Description
+
+Stone colour
+Ones
+Turns since
+Liberties
+Capture size
+Self-atari size
+Liberties after move
+Ladder capture
+Ladder escape
+Sensibleness
+Zeros
+
+3
+1
+8
+8
+8
+8
+8
+1
+1
+1
+1
+
+Player stone / opponent stone / empty
+A constant plane filled with 1
+How many turns since a move was played
+Number of liberties (empty adjacent points)
+How many opponent stones would be captured
+How many of own stones would be captured
+Number of liberties after this move is played
+Whether a move at this point is a successful ladder capture
+Whether a move at this point is a successful ladder escape
+Whether a move is legal and does not fill its own eyes
+A constant plane filled with 0
+
+Player color
+
+1
+
+Whether current player is black
+
+Feature planes used by the policy network (all but last feature) and value network (all features).
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+ARTICLE RESEARCH
+Extended Data Table 3 | Supervised learning results for the policy network
+
+Architecture
+
+Evaluation
+
+Filters
+
+Symmetries Features
+
+Test accuracy %
+
+Train accuracy %
+
+Raw
+net
+wins %
+
+AlphaGo
+wins %
+
+Forward
+time (ms)
+
+128
+192
+256
+
+1
+1
+1
+
+48
+48
+48
+
+54.6
+55.4
+55.9
+
+57.0
+58.0
+59.1
+
+36
+50
+67
+
+53
+50
+55
+
+2.8
+4.8
+7.1
+
+256
+256
+256
+
+2
+4
+8
+
+48
+48
+48
+
+56.5
+56.9
+57.0
+
+59.8
+60.2
+60.4
+
+67
+69
+69
+
+38
+14
+5
+
+13.9
+27.6
+55.3
+
+192
+192
+192
+
+1
+1
+1
+
+4
+12
+20
+
+47.6
+54.7
+54.7
+
+51.4
+57.1
+57.2
+
+25
+30
+38
+
+15
+34
+40
+
+4.8
+4.8
+4.8
+
+192
+192
+192
+
+8
+8
+8
+
+4
+12
+20
+
+49.2
+55.7
+55.8
+
+53.2
+58.3
+58.4
+
+24
+32
+42
+
+2
+3
+3
+
+36.8
+36.8
+36.8
+
+The policy network architecture consists of 128, 192 or 256 filters in convolutional layers; an explicit symmetry ensemble over 2, 4 or 8 symmetries; using only the first 4, 12 or
+20 input feature planes listed in Extended Data Table 1. The results consist of the test and train accuracy on the KGS data set; and the percentage of games won by given policy
+network against AlphaGo’s policy network (highlighted row 2): using the policy networks to select moves directly (raw wins); or using AlphaGo’s search to select moves (AlphaGo
+wins); and finally the computation time for a single evaluation of the policy network.
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+RESEARCH ARTICLE
+Extended Data Table 4 | Input features for rollout and tree policy
+
+Features used by the rollout policy (first set) and tree policy (first and second set). Patterns are based on stone colour (black/white/empty) and liberties (1, 2, ≥3)
+at each intersection of the pattern.
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+ARTICLE RESEARCH
+Extended Data Table 5 | Parameters used by AlphaGo
+
+Symbol
+
+Parameter
+
+Value
+
+β
+λ
+nvl
+nthr
+cpuct
+
+Softmax temperature
+Mixing parameter
+Virtual loss
+Expansion threshold
+Exploration constant
+
+0.67
+0.5
+3
+40
+5
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+RESEARCH ARTICLE
+Extended Data Table 6 | Results of a tournament between different Go programs
+
+Short name
+
+Computer Player
+
+Version
+
+Time settings
+
+CPUs
+
+GPUs
+
+KGS Rank
+
+Elo
+
+d
+αrvp
+αrvp
+
+Distributed AlphaGo
+AlphaGo
+
+See Methods
+See Methods
+
+5 seconds
+5 seconds
+
+1202
+48
+
+176
+8
+
+–
+–
+
+3140
+2890
+
+CS
+ZN
+PC
+FG
+GG
+
+CrazyStone
+Zen
+Pachi
+Fuego
+GnuGo
+
+2015
+5
+10.99
+svn1989
+3.8
+
+5 seconds
+5 seconds
+400,000 sims
+100,000 sims
+level 10
+
+32
+8
+16
+16
+1
+
+–
+–
+–
+–
+–
+
+6d
+6d
+2d
+–
+5k
+
+1929
+1888
+1298
+1148
+431
+
+CS4
+ZN4
+P C4
+
+CrazyStone
+Zen
+Pachi
+
+4 handicap stones
+4 handicap stones
+4 handicap stones
+
+5 seconds
+5 seconds
+400,000 sims
+
+32
+8
+16
+
+–
+–
+–
+
+–
+–
+–
+
+2526
+2413
+1756
+
+Each program played with a maximum of 5 s thinking time per move; the games against Fan Hui were conducted using longer time controls, as described in Methods. CN4, ZN4
+and PC4 were given 4 handicap stones; komi was 7.5 in all games. Elo ratings were computed by BayesElo.
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+ARTICLE RESEARCH
+Extended Data Table 7 | Results of a tournament between different variants of AlphaGo
+
+Short
+name
+
+Policy
+network
+
+Value
+network
+
+Rollouts
+
+Mixing
+constant
+
+Policy
+GPUs
+
+Value
+GPUs
+
+Elo
+rating
+
+αrvp
+αvp
+αrp
+αrv
+αv
+αr
+αp
+
+pσ
+pσ
+pσ
+[pτ ]
+[pτ ]
+[pτ ]
+pσ
+
+vθ
+vθ
+–
+vθ
+vθ
+–
+–
+
+pπ
+–
+pπ
+pπ
+–
+pπ
+–
+
+λ = 0.5
+λ=0
+λ=1
+λ = 0.5
+λ=0
+λ=1
+–
+
+2
+2
+8
+0
+0
+0
+0
+
+6
+6
+0
+8
+8
+0
+0
+
+2890
+2177
+2416
+2077
+1655
+1457
+1517
+
+Evaluating positions using rollouts only (αrp, αr), value nets only (αvp, αv), or mixing both (αrvp, αrv); either using the policy network pσ(αrvp, αvp, αrp), or no policy
+network (αrvp, αvp, αrp), that is, instead using the placeholder probabilities from the tree policy pτ throughout. Each program used 5 s per move on a single machine
+with 48 CPUs and 8 GPUs. Elo ratings were computed by BayesElo.
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+RESEARCH ARTICLE
+Extended Data Table 8 | Results of a tournament between AlphaGo and distributed AlphaGo, testing scalability
+with hardware
+
+AlphaGo
+
+Search threads
+
+CPUs
+
+GPUs
+
+Elo
+
+Asynchronous
+Asynchronous
+Asynchronous
+Asynchronous
+Asynchronous
+Asynchronous
+Asynchronous
+Asynchronous
+Asynchronous
+Asynchronous
+
+1
+2
+4
+8
+16
+32
+40
+40
+40
+40
+
+48
+48
+48
+48
+48
+48
+48
+48
+48
+48
+
+8
+8
+8
+8
+8
+8
+8
+1
+2
+4
+
+2203
+2393
+2564
+2665
+2778
+2867
+2890
+2181
+2738
+2850
+
+Distributed
+Distributed
+Distributed
+Distributed
+
+12
+24
+40
+64
+
+428
+764
+1202
+1920
+
+64
+112
+176
+280
+
+2937
+3079
+3140
+3168
+
+Each program played with a maximum of 2 s thinking time per move. Elo ratings were computed by BayesElo.
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+ARTICLE RESEARCH
+Extended Data Table 9 | Cross-table of win rates in per cent between programs
+
+αrvp
+
+αvp
+
+αrp
+
+αrv
+
+αr
+
+αv
+
+αp
+
+αrvp
+
+-
+
+1 [0; 5]
+
+5 [4; 7]
+
+0 [0; 4]
+
+0 [0; 8]
+
+0 [0; 19]
+
+0 [0; 19]
+
+αvp
+
+99 [95; 100]
+
+-
+
+61 [52; 69]
+
+35 [25; 48]
+
+6 [1; 27]
+
+0 [0; 22]
+
+1 [0; 6]
+
+αrp
+
+95 [93; 96]
+
+39 [31; 48]
+
+-
+
+13 [7; 23]
+
+0 [0; 9]
+
+0 [0; 22]
+
+4 [1; 21]
+
+αrv
+
+100 [96; 100]
+
+65 [52; 75]
+
+87 [77; 93]
+
+-
+
+0 [0; 18]
+
+29 [8; 64]
+
+48 [33; 65]
+
+αr
+
+100 [92; 100]
+
+94 [73; 99]
+
+100 [91; 100]
+
+100 [82; 100]
+
+-
+
+78 [45; 94]
+
+78 [71; 84]
+
+αv
+
+100 [81; 100]
+
+100 [78; 100]
+
+100 [78; 100]
+
+71 [36; 92]
+
+22 [6; 55]
+
+-
+
+30 [16; 48]
+
+αp
+
+100 [81; 100]
+
+99 [94; 100]
+
+96 [79; 99]
+
+52 [35; 67]
+
+22 [16; 29]
+
+70 [52; 84]
+
+-
+
+CS
+
+100 [97; 100]
+
+74 [66; 81]
+
+98 [94; 99]
+
+80 [70; 87]
+
+5 [3; 7]
+
+36 [16; 61]
+
+8 [5; 14]
+
+ZN
+
+99 [93; 100]
+
+84 [67; 93]
+
+98 [93; 99]
+
+92 [67; 99]
+
+6 [2; 19]
+
+40 [12; 77]
+
+100 [65; 100]
+
+PC
+
+100 [98; 100]
+
+99 [95; 100]
+
+100 [98; 100]
+
+98 [89; 100]
+
+78 [73; 81]
+
+87 [68; 95]
+
+55 [47; 62]
+
+FG
+
+100 [97; 100]
+
+99 [93; 100]
+
+100 [96; 100]
+
+100 [91; 100]
+
+78 [73; 83]
+
+100 [65; 100]
+
+65 [55; 73]
+
+GG
+
+100 [44; 100]
+
+100 [34; 100]
+
+100 [68; 100]
+
+100 [57; 100]
+
+99 [97; 100]
+
+67 [21; 94]
+
+99 [95; 100]
+
+CS4
+
+77 [69; 84]
+
+12 [8; 18]
+
+53 [44; 61]
+
+15 [8; 24]
+
+0 [0; 3]
+
+0 [0; 30]
+
+0 [0; 8]
+
+ZN4
+
+86 [77; 92]
+
+25 [16; 38]
+
+67 [56; 76]
+
+14 [7; 27]
+
+0 [0; 12]
+
+0 [0; 43]
+
+-
+
+P C4
+
+99 [97; 100]
+
+82 [75; 88]
+
+98 [95; 99]
+
+89 [79; 95]
+
+32 [26; 39]
+
+13 [3; 36]
+
+35 [25; 46]
+
+95% Agresti–Coull confidence intervals in grey. Each program played with a maximum of 5 s thinking time per move. CN4, ZN4 and PC4 were given 4 handicap stones;
+komi was 7.5 in all games. Distributed AlphaGo scored 77% [70; 82] against αrvp and 100% against all other programs (no handicap games were played).
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+RESEARCH ARTICLE
+Extended Data Table 10 | Cross-table of win rates in per cent between programs in the single-machine scalability study
+
+Threads
+GPU
+
+1
+
+2
+
+4
+
+8
+
+16
+
+32
+
+40
+
+40
+
+40
+
+40
+
+8
+
+8
+
+8
+
+8
+
+8
+
+8
+
+8
+
+4
+
+2
+
+1
+
+1
+
+8
+
+-
+
+70 [61;78] 90 [84;94] 94 [83;98] 86 [72;94] 98 [91;100] 98 [92;99] 100 [76;100] 96 [91;98] 38 [25;52]
+
+2
+
+8
+
+30 [22;39]
+
+-
+
+4
+
+8
+
+10 [6;16] 28 [19;39]
+
+8
+
+8
+
+6 [2;17] 19 [12;29] 38 [30;47]
+
+16
+
+8
+
+14 [6;28] 14 [7;24] 29 [20;39] 39 [29;49]
+
+32
+
+8
+
+2 [0;9]
+
+8 [3;17] 18 [11;29] 35 [24;49] 48 [37;59]
+
+40
+
+8
+
+2 [1;8]
+
+8 [4;14] 16 [10;26] 27 [18;38] 39 [29;50] 48 [37;58]
+
+40
+
+4
+
+0 [0;24] 17 [9;31] 19 [11;31] 26 [15;41] 48 [36;59] 56 [43;68] 57 [44;70]
+
+40
+
+2
+
+4 [2;9]
+
+40
+
+1
+
+62 [48;75] 74 [62;83] 82 [72;90] 88 [66;97] 95 [75;99] 100 [70;100] 96 [82;99] 98 [89;100] 95 [83;99]
+
+72 [61;81] 81 [71;88] 86 [76;93] 92 [83;97] 93 [86;96] 83 [69;91] 84 [75;90] 26 [17;38]
+-
+
+62 [53;70] 71 [61;80] 82 [71;89] 84 [74;90] 81 [69;89] 78 [63;88] 18 [10;28]
+-
+
+61 [51;71] 65 [51;76] 73 [62;82] 74 [59;85] 64 [55;73] 12 [3;34]
+-
+
+52 [41;63] 61 [50;71] 52 [41;64] 41 [32;51] 5 [1;25]
+-
+
+52 [42;63] 44 [32;57] 26 [17;36] 0 [0;30]
+-
+
+43 [30;56] 41 [26;58] 4 [1;18]
+-
+
+16 [10;25] 22 [12;37] 36 [27;45] 59 [49;68] 74 [64;83] 59 [42;74] 71 [59;82]
+
+95% Agresti–Coull confidence intervals in grey. Each program played with 2 s per move; komi was 7.5 in all games.
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+29 [18;41] 2 [0;11]
+-
+
+5 [1;17]
+-
+
+ARTICLE RESEARCH
+Extended Data Table 11 | Cross-table of win rates in per cent between programs
+in the distributed scalability study
+
+Threads
+GPU
+CPU
+
+40
+
+12
+
+24
+
+40
+
+64
+
+8
+
+64
+
+112
+
+176
+
+280
+
+48
+
+428
+
+764
+
+1202
+
+1920
+
+-
+
+52 [43; 61] 68 [59; 76] 77 [70; 82] 81 [65; 91]
+
+40
+
+8
+
+48
+
+12
+
+64
+
+428 48 [39; 57]
+
+24
+
+112 764 32 [24; 41] 36 [27; 46]
+
+40
+
+176 1202 23 [18; 30] 38 [21; 59] 64 [43; 80]
+
+64
+
+280 1920 19 [9; 35] 17 [5; 45] 40 [31; 49] 47 [33; 61]
+
+-
+
+64 [54; 73] 62 [41; 79] 83 [55; 95]
+-
+
+36 [20; 57] 60 [51; 69]
+-
+
+53 [39; 67]
+-
+
+95% Agresti–Coull confidence intervals in grey. Each program played with 2 s per move; komi was 7.5 in all games.
+
+© 2016 Macmillan Publishers Limited. All rights reserved
+
+

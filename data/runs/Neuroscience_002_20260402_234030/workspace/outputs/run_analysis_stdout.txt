@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "best_model": "hist_gradient_boosting",
+  "test_metrics": {
+    "roc_auc": 0.9913256258643915,
+    "average_precision": 0.9351036920713685,
+    "accuracy": 0.9702083333333333,
+    "balanced_accuracy": 0.9305404553652123,
+    "precision": 0.8349753694581281,
+    "recall": 0.880760289894708,
+    "f1": 0.8572569375124776,
+    "brier_score": 0.027499670339747248,
+    "threshold": 0.28885890792546237
+  }
+}

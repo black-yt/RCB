@@ -1,0 +1,9 @@
+{
+  "n_track_points": 200000,
+  "historical_years_assumed": 165,
+  "mean_wind_ms": 43.493306382331845,
+  "p90_wind_ms": 57.283390045166016,
+  "max_wind_ms": 124.44410705566406,
+  "mean_mangrove_baseline_exposure": 1.2290311343046925,
+  "max_mangrove_baseline_exposure": 14.45975090641609
+}

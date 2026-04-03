@@ -1,0 +1,220 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_cloud_seeding.py",
+    "path": "code/analysis_cloud_seeding.py",
+    "type": "file",
+    "size": 6748,
+    "mtime": 1775133642.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "dataset1_cloud_seeding_records",
+    "path": "data/dataset1_cloud_seeding_records",
+    "type": "directory"
+  },
+  {
+    "name": "cloud_seeding_us_2000_2025.csv",
+    "path": "data/dataset1_cloud_seeding_records/cloud_seeding_us_2000_2025.csv",
+    "type": "file",
+    "size": 222719,
+    "mtime": 1772778220.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "us_states.geojson",
+    "path": "data/dataset1_cloud_seeding_records/us_states.geojson",
+    "type": "file",
+    "size": 89263,
+    "mtime": 1772803314.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "agent_apparatus_patterns.csv",
+    "path": "outputs/agent_apparatus_patterns.csv",
+    "type": "file",
+    "size": 1637,
+    "mtime": 1775133640.0,
+    "exported": true
+  },
+  {
+    "name": "annual_activity.csv",
+    "path": "outputs/annual_activity.csv",
+    "type": "file",
+    "size": 222,
+    "mtime": 1775133640.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview_summary.csv",
+    "path": "outputs/data_overview_summary.csv",
+    "type": "file",
+    "size": 709,
+    "mtime": 1775133640.0,
+    "exported": true
+  },
+  {
+    "name": "narrative_stats.txt",
+    "path": "outputs/narrative_stats.txt",
+    "type": "file",
+    "size": 469,
+    "mtime": 1775133640.0,
+    "exported": true
+  },
+  {
+    "name": "projects_by_state.csv",
+    "path": "outputs/projects_by_state.csv",
+    "type": "file",
+    "size": 163,
+    "mtime": 1775133640.0,
+    "exported": true
+  },
+  {
+    "name": "purpose_composition.csv",
+    "path": "outputs/purpose_composition.csv",
+    "type": "file",
+    "size": 603,
+    "mtime": 1775133640.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2703757,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 5694400,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 13207937,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 8769749,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 9234814,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "agent_apparatus_heatmap.png",
+    "path": "report/images/agent_apparatus_heatmap.png",
+    "type": "file",
+    "size": 427238,
+    "mtime": 1775133640.0,
+    "exported": true
+  },
+  {
+    "name": "annual_activity.png",
+    "path": "report/images/annual_activity.png",
+    "type": "file",
+    "size": 134028,
+    "mtime": 1775133642.0,
+    "exported": true
+  },
+  {
+    "name": "purpose_composition.png",
+    "path": "report/images/purpose_composition.png",
+    "type": "file",
+    "size": 419236,
+    "mtime": 1775133642.0,
+    "exported": true
+  },
+  {
+    "name": "seasonality.png",
+    "path": "report/images/seasonality.png",
+    "type": "file",
+    "size": 87008,
+    "mtime": 1775133642.0,
+    "exported": true
+  },
+  {
+    "name": "spatial_concentration_states.png",
+    "path": "report/images/spatial_concentration_states.png",
+    "type": "file",
+    "size": 166677,
+    "mtime": 1775133642.0,
+    "exported": true
+  },
+  {
+    "name": "top_states.png",
+    "path": "report/images/top_states.png",
+    "type": "file",
+    "size": 91933,
+    "mtime": 1775133640.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13371,
+    "mtime": 1775133643.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5528,
+    "mtime": 1774959146.0,
+    "exported": true
+  }
+]

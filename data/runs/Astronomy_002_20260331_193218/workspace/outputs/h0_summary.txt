@@ -1,0 +1,2 @@
+H0 from SNe Ia: 110.56 +- 2.59 km/s/Mpc
+H0 from SBF : 142.93 +- 6.68 km/s/Mpc

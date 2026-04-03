@@ -1,0 +1,36 @@
+Drosophila optic-lobe DMN ensemble analysis summary
+====================================================
+Models analyzed: 50
+Validation loss range: 5.136557 to 5.677852
+Validation loss mean ± SD: 5.314310 ± 0.075209
+Best model: 000 (loss=5.136557)
+Worst model: 049 (loss=5.677852)
+
+Architecture/task metadata inferred from configs:
+- Connectome file: fib25-fib19_v2.2.json
+- Connectome extent: 15
+- Dynamics: PPNeuronIGRSynapses with relu activation
+- Dataset: MultiTaskSintel with 19 frames and dt=0.02
+- Task: ['flow']
+- Decoder: DecoderGAVP with shape=[8, 2] kernel=5
+- Trainable parameter families: bias=True, time_const=True, syn_strength=True, syn_count=False, sign=False
+
+Most heterogeneous cell-type embeddings (ensemble variability / multimodality):
+- Mi2: clusters=5, entropy=2.291, separation_proxy=0.608
+- R8: clusters=5, entropy=2.274, separation_proxy=0.682
+- R7: clusters=5, entropy=2.234, separation_proxy=0.785
+- Mi13: clusters=5, entropy=2.129, separation_proxy=0.712
+- Tm4: clusters=4, entropy=1.994, separation_proxy=0.699
+
+Related-work papers parsed:
+- paper_000.pdf: Wiring Economy and Volume Exclusion Determine Neuronal Placement in the Drosophila Brain [cell-type catalog / wiring diagram]
+- paper_001.pdf: Synaptic circuits and their variations within different columns in the visual system of Drosophila [motion pathways]
+- paper_002.pdf: 15478079399361 1..19 [motion pathways]
+- paper_003.pdf: Neuronal circuits integrating visual motion information in Drosophila melanogaster [motion pathways]
+- paper_004.pdf: Neuronal “parts list” and wiring diagram for a visual system [cell-type catalog / wiring diagram]
+
+Generated figures:
+- report/images/validation_loss_overview.png
+- report/images/task_config_overview.png
+- report/images/umap_cluster_summary.png
+- report/images/example_umap_panels.png

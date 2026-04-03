@@ -1,0 +1,1817 @@
+Energy Economics 88 (2020) 104783
+
+Contents lists available at ScienceDirect
+
+Energy Economics
+journal homepage: www.elsevier.com/locate/eneeco
+
+Estimating the cost of capital for renewable energy projects
+Bjarne Steffen a,b,⁎
+a
+b
+
+Department of Humanities, Social and Political Sciences, Energy Politics Group, ETH Zurich, 8092 Zurich, Switzerland
+Institute of Science, Technology and Policy, ETH Zurich, 8092 Zurich, Switzerland
+
+a r t i c l e
+
+i n f o
+
+Article history:
+Received 3 April 2019
+Received in revised form 16 April 2020
+Accepted 1 May 2020
+Available online 15 May 2020
+Keywords:
+Investment
+Discount rate
+Financing cost
+Debt
+Equity
+CAPM
+
+a b s t r a c t
+Many models in energy economics assess the cost of alternative power generation technologies. As an input, the
+models require well-calibrated assumptions for the cost of capital or discount rates to be used, especially for renewable energy for which the cost of capital differs widely across countries and technologies. In this article, we
+review the spectrum of estimation methods for the private cost of capital for renewable energy projects and discuss appropriate use of the methods to yield unbiased results. We then evaluate the empirical evidence from 46
+countries for the period 2009–2017. We ﬁnd a globally consistent rank order among technologies, with the cost
+of capital increasing from solar PV to onshore wind to offshore wind power. On average, the cost of capital in developing countries is signiﬁcantly higher than in industrialized countries, with large heterogeneity also within
+the groups of industrialized or developing countries.
+© 2020 The Author. Published by Elsevier B.V. This is an open access article under the CC BY license (http://
+creativecommons.org/licenses/by/4.0/).
+
+JEL classiﬁcation:
+G12
+G31
+G32
+L94
+Q42
+Q48
+
+1. Introduction
+With power generation being the largest contributor to anthropogenic CO2 emissions, decarbonization of the sector ranks high on policy
+agendas worldwide. To this end, many countries are targeting the deployment of renewable energy (RE) technologies, some of which have
+grown rapidly since the turn of the century. To achieve the goals of
+the Paris Agreement, however, the deployment of RE must be even further accelerated, as illustrated by the fact that emission pathways in line
+with the agreement's 1.5–2 °C target always assume a strong increase in
+wind and solar capacity (Luderer et al., 2018). These quantitative results
+are supported by analytical analyses which show that early investments
+in clean energy plants can lead to pathways that reduce emissions efﬁciently in the presence of knowledge accumulation (Acemoglu et al.,
+2012; Goulder and Mathai, 2000) and long-lived abatement capital
+(Vogt-Schilb et al., 2018).
+As the expansion of RE generation requires large investments, a
+sound understanding of the costs and beneﬁts of RE technologies is
+⁎ Corresponding author at: Department of Humanities, Social and Political Sciences,
+Energy Politics Group, ETH Zurich, 8092 Zurich, Switzerland.
+E-mail address: bjarne.steffen@gess.ethz.ch.
+
+necessary to effectively decarbonize the power sector on an efﬁcient
+path. With the growing deployment of RE, energy economists have
+studied the cost of RE generation from various angles, informing
+policymakers and investors about the cost and value of different RE
+technologies (cf. e.g. Borenstein, 2012; Fell and Linn, 2013; Hirth,
+2013; Joskow, 2011; May, 2017; Scholz et al., 2017; Zhang et al.,
+2016). By now, estimations of RE generation cost from economic modeling have become an integral part of long-term energy scenarios that inform the global climate policy discourse (cf. Creutzig et al., 2017;
+Luderer et al., 2017; Pietzcker et al., 2017).
+In model setups that compare capital-intense RE technologies with
+less capital-intense fossil fuel–based technologies, a precise representation of the cost of capital for RE projects (which is reﬂected in discount
+rates) is a prerequisite for meaningful quantitative results. The reason is
+that deploying RE technologies requires large up-front investments that
+must be ﬁnanced. Thus, the cost of capital makes up a signiﬁcant part of
+the lifecycle costs of RE projects; for example, in recent years, for solar
+photovoltaics (PV) in Germany the cost of capital totaled 12–37% of
+the levelized cost of electricity (LCOE) (Egli et al., 2018). In developing
+countries like Brazil or India, cost of capital can even account for 50%
+of the LCOE for solar PV (Schmidt, 2014). Borenstein (Borenstein,
+2012) illustrates how solar PV generation cost changes immensely
+
+https://doi.org/10.1016/j.eneco.2020.104783
+0140-9883/© 2020 The Author. Published by Elsevier B.V. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+
+2
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+depending on the interest rate assumed. Fossil fuel–based power generation, in contrast, is less affected by its cost of capital as a large part of
+the lifecycle costs are fuel expenditures which do not have to be ﬁnanced up front (Schmidt, 2014). Accordingly, model-based research
+has illustrated that cost-efﬁcient technology choices are highly sensitive
+to the assumed cost of capital or discount rate (Hirth and Steckel, 2016;
+Iyer et al., 2015; Stocks, 1984; Sweerts et al., 2019).
+From a theoretical point of view, an important difference needs to be
+made between the social and the private cost of capital. The social cost of
+capital, i.e. the discount rate that maximizes intertemporal social welfare, is required to derive socially optimal pathways, including for climate change mitigation investments. Theoretical and empirical work
+over the last decades made progress in quantifying the social cost of
+capital, though substantial disagreement on the appropriate choice of
+parameters remains (cf. e.g. Arrow et al., 2014; Dietz et al., 2018;
+Weitzman, 2007). In contrast, the private cost of capital, i.e. the discount
+rate used in private investment appraisals, is required to model investment decisions by ﬁrms that choose between alternatives (such as different power generation technologies) in a world that deviates from
+the theoretical optimum. Common applications in energy economics include the projection of RE expansion pathways, the assessment whether
+certain carbon emission targets will be reached, and the ex-ante evaluation of policy interventions that affect the relative revenue or cost position of technologies. For discounting in such applications, it is not the
+(normative) social discount rate that matters, but the (empirical) private discount rate for potential investment projects. This article focuses
+on the private discount rate, more commonly referred to as cost of capital in an empirical context.1
+Although sound assumptions about the private cost of capital are
+crucial for sensibly calibrated models, suitable empirical data is hardly
+available to researchers (Donovan and Nuñez, 2012; Egli et al., 2018).
+The key reason is that many RE projects are realized using project ﬁnance in which the ﬁnancial details remain private information
+(Steffen, 2018). Unlike in corporate ﬁnance setups in which the cost of
+capital is often visible from publicly traded securities, typical RE project
+ﬁnance structures combine non-traded equity investment with bank
+debt, and “ﬁnancing models used by companies are conﬁdential, making it impossible to know or to verify the actual values used by project
+developers” (Dobrotkova et al., 2018, p. 136). Cost of capital is typically
+considered a trade secret, and thus, is often not disclosed (Krupa and
+Harvey, 2017). Although the lack of transparency is less of an issue for
+RE investors (who know their cost of capital for a speciﬁc project), it is
+a challenge for researchers and policymakers alike (Egli et al., 2018).
+In particular, assuming a standard discount rate is often inappropriate
+in energy system models given the high sensitivity of results to this parameter (Iyer et al., 2015; Schmidt, 2014).
+Further complicating the matter, empirical data show large variations in RE cost of capital along several dimensions. Most importantly,
+the cost of capital differs widely between countries (Angelopoulos
+et al., 2016; Egli et al., 2019). In many cases, the spread in the cost of capital is the determining factor for LCOE differences between countries,
+not solar irradiation or wind resources (Dobrotkova et al., 2018;
+Ondraczek et al., 2015). Even within countries, there might be structural
+differences between different RE technologies, and the cost of capital
+can change over time due to RE-speciﬁc effects or economy-wide variations in the interest rate (Egli et al., 2018; Kirkpatrick and Bennear,
+2014).
+Realizing the need for a better understanding of RE cost of capital, a
+number of scholars recently started to estimate such data in various
+ways (see Section 5). However, besides considering a very diverse set
+of countries and technologies, studies used different measures for the
+cost of capital, making it hard to compare the estimates. The scholars
+also applied very different estimation methods, ranging from ﬁnancial
+1
+Note that private cost of capital are also often referred to as WACC (weighted average
+cost of capital); see Section 2.2 for a precise deﬁnition.
+
+market econometrics to qualitative interviews. Thus, although progress
+has been made in estimating RE cost of capital in speciﬁc contexts, a
+consistent picture of the overall state of knowledge is missing. Making
+appropriate assumptions about the cost of capital in investment and energy system models remains challenging. To address this challenge,
+here we present a systematic review of the global empirical evidence
+on RE cost of capital, to answer two research questions:
+1. Which methods are appropriate for estimating the cost of capital for
+RE projects?
+2. What is the state of the empirical knowledge?
+Based on the review results, we discuss the large heterogeneity in
+the cost of capital that can be observed, and implications for energy system modelers, energy economists more generally, and RE policy
+makers. The remainder of the article is structured as follows: Section 2
+provides a conceptual background concerning the cost of capital for
+RE projects. Section 3 outlines the methodology of this review, and
+Section 4 describes the literature base we analyzed for both research
+questions (RQ). Results concerning appropriate estimation methods
+(RQ 1) are summarized in Section 5, an empirical analysis of the quantitative evidence (RQ 2) is presented in Section 6. The ﬁnal section
+concludes.
+2. Characteristics of cost of capital for renewable energy
+Understanding investment in and ﬁnancing of renewable energy assets is of interest for scholars in several economics ﬁelds (e.g., energy
+and environmental economics, energy system modeling, and ﬁnancial
+economics) with differing conceptualizations of the cost of capital or
+discount rates. For clarity of analysis, we provide a brief description of
+ﬁnancing structures and cost of capital measures as understood in this
+article, and we summarize extant research on the expected heterogeneity in the cost of capital between renewable energy assets.
+2.1. Financing structures for renewable energy projects
+Similar to other infrastructure assets, power plants can be ﬁnanced
+either through corporate ﬁnance structures (i.e., “on balance sheet”,
+for instance of a utility), or project ﬁnance structures (i.e., “off balance
+sheet”, in a new legal entity). While many fossil fuel–based power
+plants have traditionally been realized by utilities in corporate ﬁnance
+structures, the surge of renewable energy investments over the last
+two decades was driven by a much broader set of sponsors drawing
+on project ﬁnance (Henderson, 2016; Steffen, 2018). In 2015, project ﬁnance was used in more than half of all new investment in RE projects
+worldwide, and in even higher shares in OECD countries (Steffen,
+2018). Therefore, in this article, we focus on this RE-speciﬁc ﬁnancing
+structure.
+In project ﬁnance, the sponsor creates a self-contained legal entity
+(or special purpose vehicle, SPV) to hold the RE asset, which then is ﬁnanced by debt and equity on the level of the SPV. For repayment, equity
+investors and debt providers depend solely on the future cash ﬂows of
+the RE project, and cannot recourse on other assets of the project sponsor. Thus, the investment risk proﬁle of the RE project, and the corresponding cost of capital, is speciﬁc to the individual investment
+project (Hainz and Kleimeier, 2012; Krupa and Harvey, 2017; Steffen,
+2018).
+2.2. Measures of the cost of capital
+While various deﬁnitions for the private cost of capital exist (cf.
+Helms et al., 2015), here we follow the common economic understanding of “the expected rate of return that market participants require in
+order to attract funds to a particular investment” (Pratt and
+Grabowski, 2014, p. 3), expressed as percentage value. Describing the
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+expected returns, the cost of capital is a forward-looking measure comprising the time value of money and a premium for risk (as well as potentially further factors, such as taxes or transaction costs). The cost of
+capital is equal to the discount rate as used in investment appraisals,
+such as net present value calculations.
+For investments that use more than one type of capital (e.g., equity
+and debt), the overall cost of capital is a combination of the returns of
+the different components. In the most simple formulation, the weighted
+average cost of capital (WACC), sometimes termed “vanilla WACC”
+(Estache and Steichen, 2015), is deﬁned as
+WACC vanilla ¼ δ C d þ ð1−δÞC e ;
+
+ð1Þ
+
+where δ is the debt share (in %), Cd is the cost of debt (in %), and Ce is the
+expected return on equity (in %). The vanilla WACC abstracts from any
+considerations of tax. In most countries, however, interest payments
+are tax-deductible expenses for companies; thus, debt comes with a
+tax beneﬁt. This fact is reﬂected in the after-tax WACC
+WACC after−tax ¼ δ ð1−τÞ C d þ ð1−δÞC e ;
+
+ð2Þ
+
+where τ is the corporate tax rate. Hence, interest payable on debt is already factored in taxable proﬁts here. In some cases (e.g., for regulators
+that want to deﬁne prices which allow a company to meet corporate tax
+liabilities and deliver a certain return on debt and equity), the pre-tax
+WACC is calculated as
+1
+Ce;
+WACC pre−tax ¼ δ C d þ ð1−δÞ
+ð1−τÞ
+
+ð3Þ
+
+where 1 / (1- τ) is the tax wedge on the cost of equity. All three deﬁnitions are used in articles concerning renewable energy projects. As the
+debt share varies signiﬁcantly between countries, between technologies, and over time, the advantage of tax-deductible interest payments
+must be considered for a meaningful comparison. Therefore, we follow
+the majority of the literature in using the after-tax WACC wherever possible in this review (note that WACCpre-tax and WACCafter-tax can be converted into each other as long as the tax rate τ is known and constant
+over time).
+Although the cost of capital is usually stated in nominal terms, in
+contexts with uncertain future inﬂation, sometimes, the deﬂated
+WACC is used to describe the cost of capital excluding inﬂation expectations. The two values can be converted using Fisher's equation
+
+
+1 þ WACC nominal ¼ 1 þ WACC real ð1 þ wÞ;
+
+ð4Þ
+
+where w is the expected inﬂation rate. Finally, all values can refer either
+to investors in the local currency (the standard case considered in this
+review) or to investors from a hard currency area, by including the premium they require for investments in the local currency (Shrimali et al.,
+2013).
+2.3. Expected heterogeneity among projects
+It is common in ﬁnancial economics to conceptually decompose the
+expected rate of returns into a risk-free rate (reﬂecting the time value of
+money) and a risk premium (reﬂecting the investment-speciﬁc risk
+(Pratt and Grabowski, 2014). While the risk-free rate should not differ
+between investment alternatives, it is primarily the risk premium that
+causes the variance in the observed cost of capital (differences in taxes
+and transaction costs can also play a role). A wide range of literature
+uses investor surveys to assess the nature of investment risks related
+to renewable energy assets (Angelopoulos et al., 2016; Egli, 2020;
+Lüthi and Wüstenhagen, 2012; Salm, 2018; Salm and Wüstenhagen,
+2018; Waissbein et al., 2018, 2013). These studies provide an indication
+of which factors lead to differences in the cost of capital between groups
+
+3
+
+of projects (notwithstanding idiosyncratic factors of each setting). Three
+dimensions are pertinent to deﬁne our analysis.
+First, the country in which a RE project will be undertaken affects the
+overall investment risk. Investors consider country-level aspects, such
+as macroeconomic stability and political uncertainties for long-term
+commitments (Steffen and Papakonstantinou, 2015; Waissbein et al.,
+2013). For RE projects in contexts where the cash ﬂow depends on payments from a public entity (e.g., from a feed-in tariff or from a power
+purchase agreement, PPA), also the experience with the RE-speciﬁc policy framework matters (Egli et al., 2018; Estache and Steichen, 2015;
+Lüthi and Wüstenhagen, 2012). An investor's perception of risks related
+to the regulatory framework can thereby be moderated by individual
+worldviews (Chassot et al., 2014). Depending on the design of a feedin tariff or a PPA, there might also be different levels of electricity market
+risk exposure for RE generation (Neuhoff et al., 2018; Polzin et al., 2019;
+Salm and Wüstenhagen, 2018). In addition, the general state of ﬁnancial
+markets differs between countries, affecting capital-intense sectors,
+such as RE (Kim and Park, 2016).
+Second, investment risk differs between different RE technologies
+(Polzin et al., 2019; Salm, 2018). For instance, the resource risk related
+to solar irradiation is typically lower than the resource risk related to
+wind (Tietjen et al., 2016). In addition, solar PV plants and wind turbines
+are based on very different operating principles, and thus, the operational risks (component failures, hazards, etc.) differ. Rotating equipment like a wind turbine is prone to more wear and tear as compared
+to photoelectric systems like solar PV, hence the share of uncertain component repairs in operating cost is much higher for wind turbines than
+for solar PV (Steffen et al., 2020).
+Third, both country- and technology-speciﬁc investment risks can
+vary over time (Egli, 2020; Mazzucato and Semieniuk, 2018). As new
+technologies are deployed, they become increasingly mature, and investment risk decreases, because of proven track records and increased
+the availability of data for such track records (Egli et al., 2018). In addition, investors and banks become more experienced in ﬁnancing RE
+projects, improving their risk assessment processes (ibid.). Changes in
+regulatory frameworks can likewise affect RE investment risks (Leisen
+et al., 2019). Finally, in addition to RE-speciﬁc factors, the general interest rate environment has changed considerably over the last few decades (especially following the 2007–2008 ﬁnancial crisis), affecting
+RE cost of capital as well (Egli et al., 2018; Kirkpatrick and Bennear,
+2014).
+Taking these dimensions into account, in the following analysis we
+differentiate empirical estimates for the cost of capital by country, technology, and ﬁnancing year. We also consider the impact of ﬂuctuating
+general interest rates.
+3. Methodology
+This article is based on a systematic review of existing empirical
+studies that quantify the cost of capital for renewable energy projects.
+The methodology is summarized in Fig. 1. First, we compile a literature
+base of relevant articles in an explicit and reproducible way. Second, we
+evaluate the selected articles concerning the research methods that are
+used for estimating the cost of capital, categorize the methods, and discuss their usability and limitations (RQ 1). Third, we extract empirical
+data on the cost of capital, convert them into comparable quantities
+using additional assumptions where necessary, compile a database suitable for a meta-analysis (Hunter and Schmidt, 2004), and discuss the
+empirical results along descriptive charts and statistics (RQ 2). The individual steps are described in more detail in the following.
+3.1. Compilation of the literature base
+To select the relevant articles in a reproducible way, we draw on
+established protocols for systematic literature reviews in the social sciences (Petticrew and Roberts, 2006). The literature search and selection
+
+4
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+Fig. 1. Summary of review methodology.
+
+thereby follows a sequence of steps with inclusion and exclusion criteria
+as follows: As the starting point, we consider all peer-reviewed literature (i.e., scientiﬁc journals, books, and conference proceedings) that
+had been published until the end of 2018 and are covered in the abstract
+database Scopus. Although in principle other types of archival documents (e.g., policy reports and press articles) contain information on
+the cost of capital for renewable energy projects, focusing on peerreviewed literature means that all studies have been subject to some review concerning their methodological quality (Cooper, 1998), though of
+varying scrutiny depending on, inter alia, the journal. Limiting the analysis to peer-reviewed papers in the Scopus database also ensures full reproducibility of the literature search.
+To address the research questions, we initially searched for articles
+where the title, abstract, or keywords included a reference to cost of
+capital (i.e., “cost of capital,” or the more general terms “ﬁnancing
+cost,” “ﬁnancing conditions”) and a reference to the considered renewable energy technologies (i.e., “renewable energy” or “clean energy” or
+“sustainable energy” or “solar” or “wind”). While evaluating the corresponding initial list of 136 articles (described below), we conducted a
+follow-up snowball sampling round of the articles cited in the initial articles (Cooper, 1998), realizing that some relevant articles
+circumscribed the cost of capital without using these search terms.
+Therefore, we added the combination “risk premium” or “capital markets,” and “investment” (which included all articles that appeared during the round of snowball sampling).2 The resulting long list includes
+182 papers.
+For the long list of articles, meta-data was extracted and the abstracts were screened if the article could fulﬁl inclusion criteria in line
+with our research scope: quantifying the cost of capital of renewable
+energy-based power generation projects (solar PV, onshore wind turbines, and offshore wind turbines) for utility-scale assets. The short
+list includes 54 papers.
+Next, we analyzed the full text of the short-listed papers in detail to
+assess the suitability of the methodologies and results for this review.
+We considered only articles that provide quantiﬁcations of the cost of
+capital based on empirical evidence (excluding, for instance, sensitivity
+analyses that study the impact of different WACC assumptions). Given
+that this review focuses on technology-speciﬁc WACCs for projectﬁnanced renewable energy plants (see Section 2.1), we also excluded
+articles that limit their discussion of the cost of capital to the
+company-level WACC of energy utilities (Helms et al., 2015; Weaver,
+2012) or country-level assumptions of economy-wide WACCs (e.g.
+Labordena et al., 2017; Ondraczek et al., 2015). The remaining 19 articles (describing 18 studies) form the literature base for the review of
+the estimation methods (research question 1) and the analysis of empirical evidence (research question 2).
+3.2. Review of estimation methods
+For each of the 19 articles, we reviewed the methods used (short
+summaries in Table 1). Most of the studies provided this information
+as part of the main text or supplementary information. If questions
+2
+Final Scopus search string: TITLE-ABS-KEY((“cost of capital” OR “ﬁnancing cost” OR
+“ﬁnancing conditions” OR (“risk premium” AND “investment”) OR (“capital markets”
+AND “investment”)) AND (“renewable energy” OR “clean energy” OR “sustainable energy”
+OR “solar” OR “wind”))
+
+remained, we referred to cited literature or contacted the corresponding
+authors to clarify. While reviewing the literature, we clustered the
+methods used in the articles by similarity and iteratively reduced the
+number of clusters until we arrived at the four basic approaches we describe in Section 5. The strengths and weaknesses of the different approaches are then discussed based on the discussions by the authors
+who used these approaches, speciﬁc criticism in other articles, and a holistic assessment taking into account the entire literature base.
+3.3. Empirical analysis of cost of capital estimates
+To summarize the empirical state of knowledge on RE cost of capital,
+quantitative results from all studies in the literature base are compiled
+in a database, including cost of debt, expected return on equity, debt
+share, and WACC (depending on what is reported in the studies). Values
+are considered separately per technology, per country, and per year. For
+each empirical value, we also included a description of the methodology
+used in the underlying article.
+For studies that do not provide the WACCafter-tax, we converted the
+WACCpre-tax as described in Section 2.2, using corporate tax rate τ for
+the given country and year from KPMG (2018). Most studies report
+nominal values; in a few cases where only real WACCs (i.e., excluding
+inﬂation expectations) are provided, we also converted them into nominal WACCs for comparability, using the expected inﬂation rate w mentioned in the respective studies. Converted values are listed as separate
+entries together with the assumptions used. In total, the database includes 358 data points spanning the period 2000–2017 and covering
+46 countries, and forms the basis for all empirical analyses in this article.
+It is provided in the Supplementary Information.
+As mentioned in Section 2.3, the years since renewable energy
+projects were ﬁrst rolled out are characterized by substantial
+changes in economy-wide interest rates, which must be considered
+when the cost of capital is compared over time. As a proxy, Fig. 2
+shows the 12-months London Interbank Offered Rate (LIBOR), a
+common benchmark interest rate, in different currencies. The ﬁgure
+illustrates a regime change during the 2007–2008 ﬁnancial crisis:
+LIBOR rates drop steeply in 2008, and then remain within a range
+of about −0.5% to 2%, although with some variation within that
+range. Therefore, when we aggregate the WACC estimates over
+time, we limit the analysis to the period since 2009 and consider
+WACC after-tax as markups on the LIBOR (i.e., WACC after-tax minus the
+LIBOR rate), a common approach used by banks and ﬁnancial investors (Krupa and Harvey, 2017).3
+4. Literature base
+Table 1 provides details about all 18 studies that have been analyzed
+in detail.4 Since the ﬁrst publication in 2009 (an analysis of renewable
+energy costs in Italy), one to two relevant studies were published per
+year, before the research output increased sharply in 2017–2018
+(eight studies were published, and thus, are the bulk of the empirical evidence). The authors' motivations for estimating the cost of capital differ: While early studies aim at generally decomposing the cost
+3
+We use the 12-months LIBOR in GBP for the United Kingdom, in EUR for other
+European countries, and in USD for non-European countries.
+4
+One study (entry no. 4) is described in two separate articles listed in Scopus.
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+5
+
+Table 1
+Empirical coverage of articles included in the review.
+No Reference
+
+Technologies
+
+Countries
+
+Years
+
+Estimated cost of
+capital components
+
+Estimation method
+
+CoD CoE DS WACC
+1
+
+2
+
+3
+
+(Lorenzoni and Solar PV, onshore
+Bano, 2009)
+wind, other
+(hydro)
+(Szabó et al.,
+Solar PV, onshore
+2010)
+wind, other
+(bioenergy)
+(Donovan and Other (mix of
+Nuñez, 2012)
+renewables)
+
+Italy
+
+2007
+
+Generic EU/United States
+
+Unclear
+
+Brazil, China, India
+
+2009
+
+x
+
+x
+
+x
+
+Elicitation of cost of capital components of unspeciﬁed
+project-ﬁnanced plants from ﬁnancial institutions
+
+x
+
+Expert interviews to judge technology-speciﬁc risk
+adjustments to standard values, archival information
+
+x
+
+4
+
+(Wood and
+Ross, 2012)
+
+Onshore wind,
+offshore wind
+
+Denmark, Germany, Netherlands,
+Spain, Sweden, Switzerland, United
+States
+
+2008
+
+5
+
+(Ardani et al.,
+2013b, Ardani
+et al., 2013a)
+(Shrimali
+et al., 2013)
+
+Solar PV
+
+United States
+
+2012
+
+Solar PV, onshore
+wind
+
+India
+
+2010–2011 x
+
+7
+
+(Estache and
+Steichen,
+2015)
+
+Belgium
+
+2012
+
+8
+
+(Kitzing and
+Weber, 2015)
+(Angelopoulos
+et al., 2016)
+(Voormolen
+et al., 2016)
+
+Solar PV, offshore
+wind, onshore
+wind, other
+(biomass)
+Offshore wind
+
+Germany
+
+2014
+
+x
+
+x
+
+x
+
+x
+
+Onshore wind
+
+26 EU member states
+
+2014
+
+x
+
+x
+
+x
+
+x
+
+Offshore wind
+
+Belgium, Denmark, Germany,
+Netherlands, United Kingdom
+
+2012
+
+Solar PV, onshore
+wind
+Other (mix of
+renewables)
+Solar PV, onshore
+wind, other
+(biomass)
+Onshore wind
+
+Greece
+
+2014–2016 x
+
+x
+
+United States
+
+2016
+
+x
+
+x
+
+Cambodia, China, India, Malaysia,
+Thailand, Vietnam
+
+2016
+
+x
+
+Germany
+
+2000–2013
+
+Solar PV
+
+Saudi Arabia, United Arab Emirates
+
+2015, 2017
+
+Solar PV
+
+Brazil, Chile, El Salvador, Guatemala,
+India, Jamaica, Mexico, Peru, South
+Africa, Uganda, United Arab Emirates,
+Zambia
+Germany
+
+2013–2016
+
+2000–2017 x
+
+x
+
+Denmark, India, United States
+
+2015, 2017
+
+x
+
+6
+
+9
+10
+
+11
+12
+13
+
+14
+
+15
+16
+
+(Angelopoulos
+et al., 2017)
+(Krupa and
+Harvey, 2017)
+(Kumar et al.,
+2017)
+(Werner and
+Scholtens,
+2017)
+(Apostoleris
+et al., 2018)
+(Dobrotkova
+et al., 2018)
+
+17
+
+(Egli et al.,
+2018)
+
+Solar PV, onshore
+wind
+
+18
+
+(Partridge,
+2018)
+
+Onshore wind,
+other (coal, gas)
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+Estimates from ﬁnancial market data, and archival
+information
+Expert interviews, using estimates from ﬁnancial
+market data as the starting point for discussion
+Expert interviews to judge country-speciﬁc risk
+adjustments, archival information including ﬁnancial
+modeling by BNEF
+Same as no. 9
+Expert interviews and archival information
+
+x
+
+x
+
+x
+
+x
+
+Estimates from ﬁnancial market data, using the CAPM
+adjusted for downside beta characteristics in
+emerging markets
+Compilation from national authorities as part of an
+International Energy Agency (IEA) task, drawing on
+elicitation of ﬁnancial details of speciﬁed actual
+projects, or expert interviews
+Expert interviews with various market participants
+(including developers and ﬁnanciers), and archival
+information
+Elicitation of cost of capital components from
+developers of speciﬁed projects, re-engineering of
+debt share
+Estimates from ﬁnancial market data using the CAPM
+
+x
+
+Expert interviews with one country expert for each
+country, and archival information
+
+x
+
+Estimates from ﬁnancial market data
+
+x
+
+Analysis/re-engineering of a ﬁnancial model for
+winning auction bids, based on archival information
+Analysis/re-engineering of a ﬁnancial model for
+winning auction bids, based on archival information
+and expert interviews
+
+x
+
+x
+
+x
+
+x
+
+Elicitation of cost of capital components of 133
+projects from ﬁnancial institutions (banks and
+investors)
+Estimates from ﬁnancial market data
+
+Note: CoD = cost of debt, CoE = cost of equity, DS = debt share, WACC = weighted average cost of capital.
+
+Fig. 2. General interest rate level over time.
+
+structure of renewable energy projects and discuss cost-reduction pathways (e.g., Lorenzoni and Bano, 2009; Wood and Ross, 2012), several recent articles focus narrowly on RE cost of capital (Angelopoulos et al.,
+
+2016; Egli et al., 2018). Accordingly, studies also vary in the extent to
+which the cost of individual capital components is being estimated
+(see Table 1).
+
+6
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+Concerning technologies, onshore wind projects have been analyzed
+in 11 studies, solar PV projects in 9 studies, and offshore wind projects in
+4 studies, reﬂecting the different levels of maturity of the technologies.
+With respect to geography, half of the studies look at only a single country, and several others compare a small set of countries. Only three studies analyze ﬁve or more OECD countries (Angelopoulos et al., 2016;
+Voormolen et al., 2016; Wood and Ross, 2012), and only two studies analyze ﬁve or more developing countries (Dobrotkova et al., 2018; Kumar
+et al., 2017). Thus, the regional overlap is limited. We discuss the empirical data below, following the review of the estimation methods.
+5. Estimation methods for RE cost of capital
+To answer the ﬁrst research question about which methods are appropriate for estimating the cost of capital for RE projects, we present
+and discuss the approaches taken in extant literature. Overall, the estimation methods can be clustered into four general approaches that
+are summarized in Fig. 3, structured in terms of the type of information
+used: elicitation of project ﬁnance data and surveys of expert estimates aim
+at gathering new data at the level of analysis which is of ﬁnal interest
+(i.e., project-level ﬁnancing data). Given the challenges of retrieving information at this level, two other approaches use readily available data
+from other areas: information about the speciﬁc project (and the general RE market) for aspects other than the cost of capital in the replication of auction results or information about the cost of capital beyond
+the speciﬁc project in the case of an analysis of ﬁnancial market data.
+The different approaches will be described in turn, followed by an overarching discussion of suitability for different settings.
+5.1. Elicitation of project ﬁnance data
+The most direct way to quantify RE cost of capital is to collect and analyze the cost of different capital components from speciﬁc RE project ﬁnance deals, as listed in a term sheet or other documents held at the
+involved ﬁnancial institutions. As mentioned above, eliciting such information is often challenging given the conﬁdential nature of project ﬁnance data (Dobrotkova et al., 2018; Egli et al., 2018; Krupa and
+Harvey, 2017). Nevertheless, several scholars succeeded in gathering
+such data, starting with Lorenzoni and Bano (Lorenzoni and Bano,
+2009), who conducted a survey among investors in the Italian market
+and presented granular ﬁgures for the components of the cost of capital
+referring to “real project ﬁnanced plants as conﬁrmed by ﬁnancial institutions” (p. 103). Beyond the technology and the ﬁnancing year, no further details about the projects are being provided. In a related approach,
+the study edited by Wood and Ross (Wood and Ross, 2012) summarizes
+a formal task of the International Energy Agency (IEA, an intergovernmental organization) for which seven national authorities collected
+data, including the cost of capital. Some of the countries thereby provide
+cost of capital data from speciﬁed projects, while others rely on expert
+interviews (see Section 5.2). Shrimali et al. (Shrimali et al., 2013) elicit
+
+ﬁnancial parameters for speciﬁed Indian wind and solar projects in interviews with the developers of these projects.
+Because the cost of capital in project ﬁnance-structures is asset speciﬁc, the external validity of the estimates from the elicited deal data is a
+caveat. As Wood and Ross (Wood and Ross, 2012) note, it is hard to assess whether single projects or deals used to estimate cost data are representative of typical projects in the market, which is even more the
+case if the projects are not identiﬁed, as in Lorenzo and Bano
+(Lorenzoni and Bano, 2009). A way to address this challenge was presented by Egli et al. (Egli et al., 2018), who elicit data on a large number
+of German projects that ﬁt pre-deﬁned characteristics, such as size and
+technology.
+5.2. Survey of expert estimates
+Given the scarcity of deal data, many studies fall back on
+interviewing RE market participants for their expert estimates, often
+complemented by archival information (e.g., press articles that mention
+the debt share of prominent projects). Experts can include project developers, ﬁnanciers, and consultants or academics. In contrast to project
+data elicitation, interviewees do not reveal data on speciﬁc projects they
+were involved in, but instead, estimate the typical cost of capital they
+observe in the market. Examples include Ardani et al. (2013b, 2013a),
+who interviewed 70 market participants in the United States; Krupa
+and Harvey (2017), who combine discussions with Unites States “sector
+participants” and archival information; Kumar et al. (Kumar et al.,
+2017), who communicated with a “country expert” for each market
+they analyzed; and some of the contributions in Wood and Ross
+(Wood and Ross, 2012).
+Compared to the elicitation of project data from speciﬁc deals, a
+qualitative estimate of cost of capital can often be provided by a broader
+set of interviewees, which facilitates the interview process. However,
+selection criteria that are too vague might increase the uncertainty
+concerning the representativeness of the estimates. While a general
+agreement of interest rates and return expectations often exists
+among participants in well-developed markets, such agreement is less
+common in smaller and less mature markets (Angelopoulos et al.,
+2016). In the latter, expert interviewees might express more of a “gut
+feeling” about the cost of capital (i.e. a value based on their intuition,
+not based on data), or they are not able to provide an estimate at all.
+To formalize the process of expert estimations, and to facilitate discussions in small or immature markets, some authors chose to provide
+benchmark rates to the interviewees as a starting point for discussion.
+Voormolen et al. (2016) discuss country-speciﬁc risk adjustments of a
+generic estimate from a ﬁnancial data provider (details on method in
+3E, 2013). Taking a different approach for a broad study of 26 countries,
+Angelopoulos et al. (2017, 2016) use a WACC estimate from ﬁnancial
+market data (see Section 5.4) as a starting point for discussions with
+80 experts. These experts were asked to provide a general assessment
+whether and in which direction the actual market conditions deviate
+
+Fig. 3. Estimation methods by type of data used.
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+from the estimates, and by what order of magnitude (see also Ecofys,
+2016). Using this mixed-methods approach, the authors estimate the
+components of the cost of capital for the broadest set of countries in
+all available studies, although with varying precision (as indicated by
+the broad ranges that are reported for some smaller markets). Finally,
+researchers also proposed conducting formal choice experiments
+(such as adaptive choice-based conjoint analysis) with investors. However, thus far, such experiments have been used to estimate risk premiums only, not the level of the components of the cost of capital
+(Salm, 2018; Salm and Wüstenhagen, 2018).
+5.3. Replication of auction results
+Recently, two studies (Apostoleris et al., 2018; Dobrotkova et al.,
+2018) used a different approach to estimate the cost of capital, drawing
+on non-ﬁnancing data for projects that were awarded a PPA in a competitive auction. Since 2015–2016, policy support for solar and wind
+plants in many countries was shifted to competitive auctions for PPAs
+as a cost-effective mechanism for procuring renewable energy (Polzin
+et al., 2019). Noticing that some auctions revealed very low prices for
+PV generation in developing countries, Apostoleris et al. (Apostoleris
+et al., 2018) and Dobrotkova et al. (Dobrotkova et al., 2018) aimed at
+decomposing the cost structure of awarded projects.5 They exploit the
+fact that much non-ﬁnancing information on the winning bids is publicly available, including the remuneration per kilowatt hour generated
+(i.e., the awarded PPA) and cost data, such as capital expenditures (as
+PV modules and inverters are sold as global commodities at relatively
+transparent price levels). Thus, the cost of capital is often the only missing piece of information. By constructing an LCOE model to replicate the
+auction results, the authors estimate missing bits of information, such as
+the cost of capital. In an analysis of auctions in the Middle East,
+Apostoleris et al. (Apostoleris et al., 2018) mainly draw on archival information; the broader analysis for 13 developing countries by
+Dobrotkova et al. (Dobrotkova et al., 2018) complements such data
+with expert interviews at multilateral development banks.
+5.4. Analysis of ﬁnancial market data
+
+7
+
+for individual technologies. Werner and Scholtens (Werner and
+Scholtens, 2017) use a general medium-term yield corporate bond
+index, claiming that these corporate bonds have a risk proﬁle similar
+to that for wind energy projects. Partridge (Partridge, 2018) uses the
+spread of utility bonds over the risk-free rate, and adds an assumed surplus for renewable energy projects. A caveat to all these studies is
+whether the market proxies used are appropriate for estimating the
+cost of the bank debt for RE projects: Given the high debt share in project ﬁnance, a precise cost of debt ﬁgure is crucial for reliable WACC
+estimates.
+A different approach to quantifying the cost of debt does not use the
+yield of traded bonds, but instead, estimates project ﬁnance-speciﬁc
+markups on the risk-free rate. In a study on Germany, Kitzing and
+Weber (Kitzing and Weber, 2015) use archival information on the typical swap premium (pswap) and bank margin (BM) to be added to the
+risk-free rate (German government bonds):
+C d ¼ r f þ pswap þ BM
+
+ð5Þ
+
+Their approach mirrors the interest rate calculation performed by a
+bank lending to an SPV, but hinges on the availability of bank margins
+and swap premiums which are often hard to obtain. Angelopoulos
+et al. (2017, 2016) also use the German government bond rate as the
+European risk-free rate, and add a CDS spread (the 10-year credit default swap quotation of the respective country), as well as an assumed
+“renewable energy project spread” (PS) that covers risk elements speciﬁc to renewable energy projects (e.g. uncertainty related to the renewable energy policy, compare Section 2.3):
+C d ¼ r f þ CDS þ PS:
+
+ð6Þ
+
+They also discuss alternative approaches, for instance, drawing on
+the LIBOR and spreads between government bonds of different countries, which all have in common that they are a combination of baseline
+rate, a country spread, and an RE project spread. These approaches can
+easily be applied to numerous countries, relying on the implicit assumption that the RE project-speciﬁc markup does not vary across borders.
+
+All of the studies discussed thus far rely on some kind of projectlevel data. A separate stream of literature uses general ﬁnancial market
+data to estimate RE cost of capital, more closely linked to the literature
+on the cost of capital for listed companies (Pratt and Grabowski,
+2014). As typical RE projects are unlisted entities (SPV), their cost of
+debt and expected rate of return cannot be directly referred from the
+prices of traded securities; thus, authors use market data proxies. The
+expected return on equity and the cost of debt are estimated separately
+in all studies in this review. Therefore, we discuss the two components
+in turn. The debt share is typically not estimated from ﬁnancial market
+data (as this project-speciﬁc parameter cannot be inferred from prices
+of traded securities), but taken from archival information or expert interviews as described above.
+
+5.4.2. Market return on equity
+For estimating the cost of equity, the capital asset pricing model
+(CAPM), originally presented by Sharpe (1964) and Lintner (1965), is
+the dominant framework. It is used by almost all practitioners in corporate ﬁnance and ﬁnancial advisory (Brotherson et al., 2013) despite
+shortcomings that have been acknowledged in the academic literature
+(mainly relating to stock return patterns that cannot be explained by
+CAPM, particularly for stocks in emerging markets) (Donovan and
+Nuñez, 2012; Fama and French, 1993). For RE projects, all reviewed
+studies drawing on ﬁnancial market data use some variation of the
+CAPM, estimating the expected return on equity as
+
+5.4.1. Market cost of debt
+For listed companies, the cost of debt is directly available, for example, from the current interest expenses as per ﬁnancial statements or
+from the yield of the company's publicly traded bonds (Pratt and
+Grabowski, 2014). Another proxy is the yield of bonds from a comparable company with a similar credit rating (Courtois et al., 2012). These
+approaches are also used to estimate the cost of debt for private RE assets, even though typically no bonds are issued but the projects are ﬁnanced with bank loans. Estache and Steichen (Estache and Steichen,
+2015) use information from ﬁnancial statements of renewable energy
+companies active in Belgium, with the challenge of small sample sizes
+
+where rf is the risk-free rate, (rm – rf) is the market risk premium, and β
+is a measure of the sensitivity of the expected asset returns to the expected market returns. The risk-free rate and the market risk premium
+apply to the market as a whole, but the beta factor is asset-speciﬁc, and
+thus, is the crucial parameter to be estimated.
+For listed companies, betas are generally obtained by regressing individual stock returns against market returns, and quoted by ﬁnancial
+data providers. For companies that are not publicly traded, the “pureplay method” is to consider the beta of a comparable company (or a
+group of companies) that has a similar risk structure (Courtois et al.,
+2012). For example, Estache and Steichen (Estache and Steichen,
+2015) use a sample of Belgian RE generation companies, and Werner
+and Scholtens (Werner and Scholtens, 2017) consider independent
+wind energy developing ﬁrms. However, the two studies do not
+
+5
+Although not within the technology scope of this review, Lilliestam and Pitz-Paal
+(2018) apply the same method for concentrated solar power (CSP) projects.
+
+
+C e ¼ r f þ β rm −r f ;
+
+ð7Þ
+
+8
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+explicitly consider that project-ﬁnanced RE assets likely have a much
+higher debt share than the comparable portfolio, which affects the equity beta. For such situations, Courtois et al. (Courtois et al., 2012) describe a process of ﬁrst un-leveraging the beta to get a value that
+includes the pure business risk, and then re-leveraging the beta to the
+debt share of the entity under study. This approach is used by
+Angelopoulos et al. (Angelopoulos et al., 2017, 2016) and by Partridge
+(Partridge, 2018).
+Although using beta as a risk measure is an established process for
+developed countries, the standard CAPM seems to be less suitable for
+developing countries and emerging markets (Courtois et al., 2012;
+Donovan and Nuñez, 2012). To improve estimates in these countries,
+Donovan and Nuñez use a “downside beta CAPM,” which allows for
+non-normal return distributions as observed in emerging markets.
+In sum, a variety of approaches use ﬁnancial market data from
+traded securities as a proxy for the cost of debt and the return of equity
+of private RE projects. The potentials and limitations of these approaches, and of the previously discussed estimation methods, is
+discussed next.
+5.5. Discussion of methods and their appropriateness
+The review of methods emphasizes the challenges of estimating the
+cost of capital for privately held entities in a newly emerging industry
+such as RE. Researchers used different approaches depending on the individual studies' objectives, and the methods differ in terms of their appropriateness to yield unbiased estimates in different settings.
+By directly addressing project-level ﬁnancing data, both an elicitation of project ﬁnance data and surveys of expert estimates avoid inferences from other information on the variable of interest, and reduce
+the danger of systematically biased inferences. In return, however,
+these approaches raise questions about the representativeness of the
+gathered data, with non-representative samples potentially introducing
+a bias as well.
+Although eliciting deal data for a large number of projects increases
+the representativeness of the estimates, the process is time-consuming,
+and is difﬁcult to scale to a larger set of countries. As this method uses
+information from past deals only, it is also restricted to countries that
+have a substantial number of comparable projects to allow for a large
+n-analysis. Thus, the approach seems more suited for in-depth analyses
+of single markets, and less suited for larger cross-country analyses, especially if less mature RE markets are included.
+Using expert estimates addresses some of these limitations; however, representativeness might be even more of an issue given the subjectivity involved. For example, meta-analyses of expert estimates in
+energy technology forecasting showed a rather low level of agreement
+between studies (Baker et al., 2015). Thus surveys of expert estimates
+seem less appropriate for obtaining precise values, but rather suited
+for an initial estimate of the cost of capital in a broader set of countries,
+particularly for immature markets where project-speciﬁc ﬁnancing data
+are unavailable.
+Estimates based on the replication of auction results are representative of the cost of capital in a certain auction round, as long as all bids
+that have been awarded a PPA are being analyzed. The precision of the
+estimates depends on the extent and quality of available nonﬁnancing information (which differs according to the speciﬁc country
+situation and actors involved). Naturally, the method is also limited to
+markets where PPA auctions are held. In these cases, the replication of
+auction results has shown to be a useful complement to expert interviews, by offering an empirical way to triangulate interviewee
+estimates.
+The estimates based on ﬁnancial market data build on a broad literature that quantiﬁes the cost of capital for listed companies, drawing on
+the CAPM and its variants. By using accessible data, such as stock and
+bond quotations, these approaches seem suitable for analyses that compare the cost of capital in different countries for which market data are
+
+available from ﬁnancial data providers. These approaches seem less appropriate for a precise comparison of technologies within a country, as
+typically the same proxies are used for solar and wind projects.
+Well beyond RE assets, a general caveat of CAPM-based estimations
+is the limited empirical support for the model, as demonstrated by Fama
+and French (Fama and French, 1993) and others. Speciﬁc to RE projects,
+transferring insights from stocks and bonds to privately held projectﬁnanced assets is nontrivial, and the extant literature is partly based
+on strong assumptions to that end. The precision of ﬁnancial market–
+based estimates hinges on the appropriateness of the market proxies
+for non-market assets. Further research drawing on the asset valuation
+literature is necessary to assess the appropriateness of assumptions
+made in the RE cost of capital estimates thus far.
+In sum, it is promising that the nascent research on the cost of capital
+for RE projects has already developed a range of estimation methods
+each of which has been applied in several studies. The framework provided in Fig. 3 can help future researchers choose the estimation
+method depending on what type of data is best available, keeping in
+mind the suitability of the different approaches as discussed, and incorporating all the incremental improvements that previous studies made.
+Beyond reﬁning the individual methods, future research could also further combine methods, for instance, by calibrating the premiums used
+in ﬁnancial market data-based analyses more precisely based on rigorously elicited data from selected deals.
+6. Analysis of empirical evidence
+To answer the second research question, here we analyze the harmonized data on RE cost of capital, focusing on the after-tax WACC.
+First, we discuss the consistency of the estimates as they are reported
+by different studies. Second, we take into account past dynamics due
+to general interest rate changes. Third, we comment on the observed
+differences between countries and technologies.
+6.1. Comparison of results from different estimation methods
+Considering all available evidence, our literature base allowed to calculate WACCafter-tax for solar PV projects in 23 different countries, for onshore wind projects in 28 countries, and offshore wind projects in 5
+countries. Most data are for projects that were ﬁnanced from 2010/
+2007 onwards (solar PV/wind) as shown in Figs. 4–6. For each technology, estimates of WACCafter-tax per country over time are provided, with
+colors indicating the different estimation methods.6 To illustrate developments over time and allow for the comparison of studies, three or
+more data points for the same country are connected by lines.
+The ﬁrst set of observations concern which estimation methods have
+been used for different technologies: While the elicitation of project
+data and surveys of expert estimates have been used universally, the
+replication of auction results so far has been limited to solar PV, a technology that experienced a number of record-breaking low bids which
+motivated two detailed analyses of the underlying factors. The analysis
+of ﬁnancial market data, in contrast, has been used mainly for wind
+power (both onshore and offshore). It is not obvious why that is the
+case, and applying ﬁnancial market-based analyses to solar PV projects
+seems an area for further research. In addition, all the available broader
+cross-country analyses draw on either expert estimates (Angelopoulos
+et al., 2016; Kumar et al., 2017; Voormolen et al., 2016; Wood and
+Ross, 2012) or auction result replication (Dobrotkova et al., 2018), and
+the use of ﬁnancial market data for such purposes is pending.
+Given the diverse set of countries that have been analyzed, the overlap in terms of different studies estimating WACCs for the same country,
+technology, and year is limited, such that a comparison of methods is
+only partly possible. For onshore wind projects, multiple studies cover
+6
+Each study and year is shown as one data point (which might be based on several data
+points in the respective study.
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+9
+
+Fig. 4. Overview estimates of the WACC for solar PV projects.
+
+the cost of capital for Germany: The ﬁnancial market-based estimate by
+Werner & Scholtens (Werner and Scholtens, 2017), elicited deal data by
+Egli et al. (Egli et al., 2018), and expert estimates by Angelopoulos et al.
+(Angelopoulos et al., 2016) and Wood & Ross (Wood and Ross, 2012)
+are roughly consistent in the years in which the studies overlap (see
+Fig. 5). In addition, the estimates for onshore wind in Denmark from interviews (Angelopoulos et al., 2016) and ﬁnancial market data
+(Partridge, 2018) are consistent. For solar PV projects, different estimates for India (Dobrotkova et al., 2018; Kumar et al., 2017; Shrimali
+et al., 2013) are all in the same magnitude (see Fig. 4). For offshore
+wind projects, only Belgian projects have been analyzed in two studies
+for the same year: The ﬁnancial market–based estimate by Estache &
+Steichen (Estache and Steichen, 2015) thereby is more than 7 percentage point lower than the interview-based estimate by Voormolen
+
+(Voormolen et al., 2016), and overall, is a clear outlier (see the discussion of methodological shortcomings in Section 5.4.2).
+6.2. Analysis of WACC markups
+As shown in Figs. 4–6, the cost of capital within countries clearly
+varies over time, with a general downward trend over the period analyzed. To analyze RE-speciﬁc trends net of the development of
+economy-wide interest rates (see Section 3.3.), Fig. 7 provides the
+WACCafter-tax markup for countries with at least three data points. Compared to the total WACC values shown in Figs. 4 and 5, the development
+of WACC markups over time is qualitatively the same. For example,
+there is still a clear decrease in Germany and Greece for both technologies (although at a slightly lower rate), likely reﬂecting ﬁnancing
+
+Fig. 5. Overview estimates of the WACC for onshore wind projects.
+
+10
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+Fig. 6. Overview estimates of the WACC for offshore wind projects.
+
+Fig. 7. General interest rate level and markups over time.
+
+To further allow a comparison between countries, even if the estimates address different years, we averaged the WACC markup for the
+period 2009–2017 and provide these values in Table 2.7 For easier comparison, the table also provides the WACC calculated for average 2017
+interest rate levels alongside the markups. As indicated in the table,
+the coverage for many countries is still very limited; only for six
+
+countries are there values from three or more studies (OECD countries
+Denmark, Germany, and Greece; and non-OECD countries Brazil, India,
+and United Arab Emirates). The WACC levels for these countries are
+depicted in Fig. 8.
+Clearly, the data points for different countries and technologies are
+drawn from studies which used different methods that each have limitations as discussed in Section 5. Nevertheless, the collective body of empirical evidence in Table 2 and Fig. 8 exhibits several patterns in how the cost
+of capital for RE projects differs between countries and technologies.
+On average, the WACCs in developed countries are clearly below
+those for developing countries, with a difference between the average
+WACC between OECD and non-OECD countries of 2.0 percentage points
+for solar PV projects and 3.1 percentage points for onshore wind projects (see Fig. 8).8 This pattern is consistent with the literature on RE
+
+7
+Excluding pre-2009 values limits the analysis to the relatively stable interest rate environment mentioned above.
+
+8
+Unweighted average of those OECD and non-OECD countries for which data are available. Offshore wind power has not yet been deployed at scale in developing countries.
+
+experience effects as described by Egli et al. (Egli et al., 2018). Only before 2009 (i.e., before the economy-wide interest rate regime changed)
+do the markup values look very different, approaching zero for onshore
+wind projects in Germany and Denmark. These values seem to be less
+comparable with the markups from later years.
+6.3. RE cost of capital by country and technology
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+11
+
+Table 2
+Average WACC markups and WACC at 2017 interest rates, per technology and country.
+Solar PV
+
+Austria
+Belgium
+Brazil
+Bulgaria
+Cambodia
+Chile
+China
+Croatia
+Cyprus
+Czech Republic
+Denmark
+El Salvador
+Estonia
+Finland
+France
+Germany
+Greece
+Guatemala
+Hungary
+India
+Ireland
+Italy
+Jamaica
+Jordan
+Latvia
+Lithuania
+Malaysia
+Mexico
+Netherlands
+Peru
+Poland
+Portugal
+Romania
+Saudi Arabia
+Slovakia
+Slovenia
+South Africa
+Spain
+Sweden
+Thailand
+Uganda
+United Arab Emirates
+United Kingdom
+United States
+Vietnam
+Zambia
+Average OECDb
+Average non-OECDb
+
+Onshore wind
+
+No. of data points considereda
+
+Offshore wind
+
+WACCafter-tax
+
+WACCafter-tax
+
+WACCafter-tax
+
+WACCafter-tax
+
+WACCafter-tax
+
+WACCafter-tax
+
+Markup to LIBOR
+
+at Ø 2017 LIBOR
+
+Markup to LIBOR
+
+at Ø 2017 LIBOR
+
+Markup to LIBOR
+
+at Ø 2017 LIBOR
+
+L + 2.7%
+L + 4.6%
+
+2.5%
+6.4%
+
+L + 6.1%
+L + 3.5%
+
+5.9%
+3.3%
+
+5.7%
+
+5.5%
+
+L + 9.6%
+
+9.4%
+
+L + 8.6%
+L + 3.1%
+L + 5.6%
+
+10.4%
+4.9%
+7.4%
+L + 11.6%
+L + 9.6%
+L + 7.6%
+L + 5.2%
+
+11.4%
+9.4%
+7.4%
+5.1%
+
+L + 7.9%
+
+7.8%
+
+L + 9.3%
+L + 6.1%
+L + 5.3%
+L + 3.1%
+L + 11.9%
+
+9.1%
+5.9%
+5.1%
+3.0%
+11.7%
+
+L + 6.3%
+
+6.1%
+
+L + 10.9%
+L + 9.6%
+L + 8.6%
+L + 7.6%
+
+10.7%
+11.4%
+8.4%
+7.4%
+
+L + 8.9%
+L + 8.1%
+
+8.7%
+7.9%
+
+L + 5.9%
+
+5.7%
+
+L + 9.9%
+
+9.8%
+
+L + 8.9%
+L + 7.6%
+L + 10.7%
+
+8.7%
+7.4%
+10.5%
+
+L + 7.7%
+L + 10.6%
+
+7.5%
+10.4%
+
+L + 9.6%
+L + 7.8%
+
+9.4%
+7.6%
+
+L + 5.5%
+L + 4.8%
+
+6.2%
+6.5%
+
+L + 11.9%
+
+12.6%
+
+L + 7.4%
+L + 10.2%
+
+7.3%
+10.4%
+
+L + 8.3%
+–
+
+8.3%
+–
+
+L + 4.3%
+
+6.1%
+
+L + 2.9%
+L + 12.0%
+L + 7.9%
+
+2.7%
+11.8%
+9.7%
+
+L + 8.8%
+
+10.6%
+
+L + 2.5%
+L + 3.7%
+
+4.3%
+5.5%
+
+L + 8.6%
+L + 3.1%
+
+10.4%
+4.9%
+
+L + 2.5%
+
+4.3%
+
+L + 2.5%
+
+L + 4.8%
+
+L + 10.1%
+L + 6.0%
+L + 3.7%
+
+L + 8.6%
+L + 2.5%
+L + 4.8%
+L + 5.6%
+
+4.2%
+
+6.6%
+
+11.9%
+7.8%
+5.5%
+
+10.4%
+4.2%
+5.4%
+7.4%
+
+(solar PV/wind ons./wind offs)
+(− / 1 / -)
+(1 / 2 / 2)
+(3 / - / -)
+(− / 1 / -)
+(1 / - / -)
+(2 / - / -)
+(1 / - / -)
+(− / 1 / -)
+(− / 1 / -)
+(− / 1 / -)
+(− / 3 / 1)
+(1 / - / -)
+(− / 1 / -)
+(− / 1 / -)
+(− / 1 / -)
+(4 / 11 / 2)
+(3 / 4 / -)
+(1 / - / -)
+(− / 1 / -)
+(5 / 3 / -)
+(− / 1 / -)
+(− / 1 / -)
+(1 / - / -)
+(1 / - / -)
+(− / 1 / -)
+(− / 1 / -)
+(1 / - / -)
+(1 / - / -)
+(− / 1 / 1)
+(2 / - / -)
+(− / 1 / -)
+(− / 1 / -)
+(− / 1 / -)
+(1 / - / -)
+(− / 1 / -)
+(− / 1 / -)
+(2 / - / -)
+(− / 1 / -)
+(− / 1 / -)
+(1 / - / -)
+(1 / - / -)
+(4 / - / -)
+(− / 1 / 1)
+(− / 2 / -)
+(1 / - / -)
+(1 / - / -)
+
+Notes: LIBOR = London Interbank Offered Rate (a common benchmark interest rate). As the EUR LIBOR was negative (−0.18%) in 2017, the WACC at Ø 2017 LIBOR rates is lower than the
+markup in EUR countries.
+a
+Each study and year is considered as one data point, which might be based on several data points in the respective study.
+b
+Unweighted averages of values from countries for which data area available.
+
+investment in developing countries which emphasizes that high ﬁnancing costs are an important barrier to investment (Schmidt, 2014;
+Shrimali et al., 2013). However, the difference between the average
+rate in OECD countries and the average rate in non-OECD countries for
+which data is available appears rather moderate, especially for solar
+PV with just 2.0 percentage points. Importantly, these averages compare
+rather heterogeneous groups of countries, as illustrated by Germany
+and Greece (both OECD), or India and the United Arab Emirates (both
+non-OECD)—underlining the necessity to consider the speciﬁc situation
+of each country.
+For solar PV, since 2015 many large projects in developing countries have been deployed through competitive auctions that yielded
+a comparably low cost of capital (see the orange dots in Fig. 4), partly
+enabled by ﬁnancial de-risking instruments from multilateral
+
+development banks. But there are large differences between developing countries: Jamaica, Peru, Saudi Arabia, and Zambia have a
+WACC for solar PV projects below 5%, and the WACC is above 10%
+for Cambodia, India, Malaysia, Thailand, and Vietnam. The data also
+show that for India (one of the largest solar PV markets) the WACC
+levels and markups hardly improved between 2011 and 2016, unlike
+in other countries.
+For wind power projects, in contrast, no developing country has an
+estimated WACC below 5%, and the difference to OECD countries is
+larger, even though there are also several European Union (EU) countries with a WACC above 10% (Croatia, Greece, Hungary, Romania, and
+Slovenia).
+Ordering the technologies by their cost of capital, we observe a clear
+pattern for all countries, with the WACC for solar PV projects the lowest,
+
+12
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+Fig. 8. Average WACC at 2017 interest rates.
+
+followed by the WACC for onshore wind projects, and the WACC for offshore wind projects the highest.9 This order reﬂects the investor perception that since having become fully mature, solar PV has a lower
+operational risk than wind (Egli et al., 2018), which also fueled the recent rapid expansion to developing countries (Steffen et al., 2018).
+Finally, the cross-country variance showed in Table 2 is larger for onshore or offshore wind power than for solar PV, mainly driven by results
+from the broad interview-based studies by Angelopoulos et al.
+(Angelopoulos et al., 2016) and Voormoolen et al. (Voormolen et al.,
+2016). Such a large variance is not apparent in the other broad studies
+by Wood & Ross (Wood and Ross, 2012) and Dobrotkova et al.
+(Dobrotkova et al., 2018) which, however, cover different countries.
+Thus, whether the different variance between technologies is due to actual technology differences or the estimation method used cannot be
+ascertained from the available data.
+In sum, comparing the available empirical evidence shows differences between countries and technologies that are in line with expectations from qualitative literature, as discussed in Section 2.3. For many
+countries, empirical WACC estimates are now available, and can be
+used by energy economists and energy system modelers. However,
+the overall fragmented coverage, with many countries having been investigated in only one or two articles, clearly calls for further research
+to increase the reliability of the estimates.
+7. Conclusion
+Aiming to address the scarcity of solid data on the cost of capital for
+RE projects, this systematic literature review identiﬁed 19 articles that
+estimated WACCs for solar PV, onshore wind, or offshore wind power,
+yielding values for 46 countries. For these countries, we ﬁnd a consistent
+rank order among technologies, with the cost of capital increasing from
+solar PV to onshore wind to offshore wind power. On average, the cost
+of capital in developing countries is signiﬁcantly higher than in industrialized countries, but major differences also occur between countries
+which are comparable with respect to their state of economic
+development.
+The suitability and limitations of different estimation methods
+has been discussed, suggesting that future research on RE cost of capital can further improve the accuracy of the estimates by taking into
+account all the reﬁnements that extant literature has proposed.
+Concerning the empirical scope of future studies, some major gaps
+in coverage should be addressed. For instance, data for major RE
+markets, such as France, Italy, and the United States, are very limited.
+In addition, it would also be desirable to gather additional evidence
+
+on countries for which estimates are already available, because
+only a regional overlap of studies will allow to more profoundly assess the consistency of studies (i.e. several studies need to estimate
+values for the same countries to allow a comparison of results). Increased country and technology overlap can help improve understanding of the uncertainty in results for a particular method, such
+as expert estimates (cf. Nemet et al., 2017), and compare the precision delivered by different methods.
+For energy economists, and energy system modelers more generally,
+the large heterogeneity in WACC estimates that became apparent in this
+article clearly emphasizes the relevance of using different cost of capital
+assumptions in many contexts. The present analysis yielded robust evidence for differences between countries and technologies that can be
+used, for instance, in RE investment models and energy system models
+with endogenous investment.
+Finally, the transparency that this review created should also be of
+interest to policymakers concerned about decarbonizing power generation. The large differences in the cost of capital for RE projects between
+countries highlights not only the need to consider RE cost of capital for
+cost-effective deployment strategies (cf. May and Neuhoff, 2017), but
+also the potential to explicitly address ﬁnancing costs as part of a renewable energy policy mix (Geddes et al., 2018; Kirkpatrick and Bennear,
+2014; Krupa et al., 2019; Shrimali et al., 2013). In the European Union,
+for instance, policymakers acknowledge that reducing ﬁnancing costs
+can have a material impact on the competitiveness of RE (EU
+Commission, 2018), but only transparency of cost of capital across countries and technologies will allow to design appropriate policy
+interventions.
+Funding
+This work was supported by the Swiss State Secretariat for Education, Research and Innovation (SERI) under contract number 16.0222.
+The opinions expressed and arguments employed herein do not necessarily reﬂect the ofﬁcial views of the Swiss Government. This work was
+conducted as part of the European Union's Horizon 2020 research and
+innovation programme project INNOPATHS under grant agreement
+No. 730403.
+Author statement
+Author contribution statement not applicable because singleauthored.
+Declaration of Competing Interest
+
+9
+
+The only exception is Greece where the WACCs for solar PV and onshore wind power
+are almost identical at 11.8% and 11.7%, respectively.
+
+The author declares no competing interests.
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+Acknowledgements
+The author thanks F. Egli, T. Schmidt, members of ETH Zurich's Energy Politics Group, participants at the 42nd IAEE International Conference, Montréal/Canada, as well as the anonymous reviewers for helpful
+comments on earlier drafts of the paper.
+Appendix A. List of abbreviations
+
+Table A.1
+Abbreviations used in the article.
+Abbreviation
+
+Explanation
+
+BNEF
+CDS
+CoD
+CoE
+DS
+EU
+IEA
+LIBOR
+LCOE
+PV
+OECD
+PPA
+RE
+RQ
+SPV
+WACC
+
+Bloomberg New Energy Finance (a ﬁnancial data provider)
+Credit default spread
+Cost of debt
+Cost of equity
+Debt share
+European Union
+International Energy Agency (an international organization)
+London Interbank Offered Rate (a benchmark interest rate)
+Levelized cost of electricity
+Photovoltaics
+Organization for Economic Co-operation and Development
+Power purchase agreement
+Renewable energy
+Research question
+Special purpose vehicle
+Weighted average cost of capital
+
+Appendix B. Supplementary data
+Supplementary data to this article can be found online at https://doi.
+org/10.1016/j.eneco.2020.104783.
+References
+3E, 2013. Benchmarking Study on Offshore Wind Incentives - Comparison of the Systems
+in 6 Neighbouring Countries.
+Acemoglu, D., Aghion, P., Bursztyn, L., Hemous, D., 2012. The environment and directed
+technical change. Am. Econ. Rev. 102, 131–166. https://doi.org/10.1257/
+aer.102.1.131.
+Angelopoulos, D., Brückmann, R., Jirouš, F., Konstantinavičiūtė, I., Noothout, P., Psarras, J.,
+Tesnière, L., Breitschopf, B., 2016. Risks and cost of capital for onshore wind energy
+investments in EU countries. Energy Environ. 27, 82–104. https://doi.org/10.1177/
+0958305X16638573.
+Angelopoulos, D., Doukas, H., Psarras, J., Stamtsis, G., 2017. Risk-based analysis and policy
+implications for renewable energy investments in Greece. Energy Policy 105,
+512–523. https://doi.org/10.1016/J.ENPOL.2017.02.048.
+Apostoleris, H., Sgouridis, S., Stefancich, M., Chiesa, M., 2018. Evaluating the factors that
+led to low-priced solar electricity projects in the Middle East. Nat. Energy 3,
+1109–1114. https://doi.org/10.1038/s41560-018-0256-3.
+Ardani, K., Davidson, C., Truitt, S., Margolis, R., Seif, D., Morris, J., Torbert, R., 2013a. Nonhardware cost reduction roadmap to 2020 for residential and commercial PV: preliminary ﬁndings. 42nd ASES National Solar Conference 2013, SOLAR 2013, pp. 14–25.
+Ardani, K., Seif, D., Davidson, C., Morris, J., Truitt, S., Torbert, R., Margolis, R., 2013b. Preliminary non-hardware (“soft”) cost-reduction roadmap for residential and small commercial solar photovoltaics, 2013-2020. 2013 IEEE 39th Photovoltaic Specialists
+Conference
+(PVSC).
+IEEE,
+pp.
+3463–3468.
+https://doi.org/10.1109/
+PVSC.2013.6745192.
+Arrow, K.J., Cropper, M.L., Gollier, C., Groom, B., Heal, G.M., Newell, R.G., Nordhaus, W.D.,
+Pindyck, R.S., Pizer, W.A., Portney, P.R., Sterner, T., Tol, R.S.J., Weitzman, M.L., 2014.
+Should governments use a declining discount rate in project analysis? Rev. Environ.
+Econ. Policy 8, 145–163. https://doi.org/10.1093/reep/reu008.
+Baker, E., Bosetti, V., Anadon, L.D., Henrion, M., Aleluia Reis, L., 2015. Future costs of key
+low-carbon energy technologies: harmonization and aggregation of energy technology expert elicitation data. Energy Policy 80, 219–232. https://doi.org/10.1016/J.
+ENPOL.2014.10.008.
+Borenstein, S., 2012. The private and public economics of renewable electricity generation. J. Econ. Perspect. 26, 67–92. https://doi.org/10.1257/jep.26.1.67.
+Brotherson, W.T., Eades, K.M., Harris, R.S., Higgins, R.C., 2013. “Best practices” in estimating the cost of capital: an update. J. Appl. Financ. 23, 15–33.
+Chassot, S., Hampl, N., Wüstenhagen, R., 2014. When energy policy meets free-market
+capitalists: the moderating inﬂuence of worldviews on risk perception and renewable energy investment decisions. Energy Res. Soc. Sci. 3, 143–151. https://doi.org/
+10.1016/j.erss.2014.07.013.
+Cooper, H., 1998. Synthesizing Research: A Guide for Literature Reviews. 3rd editio. Sage.
+
+13
+
+Courtois, Y., Lai, G.C., Drake, P.P., 2012. Cost of capital. In: Clayman, M.R., Fridson, M.S.,
+Troughton, G.H. (Eds.), Corporate Finance - a Practical Approach. John Wiley &
+Sons, Inc, pp. 127–170.
+Creutzig, F., Agoston, P., Goldschmidt, J.C., Luderer, G., Nemet, G., Pietzcker, R.C., 2017. The
+underestimated potential of solar energy to mitigate climate change. Nat. Energy 2.
+https://doi.org/10.1038/nenergy.2017.140.
+Dietz, S., Gollier, C., Kessler, L., 2018. The climate beta. J. Environ. Econ. Manag. 87,
+258–274. https://doi.org/10.1016/J.JEEM.2017.07.005.
+Dobrotkova, Z., Surana, K., Audinet, P., 2018. The price of solar energy: comparing competitive auctions for utility-scale solar PV in developing countries. Energy Policy
+118, 133–148. https://doi.org/10.1016/J.ENPOL.2018.03.036.
+Donovan, C., Nuñez, L., 2012. Figuring what’s fair: the cost of equity capital for renewable
+energy in emerging markets. Energy Policy 40, 49–58. https://doi.org/10.1016/J.
+ENPOL.2010.06.060.
+Ecofys, 2016. The Impact of Risks in Renewable Energy Investments and the Role of Smart
+Policies. EU DiaCore Final Rep.
+Egli, F., 2020. Renewable energy investment risk: an investigation of changes over time
+and the underlying drivers. Energy Policy 140, 111428. https://doi.org/10.1016/j.
+enpol.2020.111428.
+Egli, F., Steffen, B., Schmidt, T.S., 2018. A dynamic analysis of ﬁnancing conditions for renewable energy technologies. Nat. Energy 3, 1084–1092.
+Egli, F., Steffen, B., Schmidt, T.S., 2019. Bias in energy system models with uniform cost of
+capital assumption. Nat. Commun. 10, 1–3. https://doi.org/10.1038/s41467-01912468-z.
+Estache, A., Steichen, A.-S., 2015. Is Belgium overshooting in its policy support to cut the
+cost of capital of renewable sources of energy ? Reﬂets Perspect. la vie économique
+LIV, 33 https://doi.org/10.3917/rpve.541.0033.
+EU Commission, 2018. Directive (EU) 2018/2001 of the European Parliament and of the
+Council of 11 December 2018 on the Promotion of the Use of Energy from Renewable
+Sources.
+Fama, E.F., French, K.R., 1993. Common risk factors in the returns on stocks and bonds.
+J. Financ. Econ. 33, 3–56. https://doi.org/10.1016/0304-405X(93)90023-5.
+Fell, H., Linn, J., 2013. Renewable electricity policies, heterogeneity, and cost effectiveness.
+J. Environ. Econ. Manag. 66, 688–707. https://doi.org/10.1016/J.JEEM.2013.03.004.
+Geddes, A., Schmidt, T.S., Steffen, B., 2018. The multiple roles of state investment banks in
+low-carbon energy ﬁnance: an analysis of Australia, the UK and Germany. Energy Policy 115, 158–170. https://doi.org/10.1016/j.enpol.2018.01.009.
+Goulder, L.H., Mathai, K., 2000. Optimal CO2 abatement in the presence of induced technological change. J. Environ. Econ. Manag. 39, 1–38. https://doi.org/10.1006/
+JEEM.1999.1089.
+Hainz, C., Kleimeier, S., 2012. Political risk, project ﬁnance, and the participation of development banks in syndicated lending. J. Financ. Intermed. 21, 287–314. https://doi.
+org/10.1016/j.jﬁ.2011.10.002.
+Helms, T., Salm, S., Wüstenhagen, R., 2015. Investor-speciﬁc cost of capital and renewable
+energy investment decisions. In: Donovan, C.W. (Ed.), Renewable Energy Finance.
+Imperial College Press, London, pp. 77–101.
+Henderson, M., 2016. Financing renewable energy. In: Morrison, R. (Ed.), The Principles of
+Project Finance. Routledge, New York, pp. 163–182.
+Hirth, L., 2013. The market value of variable renewables: the effect of solar wind power
+variability on their relative price. Energy Econ. 38, 218–236. https://doi.org/
+10.1016/J.ENECO.2013.02.004.
+Hirth, L., Steckel, J.C., 2016. The role of capital costs in decarbonizing the electricity sector.
+Environ. Res. Lett. 11, 114010. https://doi.org/10.1088/1748-9326/11/11/114010.
+Hunter, J.E., Schmidt, F.L., 2004. Methods of Meta-Analysis: Correcting Error and Bias in
+Research Findings. 2nd editio. Sage.
+Iyer, G.C., Clarke, L.E., Edmonds, J.a., Flannery, B.P., Hultman, N.E., McJeon, H.C., Victor, D.G.,
+2015. Improved representation of investment decisions in assessments of CO2 mitigation. Nat. Clim. Chang. 5, 436–440. https://doi.org/10.1038/nclimate2553.
+Joskow, P.L., 2011. Comparing the costs of intermittent and dispatchable electricity generating technologies. Am. Econ. Rev. 101, 238–241. https://doi.org/10.1257/
+aer.101.3.238.
+Kim, J., Park, K., 2016. Financial development and deployment of renewable energy technologies. Energy Econ. 59, 238–250. https://doi.org/10.1016/j.eneco.2016.08.012.
+Kirkpatrick, A.J., Bennear, L.S., 2014. Promoting clean energy investment: an empirical
+analysis of property assessed clean energy. J. Environ. Econ. Manag. 68, 357–375.
+https://doi.org/10.1016/J.JEEM.2014.05.001.
+Kitzing, L., Weber, C., 2015. Support mechanisms for renewables: how risk exposure inﬂuences investment incentives. Int. J. Sustain. Energy Plan. Manag. 7, 113–130.
+https://doi.org/10.5278/IJSEPM.2015.7.9.
+KPMG, 2018. Corporate Tax Rate Tables (WWW Document).
+Krupa, J., Harvey, L.D., 2017. Renewable electricity ﬁnance in the United States: a state-ofthe-art review. Energy 135, 913–929. https://doi.org/10.1016/j.energy.2017.05.190.
+Krupa, J., Poudineh, R., Harvey, L.D.D., 2019. Renewable electricity ﬁnance in the resourcerich countries of the Middle East and North Africa: a case study on the Gulf cooperation council. Energy 166, 1047–1062. https://doi.org/10.1016/j.energy.2018.10.106.
+Kumar, S., Anisuzaman, M., Das, P., 2017. Estimating the low-carbon technology deployment costs and INDC targets. Globalization of Low-Carbon Technologies. Springer
+Singapore, Singapore, pp. 335–366. https://doi.org/10.1007/978-981-10-4901-9_10.
+Labordena, M., Patt, A., Bazilian, M., Howells, M., Lilliestam, J., 2017. Impact of political and
+economic barriers for concentrating solar power in sub-Saharan Africa. Energy Policy
+102, 52–72. https://doi.org/10.1016/j.enpol.2016.12.008.
+Leisen, R., Steffen, B., Weber, C., 2019. Regulatory risk and the resilience of new sustainable business models in the energy sector. J. Clean. Prod. 2019, 865–878.
+Lilliestam, J., Pitz-Paal, R., 2018. Concentrating solar power for less than USD 0.07 per
+kWh: ﬁnally the breakthrough? Renew. Energy Focus 26, 17–21. https://doi.org/
+10.1016/J.REF.2018.06.002.
+
+14
+
+B. Steffen / Energy Economics 88 (2020) 104783
+
+Lintner, J., 1965. Security prices, risk, and maximal gains from diversiﬁcation. J. Financ. 20,
+587–615. https://doi.org/10.1111/j.1540-6261.1965.tb02930.x.
+Lorenzoni, A., Bano, L., 2009. Renewable electricity costs in Italy: an estimation of the cost
+of operating in an uncertain world. Int. J. Environ. Pollut. 39, 92–111.
+Luderer, G., Pietzcker, R.C., Carrara, S., de Boer, H.S., Fujimori, S., Johnson, N., Mima, S.,
+Arent, D., 2017. Assessment of wind and solar power in global low-carbon energy
+scenarios: an introduction. Energy Econ. 64, 542–551. https://doi.org/10.1016/J.
+ENECO.2017.03.027.
+Luderer, G., Vrontisi, Z., Bertram, C., Edelenbosch, O.Y., Pietzcker, R.C., Rogelj, J., De Boer,
+H.S., Drouet, L., Emmerling, J., Fricko, O., Fujimori, S., Havlík, P., Iyer, G., Keramidas,
+K., Kitous, A., Pehl, M., Krey, V., Riahi, K., Saveyn, B., Tavoni, M., Van Vuuren, D.P.,
+Kriegler, E., 2018. Residual fossil CO2 emissions in 1.5–2 °C pathways. Nat. Clim.
+Chang. 8, 626–633. https://doi.org/10.1038/s41558-018-0198-6.
+Lüthi, S., Wüstenhagen, R., 2012. The price of policy risk — empirical insights from choice
+experiments with European photovoltaic project developers. Energy Econ. 34,
+1001–1011. https://doi.org/10.1016/J.ENECO.2011.08.007.
+May, N., 2017. The impact of wind power support schemes on technology choices. Energy
+Econ. 65, 343–354. https://doi.org/10.1016/j.eneco.2017.05.017.
+May, N.G., Neuhoff, K., 2017. Financing Power: Impacts of Energy Policies in Changing
+Regulatory Environments. DIW Berlin Discuss. Pap. No. 1684. https://doi.org/
+10.2139/ssrn.3046516.
+Mazzucato, M., Semieniuk, G., 2018. Financing renewable energy: who is ﬁnancing what
+and why it matters. Technol. Forecast. Soc. Change 127, 8–22. https://doi.org/
+10.1016/j.techfore.2017.05.021.
+Nemet, G.F., Anadon, L.D., Verdolini, E., 2017. Quantifying the effects of expert selection
+and elicitation design on experts’ conﬁdence in their judgments about future energy
+technologies. Risk Anal. 37, 315–330. https://doi.org/10.1111/risa.12604.
+Neuhoff, K., May, N., Richstein, J.C., 2018. Renewable Energy Policy in the Age of Falling
+Technology Costs.
+Ondraczek, J., Komendantova, N., Patt, A., 2015. WACC the dog: the effect of ﬁnancing
+costs on the levelized cost of solar PV power. Renew. Energy 75, 888–898. https://
+doi.org/10.1016/j.renene.2014.10.053.
+Partridge, I., 2018. Cost comparisons for wind and thermal power generation. Energy Policy 112, 272–279. https://doi.org/10.1016/J.ENPOL.2017.10.006.
+Petticrew, M., Roberts, H., 2006. Systematic Reviews in the Social Sciences. Blackwell Publishing, Melden, MA.
+Pietzcker, R.C., Ueckerdt, F., Carrara, S., de Boer, H.S., Després, J., Fujimori, S., Johnson, N.,
+Kitous, A., Scholz, Y., Sullivan, P., Luderer, G., 2017. System integration of wind and
+solar power in integrated assessment models: a cross-model evaluation of new approaches. Energy Econ. 64, 583–599. https://doi.org/10.1016/J.ENECO.2016.11.018.
+Polzin, F., Egli, F., Steffen, B., Schmidt, T.S., 2019. How do policies mobilize private ﬁnance
+for renewable energy?—a systematic review with an investor perspective. Appl. Energy 236, 1249–1268. https://doi.org/10.1016/J.APENERGY.2018.11.098.
+Pratt, S.P., Grabowski, R.J., 2014. Cost of Capital: Applications and Examples. Fifth edition.
+John Wiley & Sons, Inc https://doi.org/10.1002/9781118846780.
+Salm, S., 2018. The investor-speciﬁc price of renewable energy project risk – a choice experiment with incumbent utilities and institutional investors. Renew. Sust. Energ.
+Rev. 82, 1364–1375. https://doi.org/10.1016/J.RSER.2017.04.009.
+Salm, S., Wüstenhagen, R., 2018. Dream team or strange bedfellows? Complementarities
+and differences between incumbent energy companies and institutional investors in
+Swiss hydropower. Energy Policy 121, 476–487. https://doi.org/10.1016/J.
+ENPOL.2018.04.046.
+Schmidt, T.S., 2014. Low-carbon investment risks and de-risking. Nat. Clim. Chang. 4,
+237–239. https://doi.org/10.1038/nclimate2112.
+Scholz, Y., Gils, H.C., Pietzcker, R.C., 2017. Application of a high-detail energy system
+model to derive power sector characteristics at high wind and solar shares. Energy
+Econ. 64, 568–582. https://doi.org/10.1016/J.ENECO.2016.06.021.
+
+Sharpe, W., 1964. Capital asset prices: a theory of market equilibrium under conditions of
+risk. J. Financ. 19, 425–442. https://doi.org/10.1111/j.1540-6261.1964.tb02865.x.
+Shrimali, G., Nelson, D., Goel, S., Konda, C., Kumar, R., 2013. Renewable deployment in
+India: ﬁnancing costs and implications for policy. Energy Policy 62, 28–43. https://
+doi.org/10.1016/j.enpol.2013.07.071.
+Steffen, B., 2018. The importance of project ﬁnance for renewable energy projects. Energy
+Econ. 69. https://doi.org/10.1016/j.eneco.2017.11.006.
+Steffen, B., Papakonstantinou, V., 2015. Mitigation of political & regulatory risk in infrastructure projects. World Economic Forum, Genevahttp://www3.weforum.org/docs/
+WEF_Risk_Mitigation_Report_2015.pdf.
+Steffen, B., Matsuo, T., Steinemann, D., Schmidt, T.S., 2018. Opening new markets for clean
+energy: the role of project developers in the global diffusion of renewable energy
+technologies. Bus. Polit. 20, 553–587. https://doi.org/10.1017/bap.2018.17.
+Steffen, B., Beuse, M., Tautorat, P., Schmidt, T.S., 2020. Experience curves for operations
+and maintenance costs of renewable energy technologies. Joule 4, 1–17. https://doi.
+org/10.1016/j.joule.2019.11.012.
+Stocks, K.J., 1984. Discount rate for technology assessment: an application to the energy
+sector. Energy Econ. 6, 177–185. https://doi.org/10.1016/0140-9883(84)90014-8.
+Sweerts, B., Longa, F.D., van der Zwaan, B., 2019. Financial de-risking to unlock Africa’s renewable energy potential. Renew. Sust. Energ. Rev. 102, 75–82. https://doi.org/
+10.1016/J.RSER.2018.11.039.
+Szabó, S., Jäger-Waldau, A., Szabó, L., 2010. Risk adjusted ﬁnancial costs of photovoltaics.
+Energy Policy 38, 3807–3819. https://doi.org/10.1016/j.enpol.2010.03.001.
+Tietjen, O., Pahle, M., Fuss, S., 2016. Investment risks in power generation: a comparison
+of fossil fuel and renewable energy dominated markets. Energy Econ. 58, 174–185.
+https://doi.org/10.1016/j.eneco.2016.07.005.
+Vogt-Schilb, A., Meunier, G., Hallegatte, S., 2018. When starting with the most expensive
+option makes sense: optimal timing, cost and sectoral allocation of abatement investment. J. Environ. Econ. Manag. 88, 210–233. https://doi.org/10.1016/J.
+JEEM.2017.12.001.
+Voormolen, J.A., Junginger, H.M., van Sark, W.G.J.H.M., 2016. Unravelling historical cost
+developments of offshore wind energy in Europe. Energy Policy 88, 435–444.
+https://doi.org/10.1016/J.ENPOL.2015.10.047.
+Waissbein, O., Glemarec, Y., Bayraktar, H., Schmidt, T., 2013. Derisking Renewable Energy
+Investment. A Framework to Support Policymakers in Selecting Public Instruments to
+Promote Renewable Energy Investment in Developing Countries. United Nations Development Programme, New York.
+Waissbein, O., Bayraktar, H., Henrich, C., Schmidt, T.S., Malhotra, A., 2018. Derisking Renewable Energy Investment: Off-Grid Electriﬁcation. United Nations Development
+Programme, New York.
+Weaver, T., 2012. Financial appraisal of operational offshore wind energy projects. Renew.
+Sust. Energ. Rev. 16, 5110–5120. https://doi.org/10.1016/J.RSER.2012.05.003.
+Weitzman, M.L., 2007. A review of the stern review on the economics of climate change.
+J. Econ. Lit. 45, 703–724. https://doi.org/10.1257/jel.45.3.703.
+Werner, L., Scholtens, B., 2017. Firm type, feed-in tariff, and wind energy investment in
+Germany: an investigation of decision making factors of energy producers regarding
+investing in wind energy capacity. J. Ind. Ecol. 21, 402–411. https://doi.org/10.1111/
+jiec.12443.
+Wood, T., Ross, N., 2012. The Financial Cost of Wind Energy: A Multi-National Case Study.
+Nova Science Pub Inc.
+Zhang, M.M., Zhou, P., Zhou, D.Q., 2016. A real options model for renewable energy investment with application to solar photovoltaic power generation in China. Energy Econ.
+59, 213–226. https://doi.org/10.1016/J.ENECO.2016.07.028.
+
+

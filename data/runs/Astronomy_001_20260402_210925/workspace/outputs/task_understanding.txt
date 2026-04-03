@@ -1,0 +1,21 @@
+Task objective:
+Produce a reproducible analysis of whether an early dark energy (EDE) model helps relieve the acoustic tension between CMB and BAO measurements, using the workspace’s reproduction dataset to compare ΛCDM, EDE, and w0wa cosmologies through parameter constraints, fit-quality comparisons, and distance-indicator behavior.
+
+Available data and references:
+- data/DESI_EDE_Repro_Data.txt: structured reproduction data containing best-fit cosmological parameters and 1σ uncertainties for ΛCDM, EDE, and w0wa under CMB+DESI, plus manually extracted DESI BAO Δ(DV/rd) and ΔF_AP points and Union3 SN Δμ points from the paper’s Figure 6.
+- related_work/paper_000.pdf to paper_003.pdf: reference papers for domain context and comparison with the target paper’s claims/results.
+- Workspace targets already defined in INSTRUCTIONS.md: code/ for scripts, outputs/ for intermediate products, and report/ with report/images/ for final write-up and figures.
+
+Main planned analysis steps:
+1. Parse the structured text file into reusable tables/dictionaries for cosmological parameters and redshift-dependent observables.
+2. Reconstruct comparison tables for ΛCDM, EDE, and w0wa, including parameter shifts in Ωm, H0, σ8, ns, and the EDE-specific parameters f_EDE and log10_ac.
+3. Quantify and visualize model differences using standardized shifts/significance estimates from the provided central values and errors.
+4. Reproduce figure-style comparisons for DESI BAO and Union3 SN residual data, highlighting how EDE and late-time dark energy scenarios differ qualitatively.
+5. Summarize how well the available reproduction data support the paper’s conclusion that EDE partially relieves the tension but induces different parameter movements than w0wa.
+6. Compile a publication-style report with methods, results, limitations, and figure-based discussion.
+
+Expected deliverables:
+- Analysis code in code/ that ingests the reproduction dataset and generates tables/plots.
+- Intermediate processed outputs in outputs/.
+- report/report.md with academic-style methodology, results, discussion, and embedded relative figure references.
+- Figures in report/images/ including at minimum a data overview, main parameter-comparison visuals, and BAO/SN comparison or validation plots.

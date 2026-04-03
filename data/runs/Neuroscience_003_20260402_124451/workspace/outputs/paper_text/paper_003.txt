@@ -1,0 +1,332 @@
+Indian Pacing and Electrophysiology Journal 19 (2019) 145e149
+
+Contents lists available at ScienceDirect
+
+Indian Pacing and Electrophysiology Journal
+journal homepage: www.elsevier.com/locate/IPEJ
+
+Accuracy and usability of single-lead ECG from smartphones - A
+clinical study
+Haakon Tillmann Haverkamp a, *, Stig Ove Fosse a, Peter Schuster b, c
+a
+
+Faculty of Medicine, University of Bergen, Bergen, Norway
+Department of Heart Disease, Haukeland University Hospital, Bergen, Norway
+c
+Department of Clinical Science, University of Bergen, Bergen, Norway
+b
+
+a r t i c l e i n f o
+
+a b s t r a c t
+
+Article history:
+Received 15 February 2019
+Accepted 18 February 2019
+Available online 20 February 2019
+
+Background: Several wireless ECG devices are commercially available for possible screening, monitoring
+and diagnosis of rhythms. The ﬁeld is rapidly expanding, and some devices have demonstrated
+acceptable qualities. The objective was to evaluate the accuracy, usability and diagnostic capabilities of
+smartphone ECG in both patients and healthy controls.
+Methods: We used a commercially available smartphone ECG device, connected wirelessly to a tablet, to
+record a 30-s lead I ECG in 144 subjectsd20 of whom repeated the test after vigorous exercise. The
+subjects included 94 patients under standard calculated 12-lead ECG surveillance; transcripts were
+obtained shortly after the smartphone ECG was acquired.
+Results: No signiﬁcant differences were found in the QRS, frequency and QT intervals between the two
+modalities. Smartphone ECG recordings separated pathologic rhythms (atrial ﬁbrillation (AF)/ﬂutter,
+atrioventricular block, regular supraventricular rhythm, and pacing) from sinus rhythms with a sensitivity of 0.75 and a speciﬁcity of 0.97. The speciﬁc diagnosis of AF appeared in 11 patients and was
+detected with a sensitivity of 1 and a speciﬁcity of 0.94. There was a marginal decrease in the interpretability of the smartphone ECG after exercise. Inter- and intraobserver variability was low.
+Conclusions: Smartphone ECG accurately measures most baseline intervals and has acceptable sensitivity
+and speciﬁcity for pathological rhythms, especially for AF. Vigorous activity has a minor inﬂuence on the
+readability of the PR interval. Elderly patients may face challenges in recording a smartphone ECG
+correctly without assistance. According to our ﬁndings, the smartphone ECG would be applicable as a
+screening device for pathological rhythms.
+Copyright © 2019, Indian Heart Rhythm Society. Production and hosting by Elsevier B.V. This is an open
+access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+Keywords:
+Smartphone ECG
+Atrial ﬁbrillation
+Screening
+Digital health
+
+1. Introduction
+Different wireless, single-lead real-time electrocardiogram
+(ECG) devices are commercially available for efﬁcient screening,
+monitoring and on-demand diagnosis. Some devices have
+demonstrated acceptable detection efﬁciencies for intervals and
+rhythms [1e3]. ECG Check is an FDA-approved [4] mobile heart
+monitor manufactured by Cardiac Designs. The method allows easy
+acquisition, and the recording can be forwarded to a professional
+interpreter of choice. Many of these do-it-yourself monitors are
+available, but the question stands as to whether they truly work or
+
+* Corresponding author. Gimlebakken 19C, 5052, Bergen, Norway.
+E-mail address: def003@uib.no (H.T. Haverkamp).
+Peer review under responsibility of Indian Heart Rhythm Society.
+
+merely provide a false feeling of security. In this article we hope to
+shed some light on this matter. Wanting to evaluate the accuracy
+and usability of smartphone ECG (spECG)1, we studied both healthy
+controls and patients. In the comparison of the spECG to a standard
+calculated 12-lead ECG (scECG)2, our hypothesis was that the device would prove to be of poor clinical value. In addition, by using a
+questionnaire, we wanted to quantify the user-friendliness, accessibility, technological conﬁdence, and need for assistance. The
+study was approved by the Regional Committee for Medical and
+Health Research Ethics (REK Vest 2016/729).
+
+1
+2
+
+Abbreviation: Smartphone ECG (spECG).
+Abbreviation: Standard Calculated ECG (scECG).
+
+https://doi.org/10.1016/j.ipej.2019.02.006
+0972-6292/Copyright © 2019, Indian Heart Rhythm Society. Production and hosting by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (http://
+creativecommons.org/licenses/by-nc-nd/4.0/).
+
+146
+
+H.T. Haverkamp et al. / Indian Pacing and Electrophysiology Journal 19 (2019) 145e149
+
+2. Materials and methods
+This study was a prospective, nonrandomized, and adjudicatorblinded study. After obtaining informed consent, we collected a
+ﬁnal number of 164 spECGs from a total of 144 persons. The study
+population consisted of 37% females, and the mean age was 58
+years. The participants were divided into subgroups based on age
+(<25 years, 25e50 years, 50e75 years, or >75 years), each including
+at least 20 subjects.
+
+positive was an abnormality only seen in the spECG and a false
+negative was an abnormality only found in the scECG. Supraventricular extrasystoles and ventricular extrasystoles were disregarded due to their intermittent nature and the fact that spECG
+and scECG did not correspond perfectly with each other in the
+temporal aspect under the current study design.
+The measured intervals from the two modalities were compared
+in Stata/IC [6]. A box plot containing a 95% conﬁdence interval
+demonstrated the variance. To determine if there was a statistically
+signiﬁcant difference between the two, a paired T-test was applied.
+
+2.1. Acquisition
+The subjects included 94 patients with ongoing scECG cardiac
+surveillance admitted to the Cardiac Ward at Haukeland University
+Hospital, Bergen. The subjects were given basic instructions on how
+to use the spECG device and send the result to an email address
+created for the purpose. By putting two ﬁngers on the ECG Check, it
+registers a 30-s, one-lead ECG and stores it on a device (smartphone, tablet) via Bluetooth. The application's algorithm then
+classiﬁes the spECGs as either “Normal” or “Abnormal”, and it also
+estimates the frequency using the RR interval. Neither the frequency estimation nor the application's classiﬁcation of spECG was
+regarded in the interpretation. The participants performed the
+recording as independently as possible, supervised by study investigators and with assistance if needed. Shortly after acquiring
+the spECG, scECG reports were extracted for comparison. Following
+the ECG-acquisition process, all of the subjects completed a questionnaire subjectively assessing the performance and usability of
+the device on a scale from 1 to 4. The observers rated any need for
+assistance as “Yes” or “No”.
+In total 50 asymptomatic controls were included on the criterion
+of “no previously known heart disease”. In the group of healthy
+controls <25 years old, 20 subjects were asked to do two spECG
+acquisitions-one before and one after vigorous exercise. This
+approach was used to ascertain whether physical activity inﬂuenced the readability of the spECG or not. The exercise was highintensity but nonstandardized in form, and the subjects were at
+rest during the acquisition process.
+2.2. Data
+The collected data were anonymized and were analyzed
+manually and independently by two observers to avoid bias. The
+agreement between the two observers was tested by the intraclass
+correlation coefﬁcient (ICC). Four standard ECG intervals were
+measured (frequency, PR, QRS, and QT). The QTc interval was
+calculated using a digital calculator based on Bazett's formula [5].
+The frequency was determined by measurement of 10 beats and
+calculation of mean RR time. For scECG, Lead 1 was used to measure
+all intervals. Lead 2 was used for frequency only, due to longer
+duration on the transcript. The waveforms were not ampliﬁed.
+
+3. Results
+As demonstrated in Fig. 1, the percentage of smartphone owners
+decreases with increasing age. The need for assistance in handling
+the technology, as rated by the observer, increases correspondingly.
+The same pattern applies to how easy the participants perceived
+the recording process to be, but a large number in the older groups
+reported being comfortable using this device independently when
+given proper training and instruction.
+3.1. Statistics
+A total of 820 spECG-intervals were measured. Of these, 10%
+were uninterpretable to the reader due to poor quality and noise,
+inconsistent ﬁndings or low wave amplitude on the spECG. These
+data mean that one or more uninterpretable intervals were found
+in 27% of the spECGs. The cause of this phenomenon was primarily
+the PR intervals, of which 22% could not be interpreted (Fig. 3,
+example 2).
+The spECGs recorded during exercise in the control group
+demonstrated a decrease in interpretability of the PR interval: from
+95% pre-exercise to 87.5% postexercise. All other intervals remained
+fully interpretable to the reader. In total, 80% of all spECGs showed
+either coarse variations or ﬁner higher frequency disturbances.
+These variations and disturbances often occurred due to hand
+movements at the beginning of the acquisition, but most were still
+readable.
+Observer agreement was tested by conducting an ICC, and the
+intraobserver value was estimated to be > 0.8, while the interobserver value was >0.6. These values were interpreted as excellent
+and good, respectively [7].
+By comparing the data from the spECG and scECG in the patient
+
+2.3. Process
+The subjects were diagnosed by the observers for the purpose of
+the study, and ﬁve pathological diagnoses were employed in
+addition to sinus rhythm (atrial ﬁbrillation (AF), atrial ﬂutter,
+atrioventricular block, regular supraventricular rhythm and cardiac
+pacing). Some of the ECGs were uninterpretable to the reader;
+these were categorized as such but were included in the analysis in
+order to quantify readability.
+Using a 2  2 contingency table, the sensitivity and speciﬁcity
+for two independent situations were estimated. We deﬁned an
+abnormality seen in both modalities as a true positive, a true
+negative was no abnormality detected in either modality, a false
+
+Fig. 1. Questionnaire. Bar graph displaying the self-reported results from the questionnaire in the different age groups.
+
+H.T. Haverkamp et al. / Indian Pacing and Electrophysiology Journal 19 (2019) 145e149
+
+147
+
+(n ¼ 11), atrial ﬂutter (n ¼ 2), atrioventricular block (n ¼ 4), regular
+supraventricular rhythm (n ¼ 2) or cardiac pacing (n ¼ 9)) were
+deﬁned as abnormalities, the device demonstrated a sensitivity of
+75% and a speciﬁcity of 97%. Of the pathological diagnoses, 70%
+were identiﬁed identically in both modalities. When only the
+presence of AF was deﬁned as an abnormality, the sensitivity was
+100%, while the speciﬁcity was 94%. However, this study included
+only 11 individuals with AF. The data are displayed in Table 2.
+4. Discussion
+Many cardiac arrhythmias may be hard to identify, partly due to
+their intermittent naturedonly 47% of symptomatic arrhythmias
+are discovered using conventional 24-h Holter monitoring [8].
+Some of these arrhythmias become manifest only during or after
+strenuous physical activity and are occasionally symptoms of
+potentially life-threatening conditions [9].
+4.1. Arrhythmias
+
+Fig. 2. a: spECG vs scECG. Box plot displaying the four intervals (PR, QRS, QT, QTc) as
+measured by scECG and spECG (n ¼ 94). ECG ¼ Electrocardiogram, Sc¼Standard
+Calculated, Sp ¼ Smartphone. b: spECG vs scECG. Box plot displaying the frequencies as
+measured by scECG and spECG (n ¼ 94). BPM ¼ Beats per minute, ECG ¼ Electrocardiogram, Sc¼Standard Calculated, Sp ¼ Smartphone.
+
+Table 1
+Accuracy of intervals (n ¼ 94).
+Signiﬁcant discrepancies
+PR
+QTc
+
+Insigniﬁcant discrepancies
+
+(p ¼ 0,0005)
+(p ¼ 0,0089)
+
+(p ¼ 0,342)
+(p ¼ 0,153)
+(p ¼ 0,156)
+
+Frequency
+QRS
+QT
+
+group (n ¼ 94) and conducting a set of paired T-tests with a signiﬁcance level of 0.05, 2 of the 5 intervals (PR and QTc) demonstrated statistically signiﬁcant differences. These results are
+summarized in Table 1. To visualize the variation, the data were
+presented as box plots, as shown in Fig. 2a and b.
+3.2. Sensitivities and speciﬁcities
+When all of the aforementioned pathological diagnoses (AF
+
+Exercise-induced arrhythmias would be easier to diagnose in
+cases when the patient is symptomatic. This diagnosis requires a
+device that can be used right after intense activity. Analysis of
+healthy controls before and directly after vigorous exercise showed
+only a slight decrease in interpretability for the PR intervals
+(95e87.5%). This result is consistent with our ﬁnding that the PR
+interval is the most frequent among the 10% of noninterpretable
+intervals. The subjects were able to handle the device with an
+elevated heart rate and a high level of activation. Disturbances were
+present in all of the pre-exercise spECGs and they persisted in the
+postexercise spECGs. In general, a high degree of artifacts and disturbances was found, but the results were interpretable. This result
+indicates that activity does not dramatically affect the interpretability of the spECG. We believe the results to be applicable to the
+more physically active part of the population.
+Approximately 2e3% [10,11] of the general population has undiagnosed cardiac arrhythmias, and the consequences can be dire
+[12,13]. It is estimated that 14,500 Norwegians suffer from a stroke
+each year [14] and that up to 25% of these strokes are caused by
+undetected and untreated AF [15]. One of the main risk factors for
+AF is age [16], and the elderly population could potentially beneﬁt
+greatly from ECG Check. This beneﬁt is especially important in new
+cases of AF or in patients cardioverted by DC shock or medication.
+At 6 months, 57% of patients with only AF experienced at least one
+relapse [17], a condition which may go untreated. AF is easier to
+treat and results in fewer complications with early detection [18].
+However, the data collected in this study show that the need for
+help in performing the spECG increases with age. These subjects
+also experienced a signiﬁcantly lower degree of conﬁdence towards
+and often a lack of access to the required technology. As this group
+is probably the largest, one must take into account that they may
+face problems using the device and will be in need of more
+extensive education and follow up. Even though many of these
+subjects reported to be conﬁdent using the technology independently, this limitation might pose the biggest disadvantage of the
+ECG Check.
+
+Table 2
+Contingency table.
+Abnormality
+
+Total
+
+True pos.
+
+False neg.
+
+False pos.
+
+True neg.
+
+Sens (%)
+
+Spec (%)
+
+NPV
+
+PPV
+
+Pathology
+AF
+Pacemaker
+
+94
+94
+94
+
+21
+11
+3
+
+7
+0
+6
+
+2
+5
+0
+
+64
+78
+85
+
+75
+100
+33
+
+97
+94
+1
+
+0,9
+1
+
+0,91
+0,69
+
+Neg. ¼ negative, NPV ¼ Neg.predictive value, Pos. ¼ positive, PPV ¼ Pos. predictive value, Sens. ¼ sensitivity, Spec ¼ speciﬁcity.
+
+

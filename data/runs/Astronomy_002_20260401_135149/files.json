@@ -1,0 +1,197 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_h0dn.py",
+    "path": "code/analyze_h0dn.py",
+    "type": "file",
+    "size": 32881,
+    "mtime": 1775133546.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "H0DN_MinimalDataset.txt",
+    "path": "data/H0DN_MinimalDataset.txt",
+    "type": "file",
+    "size": 2212,
+    "mtime": 1772000208.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 639,
+    "mtime": 1775133544.0,
+    "exported": true
+  },
+  {
+    "name": "baseline_calibrators.csv",
+    "path": "outputs/baseline_calibrators.csv",
+    "type": "file",
+    "size": 881,
+    "mtime": 1775133544.0,
+    "exported": true
+  },
+  {
+    "name": "baseline_hubble_flow.csv",
+    "path": "outputs/baseline_hubble_flow.csv",
+    "type": "file",
+    "size": 699,
+    "mtime": 1775133544.0,
+    "exported": true
+  },
+  {
+    "name": "primary_host_covariance.csv",
+    "path": "outputs/primary_host_covariance.csv",
+    "type": "file",
+    "size": 1177,
+    "mtime": 1775133544.0,
+    "exported": true
+  },
+  {
+    "name": "primary_host_distances.csv",
+    "path": "outputs/primary_host_distances.csv",
+    "type": "file",
+    "size": 350,
+    "mtime": 1775133544.0,
+    "exported": true
+  },
+  {
+    "name": "variant_results.csv",
+    "path": "outputs/variant_results.csv",
+    "type": "file",
+    "size": 2164,
+    "mtime": 1775133544.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 5970082,
+    "mtime": 1773914884.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2772955,
+    "mtime": 1773914884.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 6327976,
+    "mtime": 1773914884.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3331484,
+    "mtime": 1773914884.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "calibrator_absolute_magnitude.png",
+    "path": "report/images/calibrator_absolute_magnitude.png",
+    "type": "file",
+    "size": 113506,
+    "mtime": 1775133546.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 135779,
+    "mtime": 1775133544.0,
+    "exported": true
+  },
+  {
+    "name": "hubble_diagram.png",
+    "path": "report/images/hubble_diagram.png",
+    "type": "file",
+    "size": 133307,
+    "mtime": 1775133544.0,
+    "exported": true
+  },
+  {
+    "name": "primary_covariance_heatmap.png",
+    "path": "report/images/primary_covariance_heatmap.png",
+    "type": "file",
+    "size": 214599,
+    "mtime": 1775133544.0,
+    "exported": true
+  },
+  {
+    "name": "primary_host_distances.png",
+    "path": "report/images/primary_host_distances.png",
+    "type": "file",
+    "size": 120982,
+    "mtime": 1775133546.0,
+    "exported": true
+  },
+  {
+    "name": "variant_h0_forest.png",
+    "path": "report/images/variant_h0_forest.png",
+    "type": "file",
+    "size": 103357,
+    "mtime": 1775133546.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 9205,
+    "mtime": 1775133547.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5408,
+    "mtime": 1775022709.0,
+    "exported": true
+  }
+]

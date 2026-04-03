@@ -1,0 +1,9 @@
+Dataset audit complete.
+Input grid: 181 x 360 with nominal spacing 1.00° x 1.00°.
+Input tensor shape: (2, 70, 181, 360).
+Forecast tensor shape: (1, 70, 181, 360).
+Mean temporal correlation t0->t1 across channels: -0.0004.
+Mean temporal correlation t1->FuXi+6h across channels: 0.0008.
+Mean longitude-neighbor correlation: 0.0005.
+Mean latitude-neighbor correlation: -0.0006.
+Mean spectral slope: -0.0005.

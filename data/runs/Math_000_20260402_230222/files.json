@@ -1,0 +1,226 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 24228,
+    "mtime": 1775199248.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "simulated_sequence.json",
+    "path": "data/simulated_sequence.json",
+    "type": "file",
+    "size": 6512395,
+    "mtime": 1772429302.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 2150,
+    "mtime": 1775199240.0,
+    "exported": true
+  },
+  {
+    "name": "baseline_detection_assignments.csv",
+    "path": "outputs/baseline_detection_assignments.csv",
+    "type": "file",
+    "size": 456614,
+    "mtime": 1775199246.0,
+    "exported": true
+  },
+  {
+    "name": "baseline_tracking.json",
+    "path": "outputs/baseline_tracking.json",
+    "type": "file",
+    "size": 6531529,
+    "mtime": 1775199240.0,
+    "exported": false
+  },
+  {
+    "name": "baseline_trajectory_summary.csv",
+    "path": "outputs/baseline_trajectory_summary.csv",
+    "type": "file",
+    "size": 17907,
+    "mtime": 1775199244.0,
+    "exported": true
+  },
+  {
+    "name": "data_summary.json",
+    "path": "outputs/data_summary.json",
+    "type": "file",
+    "size": 489,
+    "mtime": 1775199244.0,
+    "exported": true
+  },
+  {
+    "name": "evaluation_summary.csv",
+    "path": "outputs/evaluation_summary.csv",
+    "type": "file",
+    "size": 457,
+    "mtime": 1775199246.0,
+    "exported": true
+  },
+  {
+    "name": "frame_level_metrics.csv",
+    "path": "outputs/frame_level_metrics.csv",
+    "type": "file",
+    "size": 9912,
+    "mtime": 1775199244.0,
+    "exported": true
+  },
+  {
+    "name": "sparse_detection_assignments.csv",
+    "path": "outputs/sparse_detection_assignments.csv",
+    "type": "file",
+    "size": 458445,
+    "mtime": 1775199244.0,
+    "exported": true
+  },
+  {
+    "name": "sparse_tracking.json",
+    "path": "outputs/sparse_tracking.json",
+    "type": "file",
+    "size": 6554347,
+    "mtime": 1775199244.0,
+    "exported": false
+  },
+  {
+    "name": "sparse_trajectory_summary.csv",
+    "path": "outputs/sparse_trajectory_summary.csv",
+    "type": "file",
+    "size": 22569,
+    "mtime": 1775199240.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 2 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 115276,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8638055,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 2800126,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 871604,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 182263,
+    "mtime": 1775199246.0,
+    "exported": true
+  },
+  {
+    "name": "frame_level_recall.png",
+    "path": "report/images/frame_level_recall.png",
+    "type": "file",
+    "size": 93062,
+    "mtime": 1775199246.0,
+    "exported": true
+  },
+  {
+    "name": "id_consistency_heatmap.png",
+    "path": "report/images/id_consistency_heatmap.png",
+    "type": "file",
+    "size": 71955,
+    "mtime": 1775199246.0,
+    "exported": true
+  },
+  {
+    "name": "tracking_comparison_metrics.png",
+    "path": "report/images/tracking_comparison_metrics.png",
+    "type": "file",
+    "size": 111013,
+    "mtime": 1775199246.0,
+    "exported": true
+  },
+  {
+    "name": "trajectory_examples.png",
+    "path": "report/images/trajectory_examples.png",
+    "type": "file",
+    "size": 662102,
+    "mtime": 1775199248.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15406,
+    "mtime": 1775199249.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5259,
+    "mtime": 1775142142.0,
+    "exported": true
+  }
+]

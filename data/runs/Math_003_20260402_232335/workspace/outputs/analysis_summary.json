@@ -1,0 +1,330 @@
+{
+  "num_problems": 30,
+  "num_definitions": 72,
+  "num_rules": 43,
+  "goal_predicate_counts": {
+    "cong": 12,
+    "eqangle": 2,
+    "coll": 7,
+    "cyclic": 5,
+    "eqratio": 1,
+    "perp": 2,
+    "para": 1
+  },
+  "construction_primitive_counts": {
+    "segment": 5,
+    "on_tline": 17,
+    "on_circle": 72,
+    "on_pline": 5,
+    "on_line": 120,
+    "triangle": 23,
+    "orthocenter": 5,
+    "incenter2": 2,
+    "foot": 11,
+    "reflect": 10,
+    "midpoint": 14,
+    "on_bline": 18,
+    "circle": 28,
+    "angle_bisector": 8,
+    "on_aline": 13,
+    "eqdistance": 3,
+    "incenter": 3,
+    "cc_tangent": 1,
+    "mirror": 6,
+    "iso_triangle": 1,
+    "excenter2": 1,
+    "r_triangle": 1,
+    "on_dia": 2,
+    "angle_mirror": 1,
+    "parallelogram": 1,
+    "eqangle3": 2,
+    "free": 1,
+    "eqangle2": 1
+  },
+  "assignment_lhs_size_counts": {
+    "2": 5,
+    "1": 226,
+    "3": 25,
+    "4": 4
+  },
+  "definition_param_histogram": {
+    "4": 29,
+    "3": 17,
+    "1": 1,
+    "7": 6,
+    "5": 4,
+    "6": 8,
+    "0": 4,
+    "2": 1,
+    "8": 2
+  },
+  "rule_antecedent_count_histogram": {
+    "3": 13,
+    "1": 3,
+    "2": 19,
+    "5": 2,
+    "4": 6
+  },
+  "rule_antecedent_predicate_counts": {
+    "perp": 8,
+    "ncoll": 16,
+    "cong": 17,
+    "eqangle": 7,
+    "cyclic": 4,
+    "eqangle6": 13,
+    "midp": 10,
+    "para": 8,
+    "coll": 12,
+    "npara": 1,
+    "eqratio": 4,
+    "eqratio6": 7,
+    "circle": 5,
+    "sameside": 2
+  },
+  "rule_consequent_predicate_counts": {
+    "para": 6,
+    "cyclic": 2,
+    "eqangle": 7,
+    "cong": 5,
+    "eqratio3": 1,
+    "eqratio": 2,
+    "eqangle6": 1,
+    "eqratio6": 2,
+    "perp": 5,
+    "midp": 2,
+    "coll": 1,
+    "contri*": 3,
+    "simtri": 1,
+    "simtri2": 1,
+    "contri": 1,
+    "contri2": 1,
+    "simtri*": 2
+  },
+  "problem_year_counts": {
+    "2000": 2,
+    "2002": 2,
+    "2003": 1,
+    "2004": 2,
+    "2005": 1,
+    "2007": 1,
+    "2008": 3,
+    "2009": 1,
+    "2010": 2,
+    "2011": 1,
+    "2012": 2,
+    "2013": 1,
+    "2014": 1,
+    "2015": 2,
+    "2016": 1,
+    "2017": 1,
+    "2018": 1,
+    "2019": 2,
+    "2020": 1,
+    "2021": 1,
+    "2022": 1
+  },
+  "clause_shape_counts": {
+    "single_constraint_clause": 145,
+    "multi_constraint_clause": 115
+  },
+  "primitive_goal_overlap_counts": {},
+  "dataset_statistics": {
+    "premise_clauses": {
+      "min": 4,
+      "max": 15,
+      "mean": 8.666666666666666,
+      "median": 8.0
+    },
+    "constraint_atoms": {
+      "min": 5,
+      "max": 19,
+      "mean": 12.5,
+      "median": 12.0
+    },
+    "unique_primitives": {
+      "min": 3,
+      "max": 8,
+      "mean": 5.5,
+      "median": 5.5
+    },
+    "goal_arity": {
+      "min": 3,
+      "max": 8,
+      "mean": 4.166666666666667,
+      "median": 4.0
+    }
+  },
+  "top_primitive_arity_pairs": [
+    {
+      "primitive": "on_line",
+      "arity": 3,
+      "count": 99
+    },
+    {
+      "primitive": "on_circle",
+      "arity": 3,
+      "count": 72
+    },
+    {
+      "primitive": "circle",
+      "arity": 4,
+      "count": 26
+    },
+    {
+      "primitive": "triangle",
+      "arity": 3,
+      "count": 21
+    },
+    {
+      "primitive": "on_line",
+      "arity": 2,
+      "count": 21
+    },
+    {
+      "primitive": "on_tline",
+      "arity": 4,
+      "count": 17
+    },
+    {
+      "primitive": "on_bline",
+      "arity": 3,
+      "count": 15
+    },
+    {
+      "primitive": "midpoint",
+      "arity": 3,
+      "count": 14
+    },
+    {
+      "primitive": "foot",
+      "arity": 4,
+      "count": 11
+    },
+    {
+      "primitive": "on_aline",
+      "arity": 6,
+      "count": 11
+    },
+    {
+      "primitive": "reflect",
+      "arity": 4,
+      "count": 10
+    },
+    {
+      "primitive": "mirror",
+      "arity": 3,
+      "count": 6
+    },
+    {
+      "primitive": "orthocenter",
+      "arity": 4,
+      "count": 5
+    },
+    {
+      "primitive": "angle_bisector",
+      "arity": 3,
+      "count": 5
+    },
+    {
+      "primitive": "segment",
+      "arity": 2,
+      "count": 4
+    },
+    {
+      "primitive": "on_pline",
+      "arity": 4,
+      "count": 4
+    },
+    {
+      "primitive": "angle_bisector",
+      "arity": 4,
+      "count": 3
+    },
+    {
+      "primitive": "incenter",
+      "arity": 4,
+      "count": 3
+    },
+    {
+      "primitive": "on_bline",
+      "arity": 2,
+      "count": 3
+    },
+    {
+      "primitive": "incenter2",
+      "arity": 7,
+      "count": 2
+    }
+  ],
+  "definition_names": [
+    "2l1c",
+    "3peq",
+    "=",
+    "angle_bisector",
+    "angle_mirror",
+    "cc_tangent",
+    "cc_tangent0",
+    "centroid",
+    "circle",
+    "circumcenter",
+    "e5128",
+    "eq_quadrangle",
+    "eq_trapezoid",
+    "eq_triangle",
+    "eqangle2",
+    "eqangle3",
+    "eqdia_quadrangle",
+    "eqdistance",
+    "excenter",
+    "excenter2",
+    "foot",
+    "free",
+    "ieq_triangle",
+    "incenter",
+    "incenter2",
+    "intersection_cc",
+    "intersection_lc",
+    "intersection_ll",
+    "intersection_lp",
+    "intersection_lt",
+    "intersection_pp",
+    "intersection_tt",
+    "iso_triangle",
+    "isquare",
+    "lc_tangent",
+    "midpoint",
+    "mirror",
+    "ninepoints",
+    "nsquare",
+    "on_aline",
+    "on_aline2",
+    "on_bline",
+    "on_circle",
+    "on_circum",
+    "on_dia",
+    "on_line",
+    "on_opline",
+    "on_pline",
+    "on_tline",
+    "orthocenter",
+    "parallelogram",
+    "pentagon",
+    "psquare",
+    "quadrangle",
+    "r_trapezoid",
+    "r_triangle",
+    "rectangle",
+    "reflect",
+    "risos",
+    "s_angle",
+    "segment",
+    "shift",
+    "square",
+    "tangent",
+    "trapezoid",
+    "triangle",
+    "triangle12",
+    "trisect",
+    "trisegment"
+  ]
+}

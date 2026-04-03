@@ -1,0 +1,173 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "main_analysis.py",
+    "path": "code/main_analysis.py",
+    "type": "file",
+    "size": 9234,
+    "mtime": 1775139812.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "M-AI-Synth__Materials_AI_Dataset_.txt",
+    "path": "data/M-AI-Synth__Materials_AI_Dataset_.txt",
+    "type": "file",
+    "size": 3970,
+    "mtime": 1770620672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "optimization_surface.npz",
+    "path": "outputs/optimization_surface.npz",
+    "type": "file",
+    "size": 22338,
+    "mtime": 1775139810.0,
+    "exported": false
+  },
+  {
+    "name": "property_prediction_results.npz",
+    "path": "outputs/property_prediction_results.npz",
+    "type": "file",
+    "size": 5392,
+    "mtime": 1775139810.0,
+    "exported": false
+  },
+  {
+    "name": "structure_generation_results.npz",
+    "path": "outputs/structure_generation_results.npz",
+    "type": "file",
+    "size": 3158,
+    "mtime": 1775139810.0,
+    "exported": false
+  },
+  {
+    "name": "summary.json",
+    "path": "outputs/summary.json",
+    "type": "file",
+    "size": 635,
+    "mtime": 1775139810.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2155763,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2638490,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 891813,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 510141,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "optimization_surface.png",
+    "path": "report/images/optimization_surface.png",
+    "type": "file",
+    "size": 163975,
+    "mtime": 1775139810.0,
+    "exported": true
+  },
+  {
+    "name": "property_parity.png",
+    "path": "report/images/property_parity.png",
+    "type": "file",
+    "size": 110116,
+    "mtime": 1775139812.0,
+    "exported": true
+  },
+  {
+    "name": "property_residuals.png",
+    "path": "report/images/property_residuals.png",
+    "type": "file",
+    "size": 75947,
+    "mtime": 1775139812.0,
+    "exported": true
+  },
+  {
+    "name": "structure_latent_distributions.png",
+    "path": "report/images/structure_latent_distributions.png",
+    "type": "file",
+    "size": 125490,
+    "mtime": 1775139812.0,
+    "exported": true
+  },
+  {
+    "name": "structure_latent_mapping.png",
+    "path": "report/images/structure_latent_mapping.png",
+    "type": "file",
+    "size": 100573,
+    "mtime": 1775139812.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13961,
+    "mtime": 1775139813.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5377,
+    "mtime": 1775014252.0,
+    "exported": true
+  }
+]

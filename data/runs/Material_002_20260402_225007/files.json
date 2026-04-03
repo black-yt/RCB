@@ -1,0 +1,205 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 27448,
+    "mtime": 1775199370.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "MACE-MP-0_Reproduction_Dataset.txt",
+    "path": "data/MACE-MP-0_Reproduction_Dataset.txt",
+    "type": "file",
+    "size": 3178,
+    "mtime": 1772003774.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "adsorption_analysis.json",
+    "path": "outputs/adsorption_analysis.json",
+    "type": "file",
+    "size": 3305,
+    "mtime": 1775199366.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_manifest.json",
+    "path": "outputs/analysis_manifest.json",
+    "type": "file",
+    "size": 471,
+    "mtime": 1775199366.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.md",
+    "path": "outputs/analysis_summary.md",
+    "type": "file",
+    "size": 1139,
+    "mtime": 1775199366.0,
+    "exported": true
+  },
+  {
+    "name": "foundation_model_assessment.json",
+    "path": "outputs/foundation_model_assessment.json",
+    "type": "file",
+    "size": 1171,
+    "mtime": 1775199366.0,
+    "exported": true
+  },
+  {
+    "name": "parsed_dataset.json",
+    "path": "outputs/parsed_dataset.json",
+    "type": "file",
+    "size": 7282,
+    "mtime": 1775199366.0,
+    "exported": true
+  },
+  {
+    "name": "reaction_analysis.json",
+    "path": "outputs/reaction_analysis.json",
+    "type": "file",
+    "size": 1893,
+    "mtime": 1775199366.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1461,
+    "mtime": 1775199366.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 2121,
+    "mtime": 1775199366.0,
+    "exported": true
+  },
+  {
+    "name": "water_analysis.json",
+    "path": "outputs/water_analysis.json",
+    "type": "file",
+    "size": 432,
+    "mtime": 1775199366.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 579122,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2664200,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 703654,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2314869,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "adsorption_scaling_analysis.png",
+    "path": "report/images/adsorption_scaling_analysis.png",
+    "type": "file",
+    "size": 94005,
+    "mtime": 1775199368.0,
+    "exported": true
+  },
+  {
+    "name": "foundation_scope_summary.png",
+    "path": "report/images/foundation_scope_summary.png",
+    "type": "file",
+    "size": 89012,
+    "mtime": 1775199368.0,
+    "exported": true
+  },
+  {
+    "name": "reaction_barrier_analysis.png",
+    "path": "report/images/reaction_barrier_analysis.png",
+    "type": "file",
+    "size": 71631,
+    "mtime": 1775199368.0,
+    "exported": true
+  },
+  {
+    "name": "water_setup_overview.png",
+    "path": "report/images/water_setup_overview.png",
+    "type": "file",
+    "size": 83765,
+    "mtime": 1775199368.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 18148,
+    "mtime": 1775199371.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5298,
+    "mtime": 1775141407.0,
+    "exported": true
+  }
+]

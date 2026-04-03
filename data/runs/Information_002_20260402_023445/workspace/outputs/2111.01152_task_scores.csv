@@ -1,0 +1,534 @@
+step_id,task,source,reference_answer,model_completion,placeholder_reviewer_mean,placeholder_reviewer_std,sequence_ratio,token_precision,token_recall,token_f1,symbol_recall,automated_step_score,in_paper,prompt_quality,follow_instructions,physics_logic,math_derivation,final_answer_accuracy,human_score_mean,human_score_normalized
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)","{""2111.01152.tex"": [[55, 62]]}","$H_{Kinetic}(r) = \begin{pmatrix} E_{+K,b} & 0 & 0 & 0 \\ 0 & E_{+K,t} & 0 & 0 \\ 0 & 0 & E_{-K,b} & 0 \\ 0 & 0 & 0 & E_{-K,t} \end{pmatrix}$","The kinetic term of the single-particle Hamiltonian in the two-layer system, in the basis \((\tau = +K, \ell = \mathfrak{b}), (+K, \mathfrak{t}), (-K, \mathfrak{b}), (-K, \mathfrak{t})\), is:
+
+\[
+H_{\tau} = 
+\begin{pmatrix}
+H_{+K} & 0 \\
+0 & H_{-K}
+\end{pmatrix},
+\]
+where each \(2\times 2\) block for valley \(\tau\) is:
+\[
+H_{\tau} = 
+\begin{pmatrix}
+\frac{\hbar^2 (\mathbf{k} - \tau \bm{\kappa})^2}{2m_{\mathfrak{b}}} + \Delta_{\mathfrak{b}} & \Delta_{\text{T},\tau} \\
+\Delta_{\text{T},\tau}^* & \frac{\hbar^2 (\mathbf{k} - \tau \bm{\kappa})^2}{2m_{\mathfrak{t}}} + \Delta_{\mathfrak{t}} + V_{z\mathfrak{t}}
+\end{pmatrix}.
+\]
+
+Here, \(\tau = +1\) for \(+K\) valley and \(\tau = -1\) for \(-K\) valley, \(\bm{\kappa} = \frac{4\pi}{3a_M}(1,0)\), \(m_{\mathfrak{b}} = 0.65m_e\), \(m_{\mathfrak{t}} = 0.35m_e\), \(\Delta_{\mathfrak{b}/\mathfrak{t}}\) are intralayer potentials, \(V_{z\mathfrak{t}}\) is the band offset for the top layer, and \(\Delta_{\text{T},\tau}\) is the interlayer tunneling.",1.28,0.8255906976220118,0.13278008298755187,0.07317073170731707,0.4090909090909091,0.12413793103448276,0.6666666666666666,0.8181818181818182,1.0,1.0,1.0,2.0,2.0,1.0,1.3333333333333333,0.6666666666666666
+2,Define each term in Kinetic Hamiltonian (continuum version),"{""2111.01152.tex"": [[55, 62]], ""2111.01152_SM.tex"": [[46, 62]]}",$H_{Kinetic}(r) = \begin{pmatrix} -\frac{\hbar^2 k^2}{2 m_b} & 0 & 0 & 0 \\ 0 & -\frac{\hbar^2 (k-\kappa)^2}{2 m_t} & 0 & 0 \\ 0 & 0 & -\frac{\hbar^2 k^2}{2 m_b} & 0 \\ 0 & 0 & 0 & -\frac{\hbar^2 (k+\kappa)^2}{2 m_t} \end{pmatrix}$,"The Hamiltonian \( H_{\tau} \) for valley \( \tau = \pm 1 \) is:
+
+\[
+H_{\tau} = 
+\begin{pmatrix}
+\frac{\hbar^2 (\mathbf{k} - \tau \bm{\kappa})^2}{2m_{\mathfrak{b}}} + \Delta_{\mathfrak{b}} & \Delta_{\text{T},\tau} \\
+\Delta_{\text{T},\tau}^* & \frac{\hbar^2 (\mathbf{k} - \tau \bm{\kappa})^2}{2m_{\mathfrak{t}}} + \Delta_{\mathfrak{t}} + V_{z\mathfrak{t}}
+\end{pmatrix}.
+\]
+
+Substituting into the kinetic Hamiltonian \(\hat{\mathcal{H}}_0\):
+
+\[
+\hat{\mathcal{H}}_0 = \text{diag}(H_{+K}, H_{-K}) = 
+\begin{pmatrix}
+H_{+K} & 0 \\
+0 & H_{-K}
+\end{pmatrix}.
+\]",1.4333333333333333,0.8034647195462634,0.36101083032490977,0.2545454545454545,0.3888888888888889,0.30769230769230765,0.6666666666666666,0.7777777777777778,2.0,2.0,1.0,2.0,2.0,1.0,1.6666666666666667,0.8333333333333334
+3,Construct Potential Hamiltonian (continuum version),"{""2111.01152.tex"": [[55, 62]], ""2111.01152_SM.tex"": [[46, 62]]}","$H_{Potential}(r) = \begin{pmatrix} \Delta_b(r) & \Delta_{T,+K}(r) & 0 & 0 \\ \Delta_{T,+K}^*(r) & \Delta_t(r) & 0 & 0 \\ 0 & 0 & \Delta_b(r) & \Delta_{T,-K}(r) \\ 0 & 0 & \Delta_{T,-K}^*(r) & \Delta_t(r) \end{pmatrix}$","The potential Hamiltonian \( H_{\tau}^{\text{pot}} \) in real space, in the valley-layer basis for valley \(\tau\), is:
+
+\[
+H_{\tau}^{\text{pot}}(\mathbf{r}) = 
+\begin{pmatrix}
+\Delta_{\mathfrak{b}}(\mathbf{r}) & \Delta_{\text{T},\tau}(\mathbf{r}) \\
+\Delta_{\text{T},\tau}^*(\mathbf{r}) & \Delta_{\mathfrak{t}}(\mathbf{r}) + V_{z\mathfrak{t}}
+\end{pmatrix}.
+\]
+
+Here, \(\Delta_{\mathfrak{b}}(\mathbf{r})\) and \(\Delta_{\mathfrak{t}}(\mathbf{r})\) are the intralayer potentials in real space for the bottom and top layers, respectively. The term \(V_{z\mathfrak{t}}\) is a constant band offset for the top layer. The off-diagonal entries \(\Delta_{\text{T},\tau}(\mathbf{r})\) and its Hermitian conjugate \(\Delta_{\text{T},\tau}^*(\mathbf{r})\) describe the position-dependent interlayer tunneling in valley \(\tau\), ensuring the Hamiltonian is Hermitian. All other matrix elements are zero.",1.1428571428571428,0.8883218145798871,0.08680555555555555,0.1,0.45454545454545453,0.16393442622950818,0.5,0.9090909090909091,1.0,2.0,2.0,2.0,2.0,2.0,1.8333333333333333,0.9166666666666666
+4,Define each term in Potential Hamiltonian (continuum version),"{""2111.01152.tex"": [[55, 62], [71, 80]], ""2111.01152_SM.tex"": [[46, 62]]}","$H_{Potential}(r) = \begin{pmatrix} 2V_b\sum_{j=1,3,5} \cos(g_j \cdot r  +\psi_b) & w(1+\omega e^{i g_2 \cdot r} + \omega^2 e^{i g_3 \cdot r}) & 0 & 0 \\ w(1+\omega^{-1}e^{-i g_2 \cdot r} + \omega^{-2} e^{-i g_3 \cdot r}) & V_{zt} & 0 & 0 \\ 0 & 0 & 2V_b\sum_{j=1,3,5} \cos(g_j \cdot r  +\psi_b) & -w(1+\omega^{-1}e^{-i g_2 \cdot r} + \omega^{-2} e^{-i g_3 \cdot r}) \\ 0 & 0 & -w(1+\omega e^{i g_2 \cdot r} + \omega^2 e^{i g_3 \cdot r}) & V_{zt} \end{pmatrix}$","Based on the provided information, the intralayer potentials and interlayer tunneling terms are:
+
+*   **Intralayer Potentials:**
+    *   Top layer: \(\Delta_{\mathfrak{t}}(\mathbf{r}) = V_{z\mathfrak{t}}\)
+    *   Bottom layer: \(\Delta_{\mathfrak{b}}(\mathbf{r}) = 2V_{\mathfrak{b}}\sum_{j=1,3,5} \cos(\mathbf{g}_j \cdot \mathbf{r} + \psi_{\mathfrak{b}})\)
+
+*   **Interlayer Tunneling:**
+    *   For valley \(\tau = +K\): \(\Delta_{\text{T},+K}(\mathbf{r}) = w(1 + \omega^{1} e^{i \mathbf{g}_2 \cdot \mathbf{r}} + \omega^{2} e^{i \mathbf{g}_3 \cdot \mathbf{r}})\)
+    *   For valley \(\tau = -K\): \(\Delta_{\text{T},-K}(\mathbf{r}) = -w(1 + \omega^{-1} e^{-i \mathbf{g}_2 \cdot \mathbf{r}} + \omega^{-2} e^{-i \mathbf{g}_3 \cdot \mathbf{r}})\)
+
+Substituting these into the potential Hamiltonian \(H_{\tau}^{\text{pot}}(\mathbf{r})\) for each valley block gives:
+
+For the \(+K\) valley block:
+\[
+H_{+K}^{\text{pot}}(\mathbf{r}) =
+\begin{pmatrix}
+2V_{\mathfrak{b}}\sum_{j=1,3,5} \cos(\mathbf{g}_j \cdot \mathbf{r} + \psi_{\mathfrak{b}}) & w(1 + \omega^{1} e^{i \mathbf{g}_2 \cdot \mathbf{r}} + \omega^{2} e^{i \mathbf{g}_3 \cdot \mathbf{r}}) \\
+w(1 + \omega^{-1} e^{-i \mathbf{g}_2 \cdot \mathbf{r}} + \omega^{-2} e^{-i \mathbf{g}_3 \cdot \mathbf{r}}) & V_{z\mathfrak{t}}
+\end{pmatrix}.
+\]
+
+For the \(-K\) valley block:
+\[
+H_{-K}^{\text{pot}}(\mathbf{r}) =
+\begin{pmatrix}
+2V_{\mathfrak{b}}\sum_{j=1,3,5} \cos(\mathbf{g}_j \cdot \mathbf{r} + \psi_{\mathfrak{b}}) & -w(1 + \omega^{-1} e^{-i \mathbf{g}_2 \cdot \mathbf{r}} + \omega^{-2} e^{-i \mathbf{g}_3 \cdot \mathbf{r}}) \\
+-w(1 + \omega^{1} e^{i \mathbf{g}_2 \cdot \mathbf{r}} + \omega^{2} e^{i \mathbf{g}_3 \cdot \mathbf{r}}) & V_{z\mathfrak{t}}
+\end{pmatrix}.
+\]
+
+The full \(4\times4\) potential Hamiltonian in the valley-layer basis is:
+\[
+H_{\text{Potential}}(\mathbf{r}) =
+\begin{pmatrix}
+H_{+K}^{\text{pot}}(\mathbf{r}) & 0 \\
+0 & H_{-K}^{\text{pot}}(\mathbf{r})
+\end{pmatrix}.
+\]",1.4,0.6110100926607788,0.10602910602910603,0.26666666666666666,0.7317073170731707,0.3908794788273616,0.5,1.4634146341463414,2.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0
+5,"Convert from single-particle to second-quantized form, return in matrix","{""2111.01152_SM.tex"": [[46, 62]]}",$\hat{H}^{0} = \int dr \vec{\psi}^\dagger(r) H^{0}(r) \vec{\psi}(r)$,"The second-quantized total noninteracting Hamiltonian \(\hat{H}^{0}\) in real space is:
+
+\[
+\hat{H}^{0} = \int d^2\mathbf{r} \, \vec{\Psi}^\dagger(\mathbf{r}) \, \mathcal{H}_0(\mathbf{r}) \, \vec{\Psi}(\mathbf{r}),
+\]
+
+where the field operators are defined as
+
+\[
+\vec{\Psi}(\mathbf{r}) = \begin{pmatrix} \psi_{\mathfrak{b},+K}(\mathbf{r}) \\ \psi_{\mathfrak{t},+K}(\mathbf{r}) \\ \psi_{\mathfrak{b},-K}(\mathbf{r}) \\ \psi_{\mathfrak{t},-K}(\mathbf{r}) \end{pmatrix}, \quad \vec{\Psi}^\dagger(\mathbf{r}) = \begin{pmatrix} \psi_{\mathfrak{b},+K}^\dagger(\mathbf{r}) & \psi_{\mathfrak{t},+K}^\dagger(\mathbf{r}) & \psi_{\mathfrak{b},-K}^\dagger(\mathbf{r}) & \psi_{\mathfrak{t},-K}^\dagger(\mathbf{r}) \end{pmatrix},
+\]
+
+and the single-particle Hamiltonian matrix \(\mathcal{H}_0(\mathbf{r})\) in the valley-layer basis \((\mathfrak{b},+K), (\mathfrak{t},+K), (\mathfrak{b},-K), (\mathfrak{t},-K)\) is block-diagonal:
+
+\[
+\mathcal{H}_0(\mathbf{r}) = \begin{pmatrix} H_{+K}(\mathbf{r}) & 0 \\ 0 & H_{-K}(\mathbf{r}) \end{pmatrix}.
+\]
+
+Each \(2\times 2\) block \(H_{\tau}(\mathbf{r})\) for valley \(\tau = \pm\) (representing \(\pm K\)) is given by
+
+\[
+H_{\tau}(\mathbf{r}) = \begin{pmatrix} -\frac{\hbar^2 (\nabla + i\tau \bm{\kappa})^2}{2m_{\mathfrak{b}}} + \Delta_{\mathfrak{b}}(\mathbf{r}) & \Delta_{\text{T},\tau}(\mathbf{r}) \\ \Delta_{\text{T},\tau}^*(\mathbf{r}) & -\frac{\hbar^2 (\nabla + i\tau \bm{\kappa})^2}{2m_{\mathfrak{t}}} + \Delta_{\mathfrak{t}}(\mathbf{r}) + V_{z\mathfrak{t}} \end{pmatrix},
+\]
+
+with \(\mathbf{k} = -i\nabla\), \(\bm{\kappa} = \frac{4\pi}{3a_M}(1,0)\), and the real-space potentials as specified in the background.",1.6666666666666667,0.642416074439621,0.0,0.04878048780487805,0.8888888888888888,0.09248554913294797,0.6666666666666666,1.7777777777777777,2.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)","{""2111.01152_SM.tex"": [[46, 62]]}","$\hat{H}^{0} = \int dr \sum_{l_1, l_2} \left( \psi_{+K,l_1}^\dagger(r) H^{0}_{+K,l_1,+K,l_2}(r) \psi_{+K,l_2}(r) + \psi_{-K,l_1}^\dagger(r) H^{0}_{-K,l_1,-K,l_2}(r) \psi_{-K,l_2}(r) \right)$","The second-quantized noninteracting Hamiltonian \(\hat{\mathcal{H}}_0\) is expanded as:
+
+\[
+\hat{\mathcal{H}}_0 = \sum_{\tau = \pm} \int d^2\mathbf{r} \,
+\begin{pmatrix}
+\psi_{\mathfrak{b},\tau}^\dagger(\mathbf{r}) & \psi_{\mathfrak{t},\tau}^\dagger(\mathbf{r})
+\end{pmatrix}
+H_{\tau}(\mathbf{r})
+\begin{pmatrix}
+\psi_{\mathfrak{b},\tau}(\mathbf{r}) \\
+\psi_{\mathfrak{t},\tau}(\mathbf{r})
+\end{pmatrix},
+\]
+
+where \(H_{\tau}(\mathbf{r})\) is the \(2\times 2\) matrix Hamiltonian in real space:
+
+\[
+H_{\tau}(\mathbf{r}) =
+\begin{pmatrix}
+\frac{\hbar^2 (-i\nabla - \tau \bm{\kappa})^2}{2m_{\mathfrak{b}}} + \Delta_{\mathfrak{b}}(\mathbf{r}) & \Delta_{\text{T},\tau}(\mathbf{r}) \\
+\Delta_{\text{T},\tau}^*(\mathbf{r}) & \frac{\hbar^2 (-i\nabla - \tau \bm{\kappa})^2}{2m_{\mathfrak{t}}} + \Delta_{\mathfrak{t}}(\mathbf{r}) + V_{z\mathfrak{t}}
+\end{pmatrix}.
+\]
+
+Here, \(\mathbf{k} = -i\nabla\) is substituted, and the potentials \(\Delta_{\mathfrak{b}}(\mathbf{r})\), \(\Delta_{\mathfrak{t}}(\mathbf{r})\), and \(\Delta_{\text{T},\tau}(\mathbf{r})\) are given explicitly in the background. Since the Hamiltonian is block-diagonal in valley space, there are no terms mixing different \(\tau\).",1.6666666666666667,0.7453559924999298,0.03861003861003861,0.11016949152542373,0.4642857142857143,0.1780821917808219,0.25,0.9285714285714286,2.0,2.0,2.0,2.0,1.0,1.0,1.6666666666666667,0.8333333333333334
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),"{""2111.01152_SM.tex"": [[46, 62], [89, 93]]}","$\hat{H}^{0} = \sum_{\tau, l_1, l_2, k_1, k_2} c_{\tau,l_1}^\dagger(k_1) H^{0}_{\tau,l_1,\tau,l_2}(k_1,k_2) c_{\tau,l_2}(k_2)$","We start with the second-quantized noninteracting Hamiltonian:
+
+\[
+\hat{H}^{0} = \sum_{\tau = \pm} \int d^2\mathbf{r} \,
+\begin{pmatrix}
+\psi_{\mathfrak{b},\tau}^\dagger(\mathbf{r}) & \psi_{\mathfrak{t},\tau}^\dagger(\mathbf{r})
+\end{pmatrix}
+H_{\tau}(\mathbf{r})
+\begin{pmatrix}
+\psi_{\mathfrak{b},\tau}(\mathbf{r}) \\
+\psi_{\mathfrak{t},\tau}(\mathbf{r})
+\end{pmatrix}.
+\]
+
+Define the Fourier transform for each layer \( l \in \{\mathfrak{b}, \mathfrak{t}\} \) and valley \( \tau \):
+
+\[
+c_{\bm{k}, l, \tau}^\dagger = \frac{1}{\sqrt{V}} \int d^2\mathbf{r} \, \psi_{l,\tau}^\dagger(\mathbf{r}) e^{i \bm{k} \cdot \mathbf{r}},
+\]
+with inverse:
+\[
+\psi_{l,\tau}^\dagger(\mathbf{r}) = \frac{1}{\sqrt{V}} \sum_{\bm{k}} c_{\bm{k}, l, \tau}^\dagger e^{-i \bm{k} \cdot \mathbf{r}},
+\]
+where \( V \) is the real-space unit cell area, and \( \bm{k} \) sums over the extended Brillouin zone.
+
+Substitute into \( \hat{H}^{0} \):
+
+\[
+\hat{H}^{0} = \sum_{\tau} \int d^2\mathbf{r} \frac{1}{\sqrt{V}} \sum_{\bm{k}_1} 
+\begin{pmatrix}
+c_{\bm{k}_1, \mathfrak{b}, \tau}^\dagger e^{-i \bm{k}_1 \cdot \mathbf{r}} & c_{\bm{k}_1, \mathfrak{t}, \tau}^\dagger e^{-i \bm{k}_1 \cdot \mathbf{r}}
+\end{pmatrix}
+H_{\tau}(\mathbf{r})
+\frac{1}{\sqrt{V}} \sum_{\bm{k}_2}
+\begin{pmatrix}
+c_{\bm{k}_2, \mathfrak{b}, \tau} e^{i \bm{k}_2 \cdot \mathbf{r}} \\
+c_{\bm{k}_2, \mathfrak{t}, \tau} e^{i \bm{k}_2 \cdot \mathbf{r}}
+\end{pmatrix}.
+\]
+
+This simplifies to:
+
+\[
+\hat{H}^{0} = \sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \frac{1}{V} \int d^2\mathbf{r} \, e^{-i (\bm{k}_1 - \bm{k}_2) \cdot \mathbf{r}}
+\begin{pmatrix}
+c_{\bm{k}_1, \mathfrak{b}, \tau}^\dagger & c_{\bm{k}_1, \mathfrak{t}, \tau}^\dagger
+\end{pmatrix}
+H_{\tau}(\mathbf{r})
+\begin{pmatrix}
+c_{\bm{k}_2, \mathfrak{b}, \tau} \\
+c_{\bm{k}_2, \mathfrak{t}, \tau}
+\end{pmatrix}.
+\]
+
+Define the Fourier-transformed Hamiltonian matrix elements:
+
+\[
+h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} = \frac{1}{V} \int d^2\mathbf{r} \, e^{-i (\bm{k}_1 - \bm{k}_2) \cdot \mathbf{r}} \left[ H_{\tau}(\mathbf{r}) \right]_{l_1 l_2},
+\]
+where \( l_1, l_2 \in \{\mathfrak{b}, \mathfrak{t}\} \). Then:
+
+\[
+\hat{H}^{0} = \sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2} c_{\bm{k}_1, l_1, \tau}^\dagger \, h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} \, c_{\bm{k}_2, l_2, \tau}.
+\]
+
+Due to Bloch’s theorem, \( h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} \) is nonzero only when \( \bm{k}_1 - \bm{k}_2 = \bm{G} \), where \( \bm{G} \) is a moiré reciprocal lattice vector (including zero). Thus, we can write:
+
+\[
+\hat{H}^{0} = \sum_{\tau} \sum_{\bm{k}, \bm{G}} \sum_{l_1, l_2} c_{\bm{k}+\bm{G}, l_1, \tau}^\dagger \, h^{(\tau)}_{(\bm{k}+\bm{G}) l_1, \bm{k} l_2} \, c_{\bm{k}, l_2, \tau},
+\]
+where \( \bm{k} \) runs over the moiré Brillouin zone and \( \bm{G} \) over reciprocal lattice vectors. Alternatively, keeping the double summation over extended momenta:
+
+\[
+\boxed{\hat{H}^{0} = \sum_{\tau = \pm} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2 \in \{\mathfrak{b}, \mathfrak{t}\}} c_{\bm{k}_1, l_1, \tau}^\dagger \, h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} \, c_{\bm{k}_2, l_2, \tau}}
+\]
+
+with the understanding that \( h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} \) enforces crystal momentum conservation modulo \( \bm{G} \).",1.8,0.6000000000000001,0.013196480938416423,0.041916167664670656,0.7,0.0790960451977401,0.6,1.4,2.0,2.0,2.0,2.0,2.0,1.0,1.8333333333333333,0.9166666666666666
+8,Particle-hole transformation,"{""2111.01152_SM.tex"": [[95, 99]]}","$\hat{H}^{0} = \sum_{\tau, l_1, l_2, k_1, k_2} b_{\tau, l_1}(k_1) H^{0}_{\tau, l_1, \tau, l_2}(k_1, k_2) b_{\tau, l_2}^\dagger(k_2)$","Performing the particle-hole transformation as defined, we substitute \( c_{\bm{k},l,\tau}^\dagger = b_{\bm{k},l,\tau} \) and \( c_{\bm{k},l,\tau} = b_{\bm{k},l,\tau}^\dagger \) into the given momentum-space Hamiltonian:
+
+\[
+\hat{H}^{0} = \sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2} b_{\bm{k}_1, l_1, \tau} \, h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} \, b_{\bm{k}_2, l_2, \tau}^\dagger.
+\]
+
+Thus, in the hole basis, the noninteracting Hamiltonian is:
+
+\[
+\hat{\mathcal{H}}_0 = \sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2} b_{\bm{k}_1, l_1, \tau} \, h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} \, b_{\bm{k}_2, l_2, \tau}^\dagger.
+\]",1.7916666666666667,0.5758447900452188,0.04864864864864865,0.18309859154929578,0.65,0.28571428571428575,0.6,1.3,0.0,2.0,2.0,2.0,2.0,2.0,1.6666666666666667,0.8333333333333334
+9,Simplify the Hamiltonian in the particle-hole basis,"{""2111.01152_SM.tex"": [[95, 99]]}","$\hat{H}^{0} = \sum_{\tau, l_1, k_1} H^{0}_{\tau, l_1, \tau, l_1}(k_1, k_1) - \sum_{\tau, l_1, l_2, k_1, k_2} b_{\tau, l_1}^\dagger(k_1) (H^{0}_{\tau, l_1, \tau, l_2}(k_1, k_2))^* b_{\tau, l_2}(k_2)$","We start with the Hamiltonian in the hole basis:
+
+\[
+\hat{H}^{0} = \sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2} b_{\bm{k}_1, l_1, \tau} \, h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} \, b_{\bm{k}_2, l_2, \tau}^\dagger.
+\]
+
+The hole operators satisfy fermionic anticommutation relations:  
+\[
+\{ b_{\bm{k}_1, l_1, \tau}, b_{\bm{k}_2, l_2, \tau'}^\dagger \} = \delta_{\tau,\tau'} \delta_{l_1,l_2} \delta_{\bm{k}_1,\bm{k}_2}.
+\]
+
+Thus,  
+\[
+b_{\bm{k}_1, l_1, \tau} b_{\bm{k}_2, l_2, \tau}^\dagger = \delta_{\tau,\tau'} \delta_{l_1,l_2} \delta_{\bm{k}_1,\bm{k}_2} - b_{\bm{k}_2, l_2, \tau}^\dagger b_{\bm{k}_1, l_1, \tau}.
+\]
+
+Substituting into \(\hat{H}^{0}\):
+
+\[
+\hat{H}^{0} = \sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2} \left( \delta_{l_1,l_2} \delta_{\bm{k}_1,\bm{k}_2} - b_{\bm{k}_2, l_2, \tau}^\dagger b_{\bm{k}_1, l_1, \tau} \right) h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2}.
+\]
+
+Separate the two terms:
+
+1. Constant term:  
+\[
+\sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2} \delta_{l_1,l_2} \delta_{\bm{k}_1,\bm{k}_2} h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} = \sum_{\tau} \sum_{\bm{k}} \sum_{l} h^{(\tau)}_{\bm{k} l, \bm{k} l}.
+\]
+
+2. Quadratic term:  
+\[
+- \sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2} b_{\bm{k}_2, l_2, \tau}^\dagger b_{\bm{k}_1, l_1, \tau} h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2}.
+\]
+
+Relabel indices in the quadratic term: swap \(\bm{k}_1 \leftrightarrow \bm{k}_2\) and \(l_1 \leftrightarrow l_2\):
+
+\[
+- \sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2} b_{\bm{k}_1, l_1, \tau}^\dagger b_{\bm{k}_2, l_2, \tau} h^{(\tau)}_{\bm{k}_2 l_2, \bm{k}_1 l_1}.
+\]
+
+Now, to have \(\bm{k}_1\) before \(\bm{k}_2\) in the matrix element index, note that \(h^{(\tau)}_{\bm{k}_2 l_2, \bm{k}_1 l_1} = \left( h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} \right)^*\) because \(h^{(\tau)}\) is Hermitian. Thus:
+
+\[
+\hat{H}^{0} = \sum_{\tau} \sum_{\bm{k}} \sum_{l} h^{(\tau)}_{\bm{k} l, \bm{k} l} - \sum_{\tau} \sum_{\bm{k}_1, \bm{k}_2} \sum_{l_1, l_2} b_{\bm{k}_1, l_1, \tau}^\dagger \left( h^{(\tau)}_{\bm{k}_1 l_1, \bm{k}_2 l_2} \right)^* b_{\bm{k}_2, l_2, \tau}.
+\]
+
+This is the normal-ordered Hamiltonian in the hole basis, with \(\bm{k}_1\) before \(\bm{k}_2\) in the indices.",1.9047619047619047,0.29354352395090366,0.025193798449612403,0.08076923076923077,0.7,0.14482758620689654,0.6,1.4,2.0,1.0,2.0,2.0,2.0,2.0,1.8333333333333333,0.9166666666666666
+10,Construct interaction Hamiltonian (momentum space),"{""2111.01152_SM.tex"": [[100, 108]]}","$\hat{H}^{int} = \frac{1}{2V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,k_3,k_4} b_{l_1,\tau_1}^\dagger(k_1)b_{l_2,\tau_2}^\dagger(k_2)b_{l_2,\tau_2}(k_3)b_{l_1,\tau_1}(k_4) V(|k_1-k_4|)\delta_{k_1+k_2,k_3+k_4}$","The interaction Hamiltonian in the hole basis is:
+
+\[
+\hat{\mathcal{H}}_{\text{int}} = \frac{1}{2A} \sum_{\tau_{\alpha},\tau_{\beta}} \sum_{l_{\alpha},l_{\beta}} \sum_{\bm{k}_{\alpha},\bm{k}_{\beta},\bm{k}_{\gamma},\bm{k}_{\delta}} V(|\bm{k}_{\alpha} - \bm{k}_{\delta}|) \, \delta_{\bm{k}_{\alpha} + \bm{k}_{\beta}, \bm{k}_{\gamma} + \bm{k}_{\delta}} \,
+b_{\bm{k}_{\alpha},l_{\alpha},\tau_{\alpha}}^\dagger \, b_{\bm{k}_{\beta},l_{\beta},\tau_{\beta}}^\dagger \, b_{\bm{k}_{\gamma},l_{\beta},\tau_{\beta}} \, b_{\bm{k}_{\delta},l_{\alpha},\tau_{\alpha}},
+\]
+
+where \( V(q) = \frac{2\pi e^2 \tanh(qd)}{\epsilon q} \) with \( q = |\bm{k}_{\alpha} - \bm{k}_{\delta}| \).",1.52,0.8541662601625049,0.31620553359683795,0.1746031746031746,0.2972972972972973,0.22,0.1111111111111111,0.5945945945945946,2.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0
+11,Wick's theorem,"{""2111.01152_SM.tex"": [[110, 117]]}","$\hat{H}^{int,HF}=\frac{1}{2V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,k_3,k_4} \left[\langle b_{l_1,\tau_1}^\dagger(k_1) b_{l_1,\tau_1}(k_4) \rangle b_{l_2,\tau_2}^\dagger(k_2) b_{l_2,\tau_2}(k_3) + \langle b_{l_2,\tau_2}^\dagger(k_2) b_{l_2,\tau_2}(k_3) \rangle b_{l_1,\tau_1}^\dagger(k_1) b_{l_1,\tau_1}(k_4)-\langle b_{l_1,\tau_1}^\dagger(k_1) b_{l_1,\tau_1}(k_4) \rangle \langle b_{l_2,\tau_2}^\dagger(k_2) b_{l_2,\tau_2}(k_3) \rangle - \langle b_{l_1,\tau_1}^\dagger(k_1) b_{l_2,\tau_2}(k_3) \rangle b_{l_2,\tau_2}^\dagger(k_2) b_{l_1,\tau_1}(k_4) - \langle b_{l_2,\tau_2}^\dagger(k_2) b_{l_1,\tau_1}(k_4) \rangle b_{l_1,\tau_1}^\dagger(k_1) b_{l_2,\tau_2}(k_3) + \langle b_{l_1,\tau_1}^\dagger(k_1) b_{l_2,\tau_2}(k_3) \rangle \langle b_{l_2,\tau_2}^\dagger(k_2) b_{l_1,\tau_1}(k_4) \rangle\right] V(|k_1-k_4|)\delta_{k_1+k_2,k_3+k_4}$","The interaction Hamiltonian in the hole basis is:
+
+\[
+\hat{\mathcal{H}}_{\text{int}} = \frac{1}{2A} \sum_{\tau_{\alpha},\tau_{\beta}} \sum_{l_{\alpha},l_{\beta}} \sum_{\bm{k}_{\alpha},\bm{k}_{\beta},\bm{k}_{\gamma},\bm{k}_{\delta}} V(|\bm{k}_{\alpha} - \bm{k}_{\delta}|) \, \delta_{\bm{k}_{\alpha} + \bm{k}_{\beta}, \bm{k}_{\gamma} + \bm{k}_{\delta}} \,
+b_{\bm{k}_{\alpha},l_{\alpha},\tau_{\alpha}}^\dagger \, b_{\bm{k}_{\beta},l_{\beta},\tau_{\beta}}^\dagger \, b_{\bm{k}_{\gamma},l_{\beta},\tau_{\beta}} \, b_{\bm{k}_{\delta},l_{\alpha},\tau_{\alpha}}.
+\]
+
+The four-operator product has the form \( b^\dagger_{\alpha} b^\dagger_{\beta} b_{\gamma} b_{\delta} \), matching **EXAMPLE 1**. Applying Wick's theorem and keeping only normal terms (dropping constant terms):
+
+\[
+b^\dagger_{\alpha} b^\dagger_{\beta} b_{\gamma} b_{\delta} \rightarrow
+\langle b^\dagger_{\alpha} b_{\delta} \rangle b^\dagger_{\beta} b_{\gamma}
++ \langle b^\dagger_{\beta} b_{\gamma} \rangle b^\dagger_{\alpha} b_{\delta}
+- \langle b^\dagger_{\alpha} b_{\gamma} \rangle b^\dagger_{\beta} b_{\delta}
+- \langle b^\dagger_{\beta} b_{\delta} \rangle b^\dagger_{\alpha} b_{\gamma}.
+\]
+
+Substituting into \(\hat{\mathcal{H}}_{\text{int}}\) yields the Hartree-Fock interaction Hamiltonian:
+
+\[
+\hat{\mathcal{H}}_{\text{int}}^{\text{HF}} = \frac{1}{2A} \sum_{\tau_{\alpha},\tau_{\beta}} \sum_{l_{\alpha},l_{\beta}} \sum_{\bm{k}_{\alpha},\bm{k}_{\beta},\bm{k}_{\gamma},\bm{k}_{\delta}} V(|\bm{k}_{\alpha} - \bm{k}_{\delta}|) \, \delta_{\bm{k}_{\alpha} + \bm{k}_{\beta}, \bm{k}_{\gamma} + \bm{k}_{\delta}} \,
+\Big[ 
+\langle b^\dagger_{\alpha} b_{\delta} \rangle b^\dagger_{\beta} b_{\gamma}
++ \langle b^\dagger_{\beta} b_{\gamma} \rangle b^\dagger_{\alpha} b_{\delta}
+- \langle b^\dagger_{\alpha} b_{\gamma} \rangle b^\dagger_{\beta} b_{\delta}
+- \langle b^\dagger_{\beta} b_{\delta} \rangle b^\dagger_{\alpha} b_{\gamma}
+\Big],
+\]
+
+where shorthand indices denote:  
+\( b^\dagger_{\alpha} = b^\dagger_{\bm{k}_{\alpha},l_{\alpha},\tau_{\alpha}} \), \( b^\dagger_{\beta} = b^\dagger_{\bm{k}_{\beta},l_{\beta},\tau_{\beta}} \),  
+\( b_{\gamma} = b_{\bm{k}_{\gamma},l_{\beta},\tau_{\beta}} \), \( b_{\delta} = b_{\bm{k}_{\delta},l_{\alpha},\tau_{\alpha}} \).
+
+The total Hartree-Fock Hamiltonian is \(\hat{\mathcal{H}}^{\text{HF}} = \hat{\mathcal{H}}_0 + \hat{\mathcal{H}}_{\text{int}}^{\text{HF}}\).",2.0,0.0,0.030735455543358946,0.21333333333333335,0.3582089552238806,0.26740947075208915,0.3333333333333333,0.7164179104477612,0.0,2.0,2.0,2.0,2.0,2.0,1.6666666666666667,0.8333333333333334
+12,Extract quadratic term,"{""2111.01152_SM.tex"": [[110, 117]]}","$\hat{H}^{int,HF,2}=\frac{1}{2V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,k_3,k_4} \left[\langle b_{l_1,\tau_1}^\dagger(k_1) b_{l_1,\tau_1}(k_4) \rangle b_{l_2,\tau_2}^\dagger(k_2) b_{l_2,\tau_2}(k_3) + \langle b_{l_2,\tau_2}^\dagger(k_2) b_{l_2,\tau_2}(k_3) \rangle b_{l_1,\tau_1}^\dagger(k_1) b_{l_1,\tau_1}(k_4) - \langle b_{l_1,\tau_1}^\dagger(k_1) b_{l_2,\tau_2}(k_3) \rangle b_{l_2,\tau_2}^\dagger(k_2) b_{l_1,\tau_1}(k_4) - \langle b_{l_2,\tau_2}^\dagger(k_2) b_{l_1,\tau_1}(k_4) \rangle b_{l_1,\tau_1}^\dagger(k_1) b_{l_2,\tau_2}(k_3)\right] V(|k_1-k_4|)\delta_{k_1+k_2,k_3+k_4}$","\[
+\hat{\mathcal{H}}_{\text{int}}^{\text{HF}} = \frac{1}{2A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4}
+\Big[
+\langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2}
++ \langle b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1}
+- \langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1}
+- \langle b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2}
+\Big].
+\]",2.0,0.0,0.04230769230769231,0.6767676767676768,0.7052631578947368,0.690721649484536,0.6666666666666666,1.4105263157894736,0.0,2.0,2.0,2.0,2.0,2.0,1.6666666666666667,0.8333333333333334
+13,Swap the index to combine Hartree and Fock terms,"{""2111.01152_SM.tex"": [[110, 117]]}","$\hat{H}^{int,HF,2}=\frac{1}{V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,k_3,k_4} \left[\langle b_{l_1,\tau_1}^\dagger(k_1) b_{l_1,\tau_1}(k_4) \rangle b_{l_2,\tau_2}^\dagger(k_2) b_{l_2,\tau_2}(k_3) - \langle b_{l_1,\tau_1}^\dagger(k_1) b_{l_2,\tau_2}(k_3) \rangle b_{l_2,\tau_2}^\dagger(k_2) b_{l_1,\tau_1}(k_4)\right] V(|k_1-k_4|)\\delta_{k_1+k_2,k_3+k_4}$","We start from the given Hartree-Fock interaction Hamiltonian:
+
+\[
+\hat{\mathcal{H}}_{\text{int}}^{\text{HF}} = \frac{1}{2A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4}
+\Big[
+\langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2}
++ \langle b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1}
+- \langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1}
+- \langle b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2}
+\Big].
+\]
+
+We simplify by relabeling indices in the second Hartree term and the second Fock term to combine them with the first Hartree term and first Fock term, respectively.
+
+**Step 1: Combine the two Hartree terms**  
+The second Hartree term is:
+
+\[
+H_2 = \frac{1}{2A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4} \,
+\langle b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1}.
+\]
+
+Relabel indices by swapping \((\tau_1, l_1, \bm{k}_1, \bm{k}_4) \leftrightarrow (\tau_2, l_2, \bm{k}_2, \bm{k}_3)\):
+
+- \(\tau_1 \rightarrow \tau_2\), \(l_1 \rightarrow l_2\), \(\bm{k}_1 \rightarrow \bm{k}_2\), \(\bm{k}_4 \rightarrow \bm{k}_3\)
+- \(\tau_2 \rightarrow \tau_1\), \(l_2 \rightarrow l_1\), \(\bm{k}_2 \rightarrow \bm{k}_1\), \(\bm{k}_3 \rightarrow \bm{k}_4\)
+
+After relabeling, \(H_2\) becomes:
+
+\[
+H_2 = \frac{1}{2A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_2 - \bm{k}_3|) \, \delta_{\bm{k}_2 + \bm{k}_1, \bm{k}_4 + \bm{k}_3} \,
+\langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2}.
+\]
+
+The Kronecker delta gives \(\bm{k}_1 + \bm{k}_2 = \bm{k}_3 + \bm{k}_4\), so \(\bm{k}_2 - \bm{k}_3 = \bm{k}_4 - \bm{k}_1\). Since \(V(q) = V(-q)\), we have \(V(|\bm{k}_2 - \bm{k}_3|) = V(|\bm{k}_4 - \bm{k}_1|) = V(|\bm{k}_1 - \bm{k}_4|)\). The delta function is symmetric: \(\delta_{\bm{k}_2 + \bm{k}_1, \bm{k}_4 + \bm{k}_3} = \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4}\). Thus:
+
+\[
+H_2 = \frac{1}{2A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4} \,
+\langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2}.
+\]
+
+This is identical to the first Hartree term. Therefore, the sum of the two Hartree terms is:
+
+\[
+H_{\text{Hartree}} = \frac{1}{A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4} \,
+\langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2}.
+\]
+
+**Step 2: Combine the two Fock terms**  
+The second Fock term is:
+
+\[
+F_2 = -\frac{1}{2A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4} \,
+\langle b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2}.
+\]
+
+Relabel indices by swapping \((\tau_1, l_1, \bm{k}_1, \bm{k}_4) \leftrightarrow (\tau_2, l_2, \bm{k}_2, \bm{k}_3)\):
+
+- \(\tau_1 \rightarrow \tau_2\), \(l_1 \rightarrow l_2\), \(\bm{k}_1 \rightarrow \bm{k}_2\), \(\bm{k}_4 \rightarrow \bm{k}_3\)
+- \(\tau_2 \rightarrow \tau_1\), \(l_2 \rightarrow l_1\), \(\bm{k}_2 \rightarrow \bm{k}_1\), \(\bm{k}_3 \rightarrow \bm{k}_4\)
+
+After relabeling, \(F_2\) becomes:
+
+\[
+F_2 = -\frac{1}{2A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_2 - \bm{k}_3|) \, \delta_{\bm{k}_2 + \bm{k}_1, \bm{k}_4 + \bm{k}_3} \,
+\langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1}.
+\]
+
+Again, \(\bm{k}_1 + \bm{k}_2 = \bm{k}_3 + \bm{k}_4\) implies \(\bm{k}_2 - \bm{k}_3 = \bm{k}_4 - \bm{k}_1\), so \(V(|\bm{k}_2 - \bm{k}_3|) = V(|\bm{k}_1 - \bm{k}_4|)\). The delta function is unchanged. Thus:
+
+\[
+F_2 = -\frac{1}{2A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4} \,
+\langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1}.
+\]
+
+This is identical to the first Fock term. Therefore, the sum of the two Fock terms is:
+
+\[
+H_{\text{Fock}} = -\frac{1}{A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4} \,
+\langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1}.
+\]
+
+**Step 3: Combine results**  
+The simplified Hartree-Fock interaction Hamiltonian is:
+
+\[
+\hat{\mathcal{H}}_{\text{int}}^{\text{HF}} = \frac{1}{A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4}
+\Big[
+\langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2}
+- \langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1}
+\Big].
+\]
+
+The total Hartree-Fock Hamiltonian is \(\hat{\mathcal{H}}^{\text{HF}} = \hat{\mathcal{H}}_0 + \hat{\mathcal{H}}_{\text{int}}^{\text{HF}}\).
+
+**Final Answer:**
+
+\[
+\boxed{\hat{\mathcal{H}}_{\text{int}}^{\text{HF}} = \frac{1}{A} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3,\bm{k}_4} V(|\bm{k}_1 - \bm{k}_4|) \, \delta_{\bm{k}_1 + \bm{k}_2, \bm{k}_3 + \bm{k}_4} \left[ \langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_4,l_1,\tau_1} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_3,l_2,\tau_2} - \langle b_{\bm{k}_1,l_1,\tau_1}^\dagger b_{\bm{k}_3,l_2,\tau_2} \rangle \, b_{\bm{k}_2,l_2,\tau_2}^\dagger b_{\bm{k}_4,l_1,\tau_1} \right]}
+\]",1.5555555555555556,0.4969039949999533,0.021520305449496704,0.049019607843137254,0.6896551724137931,0.09153318077803202,0.6666666666666666,1.3793103448275863,2.0,1.0,2.0,2.0,2.0,2.0,1.8333333333333333,0.9166666666666666
+14,Reduce momentum in Hartree term (momentum in BZ + reciprocal lattice),null,"$H_{\text{Hartree}} = \frac{1}{V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,q_1,q_2,q_3,q_4} \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_1) \rangle b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_2,\tau_2,q_3}(k_2)  V(|q_1-q_4|)\delta_{q_1+q_2,q_3+q_4}$","The Hartree term is given by:
+
+\[
+H_{\text{Hartree}} = \frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2} \sum_{k_1,k_2,k_3,k_4} \sum_{q_1,q_2,q_3,q_4} V(|k_1+q_1 - k_4 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_4) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_2,\tau_2,q_3}(k_3) \, \delta_{k_1+k_2+q_1+q_2, k_3+k_4+q_3+q_4}.
+\]
+
+Since \(\langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_4) \rangle\) is nonzero only when \(k_1 = k_4\), we insert \(\delta_{k_1,k_4}\):
+
+\[
+H_{\text{Hartree}} = \frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2} \sum_{k_1,k_2,k_3,k_4} \sum_{q_1,q_2,q_3,q_4} V(|k_1+q_1 - k_4 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_4) \rangle \delta_{k_1,k_4} \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_2,\tau_2,q_3}(k_3) \, \delta_{k_1+k_2+q_1+q_2, k_3+k_4+q_3+q_4}.
+\]
+
+Using \(\delta_{k_1,k_4}\) to sum over \(k_4\) (replace \(k_4 \to k_1\)):
+
+\[
+H_{\text{Hartree}} = \frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2} \sum_{k_1,k_2,k_3} \sum_{q_1,q_2,q_3,q_4} V(|k_1+q_1 - k_1 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_1) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_2,\tau_2,q_3}(k_3) \, \delta_{k_1+k_2+q_1+q_2, k_3+k_1+q_3+q_4}.
+\]
+
+Simplify \(V(|q_1 - q_4|)\) and the delta function:
+
+\[
+H_{\text{Hartree}} = \frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2} \sum_{k_1,k_2,k_3} \sum_{q_1,q_2,q_3,q_4} V(|q_1 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_1) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_2,\tau_2,q_3}(k_3) \, \delta_{k_2+q_1+q_2, k_3+q_3+q_4}.
+\]
+
+Now, note that \(k_2\) and \(k_3\) are momenta within the first Brillouin zone, while \(q_i\) are reciprocal lattice vectors. The condition \(\delta_{k_2+q_1+q_2, k_3+q_3+q_4}\) implies \(k_2 - k_3 = q_3 + q_4 - q_1 - q_2\). Since the left side is within the first Brillouin zone and the right side is a reciprocal lattice vector, both sides must be zero for the delta to be nonzero. Thus, \(k_2 = k_3\) and \(q_1 + q_2 = q_3 + q_4\). So we write:
+
+\[
+\delta_{k_2+q_1+q_2, k_3+q_3+q_4} = \delta_{k_2,k_3} \, \delta_{q_1+q_2, q_3+q_4}.
+\]
+
+Substitute this and use \(\delta_{k_2,k_3}\) to sum over \(k_3\) (replace \(k_3 \to k_2\)):
+
+\[
+H_{\text{Hartree}} = \frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2} \sum_{k_1,k_2} \sum_{q_1,q_2,q_3,q_4} V(|q_1 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_1) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_2,\tau_2,q_3}(k_2) \, \delta_{q_1+q_2, q_3+q_4}.
+\]
+
+Thus, the final simplified Hartree term is:
+
+\[
+H_{\text{Hartree}} = \frac{1}{V} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{k_1,k_2} \sum_{q_1,q_2,q_3,q_4} V(|q_1 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_1) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_2,\tau_2,q_3}(k_2) \, \delta_{q_1+q_2, q_3+q_4}.
+\]",,,0.0,0.09594882729211088,1.0,0.17509727626459143,1.0,2.0,2.0,2.0,2.0,2.0,1.0,2.0,1.8333333333333333,0.9166666666666666
+15,Reduce momentum in Fock term (momentum in BZ + reciprocal lattice),null,"$H_{\text{Fock}} = -\frac{1}{V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,q_1,q_2,q_3,q_4} \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_1) \rangle b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_2) V(|k_1+q_1-k_2-q_4|)\delta_{q_1+q_2,q_3+q_4}$","The Fock term is given as:
+
+\[
+H_{\text{Fock}} = -\frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,k_3,k_4,q_1,q_2,q_3,q_4} V(|k_1+q_1 - k_4 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_3) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_4) \, \delta_{k_1+k_2+q_1+q_2, k_3+k_4+q_3+q_4}.
+\]
+
+Using the property that \(\langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_3) \rangle = \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_3) \rangle \delta_{k_1,k_3}\), substitute this into the expression:
+
+\[
+H_{\text{Fock}} = -\frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,k_3,k_4,q_1,q_2,q_3,q_4} V(|k_1+q_1 - k_4 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_3) \rangle \delta_{k_1,k_3} \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_4) \, \delta_{k_1+k_2+q_1+q_2, k_3+k_4+q_3+q_4}.
+\]
+
+Sum over \(k_3\) using \(\delta_{k_1,k_3}\), which replaces \(k_3\) with \(k_1\):
+
+\[
+H_{\text{Fock}} = -\frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,k_4,q_1,q_2,q_3,q_4} V(|k_1+q_1 - k_4 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_1) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_4) \, \delta_{k_1+k_2+q_1+q_2, k_1+k_4+q_3+q_4}.
+\]
+
+Simplify the Kronecker delta: \(\delta_{k_1+k_2+q_1+q_2, k_1+k_4+q_3+q_4} = \delta_{k_2+q_1+q_2, k_4+q_3+q_4}\).
+
+Now, note that \(k_2\) and \(k_4\) are momenta within the first Brillouin zone, while \(q_i\) are reciprocal lattice vectors. The condition \(k_2 + q_1 + q_2 = k_4 + q_3 + q_4\) implies \(k_2 = k_4\) and \(q_1 + q_2 = q_3 + q_4\), i.e., \(\delta_{k_2+q_1+q_2, k_4+q_3+q_4} = \delta_{k_2,k_4} \delta_{q_1+q_2, q_3+q_4}\).
+
+Substitute this into the expression:
+
+\[
+H_{\text{Fock}} = -\frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,k_4,q_1,q_2,q_3,q_4} V(|k_1+q_1 - k_4 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_1) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_4) \, \delta_{k_2,k_4} \delta_{q_1+q_2, q_3+q_4}.
+\]
+
+Sum over \(k_4\) using \(\delta_{k_2,k_4}\), which replaces \(k_4\) with \(k_2\):
+
+\[
+H_{\text{Fock}} = -\frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,q_1,q_2,q_3,q_4} V(|k_1+q_1 - k_2 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_1) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_2) \, \delta_{q_1+q_2, q_3+q_4}.
+\]
+
+Thus, the final simplified Fock term is:
+
+\[
+H_{\text{Fock}} = -\frac{1}{V} \sum_{\tau_1,\tau_2} \sum_{l_1,l_2} \sum_{k_1,k_2} \sum_{q_1,q_2,q_3,q_4} V(|k_1+q_1 - k_2 - q_4|) \, \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_1) \rangle \, b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_2) \, \delta_{q_1+q_2, q_3+q_4}.
+\]",,,0.011325028312570781,0.10307017543859649,1.0,0.18687872763419483,1.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0
+16,Combine the Hartree and Fock term,null,\hat{\mathcal{H}}^{\mathrm{HF}}=\hat{\mathcal{H}}_1+H_{\mathrm{Hartree}}+H_{\mathrm{Fock}},"The Hartree term is given as:
+
+\[
+H_{\text{Hartree}} = \frac{1}{V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,q_1,q_2,q_3,q_4} \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_1) \rangle b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_2,\tau_2,q_3}(k_2)  V(|q_1-q_4|)\delta_{q_1+q_2,q_3+q_4}.
+\]
+
+The Fock term is:
+
+\[
+H_{\text{Fock}} = -\frac{1}{V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,q_1,q_2,q_3,q_4} \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_1) \rangle b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_2) V(|k_1+q_1-k_2-q_4|)\delta_{q_1+q_2,q_3+q_4}.
+\]
+
+To align the quadratic operators in the Fock term with those in the Hartree term, relabel indices in the Fock term by swapping \((l_1,\tau_1) \leftrightarrow (l_2,\tau_2)\) and \((q_1,q_4) \leftrightarrow (q_2,q_3)\). This yields:
+
+\[
+H_{\text{Fock}} = -\frac{1}{V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,q_1,q_2,q_3,q_4} \langle b_{l_2,\tau_2,q_2}^\dagger(k_1) b_{l_1,\tau_1,q_3}(k_1) \rangle b_{l_1,\tau_1,q_1}^\dagger(k_2) b_{l_2,\tau_2,q_4}(k_2) V(|k_1+q_2-k_2-q_4|)\delta_{q_1+q_2,q_3+q_4}.
+\]
+
+Next, swap summation indices \(k_1 \leftrightarrow k_2\) and \((q_1,q_2,q_3,q_4) \leftrightarrow (q_2,q_1,q_4,q_3)\). After relabeling, the Fock term becomes:
+
+\[
+H_{\text{Fock}} = -\frac{1}{V}\sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,q_1,q_2,q_3,q_4} \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_1) \rangle b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_2) V(|k_1+q_1-k_2-q_4|)\delta_{q_1+q_2,q_3+q_4}.
+\]
+
+Adding the Hartree and Fock terms gives the total Hartree-Fock interaction:
+
+\[
+H_{\text{HF}} = \frac{1}{V} \sum_{\tau_1,\tau_2,l_1,l_2,k_1,k_2,q_1,q_2,q_3,q_4} \delta_{q_1+q_2,q_3+q_4} \Big[ V(|q_1-q_4|) \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_1,\tau_1,q_4}(k_1) \rangle b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_2,\tau_2,q_3}(k_2) 
+- V(|k_1+q_1-k_2-q_4|) \langle b_{l_1,\tau_1,q_1}^\dagger(k_1) b_{l_2,\tau_2,q_3}(k_1) \rangle b_{l_2,\tau_2,q_2}^\dagger(k_2) b_{l_1,\tau_1,q_4}(k_2) \Big].
+\]",,,0.013136288998357963,0.017595307917888565,0.75,0.0343839541547278,1.0,1.5,2.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0

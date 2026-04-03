@@ -1,0 +1,23 @@
+Task objective:
+Analyze synthetic numerical-relativity quality-control datasets for an SXS-style binary black hole catalog, with the goal of characterizing waveform accuracy and uncertainty patterns relevant to gravitational-wave modeling, catalog validation, and extrapolation/mode-selection decisions.
+
+Available data and context:
+- INSTRUCTIONS.md defines a full research workflow and final deliverables inside this workspace.
+- data/fig6_data.csv: 1500 single-valued waveform-difference measurements representing highest-resolution mismatch after alignment.
+- data/fig7_data.csv: 1500x7 modal waveform-difference measurements for spherical-harmonic modes ell=2...8.
+- data/fig8_data.csv: 1200x2 extrapolation-order difference measurements comparing N=2 vs N=3 and N=2 vs N=4.
+- related_work/ contains four papers giving scientific context on SXS waveforms, numerical-relativity accuracy/systematics, surrogate modeling, higher-mode/ringdown effects, and eccentric-binary applications.
+
+Main planned analysis steps:
+1. Load and validate all CSV files, confirm dimensions, column meanings, and summary statistics.
+2. Perform exploratory distribution analysis of waveform differences using log-scaled descriptive plots and robust statistics (median, quantiles, tail behavior).
+3. Compare error behavior across harmonic modes, including central tendency growth with ell, spread, and outlier structure.
+4. Compare extrapolation-order discrepancy distributions between N2vsN3 and N2vsN4, including relative shifts and convergence interpretation.
+5. Synthesize findings into implications for catalog accuracy, mode truncation, and waveform reliability, with clear limitations because the inputs are synthetic summary data rather than full simulations.
+6. Produce reproducible code, saved intermediate outputs, publication-style figures, and a final report.
+
+Expected deliverables:
+- Reproducible analysis scripts in code/.
+- Saved numerical summaries/intermediate outputs in outputs/.
+- Figures in report/images/ covering data overview, main results, and validation/comparison plots.
+- Final research report in report/report.md interpreting the numerical-relativity accuracy trends shown by these datasets.

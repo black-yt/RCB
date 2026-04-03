@@ -1,5 +1,35 @@
 [
   {
+    "run_id": "Physics_003_20260403_001651",
+    "task_id": "Physics_003",
+    "timestamp": "20260403_001651",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 279,
+    "total_score": 43.3
+  },
+  {
+    "run_id": "Physics_003_20260402_125047",
+    "task_id": "Physics_003",
+    "timestamp": "20260402_125047",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 548,
+    "total_score": 45.0
+  },
+  {
+    "run_id": "Physics_003_20260401_131002",
+    "task_id": "Physics_003",
+    "timestamp": "20260401_131002",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 142,
+    "total_score": 31.8
+  },
+  {
     "run_id": "Physics_003_20260321_135653",
     "task_id": "Physics_003",
     "timestamp": "20260321_135653",
@@ -8,6 +38,86 @@
     "model": "claude-opus-4-6[1m]",
     "duration_seconds": 378,
     "total_score": 46.5
+  },
+  {
+    "run_id": "Physics_002_20260403_001108",
+    "task_id": "Physics_002",
+    "timestamp": "20260403_001108",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 327,
+    "total_score": 27.45
+  },
+  {
+    "run_id": "Physics_002_20260402_124626",
+    "task_id": "Physics_002",
+    "timestamp": "20260402_124626",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 638,
+    "total_score": 21.4
+  },
+  {
+    "run_id": "Physics_002_20260402_002341",
+    "task_id": "Physics_002",
+    "timestamp": "20260402_002341",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 376,
+    "total_score": 25.05
+  },
+  {
+    "run_id": "Physics_002_20260401_130518",
+    "task_id": "Physics_002",
+    "timestamp": "20260401_130518",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 194,
+    "total_score": 10.35
+  },
+  {
+    "run_id": "Physics_001_20260403_000425",
+    "task_id": "Physics_001",
+    "timestamp": "20260403_000425",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 392,
+    "total_score": 32.0
+  },
+  {
+    "run_id": "Physics_001_20260402_124607",
+    "task_id": "Physics_001",
+    "timestamp": "20260402_124607",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 566,
+    "total_score": 25.7
+  },
+  {
+    "run_id": "Physics_001_20260402_002321",
+    "task_id": "Physics_001",
+    "timestamp": "20260402_002321",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 947,
+    "total_score": 30.25
+  },
+  {
+    "run_id": "Physics_001_20260401_130120",
+    "task_id": "Physics_001",
+    "timestamp": "20260401_130120",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "D_s_gl",
+    "duration_seconds": 213,
+    "total_score": 27.45
   },
   {
     "run_id": "Physics_000_20260330_122122",
@@ -60,6 +170,116 @@
     "total_score": 32.1
   },
   {
+    "run_id": "Neuroscience_003_20260402_235804",
+    "task_id": "Neuroscience_003",
+    "timestamp": "20260402_235804",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 367,
+    "total_score": 15.05
+  },
+  {
+    "run_id": "Neuroscience_003_20260402_124451",
+    "task_id": "Neuroscience_003",
+    "timestamp": "20260402_124451",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 1041,
+    "total_score": 15.8
+  },
+  {
+    "run_id": "Neuroscience_003_20260402_011020",
+    "task_id": "Neuroscience_003",
+    "timestamp": "20260402_011020",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 713,
+    "total_score": 7.7
+  },
+  {
+    "run_id": "Neuroscience_003_20260401_125606",
+    "task_id": "Neuroscience_003",
+    "timestamp": "20260401_125606",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 155,
+    "total_score": 4.25
+  },
+  {
+    "run_id": "Neuroscience_002_20260402_234030",
+    "task_id": "Neuroscience_002",
+    "timestamp": "20260402_234030",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 1043,
+    "total_score": 1.0
+  },
+  {
+    "run_id": "Neuroscience_002_20260402_134508",
+    "task_id": "Neuroscience_002",
+    "timestamp": "20260402_134508",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 3363,
+    "total_score": 2.0
+  },
+  {
+    "run_id": "Neuroscience_002_20260402_002234",
+    "task_id": "Neuroscience_002",
+    "timestamp": "20260402_002234",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 999,
+    "total_score": 0.75
+  },
+  {
+    "run_id": "Neuroscience_002_20260401_124612",
+    "task_id": "Neuroscience_002",
+    "timestamp": "20260401_124612",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 295,
+    "total_score": 0.4
+  },
+  {
+    "run_id": "Neuroscience_001_20260402_233406",
+    "task_id": "Neuroscience_001",
+    "timestamp": "20260402_233406",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 368,
+    "total_score": 3.75
+  },
+  {
+    "run_id": "Neuroscience_001_20260402_122849",
+    "task_id": "Neuroscience_001",
+    "timestamp": "20260402_122849",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 625,
+    "total_score": 2.55
+  },
+  {
+    "run_id": "Neuroscience_001_20260401_123958",
+    "task_id": "Neuroscience_001",
+    "timestamp": "20260401_123958",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 100,
+    "total_score": 1.2
+  },
+  {
     "run_id": "Neuroscience_001_20260321_182515",
     "task_id": "Neuroscience_001",
     "timestamp": "20260321_182515",
@@ -68,6 +288,36 @@
     "model": "claude-opus-4-6[1m]",
     "duration_seconds": 669,
     "total_score": 4.95
+  },
+  {
+    "run_id": "Neuroscience_000_20260402_232819",
+    "task_id": "Neuroscience_000",
+    "timestamp": "20260402_232819",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 336,
+    "total_score": 13.2
+  },
+  {
+    "run_id": "Neuroscience_000_20260402_122827",
+    "task_id": "Neuroscience_000",
+    "timestamp": "20260402_122827",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 827,
+    "total_score": 14.0
+  },
+  {
+    "run_id": "Neuroscience_000_20260401_123535",
+    "task_id": "Neuroscience_000",
+    "timestamp": "20260401_123535",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 125,
+    "total_score": 7.4
   },
   {
     "run_id": "Neuroscience_000_20260330_121229",
@@ -90,6 +340,156 @@
     "total_score": 8.6
   },
   {
+    "run_id": "Math_003_20260402_232335",
+    "task_id": "Math_003",
+    "timestamp": "20260402_232335",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 281,
+    "total_score": 0.0
+  },
+  {
+    "run_id": "Math_003_20260402_122648",
+    "task_id": "Math_003",
+    "timestamp": "20260402_122648",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 921,
+    "total_score": 10.0
+  },
+  {
+    "run_id": "Math_003_20260401_235138",
+    "task_id": "Math_003",
+    "timestamp": "20260401_235138",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 1159,
+    "total_score": 29.6
+  },
+  {
+    "run_id": "Math_003_20260401_122803",
+    "task_id": "Math_003",
+    "timestamp": "20260401_122803",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 130,
+    "total_score": 0.0
+  },
+  {
+    "run_id": "Math_002_20260402_231652",
+    "task_id": "Math_002",
+    "timestamp": "20260402_231652",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 387,
+    "total_score": 8.6
+  },
+  {
+    "run_id": "Math_002_20260402_122607",
+    "task_id": "Math_002",
+    "timestamp": "20260402_122607",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 2451,
+    "total_score": 7.4
+  },
+  {
+    "run_id": "Math_002_20260401_235043",
+    "task_id": "Math_002",
+    "timestamp": "20260401_235043",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 1781,
+    "total_score": 10.2
+  },
+  {
+    "run_id": "Math_002_20260401_122108",
+    "task_id": "Math_002",
+    "timestamp": "20260401_122108",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 125,
+    "total_score": 0.0
+  },
+  {
+    "run_id": "Math_001_20260402_231143",
+    "task_id": "Math_001",
+    "timestamp": "20260402_231143",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 299,
+    "total_score": 23.9
+  },
+  {
+    "run_id": "Math_001_20260402_122551",
+    "task_id": "Math_001",
+    "timestamp": "20260402_122551",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 512,
+    "total_score": 39.0
+  },
+  {
+    "run_id": "Math_001_20260401_235039",
+    "task_id": "Math_001",
+    "timestamp": "20260401_235039",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 1846,
+    "total_score": 44.1
+  },
+  {
+    "run_id": "Math_001_20260401_121718",
+    "task_id": "Math_001",
+    "timestamp": "20260401_121718",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 88,
+    "total_score": 30.6
+  },
+  {
+    "run_id": "Math_000_20260402_230222",
+    "task_id": "Math_000",
+    "timestamp": "20260402_230222",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 549,
+    "total_score": 24.7
+  },
+  {
+    "run_id": "Math_000_20260401_233652",
+    "task_id": "Math_000",
+    "timestamp": "20260401_233652",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 559,
+    "total_score": 26.2
+  },
+  {
+    "run_id": "Math_000_20260401_120618",
+    "task_id": "Math_000",
+    "timestamp": "20260401_120618",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 221,
+    "total_score": 17.7
+  },
+  {
     "run_id": "Math_000_20260330_120257",
     "task_id": "Math_000",
     "timestamp": "20260330_120257",
@@ -108,6 +508,126 @@
     "model": "gpt-5.4",
     "duration_seconds": 498,
     "total_score": 26.65
+  },
+  {
+    "run_id": "Material_003_20260402_225655",
+    "task_id": "Material_003",
+    "timestamp": "20260402_225655",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 305,
+    "total_score": 20.1
+  },
+  {
+    "run_id": "Material_003_20260402_112258",
+    "task_id": "Material_003",
+    "timestamp": "20260402_112258",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 3645,
+    "total_score": 21.8
+  },
+  {
+    "run_id": "Material_003_20260401_232634",
+    "task_id": "Material_003",
+    "timestamp": "20260401_232634",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 2248,
+    "total_score": 28.8
+  },
+  {
+    "run_id": "Material_003_20260401_115948",
+    "task_id": "Material_003",
+    "timestamp": "20260401_115948",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 147,
+    "total_score": 12.35
+  },
+  {
+    "run_id": "Material_002_20260402_225007",
+    "task_id": "Material_002",
+    "timestamp": "20260402_225007",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 398,
+    "total_score": 6.12
+  },
+  {
+    "run_id": "Material_002_20260402_113105",
+    "task_id": "Material_002",
+    "timestamp": "20260402_113105",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 782,
+    "total_score": 0.99
+  },
+  {
+    "run_id": "Material_002_20260401_231210",
+    "task_id": "Material_002",
+    "timestamp": "20260401_231210",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 814,
+    "total_score": 35.1
+  },
+  {
+    "run_id": "Material_002_20260401_115629",
+    "task_id": "Material_002",
+    "timestamp": "20260401_115629",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 157,
+    "total_score": 14.9
+  },
+  {
+    "run_id": "Material_001_20260402_224523",
+    "task_id": "Material_001",
+    "timestamp": "20260402_224523",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 275,
+    "total_score": 13.45
+  },
+  {
+    "run_id": "Material_001_20260402_112556",
+    "task_id": "Material_001",
+    "timestamp": "20260402_112556",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 932,
+    "total_score": 11.55
+  },
+  {
+    "run_id": "Material_001_20260401_224352",
+    "task_id": "Material_001",
+    "timestamp": "20260401_224352",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 1111,
+    "total_score": 23.6
+  },
+  {
+    "run_id": "Material_001_20260401_113052",
+    "task_id": "Material_001",
+    "timestamp": "20260401_113052",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 89,
+    "total_score": 1.75
   },
   {
     "run_id": "Material_000_20260330_112849",
@@ -160,6 +680,76 @@
     "total_score": 23.0
   },
   {
+    "run_id": "Life_003_20260402_223914",
+    "task_id": "Life_003",
+    "timestamp": "20260402_223914",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 356,
+    "total_score": 34.5
+  },
+  {
+    "run_id": "Life_003_20260402_025011",
+    "task_id": "Life_003",
+    "timestamp": "20260402_025011",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 1088,
+    "total_score": 36.0
+  },
+  {
+    "run_id": "Life_003_20260401_200717",
+    "task_id": "Life_003",
+    "timestamp": "20260401_200717",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 278,
+    "total_score": 27.6
+  },
+  {
+    "run_id": "Life_003_20260401_112646",
+    "task_id": "Life_003",
+    "timestamp": "20260401_112646",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 228,
+    "total_score": 29.3
+  },
+  {
+    "run_id": "Life_002_20260402_024836",
+    "task_id": "Life_002",
+    "timestamp": "20260402_024836",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 1173,
+    "total_score": 1.5
+  },
+  {
+    "run_id": "Life_002_20260401_200700",
+    "task_id": "Life_002",
+    "timestamp": "20260401_200700",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 1072,
+    "total_score": 6.9
+  },
+  {
+    "run_id": "Life_002_20260401_112219",
+    "task_id": "Life_002",
+    "timestamp": "20260401_112219",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 161,
+    "total_score": 4.9
+  },
+  {
     "run_id": "Life_002_20260321_145056",
     "task_id": "Life_002",
     "timestamp": "20260321_145056",
@@ -170,6 +760,46 @@
     "total_score": 9.7
   },
   {
+    "run_id": "Life_001_20260402_223418",
+    "task_id": "Life_001",
+    "timestamp": "20260402_223418",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 285,
+    "total_score": 13.35
+  },
+  {
+    "run_id": "Life_001_20260402_024829",
+    "task_id": "Life_001",
+    "timestamp": "20260402_024829",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 426,
+    "total_score": 12.7
+  },
+  {
+    "run_id": "Life_001_20260401_200652",
+    "task_id": "Life_001",
+    "timestamp": "20260401_200652",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 304,
+    "total_score": 16.85
+  },
+  {
+    "run_id": "Life_001_20260401_111910",
+    "task_id": "Life_001",
+    "timestamp": "20260401_111910",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 98,
+    "total_score": 9.65
+  },
+  {
     "run_id": "Life_001_20260321_181849",
     "task_id": "Life_001",
     "timestamp": "20260321_181849",
@@ -178,6 +808,16 @@
     "model": "claude-opus-4-6[1m]",
     "duration_seconds": 318,
     "total_score": 19.55
+  },
+  {
+    "run_id": "Life_000_20260401_111247",
+    "task_id": "Life_000",
+    "timestamp": "20260401_111247",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 326,
+    "total_score": 7.95
   },
   {
     "run_id": "Life_000_20260330_111707",
@@ -230,6 +870,126 @@
     "total_score": 7.55
   },
   {
+    "run_id": "Information_003_20260402_222436",
+    "task_id": "Information_003",
+    "timestamp": "20260402_222436",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 570,
+    "total_score": 5.2
+  },
+  {
+    "run_id": "Information_003_20260402_023453",
+    "task_id": "Information_003",
+    "timestamp": "20260402_023453",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 1895,
+    "total_score": 15.6
+  },
+  {
+    "run_id": "Information_003_20260401_224112",
+    "task_id": "Information_003",
+    "timestamp": "20260401_224112",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 3104,
+    "total_score": 17.75
+  },
+  {
+    "run_id": "Information_003_20260331_202744",
+    "task_id": "Information_003",
+    "timestamp": "20260331_202744",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 888,
+    "total_score": 9.2
+  },
+  {
+    "run_id": "Information_002_20260402_222052",
+    "task_id": "Information_002",
+    "timestamp": "20260402_222052",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 222,
+    "total_score": 15.8
+  },
+  {
+    "run_id": "Information_002_20260402_023445",
+    "task_id": "Information_002",
+    "timestamp": "20260402_023445",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 518,
+    "total_score": 36.8
+  },
+  {
+    "run_id": "Information_002_20260401_192455",
+    "task_id": "Information_002",
+    "timestamp": "20260401_192455",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 315,
+    "total_score": 27.1
+  },
+  {
+    "run_id": "Information_002_20260331_202504",
+    "task_id": "Information_002",
+    "timestamp": "20260331_202504",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 146,
+    "total_score": 11.5
+  },
+  {
+    "run_id": "Information_001_20260402_221510",
+    "task_id": "Information_001",
+    "timestamp": "20260402_221510",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 309,
+    "total_score": 0.0
+  },
+  {
+    "run_id": "Information_001_20260402_023436",
+    "task_id": "Information_001",
+    "timestamp": "20260402_023436",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 695,
+    "total_score": 5.6
+  },
+  {
+    "run_id": "Information_001_20260401_192424",
+    "task_id": "Information_001",
+    "timestamp": "20260401_192424",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 591,
+    "total_score": 7.0
+  },
+  {
+    "run_id": "Information_001_20260331_202137",
+    "task_id": "Information_001",
+    "timestamp": "20260331_202137",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 137,
+    "total_score": 1.0
+  },
+  {
     "run_id": "Information_000_20260330_111006",
     "task_id": "Information_000",
     "timestamp": "20260330_111006",
@@ -280,6 +1040,76 @@
     "total_score": 10.0
   },
   {
+    "run_id": "Energy_003_20260402_220933",
+    "task_id": "Energy_003",
+    "timestamp": "20260402_220933",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 322,
+    "total_score": 25.5
+  },
+  {
+    "run_id": "Energy_003_20260402_021829",
+    "task_id": "Energy_003",
+    "timestamp": "20260402_021829",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 781,
+    "total_score": 21.5
+  },
+  {
+    "run_id": "Energy_003_20260401_200259",
+    "task_id": "Energy_003",
+    "timestamp": "20260401_200259",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 3649,
+    "total_score": 15.3
+  },
+  {
+    "run_id": "Energy_003_20260331_201029",
+    "task_id": "Energy_003",
+    "timestamp": "20260331_201029",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 101,
+    "total_score": 9.0
+  },
+  {
+    "run_id": "Energy_002_20260402_021822",
+    "task_id": "Energy_002",
+    "timestamp": "20260402_021822",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 637,
+    "total_score": 33.0
+  },
+  {
+    "run_id": "Energy_002_20260401_191836",
+    "task_id": "Energy_002",
+    "timestamp": "20260401_191836",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 1443,
+    "total_score": 38.6
+  },
+  {
+    "run_id": "Energy_002_20260331_200739",
+    "task_id": "Energy_002",
+    "timestamp": "20260331_200739",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 166,
+    "total_score": 27.85
+  },
+  {
     "run_id": "Energy_002_20260321_150347",
     "task_id": "Energy_002",
     "timestamp": "20260321_150347",
@@ -288,6 +1118,46 @@
     "model": "",
     "duration_seconds": 334,
     "total_score": 31.0
+  },
+  {
+    "run_id": "Energy_001_20260402_215912",
+    "task_id": "Energy_001",
+    "timestamp": "20260402_215912",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 609,
+    "total_score": 15.5
+  },
+  {
+    "run_id": "Energy_001_20260402_021036",
+    "task_id": "Energy_001",
+    "timestamp": "20260402_021036",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 1855,
+    "total_score": 24.5
+  },
+  {
+    "run_id": "Energy_001_20260401_191819",
+    "task_id": "Energy_001",
+    "timestamp": "20260401_191819",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 463,
+    "total_score": 21.7
+  },
+  {
+    "run_id": "Energy_001_20260331_200332",
+    "task_id": "Energy_001",
+    "timestamp": "20260331_200332",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 229,
+    "total_score": 7.6
   },
   {
     "run_id": "Energy_000_20260330_104517",
@@ -340,6 +1210,76 @@
     "total_score": 11.3
   },
   {
+    "run_id": "Earth_003_20260402_215412",
+    "task_id": "Earth_003",
+    "timestamp": "20260402_215412",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 286,
+    "total_score": 0.9
+  },
+  {
+    "run_id": "Earth_003_20260402_020613",
+    "task_id": "Earth_003",
+    "timestamp": "20260402_020613",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 478,
+    "total_score": 0.0
+  },
+  {
+    "run_id": "Earth_003_20260401_191636",
+    "task_id": "Earth_003",
+    "timestamp": "20260401_191636",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 1047,
+    "total_score": 1.0
+  },
+  {
+    "run_id": "Earth_003_20260331_201851",
+    "task_id": "Earth_003",
+    "timestamp": "20260331_201851",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 86,
+    "total_score": 0.6
+  },
+  {
+    "run_id": "Earth_002_20260402_214628",
+    "task_id": "Earth_002",
+    "timestamp": "20260402_214628",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 449,
+    "total_score": 16.8
+  },
+  {
+    "run_id": "Earth_002_20260401_191349",
+    "task_id": "Earth_002",
+    "timestamp": "20260401_191349",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 690,
+    "total_score": 31.7
+  },
+  {
+    "run_id": "Earth_002_20260331_201408",
+    "task_id": "Earth_002",
+    "timestamp": "20260331_201408",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 262,
+    "total_score": 9.9
+  },
+  {
     "run_id": "Earth_002_20260321_014305",
     "task_id": "Earth_002",
     "timestamp": "20260321_014305",
@@ -348,6 +1288,46 @@
     "model": "gpt-5.4",
     "duration_seconds": 1367,
     "total_score": 22.6
+  },
+  {
+    "run_id": "Earth_001_20260402_214137",
+    "task_id": "Earth_001",
+    "timestamp": "20260402_214137",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 276,
+    "total_score": 31.38
+  },
+  {
+    "run_id": "Earth_001_20260402_020635",
+    "task_id": "Earth_001",
+    "timestamp": "20260402_020635",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 622,
+    "total_score": 40.87
+  },
+  {
+    "run_id": "Earth_001_20260401_191305",
+    "task_id": "Earth_001",
+    "timestamp": "20260401_191305",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 455,
+    "total_score": 33.56
+  },
+  {
+    "run_id": "Earth_001_20260331_201226",
+    "task_id": "Earth_001",
+    "timestamp": "20260331_201226",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 79,
+    "total_score": 25.3
   },
   {
     "run_id": "Earth_000_20260330_104037",
@@ -400,6 +1380,126 @@
     "total_score": 24.6
   },
   {
+    "run_id": "Chemistry_003_20260402_213222",
+    "task_id": "Chemistry_003",
+    "timestamp": "20260402_213222",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 533,
+    "total_score": 9.5
+  },
+  {
+    "run_id": "Chemistry_003_20260402_133344",
+    "task_id": "Chemistry_003",
+    "timestamp": "20260402_133344",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 3267,
+    "total_score": 12.3
+  },
+  {
+    "run_id": "Chemistry_003_20260401_190857",
+    "task_id": "Chemistry_003",
+    "timestamp": "20260401_190857",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 7930,
+    "total_score": 18.0
+  },
+  {
+    "run_id": "Chemistry_003_20260331_195455",
+    "task_id": "Chemistry_003",
+    "timestamp": "20260331_195455",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 223,
+    "total_score": 7.5
+  },
+  {
+    "run_id": "Chemistry_002_20260402_212616",
+    "task_id": "Chemistry_002",
+    "timestamp": "20260402_212616",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 356,
+    "total_score": 1.0
+  },
+  {
+    "run_id": "Chemistry_002_20260402_133337",
+    "task_id": "Chemistry_002",
+    "timestamp": "20260402_133337",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 529,
+    "total_score": 1.0
+  },
+  {
+    "run_id": "Chemistry_002_20260401_154822",
+    "task_id": "Chemistry_002",
+    "timestamp": "20260401_154822",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 3258,
+    "total_score": 1.0
+  },
+  {
+    "run_id": "Chemistry_002_20260331_195151",
+    "task_id": "Chemistry_002",
+    "timestamp": "20260331_195151",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 90,
+    "total_score": 0.0
+  },
+  {
+    "run_id": "Chemistry_001_20260402_212107",
+    "task_id": "Chemistry_001",
+    "timestamp": "20260402_212107",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 294,
+    "total_score": 0.5
+  },
+  {
+    "run_id": "Chemistry_001_20260402_133326",
+    "task_id": "Chemistry_001",
+    "timestamp": "20260402_133326",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 1479,
+    "total_score": 6.2
+  },
+  {
+    "run_id": "Chemistry_001_20260401_145553",
+    "task_id": "Chemistry_001",
+    "timestamp": "20260401_145553",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 3032,
+    "total_score": 3.5
+  },
+  {
+    "run_id": "Chemistry_001_20260331_194645",
+    "task_id": "Chemistry_001",
+    "timestamp": "20260331_194645",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 248,
+    "total_score": 0.5
+  },
+  {
     "run_id": "Chemistry_000_20260330_095531",
     "task_id": "Chemistry_000",
     "timestamp": "20260330_095531",
@@ -450,6 +1550,76 @@
     "total_score": 16.85
   },
   {
+    "run_id": "Astronomy_003_20260402_211549",
+    "task_id": "Astronomy_003",
+    "timestamp": "20260402_211549",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 301,
+    "total_score": 47.3
+  },
+  {
+    "run_id": "Astronomy_003_20260402_011445",
+    "task_id": "Astronomy_003",
+    "timestamp": "20260402_011445",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 385,
+    "total_score": 44.0
+  },
+  {
+    "run_id": "Astronomy_003_20260401_143610",
+    "task_id": "Astronomy_003",
+    "timestamp": "20260401_143610",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 1078,
+    "total_score": 46.5
+  },
+  {
+    "run_id": "Astronomy_003_20260331_193503",
+    "task_id": "Astronomy_003",
+    "timestamp": "20260331_193503",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 101,
+    "total_score": 44.2
+  },
+  {
+    "run_id": "Astronomy_002_20260401_141959",
+    "task_id": "Astronomy_002",
+    "timestamp": "20260401_141959",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 799,
+    "total_score": 23.5
+  },
+  {
+    "run_id": "Astronomy_002_20260401_135149",
+    "task_id": "Astronomy_002",
+    "timestamp": "20260401_135149",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 716,
+    "total_score": 12.7
+  },
+  {
+    "run_id": "Astronomy_002_20260331_193218",
+    "task_id": "Astronomy_002",
+    "timestamp": "20260331_193218",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 146,
+    "total_score": 10.0
+  },
+  {
     "run_id": "Astronomy_002_20260321_184042",
     "task_id": "Astronomy_002",
     "timestamp": "20260321_184042",
@@ -458,6 +1628,46 @@
     "model": "",
     "duration_seconds": 242,
     "total_score": 11.6
+  },
+  {
+    "run_id": "Astronomy_001_20260402_210925",
+    "task_id": "Astronomy_001",
+    "timestamp": "20260402_210925",
+    "status": "completed",
+    "agent_name": "OpenClaw",
+    "model": "openai/gpt-5.4",
+    "duration_seconds": 314,
+    "total_score": 36.0
+  },
+  {
+    "run_id": "Astronomy_001_20260401_141304",
+    "task_id": "Astronomy_001",
+    "timestamp": "20260401_141304",
+    "status": "completed",
+    "agent_name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "duration_seconds": 308,
+    "total_score": 27.4
+  },
+  {
+    "run_id": "Astronomy_001_20260401_120316",
+    "task_id": "Astronomy_001",
+    "timestamp": "20260401_120316",
+    "status": "completed",
+    "agent_name": "Codex CLI",
+    "model": "gpt-5.4",
+    "duration_seconds": 646,
+    "total_score": 20.0
+  },
+  {
+    "run_id": "Astronomy_001_20260331_192927",
+    "task_id": "Astronomy_001",
+    "timestamp": "20260331_192927",
+    "status": "completed",
+    "agent_name": "Nanobot",
+    "model": "",
+    "duration_seconds": 154,
+    "total_score": 20.4
   },
   {
     "run_id": "Astronomy_000_20260330_094408",

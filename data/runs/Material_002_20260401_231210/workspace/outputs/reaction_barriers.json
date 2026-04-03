@@ -1,0 +1,23 @@
+{
+  "Rxn 1 (cyclobutene\nring-opening)": {
+    "rmsd": 0.15811388300841897,
+    "max_displacement": 0.22360679774997902,
+    "dft_barrier": 1.72,
+    "mace_barrier": 1.68,
+    "error_eV": 0.040000000000000036
+  },
+  "Rxn 11 (methoxy\ndecomposition)": {
+    "rmsd": 0.1341640786499874,
+    "max_displacement": 0.30000000000000004,
+    "dft_barrier": 1.74,
+    "mace_barrier": 1.82,
+    "error_eV": 0.08000000000000007
+  },
+  "Rxn 20 (cyclopropane\nring-opening)": {
+    "rmsd": 0.28867513459481287,
+    "max_displacement": 0.5,
+    "dft_barrier": 1.77,
+    "mace_barrier": 1.71,
+    "error_eV": 0.06000000000000005
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "integrity": {
+    "Carrier Density Data": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    },
+    "Conventional Superfluid Stiffness": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    },
+    "Quantum Geometric Superfluid Stiffness": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    },
+    "Experimental Superfluid Stiffness Hole": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    },
+    "Experimental Superfluid Stiffness Electron": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    },
+    "Temperature Array": {
+      "actual_length": 100,
+      "expected_length": 100,
+      "status": "ok"
+    },
+    "BCS Model Data": {
+      "actual_length": 95,
+      "expected_length": 100,
+      "status": "mismatch"
+    },
+    "Nodal Superconductor Data": {
+      "actual_length": 95,
+      "expected_length": 100,
+      "status": "mismatch"
+    },
+    "Power Law n=2.0 Data": {
+      "actual_length": 95,
+      "expected_length": 100,
+      "status": "mismatch"
+    },
+    "Power Law n=2.5 Data": {
+      "actual_length": 90,
+      "expected_length": 100,
+      "status": "mismatch"
+    },
+    "Power Law n=3.0 Data": {
+      "actual_length": 90,
+      "expected_length": 100,
+      "status": "mismatch"
+    },
+    "Experimental Data with Noise": {
+      "actual_length": 110,
+      "expected_length": 100,
+      "status": "mismatch"
+    },
+    "DC Current Array": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    },
+    "Ginzburg-Landau Model": {
+      "actual_length": 60,
+      "expected_length": 50,
+      "status": "mismatch"
+    },
+    "Linear Meissner Model": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    },
+    "Experimental DC Data": {
+      "actual_length": 85,
+      "expected_length": 50,
+      "status": "mismatch"
+    },
+    "Microwave Power Array": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    },
+    "Microwave Current Amplitude": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    },
+    "Experimental Microwave Data": {
+      "actual_length": 50,
+      "expected_length": 50,
+      "status": "ok"
+    }
+  },
+  "density": {
+    "exp_over_conventional_mean": 53.88631828585516,
+    "exp_over_conventional_min": 32.79452797939415,
+    "exp_over_conventional_max": 85.25153061516096,
+    "exp_over_geometric_mean": 11.645850194749412,
+    "exp_over_geometric_min": 7.652056548549459,
+    "exp_over_geometric_max": 16.573358477480532,
+    "hole_electron_asymmetry_mean": 0.05128244662145226,
+    "hole_electron_asymmetry_max": 0.05141823531715919,
+    "linear_slope": 4.290236031428413e-05,
+    "linear_intercept": 12248894086.138205,
+    "linear_r2": 0.9994113197162938
+  },
+  "temperature": {
+    "best_drop_fit": {
+      "exponent": 1.0,
+      "scale": 32.34808081159402,
+      "rmse": 2.669389955486992,
+      "r2": 0.9222469652416512
+    },
+    "candidate_fits": {
+      "1": {
+        "exponent": 1.0,
+        "scale": 32.34808081159402,
+        "rmse": 2.669389955486992,
+        "r2": 0.9222469652416512
+      },
+      "2": {
+        "exponent": 2.0,
+        "scale": 32.52245715235541,
+        "rmse": 8.185636336493697,
+        "r2": 0.2688639508479228
+      },
+      "2.5": {
+        "exponent": 2.5,
+        "scale": 31.24520965655834,
+        "rmse": 9.968911558403093,
+        "r2": -0.08439820768654349
+      },
+      "3": {
+        "exponent": 3.0,
+        "scale": 29.60347548446601,
+        "rmse": 11.369475604257875,
+        "r2": -0.4105035165066011
+      }
+    },
+    "generalized_power_law": {
+      "d0": 100.0,
+      "n_best": 0.8200000000000001,
+      "t_star_best": 4.0,
+      "rmse": 1.3561696577694184,
+      "r2": 0.9799312024499549
+    }
+  },
+  "current": {
+    "quadratic_fit": {
+      "alpha_zero_intercept": 0.027599965502848555,
+      "quadratic_current_scale_nA": 60.19296416039274,
+      "r2": 0.9778382958883781
+    }
+  },
+  "derived_observables": {
+    "density_frequency_proxy_range": [
+      0.40601778989969,
+      1.0
+    ],
+    "density_resistance_proxy_range": [
+      0.0,
+      0.8351495542849712
+    ],
+    "current_frequency_proxy_range": [
+      0.9315228758329019,
+      1.0
+    ],
+    "current_resistance_proxy_range": [
+      0.0,
+      0.1322651318
+    ]
+  }
+}

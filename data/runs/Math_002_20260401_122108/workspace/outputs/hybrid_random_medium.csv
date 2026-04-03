@@ -1,0 +1,6 @@
+dataset,file,algo,n_agents,makespan,runtime,collisions
+random_medium,eval_map_1.npy,hybrid,10,26,0.3536856174468994,0
+random_medium,eval_map_10.npy,hybrid,10,29,0.17083191871643066,0
+random_medium,eval_map_100.npy,hybrid,10,22,0.1043703556060791,0
+random_medium,eval_map_11.npy,hybrid,10,21,0.1419203281402588,0
+random_medium,eval_map_12.npy,hybrid,10,27,0.1631641387939453,0

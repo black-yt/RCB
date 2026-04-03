@@ -1,0 +1,47 @@
+{
+  "global_encoder_size": 336,
+  "roi_scales_tested": [
+    0.18,
+    0.25,
+    0.33
+  ],
+  "image_summaries": [
+    {
+      "image_name": "demo1.png",
+      "width": 1024,
+      "height": 768,
+      "megapixels": 0.786432,
+      "best_roi_scale": 0.25,
+      "best_detail_recovery_gain": 1.4446196975778292,
+      "best_high_freq_recovery_gain": 2.1845793244029443,
+      "best_encoder_pixel_gain": 16.0
+    },
+    {
+      "image_name": "demo2.png",
+      "width": 2250,
+      "height": 1500,
+      "megapixels": 3.375,
+      "best_roi_scale": 0.33,
+      "best_detail_recovery_gain": 5.45232673907898,
+      "best_high_freq_recovery_gain": 16.27729527976554,
+      "best_encoder_pixel_gain": 9.188924283263907
+    },
+    {
+      "image_name": "method_case.png",
+      "width": 2500,
+      "height": 1681,
+      "megapixels": 4.2025,
+      "best_roi_scale": 0.33,
+      "best_detail_recovery_gain": 3.628085294788274,
+      "best_high_freq_recovery_gain": 6.831014100852515,
+      "best_encoder_pixel_gain": 9.178269178269177
+    }
+  ],
+  "aggregate": {
+    "mean_detail_recovery_gain": 3.7957987337810812,
+    "mean_high_frequency_recovery_gain": 6.896589693014243,
+    "max_detail_recovery_gain": 6.704101527291685,
+    "min_detail_recovery_gain": 1.3466644731124224
+  },
+  "interpretation": "Values above 1 indicate that the crop-specific view preserves more local detail than the single global fixed-resolution view. Encoder pixel gain estimates how many more encoder pixels are effectively allocated to the selected region when it is processed as a dedicated crop."
+}

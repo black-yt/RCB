@@ -1,0 +1,5 @@
+method,success_rate,runtime_sec,sum_of_costs,makespan,final_collisions
+LNS-PP,0.9762,5.2647,610.4048,32.8333,0.119
+MARL-LNS-PP,1.0,1.3547,715.4048,38.5714,0.0
+PP,0.9524,0.5143,615.975,32.675,-0.0476
+PP-RR,1.0,0.5533,606.6429,32.619,0.0

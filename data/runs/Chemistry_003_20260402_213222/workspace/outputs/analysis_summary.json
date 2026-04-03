@@ -1,0 +1,35 @@
+{
+  "random_charges": {
+    "proxy_energy_mean": -8.19933844397306,
+    "proxy_energy_std": 5.205470728510573,
+    "dipole_norm_mean": 76.81545879750246,
+    "dipole_norm_std": 28.91874226827327,
+    "quadrupole_norm_mean": 4752.426893618838,
+    "quadrupole_norm_std": 1760.6844100622382,
+    "max_abs_net_charge": 0.0
+  },
+  "charged_dimer": {
+    "short_range_fit": {
+      "rmse": 0.37990342728266147,
+      "mae": 0.3108634905332097,
+      "r2": 0.003514337150998026
+    },
+    "long_range_fit": {
+      "rmse": 0.35887057275585715,
+      "mae": 0.29699246034849586,
+      "r2": 0.11079821235502696
+    }
+  },
+  "ag3_chargestates": {
+    "geometry_only_fit": {
+      "rmse": 0.25299675053618403,
+      "mae": 0.20727980378831132,
+      "r2": 0.8602180592958956
+    },
+    "geometry_plus_charge_fit": {
+      "rmse": 0.25299675053618187,
+      "mae": 0.20727980378830652,
+      "r2": 0.8602180592958979
+    }
+  }
+}

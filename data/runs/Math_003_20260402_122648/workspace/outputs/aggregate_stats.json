@@ -1,0 +1,51 @@
+{
+  "num_problems": 30,
+  "num_definitions": 69,
+  "num_rules": 43,
+  "constructor_histogram": {
+    "segment": 5,
+    "on_tline": 17,
+    "on_circle": 72,
+    "on_pline": 5,
+    "on_line": 120,
+    "triangle": 23,
+    "orthocenter": 5,
+    "incenter2": 2,
+    "foot": 11,
+    "reflect": 10,
+    "midpoint": 14,
+    "on_bline": 18,
+    "circle": 28,
+    "angle_bisector": 8,
+    "on_aline": 13,
+    "eqdistance": 3,
+    "incenter": 3,
+    "cc_tangent": 1,
+    "mirror": 6,
+    "iso_triangle": 1,
+    "excenter2": 1,
+    "r_triangle": 1,
+    "on_dia": 2,
+    "angle_mirror": 1,
+    "parallelogram": 1,
+    "eqangle3": 2,
+    "free": 1,
+    "eqangle2": 1
+  },
+  "initial_predicate_histogram": {
+    "diff": 186,
+    "perp": 69,
+    "cong": 202,
+    "ncoll": 76,
+    "para": 7,
+    "coll": 160,
+    "eqangle": 62
+  },
+  "solved_problems": [],
+  "solver_totals": {
+    "definitions": 0,
+    "forward": 0,
+    "hybrid": 0
+  },
+  "mean_runtime_sec": 0.0008
+}

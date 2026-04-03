@@ -1,0 +1,165 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_matbg.py",
+    "path": "code/analyze_matbg.py",
+    "type": "file",
+    "size": 16102,
+    "mtime": 1775132340.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "MATBG Superfluid Stiffness Core Dataset.txt",
+    "path": "data/MATBG Superfluid Stiffness Core Dataset.txt",
+    "type": "file",
+    "size": 19467,
+    "mtime": 1770189695.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_metrics.json",
+    "path": "outputs/analysis_metrics.json",
+    "type": "file",
+    "size": 4435,
+    "mtime": 1775132338.0,
+    "exported": true
+  },
+  {
+    "name": "data_integrity.json",
+    "path": "outputs/data_integrity.json",
+    "type": "file",
+    "size": 2123,
+    "mtime": 1775132338.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3666801,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 225641,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3542674,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 17317606,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_current_dependence.png",
+    "path": "report/images/figure_current_dependence.png",
+    "type": "file",
+    "size": 90673,
+    "mtime": 1775132338.0,
+    "exported": true
+  },
+  {
+    "name": "figure_current_derived_observables.png",
+    "path": "report/images/figure_current_derived_observables.png",
+    "type": "file",
+    "size": 79276,
+    "mtime": 1775132338.0,
+    "exported": true
+  },
+  {
+    "name": "figure_data_integrity.png",
+    "path": "report/images/figure_data_integrity.png",
+    "type": "file",
+    "size": 162585,
+    "mtime": 1775132338.0,
+    "exported": true
+  },
+  {
+    "name": "figure_density_derived_observables.png",
+    "path": "report/images/figure_density_derived_observables.png",
+    "type": "file",
+    "size": 73334,
+    "mtime": 1775132338.0,
+    "exported": true
+  },
+  {
+    "name": "figure_density_stiffness.png",
+    "path": "report/images/figure_density_stiffness.png",
+    "type": "file",
+    "size": 85701,
+    "mtime": 1775132338.0,
+    "exported": true
+  },
+  {
+    "name": "figure_temperature_dependence.png",
+    "path": "report/images/figure_temperature_dependence.png",
+    "type": "file",
+    "size": 120290,
+    "mtime": 1775132338.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14333,
+    "mtime": 1775132341.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5571,
+    "mtime": 1775105167.0,
+    "exported": true
+  }
+]

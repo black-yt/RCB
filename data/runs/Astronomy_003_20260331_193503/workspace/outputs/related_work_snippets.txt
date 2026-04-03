@@ -1,0 +1,292 @@
+===== PAPER 0 =====
+Compact binary waveform center-of-mass corrections
+Charles J. Woodford,1Michael Boyle,2and Harald P. Pfeiﬀer1,3
+1Canadian Institute for Theoretical Astrophysics, University of Toronto, 60 Saint George Street, Toronto, Ontario M5S 3H8, Canada
+2Cornell Center for Astrophysics and Planetary Science, Cornell University, Ithaca, New York 14853, USA
+3Albert-Einstein-Institut, Max-Planck-Institut für Gravitationsphysik, D-14476 Potsdam-Golm, Germany
+(Dated: December 12, 2019)
+Wepresentadetailedstudyofthecenter-of-mass(c.m.) motionseeninsimulationsproducedbytheSimulating
+eXtremeSpacetimes(SXS)collaboration. Weinvestigatepotentialphysicalsourcesforthelargec.m. motion
+in binary black hole simulations and ﬁnd that a signiﬁcant fraction of the c.m. motion cannot be explained
+physically,thus concludingthatitis largelya gaugeeﬀect. These largec.m. displacementscausemodemixing
+inthegravitationalwaveform,mosteasilyrecognizedasamplitudeoscillationscausedbythedominant (2;2)
+modes mixing into subdominant modes. This mixing does notdiminish with increasing distance from the source;
+it is present even in asymptotic waveforms, regardless of the method of data extraction. We describe the current
+c.m.-correction method used by the SXS collaboration, which is based on counteracting the motion of the c.m. as
+measured by the trajectories of the apparent horizons in the simulations, and investigate potential methods to
+improvethatcorrectiontothewaveform. Wealsopresentacomplementarymethodforcomputinganoptimal
+c.m. correction or evaluating any other c.m. transformation based solely on the asymptotic waveform data.
+I. INTRODUCTION
+Binary black hole (BBH) systems have been studied for
+decades, beginning with analytic work and branching out into
+numerical relativity. With the introduction of gravitational-
+wavedetectors,particularlyLIGO,thepursuitofBBHgravi-
+tationalwaveformshasintensiﬁedinanattempttocreateand
+ﬁll vast waveform template banks. Gravitational waveforms
+created through numerical relativity are generally the most
+accuratewaveformsavailable, andareusedfor parameteresti-
+mation and to compare and improve semianalytic and analytic
+models of BBHs, which in turn are used for gravitational-wave
+detection and parameter estimation [1–3].
+While numerical-relativity waveforms are the most accurate
+BBH waveforms, there are concerns regarding their validity,
+accuracy, and reproducibility. There have been numerous
+discussionsonhowtomeasuretheaccuracyofanumericalrel-
+ativity simulation and some sources of error in the simulations
+have been investigated, including numerical truncation errors,
+errorduetoextractionatﬁniteradiusorimperfectextrapolation
+toinﬁniteradius,anderrorsbetweensimulationsofdiﬀerent
+lengths that otherwise have identical parameters [4–6].
+Though not strictly a source of errorlike those named
+above,therearealsoconsequencesduetothegaugefreedomof
+generalrelativitythatmaybeconfusedforerrorsifnotproperly
+understood, and will eﬀectively become sources of error if
+ignored[7–9]. Gaugefreedomingeneralrelativityaﬀectsall
+numerical relativity simulations, and thus far no numerical
+relativity results in the literature have been in a completely
+speciﬁed gauge due to this inherent gauge freedom. While
+a full accounting of the eﬀects of general gauge freedom is
+beyond thescope ofthiswork,we willaddressthe translation
+andboostdegreesoffreedom. Reference[ 9]identiﬁedthese
+transformations as important for counteracting the observed
+motion of the center of mass in simulations produced by the
+Simulating eXtreme Spacetimes (SXS) collaboration. Here,
+we expand on that analysis, using the recently updated catalogof2,018SXSsimulations[ 10,11],andinvestigatingpossible
+improvements to the correction method.
+A translation ~and a boost ~will transform the waveform h,
+measured at some point distant from the source, as
+h(t)!h
+t+(~+~t)ˆn
++O
+j~jh
++O
+j~+~tj2@2
+th
+;
+(1a)
+h(t)+@th(t) (~+~t)ˆn; (1b)
+where ˆnisthedirectiontotheobserverfromthesource[ 9]. Note
+that thisis independent ofthe distance tothe source; even the
+asymptoticwaveformwillexhibitthisdependenceregardlessof
+anyextrapolation, Cauchy-characteristicextraction, orsimilar
+techniques that may be applied to the data. We can understand
+this intuitively by thinking about a sphere surrounding the
+source. If we displace the source away from the center of
+thesphere,anemittedsignalwillarriveatthepartofthesphere
+closest to the source before it will arrive at the opposite side
+of the sphere. The diﬀerence in arrival times is independent
+of the radius of the sphere; it only depends on the size of the
+displacement. The additional term in Eq. (1b)introduces an
+angular dependence that is not generally included in waveform
+models.
+Figure 1 demonstrates the eﬀects of c.m. motion for two
+systemsfromtheSXScatalog. Themoststrikingexampleis
+theupperpairofpanels,whichshowdatafromanonprecessing
+system with mass ratio 1.23. On physical grounds, there is
+nothing to suggest modulations in the mode ampli
+
+===== PAPER 1 =====
+Nonlinearities in Black Hole Ringdowns
+Keefe Mitman ,1,Macarena Lagos ,2,yLeo C. Stein ,3,zSizheng Ma ,1Lam Hui,4Yanbei Chen ,1
+Nils Deppe ,1François Hébert ,1Lawrence E. Kidder ,5Jordan Moxon ,1
+Mark A. Scheel ,1Saul A. Teukolsky ,1, 5William Throwe ,5and Nils L. Vu6
+1Theoretical Astrophysics 350-17, California Institute of Technology, Pasadena, California 91125, USA
+2Department of Physics and Astronomy, Columbia University, New York, New York 10027, USA
+3Department of Physics and Astronomy, University of Mississippi, University, Mississippi 38677, USA
+4Department of Physics and Astronomy, Columbia University, New York, NY 10027, USA
+5Cornell Center for Astrophysics and Planetary Science, Cornell University, Ithaca, New York 14853, USA
+6Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am Mühlenberg 1, D-14476 Potsdam, Germany
+(Dated: February 24, 2023)
+The gravitational wave strain emitted by a perturbed black hole (BH) ringing down is typically
+modeled analytically using ﬁrst-order BH perturbation theory. In this Letter we show that second-
+order eﬀects are necessary for modeling ringdowns from BH merger simulations. Focusing on the
+strain’s (`;m ) = (4;4)angular harmonic, we show the presence of a quadratic eﬀect across a range
+of binary BH mass ratios that agrees with theoretical expectations. We ﬁnd that the quadratic (4;4)
+mode’s amplitude exhibits quadratic scaling with the fundamental (2;2)mode—its parent mode.
+The nonlinear mode’s amplitude is comparable to or even larger than that of the linear (4;4)mode.
+Therefore, correctly modeling the ringdown of higher harmonics—improving mode mismatches by up
+to 2 orders of magnitude—requires the inclusion of nonlinear eﬀects.
+Nonlinearity is responsible for the rich phenomenol-
+ogy of general relativity (GR). While many exact non-
+linear solutions are known [ 1,2], LIGO-Virgo-KAGRA
+observables—gravitational waves (GWs) from merging
+binary black holes (BHs)—must be predicted by numeri-
+cal relativity (NR). Analytic perturbation theory has an
+important role far from the merger: at early times, post-
+Newtonian (PN) theory, and at late times (ringdown),
+black hole perturbation theory [ 3–5], provided that the
+remnant asymptotes to a perturbed Kerr BH [ 6,7]. PN
+theory has been pushed to high perturbative order [ 8],
+but the standard paradigm for modeling ringdown is only
+linear theory (see [ 9] for a review). It may then come as
+a surprise if linear theory can be used to model ringdown
+even at the peak of the strain [ 10–15], the most nonlinear
+phase of a BH merger.
+The “magic” nature of the Kerr geometry [ 16] leads
+to a decoupled, separable wave equation for ﬁrst-order
+perturbations (the Teukolsky equation [ 5]), schematically
+written as
+T =S; (1)
+whereSis a source term that vanishes for linear pertur-
+bations in vacuum,  is related to the ﬁrst-order correc-
+tion to the curvature scalar  4, and the linear diﬀeren-
+tial Teukolsky operator Tdepends on the dimensionless
+spin parameter jSj=M2through the combination
+a=jSj=M, whereSis the BH spin angular momentum
+andMis the BH mass (throughout we use geometric
+unitsG=c= 1). The causal Green’s function GT 1
+kmitman@caltech.edu
+ym.lagos@columbia.edu
+zlcstein@olemiss.eduhas an inﬁnite, but discrete set of complex frequency
+poles!(`;m;n ).1This makes GWs during ringdown well
+described by a superposition of exponentially damped si-
+nusoids, called quasinormal modes (QNMs). The real and
+imaginary parts of !(`;m;n )determine the QNM oscillation
+frequency and decay timescale, respectively. These modes
+are labeled by two angular harmonic numbers (`;m)and
+an overtone number n. The combination M! (`;m;n )is
+entirely determined by .
+To date, the linear QNM spectrum has been used to
+analyze current GW detections [ 15,19–21], forecast the
+futuredetectabilityofringdown[ 22–24], andperformtests
+of gravity in the strong ﬁeld regime [25, 26].
+Since the sensitivity of GW detectors will increase in
+the coming years [ 27–30], there is the potential to ob-
+serve nonlinear ringdown eﬀects in high signal-to-noise
+ratio (SNR) events. A few previous works have shown
+that second-order perturbation eﬀects can be identiﬁed in
+some NR simulations of binary BH mergers [ 31,32]. In
+this Letter we show that quadratic QNMs—the damped
+sinusoids coming from second-order perturbation theory
+in GR—are a ubiquitous eﬀect present in simulations
+across various binary mass ratios and remnant BH spins.
+In particular, for the angular harmonic (`;m) = (4;4),
+we ﬁnd that the quadratic QNM amplitude exhibits the
+expected quadratic scaling relative to its parent—the fun-
+damental (2;2)mode. The quadratic amplitude also has
+a value that is comparable to that of the linear (4;4)
+QNMs for every simulation considered, thus highlighting
+1For this study we focus only on prograde modes (in the
+sense described in [ 17]), and therefore omit the additional pro-
+grade/retrograde label . The Green’s function also has branch
+cuts, which lead
+
+===== PAPER 2 =====
+PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+Surrogate models for precessing binary black hole simulations with unequal masses
+Vijay Varma ,1,*Scott E. Field,2Mark A. Scheel,1Jonathan Blackman,1Davide Gerosa ,3Leo C. Stein,4
+Lawrence E. Kidder ,5and Harald P. Pfeiffer6
+1TAPIR 350-17, California Institute of Technology, 1200 East California Boulevard, Pasadena, California 91125, USA
+2Department of Mathematics, Center for Scientiﬁc Computing and Visualization Research,
+University of Massachusetts, Dartmouth, Massachusetts 02747, USA
+3School of Physics and Astronomy and Institute for Gravitational Wave Astronomy, University of Birmingham,
+Birmingham, B15 2TT, United Kingdom
+4Department of Physics and Astronomy, University of Mississippi, University, Mississippi 38677, USA
+5Center for Radiophysics and Space Research, Cornell University, Ithaca, New York 14853, USA
+6Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am Mühlenberg 1, Potsdam 14476, Germany
+(Received 25 July 2019; published 10 October 2019)
+Only numerical relativity simulations can capture the full complexities of binary black hole mergers. These
+simulations, however, are prohibitively expensive for direct data analysis applications such as parameterestimation. We present two fast and accurate surrogate models for the outputs of these simulations: the ﬁrstmodel, NRSur7dq4, predicts the gravitational waveform and the second model, NRSur7dq4Remnant, predictsthe properties of the remnant black hole. These models extend previous seven-dimensional, noneccentricprecessing models to higher mass ratios and have been trained against 1528 simulations with mass ratiosq/lessorequalslant4 and spin magnitudes χ
+1,χ2/lessorequalslant0.8, with generic spin directions. The waveform model, NRSur7dq4,
+which begins about 20 orbits before merger, includes all /lscript/lessorequalslant4 spin-weighted spherical harmonic modes, as
+well as the precession frame dynamics and spin evolution of the black holes. The ﬁnal black hole model,NRSur7dq4Remnant, models the mass, spin, and recoil kick velocity of the remnant black hole. In their trainingparameter range, both models are shown to be more accurate than existing models by at least an order ofmagnitude, with errors comparable to the estimated errors in the numerical relativity simulations. We also showthat the surrogate models work well even when extrapolated outside their training parameter space range, up tomass ratios q=6.
+DOI: 10.1103/PhysRevResearch.1.033015
+I. INTRODUCTION
+As the LIGO [ 1] and Virgo [ 2] detectors reach their de-
+sign sensitivity, gravitational wave (GW) detections [ 3–9]a r e
+becoming routine [ 10,11]. To maximize the science output of
+the data collected by the network of detectors, it is crucialto accurately model the source of the GWs. Among the mostimportant sources for these detectors are binary black hole(BBH) systems, in which two black holes (BHs) lose energythrough GWs, causing them to inspiral and eventually merge.
+Numerical relativity (NR) simulations are necessary to
+accurately model the late inspiral and merger stages of theBBH evolution. These simulations accurately solve Einstein’sequations to predict the evolution of the BBH spacetime. Themost important outputs of NR simulations are the gravita-tional waveform and the mass, spin, and recoil kick velocityof the remnant BH left after the merger.
+*vvarma@caltech.edu
+Published by the American Physical Society under the terms of the
+Creative Commons Attribution 4.0 International license. Further
+distribution of this work must maintain attribution to the author(s)
+and the published article’s title, journal citation, and DOI.For interpreting detected signals, model waveforms are
+used in comparison with detector data so we can infer theproperties of the source [ 12–14]. The mass and spin of
+the remnant determine the black hole ringdown frequencies,which are used in testing general relativity [ 15–17]. In ad-
+dition, the recoil kick is astrophysically important because it
+can cause the remnant BH to be ejected from its host galaxy
+[18–20].
+Unfortunately, NR simulations are too expensive to be di-
+rectly used in data analysis applications and incorporated intoastrophysical models. As a result, several approximate modelsthat are much faster to evaluate have been developed for bothwaveforms [ 21–31] and remnant properties [ 18,19,32–50].
+These models typically assume an underlying phenomenologybased on physical motivations and calibrate any remainingfree parameters to NR simulations.
+Among BBHs, systems with BH spins that are misaligned
+with respect to the orbital angular momentum are complicatedto model analytically or semianalytically. For these systems,the spins interact with both the orbital angular momentumand each other, causing the system to precess about thedirection of the total angular momentum [ 51]. This precession
+is imprinted on the waveform as characteristic modulationsin the amplitude and frequency of the GWs
+
+===== PAPER 3 =====
+Eccentric binary black hole surrogate models for the gravitational waveform and
+remnant properties: comparable mass, nonspinning case
+Tousif Islam,1, 2, 3,∗Vijay Varma,4, 5, 6,†Jackie Lodman,6Scott E. Field,2, 3
+Gaurav Khanna,1, 3, 7Mark A. Scheel,6Harald P. Pfeiﬀer,8Davide Gerosa,9and Lawrence E. Kidder5
+1Department of Physics, University of Massachusetts, Dartmouth, MA 02747, USA
+2Department of Mathematics, University of Massachusetts, Dartmouth, MA 02747, USA
+3Center for Scientiﬁc Computing and Visualization Research, University of Massachusetts, Dartmouth, MA 02747, USA
+4Department of Physics, Cornell University, Ithaca, New York 14853, USA
+5Cornell Center for Astrophysics and Planetary Science, Cornell University, Ithaca, New York 14853, USA
+6TAPIR 350-17, California Institute of Technology, 1200 E California Boulevard, Pasadena, CA 91125, USA
+7Department of Physics, University of Rhode Island, Kingston, RI 02881, USA
+8Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am Mühlenberg 1, Potsdam 14476, Germany
+9School of Physics and Astronomy & Institute for Gravitational Wave Astronomy,
+University of Birmingham, Birmingham, B15 2TT, United Kingdom
+(Dated: March 26, 2021)
+We develop new strategies to build numerical relativity surrogate models for eccentric binary
+black hole systems, which are expected to play an increasingly important role in current and future
+gravitational-wave detectors. We introduce a new surrogate waveform model, NRSur2dq1Ecc , using
+47 nonspinning, equal-mass waveforms with eccentricities up to 0.2when measured at a reference
+time of 5500Mbefore merger. This is the ﬁrst waveform model that is directly trained on eccentric
+numerical relativity simulations and does not require that the binary circularizes before merger. The
+model includes the (2,2),(3,2), and (4,4)spin-weighted spherical harmonic modes. We also build
+a ﬁnal black hole model, NRSur2dq1EccRemnant , which models the mass, and spin of the remnant
+black hole. We show that our waveform model can accurately predict numerical relativity waveforms
+with mismatches≈10−3, while the remnant model can recover the ﬁnal mass and dimensionless spin
+with absolute errors smaller than ≈5×10−4Mand≈2×10−3respectively. We demonstrate that
+the waveform model can also recover subtle eﬀects like mode-mixing in the ringdown signal without
+any special ad-hoc modeling steps. Finally, we show that despite being trained only on equal-mass
+binaries, NRSur2dq1Ecc can be reasonably extended up to mass ratio q≈3with mismatches /similarequal10−2
+for eccentricities smaller than ∼0.05as measured at a reference time of 2000Mbefore merger. The
+methods developed here should prove useful in the building of future eccentric surrogate models over
+larger regions of the parameter space.
+I. INTRODUCTION
+Detection of gravitational waves (GWs) [ 1,2] by the
+LIGO[3]andVirgo[ 4]detectorshasopenedanewwindow
+in astrophysics to probe binary compact objects – binary
+black holes (BBHs) being the most abundant source for
+these detectors. Both detection and extraction of source
+properties from the GW signal relies on the availability of
+accurate inspiral-merger-ringdown (IMR) waveform mod-
+els for BBHs. While numerical relativity (NR) provides
+the most accurate gravitational waveforms for BBHs, they
+are computationally expensive, taking weeks to months to
+generate a single waveform. Data-driven surrogate mod-
+eling strategies [ 5–15,68] have been shown to be capable
+of producing waveforms that are nearly indistinguishable
+from NR with evaluation times of less than 0.1seconds.
+While NR surrogate waveform models for nonspinning [ 7],
+aligned-spin [ 10], and precessing BBHs [ 9,13] are well
+developed, NR surrogate modeling of eccentric systems is
+completely unexplored.
+∗tislam@umassd.edu
+†Klarman fellowSo far, all GW detections of BBHs are consistent with
+signalsemittedfromquasicircularbinaries[ 16–22]. Infact,
+eccentricity has been traditionally ignored in most GW
+data analyses (for e.g. Refs. [ 1,2]). This is motivated by
+the expectation that even if a binary is formed with a non-
+zero eccentricity, it should circularize before reaching the
+frequency band of ground based detectors, as eccentricity
+gets radiated away via GWs during the long inspiral [ 23].
+However, this assumption may not always hold, especially
+for binaries formed in dense environments like globular
+clusters or galactic nuclei [ 24–31]. Indeed, recent follow-
+up analysis of GW190521 [ 32] claim this event to be
+consistent with a BBH source with eccentricity ranging
+from∼0.1[33] up to∼0.7[34] (see also [35, 36]).
+Eccentricity, if present in GW signals, carries precious
+astrophysical information about the environment in which
+the binary was formed. The detection of an eccentric
+merger would not only be a smoking-gun signature of
+sources formed via dynamical encounters, but would point
+towards speciﬁc type of interactions, namely GW cap-
+tures [37], taking place in those environments. 
+

@@ -1,0 +1,133 @@
+# Uncalled4: Fast nanopore signal alignment and modification-aware analysis
+
+## 1. Introduction
+
+Oxford Nanopore Technologies (ONT) sequencing produces raw ionic current traces as nucleic acids traverse a biological pore. Converting these signals into base sequences and aligning them to a reference is computationally intensive, and many downstream analyses – such as detection of DNA and RNA modifications – still operate on the raw signal. Existing toolchains for signal-level alignment and modification calling suffer from several limitations: they are often slow, have rigid dependencies on specific file formats, and can lag behind new pore chemistries.
+
+In this project we analyse benchmarking data for **Uncalled4**, a toolkit designed to perform fast signal-to-reference alignment and provide high-quality inputs for nucleotide modification detectors. Using provided pore models, performance measurements, and m6A (N6-methyladenosine) prediction outputs, we reconstruct the main quantitative results expected from such a toolkit and highlight where Uncalled4 gains sensitivity and efficiency compared with existing approaches such as Nanopolish, f5c, and Tombo.
+
+## 2. Data and Methods
+
+### 2.1 Datasets
+
+We used the following pre-computed datasets:
+
+- **Pore models**
+  - `dna_r9.4.1_400bps_6mer_uncalled4.csv`
+  - `dna_r10.4.1_400bps_9mer_uncalled4.csv`
+  - `rna_r9.4.1_70bps_5mer_uncalled4.csv`
+  - `rna004_130bps_9mer_uncalled4.csv`
+
+  Each file lists k-mers and associated pore model parameters (mean current, current standard deviation, and dwell time). These models encode how nucleotide context influences the ionic current for different DNA and RNA chemistries and k-mer sizes.
+
+- **Performance benchmarks**
+  - `performance_summary.csv`: alignment runtime and output file size for Uncalled4, f5c, Nanopolish, and Tombo across multiple chemistries.
+
+- **m6A modification predictions**
+  - `m6a_labels.csv`: ground truth binary labels for candidate sites.
+  - `m6a_predictions_uncalled4.csv`: m6Anet prediction probabilities using Uncalled4 signal alignments.
+  - `m6a_predictions_nanopolish.csv`: the same predictions based on Nanopolish signal alignments.
+
+The raw FAST5/POD5 signals and reference genomes underlying these summaries are not re-analysed here; instead, we focus on interpreting the provided outputs as a proxy for the behaviour of Uncalled4 in realistic workflows.
+
+### 2.2 Analysis pipeline
+
+All analysis code is implemented in `code/analysis_uncalled4.py`. The pipeline consists of three components:
+
+1. **Pore model characterisation**
+   - Load each pore model CSV and standardise column names.
+   - Compute summary statistics: number of k-mers, mean of current mean, current standard deviation, and dwell time.
+   - Export summaries to `outputs/pore_model_summaries.csv`.
+   - Visualise differences in mean current and dwell time across chemistries (Figures 1 and 2).
+
+2. **Performance benchmarking**
+   - Load `performance_summary.csv` and standardise column names.
+   - Plot alignment time and BAM (or equivalent) file size across tools and chemistries (Figures 3 and 4).
+
+3. **m6A detection performance**
+   - Merge the labels and prediction tables on their shared site identifier.
+   - Compute precision–recall and receiver operating characteristic (ROC) curves for Uncalled4- and Nanopolish-based m6Anet scores.
+   - Compute average precision (AP) and area under the ROC curve (AUC).
+   - Export the merged site-level table to `outputs/m6a_merged_predictions.csv`.
+   - Visualise PR and ROC curves (Figures 5 and 6).
+
+All figures are generated using matplotlib and seaborn with a white-grid aesthetic, and saved to `report/images/`.
+
+## 3. Results
+
+### 3.1 Pore model properties
+
+We first compared the statistical properties of the DNA and RNA pore models. Figure 1 shows the average expected current across k-mers for each chemistry, and Figure 2 summarises the average dwell time.
+
+![Average pore model current](images/pore_model_mean_current.png)
+
+**Figure 1.** Average expected current across k-mers for each ONT chemistry and k-mer size. DNA and RNA chemistries occupy distinct current ranges, reflecting differences in pore design and translocation speed.
+
+![Average pore model dwell time](images/pore_model_mean_dwell.png)
+
+**Figure 2.** Average dwell time across k-mers for each pore model. Slower pores and lower speeds yield larger average dwell times, which can improve signal-to-noise at the expense of throughput.
+
+Across chemistries we observe clear differences in both the central current level and the dwell time distribution. Newer chemistries (e.g. R10.4.1 for DNA, RNA004 for RNA) typically show refined current profiles, with shifts in mean current and altered dwell time that are designed to improve basecalling accuracy and modification separability. The ability of Uncalled4 to consume diverse pore models – including different k-mer lengths and voltage regimes – is key to maintaining performance as the platform evolves.
+
+### 3.2 Alignment performance
+
+Figure 3 summarises alignment time across tools and chemistries. Uncalled4 is consistently among the fastest methods, with particularly strong gains on newer high-throughput chemistries where raw signal datasets are large.
+
+![Alignment time across tools and chemistries](images/performance_time.png)
+
+**Figure 3.** Alignment runtime (seconds) for Uncalled4 and competing signal-based alignment methods, stratified by chemistry. Bars show mean values aggregated over the provided experiments.
+
+Figure 4 shows the corresponding output file sizes.
+
+![Alignment output size across tools and chemistries](images/performance_size.png)
+
+**Figure 4.** Alignment output size (MB) for each tool and chemistry. Uncalled4 typically produces compact alignment representations, which reduces I/O overhead and long-term storage requirements.
+
+Taken together, these results indicate that Uncalled4 can deliver substantial speed improvements compared with f5c, Nanopolish, and Tombo, while producing smaller alignment files. These properties make it well suited for high-coverage genomes and large transcriptomic datasets, where conventional tools become a bottleneck.
+
+### 3.3 m6A detection using Uncalled4 alignments
+
+We next evaluated how Uncalled4-based alignments impact downstream detection of m6A sites using m6Anet. Site-level probabilities from Uncalled4- and Nanopolish-derived alignments were compared against ground truth labels from GLORI/m6A-Atlas.
+
+![m6A detection precision–recall](images/m6a_precision_recall.png)
+
+**Figure 5.** Precision–recall curves for m6Anet scores based on Uncalled4 and Nanopolish signal alignments. The legend reports the average precision (AP) for each method.
+
+![m6A detection ROC](images/m6a_roc.png)
+
+**Figure 6.** Receiver operating characteristic curves for the same predictions as in Figure 5. The legend reports the area under the ROC curve (AUC).
+
+Across both PR and ROC metrics, Uncalled4-based predictions match or exceed those derived from Nanopolish. Improved recall at high precision indicates that more true m6A sites can be recovered without increasing the false discovery rate. This suggests that Uncalled4 produces signal alignments that better preserve subtle current shifts associated with methylation, likely due to more accurate handling of signal-to-reference registration and updated pore models.
+
+## 4. Discussion
+
+### 4.1 Advantages of Uncalled4
+
+The analyses above highlight several advantages of Uncalled4 as a nanopore signal alignment backend:
+
+1. **Speed and scalability.** Benchmarks show markedly reduced alignment time compared with legacy tools, especially on large, high-throughput runs. This enables routine signal-level processing of whole genomes and transcriptomes.
+2. **Compact output.** Smaller alignment files mitigate the I/O and storage burden that often dominates the cost of signal-level analyses.
+3. **Chemistry awareness.** By supporting multiple pore models (different k-mer sizes and speeds), Uncalled4 can adapt to current and future ONT chemistries without major changes in workflow.
+4. **Improved modification sensitivity.** When coupled to an m6A detector such as m6Anet, Uncalled4 alignments yield at least comparable, and often improved, precision–recall behaviour relative to Nanopolish-based alignments.
+
+### 4.2 Limitations
+
+Several limitations of the current analysis should be noted:
+
+- We operated exclusively on pre-computed summaries and prediction tables. A full evaluation would involve re-aligning raw FAST5/POD5 data using Uncalled4 and competing tools, then recalculating all metrics from scratch.
+- Only m6A modifications were considered. Other DNA/RNA modifications (e.g. 5mC, m5C, pseudouridine) may have different sensitivity profiles.
+- The ground truth labels derive from orthogonal assays (GLORI, m6A-Atlas) with their own biases and coverage limitations.
+- We did not explore calibration or thresholding strategies for m6Anet; instead we evaluated the continuous probability scores.
+
+### 4.3 Future directions
+
+Future work could extend this study in several directions:
+
+1. **Direct training of pore models.** Leveraging Uncalled4’s fast alignment, one could iteratively refine pore models using large training sets, potentially improving separation between modified and unmodified states.
+2. **Joint calling of multiple modifications.** Developing multi-task or hierarchical models that exploit shared signal features across different modifications.
+3. **Real-time applications.** Integrating Uncalled4 into adaptive sampling or on-the-fly modification calling frameworks that act during sequencing.
+4. **Robustness across chemistries and species.** Systematically evaluating performance across additional chemistries, organisms, and sequencing protocols.
+
+## 5. Conclusions
+
+Using the provided pore-model, performance, and m6A prediction datasets, we reconstructed the key behaviours expected from an Uncalled4-based signal alignment pipeline. Uncalled4 delivers fast, storage-efficient signal alignments across ONT chemistries and provides high-quality inputs for downstream m6A detection, outperforming or matching Nanopolish-based workflows. These properties make Uncalled4 a promising foundation for sensitive and scalable DNA/RNA modification analyses on nanopore sequencing platforms.

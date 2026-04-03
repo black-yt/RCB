@@ -1,0 +1,25 @@
+Execution summary:
+- Ran the main analysis entry point: python code/run_analysis.py
+- Execution completed successfully (exit code 0).
+- The run performed trajectory-oriented feature selection on data/adata_RPE.h5ad, evaluated subset sizes, and regenerated output tables and report figures.
+
+Verified produced artifacts:
+Outputs/
+- outputs/analysis_summary.json: summary of dataset size, selected features, and best-subset metrics.
+- outputs/cell_metadata_with_pseudotime.csv: per-cell metadata with inferred pseudotime.
+- outputs/feature_ranking.csv: ranked trajectory-preserving feature scores for all features.
+- outputs/selected_features.csv: final selected feature subset.
+- outputs/subset_evaluation.csv: preservation metrics across candidate subset sizes.
+- outputs/top15_feature_ranking_detailed.csv: detailed view of the top-ranked features.
+- outputs/run_manifest.txt: manifest of the main script and generated figures.
+
+Report figures under report/images/
+- report/images/data_overview.png
+- report/images/top_feature_scores.png
+- report/images/selected_feature_heatmap.png
+- report/images/embedding_comparison.png
+- report/images/subset_validation.png
+
+Verification:
+- At least one substantive artifact exists; in fact, multiple substantial CSV/JSON outputs and five figure files were generated.
+- report/report.md was not created or modified in this step.

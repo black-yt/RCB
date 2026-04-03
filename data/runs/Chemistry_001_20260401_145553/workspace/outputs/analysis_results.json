@@ -1,0 +1,47 @@
+{
+  "protein_metrics": {
+    "n_residues": 161,
+    "n_atoms": 2591,
+    "sequence": "GMWDETELGLYKVNEYVDARDTNMGAWFEAQVVRVTRKAPSRDEPCSSTSRPALEEDVIYHVKYDDYPENGVVQMNSRDVRARARTIIKWQDLEVGQVVMLNYNPDNPKERGFWYDAEISRKRETRTARELYANVVLGDDSLNDCRIIFVDEVFKIERPGE",
+    "radius_of_gyration_A": 17.239959312935905,
+    "n_contacts_8A": 876,
+    "n_binding_pocket_residues_10A": 62,
+    "secondary_structure": {
+      "C": 137,
+      "H": 24
+    },
+    "sequential_ca_distance_mean_A": 3.8491204185861454,
+    "sequential_ca_distance_std_A": 0.03750220957775218
+  },
+  "ligand_metrics": {
+    "n_atoms": 194,
+    "n_bonds": 193,
+    "element_counts": {
+      "O": 17,
+      "N": 20,
+      "C": 53,
+      "H": 104
+    },
+    "radius_of_gyration_A": 10.73722636255061,
+    "molecular_formula": "C53H104N20O17"
+  },
+  "model_metrics": {
+    "total_parameters": 82581,
+    "architecture": "BioMolecularDiffusionFramework",
+    "d_single": 64,
+    "d_pair": 32,
+    "n_evoformer_layers": 2,
+    "n_diffusion_layers": 3
+  },
+  "prediction_metrics": {
+    "n_runs": 20,
+    "rmsd_mean_A": 23.21460043683292,
+    "rmsd_std_A": 0.3238554538624202,
+    "rmsd_min_A": 22.424673938488837,
+    "rmsd_max_A": 23.618150693130982,
+    "plddt_mean": 49.9383430480957,
+    "plddt_std": 0.5896278619766235,
+    "plddt_corr_with_rmsd": NaN,
+    "note": "Untrained model baseline \u2014 random weights, no training data"
+  }
+}

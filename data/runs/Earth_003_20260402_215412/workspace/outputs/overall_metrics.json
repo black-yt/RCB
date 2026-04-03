@@ -1,0 +1,8 @@
+{
+  "global_weighted_mean_rmse": 14.054466015951974,
+  "global_weighted_mean_abs_bias": 0.04589021454365658,
+  "global_weighted_mean_corr": 0.0007692679364741448,
+  "highest_rmse_channel": "T925",
+  "highest_corr_channel": "U100",
+  "lowest_corr_channel": "T2M"
+}

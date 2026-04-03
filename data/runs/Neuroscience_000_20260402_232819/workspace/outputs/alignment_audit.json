@@ -1,0 +1,12 @@
+{
+  "feature_shape": [
+    1738,
+    51
+  ],
+  "target_shape": [
+    1738,
+    53
+  ],
+  "shared_feature_columns": 51,
+  "max_abs_difference_between_feature_and_target_tables": 0.00011000000017702405
+}

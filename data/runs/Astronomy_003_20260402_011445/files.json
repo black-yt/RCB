@@ -1,0 +1,265 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_catalog_uncertainty.py",
+    "path": "code/analyze_catalog_uncertainty.py",
+    "type": "file",
+    "size": 15343,
+    "mtime": 1775132420.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "fig6_data.csv",
+    "path": "data/fig6_data.csv",
+    "type": "file",
+    "size": 39021,
+    "mtime": 1772262812.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "fig7_data.csv",
+    "path": "data/fig7_data.csv",
+    "type": "file",
+    "size": 264036,
+    "mtime": 1772262812.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "fig8_data.csv",
+    "path": "data/fig8_data.csv",
+    "type": "file",
+    "size": 61215,
+    "mtime": 1772262812.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "mplconfig",
+    "path": "outputs/mplconfig",
+    "type": "directory"
+  },
+  {
+    "name": "fontlist-v390.json",
+    "path": "outputs/mplconfig/fontlist-v390.json",
+    "type": "file",
+    "size": 65187,
+    "mtime": 1775132416.0,
+    "exported": true
+  },
+  {
+    "name": "paper_text",
+    "path": "outputs/paper_text",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.txt",
+    "path": "outputs/paper_text/paper_000.txt",
+    "type": "file",
+    "size": 162706,
+    "mtime": 1775132418.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.txt",
+    "path": "outputs/paper_text/paper_001.txt",
+    "type": "file",
+    "size": 60345,
+    "mtime": 1775132418.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.txt",
+    "path": "outputs/paper_text/paper_002.txt",
+    "type": "file",
+    "size": 121495,
+    "mtime": 1775132418.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.txt",
+    "path": "outputs/paper_text/paper_003.txt",
+    "type": "file",
+    "size": 134263,
+    "mtime": 1775132418.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_thresholds.csv",
+    "path": "outputs/fig6_thresholds.csv",
+    "type": "file",
+    "size": 87,
+    "mtime": 1775132416.0,
+    "exported": true
+  },
+  {
+    "name": "fig7_mode_summary.csv",
+    "path": "outputs/fig7_mode_summary.csv",
+    "type": "file",
+    "size": 2533,
+    "mtime": 1775132418.0,
+    "exported": true
+  },
+  {
+    "name": "fig7_spearman_correlation.csv",
+    "path": "outputs/fig7_spearman_correlation.csv",
+    "type": "file",
+    "size": 987,
+    "mtime": 1775132416.0,
+    "exported": true
+  },
+  {
+    "name": "lognormal_fit_summary.csv",
+    "path": "outputs/lognormal_fit_summary.csv",
+    "type": "file",
+    "size": 461,
+    "mtime": 1775132416.0,
+    "exported": true
+  },
+  {
+    "name": "report_key_metrics.csv",
+    "path": "outputs/report_key_metrics.csv",
+    "type": "file",
+    "size": 317,
+    "mtime": 1775132418.0,
+    "exported": true
+  },
+  {
+    "name": "summary_statistics.json",
+    "path": "outputs/summary_statistics.json",
+    "type": "file",
+    "size": 3658,
+    "mtime": 1775132416.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2607156,
+    "mtime": 1773914885.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1261856,
+    "mtime": 1773914885.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3453127,
+    "mtime": 1773914885.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1824472,
+    "mtime": 1773914885.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 438066,
+    "mtime": 1775132420.0,
+    "exported": true
+  },
+  {
+    "name": "extrapolation_comparison.png",
+    "path": "report/images/extrapolation_comparison.png",
+    "type": "file",
+    "size": 396643,
+    "mtime": 1775132420.0,
+    "exported": true
+  },
+  {
+    "name": "mode_dependence.png",
+    "path": "report/images/mode_dependence.png",
+    "type": "file",
+    "size": 323085,
+    "mtime": 1775132418.0,
+    "exported": true
+  },
+  {
+    "name": "mode_violin.png",
+    "path": "report/images/mode_violin.png",
+    "type": "file",
+    "size": 199654,
+    "mtime": 1775132420.0,
+    "exported": true
+  },
+  {
+    "name": "resolution_error_distribution.png",
+    "path": "report/images/resolution_error_distribution.png",
+    "type": "file",
+    "size": 218841,
+    "mtime": 1775132420.0,
+    "exported": true
+  },
+  {
+    "name": "validation_checks.png",
+    "path": "report/images/validation_checks.png",
+    "type": "file",
+    "size": 446983,
+    "mtime": 1775132420.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13184,
+    "mtime": 1775132421.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 7255,
+    "mtime": 1775063685.0,
+    "exported": true
+  }
+]

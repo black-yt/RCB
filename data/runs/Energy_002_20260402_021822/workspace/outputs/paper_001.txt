@@ -1,0 +1,1510 @@
+Applied Energy 343 (2023) 121219
+
+Contents lists available at ScienceDirect
+
+Applied Energy
+journal homepage: www.elsevier.com/locate/apenergy
+
+Green hydrogen production and use in low- and middle-income countries: A
+least-cost geospatial modelling approach applied to Kenya
+Leander A. Müller a , Alycia Leonard b ,∗, Philipp A. Trotter c,d , Stephanie Hirmer b
+a
+
+RWTH Aachen University, Templergraben 55, 52062 Aachen, Germany
+Department of Engineering Science, University of Oxford, Parks Road, OX1 3PJ, UK
+Schumpeter School of Business and Economics, University of Wuppertal, Gaußstraße 20, 42119 Wuppertal, Germany
+d
+Smith School of Enterprise and the Environment, University of Oxford, South Parks Road, Oxford, OX1 f3QY, UK
+b
+c
+
+GRAPHICAL
+
+ARTICLE
+
+ABSTRACT
+
+INFO
+
+Keywords:
+GIS
+Green hydrogen
+Renewable energy
+Energy storage
+Ammonia
+LMIC
+
+ABSTRACT
+With the rising threat of climate change, green hydrogen is increasingly seen as the high-capacity energy
+storage and transport medium of the future. This creates an opportunity for low- and middle-income countries
+to leverage their high renewable energy potential to produce, use, and export low-cost green hydrogen, creating
+environmental and economic development benefits. While identifying ideal locations for green hydrogen
+production is critical for countries when defining their green hydrogen strategies, there has been a paucity of
+adequate geospatial planning approaches suitable to low- and middle-income countries. It is essential for these
+countries to identify green hydrogen production sites which match demand to expected use cases such that their
+strategies are economically sustainable. This paper therefore develops a novel geospatial cost modelling method
+to optimize the location of green hydrogen production across different use cases, with a focus on suitability
+to low- and middle-income countries. This method is applied in Kenya to investigate the potential hydrogen
+supply chain for three use cases: ammonia-based fertilizer, freight transport, and export. We find hydrogen
+production costs of e3.7–9.9/kgH2 are currently achievable across Kenya, depending on the production location
+chosen. The cheapest production locations are identified to the south and south-east of Lake Turkana. We
+show that ammonia produced in Kenya can be cost-competitive given the current energy crisis and that Kenya
+could export hydrogen to Rotterdam with costs of e7/kgH2 , undercutting current market prices regardless of
+the carrier medium. With expected techno-economic improvements, hydrogen production costs across Kenya
+could drop to e1.8–3.0/kgH2 by 2030.
+
+∗ Corresponding author.
+
+E-mail address: alycia.leonard@eng.ox.ac.uk (A. Leonard).
+https://doi.org/10.1016/j.apenergy.2023.121219
+Received 9 December 2022; Received in revised form 6 March 2023; Accepted 24 April 2023
+Available online 10 May 2023
+0306-2619/© 2023 The Author(s). Published by Elsevier Ltd. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+
+1. Introduction
+
+Homer for electrical system sizing [16]. However, these are designed
+primarily to evaluate a set of given or heuristically determined hydrogen production sites, and not over a whole region. Khan et al.’s
+integrated green hydrogen evaluation tool [17] presents a more general
+and open-source approach to evaluate green hydrogen production
+opportunities, but analyses this for particular zones of interest only
+(i.e., not uniformly across a geography) and is tailored to the context
+of Australia. The complexity of factors to consider for geospatial
+identification and planning of green hydrogen infrastructure imply the
+utility of geographical information systems (GIS) for exact location
+planning [18,19]. This allows to evaluate land suitability for green
+hydrogen production uniformly across a region, as in Messaoudi et al.’s
+work in Algeria [20] and Soha et al.’s work in Hungary [21]. However,
+GIS analyses are not limited to land considerations, but can also allow
+planners to conduct supra-regional cost analyses which evaluate different supply and demand centres while considering relevant geographic
+constraints. Early efforts towards geospatial hydrogen planning exist in
+the literature, including Gupta et al.’s assessment of levelized costs of
+hydrogen in Switzerland [22], Tlili et al.’s assessment of transport and
+supply chains in France [23], and work by La Guardia et al. [24,25] and
+Guzzini et al. [26] assessing levelized costs of hydrogen in Italy. These
+site-specific GIS assessments often only consider a small set of discrete
+geospatial locations without ability to extend to other geographies, or
+cover only one stage of the hydrogen production process (e.g., neglecting demand centres or use-case-specific costs). One study which does
+cover more of these options is Mah et al.’s framework and application in
+Malaysia, which considers hydrogen transport methods of compressed
+gas, cryogenic liquid, or LOHC [27]. However, this work focuses on
+optimizing the entire hydrogen electricity supply chain instead of identifying specific feasible projects, and only considers hydrogen supplied
+by solar photovoltaics. A generalizable and geospatially-explicit cost
+modelling framework using multiple renewable energy generation options, which allows for application in multiple geographies, use-cases,
+and transport options is therefore needed.
+On gap (2): While integrating green hydrogen supply and demand
+modelling has been argued to be critical for optimally planning transitions towards green hydrogen [28,29], the extant quantitative planning
+literature has either not integrated demand options [20,22,30], or
+tailored them to one specific use-case. For instance, Tabandeh’s analysis focusing on hydrogen refuelling stations (HRS) [31], Tlili et al.’s
+research on green hydrogen in the transport sector [23], or Samsatli’s
+work on hydrogen in heating [32] are limited to a specific use case
+of hydrogen. The H2 Atlas produced by Forschungszentrum Jülich provides an accessible online GIS for hydrogen planning in West Africa, but
+only considers supply-side constraints [33]. Where more detailed consideration of economic and demand-side factors are taken into account,
+such as in the Hydrogen Financial Analysis Scenario Tool (H2FAST)
+from the United States National Renewable Energy Laboratory, geographic factors and existing infrastructures are not considered [34].
+However, given the different economic constraints for each hydrogen
+use case, a framework that allows the consideration of different use
+cases is required.
+On gap (3): Existing peer-reviewed research on green hydrogen
+infrastructure exhibits a considerable bias towards European countries [23,30,35] as well as cases in Asia [28,36,37]. Similarly to conventional energy systems planning work [38], there is a paucity of
+research addressing low-income countries in general, and specifically
+the sub-Saharan African region [8]. This is despite the fact that the
+International Renewable Energy Agency estimates that sub-Saharan
+Africa has the largest regional potential to produce green hydrogen for
+under 1.5 USD/kg by 2050, with 30 times higher potential than all of
+Europe [7]. Where cases in Africa have been discussed in the literature,
+they have focused mainly on macro-level analysis, such as the recent
+work by AbouSeada and Hatem [39] as well as the work by Oyewo
+et al. on continental Africa [40] and by Bhandari on Niger [29].
+
+The aim of this paper is to identify least-cost locations for the
+production of green hydrogen across varying use cases in a low- and
+middle-income country setting. We develop a novel spatial modelling
+method for the cost of green hydrogen along the entire supply chain,
+and we apply it to Kenya for use cases of ammonia production, freight
+transport, and export.
+With the rising threat of climate change, efforts towards developing
+sustainable energy systems have gained momentum in recent years [1].
+Renewable energy sources (RES), such as wind, solar, geothermal, and
+hydropower, have caught up with, and in many cases overtaken, conventional power generation technologies in terms of levelized cost of
+electricity. Indeed, they already make up significant shares of total electricity production in some regions such as Norway and Costa Rica [2].
+However, RES generation technologies alone will not be able to fully
+transform total final energy consumption [3,4]. To overcome the intermittency and volatility of RES, storage solutions are needed. Alongside
+traditional high-capacity energy storage, climate-neutral energy carriers are required to decarbonize sectors where electrical energy and
+batteries are reaching their operational limits. For these reasons, hydrogen has generated high interest in recent years [4,5]. The possibility of
+climate-neutral hydrogen production via electrolysis using RES (known
+as green hydrogen), and the subsequent opportunity to utilize it in
+cross-sectoral applications as a chemical or energetic feedstock, make
+it a promising and sustainable energy solution.
+While high-income countries are leading green hydrogen technology development and activities, low- and middle-income countries
+(LMICs) are increasingly interested in this field [6,7]. By producing
+green hydrogen domestically using their abundant RES (e.g., as exist
+in many African countries [6]), LMICs could meet domestic development goals by strengthening their own economies, increasing energy
+sovereignty, and becoming net energy exporters [7,8]. Care in such
+developments is needed, due to the risk of a renewable-based resource
+curse [9]. However, if governed well by institutions with incentives to
+ensure widespread benefits for the population [10], hydrogen production presents an opportunity for climate-compatible economic growth
+in LMICs.
+1.1. Green hydrogen location planning background
+To advance the planning of hydrogen projects, the best geospatial locations for its production and use must be identified based on
+economic, infrastructural, geological, demographic and resource endowment factors1 [12]. While a quickly growing literature has emerged
+focusing on green hydrogen infrastructure, extant research exhibits
+three critical knowledge gaps, namely concerning: (1) finding adequate geospatially explicit opportunities for green hydrogen production
+plants at different scales; (2) integrating different supply points with
+different demand options for green hydrogen; and (3) identifying applications tailored towards low- and middle-income countries with high
+renewable energy potential. The scope of each of these gaps is outlined
+below within the extant literature.
+On gap (1): While predominant mathematical optimization approaches for location planning of green hydrogen produce system-wide
+optimal solutions for hydrogen production networks [13], they are
+usually too computationally expensive to identify exact geospatial
+locations of low-cost green hydrogen production [14]. A number of
+multi-criteria decision making (MCDM) models have been developed,
+such as Abdel-Basset’s framework for deciding between hydrogen production options [15] or Rezaei’s fuzzy MCDM approach for evaluating
+developing capital cities as hydrogen production sites, which then uses
+
+1
+It is worth noting that location-based plans must also be accompanied by
+a robust political and regulatory framework [11].
+
+2
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+
+There is therefore a clear gap for a generalizable GIS-based green
+hydrogen production siting framework, which can be applied across
+different geographies and use cases, and which takes both supply
+and demand side techno-economic and geographic considerations into
+account.
+1.2. Novelty of this study
+To fill the three gaps discussed above, to the best of our knowledge,
+our study features the following three key novel features:
+• Our generalizable and geospatially explicit model allows to identify least-cost green hydrogen production locations. An important
+and novel feature in the realm of GIS-based green hydrogen
+planning is its usage of H3 hexagons as areas of analysis [41].
+As hexagons fill space optimally and are equidistant from their
+neighbours [42], this allows to apply the model to different scales
+(e.g., sub-national or continental) without requiring significant
+changes to the model. This is a key feature given the importance
+of green hydrogen infrastructure planning on a local and global
+scale [7].
+• The geospatial planning model integrates hydrogen supply locations with different domestic and export-oriented use cases. The
+literature has demonstrated efficiency gains of integrated supply
+and demand planning of green hydrogen [23,31]. However, our
+work is the first to perform geospatially explicit green hydrogen
+system analyses for different types of domestic and foreign use
+cases as well as high-resolution supply options.
+• Our study is the first peer-reviewed work to explicitly consider
+geospatial green hydrogen infrastructure siting in an LMIC. Our
+choice of Kenya underlines the relevance of such studies given
+Kenya’s excellent renewable energy potential, comparably low
+cost of capital, and the country’s efforts to introduce green hydrogen technologies domestically [43,44]. Our study responds to
+recent research calling for more country-specific studies in Africa
+to define robust energy transition pathways [8]. While Kenya
+is investigated here, the developed methodology can be used to
+analyse different country and regional cases. It is intended for use
+as a tool to analyse green hydrogen opportunities and demand
+cases in any country to support decision-making processes for
+high-level planning or policy development.
+
+Fig. 1. Summary of the spatial hydrogen cost modelling method.
+
+framework. This allows the identification of the least-cost supply location for any use case. In this model, use cases are defined in terms
+of the required state of the hydrogen needed, the quantity required,
+and the demand location. They could include hydrogen demands such
+as, for example, fertilizer production, long-term energy storage, or
+steel manufacture, among many others [45]. By determining the leastcost option for every supply chain step, holistic hydrogen costs at any
+selected demand centre are determined a least-cost production location
+is selected.
+This method exclusively models the value chain of green hydrogen
+(i.e., produced via electrolysis with RES), as producing hydrogen in
+this way promotes both sustainability and international economic independence. Two renewable energy technologies are studied as means to
+generate the required electricity for production: newly constructed solar photovoltaics (PV), or onshore wind plants. These two technologies
+are, along with hydropower, the cheapest RES, and unlike hydropower,
+they are relatively quick and capital-efficient to set up [46].
+The total cost of hydrogen from any particular supply location to
+any particular demand location is modelled as a sum of the following
+costs:
+
+The remainder of this paper proceeds as follows. Section 2 introduces the geospatial hydrogen cost optimization method. The full
+model implementation is available on GitHub: https://github.com/
+leandermue/GEOH2. Then, Section 3 presents the results of applying
+this method in Kenya, including spatial levelized costs of hydrogen
+(Section 3.1) and least-cost production locations for three potential hydrogen applications (Section 3.2). These results are compared to current
+market prices and conditions and discussed in the context of future
+techno-economic improvements in Section 4. Finally, conclusions are
+offered in Section 5.
+
+𝑐 = 𝐿𝐶𝑂𝐻 + 𝑐𝑐𝑜𝑛𝑣𝑒𝑟𝑠𝑖𝑜𝑛 + 𝑐𝑡𝑟𝑎𝑛𝑠𝑝𝑜𝑟𝑡 + 𝑐𝑠𝑡𝑜𝑟𝑎𝑔𝑒 + 𝑐𝑖𝑛𝑓 𝑟𝑎𝑠𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒
+
+(1)
+
+where each 𝑐 represents a different cost component as indicated by
+the subscript. Each of these costs is discussed in further detail in the
+following subsections.
+
+2. Methods
+A spatial cost modelling method is developed to find least-cost locations of potential green hydrogen production to match any specified
+demand or use case. The components of this model are illustrated
+in Fig. 1. To the best of our knowledge, it is the first model specifically
+designed to spatially calculate the total cost of meeting hydrogen
+demand – from power generation to hydrogen production, conversion,
+and delivery – considering different end-use cases along the entire supply
+chain using techno-economic, geological and resource endowment input
+data.
+Costs are calculated for each possible production site (i.e., each
+spatial sub-segment of the entire area of interest) using a GIS-based
+
+2.1. Electricity generation
+Electricity is required to produce green hydrogen. The levelized
+costs of energy (𝐿𝐶𝑂𝐸) for this are calculated as:
+∑𝑛 𝐶𝐴𝑃 𝐸𝑋 𝑡 +𝑂𝑃 𝐸𝑋 𝑡 +𝐹𝑡
+𝐿𝐶𝑂𝐸 =
+
+𝑡=1
+
+(1+𝑟)𝑡
+𝐸𝑡
+𝑡=1 (1+𝑟)𝑡
+
+∑𝑛
+
+(2)
+
+where 𝐶𝐴𝑃 𝐸𝑋 represents capital expenditures, 𝑂𝑃 𝐸𝑋 represents operational expenditures, 𝐹 represents fuel expenditures, 𝐸 represents
+3
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+
+electricity generation, 𝑟 represents the discount rate, and 𝑛 represents
+the lifetime of the system in years. Values with the subscript 𝑡 are
+relevant to the year 𝑡. We assume no fuel input is required for PV
+and wind generation plants, so 𝐹𝑡 is set to zero. The discount rate is
+assumed to be constant over the time horizon. 𝐶𝐴𝑃 𝐸𝑋𝑡 and 𝑂𝑃 𝐸𝑋𝑡
+are calculated as an annual payment per power capacity (kW) and the
+generated electricity is assumed to be unchanged over the lifetime of
+the system. This simplifies the calculation to:
+𝐿𝐶𝑂𝐸 =
+
+𝐶𝐴𝑃 𝐸𝑋
++ 𝑂𝑃 𝐸𝑋
+𝑃𝑉 𝐹
+
+where 𝑐𝑠𝑡𝑎𝑐𝑘 represents the cost of stack replacement, 𝐹 𝐿𝐻 represents
+the full load hours of system, 𝜂𝑒𝑙𝑦 represents the electrolysis system
+efficiency, 𝑤H2 represents gravimetric energy density, 𝑣H2 O represents
+the volume of water, and 𝑐H2 O represents water costs. These water costs
+are calculated as:
+𝑐H2 O = 𝑐H2 O𝑠𝑝𝑒𝑐 + 𝑐H2 O𝑡𝑟𝑎𝑛𝑠𝑝𝑜𝑟𝑡 + 𝐸H2 O ⋅ 𝐿𝐶𝑂𝐸
+
+where 𝑐H2 0𝑠𝑝𝑒𝑐 represents specific water costs, 𝑐H2 0𝑡𝑟𝑎𝑛𝑠𝑝𝑜𝑟𝑡 represents water transport costs, and 𝐸H2 O represents water purification energy
+demand. For both 𝐿𝐶𝑂𝐸 and water costs, the cheapest value in each
+production location is chosen. Water can be drawn from a water body,
+water way, or the ocean — if the ocean is selected, desalination is taken
+into account. 𝐿𝐶𝑂𝐻 is calculated in e/kgH2 .
+The electrolysis system is always scaled in such a way that the
+minimum of 5,000 h in case of wind electricity production shall be full
+load hours. Therefore, the electrolysis power installation is not 1:1 to
+the wind power installed, but designed smaller to ensure that it runs
+on a base power and thus it does not have to deal with the instability
+of the renewable energy sources.
+
+(3)
+
+𝐸
+𝑡
+
+) with
+where 𝑃 𝑉 𝐹 represents the present value factor (𝑃 𝑉 𝐹 = (1+𝑖) 𝑡−1
+(1+𝑖) ⋅𝑖
+interest rate 𝑖 assumed to be 8% for all equipment [47].
+Electricity generation is estimated using spatial data for PV potential
+from the Global Solar Atlas [48] and mean wind speed at a height
+of 100 m from the Global Wind Atlas [49]. To determine the annual
+generation from the PV systems, the average power potential data
+per year (kWh/kWp/a) is taken. To calculate a similar energy index
+(kWh/kW/a) for a wind turbine, an assumption had to be made about
+the actual selected wind turbine and the wind distribution within a
+year. The power output of a wind turbine can be calculated as:
+𝜌
+𝑃𝑡 =
+⋅ 𝜋 ⋅ 𝑟2 ⋅ 𝑐 3 ⋅ 𝑐𝑝 ⋅ 𝜂𝑓 𝑖𝑒𝑙𝑑 ⋅ 𝜂𝑎𝑣𝑎𝑖𝑙
+(4)
+2
+where 𝑃𝑡 represents the power output of the turbine (maximum at
+nominal power), 𝜌 represents air density, 𝑟 represents rotor radius, 𝑐
+represents wind speed, 𝑐𝑝 represents the power coefficient, 𝜂𝑓 𝑖𝑒𝑙𝑑 represents field efficiency, and 𝜂𝑎𝑣𝑎𝑖𝑙 represents availability. To represent
+the wind distribution more realistically than an average value, the
+Rayleigh distribution is used [50], which approximates the wind speed
+probability density function 𝐹 (𝑣) based on the average wind speed as:
+( )2
+𝑣
+− 𝐴
+
+2.3. Conversion
+Converting hydrogen to other forms can increase its volumetric energy content or alter its storage conditions and therefore allow a more
+economical distribution process. In the developed model, conversion is
+allowed both before and after transportation, as transporting hydrogen
+in a different state than needed at the demand point can unlock
+possible economically advantageous transport methods. The conversion
+processes modelled here are compression to 500 bar, liquefaction, and
+the transformation of hydrogen to ammonia (NH3 ) and liquid organic
+hydrogen carriers (LOHC). Throughout this work, we consider the
+LOHC carrier benzyltoluene.
+Hydrogen after electrolysis is assumed to be a pressure of 25 bar
+and a temperature of 298.15 K. The costs to convert hydrogen to other
+forms are then calculated as:
+
+(5)
+
+𝐹 (𝑣) = 1 − 𝑒
+
+where 𝑣 represents the wind speed and 𝐴 represents the scale parameter, defined as:
+2
+𝐴 = 𝑣𝑚 √
+𝜋
+
+(6)
+
+𝐶𝐴𝑃 𝐸𝑋
++ 𝑂𝑃 𝐸𝑋 + 𝑐ℎ𝑒𝑎𝑡 ⋅ 𝐸ℎ𝑒𝑎𝑡 + 𝐿𝐶𝑂𝐸 ⋅ 𝐸𝑒𝑙𝑒𝑐
+(9)
+𝑃𝑉 𝐹
+where 𝑐ℎ𝑒𝑎𝑡 represents specific heat costs, 𝐸ℎ𝑒𝑎𝑡 represents thermal
+energy demand, and 𝐸𝑒𝑙𝑒𝑐 represents electricity demand. Losses of
+hydrogen due to leakage or boil-off are neglected. Heat which is
+released during conversion processes is assumed to not be monetized
+and released without further processing.
+
+𝑐𝑐𝑜𝑛𝑣𝑒𝑟𝑠𝑖𝑜𝑛 =
+
+where 𝑣𝑚 represents the mean wind speed. After calculating the 𝐿𝐶𝑂𝐸
+for both technologies, the least-cost technology is selected for each
+potential production site. The exchange of electricity is allowed via
+the existing electricity network; therefore, the lowest 𝐿𝐶𝑂𝐸 of all
+sites connected to the grid is determined and defined as 𝐿𝐶𝑂𝐸 𝑔𝑟𝑖𝑑 .
+If electricity is purchased via the grid, a fixed transmission fee (in
+e/MWh) is charged. The most economic 𝐿𝐶𝑂𝐸 is selected for all
+locations, and thus a decision is made between 𝐿𝐶𝑂𝐸𝑤𝑖𝑛𝑑 , 𝐿𝐶𝑂𝐸𝑃 𝑉 ,
+and – in the case of a location connected to the grid – 𝐿𝐶𝑂𝐸 𝑔𝑟𝑖𝑑 for
+each considered production location.
+
+2.4. Transport
+Two hydrogen transport options are considered: road transport
+via trucks with trailers; and a pipeline system. All combinations of
+hydrogen state and type of transport between supply and demand are
+calculated and the most favourable economic option for distribution
+is selected. This, for example, means that transport of ammonia is
+permitted even if the demand scenario is for pure hydrogen. In this
+example, costs would be incurred again at the demand centre for the
+re-conversion back to pure hydrogen; these costs are integrated in the
+optimization.
+Road transport is modelled with the four hydrogen states previously
+discussed: 500 bar, liquefied H2 , LOHC, and NH3 . Road transport costs
+are calculated as:
+𝐶𝐴𝑃 𝐸𝑋𝑣𝑒ℎ𝑖𝑐𝑙𝑒
+𝑐𝑡𝑟𝑎𝑛𝑠𝑝𝑜𝑟𝑡𝑟𝑜𝑎𝑑 =
++ 𝑂𝑃 𝐸𝑋𝑣𝑒ℎ𝑖𝑐𝑙𝑒 + 𝑐𝐹 𝑢𝑒𝑙 + 𝑐𝑤𝑎𝑔𝑒𝑠
+(10)
+𝑃 𝑉 𝐹𝑣𝑒ℎ𝑖𝑐𝑙𝑒
+
+2.2. Green hydrogen production
+Green hydrogen production is modelled as undertaken through
+water electrolysis, an endothermic chemical process which splits water (H2 O) into hydrogen (H2 ) and oxygen (O2 ) through the input of
+electric energy as 2H2 O → 2H2 + O2 . This requires water, electricity,
+and (depending on the technology) heat as inputs. As the processes
+of alkaline and proton exchange membrane electrolysis do not need
+thermal input energy, and are the two most developed technologies,
+no heat requirements are assumed here [51]. Additionally, while the
+resulting oxygen is not further investigated in this analysis, it could
+potentially be captured and serve as an additional revenue stream.
+The levelized cost of hydrogen (𝐿𝐶𝑂𝐻) representing the total
+specific hydrogen production cost is calculated as:
+𝐿𝐶𝑂𝐻 =
+
+𝐶𝐴𝑃 𝐸𝑋+𝑐𝑠𝑡𝑎𝑐𝑘
++ 𝑂𝑃 𝐸𝑋
+𝑃𝑉 𝐹
++ 𝐿𝐶𝑂𝐸
+𝜂𝑒𝑙𝑦
+
+𝐹 𝐿𝐻 ⋅ 𝑤
+
+(𝑤
+⋅
+
+H2
+
+𝜂𝑒𝑙𝑦
+
+(8)
+
+where 𝑣𝑒ℎ𝑖𝑐𝑙𝑒 ∈ {𝑇 𝑟𝑢𝑐𝑘𝑠, 𝑇 𝑟𝑎𝑖𝑙𝑒𝑟𝑠}, 𝑐𝑓 𝑢𝑒𝑙 represents the cost of fuel,
+and 𝑐𝑤𝑎𝑔𝑒𝑠 represents the cost of wages.
+Gaseous hydrogen can be transported via pipeline. The transformation into the desired state is in this case always modelled at the demand
+site. Pipelines are divided into three subcategories: small (maximum
+
+)
++ 𝑐H2 O ⋅ 𝑣H2 O (7)
+
+H2
+
+4
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+
+Table 1
+Input data assigned to each geospatial hexagon, what the purpose of this specific data
+is, and which geographical data set was used for it.
+
+capacity 1.2 GW), medium (maximum capacity 4.7 GW), and large systems (maximum capacity 13 GW). For the sake of simplicity, the same
+distance is chosen for the pipeline between a production and demand
+location as the road distance between the two. Furthermore, only the
+construction of new pipelines is considered. While retrofitting existing
+pipelines could potentially be more economical, due to uncertainties
+regarding their condition, the connected networks, and the state of
+existing compressors, this option is not further investigated. Pipeline
+transport costs are calculated as:
+𝑐𝑡𝑟𝑎𝑛𝑠𝑝𝑜𝑟𝑡𝑝𝑖𝑝𝑒𝑙𝑖𝑛𝑒 =
+
+𝐶𝐴𝑃 𝐸𝑋𝑒𝑞𝑢𝑖𝑝
+𝑃 𝑉 𝐹𝑒𝑞𝑢𝑖𝑝
+
++ 𝑂𝑃 𝐸𝑋𝑒𝑞𝑢𝑖𝑝 + 𝑐𝑒𝑙𝑒𝑐𝑡𝑟𝑖𝑐𝑖𝑡𝑦
+
+Input
+
+Purpose
+
+Source
+
+PV potential
+
+Determine electricity output of PV
+modules.
+
+Global Solar Atlas
+[48]
+
+Wind speed
+
+Determine electricity output of
+standardized wind turbine.
+
+Global Wind Atlas
+[49]
+
+National grid
+
+Calculate closest distance to grid to
+determine electricity transmission
+possibility and/or grid construction
+costs.
+
+OpenStreetMap
+[52]
+
+Road network
+
+Calculate closest distance to road
+network to determine road
+availability and road construction
+costs.
+
+OpenStreetMap
+[52]
+
+Water supply
+
+Calculate closest distance to water
+bodies, ways and the ocean to
+determine water costs.
+
+OpenStreetMap
+[52]
+
+Quantity of
+constructable
+power plants
+
+Estimation of theoretical achievable
+power and hydrogen production
+capacity.
+
+‘‘Geospatial Land
+Availability for
+Energy Systems’’
+model [53].
+
+(11)
+
+where 𝑒𝑞𝑢𝑖𝑝 ∈ {𝑃 𝑖𝑝𝑒𝑙𝑖𝑛𝑒, 𝐶𝑜𝑚𝑝𝑟𝑒𝑠𝑠𝑜𝑟} and 𝑐𝑒𝑙𝑒𝑐𝑡𝑟𝑖𝑐𝑖𝑡𝑦 represents electricity costs.
+2.5. Storage
+To be able to guarantee security of supply, a three-day storage facility is modelled by default. The storage at the production site is selected
+to match the calculated least-cost transport technology. At the demand
+centre, the storage is designed to accommodate the required hydrogen
+state. If a pipeline is built, no storage is built on the production side,
+as the pipeline itself can serve as storage. Storage costs are calculated
+as:
+𝐶𝐴𝑃 𝐸𝑋𝑠𝑡𝑜𝑟𝑎𝑔𝑒
+𝑐𝑠𝑡𝑜𝑟𝑎𝑔𝑒 =
+(12)
+𝑁𝑃 𝑉𝑠𝑡𝑜𝑟𝑎𝑔𝑒
+
+a set resolution of 5 are used. Each hexagon represents an average
+area of 252.9 km2 . This resolution allows for a good initial assessment
+of regional potentials and provides a low computational time. If a
+coarser or finer resolution is desired, this can be changed when creating
+the geographic input file and applied to the model without further
+adjustments. Table 1 illustrates which input data are assigned to each
+hexagon, what the purpose of this specific data is, and which data
+source is used.
+
+where 𝑁𝑃 𝑉𝑠𝑡𝑜𝑟𝑎𝑔𝑒 represents the net present value of the storage system.
+2.6. Road and electricity infrastructure
+This method allows the possibility to ‘‘construct’’ new road or electricity infrastructure and to see how this impacts hydrogen costs. New
+electricity transmission lines can be modelled to connect production
+locations to the existing network, potentially lowering 𝐿𝐶𝑂𝐸𝑔𝑟𝑖𝑑 . They
+can also be modelled to connect production locations close to demand
+centres to the grid, making it possible to use cheaper electricity for
+hydrogen production in geographically advantageous locations. New
+roads can be modelled to allow road transport for locations which
+are currently unreachable by road, where only transport via pipeline
+systems would be possible at present.
+The existence of a network (both road and grid) is represented with
+a distance variable. If the corresponding network is running through a
+hexagon, the distance variable is equal to 0. If however does not run
+through a specific hexagon, the shortest distance between the central
+point of this hexagon and the network is calculated. Based on this
+distance the total construction costs are approximated. Infrastructure
+costs are calculated as:
+𝐶𝐴𝑃 𝐸𝑋𝑖𝑛𝑓 𝑟𝑎 + 𝑂𝑃 𝐸𝑋𝑖𝑛𝑓 𝑟𝑎
+(13)
+𝑐𝑖𝑛𝑓 𝑟𝑎 =
+𝑁𝑃 𝑉𝑖𝑛𝑓 𝑟𝑎
+
+3. Results
+The spatial hydrogen cost modelling method described above is
+applied in Kenya as an illustrative case study. Results are first presented
+for 𝐿𝐶𝑂𝐻 across the whole country (i.e., without considering conversion to any other hydrogen state or transport costs). Then, results are
+presented for three example demand cases: ammonia production for
+fertilizer, freight transport, and export to Europe from Mombasa. Any
+data inputs which are not already captured in Table 1 for these applications are outlined either in the sections below or in the Supplementary
+Material.
+3.1. LCOH across Kenya
+𝐿𝐶𝑂𝐻 is calculated across Kenya. First, 𝐿𝐶𝑂𝐸 is determined in
+each hexagon, as shown in Fig. 2. PV electricity production costs show
+minimal spatial variation; the production costs of wind show more
+spatial variation. The 𝐿𝐶𝑂𝐸 from PV ranges between e80–120/MWh.
+Electricity production from wind makes the most sense in northern
+areas, where average wind speeds of up to 15 m/s are reached and
+𝐿𝐶𝑂𝐸 is around e30/MWh.
+The 𝐿𝐶𝑂𝐻 is then calculated for each hexagon using the 𝐿𝐶𝑂𝐸
+results. The full load hours of electrolysis are taken to be 3,000 h if powered via PV and 5,000 h if powered via wind based on annual duration
+curves and capacity factors generated for Kenya; for a full justification,
+please refer to the heading ‘‘Hydrogen production capacity’’ in the
+Supplementary Materials. Results, shown in Table 2 and Fig. 3, indicate
+that hydrogen production costs largely follow the pattern of the 𝐿𝐶𝑂𝐸.
+In northern areas where wind energy can achieve low 𝐿𝐶𝑂𝐸, 𝐿𝐶𝑂𝐻
+less than e4.0/kg can be achieved. Most areas, however, have 𝐿𝐶𝑂𝐻
+of e6.0–8.0/kg and are primarily powered by solar PV.
+The reason for the large range of 𝐿𝐶𝑂𝐻 and its close linkage
+with 𝐿𝐶𝑂𝐸 is the high electricity demand of the electrolysis system
+
+where 𝑂𝑃 𝐸𝑋𝑖𝑛𝑓 𝑟𝑎 is only modelled for road infrastructure and not for
+electricity infrastructure.
+2.7. Geospatial modelling
+As previously discussed, the defined relationships are applied spatially across localized demand and supply centres. H3 hexagons [41]
+are used as areas of analysis. These are distributed evenly across
+the region of interest. Using H3 hexagons allows analysis at multiple
+resolutions without requiring major model modifications. As hexagon
+tiles regularly fill space optimally, and are equidistant from their
+neighbours, modelling is simplified significantly compared to the use
+of a square or otherwise shaped grid [42]. Each hexagon is assigned
+spatial and socioeconomic input data which underlie all previously
+described modelling. Following execution, results are assigned to each
+hexagon and can be displayed and evaluated. Here, H3 Hexagons with
+5
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+Table 2
+Statistical summary of the levelized cost of hydrogen
+in the base case.
+Result
+
+Base case value (e/kgH2 )
+
+Minimum LCOH
+Maximum LCOH
+Median LCOH
+Mean LCOH
+
+3.655
+9.912
+8.351
+7.893
+
+Fig. 4. Cost components of minimum and maximum identified levelized cost of
+hydrogen.
+
+Table 3
+Median and mean levelized cost of hydrogen with
+transmission cost variation.
+Transmission cost
+(e/MWh)
+
+Median LCOH
+(e/kgH2 )
+
+Mean LCOH
+(e/kgH2 )
+
+10
+20
+30
+40
+50
+60
+
+8.218
+8.218
+8.218
+8.218
+8.218
+8.218
+
+7.442
+7.511
+7.580
+7.648
+7.716
+7.822
+
+they make up e6.76/kgH2 or 69% of total costs at the most expensive
+location. Both water costs and the OPEX of the electrolysis system do
+not have a significant impact on the total 𝐿𝐶𝑂𝐻, even though the
+water costs include purchase, energy costs for purification, and the
+transport to the production site.
+
+Fig. 2. Achievable levelized cost of electricity (LCOE) in Kenya based on analysis of
+wind and solar photovoltaic technologies.
+
+Hexagons connected to the grid are allowed to purchase electricity
+from other connected hexagons, incurring transmission costs. Fig. 5
+shows 𝐿𝐶𝑂𝐻 accounting for grid connection, with transmission costs
+of e30/MWh. The grid exchange can be clearly seen here: the hexagons
+connected to the grid receive the most favourable 𝐿𝐶𝑂𝐸 that exists
+across the network, and thus they also have the same 𝐿𝐶𝑂𝐻. The transmission cost parameter is varied in the range e10–60/MWh, producing
+the results shown in Table 3. While all of these scenarios show the
+same minimum and maximum 𝐿𝐶𝑂𝐻 as the base case, the median and
+mean values are slightly below the base case. Although no significant
+cost reductions can be achieved in all regions, it is possible to achieve
+lower 𝐿𝐶𝑂𝐻 in regions that are connected to the grid (compare Fig. 3
+with Fig. 5). As these regions are usually also economic centres, and
+therefore also potential bulk hydrogen consumers, this can reduce the
+total costs of hydrogen, as distribution is often less costly with shorter
+transport distances.
+
+Fig. 3. Resulting levelized costs of hydrogen (LCOH) for hydrogen produced locally in
+each hexagon.
+
+The construction of new transmission lines is also considered. Here,
+the grid is considered exclusively for the transport of electricity for
+hydrogen production, and thus the entire costs for this are also taken
+into account and offset against the 𝐿𝐶𝑂𝐻. The results indicate that
+it is favourable to few hexagons construct new transmission lines, and
+to do so brings only a small cost advantage. We find that hydrogen
+production costs along the connected grid can be reduced by a further
+e0.34/kg by the construction of new lines. This cost reduction is
+achieved despite the high CAPEX of the transmission line and the
+unrealistic consideration that it is used exclusively to enable hydrogen
+production and not for electrification, integration of new electricity
+sources, stabilization and efficiency increase.
+
+considered. Considering an electrolysis system efficiency of 59% as
+per [51] (taking the lower heating value of hydrogen) the electricity
+input amounts to approximately 56.5 kWh/kgH2 . This is also highlighted in Fig. 4, which illustrates the cost components of the 𝐿𝐶𝑂𝐻
+for the hexagons with the lowest and highest 𝐿𝐶𝑂𝐻 values. While the
+electrolysis costs vary with the full load hours (i.e., 3,000 for areas
+using PV generation and 5,000 for areas using wind generation), the
+main cost gap can be traced back to the electricity costs. While in the
+cheapest location these amount to e1.76/kgH2 or 48% of total costs,
+6
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+
+3.2.2. Freight transport
+Hydrogen fuel cell (FC) trucks could be used along Kenya’s northern
+corridor for freight transport. This would require a HRS network, as
+modelled in this use case. The northern corridor is an important trade
+route in Kenya, connecting the port of Mombasa with Kenyan and East
+African economic hubs.
+In 2017, there were 13,070 HGV in Kenya’s national fleet, each
+with an average annual millage of 63,205 km [58]. This demand case
+assumes that 50% of the heavy good vehicles (HGV) in Kenya are
+utilized along this route, as the route goes through regions which cover
+approximately 50% of Kenya’s GDP [59]. We therefore model that 50%
+of HGVs could therefore be substituted by FC trucks. This fleet segment
+would drive approximately 413 million km per year. We model that
+an average of 9 kgH2 /100 km is consumed based on a typical average
+consumption of 8 kg/100 km [60] and an additional 1 kg/100 km
+to account for poor road conditions. This therefore represents a total
+hydrogen demand of 37.2 kt [61,62]. This H2 would need to be spread
+across HRS along the northern corridor, spanning from Mombasa to
+Busia. Large filling stations typically have a maximum capacity of
+3,000–5,000 kg/day [63,64]; 3,000 kg/day stations are assumed here.
+If an equally distributed HRS network of 3,000 kg/day facilities is
+built on the 973 km section of the northern corridor within Kenya, at
+least 34 HRS would have to be constructed to meet freight demand.
+This corresponds to one filling station every 30 km. It is assumed that
+hydrogen demand is evenly distributed among the 34 filling stations.
+Assuming a capacity utilization of about 75%, extra costs of about
+e1.65/kg are included in the hydrogen price due to the CAPEX and
+OPEX of the filling stations [64]. In most cases, stations store the
+hydrogen pressurized at 500 bar temporarily before it is dispensed, and
+therefore no storage costs are included in the hydrogen distribution.
+This demand case is modelled in two ways:
+
+Fig. 5. Levelized cost of hydrogen (LCOH) possible considering production in each
+hexagon with inclusion of transmission lines and transmission costs of 30 e/MWh.
+
+3.2. Evaluation of specific hydrogen demand application
+Three potential use cases for hydrogen production in Kenya are
+modelled: ammonia, freight transport, and export. These illustrate how
+the developed model can be used to spatially couple supply and demand.
+3.2.1. Ammonia
+Hydrogen is a feedstock for ammonia, which is a key input for
+several fertilizers. Most fertilizer used in Kenya is imported [54]; domestic production of green ammonia for fertilizer could therefore save
+emissions, create new revenue streams, foster economic development,
+and decrease international dependency.
+In 2020, approximately 650 kt of ammonia-based fertilizers were
+imported to Kenya [54]. Almost half of this is diammonium phosphate
+(DAP), which has an input of 0.2 tNH3 /t𝐷𝐴𝑃 [55]. 23% is urea; 0.57 tNH3
+of ammonia are needed to produce 1 t𝑢𝑟𝑒𝑎 fertilizer. 20% is nitrogen–
+phosphorus–potassium-fertilizers (NPK). It is difficult to confirm the
+ammonia input required in NPK, as the nitrogen share in these can
+vary significantly and affects the amount of ammonia required. As an
+assumption, 25% of ammonia input is considered (i.e., 0.25 tNH3 /t𝑁𝑃 𝐾 ).
+Lastly, ammonia sulfate consists of approximately 0.256 tNH3 / t𝑓 𝑒𝑟𝑡𝑖𝑙𝑖𝑧𝑒𝑟
+and is, with 3%, the smallest considered fertilizer share [56].
+In total, the ammonia required to produce these fertilizers is approximately 195 kt/a. Hydrogen accounts for 17.8% of the mass of
+ammonia, meaning that the amount of hydrogen required would therefore be approximately 35 kt/a. While this can be expected to grow in
+the coming years based on population growth and increasing threats
+to agricultural activities from climate change, which can be in part
+remediated through inputs like fertilizer [57], the present estimated
+value is used here. The demand for this use case is modelled in Nairobi,
+given its status as Kenya’s main economic hub.
+Fig. 6 shows the 100 cheapest ammonia production locations (a)
+and most cost-effective production locations (b) to cover this demand.
+Wind-intensive sites in the country’s north have an especially low
+ammonium production cost of e0.87–0.88/kgNH3 . The most favourable
+site has a theoretical hydrogen production capacity of more than 80
+kt/a and can therefore supply the total demand of ammonia.
+A breakdown of the total ammonia costs for the minimum cost
+production location is shown in Fig. 7. In the cheapest production
+location (shown in dark green in 6a), electricity is produced with wind
+and transportation is via NH3 trailers.
+
+1. by considering each filling station as a separate project, with
+a unique demand and independent production and distribution;
+and
+2. by considering the whole set of filling stations as a unified
+project, with a unified demand and optimized production and
+distribution across all stations.
+The distance to the individual demand locations is approximated with
+the mean distance value across all HRS in the second (i.e., unified
+project) case.
+In both cases, the resulting least-cost production locations are in the
+northern, windy part of Kenya (see Fig. 8). In the first analysis, three
+hexagons are selected for production directly next to each other. In the
+second analysis, only one hexagon is selected for production, due to the
+sufficient production capacity available in the most favourable hexagon
+to meet the unified demand.
+While the least-cost production selected sites do not vary significantly based on whether the filling stations are considered as separate
+or unified demands, the overall costs of the supply chain of hydrogen
+do. The total costs in the case of each filling station as a separate project
+varies between e5.4–6.3/kgH2 with an average value of e5.8/kgH2
+and thus annual costs to meet the full hydrogen requirements total
+e214.45 million. Conversely, when considering the fuelling stations as
+one project with a unified demand, LCOH of e4.7/kg is achievable,
+resulting in total costs of e173.93 million. A significant cost saving –
+e40.52 million – can therefore be achieved through holistic planning,
+due to economies of scale in the conversion and distribution process.
+This is highlighted in Fig. 9, which compares the cost breakdown of
+an average production site when HRS are considered as separate and
+unified projects. Due to the linearity of investment costs assumed for
+RES and electrolysis systems, the costs for hydrogen production are the
+same. However, better utilization and possible specific cost reductions
+of the conversion and distribution technologies bring the total costs of
+production significantly lower when the stations are considered as a
+unified project.
+7
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+
+Fig. 6. Cheapest production sites in the ammonia use case, considering the demand being centred in Nairobi (e/kgNH3 ).
+
+Table 4
+Total costs of hydrogen production and transport to Mombasa depending
+on the hydrogen shipping state and the annual export quantity.
+Hydrogen shipping
+state
+
+Export quantity (kt/year)
+1
+
+10
+
+100
+
+1,000
+
+Liquefied Hydrogen
+Ammonia
+LOHC
+
+10.86
+6.25
+5.49
+
+6.10
+5.48
+5.2
+
+5.58
+5.43
+5.16
+
+5.23
+4.70
+4.19
+
+at high quantities. Based on these results, LOHC is the cheapest option
+at any quantity. As in the previous demand cases, the most favourable
+production sites are located in the northern, windy areas in Kenya.
+The shipping route from Mombasa to Rotterdam is approximately
+13,200 km long. It runs through the Arabian sea, along the Suez
+Canal, through the Mediterranean Sea, and finally through the Strait
+of Gibraltar up to the North Sea [65]. Costs incurred for shipping are
+based on Johnston et al. [66], where a similar distance was considered.
+In this study, several routes were investigated, including between Valparaíso to Rotterdam with a distance of approximately 13,800 km. The
+cost of shipping liquefied hydrogen along this route was calculated at
+e1.38/kgH2 , LOHC at e0.96/kgH2 and ammonia at e0.39/kgH2 ; these
+figures are used here.
+Depending on the distribution method at the import location, ammonium and LOHC may have to be converted back into pure hydrogen
+upon import. Assuming electricity costs of e0.25/kWh based on the average at time of modelling [67] and heat costs of e0.06/kWh, these processes (without considering possible purification) cost approximately
+e1.17/kg for ammonia and e1.14/kg for LOHC.
+The total costs of hydrogen at the import site are shown in Fig. 10.
+Regardless of the transport state chosen, the cost of pure hydrogen at
+the Port of Rotterdam is around e7/kg.
+
+Fig. 7. Breakdown of ammonia costs in the ammonia use case.
+
+3.2.3. Export
+Export is a mid- to long-term goal for green hydrogen in Kenya.
+This use case looks at exporting three liquid carrier states of hydrogen;
+liquefied H2 , LOHC, and ammonia. It considers exporting 100 kt/a from
+the port of Mombasa to Rotterdam. The costs of hydrogen export can
+be divided into three subcategories: (1) production and distribution
+in the exporting country; (2) shipping and associated processes; and
+(3) carrier handling, transformation, and distribution in the importing
+country.
+Table 4 illustrates the total costs of hydrogen production and transportation to the port of Mombasa, depending on the chosen hydrogen
+shipping state and the annual export quantity. For all hydrogen states,
+production and distribution become cheaper with increasing quantity.
+In the case of liquefied H2 in particular, there is a large cost gap due to
+the high specific investment costs of the liquefaction plant at low flow
+rates. LOHC and ammonia offer similar costs and can undercut e5.0/kg
+
+4. Discussion
+This work finds 𝐿𝐶𝑂𝐻 of e3.7–9.9/kgH2 across Kenya, depending on the location chosen, with more than 50% of theoretical capacity lying below e5/kgH2 . Green hydrogen produced in
+8
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+
+Fig. 8. Selection of production locations in the freight demand case.
+
+Fig. 10. Total hydrogen costs for Mombasa–Rotterdam export demand case.
+Fig. 9. Hydrogen cost breakdown to demand centre for the two freight shipping
+analyses.
+
+4.1. Ammonia
+
+Kenya therefore appears to be competitive with international prices,
+especially given current high electricity and gas prices due to the
+Russian-war-induced fuel shortage.
+
+The results of the first demand case indicate that Kenyan ammonia would be cost competitive in the current energy crisis,
+and can remain competitive long-term if carbon pricing is introduced across the energy sector. Historically, the global market price
+of anhydrous ammonia has largely fallen between e100–400/t [68].
+However, as ammonia is currently largely produced via the steam
+reforming process (also known as blue hydrogen), production costs and
+thus also sales prices are highly dependent on gas prices. Due to the
+substantial increase in gas prices and the sanctions imposed on Russia
+(i.e., the world’s second-largest ammonia producer), purchase prices
+have risen to up to e1,500/t [69]. As such, the ammonia costs at the
+
+While the lowest-cost hydrogen production locations depend on the
+use case considered, they tend to follow the same pattern as the lowest
+𝐿𝐶𝑂𝐸. This is particularly evident for higher hydrogen quantities, as
+specific costs for conversion and transportation decrease. The cheapest
+production locations in Kenya are therefore in the northern areas, to the
+south-east and south of Lake Turkana, where constant high wind speeds
+result in low 𝐿𝐶𝑂𝐸, indicated both by the overall 𝐿𝐶𝑂𝐻 results across
+Kenya and in each of the demand cases modelled.
+9
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+Table 5
+Conventional ammonia production costs and break-even levelized
+costs of hydrogen with varying carbon prices. Conventional
+ammonia costs based on [70].
+
+electric trucks, electric or FC trains) can also offer zero emission freight
+transport, a feasibility study which takes all freight technologies into
+account should be made before one is selected for subsidy.
+
+Carbon price
+(e/tCO2 )
+
+Conventional NH3
+cost (e/kgNH3 )
+
+Break-even LCOH
+(e/kgH2 )
+
+4.3. Export
+
+0
+50
+100
+150
+200
+
+0.40
+0.48
+0.57
+0.65
+0.73
+
+1.05
+1.52
+1.98
+2.44
+2.91
+
+The results of the export case indicate the potential of Kenya
+exporting green hydrogen to Rotterdam with total unit costs
+of e7.0/kgH2 regardless of which carrier medium (liquefied H2 ,
+LOHC, or NH3 ) is used, undercutting current market prices. To
+realize this potential, Kenya would have to address two key points:
+namely, to (1) conceive of approaches to capitalize on synergies between domestic and foreign usage of green hydrogen, and (2) to
+build the required soft and hard infrastructure. Using international and
+private investments to establish a local industry, for instance through
+local content requirements like in South Africa’s renewable energy
+sector [72], can catalyze the domestic industry if adequate distributive
+mechanisms are implemented. Kenya is likely to have to move comparably quickly on this issue given the rapid establishment of strategic
+green hydrogen partnerships [7] and comparably high shipment costs
+due to its distance from future demand hubs (e.g., Europe, Japan, South
+Korea).
+Second, in order to realize its potential for export, Kenya would
+have to ensure that both the required infrastructure for green hydrogen compression and shipment is built, and, critically, start to build
+domestic skills in green hydrogen and its adjacent supplier industries [73]. With such a domestic skills offensive, technology transfer is
+unlikely to occur and domestification of green hydrogen benefits will
+be exacerbated [8]. International cooperation through public finance,
+concessional loans and skills transfer can help to de-risk investment in
+infrastructure, and help establish and scale the required engineering
+and social science education programmes in Kenya.
+
+demand centre found here, at e870/t including production, conversion,
+and distribution, show that NH3 produced in Kenya can already be
+cost-competitive in the current energy crisis.
+It cannot be assumed, however, that ammonia costs will remain
+this high. For non-crisis situations, ammonia production costs using
+conventional methods are estimated at e400/t in 2030 [70]. In the long
+term, the cost competitiveness of Kenyan ammonia therefore depends
+on carbon pricing. If no carbon price is introduced (i.e., a carbon price
+of e0), Kenyan NH3 is likely to be significantly more expensive than the
+market price. However, if a carbon price is introduced, this changes.
+Table 5 shows the projected costs of ammonia using conventional
+processes (i.e., using natural gas) and varying carbon emission prices
+for the year 2030. The required 𝐿𝐶𝑂𝐻 in Kenya is calculated from this,
+assuming that both conversion and distribution costs remain the same
+over time. If a CO2 -price of e100/t is introduced, Kenyan ammonia
+produced with an 𝐿𝐶𝑂𝐻 of around e2.0/kgH2 will be cost competitive,
+and with CO2 -prices of e200/t, even ammonia produced with an
+𝐿𝐶𝑂𝐻 close to e3.0/kgH2 will be competitive. While this is still lower
+than the lowest achievable 𝐿𝐶𝑂𝐻 we find in Kenya at the moment,
+it is likely that 𝐿𝐶𝑂𝐻 will decrease below this by 2030, as will be
+discussed in Section 4.4. As such, with a carbon price and anticipated
+𝐿𝐶𝑂𝐻 reductions, Kenyan ammonia could be competitive on the world
+stage within the next decade.
+
+4.4. Outlook for 2030
+Renewable energy technologies are catching up with fossil fuels in
+terms of costs through technology development, economies of scale, reduction in initial investment costs, and performance improvement [3].
+Similar techno-economical improvements are also expected for hydrogen technologies [51].
+The RES generation technologies considered for hydrogen production in this study (i.e., wind and solar PV) experienced significant price
+drops in the last few decades. Between 2010–2021, the total installed
+costs for onshore wind projects dropped on average by 4% annually,
+and solar PV achieved a total installed cost reduction of 14% per
+year [3]. If PV and onshore wind projects in Kenya follow the same
+trend in upcoming years, CAPEX for wind projects could land at around
+e1,100/kW in 2030, and those of PV around e377/kWp.
+Major improvements are also expected in terms of electrolysis system efficiency and investment costs. IRENA expects the CAPEX of
+these electrolysis technologies to be below e200–300/kW by 2050.
+Furthermore, increased output pressures are expected, which will reduce the required energy input for compression and increase system
+efficiency to 74% and higher [51]. Other studies come to similar results
+– for instance, a cost range of e444–730/kW, depending on chosen
+technology (proton exchange membrane and alkaline) and plant size
+(minimum 5 MW, maximum 100 MW) is forecast in 2030, with system
+efficiencies of up to 70% [74]. Therefore, a CAPEX of e600/kW can
+be realistically predicted. This translates to a halving of costs by 2030.
+This 50% decrease is also applied to the stack exchange costs.
+If these techno-economic improvements can be achieved (i.e., 50%
+cost reduction and 74% efficiency), hydrogen production costs across
+Kenya could drop to e1.8–3.0/kgH2 by 2030. Most production locations
+would choose PV as a generation technology; however, the cheapest
+production locations still use wind power for electricity generation.
+
+4.2. Freight transport
+The results of the second demand case show that hydrogen-based
+freight transport is a less promising application in Kenya. It is difficult for hydrogen-based freight to be cost competitive, particularly due
+to high vehicle and infrastructure CAPEX compared to the conventional
+alternative, diesel trucks.
+Fuel costs for hydrogen FC trucks are higher than for the diesel
+fuelled alternative. This analysis assumed 9.0 kgH2 /100 km is consumed by FC HGVs, while equivalent diesel trucks consume about 36.0
+L/100 km [62]. We find average hydrogen costs of e5.8/kgH2 , resulting
+in a fuel cost of e52.2/100 km. Meanwhile, diesel costs e1.1/L in
+Kenya [71], resulting in a total fuel cost of e39.6/100 km.
+While the difference in fuel costs for hydrogen FC and diesel trucks
+is not so dramatic, the difference in CAPEX is, and is decisive in
+the economics of operation. The CAPEX of current FC trucks lies
+around e550,000–600,000, while diesel trucks can be purchased for
+e100,000–150,000 [62]. Assuming a maximum annual driving distance
+of 160,000 km/a and a life duration of 8 years, additional costs for FC
+trucks compared to diesel trucks amount to approximately e35/100 km
+due to the higher CAPEX.
+The hydrogen price at the refuelling station required for competitive
+operation, including the additional costs due to the CAPEX, is shown
+in Table 6. FC trucks therefore cannot compete with diesel trucks
+at present. Cost-competitive operation of hydrogen freight could be
+achieved either by a significant increase in diesel prices, a reduction
+in the cost of hydrogen at the refuelling station, and/or a significant
+reduction in the investment costs of FC trucks. CAPEX reduction could
+also be achieved through, among other things, government subsidies to
+drive a technology push. However, as other technologies (e.g., battery
+10
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+Table 6
+Competitive hydrogen price for freight shipping with varying values of carbon and diesel prices, including CAPEX.
+Carbon price
+(e/tCO2 )
+
+1.0
+
+1.1
+
+1.2
+
+1.3
+
+1.4
+
+Diesel price (e/L)
+1.5
+
+1.6
+
+1.7
+
+1.8
+
+1.9
+
+2.0
+
+0
+50
+100
+150
+200
+
+−1.56
+−1.03
+−0.50
+0.03
+0.56
+
+−1.16
+−0.63
+−0.10
+0.43
+0.96
+
+−0.76
+−0.23
+0.30
+0.83
+1.36
+
+−0.36
+0.17
+0.70
+1.23
+1.76
+
+0.04
+0.57
+1.10
+1.63
+2.16
+
+0.44
+0.97
+1.50
+2.03
+2.56
+
+0.84
+1.37
+1.90
+2.43
+2.96
+
+1.24
+1.77
+2.30
+2.83
+3.36
+
+1.64
+2.17
+2.70
+3.23
+3.76
+
+2.04
+2.57
+3.10
+3.63
+4.16
+
+2.44
+2.97
+3.50
+4.03
+4.56
+
+current market prices regardless of which carrier medium (liquefied
+H2 , LOHC, or NH3 ) is used. Accounting for expected techno-economic
+improvements in technology costs and electrolysis system efficiency,
+hydrogen production costs across Kenya could drop to e1.8–3.0/kgH2
+by 2030.
+
+4.5. Future work
+The model developed in this paper could be improved through
+further work. While data quality regarding geospatial and investment
+parameters has markedly improved in the last few years in Kenya and
+Africa as a whole [7,12,47], there is still considerable uncertainty in
+several cost parameters, such as transport of green hydrogen at scale
+and both technology and finance cost developments in the future.
+Stochastic approaches and further sensitivity analyses might be interesting approaches to account for this data uncertainty. Furthermore, the
+current model implementation only allows one RES generation technology to be selected for use in hydrogen production in each geospatial
+hexagon (i.e., PV or wind). This selection is presently made on the basis
+of the 𝐿𝐶𝑂𝐸, and the joint construction of wind and PV technology is
+not permitted. Research regarding the combination of wind and solar
+plants for the production of hydrogen suggests that this can lead to
+lower 𝐿𝐶𝑂𝐻 overall, as the full load hours of the electrolysis plant
+can be increased and thus the specific CAPEX per kg hydrogen can
+be decreased [75]. Allowing for an optimized combination of PV and
+wind in each geospatial H3 hexagon would improve the cost accuracy
+in future work. Given the current model formulation, the cost estimates
+made here are therefore conservative; it may be possible to lower
+them with improved design of the generation sources used for green
+hydrogen production which incorporate a combination of PV and wind
+in each cell.
+
+CRediT authorship contribution statement
+Leander A. Müller: Conceptualization, Methodology, Software,
+Formal analysis, Data curation, Writing – original draft, Visualization.
+Alycia Leonard: Writing – original draft, Writing – review & editing ,
+Visualization, Project administration. Philipp A. Trotter: Conceptualization, Writing – review & editing, Supervision. Stephanie Hirmer:
+Conceptualization, Writing – review & editing, Supervision, Project
+administration.
+Declaration of competing interest
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+Data availability
+Links to all data sources are provided in supplementary material.
+Code is available openly and linked in the article.
+
+5. Conclusion
+Acknowledgements
+This paper has investigated the least-cost location of green hydrogen
+production for varying use cases while balancing demand and supply.
+To this end, a novel spatial hydrogen cost modelling method (available
+on GitHub: https://github.com/leandermue/GEOH2) has been developed to allow the assessment of green hydrogen along the entire supply
+chain in LMICs. This method was applied to Kenya as a case study, and
+it was used to investigate three possible hydrogen production use cases:
+ammonia production for fertilizer, hydrogen-based freight transport,
+and hydrogen export from Mombasa to Rotterdam.
+Results show hydrogen production costs across Kenya of e3.7–
+9.9/kgH2 are currently achievable. Green hydrogen produced in Kenya
+could therefore compete with international price ranges, especially
+given current high electricity and gas prices due to the fuel shortage resulting from the Russian war. Least-cost locations to produce hydrogen
+tend to follow the pattern of the 𝐿𝐶𝑂𝐸, especially when considering
+higher hydrogen quantities, as specific costs for conversion and transportation decrease. The cheapest production locations are identified
+in northern areas to the south and south-east of Lake Turkana, where
+constant high wind speeds create low 𝐿𝐶𝑂𝐸.
+We find that ammonia produced in Kenya could presently be costcompetitive given inflated energy prices due to the Russian war. Furthermore, with future technology improvements, cost reductions, and
+potential carbon pricing interventions, Kenyan ammonia can remain
+internationally competitive. Hydrogen-based freight road transport is
+less likely to be competitive, particularly given the high CAPEX of
+fuel cell trucks. Finally, for hydrogen export, we find that Kenya
+could export green hydrogen to a port in Europe (in this analysis
+Rotterdam) with total costs amounting to e7.0/kgH2 , undercutting
+
+This material has been produced with support from the Climate
+Compatible Growth (CCG) programme, which brings together leading
+research organizations and is led out of the STEER centre, Loughborough University. CCG is funded by UK aid from the UK government.
+However, the views expressed herein do not necessarily reflect the
+UK government’s official policies. Many thanks to Simon Patterson for
+assistance in copy-editing.
+Appendix A. Supplementary data
+Supplementary material related to this article can be found online
+at https://doi.org/10.1016/j.apenergy.2023.121219.
+References
+[1] Griffiths S, Sovacool BK, Kim J, Bazilian M, Uratani JM. Industrial decarbonization via hydrogen: A critical and systematic review of developments,
+socio-technical systems and policy options. Energy Res Soc Sci 2021;80:102208.
+[2] Ritchie H, Roser M, Rosado P. Energy. Our World in Data 2022. https://
+ourworldindata.org/energy.
+[3] IRENA. Renewable Power Generation - Costs in 2021. Tech. rep., Abu Dhabi:
+International Renewable Energy Agency; 2022, URL https://www.irena.org/
+publications/2022/Jul/Renewable-Power-Generation-Costs-in-2021.
+[4] IEA. Net Zero by 2050 - A Roadmap for the Global Energy Sector. Tech. rep.,
+International Energy Agency; 2021, URL https://www.iea.org/reports/net-zeroby-2050.
+[5] Guerra OJ, Zhang J, Eichman J, Denholm P, Kurtz J, Hodge B-M. The value
+of seasonal energy storage technologies for the integration of wind and solar
+power. Energy Environ Sci 2020;13(7):1909–22.
+11
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+
+[33] Institute of Energy and Climate Research - Techno-Economic Systems Analysis
+(IEK-3). H2 Atlas Africa. 2022, URL https://africa.h2atlas.de/ecowas.
+[34] National Renewable Energy Laboratory. H2FAST: Hydrogen Financial Analysis
+Scenario Tool. 2022, URL https://www.nrel.gov/hydrogen/h2fast.html.
+[35] Maestre V, Ortiz A, Ortiz I. Transition to a low-carbon building stock. Technoeconomic and spatial optimization of renewables-hydrogen strategies in Spain. J
+Energy Storage 2022;56:105889.
+[36] Zhao H, Kamp LM, Lukszo Z. Exploring supply chain design and expansion
+planning of China’s green ammonia production with an optimization-based
+simulation approach. Int J Hydrogen Energy 2021;46(64):32331–49.
+[37] Zhou Y, Li R, Lv Z, Liu J, Zhou H, Xu C. Green hydrogen: A promising way to
+the carbon-free society. Chin J Chem Eng 2022.
+[38] Trotter PA, McManus MC, Maconachie R. Electricity planning and implementation in sub-Saharan Africa: A systematic review. Renew Sustain Energy Rev
+2017;74:1189–209.
+[39] AbouSeada N, Hatem TM. Climate action: Prospects of green hydrogen in Africa.
+Energy Rep 2022;8:3873–90.
+[40] Oyewo AS, Bogdanov D, Aghahosseini A, Mensah TN, Breyer C. Contextualizing
+the scope, scale, and speed of energy pathways toward sustainable development
+in Africa. Iscience 2022;25(9):104965.
+[41] Uber Technologies. H3 - Hexagonal hierarchical geospatial indexing system.
+2022, URL https://h3geo.org.
+[42] Arderne C. SPIDER. 2022, URL https://github.com/carderne/ccg-spider.
+[43] IEA. Africa Energy Outlook 2019 - Overview: Kenya. Tech. rep., International
+Energy Agency; 2019, URL https://www.iea.org/articles/kenya-energy-outlook.
+[44] Ministry of Energy Kenya and Deutsche Gesellschaft für Zusammenarbeit (GIZ).
+Baseline study on the potential for power-to-x / green hydrogen in Kenya. Tech.
+rep., Kenya: Ministry of Energy Kenya; 2022.
+[45] Collett K, Silva Ribeiro C, Hayer L, Müller L, Hirmer S. Green Hydrogen for
+Development: An alternative to natural gas. Tech. rep., Climate Compatible
+Growth Programme; 2022, URL https://climatecompatiblegrowth.com/greenhydrogen-for-development-an-alternative-to-natural-gas/.
+[46] IRENA. Renewable power generation costs 2020. Tech. rep., Abu Dhabi:
+International Renewable Energy Agency; 2021, URL https://www.irena.org/
+publications/2021/Jun/Renewable-Power-Costs-in-2020.
+[47] Agutu C, Egli F, Williams NJ, Schmidt TS, Steffen B. Accounting for finance in
+electrification models for sub-Saharan Africa. Nat Energy 2022;1–11.
+[48] The World Bank Group and Solargis and Energy Sector Management Assistance
+Program (ESMAP). Global Solar Atlas. 2022, URL https://globalsolaratlas.info.
+[49] Technical University of Denmark (DTU) and The World Bank Group and Vortex
+and Energy Sector Management Assistance Program (ESMAP). Global Wind Atlas.
+2022, URL https://globalwindatlas.info.
+[50] Heier S. Windkraftanlagen: Systemauslegung, Netzintegration und Regelung (5.
+Ausg.). 2009.
+[51] IRENA. Green hydrogen cost reduction scalling up electrolysers to meet the
+1.5 ◦ C climate goal. Tech. rep., Abu Dhabi: International Renewable Energy
+Agency; 2020, URL https://irena.org/-/media/Files/IRENA/Agency/Publication/
+2020/Dec/IRENA_Green_hydrogen_cost_2020.pdf.
+[52] OpenStreetMap contributors. OpenStreetMap. 2022, URL https://www.
+openstreetmap.org/.
+[53] Ryberg DS, Robinius M, Stolten D. Evaluating land eligibility constraints of
+renewable energy sources in Europe. Energies 2018;11(5):1246.
+[54] AfricaFertilizerorg. Statistics – AfricaFertilizer.org. 2022, URL https:
+//africafertilizer.org/statistics/.
+[55] Mosaic Crop Nutrition. Diammonium phosphate. 2022, URL https://www.
+cropnutrition.com/resource-library/diammonium-phosphate.
+[56] Environment Agency Austria. Production of ammonia, nitiric acid, urea
+and n-fertilizer. Tech. rep., Vienna: Umweltbundesamt; 2017, URL
+https://www.umweltbundesamt.at/fileadmin/site/themen/industrie/ammonia_
+nitric_acid_urea_and_fertiliser_installation2_production_.pdf.
+[57] Mordor Intelligence. Fertilizers market size, overview, analysis, report 2022 27. 2022, URL https://www.mordorintelligence.com/industry-reports/fertilizersmarket.
+[58] Notter B, Weber F, Füssler J, Eichhost U. Updated transport data in Kenya
+2018 - An overview. Tech. rep., Gesellschaft für internationale Zusammenarbeit
+(GIZ) ; 2019, URL https://www.changing-transport.org/wp-content/uploads/
+2019_Updated-transport-data-in-Kenya.pdf.
+[59] Kenya National Bureau of Statistics. Gross County Product (GCP) 2021. Tech.
+rep., Nairobi: Kenya National Bureau of Statistics ; 2022, URL https://www.
+knbs.or.ke/download/gross-county-product-gcp-2021/.
+[60] Hyundai Motor Company. XCIENT Fuel Cell. 2022, URL https://trucknbus.
+hyundai.com/global/en/products/truck/xcient-fuel-cell.
+[61] Basma H, Rodríguez F. Fuel cell electric tractor-trailers: Technology overview
+and fuel economy. Tech. rep., The International Council on Clean Transportation ; 2022, URL https://theicct.org/publication/fuel-cell-tractor-trailer-techfuel-jul22/.
+[62] EMCEL Engineering Company for Fuel Cell, Hydrogen Technology and Electric
+Mobility. Company hydrogen cost and usage data. 2022.
+[63] Hydrogen Mobility Europe. Emerging conclusions 2021. Tech. rep., Element Energy; 2021, URL https://h2me.eu/wp-content/uploads/2021/01/H2ME_
+Emerging-Conclusions2020.pdf.
+
+[6] WEC. International Hydrogen Strategies. Tech. rep., World Energy Council;
+2022, URL https://www.weltenergierat.de/wp-content/uploads/2020/10/WEC_
+H2_Strategies_Executive-Summary_final.pdf.
+[7] IRENA. Geopolitics of the energy transformation: the hydrogen factor. Tech.
+rep., Abu Dhabi: International Renewable Energy Agency; 2022, URL
+https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2022/Jan/
+IRENA_Geopolitics_Hydrogen_2022.pdf.
+[8] Mulugetta Y, Sokona Y, Trotter PA, Fankhauser S, Omukuti J, Somavilla Croxatto L, et al. Africa needs context-relevant evidence to shape its clean energy
+future. Nat Energy 2022;7(11):1015–22.
+[9] Leonard A, Ahsan A, Charbonnier F, Hirmer S. The resource curse in renewable
+energy: A framework for risk assessment. Energy Strategy Rev 2022;41:100841.
+[10] Trotter PA. Rural electrification, electrification inequality and democratic
+institutions in sub-Saharan Africa. Energy for Sustain Dev 2016;34:111–29.
+[11] IEA. Global Hydrogen Review 2021. Tech. rep., International Energy Agency;
+2021, URL https://www.iea.org/reports/global-hydrogen-review-2021.
+[12] IRENA. Green Hydrogen: A guide to policy making. Tech. rep., Abu Dhabi:
+International Renewable Energy Agency; 2022, URL https://www.irena.org/
+publications/2020/Nov/Green-hydrogen.
+[13] Alirahmi SM, Razmi AR, Arabkoohsar A. Comprehensive assessment and multiobjective optimization of a green concept based on a combination of hydrogen
+and compressed air energy storage (CAES) systems. Renew Sustain Energy Rev
+2021;142:110850.
+[14] Galván A, Haas J, Moreno-Leiva S, Osorio-Aravena JC, Nowak W, Palma-Benke R,
+et al. Exporting sunshine: Planning South America’s electricity transition with
+green hydrogen. Appl Energy 2022;325:119569.
+[15] Abdel-Basset M, Gamal A, Chakrabortty RK, Ryan MJ. Evaluation of sustainable
+hydrogen production options using an advanced hybrid MCDM approach: A case
+study. Int J Hydrogen Energy 2021;46(5):4567–91.
+[16] Rezaei M, Khalilpour KR, Jahangiri M. Multi-criteria location identification for
+wind/solar based hydrogen generation: The case of capital cities of a developing
+country. Int J Hydrogen Energy 2020;45(58):33151–68.
+[17] Khan MHA, Heywood P, Kuswara A, Daiyan R, MacGill I, Amal R. An integrated
+framework of open-source tools for designing and evaluating green hydrogen
+production opportunities. Commun Earth Environ 2022;3(1):309.
+[18] Resch B, Sagl G, Törnros T, Bachmaier A, Eggers J-B, Herkel S, et al. GIS-based
+planning and modeling for renewable energy: Challenges and future research
+avenues. ISPRS Int J Geo-Inf 2014;3(2):662–92.
+[19] Strachan N, Balta-Ozkan N, Joffe D, McGeevor K, Hughes N. Soft-linking
+energy systems and GIS models to investigate spatial hydrogen infrastructure
+development in a low-carbon UK energy system. Int J Hydrogen Energy
+2009;34(2):642–57.
+[20] Messaoudi D, Settou N, Negrou B, Settou B. GIS based multi-criteria decision
+making for solar hydrogen production sites selection in Algeria. Int J Hydrogen
+Energy 2019;44(60):31808–31.
+[21] Soha T, Hartmann B. Complex power-to-gas plant site selection by multi-criteria
+decision-making and GIS. Energy Convers Manag X 2022;13:100168.
+[22] Gupta R, Rüdisüli M, Patel MK, Parra D. Smart power-to-gas deployment
+strategies informed by spatially explicit cost and value models. Appl Energy
+2022;327:120015.
+[23] Tlili O, Mansilla C, Linßen J, Reuß M, Grube T, Robinius M, et al. Geospatial
+modelling of the hydrogen infrastructure in France in order to identify the most
+suited supply chains. Int J Hydrogen Energy 2020;45(4):3053–72.
+[24] La Guardia M, D’Ippolito F, Cellura M. A GIS-based optimization model finalized
+to the localization of new power-to-gas plants: The case study of Sicily (Italy).
+Renew Energy 2022;197:828–35.
+[25] La Guardia M, D’Ippolito F, Cellura M. Construction of a webgis tool based on a
+gis semiautomated processing for the localization of p2g plants in sicily (Italy).
+ISPRS Int J Geo-Inf 2021;10(10):671.
+[26] Guzzini A, Brunaccini G, Aloisio D, Pellegrini M, Saccani C, Sergi F. A new
+geographic information system (GIS) tool for hydrogen value chain planning
+optimization: Application to Italian highways. Sustainability 2023;15(3):2080.
+[27] Mah AXY, Ho WS, Hassim MH, Hashim H, Muis ZA, Ling GHT, et al. Spatial
+optimization of photovoltaic-based hydrogen-electricity supply chain through
+an integrated geographical information system and mathematical modeling
+approach. Clean Technol Environ Policy 2022;1–20.
+[28] Chu KH, Lim J, Mang JS, Hwang M-H. Evaluation of strategic directions for
+supply and demand of green hydrogen in South Korea. Int J Hydrogen Energy
+2021.
+[29] Bhandari R. Green hydrogen production potential in West Africa–Case of Niger.
+Renew Energy 2022;196:800–11.
+[30] Kakoulaki G, Kougias I, Taylor N, Dolci F, Moya J, Jäger-Waldau A. Green
+hydrogen in Europe–A regional assessment: Substituting existing production with
+electrolysis powered by renewables. Energy Convers Manage 2021;228:113649.
+[31] Tabandeh A, Hossain M, Li L. Integrated multi-stage and multi-zone distribution
+network expansion planning with renewable energy sources and hydrogen
+refuelling stations for fuel cell vehicles. Appl Energy 2022;319:119242.
+[32] Samsatli S, Samsatli NJ. The role of renewable hydrogen and inter-seasonal
+storage in decarbonising heat–comprehensive optimisation of future renewable
+energy value chains. Appl Energy 2019;233:854–93.
+12
+
+Applied Energy 343 (2023) 121219
+
+L.A. Müller et al.
+
+[71] GlobalPetrolPricescom. Kenya diesel prices, 08-Aug-2022. 2022, URL https://
+www.globalpetrolprices.com/Kenya/diesel_prices/.
+[72] Alova G, Trotter PA, Money A. A machine-learning approach to predicting
+Africa’s electricity mix based on planned power plants and their chances of
+success. Nat Energy 2021;6(2):158–66.
+[73] Mealy P, Teytelboym A. Economic complexity and the green economy. Res Policy
+2020;103948.
+[74] Holst M, Aschbrenner S, Voglstätter C, Grimm G. Cost Forecast for LowTemperature Electrolysis - Technology Driven Bottom-Up Prognosis for PEM
+and Alkaline Water Electrolysis Systems. Tech. rep., Freiburg: Fraunhofer
+Institute for Solar Energy Systems ISE ; 2021, URL https://www.ise.fraunhofer.
+de/content/dam/ise/de/documents/publications/studies/cost-forecast-for-lowtemperature-electrolysis.pdf.
+[75] Koenig H. Scaling up the hydrogen economy: Opportunities for renewables. Tech.
+rep., 2022, URL https://www.solarify.eu/wp-content/uploads/2022/05/AuroraEnergy-Research_Scaling-up-the-hydrogen-economy_Opportunities-forRenewables.pdf.
+
+[64] NewBusFuel. Hydrogen bus refuelling – Summary Report. Tech. rep., Fuel Cell
+and Hydrogen Joint Undertaking; 2017, URL http://newbusfuel.eu/wp-content/
+uploads/2015/09/NBF_SummaryReport_download.pdf.
+[65] Sea Distance Calculator | ShipTraffic.net. 2001, URL http://www.shiptraffic.net/
+2001/05/sea-distances-calculator.html.
+[66] Johnston C, Khan MHA, Amal R, Daiyan R, MacGill I. Shipping the sunshine:
+An open-source model for costing renewable hydrogen transport from Australia.
+Int J Hydrogen Energy 2022;47(47):20362–77.
+[67] Shah S. Stima Tracker - Electricity cost in Kenya . 2022, URL https://www.
+stimatracker.com/.
+[68] Schnitkey G. Anhydrous ammonia, corn, and natural gas prices over time. Farmdoc Daily 2016;6. URL https://farmdocdaily.illinois.edu/2016/06/anhydrousammonia-corn-and-natural-gas-prices.html.
+[69] Schnitkey G, Paulson N, Zulauf C, Swanson K, Colussi J, Baltz J. Nitrogen
+fertilizer prices and supply in light of the Ukraine-Russia conflict. Farmdoc Daily
+2022;12(45).
+[70] Hydrogen Council and McKinsey & Company. Hydrogen Insights A perspective on hydrogen investment, market development and cost competitiveness.
+Tech. rep., Hydrogen Council and McKinsey & Company; 2021, URL https:
+//hydrogencouncil.com/en/hydrogen-insights-2021/.
+
+13
+
+

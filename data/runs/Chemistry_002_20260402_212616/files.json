@@ -1,0 +1,222 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 19430,
+    "mtime": 1775199560.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "1brs_AD.pdb",
+    "path": "data/1brs_AD.pdb",
+    "type": "file",
+    "size": 175527,
+    "mtime": 1772768164.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "skempi_v2.csv",
+    "path": "data/skempi_v2.csv",
+    "type": "file",
+    "size": 1602208,
+    "mtime": 1772768166.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_overview.json",
+    "path": "outputs/analysis_overview.json",
+    "type": "file",
+    "size": 481,
+    "mtime": 1775199554.0,
+    "exported": true
+  },
+  {
+    "name": "barnase_barstar_skempi_annotated.csv",
+    "path": "outputs/barnase_barstar_skempi_annotated.csv",
+    "type": "file",
+    "size": 33588,
+    "mtime": 1775199556.0,
+    "exported": true
+  },
+  {
+    "name": "barnase_barstar_statistics.json",
+    "path": "outputs/barnase_barstar_statistics.json",
+    "type": "file",
+    "size": 489,
+    "mtime": 1775199554.0,
+    "exported": true
+  },
+  {
+    "name": "interface_residue_pairs.csv",
+    "path": "outputs/interface_residue_pairs.csv",
+    "type": "file",
+    "size": 698799,
+    "mtime": 1775199556.0,
+    "exported": true
+  },
+  {
+    "name": "interface_residue_summary.csv",
+    "path": "outputs/interface_residue_summary.csv",
+    "type": "file",
+    "size": 12426,
+    "mtime": 1775199558.0,
+    "exported": true
+  },
+  {
+    "name": "skempi_with_ddg.csv",
+    "path": "outputs/skempi_with_ddg.csv",
+    "type": "file",
+    "size": 1964293,
+    "mtime": 1775199558.0,
+    "exported": false
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1762,
+    "mtime": 1775199558.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 3014,
+    "mtime": 1775199556.0,
+    "exported": true
+  },
+  {
+    "name": "top_interface_residues.csv",
+    "path": "outputs/top_interface_residues.csv",
+    "type": "file",
+    "size": 1107,
+    "mtime": 1775199556.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 162669,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 305268,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 599969,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3938436,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "barnase_barstar_ddg_by_chain.png",
+    "path": "report/images/barnase_barstar_ddg_by_chain.png",
+    "type": "file",
+    "size": 72285,
+    "mtime": 1775199560.0,
+    "exported": true
+  },
+  {
+    "name": "barnase_barstar_ddg_vs_distance.png",
+    "path": "report/images/barnase_barstar_ddg_vs_distance.png",
+    "type": "file",
+    "size": 160029,
+    "mtime": 1775199558.0,
+    "exported": true
+  },
+  {
+    "name": "interface_contact_profile.png",
+    "path": "report/images/interface_contact_profile.png",
+    "type": "file",
+    "size": 109720,
+    "mtime": 1775199560.0,
+    "exported": true
+  },
+  {
+    "name": "interface_distance_heatmap.png",
+    "path": "report/images/interface_distance_heatmap.png",
+    "type": "file",
+    "size": 183847,
+    "mtime": 1775199560.0,
+    "exported": true
+  },
+  {
+    "name": "skempi_ddg_distribution.png",
+    "path": "report/images/skempi_ddg_distribution.png",
+    "type": "file",
+    "size": 78271,
+    "mtime": 1775199560.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 17266,
+    "mtime": 1775199561.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5185,
+    "mtime": 1775136376.0,
+    "exported": true
+  }
+]

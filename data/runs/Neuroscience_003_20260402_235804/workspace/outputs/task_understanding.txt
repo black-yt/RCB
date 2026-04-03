@@ -1,0 +1,21 @@
+Task objective: develop a reproducible analysis for selecting a subset of dynamically expressed molecular features from a single-cell dataset that preserves continuous cellular trajectories relevant to state transitions, then report the method and findings in publication-style form.
+
+Available data in this workspace:
+- data/adata_RPE.h5ad: preprocessed single-cell protein imaging AnnData with 2,759 cells and 241 features.
+- Cell metadata visible in the file include annotated_age, batch, phase, and state.
+- Feature names are protein-intensity style markers (for example AKT, Bcl2, CDK2, DNA, ERK, RB).
+- related_work/: four reference PDFs (paper_000.pdf to paper_003.pdf) to inform trajectory-preserving feature-selection strategy and evaluation framing.
+
+Main planned analysis steps:
+1. Load and inspect the AnnData object, summarize cells/features/metadata, and check data quality and structure.
+2. Build a baseline cell-state trajectory representation using dimensionality reduction / neighborhood graph methods and pseudotime or progression proxies from the observed metadata.
+3. Score features for dynamic behavior along continuous trajectories while reducing confounding from batch and cell-cycle/state effects where possible.
+4. Select a compact feature subset and compare it against baselines by how well low-dimensional embeddings, neighborhood structure, and trajectory ordering are preserved.
+5. Generate clear figures for data overview, selected-feature results, and validation/comparison analyses.
+6. Write the final report with methods, results, interpretation, and limitations.
+
+Expected deliverables:
+- Analysis code in code/.
+- Intermediate results in outputs/.
+- Final report at report/report.md.
+- Supporting figures in report/images/ referenced from the report using relative paths.

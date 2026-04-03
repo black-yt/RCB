@@ -1,0 +1,87 @@
+{
+  "best_model_id": "000",
+  "checkpoint_template_summary": {
+    "largest_entries": [
+      {
+        "name": "best_chkpt/data/5",
+        "size": 27200
+      },
+      {
+        "name": "best_chkpt/data/3",
+        "size": 9420
+      },
+      {
+        "name": "best_chkpt/data/2",
+        "size": 2416
+      },
+      {
+        "name": "best_chkpt/data/4",
+        "size": 2416
+      },
+      {
+        "name": "best_chkpt/data/12",
+        "size": 2400
+      },
+      {
+        "name": "best_chkpt/data.pkl",
+        "size": 1605
+      },
+      {
+        "name": "best_chkpt/data/0",
+        "size": 260
+      },
+      {
+        "name": "best_chkpt/data/1",
+        "size": 260
+      },
+      {
+        "name": "best_chkpt/.data/serialization_id",
+        "size": 40
+      },
+      {
+        "name": "best_chkpt/data/10",
+        "size": 32
+      }
+    ],
+    "tensor_bytes": 44552,
+    "tensor_entry_count": 14,
+    "total_uncompressed_bytes": 46205,
+    "zip_entries": 18
+  },
+  "config_field_unique_counts": {
+    "activation": 1,
+    "batch_size": 1,
+    "bias_groupby": 1,
+    "bias_trainable": 1,
+    "connectome_file": 1,
+    "connectome_type": 1,
+    "dataset_type": 1,
+    "decoder_kernel_size": 1,
+    "decoder_shape": 1,
+    "decoder_type": 1,
+    "dt": 1,
+    "dynamics_type": 1,
+    "extent": 1,
+    "fold": 1,
+    "n_folds": 1,
+    "n_frames": 1,
+    "n_iters": 1,
+    "n_syn_fill": 1,
+    "sign_trainable": 1,
+    "syn_count_groupby": 1,
+    "syn_count_trainable": 1,
+    "syn_strength_groupby": 1,
+    "syn_strength_trainable": 1,
+    "tasks": 1,
+    "time_const_groupby": 1,
+    "time_const_trainable": 1,
+    "vertical_splits": 1
+  },
+  "n_models": 50,
+  "validation_loss_max": 5.677851685219341,
+  "validation_loss_mean": 5.314309535159006,
+  "validation_loss_median": 5.3001416068938045,
+  "validation_loss_min": 5.136557016107771,
+  "validation_loss_std": 0.07520905350524594,
+  "worst_model_id": "049"
+}

@@ -1,0 +1,1013 @@
+                                                                                                                                  PDF Download
+                                                                                                                                  3580305.3599238.pdf
+                                                                                                                                  02 February 2026
+                                                                                                                                  Total Citations: 16
+                                                                                                                                  Total Downloads: 778
+    .
+    .
+        Latest updates: hps://dl.acm.org/doi/10.1145/3580305.3599238
+
+
+
+
+                                                                                                                                  .
+                                                                                                                                  .
+                                                                                                                        Published: 06 August 2023
+        .
+        .
+                                                                                                                        .
+    RESEARCH-ARTICLE
+
+
+
+
+                                                                                                                        .
+                                                                                                                        Citation in BibTeX format
+    3D-IDS: Doubly Disentangled Dynamic Intrusion Detection
+
+
+
+
+                                                                                                                        .
+                                                                                                                        .
+                                                                                                                        KDD '23: The 29th ACM SIGKDD
+                                                                                                                        Conference on Knowledge Discovery and
+    CHENYANG QIU, Beijing University of Posts and Telecommunications, Beijing, Beijing, China                           Data Mining
+    .
+                                                                                                                        August 6 - 10, 2023
+    YINGSHENG GENG, Beijing University of Posts and Telecommunications, Beijing, Beijing,                               CA, Long Beach, USA
+    China
+
+
+
+
+                                                                                                                        .
+                                                                                                                        .
+                                                                                                                        Conference Sponsors:
+    .
+    JUNRUI LU, Beijing University of Posts and Telecommunications, Beijing, Beijing, China                              SIGMOD
+                                                                                                                        SIGKDD
+    .
+    KAIDA CHEN, Beijing University of Posts and Telecommunications, Beijing, Beijing, China
+    .
+    SHITONG ZHU, Beijing University of Posts and Telecommunications, Beijing, Beijing, China
+    .
+    YA SU, Huawei Technologies Co., Ltd., Shenzhen, Guangdong, China
+    .
+    View all
+    .
+    .
+    Open Access Support provided by:
+    .
+    Beijing University of Posts and Telecommunications
+    .
+    Huawei Technologies Co., Ltd.
+    .
+                                                 KDD '23: Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (August 2023)
+                                                                                                                       hps://doi.org/10.1145/3580305.3599238
+                                                                                                                                          ISBN: 9798400701030
+.
+        3D-IDS: Doubly Disentangled Dynamic Intrusion Detection
+                    Chenyang Qiu                                                  Yingsheng Geng                                             Junrui Lu
+          Beijing University of Posts and                                Beijing University of Posts and                         Beijing University of Posts and
+               Telecommunications                                             Telecommunications                                      Telecommunications
+                cyqiu@bupt.edu.cn                                        gyswasdfre2255@bupt.edu.cn                                     672@bupt.edu.cn
+
+                       Kaida Chen                                                    Shitong Zhu                                                Ya Su
+         Beijing University of Posts and                                 Beijing University of Posts and                         HUAWEI Technologies Co., Ltd.
+              Telecommunications                                              Telecommunications                                    suya9@huawei.com
+            chenkaida@bupt.edu.cn                                          1337612789@bupt.edu.cn
+
+                    Guoshun Nan∗                                                       Can Zhang                                            Junsong Fu
+         Beijing University of Posts and                                 Beijing University of Posts and                         Beijing University of Posts and
+              Telecommunications                                              Telecommunications                                      Telecommunications
+           nanguo2021@bupt.edu.cn                                         zhangcan_bupt@bupt.edu.cn                                     fujs@bupt.edu.cn
+
+                                                        Qimei Cui                                                 Xiaofeng Tao
+                                         Beijing University of Posts and                                   Beijing University of Posts and
+                                               Telecommunications                                               Telecommunications
+                                              cuiqimei@bupt.edu.cn                                               taoxf@bupt.edu.cn
+
+ABSTRACT                                                                                               known ones that are not easily detected. Experiments show the
+Network-based intrusion detection system (NIDS) monitors net-                                          superiority of our 3D-IDS. We also demonstrate that our two-step
+work traffic for malicious activities, forming the frontline defense                                   feature disentanglements benefit the explainability of NIDS.
+against increasing attacks over information infrastructures. Al-
+though promising, our quantitative analysis shows that existing                                        CCS CONCEPTS
+methods perform inconsistently in declaring various unknown at-                                        • Security and privacy → Mobile and wireless security.
+tacks (e.g., 9% and 35% F1 respectively for two distinct unknown
+threats for an SVM-based method) or detecting diverse known at-                                        KEYWORDS
+tacks (e.g., 31% F1 for the Backdoor and 93% F1 for DDoS by a                                          Intrusion Detection; Anomaly Detection; Network Security
+GCN-based state-of-the-art method), and reveals that the underly-
+                                                                                                       ACM Reference Format:
+ing cause is entangled distributions of flow features. This motivates
+                                                                                                       Chenyang Qiu, Yingsheng Geng, Junrui Lu, Kaida Chen, Shitong Zhu, Ya Su,
+us to propose 3D-IDS, a novel method that aims to tackle the above                                     Guoshun Nan, Can Zhang, Junsong Fu, Qimei Cui, and Xiaofeng Tao. 2023.
+issues through two-step feature disentanglements and a dynamic                                         3D-IDS: Doubly Disentangled Dynamic Intrusion Detection. In Proceedings
+graph diffusion scheme. Specifically, we first disentangle traffic                                     of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data
+features by a non-parameterized optimization based on mutual                                           Mining (KDD ’23), August 6–10, 2023, Long Beach, CA, USA. ACM, New York,
+information, automatically differentiating tens and hundreds of                                        NY, USA, 13 pages. https://doi.org/10.1145/3580305.3599238
+complex features of various attacks. Such differentiated features
+will be fed into a memory model to generate representations, which                                     1     INTRODUCTION
+are further disentangled to highlight the attack-specific features.                                    Network attacks [6], such as password cracking [35], man-in-the-
+Finally, we use a novel graph diffusion method that dynamically                                        middle attacks (MITM) [9], and denial of service (Dos) [58], refer to
+fuses the network topology for spatial-temporal aggregation in                                         unauthorized attempts on various digital assets in an organization’s
+evolving data streams. By doing so, we can effectively identify vari-                                  networks, to steal data or perform malicious actions. Network at-
+ous attacks in encrypted traffics, including unknown threats and                                       tacks can also be broadly regarded as network anomalies [41], as
+∗ Guoshun Nan is the corresponding author.                                                             they may involve different characteristics from most other traffics.
+                                                                                                       It was reported that 31% of companies worldwide are now being
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed                  attacked at least one time a day [76], due to the growing trends of
+for profit or commercial advantage and that copies bear this notice and the full citation              mobile online business. This urgently calls for an intelligent system
+on the first page. Copyrights for components of this work owned by others than the                     that can help administrators automatically filter out these network
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission          anomalies in a huge amount of online traffics. A network-based
+and/or a fee. Request permissions from permissions@acm.org.                                            intrusion detection system (NIDS) [38], which monitors network
+KDD ’23, August 6–10, 2023, Long Beach, CA, USA.                                                       traffic and identifies malicious activities, facilitates administrators
+© 2023 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM ISBN 979-8-4007-0103-0/23/08. . . $15.00                                                           to form the frontline defense against increasing attacks over infor-
+https://doi.org/10.1145/3580305.3599238                                                                mation infrastructures (e.g., sensors and servers). Hence, NIDS is
+
+
+
+
+                                                                                                1965
+KDD ’23, August 6–10, 2023, Long Beach, CA, USA.                                                                                          Chenyang Qiu et al.
+
+
+                                                                                   accurate decisions. We refer to such a phenomenon as the entan-
+                                                                                   gled distribution of statistical features. To analyze the reason
+                                                                                   for performance variations of acknowledged attacks during testing,
+                                                                                   we use Pearson correlation heat map [14] to visualize the represen-
+                                                                                   tations of MITM and DDoS respectively, where the representations
+                                                                                   are generated by the encoder of E-GraphSAGE. Figure 2 (e) and
+                                                                                   Figure 2 (f) demonstrate the two correlation maps. Interestingly,
+                                                                                   we observe that the coefficients of MITM representations are much
+Figure 1: Illustration of two network attacks DoS and MITM.                        larger than those of DDoS. We further compare MITM with other at-
+DoS floods the target with massive traffic to overwhelm an                         tacks, including Backdoor and Dos, and find those high coefficients
+online service, and MITM eavesdrops on the communication                           in the representation will lead to lower intrusion detection scores.
+between two targets and steals private information. An NIDS                        We refer to such a phenomenon as the entangled distribution of
+can be easily deployed in a single location to collect statistical                 representational features, which can be considered as another
+features and alert the administrator for potential threats.                        main cause for the degradation of attack classification.
+                                                                                      In light of the above discussion, a critical question arises: "How
+widely applied in many information systems of governments and                      can an intrusion detection model automatically address the above
+e-commercial business sectors [79]. Figure 1 illustrates that two                  issue, i.e., two entangled distributions, to benefit the detection of both
+network attacks threaten information systems, and a NIDS builds a                  unknown and known attacks". Achieving this goal is challenging.
+frontline defense against these threats.                                           To mitigate the issue of the first entangled distribution, we need
+   Existing NIDS can be categorized into two types, i.e., signature-               to differentiate tens and thousands of features involved in real-
+based ones [19, 32, 49] and anomaly-based ones [2, 20, 62, 73]. The                time network traffic, without prior knowledge of the statistical
+former detects network attacks based on pre-defined patterns or                    distributions. Such a problem is largely under-explored in the field
+known malicious sequences stored in a database, such as the num-                   of NIDS. For the second entangled distribution, there are some
+ber of bytes in traffic. These patterns in the NIDS are referred to                remotely related methods [7, 26, 45, 69] in other fields, including
+as signatures. The latter anomaly-based NIDS learns to track at-                   computer vision and natural language processing. However, these
+tacks with machine learning techniques. Early statistical [9, 58]                  approaches mainly focus on object-level representation learning,
+approaches, such as Support Vector Machine (SVM), Logistic Re-                     and hence they are hardly directly applied to intrusion detection to
+gression (LR), and Decision Tree (DT), rely on carefully designed                  tackle this challenging problem.
+handcrafted features to learn classification boundaries. Recent deep                  We answer the above question and address the two challenging
+learning-based methods [1, 5] use millions of neural parameters                    problems with a novel method called 3D-IDS (Doubly Disentangle
+to mine the knowledge underlying the training samples, and have                    Dynamic IDS). Specifically, we first disentangle the statistical flow
+achieved great success in automatically modeling complex cor-                      features with a non-parametric optimization based on mutual in-
+relations for tens and thousands of features. The state-of-the-art                 formation, so that entangled distributions can be automatically
+E-GraphSAGE [46] employs graph convolution networks (GCNs)                         separated for modeling the general features of various attacks. We
+to learn the feature representations for better prediction.                        refer to this step as statistical disentanglement. Then we further
+   Although promising, we observe that existing anomaly-based                      learn to differentiate the representations by a loss function, aiming
+approaches yield inconsistent results in identifying distinct attacks.             to highlight the salient features for specific attacks with smaller co-
+For statistical methods, Figure 2 (a) demonstrates that the detection              efficients. We refer to this step as representational disentanglement.
+performance of an SVM-based method [31] for an unknown attack                      We finally introduce a novel graph diffusion method that fuses the
+can be as low as 9% in terms of F1 on CTC-ToN-IOT [52], a popular                  graph topology for spatial-temporal aggregation in evolving traffic.
+benchmark for NIDS. While the model achieves 40% F1 in declaring                   Extensive experiments on five benchmarks show the superiority of
+another unknown threat (DDoS) on the same benchmark. Regarding                     our 3D-IDS. The main contributions of this paper are as follows.
+the deep learning-based methods, Figure 2 (d) demonstrates that E-
+                                                                                        • We propose 3D-IDS, a novel method that aims to mitigate
+GraphSAGE achieves a lower than 20% F1 score for MITM attacks,
+                                                                                          the entangled distributions of flow features for NIDS. To
+and a higher than 90% F1 score for DDoS on the CTC-ToN-IOT
+                                                                                          the best of our knowledge, we are the first to quantitatively
+dataset.
+                                                                                          analyze such an interesting problem and empirically reveal
+   To investigate the underlying cause of why existing methods
+                                                                                          the underlying cause in the field of intrusion detection.
+perform inconsistently for various attacks, including unknown ones
+                                                                                        • We present a double-feature disentanglement scheme for
+and known ones, we depict feature distributions and visualize the
+                                                                                          modeling the general features of various attacks and high-
+representations. Figure 2 (b) and (c) depict statistical distributions of
+                                                                                          lighting the attack-specific features, respectively. We addi-
+the two unknown attacks for the SVM-based model during testing.
+                                                                                          tionally introduce a novel graph diffusion method for better
+We observe that feature distributions of MITM attacks are entan-
+                                                                                          feature aggregation.
+gled, while the ones of DDoS are more separated. It can be inferred
+                                                                                        • We conduct extensive quantitative and qualitative exper-
+that statistical distributions of traffic features are one of the main
+                                                                                          iments on various benchmarks and provide some helpful
+underlying causes of performance variations. Separated distribu-
+                                                                                          insights for effective NIDS.
+tions benefit the unknown attack identification, while entangled
+ones are indistinguishable and unable to help the NIDS to make
+
+
+
+
+                                                                            1966
+3D-IDS: Doubly Disentangled Dynamic Intrusion Detection                                                                  KDD ’23, August 6–10, 2023, Long Beach, CA, USA.
+
+
+
+
+                     (a) F1-Score                         (b) Normalized feature distribution of MITM attacks       (c) Normalized feature distributions of DDoS attacks
+
+
+
+
+                     (d) F1-Score                         (e) Representation correlation map of MITM attacks        (f) Representation correlation map of DDoS attacks
+
+Figure 2: Quantitative analysis on CTC-TON-IOT. (a) Comparisons of detecting various attacks, which are regarded as an
+unknown type in evaluation. Specifically, we train an SVM model without using the data points of these attacks, and evaluate the
+instances of these attacks on the test set. (b) and (c) show the feature distributions of two attacks, MITM and DDoS, respectively.
+(d) Comparisons of detecting various known attacks on the previous state-of-the-art deep learning model E-GraphSAGE, (e)
+and (f) are correlation maps of representations of the two attacks, where the representations are generated by E-GraphSAGE.
+
+
+2 RELATED WORK                                                                         graphs, which incorporate temporal information into graphs. These
+                                                                                       methods can be categorized into the spatio-temporal decoupled
+2.1 Network Intrusion Detection System
+                                                                                       ones [15, 34, 54] and the spatio-temporal coupled ones [10, 12, 25, 57,
+Existing NIDS can be classified into two groups, i.e., signature-based                 70]. The former employs two separate modules to capture temporal
+ones [19, 32, 49] and anomaly-based ones [2, 20, 62, 73]. The latter                   and spatial information respectively, and the latter ones incorpo-
+involves statistical methods [9, 58] and deep learning-based ones[1,                   rate spatial-temporal dependencies by proposing a synchronous
+5]. Early deep learning studies model the traffic as independent                       modeling mechanism. Our 3D-IDS is mainly inspired by the GIND
+sequences [18, 30, 42, 48]. Recent popular studies rely on GCN to                      [12], which adaptively aggregates information via a non-linear dif-
+aggregate traffic information [15, 33, 70]. Most related to our work is                fusion method. The key difference between our GCN approach and
+Euler [36], which builds a series of static graphs based on traffic flow               GIND is: we introduce the non-linear graph diffusion method into a
+and then performs information aggregation. Our 3D-IDS differs                          multi-layer graph that considers the network topology for dynamic
+from the above methods in two aspects: 1) We build dynamic graphs                      intrusion detection.
+rather than static ones, and such a dynamic aggregation can capture
+fine-grained traffic features for attack detection. Furthermore, we                    3 PRELIMINARIES
+fuse the network layer information into our graph aggregation. 2)
+We also introduce a two-step disentanglement scheme, including                         3.1 Multi-Layer Graphs
+statistical disentanglement and representational one, to benefit the                   We consider a single-layer network modeled by a graph G = (V, E, 𝜔),
+detection of both known and unknown attacks.                                           where 𝑉 is the set of nodes and 𝐸 ⊂ V × V is the set of edges. Here
+                                                                                       𝜔 : V × V ↦→ R is an edge weight function such that each edge
+2.2    Disentangled Representation Learning                                            𝑒𝑢𝑣 ∈ E has a weight 𝜔𝑢𝑣 . A multi-layer network can be modeled
+                                                                                       by a multi-layer graph:
+Disentanglement aims to learn representations that separate the
+underlying explanatory factors responsible for variation in the                                         𝐴         · · · 𝐴 (1,𝑘 ) · · · 𝐴 (1,𝑚)
+data. Previous studies [4, 11, 16, 23, 24, 44, 47] focus on the gen-                                 © (1,1)                                     ª
+                                                                                                     ­      ..     ..       ..     ..       ..   ®
+erative models by employing constraints on the loss functions,                                       ­
+                                                                                                     ­       .        .      .        .      .   ®
+                                                                                                                                                 ®
+such as 𝛽-VAE [29]. Some recent approaches [59, 71, 72, 80] have                                A = ­­ 𝐴 (𝑙,1) · · · 𝐴 (𝑘,𝑘 ) · · · 𝐴 (𝑙,𝑚) ®® .          (1)
+studied disentangled GNNs to capture the intrinsic factors in graph-                                 ­     ..      ..        ..    ..        ..  ®
+                                                                                                     ­      .         .       .       .       .  ®
+structured data. Most related to our work is DisenLink [80], which                                   ­                                           ®
+disentangled the original features into a fixed number of factors,                                      𝐴
+                                                                                                     « (𝑚,1)      · · ·  𝐴 (𝑚,𝑘 ) · · · 𝐴 (𝑚,𝑚) ¬
+with selective factor-wise message passing for better node represen-                   where 𝐴𝑖,𝑖 refers to the intra-layer adjacency matrix and 𝐴𝑖,𝑗 (𝑖 ≠ 𝑗)
+tations. While our 3D-IDS uses a double disentanglement method,                        refers to cross-layer adjacency matrix.
+which first disentangles the statistical features via non-parametric
+optimization, and then learns to highlight the attack-specific fea-                    3.2      Edge Construction
+tures with a regularization.                                                           We have constructed a multi-layer dynamic graph by defining the
+                                                                                       devices as nodes and the communications between two devices as
+2.3    Dynamic Graph Convolution Networks                                              edges. Specifically, we first transform the Netflow data to edges by
+                                                                                       the following definition:
+Dynamic graph convolution networks (GCNs) focus on evolving
+graph streams. There is a line of early studies in GCNs on dynamic                                         E𝑖 𝑗 (𝑡) = (𝑣𝑖 , 𝑙𝑖 , 𝑣 𝑗 , 𝑙 𝑗 , 𝑡, Δ𝑡, F𝑖 𝑗 (𝑡)).           (2)
+
+
+
+
+                                                                                1967
+KDD ’23, August 6–10, 2023, Long Beach, CA, USA.                                                                                       Chenyang Qiu et al.
+
+
+
+
+Figure 3: Overview of the proposed 3D-IDS, which consists of five modules. 1) Edge construction module builds edges based
+on traffic flow. 2) Statistical disentanglement module differentiates values in vectors to facilitate the identification of various
+attacks. 3) Representational disentanglement module learns to highlight attack-specific features. 4) Multi-Layer graph diffusion
+module fuses the network topology for better aggregation over evolving dynamic traffic. 5) Traffic classifier takes the traffic
+representation as an input to yield the detection results.
+
+
+First, we concatenate the source IP and source port in the original               4.1    Statistical Disentanglement
+traffic flows as the source identity for the device 𝑖. Similarly, we              As we discussed in Section 1, statistical distributions of traffic
+can obtain the destination identity for the device 𝑗. We denote 𝑣𝑖                features are one of the main underlying causes of performance
+and 𝑣 𝑗 as the source and destination nodes respectively. Secondly,               variations. i.e., separated distributions benefit the unknown attack
+𝑙𝑖 denotes the layer of device 𝑖, and 𝑙𝑖 = 0 indicates that 𝑖 is a                identification, while entangled ones are indistinguishable and thus
+terminal device such as a PC, a server, or an IoT device. Here 𝑙𝑖 = 1             unable to help the NIDS to make accurate decisions. Therefore,
+indicates that 𝑖 is an intermediate device such as a router in the                our aim is there to disentangle the traffic features and make them
+communication link. Specifically, we assign devices with the router               distinguishable.
+address 192.168.0.1 or with many stable connections in layer 1.                      To separate the features of traffic without any prior knowledge,
+Then 𝑡 refers to the timestamp of traffic and Δ𝑡 indicates the traffic            we formulate the differentiation as a constrained non-parametric op-
+duration time. Finally, F𝑖 𝑗 (𝑡) is the traffic features.                         timization problem and approximate the optimal results by solving
+                                                                                  the Satisfiability Modulo Theory (SMT) [17]. We perform a min-
+3.3     Problem Formulation                                                       max normalization on the edge feature F𝑖 𝑗 (𝑡). For convenience,
+We first define the devices as nodes and the communications with                  we denote the normalized edge feature as F , and F𝑖 is the 𝑖-th
+timestamps between any pair of devices as edges. We use T to rep-                 normalized element.
+resent the maximum timestamp. An Edge sequence E is denoted                          We need a weight matrix w to generate the disentangled repre-
+          𝑇                                                                       sentation of F . Our key optimization objectives are to minimize
+    
+by E 𝑡 𝑡 =1 , where each E 𝑡 represents a network traffic. Also, after
+each edge, there is a corresponding multi-layer graph, then the cor-              the mutual information between the elements of traffic features
+                                                               
+responding multi-layer graph stream G takes the form of G𝑡 𝑡 =1 ,
+                                                                     𝑇            and also bound the range of w when we perform aggregation. We
+                𝑡        𝑡   𝑡                                                   start by constraining the weight matrix w with the range of the
+where each G = V , E represents the multi-layer graph at
+                                                                                  superposition function as follows:
+timestamp 𝑡. A multi-layer adjacency matrix A𝑡 ∈ R𝑚×𝑛 repre-
+sents the edges in E 𝑡 , where ∀(𝑖, 𝑗, 𝑤) ∈ E 𝑡 , A𝑡 [𝑖] [ 𝑗] = 𝑤𝑖 𝑗 and
+                                                                                                                                𝑁
+𝑤𝑖 𝑗 is the weight of the matrix. The goal of intrusion detection is to
+                                                                                                                                ∑︁
+                                                                                         𝑊min ≤ w𝑖 ≤ 𝑊max       (1 ≤ 𝑖 ≤ 𝑁 ),         w𝑖 F𝑖 ≤ 𝐵,       (3)
+learn to predict the edge E 𝑡 as a benign traffic or an attack in binary                                                        𝑖=1
+classification, and a specific type under the multi-classification.
+                                                                                  where 𝑊min , 𝑊max and 𝐵 are constants, 𝑁 is the edge feature di-
+4     MODEL                                                                       mension. We then constrain the order-preserving properties of
+In this section, we present the 3D-IDS, which consists of four main               generated representations:
+modules. Figure 3 shows the architecture of our proposed model.
+Next, we dive into the details of these modules.                                                 w𝑖 F𝑖 ≤ w𝑖+1 F𝑖+1   (1 ≤ 𝑖 ≤ 𝑁 − 1).                  (4)
+
+
+
+
+                                                                           1968
+3D-IDS: Doubly Disentangled Dynamic Intrusion Detection                                                               KDD ’23, August 6–10, 2023, Long Beach, CA, USA.
+
+
+   Finally, we maximize the distance between components in the                             2) Updating node memory: We update the node memory by
+vector w, consequently minimizing the mutual information be-                             merging the latest message with the historical memory and then
+tween each two feature elements. In this way, we can disentangle                         encode the merging information, which can be expressed as follows:
+the distribution of element-wised features. The optimization objec-
+                                                                                                             m𝑖 (𝑡) = Mem (c𝑖 (𝑡), m𝑖 (𝑡 − )) ,                  (10)
+tive can be expressed as follows:
+                                                                                         where Mem is an encoder, and here we use GRU. We also update
+                          e = arg max(w𝑁 F𝑁 − w1 F1 −
+                          w                                                              the memory of node 𝑗 via (10).
+                𝑁 −1
+                                                                                            3) Generating second disentangled node representations:
+                ∑︁                                                          (5)          We can generate the node representation by utilizing the updated
+                        |2w𝑖 F𝑖 − w𝑖+1 F𝑖+1 − w𝑖 −1 F𝑖 −1 |).
+                 𝑖=2
+                                                                                         memory in (10), and the representation of node 𝑖 in time 𝑡 can be
+                                                                                         expressed as x𝑖 (𝑡) = x𝑖 (𝑡 − ) + m𝑖 (𝑡), where x𝑖 (𝑡 − ) is the historical
+We are unable to determine the convexity of the optimization object                      representation of node 𝑖. The representation of node 𝑗 can also be
+due to its closed form. Therefore, we transform the above problem                        generated in a similar way. The initial value of node representations
+into an SMT problem with an optimization objective (6) and a                             X(0) is 0.
+subjection (7) to approximate the optimal results.                                          We aim to preserve the disentangled property in node repre-
+                                                                                         sentations. However, the update operations above may entangle
+                          e = arg max(w𝑁 F𝑁 − w1 F1 +
+                          w                                                              them at the element level again. Therefore, we propose the sec-
+                 𝑁
+                 ∑︁−1
+                                                                            (6)          ond representational disentanglement, which aims to highlight the
+                        2w𝑖 F𝑖 − w𝑖 −1 F𝑖 −1 − w𝑖+1 F𝑖+1 ),                              attack-specific features for the following end-to-end training. It
+                  𝑖=2                                                                    also ensures that the element-wised representations are close to
+subjects to:                                                                             orthogonal.
+                                                                                                                      1                     2
+              w𝑖                ∈    [𝑊min,𝑊max ]                                                          LDis =        X(𝑡)X(𝑡 − ) ⊤ − I 𝐹 .                 (11)
+             
+                                                                                                                     2
+              Í𝑁 w𝑖 n𝑖
+             
+                                ≤    𝐵
+                𝑖=1                                                         (7)             The above regularization encourages the model to learn smaller
+             
+              w𝑖 F𝑖             ≤    w𝑖+1 F(𝑖+1)                                        coefficients between every two elements of node representations.
+              2w𝑖 F𝑖
+             
+                                 ≤    w𝑖 −1 F𝑖 −1 + w𝑖+1 F𝑖+1 .
+                                                                                        Such representations can be more differentiated. As the module is
+For the above formation, we can generate the disentangled edge                           supervised by the signal of a specific attack, it can learn to highlight
+representation h𝑖,𝑗 by solving the above problem, which can be                           the attack-specific features, so as to improve the detection scores,
+expressed as h𝑖,𝑗 = w ⊙ F , where the symbol ⊙ represents the                            as discussed in Section 1. By doing so, we are able to mitigate the
+Hadamard product.                                                                        entangled distribution of representational features as mentioned at
+   Equipped with the above non-parametric optimization, we can                           the beginning.
+differentiate tens and hundreds of complex features of various
+attacks, mitigating the entangled distribution of statistical features.                  4.3    Multi-Layer Graph Diffusion
+Such statistical disentangled features facilitate our model to be                        So far, we have generated the disentangled node representations
+more sensitive to various attacks.                                                       with temporal information. For further fusing the multi-layer topo-
+                                                                                         logical structure information, we propose a multi-layer graph diffu-
+4.2     Representational Disentanglement                                                 sion module, and please note that we still preserve the disentangled
+So far we have constructed edges and statistically differentiated                        property by customized designs.
+the features of traffic flows. This module generates contextualized                         We utilize the following graph diffusion method to fuse the
+node representations X from edge representations. This involves                          topological information in evolving graph streams, which can cap-
+three steps:                                                                             ture the fine-grained continuous spatio-temporal information. The
+    1) Generating updating messages: For an incoming traffic                             previous dynamic intrusion detection methods may lose this infor-
+flow, we will build an edge or update the corresponding edge, which                      mation in separated time gaps, due to the employed time-window
+may lead to a dramatic change in the node representations involved                       or snapshots-based methods.
+in this interaction. We can update the node representations by                                                   
+                                                                                                                    𝜕𝑡 X = F (X, Θ)
+utilizing this change. Therefore, we name the abrupt change an                                                                                           (12)
+                                                                                                                    X0 = C,
+updating message and denote it as 𝑐 (𝑡). Specifically, we generate
+𝑐 (𝑡) by incorporating historical memory and disentangled edge                           where F is a matrix–valued nonlinear function conditioned on graph
+representation h𝑖,𝑗 . The messages of node 𝑖 and 𝑗 are as follows:                       G, and Θ is the tensor of trainable parameters.
+                                                                                             Specifically, we aim to amplify the important dimensions of
+           c𝑖 (𝑡) = Msg m𝑖 (𝑡 − ) , m 𝑗 (𝑡 − ) , 𝑡, Δ𝑡, 𝑙𝑖 , 𝑙 𝑗 , hi,j ,
+                                                                       
+                                                                          (8)            disentangled representations and depress the influence of trivial
+                               −           −
+           c 𝑗 (𝑡) = Msg m 𝑗 (𝑡 ) , m𝑖 (𝑡 ) , 𝑡, Δ𝑡, 𝑙𝑖 , 𝑙 𝑗 , hi,j ,
+                                                                       
+                                                                          (9)            feature elements in the diffusion process. To formulate this process,
+                                                                                         we consider PM (PeronaMalik) diffusion [56], a type of nonlinear
+where h𝑖,𝑗 is the disentangled edge representation. Δ𝑡 is the edge                       filtering. It can be expressed as:
+duration time, 𝑙𝑖 , 𝑙 𝑗 is the layer marks of edge, 𝑚𝑖 (𝑡 − ), 𝑚 𝑗 (𝑡 − )is the                          𝜕𝑥 (𝑢,𝑡 )
+historical memory of the two interacting nodes, Msg is a learnable                                                  = div[𝑔(|∇𝑥 (𝑢, 𝑡)|)∇𝑥 (𝑢, 𝑡)]
+                                                                                                             𝜕𝑡                                           (13)
+function, and we use RNN. The initial memory m(0) is set as 0.                                            𝑥 (𝑢, 0) = 𝑐,
+
+
+
+
+                                                                                  1969
+KDD ’23, August 6–10, 2023, Long Beach, CA, USA.                                                                                                            Chenyang Qiu et al.
+
+
+where 𝑑𝑖𝑣 is the divergence operator, ∇ is the gradient operator,                                embedding to be farther apart in embedded space, due to the learn-
+and 𝑔 is a function inversely proportional to the absolute value of                              ing process independency. To address this problem, we constrained
+the gradient.                                                                                    the variation between adjacent timestamps embedding by minimiz-
+   In addition, the edges in dynamic multi-layer graphs always                                   ing the Euclidean Distance:
+have different timestamps and are in different layers. There are also                                                            𝑇
+                                                                                                                                ∑︁
+different interactions at different layers and times. These factors will                                            LSmooth =          ∥X𝑡 +Δ𝑡 − X𝑡 ∥ 2 .                 (19)
+dynamically affect the information exchange results over graphs.                                                                𝑡 =0
+Therefore, we aim to incorporate the above factors into the diffusion                            Finally, the overall loss of 3D-IDS can be expressed as follows:
+process. We propose the following layer-temporal coefficient 𝑠𝑖 𝑗
+between nodes i,j in 𝑡𝑖 𝑗 time:                                                                                     L = LInt + 𝛼 LSmooth + 𝛽LDis,                         (20)
+                                                                                                 where 𝛼, and 𝛽 are trade-off parameters.
+                         𝑠𝑖 𝑗 = 𝑓 (𝑙𝑖 ||𝑙 𝑗 ||𝜙 (𝑡 − 𝑡𝑖 𝑗 )),                     (14)
+                                                                                               5 EXPERIMENTS
+                      𝑓 (x) = W (2) · ReLU W (1) x ,                              (15)           5.1 Experimental Settings
+where 𝑓 (·) is defined in (15), 𝜙 (·) represents a generic time encoder                          Datasets: We conduct experiments on five popular datasets that
+[77], W (1) and W (2) are the parameters of the first layer and second                           involve massive network traffic over the internet of things (IoT).
+layer MLP.                                                                                       We give detailed descriptions as follows:
+   To transfer the above continuous PM diffusion to the multi-layer                                   • CIC-ToN-IoT [51]: This dataset is generated from the existing
+graph, we need to define the differential operators on the multi-                                       ToN-IoT dataset [52] by a network traffic tool CICFlowMeter
+layer graph. As known from previous literature [13], the gradient                                        [40], where TON-IoT is a well-known database for intrusion
+operator corresponds to the instance matrix M, while the divergence                                      detection collected from Telemetry datasets [3] of IoT ser-
+operator corresponds to the matrix M⊤ , and we can compute the                                          vices. This dataset consists of 5, 351, 760 flows, with 53.00%
+matrix 𝑀 by the equation M𝑇 M = D − A, where D is the diagonal                                           attack samples and 47.00% benign samples.
+matrix. Then our novel multi-layer diffusion can be expressed as:                                     • CIC-BoT-IoT [64]: It is generated from the existing BoT-
+                                                                                                         IoT dataset [37] by CICFlowMeter. This dataset consists of
+                   𝜕X𝑡 = −M⊤ 𝜎 (MXK⊤ )S MXK⊤ K,                                                          6, 714, 300 traffic flows, with 98.82% attack samples and 1.18%
+                                            
+                                                                                  (16)
+                                                                                                         benign samples.
+where K is a transformation matrix, S is the layer-temporal influ-
+                                                                                                      • EdgeIIoT [21]: It is collected from an IoT/IIoT system that
+ence coefficients and 𝜎 (𝑥) represents the function exp(−|𝑥 |). The
+                                                                                                         contains mobile devices and sensors. This dataset includes
+solution to equation 16 can be expressed as:
+                                                                                                        1, 692, 555 flows, with 21.15% attack samples and 78.85% be-
+                                 ∫ 𝑡 +Δ𝑡
+                                                                                                         nign samples.
+                   X𝑡 +Δ𝑡 = X𝑡 +         𝜕𝑡 X𝑡 𝑑𝜏,              (17)                                  • NF-UNSW-NB15-v2 [66]: It is NetFlow-based and generated
+                                           𝑡
+                                                                                                         from the UNSW-NB15 [53] dataset, which has been expanded
+where 𝑡 is the last edge occurrence time and Δ𝑡 is the edge duration
+                                                                                                        with additional NetFlow features and labeled with respective
+and we use the Runge-Kutta method to solve this equation.
+                                                                                                         attack categories. This dataset includes 2, 390, 275 flows, with
+                                                                                                         3.98% attack samples and 96.02% benign samples.
+4.4     Classifier and Loss Function                                                                  • NF-CSE-CIC-IDS2018-v2 [66]: It is a NetFlow-based dataset
+Finally, we make the two-step predictions for intrusion detection.                                       generated from the original pcap files of CSE-CIC-IDS2018
+We utilize the first MLP to classify whether the traffic is benign                                       [68] dataset. This dataset includes 18, 893, 708 flows, with
+or anomalous and utilize the second MLP to detect the specific                                          11.95% attack samples and 88.05% benign samples.
+type of attack. When an unknown attack invades, the direct multi-
+                                                                                                 Configurations: All experiments and timings are conducted on a
+classifications will be easy to fail to assign the anomalous label thus
+                                                                                                 machine with Intel Xeon Gold 6330@ 2.00GHz, RTX3090 GPU, and
+leading to poor performance. In contrast, through the first-step bi-
+                                                                                                 24G memory. We use the Adam optimizer with a learning rate of
+nary classification, 3D-IDS will focus more on inconsistencies with
+                                                                                                 0.01, the learning rate scheduler reducing rate as 0.9, with weight
+normal behavior to improve the performance of detecting unknown
+                                                                                                 decay being 1𝑒 −5 . We train all the models with 500 epochs.
+attacks. The following second multi-classification will further alert
+                                                                                                 Baselines: To evaluate the performance of the proposed 3D-IDS,
+the administrators that what kind of attack it is more similar to
+                                                                                                 we select 10 deep learning based-models as baselines, including
+so that similar mitigation measures can be taken. Specifically, the
+                                                                                                 3 sequence models (i.e., MLP [60], MStream [5], LUCID [18]), 4
+intrusion loss can be expressed as:
+                                                                                                 static GCN models (i.e., GAT [74] and E-GraphSAGE [28], SSDCM
+                                                                                                 [50], DMGI [55]), where SSDCM and DMGI are designed for static
+            𝑚
+            ∑︁                                       𝑚 ∑︁
+                                                     ∑︁ 𝐾                                        multi-layer graphs, 4 dynamic GCN models (i.e., TGN [61], EULER
+ LInt = −         (log(1−𝑝 nor,𝑖 )+log(𝑝 att,𝑖 )+                 𝑦𝑖,𝑘 log(𝑝𝑖,𝑘 ). (18)          [36], AnomRank [78], DynAnom [78]). Additionally, we choose 3
+            𝑖=1                                      𝑖=1 𝑗=1
+                                                                                                 rule-based baselines to compare with the proposed 3D-IDS, (i.e.,
+where 𝑚 is the batch size, 𝐾 is the number of attack classes, 𝑝 nor,𝑖                            ML [63], AdaBoost [39], and Logistic Regression).
+is the probability of normal, 𝑝 att,𝑖 is the probability of attack. Ad-                          Metrics: We follow the previous works [65] to evaluate the perfor-
+ditionally, the adjacent time intervals may cause adjacent times                                 mances of all baselines by two commonly used metrics in intrusion
+
+
+
+
+                                                                                          1970
+3D-IDS: Doubly Disentangled Dynamic Intrusion Detection                                                            KDD ’23, August 6–10, 2023, Long Beach, CA, USA.
+
+
+          Table 1: Comparisons of binary classification on five datasets. The results with ‡ are directly copied from [8].
+
+                                CIC-TON-IoT                CIC-BoT-IoT                     EdgeIIoT          NF-UNSW-NB15-v2           NF-CSE-CIC-IDS2018-v2
+       Methods
+                               F1        AUC              F1        AUC               F1           AUC         F1      AUC                F1        AUC
+     TGN [61]            89.90±1.66    82.09±1.36    96.84±0.44   94.41±0.81    94.99±0.61     89.50±2.04   93.55±0.23   88.01±1.97    95.11±0.46    91.30±0.76
+    EULER [36]           89.73±1.13    80.48±2.46    96.00±0.29   91.47±1.36    92.89±0.32     90.64±1.80   92.76±0.86   86.97±1.11    95.87±0.51    90.76±0.64
+   AnomRank [78]         76.51±0.98    77.41±1.64    84.84±0.49   82.50±0.59    78.37±0.43     81.36±0.41   90.54±2.40   79.63±0.12    90.08±0.82    83.76±0.35
+   DynAnom [27]          79.23±1.81    75.22±0.92    83.25±0.62   79.04±0.84    81.56±0.94     83.94±0.36   89.11±1.48   85.25±0.64    91.21±0.95    88.79±0.54
+    Anomal-E [8]             -             -             -            -             -              -         91.89‡          -          94.51‡           -
+      GAT [74]           86.30±1.16    74.66±1.37    94.56±0.75   93.09±2.83    93.30±0.14     88.30±1.56   92.20±1.60   89.91±0.62    96.08±0.24    90.56±0.34
+  E-GraphSAGE [46]       89.46±1.25    79.56±1.63    93.74±0.76   90.53±1.90    92.10±1.46     89.10±0.64   94.10±0.33   90.39±0.26    95.71±0.35    90.22±0.48
+      DMGI [55]          88.83±0.48    79.13±2.11    96.07±1.89   92.65±1.57    93.83±1.67     86.03±2.45   93.11±0.98   88.51±1.00    93.87±0.84    87.56±0.55
+     SSDCM [50]          89.23±0.87    80.84±2.32    97.11±0.63   94.82±0.96    94.72±1.59     86.69±0.76   93.30±0.25   89.22±1.94    94.96±0.52    88.61±0.38
+       MLP [60]          80.74±0.43    61.80±1.48    93.01±0.60   87.90±0.54    88.78±0.44     86.00±1.49   93.12±0.64   89.92±0.55    94.59±0.94    90.42±0.89
+      MStream [5]        73.90±1.13    70.22±1.61    78.48±0.19   74.04±1.66    82.47±1.67     77.89±0.58   89.47±1.13   84.38±1.01    88.34±0.45    83.66±1.79
+      LUCID [18]         83.62±1.69    72.31±1.14    94.36±0.41   89.46±0.72    88.94±1.73     85.23±0.94   92.77±1.39   88.32±0.91    95.84±1.46    90.75±0.79
+    Ours (3D-IDS)        91.57±0.40   84.06±1.01     98.24±0.32   96.32±0.25    96.83±0.36     92.34±1.10   95.45±0.67   91.55±1.03    96.34±0.21    93.23±1.50
+
+
+
+
+                                      (a) EdgeIIoT                                                                   (b) CIC-ToN-IoT
+
+
+
+
+             (c) CIC-BoT-IoT                              (d) NF-UNSW-NB15-v2                                      (e) NF-CSE-CIC-IDS2018-v2
+
+Figure 4: Comparisons of multi-classification. Here † indicates that the results are directly copied from the previous works.
+
+
+detection including F1-score (F1) and ROC-AUC score (AUC).                            outperforms AnomRank, the previous state-of-the-art method for
+                                                                                      anomaly detection on F1, by 15.27 points over the EdgeIIoT dataset.
+                                                                                      We attribute the above results to the gains of our statistical disen-
+5.2     Main Results
+                                                                                      tanglement, representational disentanglement and dynamic graph
+5.2.1 Comparisons of binary classification. Under this setting, we                    diffusion method.
+classify a traffic flow as an attack or a benign one. We categorize
+the baselines into three groups, including dynamic GCNs at the                        5.2.2 Comparisons of multi-classification. We compare the perfor-
+top of Table 1, static GCNs at the middle of the table, and another                   mance of our method to four baselines in declaring the specific
+three baselines at the bottom. It should be noted that AnomRank                       attack type. These baselines include E-GraphSAGE [46], TGN [61],
+and DynAnom are two popular baselines for anomaly detection.                          ML [75], and AdaBoost [67], as they are representative of different
+We run our experiment 5 times and report the mean and variance                        types of intrusion detection models and have been widely used in
+values. The comparison results in Table 1 show that our 3D-IDS                        previous studies. Figure 4 shows that the proposed 3D-IDS consis-
+consistently performs the best among all baselines over the five                      tently achieves the best results among all others over five datasets.
+benchmarks, which shows the superiority of our method for in-                         For example, ours yields higher classification accuracy of up to 25
+trusion detection. Specifically, compared to the E-GraphSAGE, the                     points compared to the baseline TGN for detecting Injection at-
+previous state-of-art GCN-based approach, our method achieves a                       tacks. The existing graph-based methods, including E-GraphSAGE,
+4.80% higher F1-score over the CIC-BoT-IoT dataset. Our 3D-IDS                        ML, and AdaBoost, perform inconsistently in the identification of
+
+
+
+
+                                                                               1971
+KDD ’23, August 6–10, 2023, Long Beach, CA, USA.                                                                                                            Chenyang Qiu et al.
+
+
+Table 2: Unknown classification on the CIC-ToN-IoT dataset
+with metric F1-score (%)
+
+  Method     Logistic Regression   MSteam       E-GraphSAGE     TGN        Ours (3D-IDS)
+   DDoS           1.68±0.67        26.73±1.21    10.20±1.46   32.84±1.03     41.78±0.26
+  MITM            2.17±0.84        12.82±1.90     6.05±0.35   15.32±0.54     34.91±0.91
+ Injection        0.00±0.34        15.73±1.73    12.37±0.88   22.83±0.35     25.63±0.93
+ Backdoor         3.13±1.33        20.85±0.63     9.51±0.46   23.10±1.03     32.29±0.81
+                                                                                                               (a) Origin                        (b) First Distangled
+
+complex attacks (e.g., MITM, Uploading, and XSS). We also ob-                                       Figure 5: Statistical disentanglement of traffic features.
+serve that some attacks that are not easily detected by the baseline
+approaches, can be identified by the proposed 3D-IDS with high
+                                                                                                  removing this component can decrease the performance by 12.47
+F1 scores. For example, E-GraphSAGE only achieves 18.34% and
+                                                                                                  points in AUC. We observe that the multi-layer graph diffusion mod-
+30.7% F1 scores on CIC-ToN-IoT for MITM and Backdoor attacks,
+                                                                                                  ule also benefits the model performance. The above ablation study
+respectively, while our 3D-IDS is able to obtain higher than 23% F1
+                                                                                                  further confirms the effectiveness of the three key components.
+score for each attack. These results further show the superiority of
+the proposed 3D-IDS. We also find that the average scores of our                                  Table 3: Ablation study of 3D-IDS. F1-score (%), Precision (%),
+method on CIC-BoT-loT and CIC-ToN-loT are lower than the ones                                     ROC-AUC (%), Recall (%), all metrics above are the average of
+on the other three datasets. The underlying reason is the unbal-                                  five repeated experiments on the CIC-ToN-IoT dataset.
+anced attack distributions in the training set, where the dominant
+type may mislead the classifications. Such a finding aligns with
+previous work in the field of computer vision [22]. Nevertheless,                                       Variants            P           R              F1               AUC
+the proposed 3D-IDS is still the best under such distributions. We                                      w/o SD         92.70±0.46   90.71±0.89     91.69±0.33     86.87±0.54
+leave this interesting observation as our future work.                                                  w/o RD         91.06±0.57   87.32±0.67     89.15±0.42     83.57±1.33
+                                                                                                    w/o MLGRAND        88.76±0.54   84.43±0.26     86.54±0.71     79.32±0.30
+5.2.3 Comparisons of unknown attacks. To further investigate the
+                                                                                                    3D-IDS(ours)       97.78±0.32   98.06±0.43     97.92±0.26     96.04±0.25
+performance of detecting unknown attacks, we conduct experi-
+ments on the four attack types by discarding the corresponding
+instances in the train set and detecting them in the test set. We                                 5.4    Discussion
+run our experiments 5 times and report the mean and variance val-                                 RQ1: How does the statistical disentanglement help the de-
+ues with different random seeds. Table 2 reports the classification                               tection of various attacks? To answer this question, we visualize
+results on the CIC-ToN-IOT dataset. It shows that the statistical                                 the distributions of features before and after the statistical disentan-
+rule-based method Logistic Regression can only achieve as low as                                  glement. Figure 5 shows the visualizations of the two distributions
+a 1.68 F1 score for DDoS attacks, this confirms our analysis at the                               respectively. We can observe that there is less overlap between
+very beginning that rule-based methods can hardly detect unknown                                  distributions of features after the disentanglement compared with
+attacks. The score of graph-based E-GraphSAGE is much smaller                                     the original data, which demonstrates this module could decrease
+than 3D-IDS, e.g., 6.05% for MITM, indicating the limitations of the                              the mutual reference between features and enable them to be distin-
+static graph in detecting unknown attacks. We also observe that                                   guishable. We also observe that the distributions gradually shift to
+TGN performs better than E-GraphSAGE, although both of them                                       the right side, representing the order-preserved constraints within
+are graph-based methods. We attribute the improvement to the                                      our disentangling method.
+dynamic module for TCN. Nevertheless, our 3D-IDS outperforms                                      RQ2: How does the representational disentanglement ben-
+all these methods by a large margin, with an average score of 33.65%                              efit traffic classification for a specific attack? To answer this
+on the four attacks. The results also suggest that our method is                                  question, we track several Injection attack data in the CIC-ToN-
+more consistent in detecting various unknown attacks, showing                                     IoT dataset and obtain the representation of these data in 3D-IDS
+the effectiveness of the two disentanglements.                                                    and E-GraphSAGE. Meanwhile, we calculate the average of the
+                                                                                                  embedding of the benign data in the two models as the scaling ratio.
+5.3     Ablation Study                                                                            As shown in Figure 6, the representation values of E-GraphSAGE
+In this section, we conduct an ablation study on the CIC-ToN-IoT                                  are much closer to the normal, which increases the probability
+dataset to evaluate the effectiveness of each component. We remove                                of identifying the Injection attack as normal. It illustrates that as
+our statistical disentanglement and denote it as "w/o SD". We use                                 nodes aggregate, the discrepancies in features become blurred. The
+"w/o RD" and "w/o MLGRAND" to refer to the model that removes                                     representation values of anomalous nodes gradually converge to
+representational disentanglement and the multi-Layer graph diffu-                                 normal, leading to incorrect link predictions. Values of our model
+sion module, respectively. Table 3 reports the comparison results.                                in each dimension still deviate significantly from the normal values
+It shows that removing the multi-Layer graph diffusion module                                     since ours imposes restrictions on the aggregation of information.
+leads to the most significant performance degradation, e.g., an 18.33                             The result proves the effectiveness of our model in maintaining a
+points decrease in AUC, indicating that it is the key component                                   disentangled structure during the aggregation process, ensuring
+for the accuracy of the proposed 3D-IDS. Our second disentangled                                  the presence of discrepancies, and leading to more accurate traffic
+memory is also non-trivial to the overall detection accuracy, as                                  classification for a specific attack.
+
+
+
+
+                                                                                           1972
+3D-IDS: Doubly Disentangled Dynamic Intrusion Detection                                                       KDD ’23, August 6–10, 2023, Long Beach, CA, USA.
+
+
+                                                                                                      Table 4: TimeStamp and IP
+
+                                                                                      Time          TimeStamp                 Src IP            Dst IP
+                                                                                       𝑡1    25/04/2019 05 : 18 : 37 pm   183.68.192.168     1.169.216.58
+                                                                                       𝑡2    25/04/2019 05 : 18 : 42 pm    1.169.216.58     25.162.192.168
+                                                                                       𝑡3    25/04/2019 05 : 18 : 42 pm    1.169.216.58      230.158.52.59
+                                                                                       𝑡4    25/04/2019 05 : 18 : 49 pm   230.158.52.59     25.162.192.168
+                                                                                       𝑡5    25/04/2019 05 : 18 : 52 pm   25.162.192.168    69.151.192.168
+              (a) 3D-IDS                            (b) 3D-IDS
+                                                                                       𝑡6    25/04/2019 05 : 19 : 00 pm   177.21.192.168     230.158.52.59
+Figure 6: The comparison of node representation of the In-
+jection attack after graph aggregation of our 3D-IDS and
+E-GraphSAGE. The grey line presents benign data.
+
+
+
+
+                                                                                  Figure 8: Spatial-temporal coupling in intrusion detection.
+
+                                                                                  RQ4: How does the two-step disentanglement facilitate the
+                                                                                  explainability of 3D-IDS? For this question, we rely on Figure
+Figure 7: Linear relationship between the disentangled edge                       6 (a) as an example to recover the possible traffic features of a
+vector and the disentangled node representation.                                  password attack. First, since the original features are retained after
+                                                                                  the double disentanglement, we can find some feature values that
+                                                                                  deviate significantly from the normal values in the node embedding.
+RQ3: How does the multi-layer diffusion module perform                            As shown in Figure 7, due to the disentangled edge representation,
+effectively for intrusion detection? We have illustrated the prin-                there exists a linear relationship between the disentangled edge
+ciple of multi-layer diffusion in Section 4.3. In this part, we take              vector and the disentangled node representation. Therefore, based
+the MITM attack as an example to illustrate the effectiveness of                  on this relationship, we observe that the deviated features "Fwd
+spatial-temporal in intrusion detection.                                          Pkt Std" and "Fwd Pkt Len Max" present a strong correlation with
+    Figure 8 (a) shows a deep learning-based NIDS. When a MITM                    the password attack.
+attack occurs, it is difficult to detect the intrusion since the spatial
+and temporal information of those packets is not considered. There                6     CONCLUSION
+are also some methods that only consider a single aspect of spatial               This paper quantitatively studies the inconsistent performances
+and temporal information, such as E-GraphSAGE and MStream.                        of existing NIDS under various attacks and reveals that the under-
+In this case, for example, E-GraphSAGE mainly focuses on the                      lying cause is entangled feature distributions. These interesting
+spatial relationship of the set nodes and extracts features from                  observations motivate us to propose 3D-IDS, a novel method that
+them. However, we observe that different streams have their own                   aims to benefit known and unknown attacks with a double disen-
+timestamps from Table 4, so the lack of temporal information makes                tanglement scheme and graph diffusion mechanism. The proposed
+it impossible to analyze the dynamic structural changes of the                    3D-IDS first employs statistical disentanglement on the traffic fea-
+edge. Similarly, taking the temporal information as the only effect               tures to automatically differentiate tens and hundreds of complex
+factor will also get incomplete characteristics that do not contain               features and then employs representational disentanglement on
+spatial information (IP address). Moreover, some methods that take                the embeddings to highlight attack-specific features. Finally, 3D-
+both the spatial and temporal information into account, such as                   IDS fuses the network topology via multi-layer graph diffusion
+Euler, take the snapshot method to capture the feature of the flow                methods for dynamic intrusion detection. Extensive experiments
+which does not achieve the synchronous update for spatial and                     on five benchmarks show the effectiveness of our approach, in-
+temporal information. As shown in Figure 8 (b), intuitively, we                   cluding binary classifications, multi-classifications, and unknown
+can quickly detect that UE6 is an intrusion device of layer 1 when                attack identification. Future work could focus on the deployment
+the flow changes from 𝑆𝑊 2 − 𝑆𝑊 3 to 𝑆𝑊 2 − 𝑈 𝐸6 and 𝑈 𝐸6 −                       of 3D-IDS on future wireless networks.
+𝑆𝑊 3 considering 𝑆𝑊 2, 𝑆𝑊 3 are layer 2 devices. Also, we have
+noticed the changes in dynamic graph structure with a multi-Layer                 7     ACKNOWLEDGEMENT
+graph diffusion module to realize spatio-temporal coupling and                    This work was supported by National Key R&D Program of China
+synchronous updating. Overall, 3D-IDS performs best among these                   (Grant No.2022YFB2902200).
+baselines in detecting various attacks.
+
+
+
+
+                                                                           1973
+KDD ’23, August 6–10, 2023, Long Beach, CA, USA.                                                                                                                      Chenyang Qiu et al.
+
+
+REFERENCES                                                                                          [24] Muhammad W Gondal, Manuel Wüthrich, Ðorđe Miladinović, Francesco Lo-
+ [1] Zeeshan Ahmad, Adnan Shahid Khan, Cheah Wai Shiang, Johari Abdullah, and                            catello, Martin Breidt, Valentin Volchkov, Joel Akpo, Olivier Bachem, Bernhard
+     Farhan Ahmad. 2021. Network intrusion detection system: A systematic study                          Schölkopf, and Stefan Bauer. 2020. On the Transfer of Inductive Bias from Simu-
+     of machine learning and deep learning approaches. Transactions on Emerging                          lation to the Real World: a New Disentanglement Dataset. Advances in Neural
+     Telecommunications Technologies 32, 1 (2021), e4150.                                                Information Processing Systems 32 20 (2020), 15661–15672.
+ [2] Shadi Aljawarneh, Monther Aldwairi, and Muneer Bani Yassein. 2018. Anomaly-                    [25] Fangda Gu, Heng Chang, Wenwu Zhu, Somayeh Sojoudi, and Laurent El Ghaoui.
+     based intrusion detection system through feature selection analysis and building                    2020. Implicit graph neural networks. Advances in Neural Information Processing
+     hybrid efficient model. Journal of Computational Science 25 (2018), 152–160.                        Systems 33 (2020), 11984–11995.
+ [3] Abdullah Alsaedi, Nour Moustafa, Zahir Tari, Abdun Mahmood, and Adnan                          [26] Weikuo Guo, Huaibo Huang, Xiangwei Kong, and Ran He. 2019. Learning disen-
+     Anwar. 2020. TON_IoT telemetry dataset: A new generation dataset of IoT and                         tangled representation for cross-modal retrieval with deep mutual information
+     IIoT for data-driven intrusion detection systems. Ieee Access 8 (2020), 165130–                     estimation. In Proceedings of the 27th ACM International Conference on Multimedia.
+     165150.                                                                                             1712–1720.
+ [4] Yoshua Bengio, Aaron Courville, and Pascal Vincent. 2013. Representation                       [27] Xingzhi Guo, Baojian Zhou, and Steven Skiena. 2022. Subset Node Anomaly
+     learning: A review and new perspectives. IEEE transactions on pattern analysis                      Tracking over Large Dynamic Graphs. In Proceedings of the 28th ACM SIGKDD
+     and machine intelligence 35, 8 (2013), 1798–1828.                                                   Conference on Knowledge Discovery & Data Mining (KDD ’22). Association for
+ [5] Siddharth Bhatia, Arjit Jain, Pan Li, Ritesh Kumar, and Bryan Hooi. 2021. MStream:                  Computing Machinery. https://doi.org/10.1145/3534678.3539389
+     Fast Anomaly Detection in Multi-Aspect Streams. In Proceedings of the Web                      [28] William L Hamilton, Rex Ying, and Jure Leskovec. 2017. Representation learning
+     Conference 2021. ACM. https://doi.org/10.1145/3442381.3450023                                       on graphs: Methods and applications. arXiv preprint arXiv:1709.05584 (2017).
+ [6] Bharat Bhushan and Gadadhar Sahoo. 2018. Recent advances in attacks, technical                 [29] Irina Higgins, Loic Matthey, Arka Pal, Christopher Burgess, Xavier Glorot,
+     challenges, vulnerabilities and their countermeasures in wireless sensor networks.                  Matthew Botvinick, Shakir Mohamed, and Alexander Lerchner. 2017. beta-vae:
+     Wireless Personal Communications 98 (2018), 2037–2077.                                              Learning basic visual concepts with a constrained variational framework. In
+ [7] Christian Brodbeck and Jonathan Z Simon. 2020. Continuous speech processing.                        International conference on learning representations.
+     Current Opinion in Physiology 18 (2020), 25–31.                                                [30] Ning Hu, Zhihong Tian, Hui Lu, Xiaojiang Du, and Mohsen Guizani. 2021. A
+ [8] Evan Caville, Wai Weng Lo, Siamak Layeghy, and Marius Portmann. 2022.                               multiple-kernel clustering based intrusion detection scheme for 5G and IoT
+     Anomal-E: A self-supervised network intrusion detection system based on                             networks. International Journal of Machine Learning and Cybernetics 12, 11
+     graph neural networks. Knowledge-Based Systems 258 (2022), 110030. https:                           (2021), 3129–3144.
+     //doi.org/10.1016/j.knosys.2022.110030                                                         [31] Christiana Ioannou and Vasos Vassiliou. 2021. Network attack classification in
+ [9] Zoran Cekerevac, Zdenek Dvorak, Ludmila Prigoda, and Petar Cekerevac. 2017.                         IoT using support vector machines. Journal of Sensor and Actuator Networks 10,
+     Internet of things and the man-in-the-middle attacks–security and economic                          3 (2021), 58.
+     risks. MEST Journal 5, 2 (2017), 15–25.                                                        [32] Philokypros Ioulianou, Vasileios Vasilakis, Ioannis Moscholios, and Michael
+[10] Ben Chamberlain, James Rowbottom, Maria I Gorinova, Michael Bronstein, Stefan                       Logothetis. 2018. A signature-based intrusion detection system for the internet
+     Webb, and Emanuele Rossi. 2021. Grand: Graph neural diffusion. In International                     of things. Information and Communication Technology Form (2018).
+     Conference on Machine Learning. PMLR, 1407–1418.                                               [33] Marcus Kalander, Min Zhou, Chengzhi Zhang, Hanling Yi, and Lujia Pan. 2020.
+[11] Junxiang Chen and Kayhan Batmanghelich. 2020. Weakly supervised disentangle-                        Spatio-temporal hybrid graph convolutional network for traffic forecasting in
+     ment by pairwise similarities. In Proceedings of the AAAI Conference on Artificial                  telecommunication networks. arXiv preprint arXiv:2009.09849 (2020).
+     Intelligence, Vol. 34. 3495–3502.                                                              [34] Marcus Kalander, Min Zhou, Chengzhi Zhang, Hanling Yi, and Lujia Pan. 2020.
+[12] Qi Chen, Yifei Wang, Yisen Wang, Jiansheng Yang, and Zhouchen Lin. 2022.                            Spatio-temporal hybrid graph convolutional network for traffic forecasting in
+     Optimization-induced graph implicit nonlinear diffusion. In International Confer-                   telecommunication networks. arXiv preprint arXiv:2009.09849 (2020).
+     ence on Machine Learning. PMLR, 3648–3661.                                                     [35] Patrick Gage Kelley, Saranga Komanduri, Michelle L Mazurek, Richard Shay,
+[13] Fan RK Chung. 1997. Spectral graph theory. Vol. 92. American Mathematical Soc.                      Timothy Vidas, Lujo Bauer, Nicolas Christin, Lorrie Faith Cranor, and Julio Lopez.
+[14] Israel Cohen, Yiteng Huang, Jingdong Chen, Jacob Benesty, Jacob Benesty, Jing-                      2012. Guess again (and again and again): Measuring password strength by
+     dong Chen, Yiteng Huang, and Israel Cohen. 2009. Pearson correlation coefficient.                   simulating password-cracking algorithms. In 2012 IEEE symposium on security
+     Noise reduction in speech processing (2009), 1–4.                                                   and privacy. IEEE, 523–537.
+[15] Weilin Cong, Yanhong Wu, Yuandong Tian, Mengting Gu, Yinglong Xia, Mehrdad                     [36] Isaiah J King and H Howie Huang. 2022. Euler: Detecting network lateral move-
+     Mahdavi, and Chun-cheng Jason Chen. 2021. Dynamic Graph Representation                              ment via scalable temporal link prediction. Network and Distributed Systems
+     Learning via Graph Transformer Networks. arXiv preprint arXiv:2111.10447                            Security (NDSS) Symposium (2022).
+     (2021).                                                                                        [37] Nickolaos Koroniotis, Nour Moustafa, Elena Sitnikova, and Benjamin Turnbull.
+[16] Elliot Creager, David Madras, Jörn-Henrik Jacobsen, Marissa Weis, Kevin Swersky,                    2019. Towards the development of realistic botnet dataset in the internet of
+     Toniann Pitassi, and Richard Zemel. 2019. Flexibly fair representation learning                     things for network forensic analytics: Bot-iot dataset. Future Generation Computer
+     by disentanglement. In International conference on machine learning. PMLR, 1436–                    Systems 100 (2019), 779–796.
+     1445.                                                                                          [38] Sanjay Kumar, Ari Viinikainen, and Timo Hamalainen. 2016. Machine learning
+[17] Leonardo De Moura and Nikolaj Bjørner. 2008. Z3: An efficient SMT solver. In                        classification model for network based intrusion detection system. In 2016 11th
+     Tools and Algorithms for the Construction and Analysis of Systems: 14th Interna-                    international conference for internet technology and secured transactions (ICITST).
+     tional Conference, TACAS 2008, Held as Part of the Joint European Conferences on                    IEEE, 242–249.
+     Theory and Practice of Software, ETAPS 2008, Budapest, Hungary, March 29-April                 [39] Wassila Lalouani and Mohamed Younis. 2021. Robust distributed intrusion detec-
+     6, 2008. Proceedings 14. Springer, 337–340.                                                         tion system for edge of things. In 2021 IEEE Global Communications Conference
+[18] Roberto Doriguzzi-Corin, Stuart Millar, Sandra Scott-Hayward, Jesus Martinez-                       (GLOBECOM). IEEE, 01–06.
+     del Rincon, and Domenico Siracusa. 2020. LUCID: A practical, lightweight deep                  [40] Arash Habibi Lashkari, Y Zang, G Owhuo, MSI Mamun, and GD Gil.
+     learning solution for DDoS attack detection. IEEE Transactions on Network and                       2017. CICFlowMeter. GitHub.[vid. 2021-08-10]. Dostupné z: https://github.
+     Service Management 17, 2 (2020), 876–889.                                                           com/ahlashkari/CICFlowMeter/blob/master/ReadMe. txt (2017).
+[19] Felix Erlacher and Falko Dressler. 2018. FIXIDS: A high-speed signature-based                  [41] Xin Li, Fang Bian, Mark Crovella, Christophe Diot, Ramesh Govindan, Gianluca
+     flow intrusion detection system. In NOMS 2018-2018 IEEE/IFIP Network Operations                     Iannaccone, and Anukool Lakhina. 2006. Detection and identification of network
+     and Management Symposium. IEEE, 1–8.                                                                anomalies using sketch subspaces. In Proceedings of the 6th ACM SIGCOMM
+[20] Mojtaba Eskandari, Zaffar Haider Janjua, Massimo Vecchio, and Fabio Antonelli.                      conference on Internet measurement. 147–152.
+     2020. Passban IDS: An intelligent anomaly-based intrusion detection system for                 [42] Yuzhen Li, Renjie Li, Zhou Zhou, Jiang Guo, Wei Yang, Meijie Du, and Qingyun
+     IoT edge devices. IEEE Internet of Things Journal 7, 8 (2020), 6882–6897.                           Liu. 2022. GraphDDoS: Effective DDoS Attack Detection Using Graph Neural
+[21] Mohamed Amine Ferrag, Othmane Friha, Djallel Hamouda, Leandros Maglaras,                            Networks. In 2022 IEEE 25th International Conference on Computer Supported
+     and Helge Janicke. 2022. Edge-IIoTset: A new comprehensive realistic cyber                          Cooperative Work in Design (CSCWD). IEEE, 1275–1280.
+     security dataset of IoT and IIoT applications for centralized and federated learning.          [43] Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. 2017.
+     IEEE Access 10 (2022), 40281–40306.                                                                 Focal loss for dense object detection. In Proceedings of the IEEE international
+[22] Robert S Fisher, J Helen Cross, Jacqueline A French, Norimichi Higurashi, Edouard                   conference on computer vision. 2980–2988.
+     Hirsch, Floor E Jansen, Lieven Lagae, Solomon L Moshé, Jukka Peltola, Eliane                   [44] Zachary C Lipton. 2018. The mythos of model interpretability: In machine
+     Roulet Perez, et al. 2017. Operational classification of seizure types by the                       learning, the concept of interpretability is both important and slippery. Queue
+     International League Against Epilepsy: Position Paper of the ILAE Commission                        16, 3 (2018), 31–57.
+     for Classification and Terminology. Epilepsia 58, 4 (2017), 522–530.                           [45] Gang Liu and Jiabao Guo. 2019. Bidirectional LSTM with attention mechanism
+[23] Leilani H Gilpin, David Bau, Ben Z Yuan, Ayesha Bajwa, Michael Specter, and                         and convolutional layer for text classification. Neurocomputing 337 (2019), 325–
+     Lalana Kagal. 2018. Explaining explanations: An approach to evaluating inter-                       338.
+     pretability of machine learning. arXiv preprint arXiv:1806.00069 (2018), 118.
+
+
+
+
+                                                                                             1974
+3D-IDS: Doubly Disentangled Dynamic Intrusion Detection                                                                            KDD ’23, August 6–10, 2023, Long Beach, CA, USA.
+
+
+[46] Wai Weng Lo, Siamak Layeghy, Mohanad Sarhan, Marcus Gallagher, and Mar-                          141–147.
+     ius Portmann. 2022. E-GraphSAGE: A Graph Neural Network based Intrusion                     [63] Mohanad Sarhan, Siamak Layeghy, Nour Moustafa, and Marius Portmann. 2021.
+     Detection System for IoT. In NOMS 2022-2022 IEEE/IFIP Network Operations and                     Netflow datasets for machine learning-based network intrusion detection systems.
+     Management Symposium. IEEE, 1–9.                                                                 In Big Data Technologies and Applications: 10th EAI International Conference, BDTA
+[47] Francesco Locatello, Ben Poole, Gunnar Rätsch, Bernhard Schölkopf, Olivier                       2020, and 13th EAI International Conference on Wireless Internet, WiCON 2020,
+     Bachem, and Michael Tschannen. 2020. Weakly-supervised disentanglement                           Virtual Event, December 11, 2020, Proceedings 10. Springer, 117–135.
+     without compromises. In International Conference on Machine Learning. PMLR,                 [64] Mohanad Sarhan, Siamak Layeghy, and Marius Portmann. 2021. An explain-
+     6348–6359.                                                                                       able machine learning-based network intrusion detection system for enabling
+[48] Li Ma, Ying Chai, Lei Cui, Dongchao Ma, Yingxun Fu, and Ailing Xiao. 2020. A                     generalisability in securing IoT networks. arXiv preprint arXiv:2104.07183 (2021).
+     deep learning-based DDoS detection framework for Internet of Things. In ICC                 [65] Mohanad Sarhan, Siamak Layeghy, and Marius Portmann. 2022. Evaluating
+     2020-2020 IEEE International Conference on Communications (ICC). IEEE, 1–6.                      standard feature sets towards increased generalisability and explainability of
+[49] Mohammad Masdari and Hemn Khezri. 2020. A survey and taxonomy of the                             ML-based network intrusion detection. Big Data Research 30 (2022), 100359.
+     fuzzy signature-based intrusion detection systems. Applied Soft Computing 92                [66] Mohanad Sarhan, Siamak Layeghy, and Marius Portmann. 2022. Towards a
+     (2020), 106301.                                                                                  standard feature set for network intrusion detection system datasets. Mobile
+[50] Anasua Mitra, Priyesh Vijayan, Ranbir Sanasam, Diganta Goswami, Srinivasan                       networks and applications (2022), 1–14.
+     Parthasarathy, and Balaraman Ravindran. 2021. Semi-supervised deep learning                 [67] Robert E Schapire. 2013. Explaining adaboost. Empirical Inference: Festschrift in
+     for multiplex networks. In Proceedings of the 27th ACM SIGKDD Conference on                      Honor of Vladimir N. Vapnik (2013), 37–52.
+     Knowledge Discovery & Data Mining. 1234–1244.                                               [68] Iman Sharafaldin, Arash Habibi Lashkari, and Ali A Ghorbani. 2018. Toward
+[51] Nour Moustafa. 2019. New generations of internet of things datasets for cyberse-                 generating a new intrusion detection dataset and intrusion traffic characterization.
+     curity applications based machine learning: TON_IoT datasets. In Proceedings of                  ICISSp 1 (2018), 108–116.
+     the eResearch Australasia Conference, Brisbane, Australia. 21–25.                           [69] Vipul Sharma and Roohie Naaz Mir. 2020. A comprehensive and systematic look
+[52] Nour Moustafa. 2021. A new distributed architecture for evaluating AI-based                      up into deep learning based object detection techniques: A review. Computer
+     security systems at the edge: Network TON_IoT datasets. Sustainable Cities and                   Science Review 38 (2020), 100301.
+     Society 72 (2021), 102994.                                                                  [70] Chao Song, Youfang Lin, Shengnan Guo, and Huaiyu Wan. 2020. Spatial-
+[53] Nour Moustafa and Jill Slay. 2015. UNSW-NB15: a comprehensive data set for                       temporal synchronous graph convolutional networks: A new framework for
+     network intrusion detection systems (UNSW-NB15 network data set). In 2015                        spatial-temporal network data forecasting. In Proceedings of the AAAI Conference
+     military communications and information systems conference (MilCIS). IEEE, 1–6.                  on Artificial Intelligence, Vol. 34. 914–921.
+[54] Aldo Pareja, Giacomo Domeniconi, Jie Chen, Tengfei Ma, Toyotaro Suzumura,                   [71] Raphael Suter, Djordje Miladinovic, Bernhard Schölkopf, and Stefan Bauer. 2019.
+     Hiroki Kanezashi, Tim Kaler, Tao Schardl, and Charles Leiserson. 2020. Evolvegcn:                Robustly disentangled causal mechanisms: Validating deep representations for
+     Evolving graph convolutional networks for dynamic graphs. In Proceedings of                      interventional robustness. In International Conference on Machine Learning. PMLR,
+     the AAAI Conference on Artificial Intelligence, Vol. 34. 5363–5370.                              6056–6065.
+[55] Chanyoung Park, Donghyun Kim, Jiawei Han, and Hwanjo Yu. 2020. Unsu-                        [72] Frederik Träuble, Elliot Creager, Niki Kilbertus, Francesco Locatello, Andrea
+     pervised attributed multiplex network embedding. In Proceedings of the AAAI                      Dittadi, Anirudh Goyal, Bernhard Schölkopf, and Stefan Bauer. 2021. On disen-
+     Conference on Artificial Intelligence, Vol. 34. 5371–5378.                                       tangled representations learned from correlated data. In International Conference
+[56] Pietro Perona and Jitendra Malik. 1990. Scale-space and edge detection using                     on Machine Learning. PMLR, 10401–10412.
+     anisotropic diffusion. IEEE Transactions on pattern analysis and machine intelli-           [73] Nguyen Thanh Van, Tran Ngoc Thinh, et al. 2017. An anomaly-based network
+     gence 12, 7 (1990), 629–639.                                                                     intrusion detection system using deep learning. In 2017 international conference
+[57] Michael Poli, Stefano Massaroli, Junyoung Park, Atsushi Yamashita, Hajime                        on system science and engineering (ICSSE). IEEE, 210–214.
+     Asama, and Jinkyoo Park. 2019. Graph neural ordinary differential equations.                [74] Petar Veličković, Guillem Cucurull, Arantxa Casanova, Adriana Romero, Pietro
+     arXiv preprint arXiv:1911.07532, 2019 (2019).                                                    Lio, and Yoshua Bengio. 2017. Graph attention networks. arXiv preprint
+[58] K Munivara Prasad. 2014. DoS and DDoS attacks: defense, detection and traceback                  arXiv:1710.10903 (2017).
+     mechanisms-a survey. Global Journal of Computer Science and Technology 14, E7               [75] H Wang, ZeZXeZBePJ Lei, X Zhang, B Zhou, and J Peng. 2016. Machine learning
+     (2014), 15–32.                                                                                   basics. Deep learning (2016), 98–164.
+[59] Karl Ridgeway and Michael C Mozer. 2018. Learning deep disentangled embed-                  [76] Candid Wueest. 2014. Targeted attacks against the energy sector. Symantec
+     dings with the f-statistic loss. Advances in neural information processing systems               Security Response, Mountain View, CA (2014).
+     31 (2018).                                                                                  [77] Da Xu, Chuanwei Ruan, Evren Korpeoglu, Sushant Kumar, and Kannan Achan.
+[60] Monika Roopak, Gui Yun Tian, and Jonathon Chambers. 2019. Deep learning                          2020. Inductive representation learning on temporal graphs. arXiv preprint
+     models for cyber security in IoT networks. In 2019 IEEE 9th annual computing                     arXiv:2002.07962 (2020).
+     and communication workshop and conference (CCWC). IEEE, 0452–0457.                          [78] M. Yoon, B. Hooi, K. Shin, and C. Faloutsos. 2019. Fast and Accurate Anomaly
+[61] Emanuele Rossi, Ben Chamberlain, Fabrizio Frasca, Davide Eynard, Federico                        Detection in Dynamic Graphs with a Two-Pronged Approach. ACM (2019).
+     Monti, and Michael Bronstein. 2020. Temporal graph networks for deep learning               [79] Hengli Zhao, Ning Zheng, Jian Li, Jingjing Yao, and Qiang Hou. 2009. Unknown
+     on dynamic graphs. arXiv preprint arXiv:2006.10637 (2020).                                       malware detection based on the full virtualization and svm. In 2009 International
+[62] Rafath Samrin and D Vasumathi. 2017. Review on anomaly based network                             Conference on Management of e-Commerce and e-Government. IEEE, 473–476.
+     intrusion detection system. In 2017 international conference on electrical, elec-           [80] Shijie Zhou, Zhimeng Guo, Charu Aggarwal, Xiang Zhang, and Suhang Wang.
+     tronics, communication, computer, and optimization techniques (ICEECCOT). IEEE,                  2022. Link Prediction on Heterophilic Graphs via Disentangled Representation
+                                                                                                      Learning. arXiv preprint arXiv:2208.01820 (2022).
+
+
+
+
+                                                                                          1975
+KDD ’23, August 6–10, 2023, Long Beach, CA, USA.                                                                                                                                         Chenyang Qiu et al.
+
+
+A      THE INPUT AND OUTPUT                                                                                                 To quantify the overlap among features that exist at the begin-
+The input instances include statistical features of network traffic,                                                     ning and after shifting, we define an average overlap ratio among
+including protocol, flow duration, etc. The output results include                                                       features. The ratio can be expressed as follows:
+                                                                                                                                                                   !
+confidence scores of the binary labels (benign or abnormal) and                                                                      1 ∑︁          overlap𝑖,𝑗
+multi-class labels (attack labels) for each input. Here we provide an                                                                                                , ∀𝑖, 𝑗 ∈ [1, 𝑁 ],
+                                                                                                                                    𝑁 2 𝑖,𝑗 man(range𝑖 , range 𝑗 )
+example as follows:
+                                                                                                                         where 𝑜𝑣𝑒𝑟𝑙𝑎𝑝𝑖,𝑗 indicates the overlap distance between the min-
+                 Table 5: An example of the traffic data.                                                                max normalized feature 𝑖 and feature 𝑗. Here the symbol 𝑟𝑎𝑛𝑔𝑒𝑖
+    Src IP       Src Port            Dst IP      Dst Port   Protocol   Flow Duration       ...   Label   Attack
+ 192.168.1.195    65025          40.90.190.179     443         6          60155602         ...     0     Benign
+                                                                                                                         refers to the distribution range of feature 𝑖, and it can be computed
+                                                                                                                         by [min(0, 𝜇 − 3𝜎), max(𝜇 + 3𝜎, 1)], where 𝜇 is the mean and 𝜎 is
+                                                                                                                         the standard deviation. 𝑁 is the number of features.
+                                                                                                                            Finally, we show that the above ratio on the dataset CIC-ToN-
+B     MORE DETAILS ABOUT EQ.5                                                                                            IoT are 62.37% and 24.16% respectively before and after "manual
+Eq.5 in the main paper can be expressed as follows:                                                                      shifting", which has a significant reduction after the shifting, i.e.,
+                               Í𝑁 −1                                                                                   38.21 points decrease.
+ w̃ = arg max wN FN − w1 F1 − 𝑖=2     |2wi Fi − wi+1 Fi+1 − wi-1 Fi-1 |
+                                                                                                                       Table 7: F1 score comparisons between methods with raw
+                                                            Í𝑁 −1
+                                 = arg min −𝐿 + 𝑖=2 |𝑑𝑖+1 − 𝑑𝑖 |                                                         features and the ones with shift-distribution features, where
+                                                                                                                         ∗𝑅 represents the former and ∗𝑆 represents the latter. Here
+                                                  Í
+                                                      𝑁 −1
+                                                                                                                        LR represents the Logistic Regression method.
+                                                      𝑖=2 |𝑑𝑖+1 −𝑑𝑖 |
+                                 = arg min                  𝑁 −1         − 𝑁𝐿−1 ,
+                                                                                                                           Attack     LR_R    LR_S    E-GraphSage_R    E-GraphSage_S   3D-IDS_R   3D-IDS_S
+where 𝑑𝑖 refers to the distribution distance of the neighboring fea-                                                      Backdoor     4.21    8.05       30.89            34.46         52.92      54.79
+                                                                                                                            DoS       53.32   55.25       80.76            81.80         81.87      85.53
+tures Fi and Fi+1 . Intuitively, Eq.5 aims to maximize the distribution                                                   Injection   39.76   41.76       86.49            87.42         87.39      87.50
+distance between every two features and encourages these features                                                          MITM        3.82   6.33        13.29            16.08         49.34      51.64
+to be evenly distributed in the range for better disentanglement.
+Therefore, we use Eq.5 as our optimization objective. Another form
+of the objective can also be expressed as:                                                                               C.2     Experiments with disentangled features
+                            Í𝑁 −1               !
+                              𝑖=1 | d𝑖 |     L                                                                           The proposed statistical disentanglement can be considered as an
+                                                   5∗ .
+                                                     
+                argmin                   −
+                               N−1         N−1                                                                           explicit automatic feature processing module, aiming to reduce
+                                                                                                                         redundant correlations between raw traffic features with more
+    The difference between the above two expressions lies in the
+                 Í𝑁 −1                             Í𝑁 −1                                                                 specific guidance.
+                  𝑖+1  𝑖    |𝑑      −𝑑 |
+                                      𝑖                     |𝑑 |
+first terms 𝑖=2 𝑁 −1      and 𝑖=1𝑁 −1 . Our Eq.5 in the main paper                                                          We also applied such a module to statistical and deep learning
+learns to shape each distance 𝑑𝑖 to the optimal distance 𝑁𝐿−1 , while                                                    models (E-GraphSAGE). The results in Table 8 show that our statis-
+                                                           𝑖
+                                                                                       Í𝑁 −1
+                                                                                                  |𝑑 |                   tical disentanglement also significantly improves attack detection.
+the latter Eq.5* learns to shape the average distance 𝑖=1
+                                                       𝑁 −1 to the
+           𝐿
+optimal 𝑁 −1 .                                                                                                           Table 8: F1 score comparisons between methods with disen-
+   We conduct the following experiment to show the slight perfor-                                                        tangled features (with "+") and with raw features (without
+mance differences between the above two expressions as Table 6.                                                          "+"), respectively. Here LR represents the Logistic Regression.
+
+                                                                                                                           Attack       LR    LR+     E-GraphSage     E-GraphSage+   3D-IDS   3D-IDS+(Ours)
+                 Table 6: F1-score of the two expressions                                                                 Backdoor     4.21   13.65      30.89            35.19       52.92       64.17
+                                                                                                                          Injection   39.76   50.16      86.49            87.37       87.39       87.52
+
+ Loss       EdgeIIoT                NF-UNSW-NB15-v2                    NF-CSE-CIC-IDS2018-v2
+Eq.5        96.83±0.36                      95.45±0.67                           96.34±0.21                              C.3     The impact of statistical disentanglement
+Eq.5*       96.55±0.69                      94.22±0.89                           95.17±0.68
+                                                                                                                         The proposed feature disentanglement aims to mitigate the redun-
+                                                                                                                         dant correlations between features. It can be considered as "denois-
+                                                                                                                         ing" between features or "shifting" between feature distribution,
+C DISENTANGLEMENT STUDIES                                                                                                making the features more distinguishable for better prediction. We
+C.1 Shifting the entangled distribution                                                                                  show that our 3D-IDS can still capture important patterns jointly
+                                                                                                                         contributed by multiple features during the disentanglement. Here
+To show that similar feature distributions contribute to lower de-                                                       is a more detailed analysis to verify our hypothesis. We conduct
+tection performance, we involved all traffic features for "manual                                                        experiments on "NF-UNSW-NB15-v2" with an existing pattern that
+shifting" in the controlled experiments and reported the results in                                                      consists of three features including AVG_THROUGHPUT (traf-
+Table 7.                                                                                                                 fic throughput), PROTOCOL (protocol), and MAX_TTL (packet
+                                                                                                                         survival time), which we denoted the id of them as A, B, and C,
+                                                                                                                         respectively, and the results in Table 9 show that our 3D-IDS model
+
+
+
+                                                                                                                  1976
+3D-IDS: Doubly Disentangled Dynamic Intrusion Detection                                                                                        KDD ’23, August 6–10, 2023, Long Beach, CA, USA.
+
+
+has a very slight impact on the contribution of such a pattern to                                                  D.4     Strategies for Data Imbalance
+attack detection. In experiments, we define an importance score to                                                 Data imbalance is an interesting problem to be explored, and we ob-
+quantify the impact of the pattern on the detection, and it can be                                                 serve such a phenomenon slightly impacts the model performance
+computed by the data entropy variation after using a set of joint                                                  from experiments. Here are the detailed explanations.
+features for classification. Importance score can be expressed as:
+                                                                                                                       • Datasets. The public datasets we selected have balanced and
+             𝐼𝑚𝑝𝑜𝑟𝑡𝑎𝑛𝑐𝑒 = 𝐸𝑛𝑡𝑟𝑜𝑝𝑦𝑠𝑢𝑚 − (𝐸𝑛𝑡𝑟𝑜𝑝𝑦𝑙 + 𝐸𝑛𝑡𝑟𝑜𝑝𝑦𝑟 ),                                                            imbalanced distributions, such as CIC-ToN-IoT with 47%
+where the 𝐸𝑛𝑡𝑟𝑜𝑝𝑦𝑠𝑢𝑚 indicates the entropy without joint features,                                                        Benign samples and EdgeIIoT with 92.72% Benign samples.
+and 𝐸𝑛𝑡𝑟𝑜𝑝𝑦𝑙 + 𝐸𝑛𝑡𝑟𝑜𝑝𝑦𝑟 refers to the entropy with the joint fea-                                                      • Implementation. We use the re-weight trick for the unbalanced-
+tures.                                                                                                                    class loss [43] in our implementation, which will help im-
+   Table 9 shows the importance score without and with disentan-                                                          prove those unbalanced sample learning. We can also utilize
+gled features, and we can observe the importance scores of the                                                            data sampling and data augmentation techniques to alleviate
+multiple joined features almost keep the same after disentangle-                                                          the data imbalance.
+ment.
+                                                                                                                   E     HANDLING FALSE POSITIVE PROBLEM
+         Table 9: Features importance score comparisons.
+                                                                                                                   We conduct experiments on the UNSW-NB15 dataset to show the
+                                                                                                                   false positives rate. We observe that the false positives rate of our
+Feature id    Features   Importance score with raw features   Importance score with disentangled features
+    1
+                                                                                                                   ID-3DS can be as low as 3.27, while the values of the previous
+               A+B                      0.14                                     0.13
+    2          A+C                      0.11                                     0.11                              methods MLP and E-GraphSAGE are 16.82 and 8.29, respectively.
+    3          B+C                      0.09                                     0.10
+    4         A+B+C                     0.18                                     0.18                              We attribute such a gain to the double disentanglement that can
+                                                                                                                   highlight attack-specific features, and thus these more differentiable
+                                                                                                                   features help to model the to reduce the false positives.
+D TECHNICAL DETAILS                                                                                                   In addition to model design, the high false positive problem can
+                                                                                                                   be seen as a trade-off between false positives and false negatives.
+D.1 Technical contributions                                                                                        We can introduce a learnable parameter to control the tolerance for
+This paper has first observed the inconsistent detection perfor-                                                   suspected benign samples according to real-world scenarios.
+mance in existing NIDS and customized a doubly disentangled
+module to address this issue. Specifically, our key ingredients in-                                                F     REAL TIME DETECTION
+clude a double-feature disentanglement scheme for modeling the                                                     Our 3D-IDS can be applied to real-time attack detection due to the
+general features of various attacks and highlighting the attack-                                                   following reasons.
+specific features, respectively, and a novel graph diffusion method
+                                                                                                                        • Training&Testing. 3D-IDS supports offline model training
+for better feature aggregation.
+                                                                                                                          and online model detection. When the model has been well-
+                                                                                                                          trained with training datasets (e.g., the training frequency
+D.2          Ability of unknown attack detection
+                                                                                                                          can be once a week), the trained model can conduct real-time
+The reason 3D-IDS can generalize to unknown attacks is the better                                                         online detection for new observations.
+outlier network traffic (anomaly) detection ability, which ben-                                                         • Datasets. As an automatic deep model, 3D-IDS supports
+efits from the proposed double disentanglement and multi-layer                                                            different data with features. For real-time anomaly detection
+graph diffusion modules. The unknown attack detection can be                                                              in a specific scene, we can use the scene’s historical (domain-
+cast as an outlier detection task. A method that can better aug-                                                          specific) data as the training set. If the application scenario is
+ment and highlight the deviations in features will better detect                                                          similar to our network traffic anomaly detection, the datasets
+the outlier from benign. From this perspective, 3D-IDS first auto-                                                        in our paper can be trained for real-time detection.
+matically distinguishes hundreds of dimensional features via the                                                        • Efficiency. We conduct a real-time detection on RTX 3090
+proposed statistical entanglement and captures subtle spatiotem-                                                          GPU and report the detection number per minute and accu-
+poral information via the multi-layer graph diffusion module. Our                                                         racy, as shown in Table 10, indicating the potential of 3D-IDS
+second disentanglement module guarantees each dimension of fea-                                                           to extend to real-world detection.
+tures maintains the disentangled properties during the training. By
+doing so, the attacks with unknown labels and each-dimension-                                                      Table 10: The speed and accuracy of real-time detection in
+distinguishable features can be properly detected as an outlier, thus                                              different scenarios.
+improving the ability to generalize to unknown attacks.
+
+D.3          Incorporating the new nodes                                                                                        Scenario                  Speed            Accuracy
+3D-IDS first appends the new node and the corresponding new                                                               Binary Classification     11334 traffic/min          0.99
+edges to the list of nodes and edges. And then we initialize the                                                          Multi Classification      10603 traffic/min          0.75
+memory and the representation vector associated with the new
+node as a 0 vector. After the above operations, the node will be
+incorporated into our methods.
+
+
+
+
+                                                                                                            1977
+

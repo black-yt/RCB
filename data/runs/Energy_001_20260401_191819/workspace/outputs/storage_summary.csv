@@ -1,0 +1,4 @@
+bus,carrier,p_nom,e_nom,efficiency,max_soc_MWh,mean_soc_MWh,total_discharge_GWh,total_charge_GWh
+Bus1,PHS,300,1800,0.75,600.0,5.357142857142857,0.9,0.0
+Bus3,PHS,250,1500,0.75,500.0,8.928571428571429,0.75,0.0
+Bus12,PHS,200,1200,0.75,600.0,7.142857142857143,0.6,0.0

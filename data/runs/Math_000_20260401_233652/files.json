@@ -1,0 +1,197 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 27173,
+    "mtime": 1775131798.0,
+    "exported": true
+  },
+  {
+    "name": "tracker.py",
+    "path": "code/tracker.py",
+    "type": "file",
+    "size": 16734,
+    "mtime": 1775131798.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "simulated_sequence.json",
+    "path": "data/simulated_sequence.json",
+    "type": "file",
+    "size": 6512395,
+    "mtime": 1772429302.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "metrics.json",
+    "path": "outputs/metrics.json",
+    "type": "file",
+    "size": 354,
+    "mtime": 1775131796.0,
+    "exported": true
+  },
+  {
+    "name": "summary.json",
+    "path": "outputs/summary.json",
+    "type": "file",
+    "size": 1421,
+    "mtime": 1775131796.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 115276,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8638055,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 2800126,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 871604,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_dataset_overview.png",
+    "path": "report/images/fig1_dataset_overview.png",
+    "type": "file",
+    "size": 127746,
+    "mtime": 1775131798.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_metric_comparison.png",
+    "path": "report/images/fig2_metric_comparison.png",
+    "type": "file",
+    "size": 68657,
+    "mtime": 1775131796.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_per_frame_metrics.png",
+    "path": "report/images/fig3_per_frame_metrics.png",
+    "type": "file",
+    "size": 208455,
+    "mtime": 1775131798.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_id_switches.png",
+    "path": "report/images/fig4_id_switches.png",
+    "type": "file",
+    "size": 121273,
+    "mtime": 1775131796.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_depth_analysis.png",
+    "path": "report/images/fig5_depth_analysis.png",
+    "type": "file",
+    "size": 148351,
+    "mtime": 1775131796.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_frame_visualization.png",
+    "path": "report/images/fig6_frame_visualization.png",
+    "type": "file",
+    "size": 406984,
+    "mtime": 1775131796.0,
+    "exported": true
+  },
+  {
+    "name": "fig7_threshold_sensitivity.png",
+    "path": "report/images/fig7_threshold_sensitivity.png",
+    "type": "file",
+    "size": 125461,
+    "mtime": 1775131798.0,
+    "exported": true
+  },
+  {
+    "name": "fig8_iou_sensitivity.png",
+    "path": "report/images/fig8_iou_sensitivity.png",
+    "type": "file",
+    "size": 110436,
+    "mtime": 1775131796.0,
+    "exported": true
+  },
+  {
+    "name": "fig9_nlayers_sensitivity.png",
+    "path": "report/images/fig9_nlayers_sensitivity.png",
+    "type": "file",
+    "size": 122055,
+    "mtime": 1775131798.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 18189,
+    "mtime": 1775131799.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5259,
+    "mtime": 1775057812.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,31 @@
+Execution summary:
+- Ran the main analysis entry point with: python code/run_analysis.py > outputs/run_analysis_stdout.txt 2>&1
+- The script completed successfully with exit code 0.
+- The analysis performed dataset summarization, exploratory plotting, model comparison by cross-validation, final model fitting, held-out test evaluation, degradation-stratified assessment, prediction export, and feature effect-size analysis.
+
+Key produced artifacts:
+Outputs under outputs/
+- dataset_summary.json: train/test shape, class balance, degradation counts, and missing-value summary.
+- cv_metrics.csv and cv_metrics_summary.csv: cross-validation results for logistic regression, random forest, and hist_gradient_boosting models.
+- final_metrics.json: selected model and final validation/test metrics.
+- degradation_metrics.csv: performance broken down by degradation type.
+- test_predictions.csv: test-set probabilities and binary predictions.
+- feature_effect_summary.csv: per-feature class-separation effect sizes.
+- best_model.pkl: serialized final model, threshold, and model name.
+- run_analysis_stdout.txt: captured console output from the completed run.
+
+Figures under report/images/
+- data_overview_class_degradation.png
+- feature_distributions_selected.png
+- feature_correlation_heatmap.png
+- model_comparison_cv.png
+- test_roc_pr_curves.png
+- test_confusion_matrix.png
+- degradation_performance.png
+- calibration_curve.png
+- feature_effect_sizes_top15.png
+
+Verification:
+- The run completed successfully.
+- Multiple substantive artifacts were generated in both outputs/ and report/images/.
+- The best model recorded in outputs/final_metrics.json is hist_gradient_boosting with strong held-out performance (ROC AUC about 0.991 and average precision about 0.935).

@@ -1,0 +1,18 @@
+Unified VOS-style Lasso analysis summary
+=
+Dataset: Lasso Regression Problem with Condition Number 10
+Shape: n=1000, p=2000
+Condition number (A): 10.0000
+Smooth Lipschitz constant L: 0.100000
+Regularization lambda: 3.551020e-03 (8.00% of lambda_max)
+
+Method comparison:
+- ISTA: iterations=270, final objective=2.578788e-01, gap=0.000000e+00, rel_err_true=2.292728e-01, support_f1=0.8821
+- FISTA: iterations=399, final objective=2.578788e-01, gap=0.000000e+00, rel_err_true=2.292728e-01, support_f1=0.8821
+- ADMM: iterations=66, final objective=2.578788e-01, gap=1.665335e-16, rel_err_true=2.292728e-01, support_f1=0.8821
+
+Generated figures:
+- report/images/data_overview.png
+- report/images/convergence_comparison.png
+- report/images/coefficient_recovery.png
+- report/images/top_coefficients.png

@@ -1,0 +1,63 @@
+{
+  "data_summary": {
+    "num_frames": 100,
+    "unique_gt_ids": 200,
+    "mean_gt_per_frame": 200.0,
+    "mean_detections_per_frame": 158.2,
+    "min_detections_per_frame": 142,
+    "max_detections_per_frame": 170,
+    "estimated_detection_rate": 0.791,
+    "score_mean": 0.2656887615315739,
+    "score_std": 0.13003822060107847,
+    "pseudo_depth_mean": 0.6920258583651201,
+    "pseudo_depth_std": 0.1321279419465425,
+    "pairwise_iou_mean_sample": 0.033246829586347906,
+    "pairwise_iou_gt005_ratio_sample": 0.15051186017478152
+  },
+  "evaluation": [
+    {
+      "mode": "baseline_global",
+      "num_tracks": 334,
+      "mean_track_purity": 0.3500338900864132,
+      "median_track_purity": 0.27586206896551724,
+      "mean_gt_fragmentation": 20.95,
+      "median_gt_fragmentation": 21.0,
+      "mean_gt_detection_recall_proxy": 0.7847999999999999,
+      "id_switches_iou50": 5539,
+      "mean_frame_recall_iou50": 0.7893000000000001,
+      "mean_frame_precision_iou50": 0.9946648449957859
+    },
+    {
+      "mode": "sparse_hierarchical",
+      "num_tracks": 421,
+      "mean_track_purity": 0.3270894437057906,
+      "median_track_purity": 0.26705426356589146,
+      "mean_gt_fragmentation": 29.71,
+      "median_gt_fragmentation": 30.0,
+      "mean_gt_detection_recall_proxy": 0.78555,
+      "id_switches_iou50": 7233,
+      "mean_frame_recall_iou50": 0.7883999999999999,
+      "mean_frame_precision_iou50": 0.9947285616045789
+    }
+  ],
+  "generated_files": {
+    "outputs": [
+      "outputs/data_summary.json",
+      "outputs/baseline_tracking.json",
+      "outputs/sparse_tracking.json",
+      "outputs/evaluation_summary.csv",
+      "outputs/frame_level_metrics.csv",
+      "outputs/baseline_detection_assignments.csv",
+      "outputs/sparse_detection_assignments.csv",
+      "outputs/baseline_trajectory_summary.csv",
+      "outputs/sparse_trajectory_summary.csv"
+    ],
+    "figures": [
+      "report/images/data_overview.png",
+      "report/images/tracking_comparison_metrics.png",
+      "report/images/frame_level_recall.png",
+      "report/images/trajectory_examples.png",
+      "report/images/id_consistency_heatmap.png"
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 18390,
+    "mtime": 1775199346.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_chargestates.xyz",
+    "path": "data/ag3_chargestates.xyz",
+    "type": "file",
+    "size": 25976,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "charged_dimer.xyz",
+    "path": "data/charged_dimer.xyz",
+    "type": "file",
+    "size": 55920,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "random_charges.xyz",
+    "path": "data/random_charges.xyz",
+    "type": "file",
+    "size": 768000,
+    "mtime": 1772414960.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_metrics.csv",
+    "path": "outputs/ag3_metrics.csv",
+    "type": "file",
+    "size": 8472,
+    "mtime": 1775199342.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_notes.txt",
+    "path": "outputs/analysis_notes.txt",
+    "type": "file",
+    "size": 988,
+    "mtime": 1775199342.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 918,
+    "mtime": 1775199342.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_metrics.csv",
+    "path": "outputs/charged_dimer_metrics.csv",
+    "type": "file",
+    "size": 8189,
+    "mtime": 1775199342.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_overview.csv",
+    "path": "outputs/dataset_overview.csv",
+    "type": "file",
+    "size": 353,
+    "mtime": 1775199342.0,
+    "exported": true
+  },
+  {
+    "name": "random_charges_frame_metrics.csv",
+    "path": "outputs/random_charges_frame_metrics.csv",
+    "type": "file",
+    "size": 6732,
+    "mtime": 1775199342.0,
+    "exported": true
+  },
+  {
+    "name": "random_charges_observables.json",
+    "path": "outputs/random_charges_observables.json",
+    "type": "file",
+    "size": 285,
+    "mtime": 1775199342.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1451,
+    "mtime": 1775199342.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 2479,
+    "mtime": 1775199342.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1659509,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1792962,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 263549,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6623726,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_analysis.png",
+    "path": "report/images/ag3_analysis.png",
+    "type": "file",
+    "size": 157907,
+    "mtime": 1775199344.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_analysis.png",
+    "path": "report/images/charged_dimer_analysis.png",
+    "type": "file",
+    "size": 191019,
+    "mtime": 1775199344.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_energy_overview.png",
+    "path": "report/images/dataset_energy_overview.png",
+    "type": "file",
+    "size": 76407,
+    "mtime": 1775199344.0,
+    "exported": true
+  },
+  {
+    "name": "random_charges_analysis.png",
+    "path": "report/images/random_charges_analysis.png",
+    "type": "file",
+    "size": 162036,
+    "mtime": 1775199346.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15460,
+    "mtime": 1775199347.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6294,
+    "mtime": 1775136742.0,
+    "exported": true
+  }
+]

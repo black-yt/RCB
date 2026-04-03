@@ -1,0 +1,32 @@
+{
+  "Formation Energy": {
+    "Structural only": 0.975295141247582,
+    "XRD only": 0.975295141247582,
+    "Latent (VAE) only": 0.6420266791183629,
+    "FTIR only": 0.975295141247582,
+    "Struct + XRD": 0.975295141247582,
+    "Struct + Latent": 0.9654360757265726,
+    "Struct + XRD + Latent": 0.9662472577190231,
+    "All modalities": 0.9657420640590212
+  },
+  "Band Gap": {
+    "Structural only": 0.4196752429970621,
+    "XRD only": 0.41967524299706394,
+    "Latent (VAE) only": 0.15194664878761102,
+    "FTIR only": 0.4196752429970608,
+    "Struct + XRD": 0.41967524299706316,
+    "Struct + Latent": 0.24167160536140217,
+    "Struct + XRD + Latent": 0.2449858029995129,
+    "All modalities": 0.24253634653692419
+  },
+  "Bulk Modulus": {
+    "Structural only": 0.9862276026885615,
+    "XRD only": 0.9862276026885617,
+    "Latent (VAE) only": 0.9071533430362339,
+    "FTIR only": 0.9862276026885617,
+    "Struct + XRD": 0.9862276026885617,
+    "Struct + Latent": 0.9821579522162158,
+    "Struct + XRD + Latent": 0.981915335224129,
+    "All modalities": 0.9820251974365963
+  }
+}

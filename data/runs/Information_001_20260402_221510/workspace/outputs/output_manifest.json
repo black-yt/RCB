@@ -1,0 +1,22 @@
+{
+  "input_images": [
+    "data/demo_imgs/demo1.png",
+    "data/demo_imgs/demo2.png",
+    "data/demo_imgs/method_case.png"
+  ],
+  "output_files": [
+    "outputs/analysis_summary.json",
+    "outputs/image_summaries.json",
+    "outputs/roi_metrics.csv",
+    "outputs/task_understanding.txt",
+    "report/images/dataset_overview.png",
+    "report/images/demo1_comparison_panel.png",
+    "report/images/demo1_roi_overview.png",
+    "report/images/demo2_comparison_panel.png",
+    "report/images/demo2_roi_overview.png",
+    "report/images/method_case_comparison_panel.png",
+    "report/images/method_case_roi_overview.png",
+    "report/images/metric_comparison.png",
+    "report/images/scale_tradeoff.png"
+  ]
+}

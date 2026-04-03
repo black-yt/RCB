@@ -1,0 +1,626 @@
+                                              E-GraphSAGE: A Graph Neural Network based
+                                                    Intrusion Detection System for IoT
+                                                                Wai Weng Lo∗ , Siamak Layeghy† , Mohanad Sarhan‡ , Marcus Gallagher§ , and
+                                                                                           Marius Portmann¶
+                                                                           School of Information Technology and Electrical Engineering
+                                                                                The University of Queensland, Brisbane, Australia
+                                         Email: ∗ w.w.lo@uq.net.au, † siamak.layeghy@uq.net.au, ‡ m.sarhan@uq.net.au, § marcusg@itee.uq.edu.au, ¶ marius@itee.uq.edu.au
+arXiv:2103.16329v8 [cs.NI] 11 Jan 2022
+
+
+
+
+                                            Abstract—This paper presents a new Network Intrusion Detec-           the regular traffic patterns in the network. Over the last few
+                                         tion System (NIDS) based on Graph Neural Networks (GNNs).                years, there has been great progress in the application of new
+                                         GNNs are a relatively new sub-field of deep neural networks,             Machine Learning (ML) models and techniques, in particular
+                                         which can leverage the inherent structure of graph-based data.
+                                         Training and evaluation data for NIDSs are typically repre-              deep learning-based approaches, for the development of new
+                                         sented as flow records, which can naturally be represented in            NIDS solutions.
+                                         a graph format. In this paper, we propose E-GraphSAGE, a                    In this paper, we are exploring the use of GNNs, a rela-
+                                         GNN approach that allows capturing both the edge features                tively new sub-field of deep neural networks for IoT network
+                                         of a graph as well as the topological information for network            intrusion detection. GNNs are tailored to applications with
+                                         intrusion detection in IoT networks. To the best of our knowledge,
+                                         our proposal is the first successful, practical, and extensively         graph-structured data, such as social sciences, chemistry, and
+                                         evaluated approach of applying GNNs on the problem of network            telecommunications, and are able to leverage the inherent
+                                         intrusion detection for IoT using flow-based data. Our extensive         structure of the graph data by building relational inductive
+                                         experimental evaluation on four recent NIDS benchmark datasets           biases into the deep learning architecture. This provides the
+                                         shows that our approach outperforms the state-of-the-art in              ability to learn, reason, and generalise from the graph data,
+                                         terms of key classification metrics, which demonstrates the
+                                         potential of GNNs in network intrusion detection, and provides           inspired by the concept of message propagation [2].
+                                         motivation for further research.                                            Network intrusion detection is typically performed on flow-
+                                            Index Terms—Graph Neural Networks, Network Intrusion                  based network data such as NetFlow [3], where flows are
+                                         Detection System, Internet of Things                                     identified by the communication endpoints (IP address, L4
+                                                                                                                  port number, L4 protocol), and annotated via a set of flow
+                                                                                                                  fields which provide details on the flows, such as the number
+                                                               I. I NTRODUCTION
+                                                                                                                  of packets, number of bytes, flow duration, etc. This flow data
+                                            IoT network attacks have significantly increased over the             can naturally be represented in a graph format, where the flow
+                                         last few years, both in terms of frequency and level of                  endpoints are mapped to graph nodes, and network traffic
+                                         sophistication. IoT networks consist of many interconnected              flows are mapped to the graph edges. Both the topological
+                                         devices, including cameras, temperature sensors, smart TV,               information as well as the information contained in edge
+                                         wireless printer, and other edge devices that require network            features are crucial for the classification of network traffic and
+                                         connectivity [1]. Cybercriminals can compromise and exploit              the detection of attack flows.
+                                         IoT networks to perform malicious activities such as IoT                    Key recent works on ML-based NIDS, such as
+                                         ransomware, Botnet DDoS attacks. NIDSs, which are placed                 [4][5][6][7][8], consider flow data records independently,
+                                         at strategic points within the IoT network to monitor traffic,           without considering the interrelation between them, and hence
+                                         are an important tool for the detection and mitigation of                the traffic pattern more globally. Consequently, these methods
+                                         network-based cyber attacks. There are two main types of                 are limited in their ability to detect sophisticated IoT network
+                                         NIDS, signature-based and intrusion detection-based systems.             attacks, such as botnet attacks [9], distributed port scans [10],
+                                         A signature-based NIDS relies on a pre-installed set of attack           or DNS Amplification attacks [11], where a more global view
+                                         signatures, which are compared and pattern-matched with the              of the network and traffic flow is required.
+                                         monitored network traffic in order to detect attacks. As a result,          We believe that traffic patterns at a more global level,
+                                         this type of NIDS can effectively detect known attacks with              and hence flow interrelationships should be considered for
+                                         a relatively low false alarm rate, but they are significantly            the detection of distributed attacks in IoT, providing the
+                                         less effective in detecting new attacks or variants of existing          motivation for the work presented in this paper. We propose
+                                         attacks. In contrast, intrusion detection-based systems have             E-GraphSAGE, a GNN model that aims to overcome the
+                                         the potential to detect intrusions by detecting deviations from          current limitations of NIDSs for IoT. E-GraphSAGE enables
+                                         978-1-6654-0601-7/22$31.00 © 2022 IEEE                                   the collection of information on flow-based features and
+
+
+
+                                         This paper has been accepted for publication in IEEE/IFIP Network Operations and Management Symposium, Budapest, Hungary, April 2022. This is an
+                                         author’s copy, The respective copyrights are with IEEE/IFIP.
+                                                                    dataset, where it achieved an accuracy of 96.8% and 86.2% in
+                                                                    binary and multiclass classification experiments respectively.
+                                                                       In [5], an attack mitigation framework for IoT networks
+                                                                    is proposed using a hybrid of signature- and intrusion-based
+                                                                    detection systems. The signature-based system uses a database
+                                                                    of black-listed sources. The intrusion-based module adopts
+                                                                    an extreme gradient boosting (XGBoost) algorithm. The XG-
+                                                                    Boost classifier achieved a binary classification accuracy of
+                                                                    99.99% and a false alarm rate of 0.05% on the BoT-IoT
+                                                                    dataset, and 99.96% multiclass classification F1-Score of 97%.
+                                                                       Sarhan et al. [6] converted the UNSW-NB15, BoT-IoT, and
+                                                                    ToN-IoT datasets from their proprietary formats and feature
+                                                                    set into a common Netflow-based format, with eight Netflow
+                                                                    features as a common feature set. The corresponding new
+           Fig. 1: Overall deployment architecture                  Netflow-based variants of the datasets, i.e. NF-UNSW-NB15,
+                                                                    NF-BoT-IoT, and NF-ToN-IoT, have been made publicly avail-
+                                                                    able. The authors evaluated an Extra Tree ensemble classifier
+topological patterns to account for the interconnected patterns     across these three datasets and have reported an F1-Score of
+of network flows.Consequently, E-GraphSAGE supports the             0.85, 0.97, and 1.00, respectively for binary classification. For
+process of edge classification, and hence the detection of          the multi-class case, the corresponding F1-Scores are 0.98,
+malicious network flows, as illustrated in Figure 1.                0.77 and 0.60.
+   We demonstrate how the E-GraphSAGE algorithm can be                 In [7], the authors focused on securing Internet of medical
+utilized to build a reliable NIDS, and provide an extensive         things’ networks (IoMT) using a two-level intrusion detection
+experimental evaluation of the proposed system on four re-          model. The first level used a decision tree (DT), naive Bayes
+cent NIDS benchmark datasets. Our results show that the             (NB), and random forest (RF) as first-level individual learners.
+E-GraphSAGE-based NIDS outperformed the state-of-the-art            In the next level, an XGBoost classifier was used to identify
+in regards to key classification metrics in all four consid-        normal and attack instances. The ensemble model achieved a
+ered benchmark datasets. To the best of our knowledge, our          binary classification accuracy of 96.35% and an F1-Score of
+approach is the first successful, practical, and extensively        0.95 on the ToN-IoT dataset.
+evaluated approach of applying GNNs on the problem of                  Churcher et al. [8] applied several machine learning al-
+network intrusion detection for IoT using flow-based data.          gorithms such as k-nearest neighbour (KNN), decision tree
+   In summary, the key contributions of this paper are twofold:     (DT), support vector machine (SVM), naive Bayes (NB),
+  • We have proposed and implemented E-GraphSAGE, a                 random forest (RF), artificial neural network (ANN), and
+    GNN-based NIDS, which allows the incorporation of               logistic regression (LR) for network intrusion detection. The
+    edge features and topological patterns for IoT network          authors evaluated different classifier performances on BoT-
+    intrusion detection.                                            IoT datasets and reported that the KNN classifier achieved the
+  • We applied E-GraphSAGE on four benchmark IoT NIDS
+                                                                    highest multiclass classification performance with an F1-Score
+    datasets for network intrusion detection, where the results     of 0.99 and classification accuracy of 99.00%.
+    demonstrated its potential via extensive experimental              Xiao et al. [12] proposed a graph embedding approach to
+    evaluation.                                                     perform intrusion detection on network flows. The authors first
+                                                                    converted the network flows into a first-order and second-
+   The rest of the paper is organized as follows. Section II
+                                                                    order graph. The first-order graph learns the latent features
+discusses key related works, and Section III provides the
+                                                                    from the perspective of a single host by using its IP address
+relevant background on GNNs and GraphSAGE. Our proposed
+                                                                    and port number. The second-order graph aims to learn the
+E-GraphSAGE algorithm and the corresponding NIDS are
+                                                                    latent features from a global perspective by using source IP
+introduced in Section IV. Experimental evaluation results are
+                                                                    addresses, source ports, destination IP addresses, as well as
+presented in Section VI, and Section VII concludes the paper.
+                                                                    destination ports. The extracted graph embeddings and the raw
+                                                                    features are then used to train a Random Forest classifier to
+                     II. R ELATED W ORK
+                                                                    detect network attacks.
+   Haitao et al.[4] designed a multimodal sequential NIDS with         However, a significant limitation of this approach is its use
+a hierarchical progressive network to capture different levels of   of a traditional transductive graph embedding method [13],
+network data features. The approach is based on a combination       which limits its ability to classify samples with graph nodes,
+of a deep autoencoder and LSTM architecture, in order to            e.g. IP addresses and port numbers, which were not seen
+integrate the structural information within the temporal in-        during the training phase. This makes the approach unsuitable
+formation shared between similar network connections. The           for most practical NIDS application scenarios. In contrast,
+system is evaluated on 3 datasets including the UNSW-NB15           the E-GraphSAGE approach presented in this paper uses an
+inductive learning approach, which does not suffer from this        the network flow data, which can be directly encoded in a
+limitation.                                                         graph format. While some traditional ML-based approaches
+   Zhou et al.[14] proposed using a graph convolutional neu-        attempt to work with graph data, this is typically quite cum-
+ral network (GCN) to perform P2P botnet node detection.             bersome and relies on hand-engineered features.
+The authors first generated botnet traffic by creating botnet          A common task performed by GNNs is to generating
+connections mixed with different real large-scale network           node embeddings [17], which aims to encode nodes as low-
+traffic flows. Then, they applied the GCN for botnet node           dimensional vectors, while maintaining their key relationships
+classification.The generated graph does not include any flow        and graph position in the original format. Node embedding is
+or node features and the approach only considers the topo-          typically a key precursor to apply for downstream tasks such
+logical information of the network connectivity graph for P2P       as node classification and node clustering [17]. GNNs have
+botnet node classification, rather than flow classification. This   recently received a lot of attention due to their convincing
+approach limits the detection of botnet attacks, and does not       performance and high interpretability of the results through
+focus on other network attacks, such as XSS and ransomware.         the visualisation of the node embeddings [18].
+In addition, it does not leverage all the information provided      B. GraphSAGE
+in network flow data, i.e., the network flow features.
+   While some existing graph representation learning methods           The Graph SAmple and aggreGatE (GraphSAGE) algorithm
+have already considered edge features, none of them can be          is one of the most well-known GNNs and was developed by
+directly applied to network intrusion detection. Methods such       Hamilton et al. [13] . In GraphSAGE, a fixed size sub-set is
+as [15] [16] consider edge features, but only for the purpose       (uniformly randomly) sampled. This allows limiting the space
+of improving node representation for better performance, and        and time complexity of the algorithm, irrespective of the graph
+not edge classification, which is the aim in NIDSs.                 structure (e.g. node degree distribution) and batch size.
+   In contrast to related studies, our approach leverages edge         The GraphSAGE algorithm operates on a graph G(V, E),
+features that can be extracted from network flow data, and          where V is the set of nodes and E is the set of edges. The
+is critical for the detection of individual attack flows via        node features of a node v are represented as the vector xv ,
+its edge embedding approach. NIDSs based on traditional             and the complete set of node feature vectors as {xv , ∀v ∈ V}.
+(non-graph-based) machine learning algorithms currently have           A key hyperparameter of the GraphSAGE algorithm is the
+not fully leveraged the structural and topological information      number of graph convolutional layers K, which specifies the
+inherent in network flow data for complex network attack            number of hops via which node information is aggregated at
+detection, such as a botnet attack, which is one of the key         each iteration. Another important aspect of GraphSAGE is the
+strengths of GNNs. A key feature and novel contribution             choice of a differentiable aggregator function AGGk , ∀k ∈
+of E-GraphSAGE proposed in this paper, is its ability to            {1, ..., K}, to aggregate information from neighbor nodes.
+leverage both, topological information and edge features in         The algorithm is performed in both a forward and backward
+network flow data. Furthermore, related studies that apply a        propagation stage, which we now discuss in more detail.
+                                                                       1) Node Embedding: Similar to the convolution operation
+ML approach for NIDS typically use either, one, two, or a
+                                                                    in convolutional neural networks (CNNs), information relating
+maximum of three NIDS benchmark datasets to evaluate the
+                                                                    to the local neighborhood of a node is collected and is used
+proposed systems. For the evaluation of the proposed GNN-
+                                                                    to compute the node embedding. The GraphSAGE algorithm
+based approach, we used four different benchmark datasets,
+                                                                    starts by assuming the model has already been trained and the
+which provide a higher degree of confidence in the robustness
+                                                                    weight matrices and aggregator function parameters are fixed.
+of the method and the ability to generalize to different types
+                                                                    For each node, the algorithm iteratively aggregates information
+of network scenarios.
+                                                                    from the node’s neighbours, the node’s neighbours-neighbours,
+                      III. BACKGROUND                               and so on.
+A. Graph Neural Networks (GNN)                                         At each iteration, initially the neighborhood of the node
+                                                                    is sampled, and the information from the sampled nodes
+   GNN is one of the most recent and fastest growing subareas
+                                                                    is aggregated into a single vector. At the k-th layer, the
+in machine learning. Its power and potential lies in its ability
+                                                                    aggregated information hkN (v) at a node v, based of the
+to leverage the inherent graph structure of a lot of data
+                                                                    sampled neighborhood N (v), can be expressed as Equation
+encountered in real world application domains, such as social
+                                                                    1 [13]:
+media networks, biology, telecommunications, etc. The graph
+format captures the structural information by modelling a set
+                                                                              hkN (v) = AGG k
+                                                                                                   k−1            
+                                                                                                   hu , ∀u ∈ N (v)               (1)
+of objects and their relationships. The objects are represented
+by graph nodes and their relationships by graph edges. In the         Here, hk−1
+                                                                               u    represents the embedding of node u in the
+case of computer networks, individual hosts (IP addresses) are      previous layer. These embeddings of all nodes u in the
+modelled as graph nodes, and the communication between the          neighbourhood of v are aggregated into the embedding of node
+hosts, i.e., the network flows, are modelled as graph edges.        v at layer k.
+   The key motivation of using a GNN for NIDSs is the ability         This aggregation process is illustrated in Figure 2 (right),
+to easily and directly exploit the rich structural information in   the topological and node features in the graph, as collected and
+           A
+                                                          D          Algorithm 1: E-GraphSAGE edge embedding
+                                           B      AGG
+                                                          A                     input : Graph G(V, E);
+     B          C
+                           A       AGG                                                 input edge features {euv , ∀uv ∈ E};
+                                           C      AGG     A                            input node features xv = {1, . . . , 1};
+                                                                                       depth K;
+                                                          A
+                    E
+                                           D      AGG                                  weight matrices Wk , ∀k ∈ {1, . . . , K};
+           D
+                                                          E                            non-linearity σ;
+                                                                                       differentiable aggregator functions AGGk ;
+                                                          B
+                                                                                output: Edge embeddings zuv , ∀uv ∈ E
+Fig. 2: A given graph (left), and the corresponding Graph-              1       h0v ← xv , ∀v ∈ V
+SAGE architecture with depth-2 convolutions (right) and full            2       for k ← 1 to K do
+                                                                        3            for v ∈ V do
+neighborhood sampling.                                                                                   n
+                                                                                                            k−1
+                                                                                                                                     o
+                                                                        4                 hkN (v) ← AGGk   euv  , ∀u ∈ N (v), uv ∈ E
+                                                                                                                                
+                                                                        5                 hkv ← σ Wk · CONCAT hk−1  v   , hkN (v)
+aggregated from the k-hop neighborhood of each graph node.
+                                                                        6       zv = hKv
+In the GraphSAGE model, we can use different aggregation                7       for uv ∈ E do
+methods, including mean, pooling, or different types of neural          8           zK             K K
+                                                                                     uv ←CON CAT (zu ,zv )
+
+networks, e.g., Long Short-Term Memory (LSTM) [13].
+   The aggregated embeddings of the sampled neighborhood
+hkN (v) are then concatenated with the node’s embedding from
+                                                                       Our proposed approach (E-GraphSAGE) aims to overcome
+the previous layer hk−1
+                     v   . After applying the model’s trainable
+                                                                    this limitation and facilitate the capture of edge features and
+parameters (Wk , the trainable weight matrix) and passing the
+                                                                    topological information for intrusion detection. This section
+result through a non-linear activation function σ (e.g. ReLU),
+                                                                    introduces E-GraphSAGE in two parts. The first part discusses
+the layer k node v embedding is calculated, as shown in
+                                                                    the E-GraphSAGE model and the extensions to the original
+Equation 2 [13].
+                                                                    GraphSAGE algorithm that were made to facilitate edge
+                                                                    embedding and edge classification. In the second part, we
+                                            
+           hkv = σ Wk · CONCAT hk−1
+                                v   , hkN (v)                 (2)
+                                                                    discuss the application of E-GraphSAGE as an NIDS.
+   The final representation (embedding) of node v is expressed
+as zv , which is essentially the embedding of the node at the       A. E-GraphSAGE Model
+final layer K, as shown in Equation 3. For the purpose of node         1) Edge Embedding: The message passing function in the
+classification, zv can be passed through a sigmoidal neuron or      original GraphSAGE algorithm only considers node features,
+softmax layer.                                                      and edge features are not taken into consideration [13]. To
+                                                                    include the edge features, it is required to sample and aggre-
+                    zv = hK
+                          v ,       ∀v ∈ V                    (3)   gate the edge information of the graph. In addition, the final
+                                                                    output of the algorithm needs to provide an edge embedding
+                     IV. E-G RAPH SAGE                              rather than the node embedding provided by the original
+   Traditional GNNs, e.g. GraphSAGE, have been successfully         algorithm. Our proposed E-GraphSAGE algorithm with these
+applied in a wide range of applications. However, these             modifications is shown in Algorithm 1.
+approaches mainly focus on node features for node classifi-            Key differences to the original GraphSAGE algorithm [13]
+cation, and are currently unable to consider edge features for      are in regards to the algorithm input, the message pass-
+edge classification. In contrast, our proposed E-GraphSAGE          ing/aggregator function, and the output.
+algorithm allows us to consider the edge (flow) information            The input includes edge features {euv , ∀uv ∈ E}, which
+in the embedding process. This provides the basis for com-          are, as mentioned before, missing from the list of inputs in
+puting the corresponding edge embeddings and enabling edge          GraphSAGE. Since the flow-based NIDS datasets only consist
+classification; that is, the classification of network flows into   of flow (edge) features rather than node features. Therefore,
+benign and attack flows.                                            we are using only provided edge features. We use the vector
+   The goal of an NIDS is to detect and identify malicious          xv = {1, . . . , 1} to initialise the node features (and initial node
+traffic and flows. This corresponds to the problem of edge          embeddings) and the dimension of all one constant vector is
+classification in our graph representation of flow datasets,        the same as the number of edge features, as shown in Line 1
+where the key information is provided as edge features. Con-        of the algorithm.
+sequently, the current NIDS benchmark network datasets [6]             In Line 4, instead of using the standard GraphSAGE node
+[19] [20] provide network flow information as edge features,        aggregator function (Equation 1), our newly proposed neigh-
+rather than node features, which only allows edge (flow)            borhood aggregator function creates the aggregated embed-
+classification. In contrast, most related GNN research to date      dings of the sampled neighborhood edges at the k-th layer, as
+has focused on the problem of node classification, and the          shown in Equation 4 below.
+proposed solutions cannot be applied to the edge classification                                 n                          o
+problem in the context of NIDS.                                             hkN (v) = AGG k        k−1
+                                                                                                  euv  , ∀u ∈ N (v), uv ∈ E           (4)
+   Here, ek−1
+           uv   are the features of edge uv from N (v), the
+sampled neighborhood of node v, at layer k-1. The set
+{∀u ∈ N (v), uv ∈ E} represents the sampled edges in the
+neighborhood N (v)). In Line 5, the node embedding for node
+v at layer k is calculated as in GraphSAGE (Equation 2), but
+with the critical difference that in the new algorithm hkN (v) is
+calculated via Equation 4 to include the edge features. Thus,
+the topological and edge information in the network flow graph
+                                                                     Fig. 3: Proposed E-GraphSAGE-based NIDS architecture.
+is collected and aggregated from the k-hop neighborhood of
+each network graph node.
+   The final node embeddings at depth K, zv = hK         v , are       There are various possibilities for defining the end points
+assigned in Line 8. Finally, the edge embeddings zK      uv for     of a flow and hence the graph nodes. The method used in this
+each edge uv are calculated as the concatenation of the node        study uses the following 4 flow fields to identify a graph edge:
+embeddings of nodes u and v, as shown in Equation 5 below.          Source IP Address, Source (L4) Port, Destination IP Address,
+                                                                  and Destination (L4) Port. The first two fields form a 2-tuple
+              zK             K    K
+               uv = CON CAT zu , zv   , uv ∈ E                (5)   that identifies the source node and the two last fields identify
+                                                                    the destination node of the flow. The additional flow fields
+This represents the final output of the forward propagation
+                                                                    provide features that are associated with the corresponding
+stage in E-GraphSAGE.
+                                                                    graph edge. e.g. , the source node (172.26.185.48 : 52962)
+   2) Time and Space Complexity: The loops over the k-hop
+                                                                    exchanges data with destination node (192.168.1.152 : 80)
+neighbour edges are the most time-consuming of the model
+                                                                    and the corresponding flow can be represented as a network
+as shown in Algorithm 1, Line 4. The upper bound time
+                                                                    edge.
+complexity estimation      of E-GraphSAGE can be represented
+                                                                      To construct the network graph from the flow data, we
+as O eKnd2 , where n is the total number of nodes in the
+                                                                    mapped the original source IP addresses to randomly assigned
+network, e is the number of neighbour edges being sampled
+                                                                    IP addresses in the range from 172.16.0.1 to 172.31.0.1. The
+for each node, K is the number of layers, d is the dimension
+                                                                    reason for this is the fact that in a lot of the NIDS datasets
+of the node hidden features. The    space complexity of E-         used in this paper, only a small number of IP addresses were
+GraphSAGE is O beKd + Kd2 , where b is the batch size.
+                                                                    used as the source of the attacks. The random mapping avoids
+Since E-GraphSAGE can support a min-batch setting, i.e.,
+                                                                    the potential problem of the source IP addresses providing an
+a fixed size of neighbour edges are being sampled to im-
+                                                                    unintentional label for attack traffic.
+prove the training efficiency and reduce memory consumption.
+                                                                       Since in our graph construction all remaining flow record
+Instead of using full neighbourhood sets in Algorithm 1,
+                                                                    fields were assigned to the edge, the graph nodes are feature-
+the per-batch space and time complexity for E-GraphSAGE,
+                                                                    less. In this algorithm, we assign a one vector, a vector with all
+which uniformly randomlysamples a fixed-size set of edge
+                       QK                                           values of one to all nodes. As shown in Algorithm 1, we are
+neighbors, is O          i=1 Ei , where the sampled edges are       using this method in our algorithm, with the dimensionality
+Ei , i ∈ {1, . . . , K}.                                            of the all one constant vector in each node depending on the
+                                                                    number of edge features.
+B. E-GraphSAGE NIDS
+                                                                       2) E-GraphSAGE Training: The neural network model we
+   Figure 3 shows a high level overview of our proposed NIDS        use in our implementation consists of two E-GraphSAGE
+based on E-GraphSAGE. First, the network graph is generated         layers (K = 2), which means that neighbour information is
+from the network flow data, and is then fed into the supervised     aggregated from a two-hop neighbourhood. For the aggrega-
+training process of the E-GraphSAGE model in the next step.         tion function AGG, as shown in Equation 4, we use the mean
+In the last step, the edge embeddings are created, which forms      function which simply finds the element-wise mean of the
+the basis for the classification of edges (network flows) into      edge features in the sampled neighborhood. The definition of
+benign and attack classes. These three steps are explained in       the mean aggregator function in E-GraphSAGE is provided in
+the following subsections.                                          Equation 6 below.
+   1) Network Graph Construction: Network flows (e.g., Net-                                          X         ek−1
+                                                                                                                uv
+Flow) are a common format for recording network communi-                               hkN (v) =                                  (6)
+                                                                                                              |N (v)|e
+cation in production networks, and it is also the most common                                      u∈N (v),
+                                                                                                    uv∈E
+format in the context of NIDS. The flow records usually
+consist of fields for identifying the source and destination of        Here, |N (v)|e represents the number of edges in the sam-
+the communication, and the rest of a record field provides          pled neighborhood, and ek−1
+                                                                                              uv represent their edge features at
+further information on the flow, such as the number of packets      layer k − 1. For our implementation, we chose full neighbor-
+and bytes, flow duration, etc. A graph therefore provides a very    hood sampling, which means information from the full set of
+natural way to model such data.                                     edges in a node’s neighbourhood is aggregated.
+   In both E-GraphSAGE layers, for the hidden feature sizes             well as IoT network traffic collected from a medium-
+of each layer represented in Equation 2, we use a size of               scale network at the Cyber Range and IoT Labs at
+128 hidden units, which is also the dimension of the node               the UNSW Canberra (Australia). In this paper, only the
+embeddings. For the nonlinear transformation (σ in Equation             network traffic component of the dataset is used. The Bro-
+2), we use the ReLU activation function, and for the purpose of         IDS network monitoring tool was used to generate the
+regularisation, we use a dropout mechanism with a rate of 0.2           dataset’s 44 network flow features. The dataset consists of
+between the two E-GraphSAGE layers. We chose the cross-                 796,380 (3.56%) benign flows and 21,542,641 (96.44%)
+entropy loss function, and gradient descent in the backward             attack flows, with a total of 22,339,021 flows.
+propagation phase is performed using the Adam optimizer with          • NF-ToT-IoT and NF-BoT-IoT: A lack of a standard for-
+learning rate of 0.001.                                                 mat and feature set among the various NIDS datasets has
+   When node embeddings are generated in the last                       made it very difficult to compare the performance of ML-
+E-GraphSAGE layer, they are converted to the corresponding              based network traffic classifiers across different datasets,
+edge embeddings (Line 10 of Algorithm 1). Since the edge                and to evaluate their ability to generalise to different
+embeddings are created via concatenation of two node em-                network scenarios. Sarhan et al. [6] have addressed this
+beddings, the size of the edge embeddings is 256 dimensions.            problem by providing the NetFlow version of the above
+   The output edge embeddings pass through a softmax layer,             mentioned three NIDS datasets. The authors of [6] used
+which makes it possible to compare the output of the algorithm          the raw packet capture (pcap) files of the original NIDS
+to the labels provided by the NIDS datasets and to tune the             datasets and converted them to the NetFlow format via
+trainable model parameters in the backward propagation phase.           the nprobe [22] tool and selected 12 fields to be extracted,
+   3) Edge Classification: After the model parameters have              resulting in the new variants of the original datasets, i.e.
+been tuned in the training process, the model is ready for              NF-ToT-IoT and NF-BoT-IoT. In NF-ToT-IoT, the total
+evaluation via the classification of unseen test samples. The           number of network flows is 1,379,274, out of which
+test flow records are also converted to graphs, passed through          1,108,995 (80.4 %) are attack flows and 270,279 (19.6
+the trained E-GraphSAGE layers, from which the edge embed-              %) are benign flows. The NF-BoT-IoT dataset has a total
+dings are calculated. They are then converted to class prob-            number of 600,100 flows, out of which 586,241 (97.69
+abilities in the final softmax layer and are finally compared           %) are attack flows and 13,859 (2.31 %) are benign flows.
+with the true class labels in order to compute the classification
+evaluation performance metrics.                                                     VI. E XPERIMENTAL R ESULTS
+                        V. DATASETS                                    To evaluate the performance of the proposed neural network
+                                                                    model, the standard metrics listed in Table I are used, where
+   For the evaluation of the GNN-based NIDS proposed in this
+                                                                    T P , T N , F P and F N represent the number of True Positives,
+paper, we use four publicly available NIDS datasets, which
+                                                                    True Negatives, False Positives and False Negatives respec-
+consist of different types of labelled attack flows as well as
+                                                                    tively. First, the results of the binary classification problem,
+benign network flows. The first two datasets, consisting of
+                                                                    where the aim is to distinguish between attack and benign
+ToN-IoT [20] and BoT-IoT [19], have proprietary formats and
+                                                                    traffic, are presented. Subsequently, we present the results of
+feature sets, and have been widely used to evaluate Machine
+                                                                    the multiclass classification experiments, where the aim was
+Learning based network intrusion detection systems in IoT.
+                                                                    to identify the specific attack type of each flow.
+In addition, we also consider two recently created variants
+of these datasets, where the respective format is translated to
+NetFlow with a common feature set, i.e. NF-TON-IoT [6] and          A. Binary Classification Results
+NF-BoT-IoT [6]. A brief overview of these datasets is provided
+in the following.                                                      The datasets used in this paper all include two sets of labels.
+   • BoT-IoT: This is another recent dataset with a specific
+                                                                    The first label determines if a flow record belongs to a benign
+     on IoT networks, created by Koroniotis et al. [19] in          or attack class, and the second label identifies the attack type.
+     2019. The authors simulated IoT services such as water         We use the first label set for binary classification, and the
+     stations, by using the Node-red tool [21] and gener-           second set for multiclass classification.
+     ated the corresponding IoT traffic. The Argus tool was
+     consequently used for feature extraction. This dataset is           TABLE I: Evaluation metrics utilised in this study
+     comprised of 6 types of attacks and a total of 47 features
+                                                                                     Metric                  Definition
+     with corresponding class labels. The dataset contains only
+                                                                                                                 TP
+     477 (0.01%) benign flows and 3,668,045 (99.99%) attack                  Detection Rate (Recall)          T P +F N
+                                                                                                                 TP
+     flows, with a total of 3,668,522 flows.                                        Precision                 T P +F P
+   • ToN-IoT: This is a relatively new and extensive dataset                        F1-Score                Recall×P recision
+                                                                                                       2 × Recall+P recision
+     that was generated in 2019 by Abdullah et al.[20], which                       Accuracy                  T P +T N
+                                                                                                         T P +F P +T N +F N
+     includes different types of IoT data, such as operation                                                     FP
+                                                                            False Alarm Rate (FAR)
+     system logs, telemetry data of IoT/IIoT services, as                                                     F P +T N
+   TABLE II: E-GraphSAGE binary classification results                   TABLE IV: Results of multiclass classification by E-
+  Dataset     Accuracy   Precision   F1-Score   Recall (DR)      FAR
+                                                                         GraphSAGE on BoT-IoT dataset families
+  BoT-IoT      99.99%      1.00        1.00       99.99%        0.00 %
+ NF-BoT-IoT    93.57%      1.00        0.97       93.43%        0.38 %
+                                                                                                     BoT-IoT               NF-BoT-IoT
+  ToN-IoT      97.87%      1.00        0.99       97.86%        1.92%        Class Name          DR       F1-Score       DR     F1-Score
+ NF-ToN-IoT    99.69%      1.00        1.00       99.85%        0.15%     Benign               100.00%        0.99     99.45%        0.42
+                                                                          DDoS                  99.99%        1.00     40.82%        0.39
+                                                                          DoS                   99.99%        1.00     57.13%        0.47
+   We use the full dataset, except for the ToN-IoT dataset,               Reconnaissance        99.98%        1.00     84.50%        0.92
+                                                                          Theft                 93.75%        0.97     99.83%        0.39
+where we considered a randomly sampled subset with 10%                    Weighted Average      99.99%        1.00     78.16%        0.81
+of the original size, due to the very large size of the original
+dataset. In regards to training and evaluation data split, 70%
+of the flow records of each datasets were selected for training          GraphSAGE approach across four significantly different NIDS
+and 30% were reserved for testing and evaluation.                        benchmark datasets. The consistently solid results demonstrate
+   As mentioned above, the experimental evaluation was based             the robustness of our GNN-based approach and its ability to
+on three original datasets with proprietary flow formats and             generalise across different types of network traffic patterns,
+feature sets, as well as their corresponding NetFlow versions.           feature sets, and attack types. We believe this is due to the
+As shown in [6], even though the original dataset and its                ability of the GNN architecture to capture the information in
+NetFlow counterpart represent essentially the same network               the inherent graph structure of the flow-based NIDS datasets.
+events, the performance of a classifier for the two datasets
+versions can vary significantly, due to the different feature            B. Multiclass Classification Results
+sets. Table II presents the detailed results of our E-GraphSAGE
+                                                                           We are now considering the multiclass classification prob-
+classifier for the binary classification case, showing Accuracy,
+                                                                         lem, where the classifier aims to distinguish between different
+Precision , F1-Score, Recall and FAR, for the considered
+                                                                         types of attacks as well as benign traffic. This is a much
+four benchmark datasets. As can be seen in the table, the E-
+                                                                         harder problem than in the binary case. For the evaluation
+GraphSAGE classifier performs very well across all different
+                                                                         of the E-GraphSAGE classifier in the multiclass scenario, we
+performance metrics. Since the considered datasets are gen-
+                                                                         considered the same four NIDS datasets as for the binary case.
+erally highly imbalanced, the F1-Score is a more relevant
+                                                                         Depending on the NIDS dataset, the number of attack classes
+performance metric. We use the F1-Score to compare our
+                                                                         range between 4 and 9.
+classifier with the state-of-the-art, i.e., the best classification
+                                                                           Tables IV and V show the corresponding results for the
+results reported in the literature for each of the four NIDS
+                                                                         BoT-IoT and ToN-IoT datasets and their respective Netflow
+datasets.
+                                                                         counterparts. For the BoT-IoT dataset with its original format
+   Table III shows the corresponding results of our
+                                                                         and feature set, a very high weighted Detection Rate and F1-
+E-GraphSAGE classifier compared to the best performing
+                                                                         Score is achieved for all the 5 traffic classes (4 attack classes
+related works for each datasets in terms of F1-Score. As
+                                                                         plus benign class), with a weighted average of 99.99% and
+can be observed from the table, in regards to F1-Score,
+                                                                         1.00 respectively. The corresponding numbers for the NF-BoT-
+E-GraphSAGE outperforms the best reported classifiers in
+                                                                         IoT dataset are significantly lower, with a weighted average
+ToN-IoT and BoT-IoT. The NF-ToN-IoT and NF-BoT-IoT
+                                                                         DR value of 78.16% and weighted F1-Score of 0.81.
+experiments achieved an F1-score of 1.0 and 0.97, respectively,
+                                                                           The results for the ToN-IoT datasets show a high weighted
+which are the same as the state-of-art algorithms.
+                                                                         average Detection Rate (86.78%) and F1-Score (0.87), but
+   These results demonstrate the power of our GNN-based
+                                                                         the values vary significantly for the individual traffic classes.
+approach for traffic classification and network intrusion detec-
+tion. In contrast to most related works, where a new ML-based
+NIDS classifier is evaluated on one, two or a maximum three              TABLE V: Results of multiclass classification by E-
+datasets, we have demonstrated the performance of our E-                 GraphSAGE on ToN-IoT datasets families
+                                                                                                    ToN-IoT               NF-ToN-IoT
+TABLE III: Performance of binary classification by E-                         Class Name         DR     F1-Score        DR     F1-Score
+                                                                          Benign               88.12%       0.91      98.86%        0.92
+GraphSAGE compared with the state-of-art algorithms                       Backdoor              5.06%       0.08      98.38%        0.99
+                 Method                  Dataset          F1              DDoS                 96.94%       0.98      52.35%        0.68
+        Proposed E-GraphSAGE             BoT-IoT         1.00             DoS                  96.08%       0.73       0.00%        0.00
+              XGBoost [5]                BoT-IoT         0.99             Injection            88.94%       0.83      93.15%        0.71
+        Proposed E-GraphSAGE            NF-BoT-IoT       0.97             MIMT                 87.43%       0.18      22.88%        0.28
+         Extra Tree Classifier [6]      NF-BoT-IoT       0.97             Ransomware           98.55%       0.94      96.49%        0.23
+        Proposed E-GraphSAGE             ToN-IoT         0.99             Password             89.15%       0.91      19.92%        0.25
+              Ensemble [7]               ToN-IoT         0.95             Scanning             75.84%       0.85      15.32%        0.13
+        Proposed E-GraphSAGE            NF-ToN-IoT       1.00             XSS                  92.08%       0.95       0.00%        0.00
+         Extra Tree Classifier [6]      NF-ToN-IoT       1.00             Weighted Average     86.78%       0.87      67.16%        0.63
+                                                                  weighted F1-Scores of E-GraphSAGE compared with the top
+                                                                  one or two best reported results in the literature, depending
+                                                                  on availability. We observe that E-GraphSAGE outperforms
+                                                                  all the state-of-the-art classifiers, with the only exception of
+                                                                  the ToN-IoT dataset, where E-GraphSAGE matches the F1-
+                                                                  Score as the best reported results.
+                                                                     Overall, we see that E-GraphSAGE at least matches, and in
+                                                                  most cases significantly outperforms the state-of-the-art ML-
+                                                                  based NIDS approaches, for both binary and multi-class clas-
+                                                                  sification. This is particularly significant, given our stringent
+                                                                  comparison methodology, where we picked the best perform-
+          (a) raw data              (b) edge embedded data
+                                                                  ing classifiers for each of the four individual NIDS datasets,
+Fig. 4: Visualisation of dimensionality reduction a) Sample of    and performed a pairwise comparison with E-GraphSAGE.
+BoT-IoT raw validation data, b)Sample of edge embeddings          This is in contrast to a more typical approach in which a
+generated by E-GraphSAGE (Multiclass).                            classifier is compared with related approaches on one, two, or
+                                                                  three common datasets.
+
+As for the BoT-IoT dataset, we observe a significantly lower               VII. C ONCLUSIONS AND F UTURE W ORK
+classification performance for the NetFlow variant of the BoT-       This paper presents a novel approach to network intru-
+IoT dataset. This can be explained by the very different          sion detection based on GNNs. For this, we propose E-
+nature of the feature set. While the original feature sets        GraphSAGE which the capturing of edge features as well as
+include specifically engineered features to detect the attack     the topological pattern of a network flow graph, and is hence
+classes included in the dataset, the NetFlow variants consist     able to implement attack flow detection. In this paper, we
+of relatively simple and generic features.                        focus on the application of E-GraphSAGE for IoT network
+   To get an intuitive understanding of the promising and         intrusion detection, and more specifically, for the detection of
+robust performance of the E-GraphSAGE classifier, we in-          malicious network flows. To the best of our knowledge, this
+vestigated and visualised the edge embeddings generated by        represents the first implementation and extensive evaluation
+the algorithm, based on the BoT-IoT dataset. For this, we         of an GNN-based NIDS for IoT using network flow data. Our
+generate two visualisations. First, we take the sample ‘raw’      experimental evaluation based on four IoT NIDS benchmark
+BoT-IoT dataset and the edge embedding then applied the           datasets shows that our E-GraphSAGE-based NIDS performs
+Uniform Manifold Approximation and Projection (UMAP)              exceptionally well and overall outperforms the state-of-the-
+[23] dimensionality reduction algorithm to map the high-          art ML-based classifiers. The evaluation results of our initial
+dimensional data down to two dimensions, for the purpose          system demonstrate the potential of a GNN-based approach
+of visualisation. The result is shown in Figure 4. We now see     for network intrusion detection. In the future, we plan to
+a clear separation of attack flows and normal/benign flows.       apply neighbourhood sampling techniques to improve the
+This illustrates the ability of the edge embedding mechanism      run-time of the proposed E-GraphSAGE model, particularly
+of the E-GraphSAGE algorithm to leverage the inherent graph       exploring non-uniform sampling techniques. Also, it is worth
+structure of the flow-based NIDS data, and to be able to sepa-    investigating explainable graph neural network algorithms,
+rate attack traffic from normal traffic in the embedding space,   such as GNNExplainer [24], to get more insights about GNN
+which in turn results in a high classification performance.       model outputs.
+   As in the binary classification case, we have provided a                                R EFERENCES
+comparison of our E-GraphSAGE-based NIDS with the state-
+of-the-art classifiers. Table VI shows the average multiclass      [1] A. Ghasempour, “Internet of things in smart grid: Ar-
+                                                                       chitecture, applications, services, key technologies, and
+                                                                       challenges,” Inventions, vol. 4, no. 1, p. 22, 2019.
+TABLE VI: Performance of multiclass classification by E-           [2] Z. Wu, S. Pan, F. Chen, G. Long, C. Zhang, and P. S. Yu,
+GraphSAGE compared with the state-of-art algorithms                    “A comprehensive survey on graph neural networks,”
+                                                                       IEEE Transactions on Neural Networks and Learning
+                Method               Dataset      W-F1
+       Proposed E-GraphSAGE          BoT-IoT      1.00                 Systems, vol. 32, no. 1, pp. 4–24, 2021. DOI: 10.1109/
+               KNN [8]               BoT-IoT      0.99                 TNNLS.2020.2978386.
+             XGBoost [5]             BoT-IoT      0.97             [3] B. Claise, “Cisco systems netflow services export ver-
+       Proposed E-GraphSAGE         NF-BoT-IoT    0.81                 sion 9,” RFC, vol. 3954, pp. 1–33, 2004.
+        Extra Tree Classifier [6]   NF-BoT-IoT    0.77
+       Proposed E-GraphSAGE          ToN-IoT      0.87
+        Extra Tree Classifier [6]    ToN-IoT      0.87
+       Proposed E-GraphSAGE         NF-ToN-IoT    0.63
+        Extra Tree Classifier [6]   NF-ToN-IoT    0.60
+ [4]   H. He, X. Sun, H. He, G. Zhao, L. He, and J. Ren, “A                 Workshop on Machine Learning and Systems (MLSys),
+       novel multimodal-sequential approach based on multi-                 2020.
+       view features for network intrusion detection,” IEEE          [15]   L. Gong and Q. Cheng, “Exploiting edge features
+       Access, vol. 7, pp. 183 207–183 221, 2019. DOI: 10 .                 for graph neural networks,” in Proceedings of the
+       1109/ACCESS.2019.2959131.                                            IEEE/CVF Conference on Computer Vision and Pattern
+ [5]   M. A. Lawal, R. A. Shaikh, and S. R. Hassan, “An                     Recognition (CVPR), Jun. 2019.
+       anomaly mitigation framework for iot using fog com-           [16]   J. Gilmer, S. S. Schoenholz, P. F. Riley, O. Vinyals,
+       puting,” Electronics, vol. 9, no. 10, 2020, ISSN: 2079-              and G. E. Dahl, “Neural message passing for quantum
+       9292. DOI: 10.3390/electronics9101565.                               chemistry,” in Proceedings of the 34th International
+ [6]   M. Sarhan, S. Layeghy, N. Moustafa, and M. Portmann,                 Conference on Machine Learning, D. Precup and Y. W.
+       Netflow datasets for machine learning-based network                  Teh, Eds., ser. Proceedings of Machine Learning Re-
+       intrusion detection systems, Nov. 2020. arXiv: 2011 .                search, vol. 70, PMLR, Jun. 2017, pp. 1263–1272.
+       09144.                                                               [Online]. Available: https://proceedings.mlr.press/v70/
+ [7]   P. Kumar, G. P. Gupta, and R. Tripathi, “An ensem-                   gilmer17a.html.
+       ble learning and fog-cloud architecture-driven cyber-         [17]   H. Cai, V. W. Zheng, and K. C. Chang, “A Com-
+       attack detection framework for iomt networks,” Com-                  prehensive Survey of Graph Embedding: Problems,
+       puter Communications, vol. 166, pp. 110–124, 2021,                   Techniques, and Applications,” IEEE Transactions on
+       ISSN : 0140-3664. DOI : https : / / doi . org / 10 . 1016 /          Knowledge and Data Engineering, vol. 30, no. 9,
+       j . comcom . 2020 . 12 . 003. [Online]. Available: https :           pp. 1616–1637, 2018, ISSN: 1558-2191. DOI: 10.1109/
+       / / www . sciencedirect . com / science / article / pii /            TKDE.2018.2807452.
+       S0140366420320090.                                            [18]   J. Zhou, G. Cui, Z. Zhang, C. Yang, Z. Liu, and M.
+ [8]   A. Churcher, R. Ullah, J. Ahmad, S. ur Rehman,                       Sun, “Graph neural networks: A review of methods and
+       F. Masood, M. Gogate, F. Alqahtani, B. Nour, and                     applications,” ArXiv, vol. abs/1812.08434, 2018.
+       W. J. Buchanan, “An experimental analysis of attack           [19]   N. Koroniotis, N. Moustafa, E. Sitnikova, and B.
+       classification using machine learning in iot networks,”              Turnbull, “Towards the development of realistic botnet
+       Sensors, vol. 21, no. 2, 2021, ISSN: 1424-8220. DOI:                 dataset in the Internet of Things for network forensic an-
+       10.3390/s21020446. [Online]. Available: https://www.                 alytics: Bot-IoT dataset,” Future Generation Computer
+       mdpi.com/1424-8220/21/2/446.                                         Systems, 2019, ISSN: 0167739X. DOI: 10.1016/j.future.
+ [9]   G. Vormayr, T. Zseby, and J. Fabini, “Botnet com-                    2019.05.041. arXiv: 1811.00701.
+       munication patterns,” IEEE Communications Surveys             [20]   A. Alsaedi, N. Moustafa, A. M. Z. Tari, and A. Anwar,
+       Tutorials, vol. 19, no. 4, pp. 2768–2796, 2017. DOI:                 “TON IoT telemetry dataset: A new generation dataset
+       10.1109/COMST.2017.2749442.                                          of iot and iiot for data-driven intrusion detection sys-
+[10]   M. H. Bhuyan, D. K. Bhattacharyya, and J. K. Kalita,                 tems,” IEEE Access, vol. 8, pp. 165 130–165 150, 2020.
+       “Surveying port scans and their detection methodolo-                 DOI : 10.1109/ACCESS.2020.3022862.
+       gies,” The Computer Journal, vol. 54, no. 10, pp. 1565–       [21]   Low-code programming for event-driven applications,
+       1581, 2011.                                                          Feb. 2021. [Online]. Available: https://nodered.org/.
+[11]   G. Kambourakis, T. Moschos, D. Geneiatakis, and               [22]   An extensible netflow v5/v9/ipfix probe for ipv4/v6, Feb.
+       S. Gritzalis, “Detecting dns amplification attacks,” in              2021. [Online]. Available: https : / / www . ntop . org /
+       International workshop on critical information infras-               products/netflow/nprobe/.
+       tructures security, Springer, 2007, pp. 185–196.              [23]   L. McInnes, J. Healy, and J. Melville, “Umap: Uniform
+[12]   Q. Xiao, J. Liu, Q. Wang, Z. Jiang, X. Wang, and                     manifold approximation and projection for dimension
+       Y. Yao, “Towards Network Anomaly Detection Using                     reduction,” arXiv preprint arXiv:1802.03426, 2018.
+       Graph Embedding,” in Computational Science – ICCS             [24]   R. Ying, D. Bourgeois, J. You, M. Zitnik, and J.
+       2020, V. V. Krzhizhanovskaya, G. Závodszky, M. H.                   Leskovec, “Gnnexplainer: Generating explanations for
+       Lees, J. J. Dongarra, P. M. A. Sloot, S. Brissos, and J.             graph neural networks,” Advances in neural information
+       Teixeira, Eds., Cham: Springer International Publishing,             processing systems, vol. 32, p. 9240, 2019.
+       2020, pp. 156–169, ISBN: 978-3-030-50423-6.
+[13]   W. L. Hamilton, R. Ying, and J. Leskovec, “Inductive
+       representation learning on large graphs,” in Proceed-
+       ings of the 31st International Conference on Neural
+       Information Processing Systems, ser. NIPS’17, Long
+       Beach, California, USA: Curran Associates Inc., 2017,
+       pp. 1025–1035, ISBN: 9781510860964.
+[14]   J. Zhou, Z. Xu, A. Rush, and M. Yu, “Automating
+       Botnet Detection with Graph Neural Networks,” in 4th
+

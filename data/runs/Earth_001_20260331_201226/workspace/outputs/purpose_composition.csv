@@ -1,0 +1,18 @@
+purpose,n
+augment snowpack,326
+increase precipitation,221
+"augment snowpack, increase precipitation",118
+"increase precipitation, suppress hail",55
+"augment snowpack, increase runoff",50
+"suppress hail, increase precipitation",14
+suppress hail,11
+"increase precipitation, augment snowpack",10
+"augment snowpack, suppress fog",7
+suppress fog,6
+research,4
+"increase precipitation, increase precipitation",3
+"research, augment snowpack",2
+"augment snowpack, increase runoff, research",2
+"increase runoff, increase precipitation",1
+"increase precipitation, increase runoff",1
+"augment snowpack, research",1

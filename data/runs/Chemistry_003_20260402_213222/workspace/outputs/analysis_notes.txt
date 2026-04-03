@@ -1,0 +1,21 @@
+Long-range electrostatics benchmark analysis summary
+
+This analysis creates simple, interpretable descriptor-based baselines tailored to the three provided datasets.
+It does not train a full LES-like neural potential, but it quantifies the electrostatic structure that such a model must capture.
+
+Key findings:
+- random_charges: exact charge-derived proxy energies show mean -8.1993 with dipole norm mean 76.8155.
+- charged_dimer: adding explicit long-range descriptors improved R^2 from 0.0035 to 0.1108.
+- ag3_chargestates: adding charge-state information improved R^2 from 0.8602 to 0.8602.
+
+Generated outputs:
+- outputs/dataset_overview.csv
+- outputs/random_charges_frame_metrics.csv
+- outputs/random_charges_observables.json
+- outputs/charged_dimer_metrics.csv
+- outputs/ag3_metrics.csv
+- outputs/analysis_summary.json
+- report/images/dataset_energy_overview.png
+- report/images/random_charges_analysis.png
+- report/images/charged_dimer_analysis.png
+- report/images/ag3_analysis.png

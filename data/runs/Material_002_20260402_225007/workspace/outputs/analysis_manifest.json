@@ -1,0 +1,16 @@
+{
+  "outputs": [
+    "outputs/parsed_dataset.json",
+    "outputs/water_analysis.json",
+    "outputs/adsorption_analysis.json",
+    "outputs/reaction_analysis.json",
+    "outputs/foundation_model_assessment.json",
+    "outputs/analysis_summary.md"
+  ],
+  "figures": [
+    "report/images/water_setup_overview.png",
+    "report/images/adsorption_scaling_analysis.png",
+    "report/images/reaction_barrier_analysis.png",
+    "report/images/foundation_scope_summary.png"
+  ]
+}

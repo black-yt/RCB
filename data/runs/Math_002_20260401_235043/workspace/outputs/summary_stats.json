@@ -1,0 +1,34 @@
+{
+  "PP": {
+    "total_instances": 270,
+    "successful": 115,
+    "success_rate": 0.42592592592592593,
+    "avg_conflicts": 1.5333333333333334,
+    "avg_time": 0.1457553227742513,
+    "avg_cost_success": 133.42608695652174
+  },
+  "LNS-PP": {
+    "total_instances": 270,
+    "successful": 122,
+    "success_rate": 0.45185185185185184,
+    "avg_conflicts": 1.3407407407407408,
+    "avg_time": 1.6239151778044525,
+    "avg_cost_success": 138.58196721311475
+  },
+  "MARL-Inspired": {
+    "total_instances": 270,
+    "successful": 155,
+    "success_rate": 0.5740740740740741,
+    "avg_conflicts": 0.8222222222222222,
+    "avg_time": 0.3732441363511262,
+    "avg_cost_success": 168.83225806451614
+  },
+  "Hybrid-MARL-LNS": {
+    "total_instances": 270,
+    "successful": 169,
+    "success_rate": 0.6259259259259259,
+    "avg_conflicts": 0.6851851851851852,
+    "avg_time": 1.458271695949413,
+    "avg_cost_success": 184.27810650887574
+  }
+}

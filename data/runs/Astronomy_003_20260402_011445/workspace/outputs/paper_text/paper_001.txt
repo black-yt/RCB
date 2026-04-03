@@ -1,0 +1,574 @@
+                                                                           Nonlinearities in Black Hole Ringdowns
+
+                                             Keefe Mitman ,1, ∗ Macarena Lagos ,2, † Leo C. Stein ,3, ‡ Sizheng Ma ,1 Lam Hui,4 Yanbei Chen ,1
+                                                        Nils Deppe ,1 François Hébert ,1 Lawrence E. Kidder ,5 Jordan Moxon ,1
+                                                      Mark A. Scheel ,1 Saul A. Teukolsky ,1, 5 William Throwe ,5 and Nils L. Vu 6
+                                                   1
+                                                    Theoretical Astrophysics 350-17, California Institute of Technology, Pasadena, California 91125, USA
+                                                      2
+                                                        Department of Physics and Astronomy, Columbia University, New York, New York 10027, USA
+                                                   3
+                                                     Department of Physics and Astronomy, University of Mississippi, University, Mississippi 38677, USA
+                                                         4
+                                                           Department of Physics and Astronomy, Columbia University, New York, NY 10027, USA
+                                                5
+                                                  Cornell Center for Astrophysics and Planetary Science, Cornell University, Ithaca, New York 14853, USA
+                                         6
+                                           Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am Mühlenberg 1, D-14476 Potsdam, Germany
+                                                                                          (Dated: February 24, 2023)
+                                                          The gravitational wave strain emitted by a perturbed black hole (BH) ringing down is typically
+                                                       modeled analytically using first-order BH perturbation theory. In this Letter we show that second-
+arXiv:2208.07380v2 [gr-qc] 22 Feb 2023
+
+
+
+
+                                                       order effects are necessary for modeling ringdowns from BH merger simulations. Focusing on the
+                                                       strain’s (`, m) = (4, 4) angular harmonic, we show the presence of a quadratic effect across a range
+                                                       of binary BH mass ratios that agrees with theoretical expectations. We find that the quadratic (4, 4)
+                                                       mode’s amplitude exhibits quadratic scaling with the fundamental (2, 2) mode—its parent mode.
+                                                       The nonlinear mode’s amplitude is comparable to or even larger than that of the linear (4, 4) mode.
+                                                       Therefore, correctly modeling the ringdown of higher harmonics—improving mode mismatches by up
+                                                       to 2 orders of magnitude—requires the inclusion of nonlinear effects.
+
+
+                                            Nonlinearity is responsible for the rich phenomenol-           has an infinite, but discrete set of complex frequency
+                                         ogy of general relativity (GR). While many exact non-             poles ω(`,m,n) .1 This makes GWs during ringdown well
+                                         linear solutions are known [1, 2], LIGO-Virgo-KAGRA               described by a superposition of exponentially damped si-
+                                         observables—gravitational waves (GWs) from merging                nusoids, called quasinormal modes (QNMs). The real and
+                                         binary black holes (BHs)—must be predicted by numeri-             imaginary parts of ω(`,m,n) determine the QNM oscillation
+                                         cal relativity (NR). Analytic perturbation theory has an          frequency and decay timescale, respectively. These modes
+                                         important role far from the merger: at early times, post-         are labeled by two angular harmonic numbers (`, m) and
+                                         Newtonian (PN) theory, and at late times (ringdown),              an overtone number n. The combination M ω(`,m,n) is
+                                         black hole perturbation theory [3–5], provided that the           entirely determined by χ.
+                                         remnant asymptotes to a perturbed Kerr BH [6, 7]. PN                 To date, the linear QNM spectrum has been used to
+                                         theory has been pushed to high perturbative order [8],            analyze current GW detections [15, 19–21], forecast the
+                                         but the standard paradigm for modeling ringdown is only           future detectability of ringdown [22–24], and perform tests
+                                         linear theory (see [9] for a review). It may then come as         of gravity in the strong field regime [25, 26].
+                                         a surprise if linear theory can be used to model ringdown            Since the sensitivity of GW detectors will increase in
+                                         even at the peak of the strain [10–15], the most nonlinear        the coming years [27–30], there is the potential to ob-
+                                         phase of a BH merger.                                             serve nonlinear ringdown effects in high signal-to-noise
+                                            The “magic” nature of the Kerr geometry [16] leads             ratio (SNR) events. A few previous works have shown
+                                         to a decoupled, separable wave equation for first-order           that second-order perturbation effects can be identified in
+                                         perturbations (the Teukolsky equation [5]), schematically         some NR simulations of binary BH mergers [31, 32]. In
+                                         written as                                                        this Letter we show that quadratic QNMs—the damped
+                                                                                                           sinusoids coming from second-order perturbation theory
+                                                                   T ψ = S,                        (1)     in GR—are a ubiquitous effect present in simulations
+                                         where S is a source term that vanishes for linear pertur-         across various binary mass ratios and remnant BH spins.
+                                         bations in vacuum, ψ is related to the first-order correc-        In particular, for the angular harmonic (`, m) = (4, 4),
+                                         tion to the curvature scalar ψ4 , and the linear differen-        we find that the quadratic QNM amplitude exhibits the
+                                         tial Teukolsky operator T depends on the dimensionless            expected quadratic scaling relative to its parent—the fun-
+                                         spin parameter χ ≡ |S|/M 2 through the combination                damental (2, 2) mode. The quadratic amplitude also has
+                                         a = |S|/M , where S is the BH spin angular momentum               a value that is comparable to that of the linear (4, 4)
+                                         and M is the BH mass (throughout we use geometric                 QNMs for every simulation considered, thus highlighting
+                                         units G = c = 1). The causal Green’s function G ∼ T −1
+
+
+                                                                                                           1 For  this study we focus only on prograde modes (in the
+                                         ∗ kmitman@caltech.edu
+                                                                                                             sense described in [17]), and therefore omit the additional pro-
+                                         † m.lagos@columbia.edu
+                                                                                                             grade/retrograde label ±. The Green’s function also has branch
+                                         ‡ lcstein@olemiss.edu                                               cuts, which lead to power-law tails [18], which we ignore here.
+2
+
+                            u0 = 15.00M                    u0 = 20.00M                u0 = 25.00M                   u0 = 30.00M
+                                                                                                                                                    8
+                      0.2
+         |
+    (2,2,0)×(2,2,0)
+
+
+                                                                                                                                                    7
+
+                      0.1                                                                                                                           6
+         |A(4,4)
+
+
+
+
+                                                                                                                                                        Mass ratio q
+                                                                                                                                                    5
+
+                      0.2
+                                                                                                                                                    4
+             |A(4,4,0) |
+
+
+
+
+                                                                                                                                                    3
+                      0.1
+                                                                                                                                                    2
+
+                                                                                                                                                    1
+                                  0.5            1.0                0.5       1.0           0.5           1.0              0.5           1.0
+                                |A(2,2,0) |                    |A(2,2,0) |                |A(2,2,0) |                    |A(2,2,0) |
+
+FIG. 1. Relationship between the peak amplitudes of the linear (2, 2, 0) and the quadratic (2, 2, 0) × (2, 2, 0) QNMs (top) as
+well as the linear (4, 4, 0) QNM (bottom), at different model start times u0 . Colors show different mass ratios q, and circles
+and triangles denote systems with remnant dimensionless spin χf ≈ 0.5 and χf ≈ 0.7, respectively. Each blue curve is a pure
+quadratic fit with start time u0 , and the shaded region brackets every one of the individual fits.
+
+the need to include nonlinear effects in ringdown models                              The NR strain at future null infinity contains all of the
+of higher harmonics.                                                                angular information of the GW and is decomposed as
+   Quadratic QNMs.—Second-order perturbation theory                                                       ∞ X
+                                                                                                          X
+has been studied for both Schwarzschild and Kerr BHs [33–                              hNR (u, θ, φ) ≡                hNR
+                                                                                                                       (`,m) (u)−2 Y(`,m) (θ, φ),            (3)
+43]. This involves the same Teukolsky operator as in                                                      `=2 |m|≤`
+Eq. (1) acting on the second-order curvature correction,
+and a complicated source S that depends quadratically                               where u is the Bondi time and −2 Y(`,m) are the spin-
+on the linear perturbations [41, 42, 44]. The second-order                          weighted s = −2 spherical harmonics. We model this
+solution results from a rather involved integral of this                            data with two different QNM Ansätze, valid between
+source against the Green’s function G [38, 43]. We only                             times u ∈ [u0 , uf ]. The first model, which is typically
+need to know that it is quadratic in the linear perturbation                        used in the literature, involves purely linear QNMs,
+and that, after enough time, it is well approximated by                                                   N
+                                                                                                          X
+                                                                                                L
+the quadratic QNMs.                                                                     hmodel,
+                                                                                         (`,m,N ) (u) =         A(`,m,n) e−iω(`,m,n) (u−upeak ) .            (4)
+   The frequency spectrum of quadratic QNMs is distinct                                                   n=0
+from the linear QNM spectrum. For each pair of linear                               Here A(`,m,n) is the peak amplitude of the linear QNM
+QNM frequencies ω(`1 ,m1 ,n1 ) and ω(`2 ,m2 ,n2 ) (in either                        with frequency ω(`,m,n) , N is the total number of overtones
+the left or right half complex plane), there will be a                              considered in the model, and upeak is the time at which
+corresponding quadratic QNM frequency                                               the L2 norm of the strain over the two-sphere achieves
+                                                                                    its maximum value (a proxy for the merger time), which
+                            ω ≡ ω(`1 ,m1 ,n1 ) + ω(`2 ,m2 ,n2 ) .            (2)    we take to be upeak = 0 without loss of generality. Note
+                                                                                    that here we have suppressed the spheroidal-spherical
+As the linear (2, ±2, 0) modes are most important, it is                            decomposition (which we include as in Eq. (6) of [17]).
+promising to investigate the quadratic QNMs they gen-                                  We will use Eq. (4) to model both the (2, 2) and (4, 4)
+erate, which primarily appear in the (`, m) = (4, ±4)                               modes of the strain.3 When modeling the (2, 2) mode,
+modes [36, 37, 43]. The quadratic QNM coming from
+the (2, 2) mode would have frequency ω(2,2,0)×(2,2,0) ≡
+2ω(2,2,0) and would decay faster than the linear funda-                               to the memory effect, as they are non-oscillatory. From angular
+mental mode (4, 4, 0), but slower than the first linear                               selection rules they will be most prominent in the (2, 0) mode.
+overtone (4, 4, 1), regardless of the BH spin.2                                       While these effects could also prove interesting to study, they are
+                                                                                      much more well understood than the quadratic QNMs in the (4, 4)
+                                                                                      mode, so we reserve their examination for future work [17, 45].
+                                                                                    3 We ignore the m < 0 modes because the binary BH simulations
+
+                                                                                      that we consider are nonprecessing and are in quasicircular orbits,
+2 The (`, m, n) = (2, 2, 0) can excite other quadratic QNMs with                      so the m < 0 modes can be recovered from the m > 0 modes via
+     frequency ω = ω(2,2,0) − ω(2,2,0) . These will instead be related                h(`,m) = (−1)` h(`,−m)
+                                                                                                                                                      3
+
+we use N = 1 and when modeling the (4, 4) mode we use                         TABLE I. List of simulations used (ID is shorthand for
+N = 2. While prior works have included more overtones in                      SXS:BBH:ID from the SXS catalog [46] where the full list
+their models [10–14, 17], we restrict ourselves to no more                    of binary parameters can be found) with their mass ratios q
+                                                                              and dimensionless remnant spins χf . All of these binaries are
+than two overtones because we find that the amplitudes of
+                                                                              nonprecessing and are in quasicircular orbits.
+higher overtones tend to vary with the model start time u0
+and hence are not very robust. Moreover, their inclusion                       ID 1502 1476 1506 1508 1474 1505 1504 1485 1486 1441
+does not affect considerably the best-fit amplitude of the                      q 1.00 1.00 1.00 1.28 1.28 1.33 1.98 3.09 3.72 8.00
+modes in which we are interested.                                              χf 0.73 0.68 0.71 0.73 0.73 0.71 0.71 0.68 0.70 0.72
+   The novel QNM model, which includes second-order
+effects and highlights our main result, only changes how                       ID 1500 1492 1465 1458 1438 1430                     ID 0305
+the (4, 4) mode is described, compared to Eq. (4). It is                        q 1.00 1.00 1.71 3.80 5.87 8.00                      q 1.22
+given by                                                                       χf 0.53 0.48 0.48 0.47 0.47 0.50                     χf 0.69
+                    1
+                    X
+        Q
+hmodel,
+ (4,4)    (u) =           A(4,4,n) e−iω(4,4,n) (u−upeak )           (5)          Quadratic fitting.—In order to fit the ringdown models
+                    n=0                                                       to the NR waveforms, using the least-squares implemen-
+                          (2,2,0)×(2,2,0) −iω(2,2,0)×(2,2,0) (u−upeak )
+                    + A(4,4)             e                                ,   tation from SciPy v1.6.2 [59], we minimize the L2 norm
+                                                                              of the residual
+           (2,2,0)×(2,2,0)
+where A(4,4)              is the peak amplitude of the                                      hR, Ri for R ≡ hNR       model
+                                                                                                            (`,m) − h(`,m) ,                       (6)
+quadratic QNM sourced by the linear (2, 2, 0) QNM inter-
+acting with itself. In each model, for the linear amplitudes                  where the inner product between modes a and b is
+we factor out the angular mixing coefficients, whereas for                                            Z uf
+the quadratic term we absorb the angular structure (from                                     ha, bi ≡      du a(u)b(u),                            (7)
+the nonlinear mixing coefficients and the Green’s function                                                    u0
+integral of the second-order source terms) into the ampli-
+       (2,2,0)×(2,2,0)                                                        with a(u) being the complex conjugate of a(u). We will
+tude A(4,4)            . We emphasize that the two models                     fix uf = 100M and vary the value of u0 . In Eq. (6),
+  model, L                   Q
+h(4,4,2)   (u) and hmodel,
+                      (4,4)    (u) contain the same number of                 hmodel is given by Eq. (4) with N = 1 for the (2, 2)
+free parameters.                                                              mode and Eq. (5) for the (4, 4) mode by default, unless
+   In these ringdown models, we fix the QNM frequencies                       explicitly mentioned that we use the purely linear model,
+to the values predicted by GR in vacuum and fit the QNM                       Eq. (4), with N = 2. We fix the frequencies and perform
+amplitudes to NR simulations, which cannot be predicted                       a spheroidal-to-spherical angular decomposition of the
+from first principles as they depend on the merger details.                   linear terms in our QNM models using the open-source
+From the quadratic sourcing by the linear (2, 2, 0) mode,                     Python package qnm [60].
+               (2,2,0)×(2,2,0)                                                   We show the main result of the fits in Fig. 1 for a
+we expect A(4,4)               ∝ (A(2,2,0) )2 . We will use this
+                                                                              range of initial times u0 with which we find the best-fit
+theoretical expectation as one main test to confirm the                       amplitudes to be stable (shown later). In the top panel,
+presence of quadratic QNMs. To perform this check we                                                        (2,2,0)×(2,2,0)
+need a family of systems with different linear amplitudes,                    we see that A(2,2,0) and A(4,4)               are consistent with
+which is easily accomplished by varying the binary mass                       a quadratic relationship, illustrated by the shaded blue
+ratio q ≡ m1 /m2 ≥ 1.                                                         region that is obtained by combining the fitted quadratic
+   The proportionality coefficient between (A(2,2,0) )2 and                   curves for u0 ∈ [15M, 30M ]. In this region, we find the
+                                                                                      (2,2,0)×(2,2,0)
+  (2,2,0)×(2,2,0)
+A(4,4)         (which we expect to be order unity [31, 43])                   ratio A(4,4)            /(A(2,2,0) )2 to range between 0.20 and
+                                                                                   4
+comes from the spacetime dependence of the full quadratic                     0.15. Again we emphasize that here A(2,2,0) has the
+                                                                                                                                 (2,2,0)×(2,2,0)
+source as well as the Green’s function. While, in principle,                  mixing coefficients factored out, while A(4,4)          con-
+this can be computed, we use the fact that it should only                     tains whatever angular structure arises through nonlinear
+depend on the dimensionless spin χf of the remnant BH.                        effects. There is no noticeable difference in the quadratic
+   We consider a family of 17 simulations (listed in Table I)                 relationship followed by the 0.7 and 0.5 spin families of
+of binary BH systems in the range q ∈ [1, 8]. To control the                  waveforms, compared to the variations that are observed
+dependence on χf , six are in the range χf = 0.5 ± 0.035,                                        (2,2,0)×(2,2,0)
+                                                                              in the best-fit A(4,4)             due to the choice of the
+and ten have χf = 0.7 ± 0.035. The final simulation,
+                                                                              model start time u0 .
+SXS:BBH:0305, is consistent with GW150914 [47]. These
+simulations were produced using the Spectral Einstein
+Code (SpEC) and are available in the SXS catalog [46, 48,
+49]. For each simulation, the strain waveform has been                        4 In addition to the amplitudes, we can also check the consistency
+
+extracted using Cauchy characteristic extraction and has                        of the phases of the quadratic (4, 4) QNM and the linear (2, 2, 0)
+                                                                                                                    (2,2,0)×(2,2,0)
+then been mapped to the superrest frame at 250M after                           QNM. We find that the phase of A(4,4)               /A2(2,2,0) is always
+upeak [50–54] using the techniques presented in [54] and                        within 0.4 radians of 0, for each simulation, for start times in the
+the code scri [55–58].                                                          range u0 ∈ [15M, 30M ].
+4
+
+   We emphasize that this quadratic behavior is unique
+          (2,2,0)×(2,2,0)                                                                                  Re[hNR
+                                                                                                                                    model,Q
+to the A(4,4)             mode, as can be seen in the bottom                                                   (4,4) ]          Re[h(4,4)      ]
+                                                                                                 100
+                                                                                                               QNM                  QNM
+panel of Fig. 1, where we show the best-fit linear amplitude                                               Re[h(4,4,1) ]        Re[h(2,2,0)×(2,2,0) ]
+
+
+
+
+                                                                              r |h| / M
+A(4,4,0) as a function of A(2,2,0) . These two modes are not                              10−2
+related quadratically (for more on their scaling with mass
+ratio, see [61]), which confirms the distinct physical origin
+                     (2,2,0)×(2,2,0)                                                      10−4
+of A(4,4,0) and A(4,4)               . The best-fit amplitudes
+of A(4,4,0) and A(2,2,0) are nearly constant across these
+                                                                                          10−6
+values of u0 , which is why the four bottom figures look
+                                                (2,2,0)×(2,2,0)
+the same. A key result of Fig. 1 is that A(4,4)                 is
+
+
+
+
+                                                                            r hNR − hmodel / M
+                                                                                                                                     model,L
+comparable to or larger (by a factor of ∼ 4 in cases with                                 10−2                                     h(4,4)
+
+q ≈ 1) than A(4,4,0) at the time of the peak. Given that                                  10−3
+                                                                                                                                     model,Q
+                                                                                                                                   h(4,4)
+                                (2,2,0)×(2,2,0)
+the exponential decay rates of A(4,4)           and A(4,4,0)                                                                       Numerical Error
+                                                                                          10−4
+for a BH with χf = 0.7 are Im[M ω(2,2,0)×(2,2,0) ] = −0.16
+and Im[M ω(4,4,0) ] = −0.08, respectively, even beyond                                    10−5
+10M after upeak the quadratic mode will be larger than
+                                                                                          10−6
+the linear mode for equal mass ratio binaries.5 Thus, for
+large SNR events in which the (4, 4) mode is detectable,
+the quadratic QNM could be measurable.                                                                 0     20            40          60               80
+                                                                                                              (u − upeak ) / M
+   Comparisons.—Figure 2 shows the GW150914 simula-
+tion (SXS:BBH:0305) and its fitting at u0 = 20M , the                     FIG. 2. Top: in black, the NR waveform for the SXS:BBH:0305
+time at which the residual in the (4, 4) mode reaches                     simulation and its comparison to the quadratic (4, 4) QNM
+its minimum. The top panel shows the waveform fit                         model with start time u0 = 20M (total is dashed blue; yellow
+                                             Q
+with the (4, 4) quadratic model hmodel,
+                                     (4,4)     as a function of           and green are contributions from individual QNMs, respec-
+time, where we find that it can fit rather well the am-                   tively the linear (4, 4, 1) and the quadratic (2, 2, 0) × (2, 2, 0)).
+plitude and phase evolution of the numerical waveform                     Bottom: residual in the (4, 4) mode when using the linear
+                                                                          (solid red) or the quadratic (dashed blue) (4, 4) model. We
+at late times. The bottom panel shows the residual of
+                                                                          also show a conservative estimate of the numerical error.
+the NR waveform with the linear and quadratic (4, 4)
+                         L              Q
+QNM models, hmodel,
+                 (4,4,2)   and hmodel,
+                                (4,4)     , and a conservative
+                                                                          of fit by our models through the mismatch
+estimate for the numerical error obtained by comparing
+the highest and second highest resolution simulations for                                                                       
+SXS:BBH:0305. We see that even though the linear and                                                hhNR     |h model
+                                                                                                        (`,m) (`,m)   i
+                                                                             M = 1 − Re  q                                      .                (8)
+quadratic (4, 4) models have the same number of free                                          hh(`,m) |hNR
+                                                                                                NR            ihhmodel |hmodel i
+                                      Q                                                                 (`,m)    (`,m)   (`,m)
+parameters, the residual of hmodel,
+                               (4,4)     is nearly an order of
+magnitude better, which confirms the importance of in-                    The top panel of Fig. 3 shows the mismatch in the (4, 4)
+cluding quadratic QNMs. Since, in general, the quadratic                  mode between the NR waveform and the QNM model as a
+mode decays in time slower than the (4, 4, 2) QNM, the                    function of u0 . The red and blue lines show the results for
+quadratic model generally better describes the late time                  the SXS:BBH:0305 simulation when the (4, 4) mode was
+behavior of the waveform. In addition, the best-fit value                                           L             Q
+                                                                          modeled with hmodel,
+                                                                                            (4,4,2)   and hmodel,
+                                                                                                           (4,4)    , respectively. As a
+of A(4,4,0) —which is the most important QNM in the (4, 4)
+mode at late times—differs in the linear and quadratic                    reference, we also show the numerical error calculated for
+models, which causes the residuals to be rather different                 SXS:BBH:0305.6 We see that the numerical error is below
+even beyond u = 50M when we expect the overtones and                      the fitted model mismatches for u0 . 40M , but will cause
+quadratic mode to be subdominant.                                         the mismatch to worsen at later times. We also see that
+                                                                          the linear model performs worse than the quadratic model
+    In addition to the residuals, we quantify the goodness                for any u0 , confirming that the residual difference shown
+                                                                          in the bottom panel of Fig. 2 was not a coincidence of the
+                                                                          particular fitting time chosen there. At times u0 ≈ 20M ,
+                                                                          we see that the mismatch is about 2 orders of magnitude
+                                                                          better in the quadratic model. We find similar results for
+
+5 We also find the peak amplitude A
+                                         (4,4,1) to be comparable or
+                           (2,2,0)×(2,2,0)
+    sometimes larger than A(4,4)           (see bottom panel of Fig. 3)
+    but, since Im[M ω(4,4,1) ] = −0.25, this (4, 4, 1) mode decays fast   6 The numerical error for the other simulations tends to be worse
+
+    enough that it will be comparable or smaller than the quadratic          since they were not run with as fine of a resolution, but the errors
+    (4, 4) mode after u = 10M .                                              are nonetheless comparable to that of SXS:BBH:0305.
+                                                                                                                                                                5
+
+             model 100M                                                                             0.5                                                10−2
+                                                         SXS:BBH:0305 (hmodel,L )                            ω(4,4,2)
+                          102
+    (4,4) , h(4,4) )|u0
+                                                         SXS:BBH:0305 (hmodel,Q )                            ω(2,2,0)×(2,2,0)
+                                                                                                    0.4
+                                                                                                                                                       10−3
+
+
+
+
+                                                                                                                                                          Mismatch M
+                          100                            Other simulations (hmodel,Q )
+
+
+
+
+                                                                                                −Im[ω]
+                                                         Numerical Error
+                     10−2                                                                           0.3
+                                                                                                                                                       10−4
+                     10−4                                                                           0.2
+ M(hNR
+
+
+
+
+                     10−6                                                                                                                              10−5
+                                                                                                    0.1
+
+                                                                                                                                              10−6
+                          101                                                                        1.050 1.075 1.100 1.125 1.150 1.175 1.200
+                                 (4, 4, 0)
+     |QNM Amplitude|
+
+
+
+
+                                 (4, 4, 1)                                                                                 Re[ω]
+                          100    (2, 2, 0) × (2, 2, 0)
+                                                                                              FIG. 4.      Contour plot of the mismatch between the
+                                                                                              SXS:BBH:0305 waveform and a (4, 4) model with three QNMs,
+                     10−1
+                                                                                              in which two frequencies are fixed to the GR predictions of
+                                                                                              the linear (4, 4, 0) and (4, 4, 1) QNMs, but the third is varied.
+                     10−2                                                                     The contour lines are logarithmically spaced in M between
+                                                                                              10−6 and 10−2 . The start time of the model is taken to be
+                                                                                              u0 = 20M .
+                           −10       0            10            20         30            40
+                                             (u0 − upeak ) / M
+                                                                                              the QNM model, either by including more overtones as
+FIG. 3. Top: mismatch in the (4, 4) mode for SXS:BBH:0305,                                    in [10], modifying the time dependence of the linear [62]
+as well as for every other simulation examined, and a com-                                    and quadratic terms, or considering more nonlinear effects.
+parison to the numerical error floor. Bottom: amplitudes of                                      Finally we check which frequency is preferred by the
+the three QNM terms in the quadratic (4, 4) QNM model as a                                    (4, 4) mode of the numerical strain. For this, we fix two
+function of the model start time u0 .                                                         frequencies to be the linear ω(4,4,0) and ω(4,4,1) frequen-
+                                                                                              cies, and keep one frequency free. We vary the frequency
+all of the simulations analyzed in this Letter7 (light blue                                   of that third term and fit every amplitude to minimize
+                                                   Q
+thin curves show the mismatch of the hmodel, (4,4)    in those                                the residual in Eq. (6). Figure 4 shows contours of the
+simulations), although the mismatch difference becomes                                        mismatch over the real and imaginary parts of the un-
+more modest for simulations with q ≈ 8 since the relative                                     known frequency for the SXS:BBH:0305 simulation using
+amplitude of the quadratic mode decreases (cf. bottom                                         u0 = 20M . We confirm that the data clearly prefers the
+panel of Fig. 1 where we see that amplitude of the (2, 2, 0)                                  frequency ω(2,2,0)×(2,2,0) = 2ω(2,2,0) over ω(4,4,2) .
+mode decreases with q, while the amplitude of the (4, 4, 0)                                      Conclusions.—We have shown that second-order effects
+mode increases with q). When comparing the mismatches                                         are present in the ringdown phase of binary BH mergers
+to the error, we find that every simulation remains above                                     for a wide range of mass ratios, matching theoretical
+the numerical error floor until u0 & 40M .8                                                   expectations and helping improve ringdown modeling at
+   In the bottom panel of Fig. 3, we show the best-fit                                        late times. We analyzed 17 NR simulations and in every
+amplitudes of the QNMs in the (4, 4) mode as functions                                        one of them we found that, in the (`, m) = (4, 4) mode,
+of u0 . We show the results for SXS:BBH:0305 (thick                                           the quadratic QNM analyzed has a peak amplitude that
+lines) as well as the rest of the simulations (thin lines).                                   is comparable to or larger than the (`, m, n) = (4, 4, 0)
+We see that at u0 & 10M the amplitude of A(4,4,0) is                                          fundamental linear QNM. Because of the relatively slow
+extremely stable, but the faster the additional QNM                                           decay of this quadratic QNM, we find that for nearly
+decays, the more variations that are seen. Nevertheless,                                      equal-mass systems this QNM will be larger than the
+       (2,2,0)×(2,2,0)
+the A(4,4)             exhibits only ∼ 20% variations for u0 ∈                                corresponding linear fundamental mode even 10M after
+[15M, 30M ], whereas A(4,4,1) varies by ∼ 90% in the                                          upeak .
+same range. Before and near u0 ≈ 10M every amplitude                                             These results highlight that we may be able to observe
+shows considerable variations, which is why we use u0 ≥                                       this nonlinear effect in future high-SNR GW events with
+15M in this Letter. This suggests a need to improve                                           a detectable (4, 4) harmonic. A quantitative analysis, and
+                                                                                              a generalization to other harmonics, will be performed in
+                                                                                              the future to assess in detail the detectability of quadratic
+7 Except for a few simulations at early times 0 . u . 10M , for
+                                                                                              QNMs and how well they can be distinguished from linear
+                                                   0
+                                                                                              QNMs, for current GW detectors at design sensitivity as
+  which the linear model can have a marginally better mismatch.
+8 We emphasize that the reason the numerical error curve increases                            well as next-generation GW detectors. It would also be
+  with u0 is because of the normalization factor in Eq. (8); i.e.,                            interesting to study how the linear/quadratic relationship
+  with higher u0 the integral of the numerical error becomes more                             of these nonlinearities varies with the spin of the remnant,
+  comparable to the strain’s amplitude.                                                       especially as one approaches maximal spin.
+6
+
+   The confirmation of quadratic QNMs opens new pos-                       ary Black Holes: Uniqueness and Beyond, Living Rev.
+sibilities for more general understanding of the role of                   Rel. 15, 7 (2012), arXiv:1205.6112 [gr-qc].
+nonlinearities in the ringdown of perturbed black holes. It            [8] L. Blanchet, Gravitational Radiation from Post-
+is now clear that we can readily improve the basic linear                  Newtonian Sources and Inspiralling Compact Binaries,
+models that have been used previously in theoretical and                   Living Rev. Rel. 17, 2 (2014), arXiv:1310.1528 [gr-qc].
+                                                                       [9] E. Berti, V. Cardoso, and A. O. Starinets, Quasinormal
+observational ringdown analyses. Quadratic QNMs pro-
+                                                                           modes of black holes and black branes, Class. Quant. Grav.
+vide new opportunities to maximize the science return of                   26, 163001 (2009), arXiv:0905.2975 [gr-qc].
+GW detections, by increasing the likelihood of detecting              [10] M. Giesler, M. Isi, M. A. Scheel, and S. Teukolsky, Black
+multiple QNM frequencies. One of these key science goals                   Hole Ringdown: The Importance of Overtones, Phys. Rev.
+is performing high-precision consistency tests of GR with                  X 9, 041060 (2019), arXiv:1903.08284 [gr-qc].
+GW observations. Fulfilling this aim will require a correct           [11] S. Bhagwat, X. J. Forteza, P. Pani, and V. Ferrari,
+ringdown model, which incorporates the nonlinear effects                   Ringdown overtones, black hole spectroscopy, and no-
+that we have shown to be robustly present.                                 hair theorem tests, Phys. Rev. D 101, 044033 (2020),
+                                                                           arXiv:1910.08708 [gr-qc].
+   Acknowledgments.—We thank Max Isi and the Flat-
+                                                                      [12] G. B. Cook, Aspects of multimode Kerr ringdown fitting,
+iron Institute for fostering discourse, and Vishal Baib-                   Phys. Rev. D 102, 024027 (2020), arXiv:2004.08347 [gr-
+hav, Emanuele Berti, Mark Cheung, Matt Giesler, Scott                      qc].
+Hughes, and Max Isi for valuable conversations. Compu-                [13] X. Jiménez Forteza, S. Bhagwat, P. Pani, and V. Fer-
+tations for this work were performed with the Wheeler                      rari, Spectroscopy of binary black hole ringdown using
+cluster at Caltech. This work was supported in part by                     overtones and angular modes, Phys. Rev. D 102, 044053
+the Sherman Fairchild Foundation and by NSF Grants                         (2020), arXiv:2005.03260 [gr-qc].
+No. PHY-2011961, No. PHY-2011968, and No. OAC-                        [14] A. Dhani, Importance of mirror modes in binary black hole
+1931266 at Caltech, as well as NSF Grants No. PHY-                         ringdown waveform, Phys. Rev. D 103, 104048 (2021),
+1912081, No. PHY-2207342, and No. OAC-1931280 at                           arXiv:2010.08602 [gr-qc].
+Cornell. The work of L.C.S. was partially supported                   [15] E. Finch and C. J. Moore, Searching for a Ringdown
+                                                                           Overtone in GW150914, arXiv:2205.07809 [gr-qc].
+by NSF CAREER Grant No. PHY-2047382. M.L. was
+                                                                      [16] S. A. Teukolsky, The Kerr Metric, Class. Quant. Grav.
+funded by the Innovative Theoretical Cosmology Fellow-                     32, 124006 (2015), arXiv:1410.2130 [gr-qc].
+ship at Columbia University. L.H. was funded by the                   [17] L. Magaña Zertuche, K. Mitman, N. Khera, L. C. Stein,
+DOE DE-SC0011941 and a Simons Fellowship in Theoret-                       M. Boyle, N. Deppe, F. Hébert, D. A. B. Iozzo, L. E. Kid-
+ical Physics. M.L. and L.C.S. thank the Benasque Science                   der, J. Moxon, H. P. Pfeiffer, M. A. Scheel, S. A. Teukolsky,
+Center and the organizers of the 2022 workshop “New                        W. Throwe, and N. Vu, High precision ringdown modeling:
+frontiers in strong gravity,” where some of this work was                  Multimode fits and BMS frames, Physical Review D 105,
+performed; and M.L. acknowledges NSF Grant No. PHY-                        10.1103/physrevd.105.104015 (2022), 2110.15922.
+1759835 for supporting travel to this workshop.                       [18] E. W. Leaver, Spectral decomposition of the perturbation
+                                                                           response of the Schwarzschild geometry, Phys. Rev. D 34,
+   Note added.–Recently, we learned that Cheung et al.                     384 (1986).
+conducted a similar study, whose results are consistent               [19] M. Isi, M. Giesler, W. M. Farr, M. A. Scheel, and S. A.
+with ours [63].                                                            Teukolsky, Testing the no-hair theorem with GW150914,
+                                                                           Phys. Rev. Lett. 123, 111102 (2019), arXiv:1905.00869
+                                                                           [gr-qc].
+                                                                      [20] R. Cotesta, G. Carullo, E. Berti, and V. Cardoso,
+                                                                           On the detection of ringdown overtones in GW150914,
+ [1] H. Stephani, D. Kramer, M. A. H. MacCallum, C. Hoense-                arXiv:2201.00822 [gr-qc].
+     laers, and E. Herlt, Exact solutions of Einstein’s field equa-   [21] M. Isi and W. M. Farr, Revisiting the ringdown of
+     tions, Cambridge Monographs on Mathematical Physics                   GW150914, arXiv:2202.02941 [gr-qc].
+     (Cambridge Univ. Press, Cambridge, 2003).                        [22] E. Berti, A. Sesana, E. Barausse, V. Cardoso, and K. Bel-
+ [2] J. B. Griffiths and J. Podolsky, Exact Space-Times in                 czynski, Spectroscopy of Kerr black holes with Earth- and
+     Einstein’s General Relativity, Cambridge Monographs                   space-based interferometers, Phys. Rev. Lett. 117, 101102
+     on Mathematical Physics (Cambridge University Press,                  (2016), arXiv:1605.09286 [gr-qc].
+     Cambridge, 2009).                                                [23] I. Ota and C. Chirenti, Overtones or higher harmonics?
+ [3] T. Regge and J. A. Wheeler, Stability of a Schwarzschild              Prospects for testing the no-hair theorem with gravita-
+     singularity, Phys. Rev. 108, 1063 (1957).                             tional wave detections, Phys. Rev. D 101, 104005 (2020),
+ [4] F. J. Zerilli, Gravitational field of a particle falling in           arXiv:1911.00440 [gr-qc].
+     a schwarzschild geometry analyzed in tensor harmonics,           [24] S. Bhagwat, C. Pacilio, E. Barausse, and P. Pani, Land-
+     Phys. Rev. D 2, 2141 (1970).                                          scape of massive black-hole spectroscopy with LISA and
+ [5] S. A. Teukolsky, Perturbations of a rotating black hole. 1.           the Einstein Telescope, Phys. Rev. D 105, 124063 (2022),
+     Fundamental equations for gravitational electromagnetic               arXiv:2201.00023 [gr-qc].
+     and neutrino field perturbations, Astrophys. J. 185, 635         [25] E. Berti, K. Yagi, H. Yang, and N. Yunes, Extreme gravity
+     (1973).                                                               tests with gravitational waves from compact binary coales-
+ [6] R. Penrose, Gravitational collapse: The role of general               cences: (II) ringdown, General Relativity and Gravitation
+     relativity, Riv. Nuovo Cim. 1, 252 (1969).                            50, 10.1007/s10714-018-2372-6 (2018), 1801.03587.
+ [7] P. T. Chrusciel, J. Lopes Costa, and M. Heusler, Station-        [26] R. Abbott et al. (LIGO Scientific, VIRGO, KA-
+                                                                                                                               7
+
+     GRA), Tests of General Relativity with GWTC-3,                    invariant gravitational perturbations of a Kerr black hole,
+     arXiv:2112.06861 [gr-qc].                                         Phys. Rev. D 59, 124022 (1999), arXiv:gr-qc/9811019.
+[27] B. P. Abbott et al. (KAGRA, LIGO Scientific,                 [45] K. Mitman, J. Moxon, M. A. Scheel, S. A. Teukolsky,
+     Virgo, VIRGO), Prospects for observing and localizing             M. Boyle, N. Deppe, L. E. Kidder, and W. Throwe, Com-
+     gravitational-wave transients with Advanced LIGO, Ad-             putation of displacement and spin gravitational memory
+     vanced Virgo and KAGRA, Living Rev. Rel. 21, 3 (2018),            in numerical relativity, Phys. Rev. D 102, 104007 (2020),
+     arXiv:1304.0670 [gr-qc].                                          arXiv:2007.11562 [gr-qc].
+[28] L. S. Team, LISA Science Requirement Document.               [46] M. Boyle et al., The SXS Collaboration catalog of binary
+[29] M. Maggiore et al., Science Case for the Einstein Tele-           black hole simulations, Class. Quant. Grav. 36, 195006
+     scope, JCAP 03, 050, arXiv:1912.02622 [astro-ph.CO].              (2019), arXiv:1904.04831 [gr-qc].
+[30] M. Evans et al., A Horizon Study for Cosmic Explorer:        [47] B. P. Abbott et al. (LIGO Scientific, Virgo), GW150914:
+     Science, Observatories, and Community, arXiv:2109.09882           First results from the search for binary black hole coa-
+     [astro-ph.IM].                                                    lescence with Advanced LIGO, Phys. Rev. D 93, 122003
+[31] L. London, D. Shoemaker, and J. Healy, Modeling ring-             (2016), arXiv:1602.03839 [gr-qc].
+     down: Beyond the fundamental quasinormal modes, Phys.        [48] https://www.black-holes.org/code/SpEC.html.
+     Rev. D 90, 124032 (2014), [Erratum: Phys.Rev.D 94,           [49] SXS Gravitational Waveform Database, http://www.
+     069902 (2016)], arXiv:1404.3197 [gr-qc].                          black-holes.org/waveforms.
+[32] S. Ma, K. Mitman, L. Sun, N. Deppe, F. Hébert,               [50] J. Moxon, M. A. Scheel, and S. A. Teukolsky, Improved
+     L. E. Kidder, J. Moxon, W. Throwe, N. L. Vu, and                  Cauchy-characteristic evolution system for high-precision
+     Y. Chen, Collective filters: a new approach to analyze the        numerical relativity waveforms, Phys. Rev. D 102, 044052
+     gravitational-wave ringdown of binary black-hole mergers,         (2020), arXiv:2007.01339 [gr-qc].
+     arXiv:2207.10870 [gr-qc].                                    [51] J. Moxon, M. A. Scheel, S. A. Teukolsky, N. Deppe,
+[33] R. J. Gleiser, C. O. Nicasio, R. H. Price, and J. Pullin,         N. Fischer, F. Hébert, L. E. Kidder, and W. Throwe,
+     Colliding black holes: How far can the close approxi-             The SpECTRE Cauchy-characteristic evolution system
+     mation go?, Phys. Rev. Lett. 77, 4483 (1996), arXiv:gr-           for rapid, precise waveform extraction, arXiv:2110.08635
+     qc/9609022.                                                       [gr-qc].
+[34] R. J. Gleiser, C. O. Nicasio, R. H. Price, and J. Pullin,    [52] N. Deppe, W. Throwe, L. E. Kidder, N. L. Fischer, C. Ar-
+     Second order perturbations of a Schwarzschild black               maza, G. S. Bonilla, F. Hébert, P. Kumar, G. Lovelace,
+     hole, Class. Quant. Grav. 13, L117 (1996), arXiv:gr-              J. Moxon, E. O’Shea, H. P. Pfeiffer, M. A. Scheel,
+     qc/9510049.                                                       S. A. Teukolsky, I. Anantpurkar, M. Boyle, F. Foucart,
+[35] R. J. Gleiser, C. O. Nicasio, R. H. Price, and J. Pullin,         M. Giesler, D. A. B. Iozzo, I. Legred, D. Li, A. Macedo,
+     Gravitational radiation from Schwarzschild black holes:           D. Melchor, M. Morales, T. Ramirez, H. R. Rüter,
+     The Second order perturbation formalism, Phys. Rept.              J. Sanchez, S. Thomas, and T. Wlodarczyk, SpECTRE
+     325, 41 (2000), arXiv:gr-qc/9807077.                              (2020).
+[36] K. Ioka and H. Nakano, Second and higher-order quasi-        [53] K. Mitman et al., Fixing the BMS frame of numerical
+     normal modes in binary black hole mergers, Phys. Rev.             relativity waveforms, Phys. Rev. D 104, 024051 (2021),
+     D 76, 061503 (2007), arXiv:0704.3467 [astro-ph].                  arXiv:2105.02300 [gr-qc].
+[37] H. Nakano and K. Ioka, Second Order Quasi-Normal             [54] K. Mitman et al., Fixing the BMS Frame of Numerical Rel-
+     Mode of the Schwarzschild Black Hole, Phys. Rev. D 76,            ativity Waveforms with BMS Charges, arXiv:2208.04356
+     084007 (2007), arXiv:0708.0450 [gr-qc].                           [gr-qc].
+[38] S. Okuzumi, K. Ioka, and M.-a. Sakagami, Possible Dis-       [55] M. Boyle, D. Iozzo, and L. C. Stein, moble/scri: v1.2
+     covery of Nonlinear Tail and Quasinormal Modes in                 (2020).
+     Black Hole Ringdown, Phys. Rev. D 77, 124018 (2008),         [56] M. Boyle, Angular velocity of gravitational radiation from
+     arXiv:0803.0501 [gr-qc].                                          precessing binaries and the corotating frame, Phys. Rev.
+[39] D. Brizuela, J. M. Martin-Garcia, and M. Tiglio, A Com-           D 87, 104006 (2013), arXiv:1302.2919 [gr-qc].
+     plete gauge-invariant formalism for arbitrary second-order   [57] M. Boyle, L. E. Kidder, S. Ossokine, and H. P. Pfeif-
+     perturbations of a Schwarzschild black hole, Phys. Rev.           fer, Gravitational-wave modes from precessing black-hole
+     D 80, 024021 (2009), arXiv:0903.1134 [gr-qc].                     binaries, arXiv:1409.4431 [gr-qc].
+[40] E. Pazos, D. Brizuela, J. M. Martin-Garcia, and M. Tiglio,   [58] M. Boyle, Transformations of asymptotic gravitational-
+     Mode coupling of Schwarzschild perturbations: Ring-               wave data, Phys. Rev. D 93, 084031 (2016),
+     down frequencies, Phys. Rev. D 82, 104028 (2010),                 arXiv:1509.00862 [gr-qc].
+     arXiv:1009.4665 [gr-qc].                                     [59] P. Virtanen, R. Gommers, T. E. Oliphant, M. Haber-
+[41] J. L. Ripley, N. Loutrel, E. Giorgi, and F. Pretorius,            land, T. Reddy, D. Cournapeau, E. Burovski, P. Peterson,
+     Numerical computation of second order vacuum pertur-              W. Weckesser, J. Bright, S. J. van der Walt, M. Brett,
+     bations of Kerr black holes, Phys. Rev. D 103, 104018             J. Wilson, K. J. Millman, N. Mayorov, A. R. J. Nel-
+     (2021), arXiv:2010.00162 [gr-qc].                                 son, E. Jones, R. Kern, E. Larson, C. J. Carey, İ. Polat,
+[42] N. Loutrel, J. L. Ripley, E. Giorgi, and F. Pretorius,            Y. Feng, E. W. Moore, J. VanderPlas, D. Laxalde, J. Perk-
+     Second Order Perturbations of Kerr Black Holes: Recon-            told, R. Cimrman, I. Henriksen, E. A. Quintero, C. R. Har-
+     struction of the Metric, Phys. Rev. D 103, 104017 (2021),         ris, A. M. Archibald, A. H. Ribeiro, F. Pedregosa, P. van
+     arXiv:2008.11770 [gr-qc].                                         Mulbregt, and SciPy 1.0 Contributors, SciPy 1.0: Funda-
+[43] M. Lagos and L. Hui, Generation and propagation of                mental Algorithms for Scientific Computing in Python,
+     nonlinear quasi-normal modes of a Schwarzschild black             Nature Methods 17, 261 (2020).
+     hole, arXiv:2208.07379 [gr-qc].                              [60] L. C. Stein, qnm: A Python package for calculating Kerr
+[44] M. Campanelli and C. O. Lousto, Second order gauge                quasinormal modes, separation constants, and spherical-
+8
+
+     spheroidal mixing coefficients, J. Open Source Softw. 4,        L. Lehner, Nonlinear effects in the black hole ringdown:
+     1683 (2019), arXiv:1908.10377 [gr-qc].                          Absorption-induced mode excitation, Phys. Rev. D 105,
+[61] S. Borhanian, K. G. Arun, H. P. Pfeiffer, and B. S.             064046 (2022), arXiv:2112.11168 [gr-qc].
+     Sathyaprakash, Comparison of post-Newtonian mode           [63] M. H.-Y. Cheung, V. Baibhav, E. Berti, V. Cardoso,
+     amplitudes with numerical relativity simulations of bi-         G. Carullo, R. Cotesta, W. Del Pozzo, F. Duque, T. Helfer,
+     nary black holes, Class. Quant. Grav. 37, 065006 (2020),        E. Shukla, and K. W. K. Wong, Nonlinear effects in black
+     arXiv:1901.08516 [gr-qc].                                       hole ringdown, arXiv:2208.07374 [gr-qc].
+[62] L. Sberna, P. Bosch, W. E. East, S. R. Green, and
+

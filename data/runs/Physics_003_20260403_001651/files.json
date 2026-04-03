@@ -1,0 +1,208 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 19878,
+    "mtime": 1775199582.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "polarization_dependence.png",
+    "path": "data/polarization_dependence.png",
+    "type": "file",
+    "size": 211842,
+    "mtime": 1770710438.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "polarization_dependence_data.csv",
+    "path": "data/polarization_dependence_data.csv",
+    "type": "file",
+    "size": 632,
+    "mtime": 1770710442.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "processed_band_data.json",
+    "path": "data/processed_band_data.json",
+    "type": "file",
+    "size": 35473,
+    "mtime": 1770710438.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "raw_trARPES_data.h5",
+    "path": "data/raw_trARPES_data.h5",
+    "type": "file",
+    "size": 1933136,
+    "mtime": 1770709552.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_metrics.json",
+    "path": "outputs/analysis_metrics.json",
+    "type": "file",
+    "size": 3805,
+    "mtime": 1775199580.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.txt",
+    "path": "outputs/analysis_summary.txt",
+    "type": "file",
+    "size": 1428,
+    "mtime": 1775199578.0,
+    "exported": true
+  },
+  {
+    "name": "raw_data_summary.json",
+    "path": "outputs/raw_data_summary.json",
+    "type": "file",
+    "size": 2819,
+    "mtime": 1775199578.0,
+    "exported": true
+  },
+  {
+    "name": "replica_band_metrics.csv",
+    "path": "outputs/replica_band_metrics.csv",
+    "type": "file",
+    "size": 873,
+    "mtime": 1775199578.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1277,
+    "mtime": 1775199580.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 1775,
+    "mtime": 1775199578.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 239854,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1630751,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1078918,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 752873,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "polarization_dependence_analysis.png",
+    "path": "report/images/polarization_dependence_analysis.png",
+    "type": "file",
+    "size": 281579,
+    "mtime": 1775199582.0,
+    "exported": true
+  },
+  {
+    "name": "pump_angle_grid.png",
+    "path": "report/images/pump_angle_grid.png",
+    "type": "file",
+    "size": 965398,
+    "mtime": 1775199582.0,
+    "exported": true
+  },
+  {
+    "name": "replica_band_analysis.png",
+    "path": "report/images/replica_band_analysis.png",
+    "type": "file",
+    "size": 222712,
+    "mtime": 1775199582.0,
+    "exported": true
+  },
+  {
+    "name": "spectral_overview.png",
+    "path": "report/images/spectral_overview.png",
+    "type": "file",
+    "size": 214777,
+    "mtime": 1775199580.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14035,
+    "mtime": 1775199583.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5351,
+    "mtime": 1775146611.0,
+    "exported": true
+  }
+]

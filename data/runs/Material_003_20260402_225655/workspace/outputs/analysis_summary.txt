@@ -1,0 +1,18 @@
+AI-guided inverse-design analysis summary
+========================================
+
+Calibration dataset: 295 polymers
+Vitrimer design space: 8424 acid/epoxide combinations
+Unique acids: 7729; unique epoxides: 7667
+
+Gaussian-process calibration performance (5-fold CV):
+- MAE: 21.14 K
+- RMSE: 27.50 K
+- R^2: 0.917
+- Pearson r: 0.958
+
+Top-ranked candidates by target calibrated Tg:
+- Target 300 K: predicted 297.5 ± 45.5 K | acid=NC(CCCCC(=O)O)C(=O)O | epoxide=O=C(CCCC1CO1)N(CCc1ccccc1)CC1CO1
+- Target 350 K: predicted 350.7 ± 48.6 K | acid=O=C(O)c1cc(C(=O)N2CCCCC2C(=O)O)ccn1 | epoxide=c1ccc2c(OCC3CO3)ccc(OCC3CO3)c2c1
+- Target 400 K: predicted 399.0 ± 45.6 K | acid=O=C(O)c1cccc(C=Cc2cccc(C(=O)O)c2)c1 | epoxide=Cc1cc(C)c2c(OCC3CO3)ccc(OCC3CO3)c2n1
+- Target 450 K: predicted 408.5 ± 59.5 K | acid=O=C(O)C1(C(=O)O)CCN(Cc2ccc3ccccc3n2)CC1 | epoxide=CC(C)C(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1

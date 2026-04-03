@@ -1,0 +1,62 @@
+{
+  "rd_ratio_proxy": [
+    {
+      "model": "lcdm",
+      "model_label": "$\\Lambda$CDM",
+      "rd_ratio_proxy": 1.0,
+      "rd_ratio_proxy_sigma": 0.005812974126019769
+    },
+    {
+      "model": "ede",
+      "model_label": "EDE",
+      "rd_ratio_proxy": 0.9607898448519041,
+      "rd_ratio_proxy_sigma": 0.014115067355351342
+    },
+    {
+      "model": "w0wa",
+      "model_label": "$w_0w_a$",
+      "rd_ratio_proxy": 1.072755905511811,
+      "rd_ratio_proxy_sigma": 0.032399663706695635
+    }
+  ],
+  "ede_detection_sigma": 3.0,
+  "w0wa_deviation_from_lcdm_limit_sigma": {
+    "w0_vs_minus1": 2.7619047619047623,
+    "wa_vs_0": -3.017241379310345
+  },
+  "distance_series": {
+    "desi_dvrd_points": {
+      "weighted_mean": -0.008473836856539572,
+      "weighted_mean_sigma": 0.0029261721265711237,
+      "slope_per_redshift": 0.015385716526298606,
+      "slope_sigma": 0.006399409551172838,
+      "intercept": -0.023018380043064026,
+      "intercept_sigma": 0.006720074598457853,
+      "chi2_zero_model": 14.436826814058957,
+      "chi2_linear_model": 0.27034861018346823,
+      "n_points": 7
+    },
+    "desi_fap_points": {
+      "weighted_mean": 0.0084,
+      "weighted_mean_sigma": 0.008,
+      "slope_per_redshift": 0.006200769143829096,
+      "slope_sigma": 0.017667193505422805,
+      "intercept": 0.003001362352616635,
+      "intercept_sigma": 0.017337782597322507,
+      "chi2_zero_model": 4.0625,
+      "chi2_linear_model": 2.836815520188691,
+      "n_points": 7
+    },
+    "sne_mu_points": {
+      "weighted_mean": -0.04881179937551645,
+      "weighted_mean_sigma": 0.022714901341628915,
+      "slope_per_redshift": 0.2041236548828282,
+      "slope_sigma": 0.12871982281243247,
+      "intercept": -0.1471379846659338,
+      "intercept_sigma": 0.06603401196105986,
+      "chi2_zero_model": 7.451927437641724,
+      "chi2_linear_model": 0.31944820648418665,
+      "n_points": 7
+    }
+  }
+}

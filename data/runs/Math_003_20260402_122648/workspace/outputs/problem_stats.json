@@ -1,0 +1,625 @@
+[
+  {
+    "name": "translated_imo_2000_p1",
+    "goal_predicate": "cong",
+    "num_constructions": 17,
+    "num_initial_facts": 25,
+    "constructor_histogram": {
+      "segment": 1,
+      "on_tline": 2,
+      "on_circle": 6,
+      "on_pline": 2,
+      "on_line": 6
+    },
+    "initial_predicate_histogram": {
+      "diff": 8,
+      "perp": 2,
+      "cong": 6,
+      "ncoll": 1,
+      "para": 2,
+      "coll": 6
+    }
+  },
+  {
+    "name": "translated_imo_2000_p6",
+    "goal_predicate": "cong",
+    "num_constructions": 12,
+    "num_initial_facts": 43,
+    "constructor_histogram": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "incenter2": 1,
+      "foot": 3,
+      "reflect": 4,
+      "on_line": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 5,
+      "perp": 13,
+      "eqangle": 3,
+      "coll": 8,
+      "cong": 10,
+      "diff": 4
+    }
+  },
+  {
+    "name": "translated_imo_2002_p2a",
+    "goal_predicate": "eqangle",
+    "num_constructions": 11,
+    "num_initial_facts": 21,
+    "constructor_histogram": {
+      "segment": 1,
+      "midpoint": 1,
+      "on_circle": 4,
+      "on_bline": 3,
+      "on_pline": 1,
+      "on_line": 1
+    },
+    "initial_predicate_histogram": {
+      "diff": 6,
+      "coll": 2,
+      "cong": 8,
+      "eqangle": 3,
+      "ncoll": 1,
+      "para": 1
+    }
+  },
+  {
+    "name": "translated_imo_2002_p2b",
+    "goal_predicate": "eqangle",
+    "num_constructions": 11,
+    "num_initial_facts": 21,
+    "constructor_histogram": {
+      "segment": 1,
+      "midpoint": 1,
+      "on_circle": 4,
+      "on_bline": 3,
+      "on_pline": 1,
+      "on_line": 1
+    },
+    "initial_predicate_histogram": {
+      "diff": 6,
+      "coll": 2,
+      "cong": 8,
+      "eqangle": 3,
+      "ncoll": 1,
+      "para": 1
+    }
+  },
+  {
+    "name": "translated_imo_2003_p4",
+    "goal_predicate": "cong",
+    "num_constructions": 13,
+    "num_initial_facts": 26,
+    "constructor_histogram": {
+      "triangle": 1,
+      "circle": 1,
+      "on_circle": 3,
+      "on_bline": 2,
+      "on_line": 3,
+      "foot": 3
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 4,
+      "cong": 7,
+      "diff": 4,
+      "eqangle": 2,
+      "coll": 6,
+      "perp": 3
+    }
+  },
+  {
+    "name": "translated_imo_2004_p1",
+    "goal_predicate": "coll",
+    "num_constructions": 12,
+    "num_initial_facts": 24,
+    "constructor_histogram": {
+      "triangle": 1,
+      "midpoint": 1,
+      "on_circle": 4,
+      "on_line": 2,
+      "angle_bisector": 2,
+      "circle": 2
+    },
+    "initial_predicate_histogram": {
+      "diff": 6,
+      "coll": 3,
+      "cong": 9,
+      "ncoll": 4,
+      "eqangle": 2
+    }
+  },
+  {
+    "name": "translated_imo_2004_p5",
+    "goal_predicate": "cong",
+    "num_constructions": 5,
+    "num_initial_facts": 8,
+    "constructor_histogram": {
+      "triangle": 1,
+      "circle": 1,
+      "on_circle": 1,
+      "on_aline": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 2,
+      "cong": 3,
+      "diff": 1,
+      "eqangle": 2
+    }
+  },
+  {
+    "name": "translated_imo_2005_p5",
+    "goal_predicate": "cyclic",
+    "num_constructions": 15,
+    "num_initial_facts": 26,
+    "constructor_histogram": {
+      "triangle": 1,
+      "eqdistance": 2,
+      "on_line": 8,
+      "circle": 2,
+      "on_circle": 2
+    },
+    "initial_predicate_histogram": {
+      "diff": 8,
+      "cong": 8,
+      "coll": 8,
+      "ncoll": 2
+    }
+  },
+  {
+    "name": "translated_imo_2007_p4",
+    "goal_predicate": "eqratio",
+    "num_constructions": 12,
+    "num_initial_facts": 27,
+    "constructor_histogram": {
+      "triangle": 1,
+      "circle": 1,
+      "on_circle": 1,
+      "on_bline": 1,
+      "midpoint": 2,
+      "on_line": 4,
+      "foot": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 3,
+      "cong": 6,
+      "diff": 7,
+      "eqangle": 1,
+      "coll": 8,
+      "perp": 2
+    }
+  },
+  {
+    "name": "translated_imo_2008_p1a",
+    "goal_predicate": "cyclic",
+    "num_constructions": 17,
+    "num_initial_facts": 28,
+    "constructor_histogram": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "midpoint": 3,
+      "on_circle": 6,
+      "on_line": 6
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 1,
+      "perp": 3,
+      "diff": 6,
+      "coll": 9,
+      "cong": 9
+    }
+  },
+  {
+    "name": "translated_imo_2008_p1b",
+    "goal_predicate": "cyclic",
+    "num_constructions": 17,
+    "num_initial_facts": 28,
+    "constructor_histogram": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "midpoint": 3,
+      "on_circle": 6,
+      "on_line": 6
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 1,
+      "perp": 3,
+      "diff": 6,
+      "coll": 9,
+      "cong": 9
+    }
+  },
+  {
+    "name": "translated_imo_2008_p6",
+    "goal_predicate": "cong",
+    "num_constructions": 18,
+    "num_initial_facts": 45,
+    "constructor_histogram": {
+      "triangle": 1,
+      "circle": 1,
+      "on_circle": 1,
+      "on_tline": 8,
+      "incenter": 2,
+      "foot": 2,
+      "cc_tangent": 1,
+      "on_line": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 5,
+      "cong": 7,
+      "diff": 9,
+      "perp": 14,
+      "eqangle": 6,
+      "coll": 4
+    }
+  },
+  {
+    "name": "translated_imo_2009_p2",
+    "goal_predicate": "cong",
+    "num_constructions": 9,
+    "num_initial_facts": 21,
+    "constructor_histogram": {
+      "triangle": 1,
+      "circle": 2,
+      "on_tline": 1,
+      "mirror": 3,
+      "on_line": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 2,
+      "cong": 7,
+      "diff": 6,
+      "perp": 1,
+      "coll": 5
+    }
+  },
+  {
+    "name": "translated_imo_2010_p2",
+    "goal_predicate": "cong",
+    "num_constructions": 11,
+    "num_initial_facts": 22,
+    "constructor_histogram": {
+      "triangle": 1,
+      "circle": 1,
+      "incenter": 1,
+      "on_line": 4,
+      "on_circle": 2,
+      "on_aline": 1,
+      "midpoint": 1
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 2,
+      "cong": 5,
+      "eqangle": 4,
+      "diff": 6,
+      "coll": 5
+    }
+  },
+  {
+    "name": "translated_imo_2010_p4",
+    "goal_predicate": "cong",
+    "num_constructions": 11,
+    "num_initial_facts": 18,
+    "constructor_histogram": {
+      "iso_triangle": 1,
+      "on_tline": 1,
+      "on_circle": 5,
+      "on_line": 4
+    },
+    "initial_predicate_histogram": {
+      "eqangle": 1,
+      "cong": 6,
+      "diff": 6,
+      "perp": 1,
+      "coll": 4
+    }
+  },
+  {
+    "name": "translated_imo_2011_p6",
+    "goal_predicate": "coll",
+    "num_constructions": 19,
+    "num_initial_facts": 49,
+    "constructor_histogram": {
+      "triangle": 1,
+      "circle": 2,
+      "on_circle": 3,
+      "on_tline": 1,
+      "reflect": 6,
+      "on_line": 6
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 8,
+      "cong": 19,
+      "diff": 9,
+      "perp": 7,
+      "coll": 6
+    }
+  },
+  {
+    "name": "translated_imo_2012_p1",
+    "goal_predicate": "cong",
+    "num_constructions": 10,
+    "num_initial_facts": 27,
+    "constructor_histogram": {
+      "triangle": 1,
+      "excenter2": 1,
+      "on_line": 8
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 1,
+      "eqangle": 3,
+      "coll": 11,
+      "perp": 3,
+      "cong": 2,
+      "diff": 7
+    }
+  },
+  {
+    "name": "translated_imo_2012_p5",
+    "goal_predicate": "cong",
+    "num_constructions": 9,
+    "num_initial_facts": 18,
+    "constructor_histogram": {
+      "r_triangle": 1,
+      "foot": 1,
+      "on_line": 5,
+      "on_circle": 2
+    },
+    "initial_predicate_histogram": {
+      "perp": 2,
+      "ncoll": 1,
+      "coll": 6,
+      "diff": 7,
+      "cong": 2
+    }
+  },
+  {
+    "name": "translated_imo_2013_p4",
+    "goal_predicate": "coll",
+    "num_constructions": 13,
+    "num_initial_facts": 26,
+    "constructor_histogram": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "on_line": 7,
+      "circle": 2,
+      "on_circle": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 3,
+      "perp": 3,
+      "diff": 7,
+      "coll": 7,
+      "cong": 6
+    }
+  },
+  {
+    "name": "translated_imo_2014_p4",
+    "goal_predicate": "cong",
+    "num_constructions": 10,
+    "num_initial_facts": 18,
+    "constructor_histogram": {
+      "triangle": 1,
+      "on_line": 4,
+      "on_aline": 2,
+      "mirror": 2,
+      "circle": 1
+    },
+    "initial_predicate_histogram": {
+      "diff": 5,
+      "coll": 6,
+      "ncoll": 1,
+      "eqangle": 2,
+      "cong": 4
+    }
+  },
+  {
+    "name": "translated_imo_2015_p3",
+    "goal_predicate": "coll",
+    "num_constructions": 12,
+    "num_initial_facts": 24,
+    "constructor_histogram": {
+      "triangle": 1,
+      "orthocenter": 1,
+      "on_line": 2,
+      "midpoint": 1,
+      "circle": 3,
+      "on_dia": 2,
+      "on_circle": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 3,
+      "perp": 5,
+      "diff": 4,
+      "coll": 3,
+      "cong": 9
+    }
+  },
+  {
+    "name": "translated_imo_2015_p4",
+    "goal_predicate": "coll",
+    "num_constructions": 17,
+    "num_initial_facts": 31,
+    "constructor_histogram": {
+      "triangle": 1,
+      "circle": 3,
+      "on_line": 6,
+      "on_circle": 7
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 3,
+      "cong": 13,
+      "diff": 9,
+      "coll": 6
+    }
+  },
+  {
+    "name": "translated_imo_2016_p1",
+    "goal_predicate": "coll",
+    "num_constructions": 13,
+    "num_initial_facts": 31,
+    "constructor_histogram": {
+      "triangle": 1,
+      "angle_bisector": 1,
+      "on_bline": 3,
+      "on_tline": 1,
+      "on_line": 4,
+      "angle_mirror": 1,
+      "midpoint": 1,
+      "parallelogram": 1
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 3,
+      "eqangle": 5,
+      "diff": 9,
+      "cong": 6,
+      "perp": 1,
+      "coll": 5,
+      "para": 2
+    }
+  },
+  {
+    "name": "translated_imo_2017_p4",
+    "goal_predicate": "perp",
+    "num_constructions": 11,
+    "num_initial_facts": 19,
+    "constructor_histogram": {
+      "segment": 1,
+      "mirror": 1,
+      "on_bline": 1,
+      "on_circle": 4,
+      "circle": 1,
+      "on_tline": 2,
+      "on_line": 1
+    },
+    "initial_predicate_histogram": {
+      "diff": 5,
+      "coll": 2,
+      "cong": 8,
+      "eqangle": 1,
+      "ncoll": 1,
+      "perp": 2
+    }
+  },
+  {
+    "name": "translated_imo_2018_p1",
+    "goal_predicate": "para",
+    "num_constructions": 9,
+    "num_initial_facts": 18,
+    "constructor_histogram": {
+      "triangle": 1,
+      "circle": 1,
+      "on_line": 2,
+      "on_circle": 3,
+      "on_bline": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 1,
+      "cong": 7,
+      "diff": 6,
+      "coll": 2,
+      "eqangle": 2
+    }
+  },
+  {
+    "name": "translated_imo_2019_p2",
+    "goal_predicate": "cyclic",
+    "num_constructions": 10,
+    "num_initial_facts": 20,
+    "constructor_histogram": {
+      "triangle": 1,
+      "on_line": 6,
+      "on_pline": 1,
+      "eqangle3": 2
+    },
+    "initial_predicate_histogram": {
+      "diff": 9,
+      "coll": 6,
+      "ncoll": 2,
+      "para": 1,
+      "eqangle": 2
+    }
+  },
+  {
+    "name": "translated_imo_2019_p6",
+    "goal_predicate": "perp",
+    "num_constructions": 12,
+    "num_initial_facts": 32,
+    "constructor_histogram": {
+      "triangle": 1,
+      "incenter2": 1,
+      "on_tline": 1,
+      "on_circle": 4,
+      "on_line": 3,
+      "circle": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 3,
+      "eqangle": 3,
+      "coll": 6,
+      "perp": 4,
+      "cong": 10,
+      "diff": 6
+    }
+  },
+  {
+    "name": "translated_imo_2020_p1",
+    "goal_predicate": "cong",
+    "num_constructions": 13,
+    "num_initial_facts": 21,
+    "constructor_histogram": {
+      "triangle": 1,
+      "angle_bisector": 4,
+      "on_aline": 6,
+      "on_line": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 7,
+      "eqangle": 10,
+      "diff": 2,
+      "coll": 2
+    }
+  },
+  {
+    "name": "translated_imo_2021_p3",
+    "goal_predicate": "coll",
+    "num_constructions": 12,
+    "num_initial_facts": 22,
+    "constructor_histogram": {
+      "triangle": 1,
+      "angle_bisector": 1,
+      "on_aline": 2,
+      "on_line": 5,
+      "on_bline": 1,
+      "circle": 2
+    },
+    "initial_predicate_histogram": {
+      "ncoll": 4,
+      "eqangle": 4,
+      "diff": 4,
+      "coll": 5,
+      "cong": 5
+    }
+  },
+  {
+    "name": "translated_imo_2022_p4",
+    "goal_predicate": "cyclic",
+    "num_constructions": 14,
+    "num_initial_facts": 23,
+    "constructor_histogram": {
+      "segment": 1,
+      "free": 1,
+      "eqdistance": 1,
+      "on_bline": 2,
+      "eqangle2": 1,
+      "on_line": 8
+    },
+    "initial_predicate_histogram": {
+      "diff": 8,
+      "cong": 3,
+      "eqangle": 3,
+      "ncoll": 1,
+      "coll": 8
+    }
+  }
+]

@@ -1,0 +1,1 @@
+This workspace contains one experimental protein-ligand complex (2L3R). The analysis script therefore focuses on structure parsing, contact inference, geometry-aware visualization, and a synthetic reverse-diffusion refinement benchmark that stress-tests the proposed multimolecule architecture design without claiming model training.

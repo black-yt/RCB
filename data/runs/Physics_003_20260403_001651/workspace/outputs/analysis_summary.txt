@@ -1,0 +1,29 @@
+Floquet-Bloch graphene tr-ARPES analysis summary
+================================================
+
+Data overview
+- Energy grid: 200 points spanning -0.500 to 0.500 eV
+- Momentum grid: 150 points spanning -0.300 to 0.300 A^-1
+- Time delays: 5 values spanning -0.500 to 2.000 ps
+- Pump polarization angles: [0, 30, 60, 90, 120, 150, 180]
+
+Key physical observables
+- Dirac point near kx = -0.3000 A^-1, E = -0.0427 eV
+- Pump photon energy in processed features: 0.2480 eV
+- Mean absolute mismatch between |replica offset| and pump energy: 0.00000 eV
+- Approximate |E-E_D| vs |k-k_D| slope: 5.5014 eV/A^-1
+
+Replica bands
+- Order -1: kx=-0.0463 A^-1, E=-0.2907 eV, offset=-0.2480 eV, pump-on/pump-off=1.054
+- Order -1: kx=0.0463 A^-1, E=-0.2907 eV, offset=-0.2480 eV, pump-on/pump-off=1.053
+- Order +1: kx=-0.0342 A^-1, E=0.2053 eV, offset=+0.2480 eV, pump-on/pump-off=1.073
+- Order +1: kx=0.0342 A^-1, E=0.2053 eV, offset=+0.2480 eV, pump-on/pump-off=1.073
+
+Polarization dependence
+- Intensity anisotropy max/min = 1.0183
+- Peak-to-peak modulation / mean = 0.0182
+- cos(2θ) fit R^2 = 0.0474, modulation depth = 0.0026
+- Fitted phase = 0.21 degrees
+
+Interpretive note
+- Replica energies sit approximately one pump-photon energy above and below the Dirac point, while the polarization response is weak but twofold-symmetric, consistent with Floquet-Bloch sidebands mixed with polarization-sensitive Volkov-type final-state dressing.

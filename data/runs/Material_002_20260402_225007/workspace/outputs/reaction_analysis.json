@@ -1,0 +1,52 @@
+{
+  "per_reaction": [
+    {
+      "reaction": "Rxn 1",
+      "label": "Rxn 1 \u2013 cyclobutene ring\u2011opening",
+      "atom_count": 8,
+      "reactant_bond_count": 8,
+      "transition_state_bond_count": 8,
+      "reactant_radius_of_gyration_A": 1.131304823186438,
+      "transition_state_radius_of_gyration_A": 1.032345294822682,
+      "delta_radius_of_gyration_A": -0.0989595283637561,
+      "rms_pair_distance_shift_A": 0.1932604848969536,
+      "max_pair_distance_shift_A": 0.3999999999999999,
+      "dft_barrier_eV": 1.72,
+      "barrier_per_atom_eV": 0.215
+    },
+    {
+      "reaction": "Rxn 11",
+      "label": "Rxn 11 \u2013 methoxy decomposition",
+      "atom_count": 5,
+      "reactant_bond_count": 5,
+      "transition_state_bond_count": 5,
+      "reactant_radius_of_gyration_A": 0.6789637806147747,
+      "transition_state_radius_of_gyration_A": 0.814430122738555,
+      "delta_radius_of_gyration_A": 0.13546634212378028,
+      "rms_pair_distance_shift_A": 0.16518856116641115,
+      "max_pair_distance_shift_A": 0.30000000000000004,
+      "dft_barrier_eV": 1.74,
+      "barrier_per_atom_eV": 0.348
+    },
+    {
+      "reaction": "Rxn 20",
+      "label": "Rxn 20 \u2013 cyclopropane ring\u2011opening",
+      "atom_count": 9,
+      "reactant_bond_count": 9,
+      "transition_state_bond_count": 6,
+      "reactant_radius_of_gyration_A": 0.968837987455098,
+      "transition_state_radius_of_gyration_A": 1.0109494204827116,
+      "delta_radius_of_gyration_A": 0.042111433027613665,
+      "rms_pair_distance_shift_A": 0.2530487451219482,
+      "max_pair_distance_shift_A": 0.5,
+      "dft_barrier_eV": 1.77,
+      "barrier_per_atom_eV": 0.19666666666666666
+    }
+  ],
+  "barrier_summary": {
+    "mean_barrier_eV": 1.7433333333333334,
+    "std_barrier_eV": 0.020548046676563275,
+    "mean_rms_shift_A": 0.203832597061771,
+    "shift_barrier_correlation": 0.7473295692296608
+  }
+}

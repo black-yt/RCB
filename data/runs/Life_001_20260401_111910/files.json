@@ -1,0 +1,275 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 5913,
+    "mtime": 1775211948.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "cell-populations.csv",
+    "path": "data/cell-populations.csv",
+    "type": "file",
+    "size": 1162727,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "final-response-likelihoods.csv",
+    "path": "data/final-response-likelihoods.csv",
+    "type": "file",
+    "size": 91166,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "optimization_runtime_data.csv",
+    "path": "data/optimization_runtime_data.csv",
+    "type": "file",
+    "size": 587,
+    "mtime": 1773033824.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "selected-vaccine-elements.budget-10.minsum.adaptive.csv",
+    "path": "data/selected-vaccine-elements.budget-10.minsum.adaptive.csv",
+    "type": "file",
+    "size": 4561,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "sim-specific-response-likelihoods.csv",
+    "path": "data/sim-specific-response-likelihoods.csv",
+    "type": "file",
+    "size": 111165,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-0.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-0.csv",
+    "type": "file",
+    "size": 109196,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-1.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-1.csv",
+    "type": "file",
+    "size": 109083,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-2.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-2.csv",
+    "type": "file",
+    "size": 109371,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-3.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-3.csv",
+    "type": "file",
+    "size": 109188,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-4.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-4.csv",
+    "type": "file",
+    "size": 109232,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 6 more items",
+    "path": "data/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "coverage_per_rep_thr0.5.csv",
+    "path": "outputs/coverage_per_rep_thr0.5.csv",
+    "type": "file",
+    "size": 86,
+    "mtime": 1775211946.0,
+    "exported": true
+  },
+  {
+    "name": "per_cell_p_response_combo.csv",
+    "path": "outputs/per_cell_p_response_combo.csv",
+    "type": "file",
+    "size": 44188,
+    "mtime": 1775211946.0,
+    "exported": true
+  },
+  {
+    "name": "per_cell_p_response_summary.csv",
+    "path": "outputs/per_cell_p_response_summary.csv",
+    "type": "file",
+    "size": 822,
+    "mtime": 1775211946.0,
+    "exported": true
+  },
+  {
+    "name": "summary_metrics.csv",
+    "path": "outputs/summary_metrics.csv",
+    "type": "file",
+    "size": 195,
+    "mtime": 1775211946.0,
+    "exported": true
+  },
+  {
+    "name": "vaccine_iou_pairs.csv",
+    "path": "outputs/vaccine_iou_pairs.csv",
+    "type": "file",
+    "size": 663,
+    "mtime": 1775211946.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 435620,
+    "mtime": 1773914900.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 5699298,
+    "mtime": 1773914900.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 18502062,
+    "mtime": 1773914900.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1562817,
+    "mtime": 1773914900.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_p_response_distribution.png",
+    "path": "report/images/fig1_p_response_distribution.png",
+    "type": "file",
+    "size": 87503,
+    "mtime": 1775211946.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_coverage_curve.png",
+    "path": "report/images/fig2_coverage_curve.png",
+    "type": "file",
+    "size": 97246,
+    "mtime": 1775211948.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_runtime_scaling.png",
+    "path": "report/images/fig3_runtime_scaling.png",
+    "type": "file",
+    "size": 243838,
+    "mtime": 1775211948.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_combo_p_response_distribution.png",
+    "path": "report/images/fig4_combo_p_response_distribution.png",
+    "type": "file",
+    "size": 96141,
+    "mtime": 1775211946.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_coverage_bar_thr0.5.png",
+    "path": "report/images/fig5_coverage_bar_thr0.5.png",
+    "type": "file",
+    "size": 90416,
+    "mtime": 1775211948.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_iou_distribution.png",
+    "path": "report/images/fig6_iou_distribution.png",
+    "type": "file",
+    "size": 91786,
+    "mtime": 1775211948.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 7950,
+    "mtime": 1775211949.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 8710,
+    "mtime": 1775013550.0,
+    "exported": true
+  }
+]

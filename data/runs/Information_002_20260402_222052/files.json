@@ -1,0 +1,297 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 15680,
+    "mtime": 1775199990.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "2111.01152",
+    "path": "data/2111.01152",
+    "type": "directory"
+  },
+  {
+    "name": "2111.01152.pdf",
+    "path": "data/2111.01152/2111.01152.pdf",
+    "type": "file",
+    "size": 3451378,
+    "mtime": 1770606672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2111.01152.tex",
+    "path": "data/2111.01152/2111.01152.tex",
+    "type": "file",
+    "size": 28292,
+    "mtime": 1770606672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2111.01152.yaml",
+    "path": "data/2111.01152/2111.01152.yaml",
+    "type": "file",
+    "size": 36113,
+    "mtime": 1770606672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2111.01152_auto.md",
+    "path": "data/2111.01152/2111.01152_auto.md",
+    "type": "file",
+    "size": 69829,
+    "mtime": 1774085849.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2111.01152_execution.ipynb",
+    "path": "data/2111.01152/2111.01152_execution.ipynb",
+    "type": "file",
+    "size": 145476,
+    "mtime": 1770606672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2111.01152_extractor.ipynb",
+    "path": "data/2111.01152/2111.01152_extractor.ipynb",
+    "type": "file",
+    "size": 65339,
+    "mtime": 1770606672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2111.01152_extractor.md",
+    "path": "data/2111.01152/2111.01152_extractor.md",
+    "type": "file",
+    "size": 20476,
+    "mtime": 1773928992.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2111.01152_score_prompt.ipynb",
+    "path": "data/2111.01152/2111.01152_score_prompt.ipynb",
+    "type": "file",
+    "size": 11825,
+    "mtime": 1770606672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2111.01152_SM.pdf",
+    "path": "data/2111.01152/2111.01152_SM.pdf",
+    "type": "file",
+    "size": 3864518,
+    "mtime": 1770606672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2111.01152_SM.tex",
+    "path": "data/2111.01152/2111.01152_SM.tex",
+    "type": "file",
+    "size": 30096,
+    "mtime": 1770606672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 1 more items",
+    "path": "data/2111.01152/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_provenance.json",
+    "path": "outputs/analysis_provenance.json",
+    "type": "file",
+    "size": 881,
+    "mtime": 1775199988.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 7018,
+    "mtime": 1775199988.0,
+    "exported": true
+  },
+  {
+    "name": "paper_context_summary.txt",
+    "path": "outputs/paper_context_summary.txt",
+    "type": "file",
+    "size": 2811,
+    "mtime": 1775199988.0,
+    "exported": true
+  },
+  {
+    "name": "placeholder_mismatch_table.csv",
+    "path": "outputs/placeholder_mismatch_table.csv",
+    "type": "file",
+    "size": 24838,
+    "mtime": 1775199988.0,
+    "exported": true
+  },
+  {
+    "name": "related_work_inventory.json",
+    "path": "outputs/related_work_inventory.json",
+    "type": "file",
+    "size": 499,
+    "mtime": 1775199988.0,
+    "exported": true
+  },
+  {
+    "name": "source_snippets.json",
+    "path": "outputs/source_snippets.json",
+    "type": "file",
+    "size": 29181,
+    "mtime": 1775199988.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 875,
+    "mtime": 1775199988.0,
+    "exported": true
+  },
+  {
+    "name": "task_score_table.csv",
+    "path": "outputs/task_score_table.csv",
+    "type": "file",
+    "size": 6597,
+    "mtime": 1775199988.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 1708,
+    "mtime": 1775199988.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 10295148,
+    "mtime": 1773914897.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1283694,
+    "mtime": 1773914897.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 758697,
+    "mtime": 1773914897.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3664672,
+    "mtime": 1773914897.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 6004349,
+    "mtime": 1773914897.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "reviewer_placeholder_averages.png",
+    "path": "report/images/reviewer_placeholder_averages.png",
+    "type": "file",
+    "size": 48785,
+    "mtime": 1775199990.0,
+    "exported": true
+  },
+  {
+    "name": "score_dimension_averages.png",
+    "path": "report/images/score_dimension_averages.png",
+    "type": "file",
+    "size": 96945,
+    "mtime": 1775199990.0,
+    "exported": true
+  },
+  {
+    "name": "task_total_scores.png",
+    "path": "report/images/task_total_scores.png",
+    "type": "file",
+    "size": 270956,
+    "mtime": 1775199990.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13220,
+    "mtime": 1775199991.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4910,
+    "mtime": 1775139652.0,
+    "exported": true
+  }
+]

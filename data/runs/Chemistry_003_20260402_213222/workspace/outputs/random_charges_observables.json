@@ -1,0 +1,9 @@
+{
+  "proxy_energy_mean": -8.19933844397306,
+  "proxy_energy_std": 5.205470728510573,
+  "dipole_norm_mean": 76.81545879750246,
+  "dipole_norm_std": 28.91874226827327,
+  "quadrupole_norm_mean": 4752.426893618838,
+  "quadrupole_norm_std": 1760.6844100622382,
+  "max_abs_net_charge": 0.0
+}

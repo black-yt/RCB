@@ -1,0 +1,181 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 15395,
+    "mtime": 1775198948.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "complex_optimization_data.npy",
+    "path": "data/complex_optimization_data.npy",
+    "type": "file",
+    "size": 16024503,
+    "mtime": 1770604412.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_histories.npz",
+    "path": "outputs/analysis_histories.npz",
+    "type": "file",
+    "size": 24204,
+    "mtime": 1775198946.0,
+    "exported": false
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 2732,
+    "mtime": 1775198946.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.txt",
+    "path": "outputs/analysis_summary.txt",
+    "type": "file",
+    "size": 795,
+    "mtime": 1775198946.0,
+    "exported": true
+  },
+  {
+    "name": "solutions.npz",
+    "path": "outputs/solutions.npz",
+    "type": "file",
+    "size": 81242,
+    "mtime": 1775198946.0,
+    "exported": false
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1846,
+    "mtime": 1775198946.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 2557,
+    "mtime": 1775198946.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 656705,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1161056,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 794236,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 883291,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "coefficient_recovery.png",
+    "path": "report/images/coefficient_recovery.png",
+    "type": "file",
+    "size": 164125,
+    "mtime": 1775198946.0,
+    "exported": true
+  },
+  {
+    "name": "convergence_comparison.png",
+    "path": "report/images/convergence_comparison.png",
+    "type": "file",
+    "size": 290756,
+    "mtime": 1775198948.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 131473,
+    "mtime": 1775198946.0,
+    "exported": true
+  },
+  {
+    "name": "top_coefficients.png",
+    "path": "report/images/top_coefficients.png",
+    "type": "file",
+    "size": 213811,
+    "mtime": 1775198946.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14548,
+    "mtime": 1775198949.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5090,
+    "mtime": 1775142703.0,
+    "exported": true
+  }
+]

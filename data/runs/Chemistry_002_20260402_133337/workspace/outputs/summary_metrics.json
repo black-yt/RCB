@@ -1,0 +1,44 @@
+{
+  "interface_summary": {
+    "n_residues_total": 195,
+    "n_interface_residues": 41,
+    "chain_A_interface_residues": 22,
+    "chain_D_interface_residues": 19,
+    "n_1brs_skempi_measurements": 94,
+    "n_single_mutants": 49,
+    "n_double_mutants": 45,
+    "single_mutation_spearman_contact_vs_ddg": 0.6320818621322404
+  },
+  "model_metrics": {
+    "mae_kcal_mol": 1.126308269288394,
+    "r2": 0.6380355833186506,
+    "pearson_r": 0.8002008108712539,
+    "spearman_rho": 0.8113563215705697
+  },
+  "feature_columns": [
+    "n_mutations",
+    "sum_contact_partner_count",
+    "sum_atom_contact_count",
+    "mean_min_interchain_distance",
+    "n_interface_mutations",
+    "n_to_alanine",
+    "n_charge_reversal",
+    "n_charge_loss",
+    "n_aromatic_loss",
+    "sum_hydropathy_change_abs",
+    "sum_volume_change_abs"
+  ],
+  "feature_coefficients": {
+    "n_mutations": -0.2582896237488468,
+    "sum_contact_partner_count": 1.5091570119821263,
+    "sum_atom_contact_count": -0.7673238695618025,
+    "mean_min_interchain_distance": -0.6661373097617259,
+    "n_interface_mutations": 0.439659303627266,
+    "n_to_alanine": 0.12308316670326769,
+    "n_charge_reversal": 0.04153132711552037,
+    "n_charge_loss": 0.75681497775188,
+    "n_aromatic_loss": 0.13421387302945023,
+    "sum_hydropathy_change_abs": 0.059688946605761524,
+    "sum_volume_change_abs": 0.3027098814584405
+  }
+}

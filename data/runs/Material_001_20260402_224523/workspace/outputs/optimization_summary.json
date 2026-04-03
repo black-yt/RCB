@@ -1,0 +1,24 @@
+{
+  "bounds": {
+    "temperature": [
+      200.0,
+      500.0
+    ],
+    "time": [
+      10.0,
+      30.0
+    ]
+  },
+  "initial_point": {
+    "temperature": 350.0,
+    "time": 20.0
+  },
+  "best_point": {
+    "temperature": 356.30252100840335,
+    "time": 18.067226890756302,
+    "score": 1.7005144935229324
+  },
+  "iterations": 10,
+  "step_fraction": 0.1,
+  "final_score": 1.6646908527773894
+}

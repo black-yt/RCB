@@ -1,0 +1,8 @@
+metric,value
+Resolution median mismatch,0.0004249407871194731
+Resolution 95th percentile,0.003122652402503906
+Fraction below 1e-3,0.7773333333333333
+Mode-ell=2 median,0.00029969399389983696
+Mode-ell=8 median,0.0022674572547313277
+Median extrapolation ratio N4/N3,2.668263131144048
+Fraction N4 > N3,0.7216666666666667

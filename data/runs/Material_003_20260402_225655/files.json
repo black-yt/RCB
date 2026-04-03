@@ -1,0 +1,235 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 18371,
+    "mtime": 1775200028.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "tg_calibration.csv",
+    "path": "data/tg_calibration.csv",
+    "type": "file",
+    "size": 23515,
+    "mtime": 1773033792.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "tg_vitrimer_MD.csv",
+    "path": "data/tg_vitrimer_MD.csv",
+    "type": "file",
+    "size": 917247,
+    "mtime": 1773033792.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.txt",
+    "path": "outputs/analysis_summary.txt",
+    "type": "file",
+    "size": 894,
+    "mtime": 1775200022.0,
+    "exported": true
+  },
+  {
+    "name": "calibration_metrics.json",
+    "path": "outputs/calibration_metrics.json",
+    "type": "file",
+    "size": 154,
+    "mtime": 1775200018.0,
+    "exported": true
+  },
+  {
+    "name": "calibration_predictions.csv",
+    "path": "outputs/calibration_predictions.csv",
+    "type": "file",
+    "size": 44576,
+    "mtime": 1775200024.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_summary_by_target.csv",
+    "path": "outputs/candidate_summary_by_target.csv",
+    "type": "file",
+    "size": 503,
+    "mtime": 1775200018.0,
+    "exported": true
+  },
+  {
+    "name": "data_summary.json",
+    "path": "outputs/data_summary.json",
+    "type": "file",
+    "size": 337,
+    "mtime": 1775200022.0,
+    "exported": true
+  },
+  {
+    "name": "inverse_design_candidates.csv",
+    "path": "outputs/inverse_design_candidates.csv",
+    "type": "file",
+    "size": 3967,
+    "mtime": 1775200024.0,
+    "exported": true
+  },
+  {
+    "name": "latent_model_summary.json",
+    "path": "outputs/latent_model_summary.json",
+    "type": "file",
+    "size": 454,
+    "mtime": 1775200018.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1302,
+    "mtime": 1775200024.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 2301,
+    "mtime": 1775200022.0,
+    "exported": true
+  },
+  {
+    "name": "vitrimer_calibrated_predictions.csv",
+    "path": "outputs/vitrimer_calibrated_predictions.csv",
+    "type": "file",
+    "size": 1278811,
+    "mtime": 1775200024.0,
+    "exported": false
+  },
+  {
+    "name": "\u2026 1 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 577093,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8227164,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3334613,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4004940,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "calibrated_distribution.png",
+    "path": "report/images/calibrated_distribution.png",
+    "type": "file",
+    "size": 143161,
+    "mtime": 1775200024.0,
+    "exported": true
+  },
+  {
+    "name": "calibration_performance.png",
+    "path": "report/images/calibration_performance.png",
+    "type": "file",
+    "size": 410028,
+    "mtime": 1775200024.0,
+    "exported": true
+  },
+  {
+    "name": "candidate_map.png",
+    "path": "report/images/candidate_map.png",
+    "type": "file",
+    "size": 671983,
+    "mtime": 1775200026.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 464621,
+    "mtime": 1775200026.0,
+    "exported": true
+  },
+  {
+    "name": "latent_design_space.png",
+    "path": "report/images/latent_design_space.png",
+    "type": "file",
+    "size": 784579,
+    "mtime": 1775200028.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 18064,
+    "mtime": 1775200029.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5048,
+    "mtime": 1775141815.0,
+    "exported": true
+  }
+]

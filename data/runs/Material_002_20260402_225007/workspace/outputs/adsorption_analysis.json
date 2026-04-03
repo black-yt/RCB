@@ -1,0 +1,107 @@
+{
+  "per_metal": [
+    {
+      "metal": "Ni",
+      "atomic_number": 28,
+      "lattice_constant_A": 3.52,
+      "nearest_neighbor_A": 2.4890158697766473,
+      "layer_spacing_A": 2.032272947547483,
+      "surface_area_A2": 21.460802326101415,
+      "slab_thickness_A": 4.064545895094966,
+      "vacuum_gap_A": 10.0,
+      "adsorbate_height_A": 1.5,
+      "top_site_density_A^-2": 0.046596580351693714,
+      "force_tolerance_eV_A": 0.05,
+      "predicted_E_OH_eV": 1.0,
+      "predicted_E_O_eV": 2.0300000000000002
+    },
+    {
+      "metal": "Cu",
+      "atomic_number": 29,
+      "lattice_constant_A": 3.61,
+      "nearest_neighbor_A": 2.5526554800834362,
+      "layer_spacing_A": 2.084234471774549,
+      "surface_area_A2": 22.572259329318364,
+      "slab_thickness_A": 4.168468943549098,
+      "vacuum_gap_A": 10.0,
+      "adsorbate_height_A": 1.5,
+      "top_site_density_A^-2": 0.044302166894792536,
+      "force_tolerance_eV_A": 0.05,
+      "predicted_E_OH_eV": 0.7,
+      "predicted_E_O_eV": 1.4749999999999999
+    },
+    {
+      "metal": "Rh",
+      "atomic_number": 45,
+      "lattice_constant_A": 3.8,
+      "nearest_neighbor_A": 2.68700576850888,
+      "layer_spacing_A": 2.193931022920578,
+      "surface_area_A2": 25.010813661294584,
+      "slab_thickness_A": 4.387862045841156,
+      "vacuum_gap_A": 10.0,
+      "adsorbate_height_A": 1.5,
+      "top_site_density_A^-2": 0.03998270562255027,
+      "force_tolerance_eV_A": 0.05,
+      "predicted_E_OH_eV": 1.08,
+      "predicted_E_O_eV": 2.1780000000000004
+    },
+    {
+      "metal": "Pd",
+      "atomic_number": 46,
+      "lattice_constant_A": 3.89,
+      "nearest_neighbor_A": 2.75064537881567,
+      "layer_spacing_A": 2.2458925471476445,
+      "surface_area_A2": 26.209566025213007,
+      "slab_thickness_A": 4.491785094295289,
+      "vacuum_gap_A": 10.0,
+      "adsorbate_height_A": 1.5,
+      "top_site_density_A^-2": 0.03815400831276728,
+      "force_tolerance_eV_A": 0.05,
+      "predicted_E_OH_eV": 0.92,
+      "predicted_E_O_eV": 1.8820000000000001
+    },
+    {
+      "metal": "Ir",
+      "atomic_number": 77,
+      "lattice_constant_A": 3.84,
+      "nearest_neighbor_A": 2.715290039756342,
+      "layer_spacing_A": 2.217025033688163,
+      "surface_area_A2": 25.540128388087634,
+      "slab_thickness_A": 4.434050067376326,
+      "vacuum_gap_A": 10.0,
+      "adsorbate_height_A": 1.5,
+      "top_site_density_A^-2": 0.03915407098996486,
+      "force_tolerance_eV_A": 0.05,
+      "predicted_E_OH_eV": 1.18,
+      "predicted_E_O_eV": 2.363
+    },
+    {
+      "metal": "Pt",
+      "atomic_number": 78,
+      "lattice_constant_A": 3.92,
+      "nearest_neighbor_A": 2.7718585822512662,
+      "layer_spacing_A": 2.263213055223333,
+      "surface_area_A2": 26.61538552942639,
+      "slab_thickness_A": 4.526426110446666,
+      "vacuum_gap_A": 10.0,
+      "adsorbate_height_A": 1.5,
+      "top_site_density_A^-2": 0.03757225304493088,
+      "force_tolerance_eV_A": 0.05,
+      "predicted_E_OH_eV": 1.02,
+      "predicted_E_O_eV": 2.067
+    }
+  ],
+  "scaling_fit": {
+    "slope": 1.8500000000000005,
+    "intercept": 0.17999999999999944,
+    "pearson_r": 0.9999999999999998
+  },
+  "gas_phase_oh_bond_A": 1.0,
+  "slab_size": [
+    2,
+    2,
+    3
+  ],
+  "placement_site": "fcc hollow",
+  "fixed_layers": "bottom 2 layers (tags \u2265 2)"
+}

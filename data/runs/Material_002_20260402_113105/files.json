@@ -1,0 +1,231 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_foundation_model.py",
+    "path": "code/analyze_foundation_model.py",
+    "type": "file",
+    "size": 40545,
+    "mtime": 1775132940.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "MACE-MP-0_Reproduction_Dataset.txt",
+    "path": "data/MACE-MP-0_Reproduction_Dataset.txt",
+    "type": "file",
+    "size": 3178,
+    "mtime": 1772003774.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "mplconfig",
+    "path": "outputs/mplconfig",
+    "type": "directory"
+  },
+  {
+    "name": "fontlist-v390.json",
+    "path": "outputs/mplconfig/fontlist-v390.json",
+    "type": "file",
+    "size": 65187,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "paper_text",
+    "path": "outputs/paper_text",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.txt",
+    "path": "outputs/paper_text/paper_000.txt",
+    "type": "file",
+    "size": 62081,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.txt",
+    "path": "outputs/paper_text/paper_001.txt",
+    "type": "file",
+    "size": 62839,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.txt",
+    "path": "outputs/paper_text/paper_002.txt",
+    "type": "file",
+    "size": 48473,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.txt",
+    "path": "outputs/paper_text/paper_003.txt",
+    "type": "file",
+    "size": 68145,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "adsorption_metrics.csv",
+    "path": "outputs/adsorption_metrics.csv",
+    "type": "file",
+    "size": 954,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "benchmark_summary.json",
+    "path": "outputs/benchmark_summary.json",
+    "type": "file",
+    "size": 10156,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "literature_summary.json",
+    "path": "outputs/literature_summary.json",
+    "type": "file",
+    "size": 1211,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "proposed_model_spec.json",
+    "path": "outputs/proposed_model_spec.json",
+    "type": "file",
+    "size": 1058,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "reaction_metrics.csv",
+    "path": "outputs/reaction_metrics.csv",
+    "type": "file",
+    "size": 506,
+    "mtime": 1775132938.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 579122,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2664200,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 703654,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2314869,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "benchmark_instances.png",
+    "path": "report/images/benchmark_instances.png",
+    "type": "file",
+    "size": 168147,
+    "mtime": 1775132940.0,
+    "exported": true
+  },
+  {
+    "name": "chemistry_matrix.png",
+    "path": "report/images/chemistry_matrix.png",
+    "type": "file",
+    "size": 107624,
+    "mtime": 1775132940.0,
+    "exported": true
+  },
+  {
+    "name": "foundation_model_blueprint.png",
+    "path": "report/images/foundation_model_blueprint.png",
+    "type": "file",
+    "size": 206427,
+    "mtime": 1775132940.0,
+    "exported": true
+  },
+  {
+    "name": "geometric_scales.png",
+    "path": "report/images/geometric_scales.png",
+    "type": "file",
+    "size": 135926,
+    "mtime": 1775132940.0,
+    "exported": true
+  },
+  {
+    "name": "transferability_summary.png",
+    "path": "report/images/transferability_summary.png",
+    "type": "file",
+    "size": 165049,
+    "mtime": 1775132940.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 11828,
+    "mtime": 1775132941.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5298,
+    "mtime": 1775100665.0,
+    "exported": true
+  }
+]

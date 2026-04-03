@@ -1,0 +1,342 @@
+======================================================================
+MAPF Hybrid MARL-LNS Experiment Suite
+======================================================================
+
+--- Category: RANDOM_SMALL ---
+  Map dirs: ['random_small/maps_50_10_10_0.175', 'random_small/maps_55_10_10_0.175']
+  Agent counts: [3, 5, 8, 10]
+  Time limit: 20.0s per instance
+  [1/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=3 seed=42 -> 4/4 succeeded
+  [2/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=3 seed=123 -> 4/4 succeeded
+  [3/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=3 seed=456 -> 4/4 succeeded
+  [4/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [5/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [6/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=5 seed=456 -> 0/4 succeeded
+  [7/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=8 seed=42 -> 1/4 succeeded
+  [8/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=8 seed=123 -> 2/4 succeeded
+  [9/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=8 seed=456 -> 0/4 succeeded
+  [10/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=10 seed=42 -> 0/4 succeeded
+  [11/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=10 seed=123 -> 0/4 succeeded
+  [12/72] random_small/maps_50_10_10_0.175/eval_map_1.npy n_agents=10 seed=456 -> 0/4 succeeded
+  [13/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=3 seed=42 -> 4/4 succeeded
+  [14/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=3 seed=123 -> 4/4 succeeded
+  [15/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=3 seed=456 -> 4/4 succeeded
+  [16/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [17/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [18/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [19/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=8 seed=42 -> 4/4 succeeded
+  [20/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=8 seed=123 -> 0/4 succeeded
+  [21/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=8 seed=456 -> 1/4 succeeded
+  [22/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=10 seed=42 -> 0/4 succeeded
+  [23/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=10 seed=123 -> 1/4 succeeded
+  [24/72] random_small/maps_50_10_10_0.175/eval_map_39.npy n_agents=10 seed=456 -> 2/4 succeeded
+  [25/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=3 seed=42 -> 4/4 succeeded
+  [26/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=3 seed=123 -> 4/4 succeeded
+  [27/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=3 seed=456 -> 4/4 succeeded
+  [28/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=5 seed=42 -> 2/4 succeeded
+  [29/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [30/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [31/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=8 seed=42 -> 2/4 succeeded
+  [32/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=8 seed=123 -> 2/4 succeeded
+  [33/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=8 seed=456 -> 0/4 succeeded
+  [34/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=10 seed=42 -> 0/4 succeeded
+  [35/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=10 seed=123 -> 0/4 succeeded
+  [36/72] random_small/maps_50_10_10_0.175/eval_map_69.npy n_agents=10 seed=456 -> 4/4 succeeded
+  [37/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=3 seed=42 -> 4/4 succeeded
+  [38/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=3 seed=123 -> 4/4 succeeded
+  [39/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=3 seed=456 -> 4/4 succeeded
+  [40/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [41/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [42/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=5 seed=456 -> 0/4 succeeded
+  [43/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=8 seed=42 -> 1/4 succeeded
+  [44/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=8 seed=123 -> 2/4 succeeded
+  [45/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=8 seed=456 -> 0/4 succeeded
+  [46/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=10 seed=42 -> 0/4 succeeded
+  [47/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=10 seed=123 -> 0/4 succeeded
+  [48/72] random_small/maps_55_10_10_0.175/eval_map_1.npy n_agents=10 seed=456 -> 0/4 succeeded
+  [49/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=3 seed=42 -> 4/4 succeeded
+  [50/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=3 seed=123 -> 4/4 succeeded
+  [51/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=3 seed=456 -> 4/4 succeeded
+  [52/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [53/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [54/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [55/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=8 seed=42 -> 4/4 succeeded
+  [56/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=8 seed=123 -> 0/4 succeeded
+  [57/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=8 seed=456 -> 1/4 succeeded
+  [58/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=10 seed=42 -> 0/4 succeeded
+  [59/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=10 seed=123 -> 1/4 succeeded
+  [60/72] random_small/maps_55_10_10_0.175/eval_map_39.npy n_agents=10 seed=456 -> 2/4 succeeded
+  [61/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=3 seed=42 -> 4/4 succeeded
+  [62/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=3 seed=123 -> 4/4 succeeded
+  [63/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=3 seed=456 -> 4/4 succeeded
+  [64/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=5 seed=42 -> 2/4 succeeded
+  [65/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [66/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [67/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=8 seed=42 -> 2/4 succeeded
+  [68/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=8 seed=123 -> 2/4 succeeded
+  [69/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=8 seed=456 -> 0/4 succeeded
+  [70/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=10 seed=42 -> 0/4 succeeded
+  [71/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=10 seed=123 -> 0/4 succeeded
+  [72/72] random_small/maps_55_10_10_0.175/eval_map_69.npy n_agents=10 seed=456 -> 4/4 succeeded
+  Completed 288 result records
+
+--- Category: RANDOM_MEDIUM ---
+  Map dirs: ['random_medium/maps_312_25_25_0.175', 'random_medium/maps_344_25_25_0.175']
+  Agent counts: [5, 10, 15, 20]
+  Time limit: 30.0s per instance
+  [1/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [2/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [3/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [4/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=10 seed=42 -> 2/4 succeeded
+  [5/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [6/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=10 seed=456 -> 2/4 succeeded
+  [7/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=15 seed=42 -> 2/4 succeeded
+  [8/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=15 seed=123 -> 4/4 succeeded
+  [9/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=15 seed=456 -> 0/4 succeeded
+  [10/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=20 seed=42 -> 0/4 succeeded
+  [11/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=20 seed=123 -> 0/4 succeeded
+  [12/72] random_medium/maps_312_25_25_0.175/eval_map_1.npy n_agents=20 seed=456 -> 0/4 succeeded
+  [13/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [14/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [15/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=5 seed=456 -> 0/4 succeeded
+  [16/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=10 seed=42 -> 0/4 succeeded
+  [17/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [18/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=10 seed=456 -> 4/4 succeeded
+  [19/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=15 seed=42 -> 0/4 succeeded
+  [20/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=15 seed=123 -> 4/4 succeeded
+  [21/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=15 seed=456 -> 1/4 succeeded
+  [22/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=20 seed=42 -> 0/4 succeeded
+  [23/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=20 seed=123 -> 0/4 succeeded
+  [24/72] random_medium/maps_312_25_25_0.175/eval_map_39.npy n_agents=20 seed=456 -> 2/4 succeeded
+  [25/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [26/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [27/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [28/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=10 seed=42 -> 4/4 succeeded
+  [29/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [30/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=10 seed=456 -> 4/4 succeeded
+  [31/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=15 seed=42 -> 0/4 succeeded
+  [32/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=15 seed=123 -> 2/4 succeeded
+  [33/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=15 seed=456 -> 0/4 succeeded
+  [34/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=20 seed=42 -> 2/4 succeeded
+  [35/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=20 seed=123 -> 2/4 succeeded
+  [36/72] random_medium/maps_312_25_25_0.175/eval_map_69.npy n_agents=20 seed=456 -> 0/4 succeeded
+  [37/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [38/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [39/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [40/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=10 seed=42 -> 2/4 succeeded
+  [41/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [42/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=10 seed=456 -> 2/4 succeeded
+  [43/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=15 seed=42 -> 2/4 succeeded
+  [44/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=15 seed=123 -> 4/4 succeeded
+  [45/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=15 seed=456 -> 0/4 succeeded
+  [46/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=20 seed=42 -> 0/4 succeeded
+  [47/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=20 seed=123 -> 0/4 succeeded
+  [48/72] random_medium/maps_344_25_25_0.175/eval_map_1.npy n_agents=20 seed=456 -> 0/4 succeeded
+  [49/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=5 seed=42 -> 3/4 succeeded
+  [50/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=5 seed=123 -> 2/4 succeeded
+  [51/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [52/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=10 seed=42 -> 2/4 succeeded
+  [53/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=10 seed=123 -> 2/4 succeeded
+  [54/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=10 seed=456 -> 0/4 succeeded
+  [55/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=15 seed=42 -> 4/4 succeeded
+  [56/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=15 seed=123 -> 0/4 succeeded
+  [57/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=15 seed=456 -> 2/4 succeeded
+  [58/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=20 seed=42 -> 2/4 succeeded
+  [59/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=20 seed=123 -> 0/4 succeeded
+  [60/72] random_medium/maps_344_25_25_0.175/eval_map_39.npy n_agents=20 seed=456 -> 0/4 succeeded
+  [61/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [62/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [63/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [64/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=10 seed=42 -> 2/4 succeeded
+  [65/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=10 seed=123 -> 2/4 succeeded
+  [66/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=10 seed=456 -> 2/4 succeeded
+  [67/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=15 seed=42 -> 0/4 succeeded
+  [68/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=15 seed=123 -> 0/4 succeeded
+  [69/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=15 seed=456 -> 0/4 succeeded
+  [70/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=20 seed=42 -> 0/4 succeeded
+  [71/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=20 seed=123 -> 1/4 succeeded
+  [72/72] random_medium/maps_344_25_25_0.175/eval_map_69.npy n_agents=20 seed=456 -> 0/4 succeeded
+  Completed 288 result records
+
+--- Category: RANDOM_LARGE ---
+  Map dirs: ['random_large/maps_1250_50_50_0.175']
+  Agent counts: [10, 20, 30]
+  Time limit: 45.0s per instance
+  [1/18] random_large/maps_1250_50_50_0.175/eval_map_1.npy n_agents=10 seed=42 -> 2/4 succeeded
+  [2/18] random_large/maps_1250_50_50_0.175/eval_map_1.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [3/18] random_large/maps_1250_50_50_0.175/eval_map_1.npy n_agents=10 seed=456 -> 2/4 succeeded
+  [4/18] random_large/maps_1250_50_50_0.175/eval_map_1.npy n_agents=20 seed=42 -> 2/4 succeeded
+  [5/18] random_large/maps_1250_50_50_0.175/eval_map_1.npy n_agents=20 seed=123 -> 2/4 succeeded
+  [6/18] random_large/maps_1250_50_50_0.175/eval_map_1.npy n_agents=20 seed=456 -> 2/4 succeeded
+  [7/18] random_large/maps_1250_50_50_0.175/eval_map_1.npy n_agents=30 seed=42 -> 2/4 succeeded
+  [8/18] random_large/maps_1250_50_50_0.175/eval_map_1.npy n_agents=30 seed=123 -> 1/4 succeeded
+  [9/18] random_large/maps_1250_50_50_0.175/eval_map_1.npy n_agents=30 seed=456 -> 0/4 succeeded
+  [10/18] random_large/maps_1250_50_50_0.175/eval_map_54.npy n_agents=10 seed=42 -> 4/4 succeeded
+  [11/18] random_large/maps_1250_50_50_0.175/eval_map_54.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [12/18] random_large/maps_1250_50_50_0.175/eval_map_54.npy n_agents=10 seed=456 -> 2/4 succeeded
+  [13/18] random_large/maps_1250_50_50_0.175/eval_map_54.npy n_agents=20 seed=42 -> 4/4 succeeded
+  [14/18] random_large/maps_1250_50_50_0.175/eval_map_54.npy n_agents=20 seed=123 -> 2/4 succeeded
+  [15/18] random_large/maps_1250_50_50_0.175/eval_map_54.npy n_agents=20 seed=456 -> 4/4 succeeded
+  [16/18] random_large/maps_1250_50_50_0.175/eval_map_54.npy n_agents=30 seed=42 -> 2/4 succeeded
+  [17/18] random_large/maps_1250_50_50_0.175/eval_map_54.npy n_agents=30 seed=123 -> 0/4 succeeded
+  [18/18] random_large/maps_1250_50_50_0.175/eval_map_54.npy n_agents=30 seed=456 -> 0/4 succeeded
+  Completed 72 result records
+
+--- Category: EMPTY ---
+  Map dirs: ['empty/empty_maps_453_25_25']
+  Agent counts: [10, 20, 30]
+  Time limit: 30.0s per instance
+  [1/27] empty/empty_maps_453_25_25/eval_map_empty_1.npy n_agents=10 seed=42 -> 4/4 succeeded
+  [2/27] empty/empty_maps_453_25_25/eval_map_empty_1.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [3/27] empty/empty_maps_453_25_25/eval_map_empty_1.npy n_agents=10 seed=456 -> 4/4 succeeded
+  [4/27] empty/empty_maps_453_25_25/eval_map_empty_1.npy n_agents=20 seed=42 -> 2/4 succeeded
+  [5/27] empty/empty_maps_453_25_25/eval_map_empty_1.npy n_agents=20 seed=123 -> 2/4 succeeded
+  [6/27] empty/empty_maps_453_25_25/eval_map_empty_1.npy n_agents=20 seed=456 -> 2/4 succeeded
+  [7/27] empty/empty_maps_453_25_25/eval_map_empty_1.npy n_agents=30 seed=42 -> 1/4 succeeded
+  [8/27] empty/empty_maps_453_25_25/eval_map_empty_1.npy n_agents=30 seed=123 -> 4/4 succeeded
+  [9/27] empty/empty_maps_453_25_25/eval_map_empty_1.npy n_agents=30 seed=456 -> 0/4 succeeded
+  [10/27] empty/empty_maps_453_25_25/eval_map_empty_24.npy n_agents=10 seed=42 -> 4/4 succeeded
+  [11/27] empty/empty_maps_453_25_25/eval_map_empty_24.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [12/27] empty/empty_maps_453_25_25/eval_map_empty_24.npy n_agents=10 seed=456 -> 4/4 succeeded
+  [13/27] empty/empty_maps_453_25_25/eval_map_empty_24.npy n_agents=20 seed=42 -> 2/4 succeeded
+  [14/27] empty/empty_maps_453_25_25/eval_map_empty_24.npy n_agents=20 seed=123 -> 2/4 succeeded
+  [15/27] empty/empty_maps_453_25_25/eval_map_empty_24.npy n_agents=20 seed=456 -> 2/4 succeeded
+  [16/27] empty/empty_maps_453_25_25/eval_map_empty_24.npy n_agents=30 seed=42 -> 1/4 succeeded
+  [17/27] empty/empty_maps_453_25_25/eval_map_empty_24.npy n_agents=30 seed=123 -> 4/4 succeeded
+  [18/27] empty/empty_maps_453_25_25/eval_map_empty_24.npy n_agents=30 seed=456 -> 0/4 succeeded
+  [19/27] empty/empty_maps_453_25_25/eval_map_empty_4.npy n_agents=10 seed=42 -> 4/4 succeeded
+  [20/27] empty/empty_maps_453_25_25/eval_map_empty_4.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [21/27] empty/empty_maps_453_25_25/eval_map_empty_4.npy n_agents=10 seed=456 -> 4/4 succeeded
+  [22/27] empty/empty_maps_453_25_25/eval_map_empty_4.npy n_agents=20 seed=42 -> 2/4 succeeded
+  [23/27] empty/empty_maps_453_25_25/eval_map_empty_4.npy n_agents=20 seed=123 -> 2/4 succeeded
+  [24/27] empty/empty_maps_453_25_25/eval_map_empty_4.npy n_agents=20 seed=456 -> 2/4 succeeded
+  [25/27] empty/empty_maps_453_25_25/eval_map_empty_4.npy n_agents=30 seed=42 -> 1/4 succeeded
+  [26/27] empty/empty_maps_453_25_25/eval_map_empty_4.npy n_agents=30 seed=123 -> 4/4 succeeded
+  [27/27] empty/empty_maps_453_25_25/eval_map_empty_4.npy n_agents=30 seed=456 -> 0/4 succeeded
+  Completed 108 result records
+
+--- Category: MAZE ---
+  Map dirs: ['maze/maze_maps_125_25_25']
+  Agent counts: [5, 8, 12]
+  Time limit: 30.0s per instance
+  [1/27] maze/maze_maps_125_25_25/eval_map_maze_1.npy n_agents=5 seed=42 -> 2/4 succeeded
+  [2/27] maze/maze_maps_125_25_25/eval_map_maze_1.npy n_agents=5 seed=123 -> 0/4 succeeded
+  [3/27] maze/maze_maps_125_25_25/eval_map_maze_1.npy n_agents=5 seed=456 -> 2/4 succeeded
+  [4/27] maze/maze_maps_125_25_25/eval_map_maze_1.npy n_agents=8 seed=42 -> 2/4 succeeded
+  [5/27] maze/maze_maps_125_25_25/eval_map_maze_1.npy n_agents=8 seed=123 -> 4/4 succeeded
+  [6/27] maze/maze_maps_125_25_25/eval_map_maze_1.npy n_agents=8 seed=456 -> 0/4 succeeded
+  [7/27] maze/maze_maps_125_25_25/eval_map_maze_1.npy n_agents=12 seed=42 -> 0/4 succeeded
+  [8/27] maze/maze_maps_125_25_25/eval_map_maze_1.npy n_agents=12 seed=123 -> 0/4 succeeded
+  [9/27] maze/maze_maps_125_25_25/eval_map_maze_1.npy n_agents=12 seed=456 -> 0/4 succeeded
+  [10/27] maze/maze_maps_125_25_25/eval_map_maze_39.npy n_agents=5 seed=42 -> 2/4 succeeded
+  [11/27] maze/maze_maps_125_25_25/eval_map_maze_39.npy n_agents=5 seed=123 -> 0/4 succeeded
+  [12/27] maze/maze_maps_125_25_25/eval_map_maze_39.npy n_agents=5 seed=456 -> 2/4 succeeded
+  [13/27] maze/maze_maps_125_25_25/eval_map_maze_39.npy n_agents=8 seed=42 -> 2/4 succeeded
+  [14/27] maze/maze_maps_125_25_25/eval_map_maze_39.npy n_agents=8 seed=123 -> 4/4 succeeded
+  [15/27] maze/maze_maps_125_25_25/eval_map_maze_39.npy n_agents=8 seed=456 -> 0/4 succeeded
+  [16/27] maze/maze_maps_125_25_25/eval_map_maze_39.npy n_agents=12 seed=42 -> 0/4 succeeded
+  [17/27] maze/maze_maps_125_25_25/eval_map_maze_39.npy n_agents=12 seed=123 -> 0/4 succeeded
+  [18/27] maze/maze_maps_125_25_25/eval_map_maze_39.npy n_agents=12 seed=456 -> 0/4 succeeded
+  [19/27] maze/maze_maps_125_25_25/eval_map_maze_69.npy n_agents=5 seed=42 -> 2/4 succeeded
+  [20/27] maze/maze_maps_125_25_25/eval_map_maze_69.npy n_agents=5 seed=123 -> 0/4 succeeded
+  [21/27] maze/maze_maps_125_25_25/eval_map_maze_69.npy n_agents=5 seed=456 -> 2/4 succeeded
+  [22/27] maze/maze_maps_125_25_25/eval_map_maze_69.npy n_agents=8 seed=42 -> 2/4 succeeded
+  [23/27] maze/maze_maps_125_25_25/eval_map_maze_69.npy n_agents=8 seed=123 -> 4/4 succeeded
+  [24/27] maze/maze_maps_125_25_25/eval_map_maze_69.npy n_agents=8 seed=456 -> 0/4 succeeded
+  [25/27] maze/maze_maps_125_25_25/eval_map_maze_69.npy n_agents=12 seed=42 -> 0/4 succeeded
+  [26/27] maze/maze_maps_125_25_25/eval_map_maze_69.npy n_agents=12 seed=123 -> 0/4 succeeded
+  [27/27] maze/maze_maps_125_25_25/eval_map_maze_69.npy n_agents=12 seed=456 -> 0/4 succeeded
+  Completed 108 result records
+
+--- Category: ROOM ---
+  Map dirs: ['room/room_maps_250_25_25']
+  Agent counts: [5, 10, 15]
+  Time limit: 30.0s per instance
+  [1/27] room/room_maps_250_25_25/eval_map_room_1.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [2/27] room/room_maps_250_25_25/eval_map_room_1.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [3/27] room/room_maps_250_25_25/eval_map_room_1.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [4/27] room/room_maps_250_25_25/eval_map_room_1.npy n_agents=10 seed=42 -> 1/4 succeeded
+  [5/27] room/room_maps_250_25_25/eval_map_room_1.npy n_agents=10 seed=123 -> 0/4 succeeded
+  [6/27] room/room_maps_250_25_25/eval_map_room_1.npy n_agents=10 seed=456 -> 0/4 succeeded
+  [7/27] room/room_maps_250_25_25/eval_map_room_1.npy n_agents=15 seed=42 -> 1/4 succeeded
+  [8/27] room/room_maps_250_25_25/eval_map_room_1.npy n_agents=15 seed=123 -> 0/4 succeeded
+  [9/27] room/room_maps_250_25_25/eval_map_room_1.npy n_agents=15 seed=456 -> 0/4 succeeded
+  [10/27] room/room_maps_250_25_25/eval_map_room_24.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [11/27] room/room_maps_250_25_25/eval_map_room_24.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [12/27] room/room_maps_250_25_25/eval_map_room_24.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [13/27] room/room_maps_250_25_25/eval_map_room_24.npy n_agents=10 seed=42 -> 1/4 succeeded
+  [14/27] room/room_maps_250_25_25/eval_map_room_24.npy n_agents=10 seed=123 -> 0/4 succeeded
+  [15/27] room/room_maps_250_25_25/eval_map_room_24.npy n_agents=10 seed=456 -> 0/4 succeeded
+  [16/27] room/room_maps_250_25_25/eval_map_room_24.npy n_agents=15 seed=42 -> 1/4 succeeded
+  [17/27] room/room_maps_250_25_25/eval_map_room_24.npy n_agents=15 seed=123 -> 0/4 succeeded
+  [18/27] room/room_maps_250_25_25/eval_map_room_24.npy n_agents=15 seed=456 -> 0/4 succeeded
+  [19/27] room/room_maps_250_25_25/eval_map_room_4.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [20/27] room/room_maps_250_25_25/eval_map_room_4.npy n_agents=5 seed=123 -> 4/4 succeeded
+  [21/27] room/room_maps_250_25_25/eval_map_room_4.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [22/27] room/room_maps_250_25_25/eval_map_room_4.npy n_agents=10 seed=42 -> 1/4 succeeded
+  [23/27] room/room_maps_250_25_25/eval_map_room_4.npy n_agents=10 seed=123 -> 0/4 succeeded
+  [24/27] room/room_maps_250_25_25/eval_map_room_4.npy n_agents=10 seed=456 -> 0/4 succeeded
+  [25/27] room/room_maps_250_25_25/eval_map_room_4.npy n_agents=15 seed=42 -> 1/4 succeeded
+  [26/27] room/room_maps_250_25_25/eval_map_room_4.npy n_agents=15 seed=123 -> 0/4 succeeded
+  [27/27] room/room_maps_250_25_25/eval_map_room_4.npy n_agents=15 seed=456 -> 0/4 succeeded
+  Completed 108 result records
+
+--- Category: WAREHOUSE ---
+  Map dirs: ['warehouse/warehouse_maps_266_25_25']
+  Agent counts: [5, 10, 15]
+  Time limit: 30.0s per instance
+  [1/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [2/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy n_agents=5 seed=123 -> 0/4 succeeded
+  [3/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [4/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy n_agents=10 seed=42 -> 4/4 succeeded
+  [5/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [6/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy n_agents=10 seed=456 -> 4/4 succeeded
+  [7/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy n_agents=15 seed=42 -> 1/4 succeeded
+  [8/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy n_agents=15 seed=123 -> 0/4 succeeded
+  [9/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy n_agents=15 seed=456 -> 1/4 succeeded
+  [10/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_39.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [11/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_39.npy n_agents=5 seed=123 -> 0/4 succeeded
+  [12/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_39.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [13/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_39.npy n_agents=10 seed=42 -> 4/4 succeeded
+  [14/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_39.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [15/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_39.npy n_agents=10 seed=456 -> 4/4 succeeded
+  [16/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_39.npy n_agents=15 seed=42 -> 1/4 succeeded
+  [17/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_39.npy n_agents=15 seed=123 -> 0/4 succeeded
+  [18/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_39.npy n_agents=15 seed=456 -> 1/4 succeeded
+  [19/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_69.npy n_agents=5 seed=42 -> 4/4 succeeded
+  [20/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_69.npy n_agents=5 seed=123 -> 0/4 succeeded
+  [21/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_69.npy n_agents=5 seed=456 -> 4/4 succeeded
+  [22/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_69.npy n_agents=10 seed=42 -> 4/4 succeeded
+  [23/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_69.npy n_agents=10 seed=123 -> 4/4 succeeded
+  [24/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_69.npy n_agents=10 seed=456 -> 4/4 succeeded
+  [25/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_69.npy n_agents=15 seed=42 -> 1/4 succeeded
+  [26/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_69.npy n_agents=15 seed=123 -> 0/4 succeeded
+  [27/27] warehouse/warehouse_maps_266_25_25/eval_map_warehouse_69.npy n_agents=15 seed=456 -> 1/4 succeeded
+  Completed 108 result records
+
+
+Results saved to: /mnt/shared-storage-user/yetianlin/ResearchClawBench/workspaces/Math_002_20260401_235043/code/../outputs/experiment_results.json
+Total result records: 1080
+
+======================================================================
+RESULTS SUMMARY
+======================================================================
+
+Overall Success Rate by Algorithm:
+--------------------------------------------------
+  PP                  : SR=42.59%  Avg Conflicts=1.5  Avg Time=0.15s
+  LNS-PP              : SR=45.19%  Avg Conflicts=1.3  Avg Time=1.62s
+  MARL-Inspired       : SR=57.41%  Avg Conflicts=0.8  Avg Time=0.37s
+  Hybrid-MARL-LNS     : SR=62.59%  Avg Conflicts=0.7  Avg Time=1.46s
+
+Success Rate by Category:
+----------------------------------------------------------------------
+Category       PP                LNS-PP            MARL-Inspired     Hybrid-MARL-LNS   
+---------------------------------------------------------------------------------------
+empty            44.4% ( 27)  44.4% ( 27)  77.8% ( 27)  88.9% ( 27)
+maze             22.2% ( 27)  22.2% ( 27)  33.3% ( 27)  33.3% ( 27)
+random_large     33.3% ( 18)  33.3% ( 18)  72.2% ( 18)  77.8% ( 18)
+random_medium    37.5% ( 72)  38.9% ( 72)  61.1% ( 72)  63.9% ( 72)
+random_small     55.6% ( 72)  55.6% ( 72)  61.1% ( 72)  63.9% ( 72)
+room             33.3% ( 27)  55.6% ( 27)  33.3% ( 27)  33.3% ( 27)
+warehouse        55.6% ( 27)  55.6% ( 27)  55.6% ( 27)  77.8% ( 27)

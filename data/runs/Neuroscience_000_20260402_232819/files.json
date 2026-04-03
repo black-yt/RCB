@@ -1,0 +1,269 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 15639,
+    "mtime": 1775199108.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "Together_1_features_extracted.csv",
+    "path": "data/Together_1_features_extracted.csv",
+    "type": "file",
+    "size": 910871,
+    "mtime": 1773033714.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Together_1_machine_results_reference.csv",
+    "path": "data/Together_1_machine_results_reference.csv",
+    "type": "file",
+    "size": 1790428,
+    "mtime": 1773033716.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Together_1_targets_inserted.csv",
+    "path": "data/Together_1_targets_inserted.csv",
+    "type": "file",
+    "size": 765692,
+    "mtime": 1773033716.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "alignment_audit.json",
+    "path": "outputs/alignment_audit.json",
+    "type": "file",
+    "size": 201,
+    "mtime": 1775199104.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 6796,
+    "mtime": 1775199102.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_attack.csv",
+    "path": "outputs/classification_report_attack.csv",
+    "type": "file",
+    "size": 385,
+    "mtime": 1775199102.0,
+    "exported": true
+  },
+  {
+    "name": "classification_report_sniffing.csv",
+    "path": "outputs/classification_report_sniffing.csv",
+    "type": "file",
+    "size": 382,
+    "mtime": 1775199104.0,
+    "exported": true
+  },
+  {
+    "name": "confusion_matrix_attack.csv",
+    "path": "outputs/confusion_matrix_attack.csv",
+    "type": "file",
+    "size": 43,
+    "mtime": 1775199102.0,
+    "exported": true
+  },
+  {
+    "name": "confusion_matrix_sniffing.csv",
+    "path": "outputs/confusion_matrix_sniffing.csv",
+    "type": "file",
+    "size": 42,
+    "mtime": 1775199102.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_summary.csv",
+    "path": "outputs/dataset_summary.csv",
+    "type": "file",
+    "size": 86,
+    "mtime": 1775199102.0,
+    "exported": true
+  },
+  {
+    "name": "feature_importance_attack.csv",
+    "path": "outputs/feature_importance_attack.csv",
+    "type": "file",
+    "size": 3964,
+    "mtime": 1775199102.0,
+    "exported": true
+  },
+  {
+    "name": "feature_importance_sniffing.csv",
+    "path": "outputs/feature_importance_sniffing.csv",
+    "type": "file",
+    "size": 3946,
+    "mtime": 1775199104.0,
+    "exported": true
+  },
+  {
+    "name": "feature_missingness.csv",
+    "path": "outputs/feature_missingness.csv",
+    "type": "file",
+    "size": 859,
+    "mtime": 1775199104.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 12 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3024514,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 9125934,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 4320154,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3464361,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 9435744,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "attack_diagnostics.png",
+    "path": "report/images/attack_diagnostics.png",
+    "type": "file",
+    "size": 134081,
+    "mtime": 1775199106.0,
+    "exported": true
+  },
+  {
+    "name": "attack_feature_importance.png",
+    "path": "report/images/attack_feature_importance.png",
+    "type": "file",
+    "size": 141917,
+    "mtime": 1775199106.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 153668,
+    "mtime": 1775199106.0,
+    "exported": true
+  },
+  {
+    "name": "feature_correlation_heatmap.png",
+    "path": "report/images/feature_correlation_heatmap.png",
+    "type": "file",
+    "size": 168907,
+    "mtime": 1775199106.0,
+    "exported": true
+  },
+  {
+    "name": "model_performance_summary.png",
+    "path": "report/images/model_performance_summary.png",
+    "type": "file",
+    "size": 175516,
+    "mtime": 1775199106.0,
+    "exported": true
+  },
+  {
+    "name": "sniffing_diagnostics.png",
+    "path": "report/images/sniffing_diagnostics.png",
+    "type": "file",
+    "size": 126984,
+    "mtime": 1775199106.0,
+    "exported": true
+  },
+  {
+    "name": "sniffing_feature_importance.png",
+    "path": "report/images/sniffing_feature_importance.png",
+    "type": "file",
+    "size": 143439,
+    "mtime": 1775199108.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 17078,
+    "mtime": 1775199109.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5524,
+    "mtime": 1775143699.0,
+    "exported": true
+  }
+]

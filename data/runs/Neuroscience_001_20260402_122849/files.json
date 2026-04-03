@@ -1,0 +1,272 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_flow_dmn.py",
+    "path": "code/analyze_flow_dmn.py",
+    "type": "file",
+    "size": 21779,
+    "mtime": 1775133400.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "flow",
+    "path": "data/flow",
+    "type": "directory"
+  },
+  {
+    "name": "0000",
+    "path": "data/flow/0000",
+    "type": "directory"
+  },
+  {
+    "name": "000",
+    "path": "data/flow/0000/000",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "001",
+    "path": "data/flow/0000/001",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "002",
+    "path": "data/flow/0000/002",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "003",
+    "path": "data/flow/0000/003",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "004",
+    "path": "data/flow/0000/004",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "005",
+    "path": "data/flow/0000/005",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "006",
+    "path": "data/flow/0000/006",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "007",
+    "path": "data/flow/0000/007",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "008",
+    "path": "data/flow/0000/008",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "009",
+    "path": "data/flow/0000/009",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "\u2026 41 more items",
+    "path": "data/flow/0000/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 712,
+    "mtime": 1775133394.0,
+    "exported": true
+  },
+  {
+    "name": "celltype_cluster_performance.csv",
+    "path": "outputs/celltype_cluster_performance.csv",
+    "type": "file",
+    "size": 18076,
+    "mtime": 1775133394.0,
+    "exported": true
+  },
+  {
+    "name": "celltype_embedding_points.csv",
+    "path": "outputs/celltype_embedding_points.csv",
+    "type": "file",
+    "size": 163913,
+    "mtime": 1775133394.0,
+    "exported": true
+  },
+  {
+    "name": "celltype_label_nmi.csv",
+    "path": "outputs/celltype_label_nmi.csv",
+    "type": "file",
+    "size": 84507,
+    "mtime": 1775133394.0,
+    "exported": true
+  },
+  {
+    "name": "celltype_summary.csv",
+    "path": "outputs/celltype_summary.csv",
+    "type": "file",
+    "size": 7752,
+    "mtime": 1775133394.0,
+    "exported": true
+  },
+  {
+    "name": "model_metrics.csv",
+    "path": "outputs/model_metrics.csv",
+    "type": "file",
+    "size": 7844,
+    "mtime": 1775133394.0,
+    "exported": true
+  },
+  {
+    "name": "tensor_summary.csv",
+    "path": "outputs/tensor_summary.csv",
+    "type": "file",
+    "size": 1893,
+    "mtime": 1775133394.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 892356,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1263727,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 6544746,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6955532,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 6957184,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_01_overview.png",
+    "path": "report/images/figure_01_overview.png",
+    "type": "file",
+    "size": 572073,
+    "mtime": 1775133398.0,
+    "exported": true
+  },
+  {
+    "name": "figure_02_celltype_diversity.png",
+    "path": "report/images/figure_02_celltype_diversity.png",
+    "type": "file",
+    "size": 240071,
+    "mtime": 1775133398.0,
+    "exported": true
+  },
+  {
+    "name": "figure_03_selected_embeddings.png",
+    "path": "report/images/figure_03_selected_embeddings.png",
+    "type": "file",
+    "size": 581623,
+    "mtime": 1775133396.0,
+    "exported": true
+  },
+  {
+    "name": "figure_04_cluster_performance.png",
+    "path": "report/images/figure_04_cluster_performance.png",
+    "type": "file",
+    "size": 172844,
+    "mtime": 1775133396.0,
+    "exported": true
+  },
+  {
+    "name": "figure_05_nmi_heatmap.png",
+    "path": "report/images/figure_05_nmi_heatmap.png",
+    "type": "file",
+    "size": 205293,
+    "mtime": 1775133398.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14387,
+    "mtime": 1775133401.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5942,
+    "mtime": 1775104129.0,
+    "exported": true
+  }
+]

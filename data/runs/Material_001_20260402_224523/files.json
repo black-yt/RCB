@@ -1,0 +1,213 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 15141,
+    "mtime": 1775199268.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "M-AI-Synth__Materials_AI_Dataset_.txt",
+    "path": "data/M-AI-Synth__Materials_AI_Dataset_.txt",
+    "type": "file",
+    "size": 3970,
+    "mtime": 1770620672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 1829,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "optimization_summary.json",
+    "path": "outputs/optimization_summary.json",
+    "type": "file",
+    "size": 393,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "optimization_trajectory.csv",
+    "path": "outputs/optimization_trajectory.csv",
+    "type": "file",
+    "size": 1033,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "property_features.csv",
+    "path": "outputs/property_features.csv",
+    "type": "file",
+    "size": 25783,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "property_prediction_metrics.json",
+    "path": "outputs/property_prediction_metrics.json",
+    "type": "file",
+    "size": 1051,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "property_targets.csv",
+    "path": "outputs/property_targets.csv",
+    "type": "file",
+    "size": 2358,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "structure_generated_samples.csv",
+    "path": "outputs/structure_generated_samples.csv",
+    "type": "file",
+    "size": 10014,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "structure_generation_summary.json",
+    "path": "outputs/structure_generation_summary.json",
+    "type": "file",
+    "size": 311,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 869,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 1769,
+    "mtime": 1775199266.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2155763,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2638490,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 891813,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 510141,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "optimization_analysis.png",
+    "path": "report/images/optimization_analysis.png",
+    "type": "file",
+    "size": 141226,
+    "mtime": 1775199268.0,
+    "exported": true
+  },
+  {
+    "name": "property_prediction_overview.png",
+    "path": "report/images/property_prediction_overview.png",
+    "type": "file",
+    "size": 291421,
+    "mtime": 1775199268.0,
+    "exported": true
+  },
+  {
+    "name": "property_prediction_validation.png",
+    "path": "report/images/property_prediction_validation.png",
+    "type": "file",
+    "size": 130002,
+    "mtime": 1775199268.0,
+    "exported": true
+  },
+  {
+    "name": "structure_generation_analysis.png",
+    "path": "report/images/structure_generation_analysis.png",
+    "type": "file",
+    "size": 136456,
+    "mtime": 1775199268.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15117,
+    "mtime": 1775199269.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5377,
+    "mtime": 1775141123.0,
+    "exported": true
+  }
+]

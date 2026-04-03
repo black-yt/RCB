@@ -1,0 +1,22 @@
+{
+  "quantum_geometry_enhancement": {
+    "mean_ratio_hole_doped": 55.268020807816065,
+    "mean_ratio_electron_doped": 52.50461576389423,
+    "mean_ratio_geometric": 4.565012014264696,
+    "max_exp_to_geom_ratio": 16.99831639274951
+  },
+  "temperature_power_law": {
+    "D_bg_fit": 68.86230280509805,
+    "D_bg_err": 0.24622271569225807,
+    "D_sc_fit": 28.201985248432774,
+    "D_sc_err": 0.3687631974012476,
+    "power_law_exponent_n": 1.0000000000000002,
+    "power_law_exponent_err": 0.035295559842064284
+  },
+  "current_dependence": {
+    "GL_fit_Ds0_mw": 100.98352193467608,
+    "GL_fit_Ic_mw_nA": 57.08925662596648,
+    "DC_quadratic_slope": 0.9071177960528849,
+    "MW_quadratic_slope": 1.0262738909831954
+  }
+}

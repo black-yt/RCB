@@ -1,0 +1,176 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_trarpes.py",
+    "path": "code/analysis_trarpes.py",
+    "type": "file",
+    "size": 7577,
+    "mtime": 1775207192.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "polarization_dependence.png",
+    "path": "data/polarization_dependence.png",
+    "type": "file",
+    "size": 211842,
+    "mtime": 1770710438.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "polarization_dependence_data.csv",
+    "path": "data/polarization_dependence_data.csv",
+    "type": "file",
+    "size": 632,
+    "mtime": 1770710442.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "processed_band_data.json",
+    "path": "data/processed_band_data.json",
+    "type": "file",
+    "size": 35473,
+    "mtime": 1770710438.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "raw_trARPES_data.h5",
+    "path": "data/raw_trARPES_data.h5",
+    "type": "file",
+    "size": 1933136,
+    "mtime": 1770709552.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 464,
+    "mtime": 1775207190.0,
+    "exported": true
+  },
+  {
+    "name": "polarization_fit_parameters.json",
+    "path": "outputs/polarization_fit_parameters.json",
+    "type": "file",
+    "size": 100,
+    "mtime": 1775207190.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 239854,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1630751,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1078918,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 752873,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig_equilibrium_spectrum.png",
+    "path": "report/images/fig_equilibrium_spectrum.png",
+    "type": "file",
+    "size": 146029,
+    "mtime": 1775207192.0,
+    "exported": true
+  },
+  {
+    "name": "fig_floquet_replicas_overlay.png",
+    "path": "report/images/fig_floquet_replicas_overlay.png",
+    "type": "file",
+    "size": 191850,
+    "mtime": 1775207192.0,
+    "exported": true
+  },
+  {
+    "name": "fig_polarization_dependence.png",
+    "path": "report/images/fig_polarization_dependence.png",
+    "type": "file",
+    "size": 219333,
+    "mtime": 1775207190.0,
+    "exported": true
+  },
+  {
+    "name": "fig_pumped_spectra_vs_angle.png",
+    "path": "report/images/fig_pumped_spectra_vs_angle.png",
+    "type": "file",
+    "size": 557411,
+    "mtime": 1775207192.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14382,
+    "mtime": 1775207193.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5351,
+    "mtime": 1775020202.0,
+    "exported": true
+  }
+]

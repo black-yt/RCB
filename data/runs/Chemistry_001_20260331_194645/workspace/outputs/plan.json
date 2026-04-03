@@ -1,0 +1,11 @@
+{
+  "steps": [
+    "Survey related work PDFs and extract key ideas on multimodal structure prediction and diffusion models",
+    "Design unified architecture taking protein sequence, nucleic acid sequence, and small-molecule graph as inputs, outputting 3D complex via diffusion",
+    "Implement lightweight prototype components: data loaders for PDB/SDF, simple equivariant diffusion over ligand conditioned on frozen protein",
+    "Compute and visualize basic geometric features of provided protein and ligand (distance distributions, contact maps)",
+    "Mock training loop on synthetic noise to demonstrate diffusion behaviour (no real training here due to resource limits)",
+    "Generate figures summarizing geometry and illustrative diffusion trajectories",
+    "Write full report (methods, proposed model, experiments on sample complex, limitations)"
+  ]
+}

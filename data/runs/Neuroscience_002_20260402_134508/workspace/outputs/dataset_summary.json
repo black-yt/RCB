@@ -1,0 +1,25 @@
+{
+  "train_shape": [
+    168000,
+    22
+  ],
+  "test_shape": [
+    72000,
+    22
+  ],
+  "positive_rate_train": 0.09932738095238096,
+  "positive_rate_test": 0.10156944444444445,
+  "degradation_counts_train": {
+    "Mixed": 42000,
+    "Misalignment": 42000,
+    "Average": 42000,
+    "Missing Sections": 42000
+  },
+  "degradation_counts_test": {
+    "Mixed": 18000,
+    "Misalignment": 18000,
+    "Average": 18000,
+    "Missing Sections": 18000
+  },
+  "selected_model": "RandomForest"
+}

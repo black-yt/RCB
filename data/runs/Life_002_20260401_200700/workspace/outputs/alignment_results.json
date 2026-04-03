@@ -1,0 +1,235 @@
+{
+  "complex_info": {
+    "7xg4": {
+      "pdb_id": "7xg4",
+      "n_chains_total": 12,
+      "n_protein_chains": 9,
+      "n_nucleic_chains": 3,
+      "chains": {
+        "A": {
+          "type": "protein",
+          "n_residues": 241,
+          "n_atoms": 1898,
+          "n_aa_residues": 241
+        },
+        "B": {
+          "type": "protein",
+          "n_residues": 219,
+          "n_atoms": 1709,
+          "n_aa_residues": 219
+        },
+        "C": {
+          "type": "protein",
+          "n_residues": 329,
+          "n_atoms": 2488,
+          "n_aa_residues": 329
+        },
+        "D": {
+          "type": "protein",
+          "n_residues": 331,
+          "n_atoms": 2503,
+          "n_aa_residues": 331
+        },
+        "E": {
+          "type": "protein",
+          "n_residues": 324,
+          "n_atoms": 2450,
+          "n_aa_residues": 324
+        },
+        "F": {
+          "type": "protein",
+          "n_residues": 324,
+          "n_atoms": 2450,
+          "n_aa_residues": 324
+        },
+        "G": {
+          "type": "protein",
+          "n_residues": 280,
+          "n_atoms": 2131,
+          "n_aa_residues": 280
+        },
+        "H": {
+          "type": "protein",
+          "n_residues": 234,
+          "n_atoms": 1800,
+          "n_aa_residues": 234
+        },
+        "I": {
+          "type": "nucleic",
+          "n_residues": 60,
+          "n_atoms": 1317,
+          "n_aa_residues": 0
+        },
+        "J": {
+          "type": "nucleic",
+          "n_residues": 36,
+          "n_atoms": 722,
+          "n_aa_residues": 0
+        },
+        "K": {
+          "type": "nucleic",
+          "n_residues": 37,
+          "n_atoms": 759,
+          "n_aa_residues": 0
+        },
+        "L": {
+          "type": "protein",
+          "n_residues": 594,
+          "n_atoms": 4542,
+          "n_aa_residues": 594
+        }
+      },
+      "total_residues": 3009,
+      "total_atoms": 24769
+    },
+    "6n40": {
+      "pdb_id": "6n40",
+      "n_chains_total": 1,
+      "n_protein_chains": 1,
+      "n_nucleic_chains": 0,
+      "chains": {
+        "A": {
+          "type": "protein",
+          "n_residues": 726,
+          "n_atoms": 5535,
+          "n_aa_residues": 726
+        }
+      },
+      "total_residues": 726,
+      "total_atoms": 5535
+    }
+  },
+  "chain_stats": {
+    "7xg4": {
+      "chain_lengths": {
+        "A": 241,
+        "B": 219,
+        "C": 329,
+        "D": 331,
+        "E": 324,
+        "F": 324,
+        "G": 280,
+        "H": 234,
+        "L": 594
+      },
+      "mean_length": 319.55555555555554,
+      "total_residues": 2876
+    },
+    "6n40": {
+      "chain_lengths": {
+        "A": 726
+      },
+      "mean_length": 726.0,
+      "total_residues": 726
+    }
+  },
+  "pairwise_tm_matrix": {
+    "A": {
+      "A": 0.14281484759128665
+    },
+    "B": {
+      "A": 0.10741969275086576
+    },
+    "C": {
+      "A": 0.09973947357635601
+    },
+    "D": {
+      "A": 0.10342932022323849
+    },
+    "E": {
+      "A": 0.13002697491928827
+    },
+    "F": {
+      "A": 0.12928301013128757
+    },
+    "G": {
+      "A": 0.10994629434718599
+    },
+    "H": {
+      "A": 0.10573147302078273
+    },
+    "L": {
+      "A": 0.16478618265106582
+    }
+  },
+  "pairwise_rmsd_matrix": {
+    "A": {
+      "A": 33.6295234434429
+    },
+    "B": {
+      "A": 33.22885082102698
+    },
+    "C": {
+      "A": 38.11569116351114
+    },
+    "D": {
+      "A": 38.62216949170326
+    },
+    "E": {
+      "A": 35.25419874021669
+    },
+    "F": {
+      "A": 35.23643642225382
+    },
+    "G": {
+      "A": 34.70697113909227
+    },
+    "H": {
+      "A": 31.09422186394942
+    },
+    "L": {
+      "A": 30.423636680186807
+    }
+  },
+  "chain_assignment": [
+    {
+      "chain_7xg4": "L",
+      "chain_6n40": "A",
+      "tm_score": 0.16478618265106582,
+      "rmsd": 30.423636680186807
+    }
+  ],
+  "complex_tm_score": 0.03403442019983765,
+  "superimposition_data": [
+    {
+      "chain_7xg4": "L",
+      "chain_6n40": "A",
+      "tm_score": 0.16478618265106582,
+      "rmsd": 30.423636680186807,
+      "n_residues_7xg4": 594,
+      "n_residues_6n40": 726,
+      "rotation_matrix": [
+        [
+          0.6972004053470146,
+          0.6551722247178922,
+          0.29096553253479396
+        ],
+        [
+          0.6395579246790049,
+          -0.3851107460234966,
+          -0.6653234604114372
+        ],
+        [
+          -0.3238474864507873,
+          0.649953130155835,
+          -0.6875200113085037
+        ]
+      ],
+      "translation_vector": [
+        -329.8488906524858,
+        62.79869545819115,
+        140.07015166589645
+      ],
+      "centroid_7xg4": [
+        241.99981689453125,
+        173.19078063964844,
+        213.1079864501953
+      ],
+      "centroid_6n40": [
+        19.40700912475586,
+        3.651414632797241,
+        38.03545379638672
+      ]
+    }
+  ]
+}

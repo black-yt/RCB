@@ -1,0 +1,211 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 23538,
+    "mtime": 1775133494.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "1brs_AD.pdb",
+    "path": "data/1brs_AD.pdb",
+    "type": "file",
+    "size": 175527,
+    "mtime": 1772768164.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "skempi_v2.csv",
+    "path": "data/skempi_v2.csv",
+    "type": "file",
+    "size": 1602208,
+    "mtime": 1772768166.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "mplconfig",
+    "path": "outputs/mplconfig",
+    "type": "directory"
+  },
+  {
+    "name": "fontlist-v390.json",
+    "path": "outputs/mplconfig/fontlist-v390.json",
+    "type": "file",
+    "size": 65187,
+    "mtime": 1775133492.0,
+    "exported": true
+  },
+  {
+    "name": "1brs_expanded_mutations.csv",
+    "path": "outputs/1brs_expanded_mutations.csv",
+    "type": "file",
+    "size": 13788,
+    "mtime": 1775133492.0,
+    "exported": true
+  },
+  {
+    "name": "1brs_model_predictions.csv",
+    "path": "outputs/1brs_model_predictions.csv",
+    "type": "file",
+    "size": 31888,
+    "mtime": 1775133492.0,
+    "exported": true
+  },
+  {
+    "name": "1brs_mutation_features.csv",
+    "path": "outputs/1brs_mutation_features.csv",
+    "type": "file",
+    "size": 31562,
+    "mtime": 1775133492.0,
+    "exported": true
+  },
+  {
+    "name": "1brs_pairwise_contacts.csv",
+    "path": "outputs/1brs_pairwise_contacts.csv",
+    "type": "file",
+    "size": 342623,
+    "mtime": 1775133492.0,
+    "exported": true
+  },
+  {
+    "name": "1brs_residue_hotspots.csv",
+    "path": "outputs/1brs_residue_hotspots.csv",
+    "type": "file",
+    "size": 1915,
+    "mtime": 1775133492.0,
+    "exported": true
+  },
+  {
+    "name": "1brs_residue_interface.csv",
+    "path": "outputs/1brs_residue_interface.csv",
+    "type": "file",
+    "size": 8755,
+    "mtime": 1775133492.0,
+    "exported": true
+  },
+  {
+    "name": "summary_metrics.json",
+    "path": "outputs/summary_metrics.json",
+    "type": "file",
+    "size": 1380,
+    "mtime": 1775133492.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 162669,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 305268,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 599969,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3938436,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_1_overview.png",
+    "path": "report/images/figure_1_overview.png",
+    "type": "file",
+    "size": 257915,
+    "mtime": 1775133494.0,
+    "exported": true
+  },
+  {
+    "name": "figure_2_contact_map.png",
+    "path": "report/images/figure_2_contact_map.png",
+    "type": "file",
+    "size": 213163,
+    "mtime": 1775133494.0,
+    "exported": true
+  },
+  {
+    "name": "figure_3_hotspots.png",
+    "path": "report/images/figure_3_hotspots.png",
+    "type": "file",
+    "size": 293563,
+    "mtime": 1775133494.0,
+    "exported": true
+  },
+  {
+    "name": "figure_4_model_validation.png",
+    "path": "report/images/figure_4_model_validation.png",
+    "type": "file",
+    "size": 558105,
+    "mtime": 1775133494.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 11561,
+    "mtime": 1775133495.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5185,
+    "mtime": 1775108017.0,
+    "exported": true
+  }
+]

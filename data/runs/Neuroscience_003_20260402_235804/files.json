@@ -1,0 +1,213 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 17359,
+    "mtime": 1775199012.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "adata_RPE.h5ad",
+    "path": "data/adata_RPE.h5ad",
+    "type": "file",
+    "size": 8145585,
+    "mtime": 1772768114.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 1657,
+    "mtime": 1775199010.0,
+    "exported": true
+  },
+  {
+    "name": "cell_metadata_with_pseudotime.csv",
+    "path": "outputs/cell_metadata_with_pseudotime.csv",
+    "type": "file",
+    "size": 142728,
+    "mtime": 1775199010.0,
+    "exported": true
+  },
+  {
+    "name": "feature_ranking.csv",
+    "path": "outputs/feature_ranking.csv",
+    "type": "file",
+    "size": 47266,
+    "mtime": 1775199010.0,
+    "exported": true
+  },
+  {
+    "name": "run_manifest.txt",
+    "path": "outputs/run_manifest.txt",
+    "type": "file",
+    "size": 285,
+    "mtime": 1775199010.0,
+    "exported": true
+  },
+  {
+    "name": "selected_features.csv",
+    "path": "outputs/selected_features.csv",
+    "type": "file",
+    "size": 768,
+    "mtime": 1775199010.0,
+    "exported": true
+  },
+  {
+    "name": "subset_evaluation.csv",
+    "path": "outputs/subset_evaluation.csv",
+    "type": "file",
+    "size": 1106,
+    "mtime": 1775199010.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1367,
+    "mtime": 1775199010.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 1807,
+    "mtime": 1775199010.0,
+    "exported": true
+  },
+  {
+    "name": "top15_feature_ranking_detailed.csv",
+    "path": "outputs/top15_feature_ranking_detailed.csv",
+    "type": "file",
+    "size": 3051,
+    "mtime": 1775199010.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3849589,
+    "mtime": 1773914911.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1095492,
+    "mtime": 1773914911.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 8684628,
+    "mtime": 1773914911.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1480436,
+    "mtime": 1773914911.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 417735,
+    "mtime": 1775199012.0,
+    "exported": true
+  },
+  {
+    "name": "embedding_comparison.png",
+    "path": "report/images/embedding_comparison.png",
+    "type": "file",
+    "size": 358962,
+    "mtime": 1775199012.0,
+    "exported": true
+  },
+  {
+    "name": "selected_feature_heatmap.png",
+    "path": "report/images/selected_feature_heatmap.png",
+    "type": "file",
+    "size": 562949,
+    "mtime": 1775199012.0,
+    "exported": true
+  },
+  {
+    "name": "subset_validation.png",
+    "path": "report/images/subset_validation.png",
+    "type": "file",
+    "size": 160505,
+    "mtime": 1775199012.0,
+    "exported": true
+  },
+  {
+    "name": "top_feature_scores.png",
+    "path": "report/images/top_feature_scores.png",
+    "type": "file",
+    "size": 225088,
+    "mtime": 1775199012.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13494,
+    "mtime": 1775199013.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4897,
+    "mtime": 1775145484.0,
+    "exported": true
+  }
+]

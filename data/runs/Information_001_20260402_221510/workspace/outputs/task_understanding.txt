@@ -1,0 +1,24 @@
+Task objective: investigate, using the provided demo images and related papers, how a training-free task-guided cropping/zoom-in framework can mitigate the small-object information loss of fixed-resolution vision encoders in multimodal LLMs, and then build a complete analysis with code, figures, and a research-style report inside this workspace.
+
+Available data and references in this workspace:
+- data/demo_imgs/demo1.png — RGB image, 1024x768
+- data/demo_imgs/demo2.png — RGB image, 2250x1500
+- data/demo_imgs/method_case.png — PNG illustration, 2500x1681
+- related_work/paper_000.pdf — V*: guided visual search for MLLMs
+- related_work/paper_001.pdf — transformer attention explainability
+- related_work/paper_002.pdf — BLIP-2 background on frozen vision encoders + LLMs
+- related_work/paper_003.pdf — Monkey on image resolution for multimodal models
+
+Main planned analysis steps:
+1. Read the related papers to extract the key problem setting, assumptions, and evaluation ideas around high-resolution perception, cropping/search, and fixed-resolution encoder limits.
+2. Inspect the demo images and characterize where fine-grained or small-object details are likely to be lost under global downsampling.
+3. Implement reproducible analysis code in code/ to simulate fixed-resolution encoding effects, generate task-guided crop/zoom comparisons, and produce quantitative and qualitative evidence of detail recovery.
+4. Save intermediate measurements and visual outputs to outputs/, including overview figures, crop examples, and comparison plots.
+5. Write a publication-style report/report.md summarizing methodology, results, interpretation, limitations, and implications, with figures stored in report/images/ and referenced relatively.
+
+Expected deliverables:
+- Reproducible analysis scripts in code/
+- Intermediate outputs and analysis artifacts in outputs/
+- A comprehensive report at report/report.md
+- Report figures in report/images/, including data overview visuals, main result figures, and validation/comparison plots
+- A workspace-contained, task-specific study of whether task-guided cropping improves fine-grained perception on the provided examples.

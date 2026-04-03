@@ -1,0 +1,336 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_neoantigen_vaccine.py",
+    "path": "code/analyze_neoantigen_vaccine.py",
+    "type": "file",
+    "size": 23180,
+    "mtime": 1775132298.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "cell-populations.csv",
+    "path": "data/cell-populations.csv",
+    "type": "file",
+    "size": 1162727,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "final-response-likelihoods.csv",
+    "path": "data/final-response-likelihoods.csv",
+    "type": "file",
+    "size": 91166,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "optimization_runtime_data.csv",
+    "path": "data/optimization_runtime_data.csv",
+    "type": "file",
+    "size": 587,
+    "mtime": 1773033824.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "selected-vaccine-elements.budget-10.minsum.adaptive.csv",
+    "path": "data/selected-vaccine-elements.budget-10.minsum.adaptive.csv",
+    "type": "file",
+    "size": 4561,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "sim-specific-response-likelihoods.csv",
+    "path": "data/sim-specific-response-likelihoods.csv",
+    "type": "file",
+    "size": 111165,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-0.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-0.csv",
+    "type": "file",
+    "size": 109196,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-1.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-1.csv",
+    "type": "file",
+    "size": 109083,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-2.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-2.csv",
+    "type": "file",
+    "size": 109371,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-3.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-3.csv",
+    "type": "file",
+    "size": 109188,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "vaccine-elements.scores.100-cells.10x.rep-4.csv",
+    "path": "data/vaccine-elements.scores.100-cells.10x.rep-4.csv",
+    "type": "file",
+    "size": 109232,
+    "mtime": 1713518802.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 6 more items",
+    "path": "data/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "ablation_summary.csv",
+    "path": "outputs/ablation_summary.csv",
+    "type": "file",
+    "size": 903,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_overview.csv",
+    "path": "outputs/analysis_overview.csv",
+    "type": "file",
+    "size": 278,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "budget_optimization_summary.csv",
+    "path": "outputs/budget_optimization_summary.csv",
+    "type": "file",
+    "size": 5975,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "coverage_by_threshold.csv",
+    "path": "outputs/coverage_by_threshold.csv",
+    "type": "file",
+    "size": 15162,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "element_summary.csv",
+    "path": "outputs/element_summary.csv",
+    "type": "file",
+    "size": 1960,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "final_response_summary.csv",
+    "path": "outputs/final_response_summary.csv",
+    "type": "file",
+    "size": 857,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "iou_matrix.csv",
+    "path": "outputs/iou_matrix.csv",
+    "type": "file",
+    "size": 816,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "key_metrics.json",
+    "path": "outputs/key_metrics.json",
+    "type": "file",
+    "size": 1066,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "runtime_by_sample.csv",
+    "path": "outputs/runtime_by_sample.csv",
+    "type": "file",
+    "size": 433,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "runtime_summary.csv",
+    "path": "outputs/runtime_summary.csv",
+    "type": "file",
+    "size": 108,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 2 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 435620,
+    "mtime": 1773914900.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 5699298,
+    "mtime": 1773914900.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 18502062,
+    "mtime": 1773914900.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1562817,
+    "mtime": 1773914900.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_1_mutation_prevalence.png",
+    "path": "report/images/figure_1_mutation_prevalence.png",
+    "type": "file",
+    "size": 131370,
+    "mtime": 1775132296.0,
+    "exported": true
+  },
+  {
+    "name": "figure_2_element_heatmap.png",
+    "path": "report/images/figure_2_element_heatmap.png",
+    "type": "file",
+    "size": 366040,
+    "mtime": 1775132296.0,
+    "exported": true
+  },
+  {
+    "name": "figure_3_response_distribution.png",
+    "path": "report/images/figure_3_response_distribution.png",
+    "type": "file",
+    "size": 152331,
+    "mtime": 1775132296.0,
+    "exported": true
+  },
+  {
+    "name": "figure_4_coverage_curve.png",
+    "path": "report/images/figure_4_coverage_curve.png",
+    "type": "file",
+    "size": 161971,
+    "mtime": 1775132294.0,
+    "exported": true
+  },
+  {
+    "name": "figure_5_budget_tradeoff.png",
+    "path": "report/images/figure_5_budget_tradeoff.png",
+    "type": "file",
+    "size": 155871,
+    "mtime": 1775132296.0,
+    "exported": true
+  },
+  {
+    "name": "figure_6_iou_matrix.png",
+    "path": "report/images/figure_6_iou_matrix.png",
+    "type": "file",
+    "size": 119333,
+    "mtime": 1775132296.0,
+    "exported": true
+  },
+  {
+    "name": "figure_7_runtime_scaling.png",
+    "path": "report/images/figure_7_runtime_scaling.png",
+    "type": "file",
+    "size": 231958,
+    "mtime": 1775132296.0,
+    "exported": true
+  },
+  {
+    "name": "figure_8_validation.png",
+    "path": "report/images/figure_8_validation.png",
+    "type": "file",
+    "size": 117030,
+    "mtime": 1775132296.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14038,
+    "mtime": 1775132299.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 8710,
+    "mtime": 1775069309.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,8 @@
+metric,value
+median_ratio_N2vsN4_to_N2vsN3,2.668263131144048
+mean_ratio_N2vsN4_to_N2vsN3,8.115300372981505
+fraction_N2vsN4_gt_N2vsN3,0.7216666666666667
+fraction_N2vsN4_gt_2x_N2vsN3,0.5716666666666667
+median_log10_difference,0.4262241406378695
+mean_log10_difference,0.40996776015020625
+spearman_like_rank_corr,0.030430305854379065

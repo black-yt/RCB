@@ -1,0 +1,245 @@
+task_index,task_name,placeholder,annotator,score
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",system,Haining,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",system,Will,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",system,Yasaman,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",real|momentum,Haining,0
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",real|momentum,Will,0
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",real|momentum,Yasaman,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",single-particle|second-quantized,Haining,0
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",single-particle|second-quantized,Will,0
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",single-particle|second-quantized,Yasaman,0
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",degrees_of_freedom,Haining,1
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",degrees_of_freedom,Will,1
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",degrees_of_freedom,Yasaman,1
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",kinetic_symbol,Haining,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",kinetic_symbol,Will,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",kinetic_symbol,Yasaman,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",variable,Haining,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",variable,Yasaman,0
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",order,Haining,1
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",order,Will,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",order,Yasaman,1
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",Note that the sublattice degrees of freedom is suppressed for now and will be stated later,Haining,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",Note that the sublattice degrees of freedom is suppressed for now and will be stated later,Yasaman,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",definition_of_variables,Haining,2
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",definition_of_variables,Will,1
+1,"Construct Kinetic Hamiltonian (continuum version, single-particle)",definition_of_variables,Yasaman,2
+2,Define each term in Kinetic Hamiltonian (continuum version),Energy_dispersion,Haining,2
+2,Define each term in Kinetic Hamiltonian (continuum version),Energy_dispersion,Will,2
+2,Define each term in Kinetic Hamiltonian (continuum version),Energy_dispersion,Yasaman,2
+2,Define each term in Kinetic Hamiltonian (continuum version),parabolic|Dirac|cos,Haining,2
+2,Define each term in Kinetic Hamiltonian (continuum version),parabolic|Dirac|cos,Will,0
+2,Define each term in Kinetic Hamiltonian (continuum version),parabolic|Dirac|cos,Yasaman,2
+2,Define each term in Kinetic Hamiltonian (continuum version),electrons|holes,Haining,0
+2,Define each term in Kinetic Hamiltonian (continuum version),electrons|holes,Will,0
+2,Define each term in Kinetic Hamiltonian (continuum version),electrons|holes,Yasaman,0
+2,Define each term in Kinetic Hamiltonian (continuum version),"In addition, a shift of {momentum_shift} in the momentum ${k_symbol}$ for {shifted_Ek}, respectively.",Haining,2
+2,Define each term in Kinetic Hamiltonian (continuum version),"In addition, a shift of {momentum_shift} in the momentum ${k_symbol}$ for {shifted_Ek}, respectively.",Will,2
+2,Define each term in Kinetic Hamiltonian (continuum version),"In addition, a shift of {momentum_shift} in the momentum ${k_symbol}$ for {shifted_Ek}, respectively.",Yasaman,2
+2,Define each term in Kinetic Hamiltonian (continuum version),momentum_shift,Haining,1
+2,Define each term in Kinetic Hamiltonian (continuum version),momentum_shift,Will,0
+2,Define each term in Kinetic Hamiltonian (continuum version),momentum_shift,Yasaman,1
+2,Define each term in Kinetic Hamiltonian (continuum version),k_symbol,Haining,2
+2,Define each term in Kinetic Hamiltonian (continuum version),k_symbol,Will,2
+2,Define each term in Kinetic Hamiltonian (continuum version),k_symbol,Yasaman,2
+2,Define each term in Kinetic Hamiltonian (continuum version),shifted_Ek,Haining,0
+2,Define each term in Kinetic Hamiltonian (continuum version),shifted_Ek,Will,1
+2,Define each term in Kinetic Hamiltonian (continuum version),shifted_Ek,Yasaman,1
+2,Define each term in Kinetic Hamiltonian (continuum version),r_symbol,Haining,2
+2,Define each term in Kinetic Hamiltonian (continuum version),r_symbol,Will,2
+2,Define each term in Kinetic Hamiltonian (continuum version),r_symbol,Yasaman,2
+2,Define each term in Kinetic Hamiltonian (continuum version),kinetic_symbol,Haining,2
+2,Define each term in Kinetic Hamiltonian (continuum version),kinetic_symbol,Will,2
+2,Define each term in Kinetic Hamiltonian (continuum version),kinetic_symbol,Yasaman,2
+2,Define each term in Kinetic Hamiltonian (continuum version),definition_of_variables,Haining,2
+2,Define each term in Kinetic Hamiltonian (continuum version),definition_of_variables,Will,2
+2,Define each term in Kinetic Hamiltonian (continuum version),definition_of_variables,Yasaman,1
+3,Construct Potential Hamiltonian (continuum version),potential_symbol,Haining,2
+3,Construct Potential Hamiltonian (continuum version),potential_symbol,Will,2
+3,Construct Potential Hamiltonian (continuum version),potential_symbol,Yasaman,2
+3,Construct Potential Hamiltonian (continuum version),real|momentum,Haining,0
+3,Construct Potential Hamiltonian (continuum version),real|momentum,Will,0
+3,Construct Potential Hamiltonian (continuum version),real|momentum,Yasaman,0
+3,Construct Potential Hamiltonian (continuum version),single-particle|second-quantized,Haining,0
+3,Construct Potential Hamiltonian (continuum version),single-particle|second-quantized,Will,0
+3,Construct Potential Hamiltonian (continuum version),single-particle|second-quantized,Yasaman,2
+3,Construct Potential Hamiltonian (continuum version),diagonal_potential,Haining,0
+3,Construct Potential Hamiltonian (continuum version),diagonal_potential,Will,1
+3,Construct Potential Hamiltonian (continuum version),diagonal_potential,Yasaman,0
+3,Construct Potential Hamiltonian (continuum version),potential_degrees_of_freedom,Haining,1
+3,Construct Potential Hamiltonian (continuum version),potential_degrees_of_freedom,Will,1
+3,Construct Potential Hamiltonian (continuum version),potential_degrees_of_freedom,Yasaman,2
+3,Construct Potential Hamiltonian (continuum version),offdiagonal_potential,Haining,2
+3,Construct Potential Hamiltonian (continuum version),offdiagonal_potential,Will,2
+3,Construct Potential Hamiltonian (continuum version),offdiagonal_potential,Yasaman,2
+3,Construct Potential Hamiltonian (continuum version),definition_of_variables,Haining,2
+3,Construct Potential Hamiltonian (continuum version),definition_of_variables,Will,2
+3,Construct Potential Hamiltonian (continuum version),definition_of_variables,Yasaman,1
+4,Define each term in Potential Hamiltonian (continuum version),potential_symbol,Haining,2
+4,Define each term in Potential Hamiltonian (continuum version),potential_symbol,Will,2
+4,Define each term in Potential Hamiltonian (continuum version),potential_symbol,Yasaman,0
+4,Define each term in Potential Hamiltonian (continuum version),Potential_variables,Haining,1
+4,Define each term in Potential Hamiltonian (continuum version),Potential_variables,Will,1
+4,Define each term in Potential Hamiltonian (continuum version),Potential_variables,Yasaman,1
+4,Define each term in Potential Hamiltonian (continuum version),expression_diag,Haining,1
+4,Define each term in Potential Hamiltonian (continuum version),expression_diag,Will,2
+4,Define each term in Potential Hamiltonian (continuum version),expression_diag,Yasaman,1
+4,Define each term in Potential Hamiltonian (continuum version),expression_offdiag,Haining,1
+4,Define each term in Potential Hamiltonian (continuum version),expression_offdiag,Will,2
+4,Define each term in Potential Hamiltonian (continuum version),expression_offdiag,Yasaman,2
+4,Define each term in Potential Hamiltonian (continuum version),definition_of_variables,Haining,2
+4,Define each term in Potential Hamiltonian (continuum version),definition_of_variables,Will,2
+4,Define each term in Potential Hamiltonian (continuum version),definition_of_variables,Yasaman,1
+5,"Convert from single-particle to second-quantized form, return in matrix",real|momentum,Haining,2
+5,"Convert from single-particle to second-quantized form, return in matrix",real|momentum,Will,2
+5,"Convert from single-particle to second-quantized form, return in matrix",real|momentum,Yasaman,2
+5,"Convert from single-particle to second-quantized form, return in matrix",nonint_symbol,Haining,2
+5,"Convert from single-particle to second-quantized form, return in matrix",nonint_symbol,Will,2
+5,"Convert from single-particle to second-quantized form, return in matrix",nonint_symbol,Yasaman,2
+5,"Convert from single-particle to second-quantized form, return in matrix",kinetic_symbol,Haining,2
+5,"Convert from single-particle to second-quantized form, return in matrix",kinetic_symbol,Will,1
+5,"Convert from single-particle to second-quantized form, return in matrix",kinetic_symbol,Yasaman,2
+5,"Convert from single-particle to second-quantized form, return in matrix",potential_symbol,Haining,2
+5,"Convert from single-particle to second-quantized form, return in matrix",potential_symbol,Will,1
+5,"Convert from single-particle to second-quantized form, return in matrix",potential_symbol,Yasaman,2
+5,"Convert from single-particle to second-quantized form, return in matrix",$r$|$k$,Haining,2
+5,"Convert from single-particle to second-quantized form, return in matrix",$r$|$k$,Will,2
+5,"Convert from single-particle to second-quantized form, return in matrix",$r$|$k$,Yasaman,2
+5,"Convert from single-particle to second-quantized form, return in matrix",second_nonint_symbol,Haining,0
+5,"Convert from single-particle to second-quantized form, return in matrix",second_nonint_symbol,Will,0
+5,"Convert from single-particle to second-quantized form, return in matrix",second_nonint_symbol,Yasaman,2
+5,"Convert from single-particle to second-quantized form, return in matrix",definition_of_variables,Haining,2
+5,"Convert from single-particle to second-quantized form, return in matrix",definition_of_variables,Will,2
+5,"Convert from single-particle to second-quantized form, return in matrix",definition_of_variables,Yasaman,1
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",second_nonint_symbol,Haining,2
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",second_nonint_symbol,Will,0
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",second_nonint_symbol,Yasaman,2
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",matrix_element_symbol,Haining,2
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",matrix_element_symbol,Will,0
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",matrix_element_symbol,Yasaman,2
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",basis_symbol,Haining,2
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",basis_symbol,Will,2
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",basis_symbol,Yasaman,2
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",definition_of_variables,Haining,2
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",definition_of_variables,Will,2
+6,"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",definition_of_variables,Yasaman,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),real_creation_op,Haining,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),real_creation_op,Will,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),real_creation_op,Yasaman,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),momentum_creation_op,Haining,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),momentum_creation_op,Will,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),momentum_creation_op,Yasaman,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),definition_of_Fourier_Transformation,Haining,0
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),definition_of_Fourier_Transformation,Will,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),definition_of_Fourier_Transformation,Yasaman,0
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),real_variable,Haining,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),real_variable,Will,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),real_variable,Yasaman,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),entire_real|first_Brillouin_Zone,Haining,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),entire_real|first_Brillouin_Zone,Yasaman,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),second_nonint_symbol,Haining,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),second_nonint_symbol,Will,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),second_nonint_symbol,Yasaman,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),definition_of_variables,Haining,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),definition_of_variables,Will,2
+7,Convert noninteracting Hamiltonian in real space to momentum space (continuum version),definition_of_variables,Yasaman,2
+8,Particle-hole transformation,hole_op,Haining,2
+8,Particle-hole transformation,hole_op,Will,2
+8,Particle-hole transformation,hole_op,Yasaman,2
+8,Particle-hole transformation,particle_op,Haining,2
+8,Particle-hole transformation,particle_op,Will,2
+8,Particle-hole transformation,particle_op,Yasaman,2
+8,Particle-hole transformation,particle_creation_op,Haining,2
+8,Particle-hole transformation,particle_creation_op,Will,2
+8,Particle-hole transformation,particle_creation_op,Yasaman,2
+8,Particle-hole transformation,hole_creation_op,Haining,2
+8,Particle-hole transformation,hole_creation_op,Will,2
+8,Particle-hole transformation,hole_creation_op,Yasaman,0
+8,Particle-hole transformation,particle_annihilation_op,Haining,2
+8,Particle-hole transformation,particle_annihilation_op,Will,2
+8,Particle-hole transformation,particle_annihilation_op,Yasaman,2
+8,Particle-hole transformation,hole_annihilation_op,Haining,2
+8,Particle-hole transformation,hole_annihilation_op,Will,2
+8,Particle-hole transformation,hole_annihilation_op,Yasaman,0
+8,Particle-hole transformation,second_nonint_symbol,Haining,2
+8,Particle-hole transformation,second_nonint_symbol,Will,2
+8,Particle-hole transformation,second_nonint_symbol,Yasaman,2
+8,Particle-hole transformation,definition_of_variables,Haining,2
+8,Particle-hole transformation,definition_of_variables,Will,2
+8,Particle-hole transformation,definition_of_variables,Yasaman,1
+9,Simplify the Hamiltonian in the particle-hole basis,second_nonint_symbol,Haining,2
+9,Simplify the Hamiltonian in the particle-hole basis,second_nonint_symbol,Will,2
+9,Simplify the Hamiltonian in the particle-hole basis,second_nonint_symbol,Yasaman,2
+9,Simplify the Hamiltonian in the particle-hole basis,hole_op,Haining,2
+9,Simplify the Hamiltonian in the particle-hole basis,hole_op,Will,2
+9,Simplify the Hamiltonian in the particle-hole basis,hole_op,Yasaman,2
+9,Simplify the Hamiltonian in the particle-hole basis,index_1,Haining,2
+9,Simplify the Hamiltonian in the particle-hole basis,index_1,Will,2
+9,Simplify the Hamiltonian in the particle-hole basis,index_1,Yasaman,2
+9,Simplify the Hamiltonian in the particle-hole basis,index_2,Haining,2
+9,Simplify the Hamiltonian in the particle-hole basis,index_2,Will,2
+9,Simplify the Hamiltonian in the particle-hole basis,index_2,Yasaman,2
+9,Simplify the Hamiltonian in the particle-hole basis,op,Haining,2
+9,Simplify the Hamiltonian in the particle-hole basis,op,Will,1
+9,Simplify the Hamiltonian in the particle-hole basis,op,Yasaman,2
+9,Simplify the Hamiltonian in the particle-hole basis,Ham_op,Haining,2
+9,Simplify the Hamiltonian in the particle-hole basis,Ham_op,Will,2
+9,Simplify the Hamiltonian in the particle-hole basis,Ham_op,Yasaman,2
+9,Simplify the Hamiltonian in the particle-hole basis,definition_of_variables,Haining,1
+9,Simplify the Hamiltonian in the particle-hole basis,definition_of_variables,Will,2
+9,Simplify the Hamiltonian in the particle-hole basis,definition_of_variables,Yasaman,2
+10,Construct interaction Hamiltonian (momentum space),second_int_symbol,Haining,2
+10,Construct interaction Hamiltonian (momentum space),second_int_symbol,Will,2
+10,Construct interaction Hamiltonian (momentum space),second_int_symbol,Yasaman,2
+10,Construct interaction Hamiltonian (momentum space),index_of_operator,Haining,0
+10,Construct interaction Hamiltonian (momentum space),index_of_operator,Will,0
+10,Construct interaction Hamiltonian (momentum space),index_of_operator,Yasaman,0
+10,Construct interaction Hamiltonian (momentum space),momentum,Haining,0
+10,Construct interaction Hamiltonian (momentum space),momentum,Will,0
+10,Construct interaction Hamiltonian (momentum space),momentum,Yasaman,0
+10,Construct interaction Hamiltonian (momentum space),"For each operator, the total momentum is the sum of moire reciprocal lattice $b_i$ and momentum with in the first BZ $k_i$",Haining,2
+10,Construct interaction Hamiltonian (momentum space),"For each operator, the total momentum is the sum of moire reciprocal lattice $b_i$ and momentum with in the first BZ $k_i$",Yasaman,2
+10,Construct interaction Hamiltonian (momentum space),interaction,Haining,2
+10,Construct interaction Hamiltonian (momentum space),interaction,Will,2
+10,Construct interaction Hamiltonian (momentum space),interaction,Yasaman,2
+10,Construct interaction Hamiltonian (momentum space),int_form,Haining,2
+10,Construct interaction Hamiltonian (momentum space),int_form,Will,2
+10,Construct interaction Hamiltonian (momentum space),int_form,Yasaman,2
+10,Construct interaction Hamiltonian (momentum space),normalization_factor,Haining,2
+10,Construct interaction Hamiltonian (momentum space),normalization_factor,Will,2
+10,Construct interaction Hamiltonian (momentum space),normalization_factor,Yasaman,2
+10,Construct interaction Hamiltonian (momentum space),op,Haining,2
+10,Construct interaction Hamiltonian (momentum space),op,Yasaman,2
+10,Construct interaction Hamiltonian (momentum space),definition_of_variables,Haining,2
+10,Construct interaction Hamiltonian (momentum space),definition_of_variables,Will,2
+10,Construct interaction Hamiltonian (momentum space),definition_of_variables,Yasaman,2
+11,Wick's theorem,second_int_symbol,Haining,2
+11,Wick's theorem,second_int_symbol,Will,2
+11,Wick's theorem,second_int_symbol,Yasaman,2
+11,Wick's theorem,Hartree_Fock_symbol,Haining,2
+11,Wick's theorem,Hartree_Fock_symbol,Will,2
+11,Wick's theorem,Hartree_Fock_symbol,Yasaman,2
+11,Wick's theorem,definition_of_variables,Haining,2
+11,Wick's theorem,definition_of_variables,Will,2
+11,Wick's theorem,definition_of_variables,Yasaman,2
+12,Extract quadratic term,Hartree_Fock_term_symbol,Haining,2
+12,Extract quadratic term,Hartree_Fock_term_symbol,Will,2
+12,Extract quadratic term,Hartree_Fock_term_symbol,Yasaman,2
+12,Extract quadratic term,bilinear_op,Haining,2
+12,Extract quadratic term,bilinear_op,Will,2
+12,Extract quadratic term,bilinear_op,Yasaman,2
+12,Extract quadratic term,Hartree_Fock_second_quantized_symbol,Haining,2
+12,Extract quadratic term,Hartree_Fock_second_quantized_symbol,Will,2
+12,Extract quadratic term,Hartree_Fock_second_quantized_symbol,Yasaman,2
+12,Extract quadratic term,definition_of_variables,Haining,2
+12,Extract quadratic term,definition_of_variables,Will,2
+12,Extract quadratic term,definition_of_variables,Yasaman,2
+13,Swap the index to combine Hartree and Fock terms,Hartree_Fock_second_quantized_symbol,Haining,2
+13,Swap the index to combine Hartree and Fock terms,Hartree_Fock_second_quantized_symbol,Will,2
+13,Swap the index to combine Hartree and Fock terms,Hartree_Fock_second_quantized_symbol,Yasaman,2
+13,Swap the index to combine Hartree and Fock terms,expected_value,Haining,2
+13,Swap the index to combine Hartree and Fock terms,expected_value,Yasaman,2
+13,Swap the index to combine Hartree and Fock terms,expression_Hartree_1,Haining,1
+13,Swap the index to combine Hartree and Fock terms,expression_Hartree_1,Yasaman,1
+13,Swap the index to combine Hartree and Fock terms,expression_Hartree_2,Haining,1
+13,Swap the index to combine Hartree and Fock terms,expression_Hartree_2,Yasaman,1

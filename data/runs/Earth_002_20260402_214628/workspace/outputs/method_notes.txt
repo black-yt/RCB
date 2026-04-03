@@ -1,0 +1,36 @@
+Composite mangrove climate-risk workflow used in this workspace
+=========================================================
+
+1. Mangrove sample:
+   - Read the provided 10% Global Mangrove Watch sample directly from the GeoPackage.
+   - Decode GeoPackage point geometries into longitude/latitude.
+
+2. Relative sea-level rise (SLR):
+   - Read AR6 regional relative SLR products for SSP2-4.5, SSP3-7.0, and SSP5-8.5.
+   - Use the median quantile (0.5) and summarize 2020-2100 mean rates.
+   - Assign the nearest AR6 coastal SLR location to each mangrove sample point and country centroid.
+
+3. Tropical cyclone (TC) baseline hazard:
+   - Read the provided historical TC track-point dataset.
+   - Convert each track point into a local exposure contribution using a wind-squared Gaussian kernel.
+   - Aggregate nearby track contributions around mangrove points and country centroids.
+
+4. TC regime-shift proxy:
+   - Because no future TC projection file is provided in the workspace, apply a scenario-specific,
+     basin-level multiplier informed by the supplied related work: stronger increases around the
+     Atlantic / East Pacific / Americas, modest increases in the Indian basin, and relative decreases
+     around the western Pacific / Oceania.
+
+5. Composite index:
+   - Normalize shifted TC exposure and SLR exposure to [0,1].
+   - Combine them with equal weights: Risk = 0.5 * TC_norm + 0.5 * SLR_norm.
+
+6. Ecosystem-service linkage:
+   - Use the provided country dataset to combine risk with mangrove area, population benefit,
+     property benefit, and risk metrics.
+   - Create a scenario-specific national priority score that blends hazard and service magnitude.
+
+Important limitation:
+---------------------
+This is a transparent comparative-risk implementation constrained to the supplied inputs. It should be
+interpreted as a task-specific screening framework rather than a full process-based forecast.

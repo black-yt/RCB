@@ -1,0 +1,20 @@
+{
+  "binary_best_model": "rf",
+  "binary_best_macro_f1": 0.99605335709899,
+  "multiclass_macro_f1": 0.6020205681033369,
+  "unknown_attack_macro_f1_mean": 0.8431333270247273,
+  "few_shot_macro_f1": {
+    "1": 0.29025469622418903,
+    "5": 0.3531638434895212,
+    "10": 0.3069069569794308
+  },
+  "generated_figures": [
+    "report/images/data_overview.png",
+    "report/images/feature_embedding.png",
+    "report/images/binary_results.png",
+    "report/images/binary_confusion.png",
+    "report/images/multiclass_confusion.png",
+    "report/images/unknown_attack_results.png",
+    "report/images/few_shot_results.png"
+  ]
+}

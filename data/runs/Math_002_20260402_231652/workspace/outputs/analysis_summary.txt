@@ -1,0 +1,43 @@
+Hybrid MAPF analysis summary
+============================
+
+Dataset coverage:
+- empty: 200 maps
+- maze: 400 maps
+- random_large: 400 maps
+- random_medium: 400 maps
+- random_small: 400 maps
+- random_small_top: 100 maps
+- room: 200 maps
+- warehouse: 400 maps
+
+Method summary by family:
+- empty:
+  - hybrid_marl_lns: success=0.667, runtime=0.0450s, mean_cost=396.333
+  - prioritized_planning: success=0.000, runtime=0.0185s, mean_cost=397.667
+- maze:
+  - hybrid_marl_lns: success=1.000, runtime=0.0734s, mean_cost=319.333
+  - prioritized_planning: success=0.000, runtime=0.0305s, mean_cost=309.0
+- random_large:
+  - hybrid_marl_lns: success=1.000, runtime=0.1359s, mean_cost=858.0
+  - prioritized_planning: success=0.667, runtime=0.0749s, mean_cost=860.333
+- random_medium:
+  - hybrid_marl_lns: success=1.000, runtime=0.0198s, mean_cost=319.333
+  - prioritized_planning: success=0.667, runtime=0.0096s, mean_cost=319.667
+- random_small:
+  - hybrid_marl_lns: success=1.000, runtime=0.0011s, mean_cost=31.333
+  - prioritized_planning: success=1.000, runtime=0.0006s, mean_cost=32.0
+- random_small_top:
+  - hybrid_marl_lns: success=1.000, runtime=0.0011s, mean_cost=33.667
+  - prioritized_planning: success=1.000, runtime=0.0006s, mean_cost=35.0
+- room:
+  - hybrid_marl_lns: success=0.667, runtime=0.4529s, mean_cost=486.0
+  - prioritized_planning: success=0.000, runtime=0.0758s, mean_cost=466.0
+- warehouse:
+  - hybrid_marl_lns: success=1.000, runtime=0.0164s, mean_cost=345.667
+  - prioritized_planning: success=0.333, runtime=0.0084s, mean_cost=345.0
+
+Interpretation:
+- The hybrid method emulates a MARL-guided early conflict forecast by prioritizing agents whose independently planned rollouts create the most congestion, then performs LNS-style repair rounds before falling back to reservation-based planning.
+- The baseline relies only on prioritized planning, so differences in success or cost isolate the value of congestion-aware ordering and local repair.
+- These experiments use synthetic start-goal assignments sampled from the provided occupancy grids because explicit agent-task files are not present in the workspace inputs.

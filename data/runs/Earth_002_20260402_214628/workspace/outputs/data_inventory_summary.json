@@ -1,0 +1,21 @@
+{
+  "workspace": "/mnt/shared-storage-user/yetianlin/ResearchClawBench/workspaces/Earth_002_20260402_214628",
+  "input_files": {
+    "mangroves": "data/mangroves/gmw_v4_ref_smpls_qad_v12.gpkg",
+    "countries": "data/ecosystem/UCSC_CWON_countrybounds.gpkg",
+    "tc": "data/tc/tracks_mit_mpi-esm1-2-hr_historical_reduced.nc",
+    "slr": {
+      "ssp245": "data/slr/total_ssp245_medium_confidence_rates.nc",
+      "ssp370": "data/slr/total_ssp370_medium_confidence_rates.nc",
+      "ssp585": "data/slr/total_ssp585_medium_confidence_rates.nc"
+    }
+  },
+  "mangrove_sample_points": 100000,
+  "implied_full_sample_points": 1000000,
+  "country_rows": 121,
+  "scenarios": [
+    "ssp245",
+    "ssp370",
+    "ssp585"
+  ]
+}

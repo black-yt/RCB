@@ -1,0 +1,22 @@
+{
+  "num_nodes": 121910,
+  "feat_dim": 40,
+  "num_classes": 10,
+  "benign_class": 0,
+  "known_attacks": [
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "unknown_attacks": [
+    1,
+    4
+  ],
+  "num_train": 340,
+  "num_val": 24376,
+  "num_test": 25418
+}

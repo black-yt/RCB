@@ -1,0 +1,6 @@
+,IQR_outliers,Zscore_outliers,Physical_violations,Rolling_anomalies,Total_flagged,Flag_pct
+electricity,0,0,0,0,0,0.0
+heat,0,0,0,0,0,0.0
+cooling,0,0,0,0,0,0.0
+pv,0,0,0,0,0,0.0
+ghg,0,0,0,0,0,0.0

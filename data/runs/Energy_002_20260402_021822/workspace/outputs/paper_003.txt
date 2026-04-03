@@ -1,0 +1,1226 @@
+ETH Library
+
+Adverse effects of rising interest
+rates on sustainable energy
+transitions
+Journal Article
+Author(s):
+Schmidt, Tobias
+
+; Steffen, Bjarne; Egli, Florian Manuel
+
+; Pahle, Michael; Tietjen, Oliver; Edenhofer, Ottmar
+
+Publication date:
+2019-09
+Permanent link:
+https://doi.org/10.3929/ethz-b-000371742
+Rights / license:
+In Copyright - Non-Commercial Use Permitted
+Originally published in:
+Nature Sustainability 2(9), https://doi.org/10.1038/s41893-019-0375-2
+Funding acknowledgement:
+730403 - Innovation pathways, strategies and policies for the Low-Carbon Transition in Europe (SBFI)
+
+This page was generated automatically upon download from the ETH Zurich Research Collection.
+For more information, please consult the Terms of use.
+
+D GESS
+
+Energy Politics Group
+Adverse effects of rising interest
+rates on sustainable energy
+transitions
+Tobias S. Schmidt1*, Bjarne Steffen1*, Florian Egli1*,
+Michael Pahle2, Oliver Tietjen2,4, Ottmar Edenhofer2,3,4
+Published in Nature Sustainability
+Please cite article as: Schmidt, T.S., Steffen, B., Egli, F. et al.
+Adverse effects of rising interest rates on sustainable energy
+transitions. Nat Sustain 2, 879–885 (2019).
+https://doi.org/10.1038/s41893-019-0375-2
+
+Abstract:
+Increasing the use of renewable energy (RE) is a key enabler of
+sustainable energy transitions. While the cost of RE have substantially
+declined in the past, here we show that rising interest rates can reverse
+the trend of decreasing RE costs, particularly in Europe with its
+historically low interest rates. In Germany, interest rates recovering to
+pre-financial crisis levels within 5 years could add 11% and 25% to the
+levelized cost (LCOE) of solar PV and wind onshore, respectively, with
+financing costs accounting for roughly one-third of total LCOE. As fossil
+fuel-based electricity costs are much less and potentially even
+negatively affected by rising IRs, the viability of RE investments would
+be markedly deteriorated. Based on these findings, we argue that rising
+interest rates could jeopardize the sustainable energy transition and
+propose a self-adjusting thermostatic policy strategy to safeguard
+against rising interest rates.
+
+The Energy Politics Group (EPG) within the Department of Humanities, Social, and
+Political Sciences of ETH Zurich investigates questions related to the governance of
+technological change in the energy sector.
+
+1 Energy Politics Group, ETH Zurich
+2 Potsdam-Institute for Climate Impact Research
+3 Mercator Research Institute on Global Commons and Climate Change
+4 TU Berlin
+
+* tobiasschmidt@ethz.ch * bjarne.steffen@gess.ethz.ch * florian.egli@gess.ethz.ch
+
+Replacing fossil fuel (FF)-based with renewable energy (RE)-based electricity generation technologies
+has multiple societal benefits, such as climate change mitigation or improved air quality and thus
+health1–3. Doubling the global share of renewable energy is therefore one of the targets of Sustainable
+Development Goal (SDG) 7 of the 2030 Agenda for Sustainable Development, a goal whose attainment
+is also highly important to reach several other SDGs4. This particularly holds for climate action (SDG
+13): all emission pathways that reach the Paris Agreement’s target of limiting global warming to well
+below 2°C assume strong increases of RE5,6.
+Achieving such a sustainable energy transition has become considerably easier since RE, especially
+solar photovoltaics (PV) and wind, have experienced substantial cost reductions in the past decades7.
+This dynamic has been enabled largely by RE deployment policies, particularly in countries of the
+European Union, a front-runner in large-scale RE deployment. These policies induced technological
+and organizational innovation and contributed to the formation of a global RE industry that exploited
+economies of scale in production and thereby allowed RE technologies to travel down their cost
+learning curves8,9. Today, in many European countries, the levelized cost of electricity (LCOE) of RE
+investments are comparable with the marginal cost of gas- and coal-based electricity plants 7,10. In line
+with these developments, recent auctions for RE in Europe were concluded at wholesale market price
+levels. Since April 2017 such subsidy-free auction results have appeared among others in Denmark,
+Germany the Netherlands, Spain, Portugal and Sweden11. In fall 2018, for the first time, a large PV plant
+that purely relies on income from the wholesale electricity market was commissioned in Spain12. By
+mid-2019, similar projects were announced and constructed in Germany12,13.
+These developments have beguiled scholars, industry experts, policy makers, and the media into
+believing that the trend of decreasing RE costs is irreversible14,15 and claiming that the times of
+subsidizing RE are over11,16–18. As a result, countries particularly in the EU – yet again being front
+runners, though in reverse direction – are considering abandoning RE subsidies and leaving RE
+deployment to market forces19,20 and the EU Emissions Trading System (ETS) alone. While phase-outs
+in Europe have not been implemented yet, the trend towards phasing out RE deployment policies is
+apparent from the EU’s recent decision no longer to impose legally binding RE targets and respective
+deployment policies in its member states.
+However, it should not be taken for granted that the strong downward trend of RE costs observed in
+the past is going to continue. New data for Germany shows that the past RE cost reductions do not
+only stem from technological innovation, but to a substantial part also from improved financing
+conditions for RE power plants, particularly lowered long-term interest rates21. Lower interest rates
+(IR) translate directly into lower cost of debt and equity21,22, which lowers the LCOE of capital intensive
+RE investments23,24. Thus far, the potential effects of rising IRs on the viability of RE investments
+unexplored.
+To address this gap, first, we analyse the effects of IR increases on the LCOE of large-scale solar PV and
+wind-onshore investments, finding that their LCOE might increase by 11% (PV) and 25% (Wind), should
+IRs reach pre-financial crisis levels over the next 5 years. Second, we compare these LCOE with the
+marginal cost of installed FF plants, as these typically set the wholesale market prices. We find that the
+viability of RE investments solely relying on income from the wholesale market is drastically reduced
+in case of rising IRs. Third, based on these findings, we argue that solely relying on wholesale markets
+and the EU ETS is a risky strategy and propose an alternative policy strategy, relying on RE auctions in
+the short-run and an ETS price floor in the longer-run.
+
+2
+
+Interest rate effects on the cost of renewable energy
+The low interest rates observed in recent years in Europe (and beyond) are largely a consequence of
+monetary policy: In the wake of the financial crisis of 2007–2008, the European Central Bank lowered
+overnight interest rates and in 2015 started purchasing large amounts of sovereign and corporate
+bonds – an approach termed ‘quantitative easing’. This contributed to low levels of long-term IR (cf.
+Figure 1a), allowing RE plants to borrow capital at very low rates21. While long-term IR in Europe are
+still historically low, financial expert estimates suggest that they might rise again, as they already have
+in the US since 201625.
+To quantify the effect of possible future IR increases, we calculate the levelized cost of electricity
+(LCOE) for solar photovoltaics (PV) and onshore wind plants in Germany in three steps (see methods
+for details). First, we use historical government bond yields to develop three future interest rate
+scenarios from 2019 to 2023 (Figure 1a). Second, we project technology- and time-specific future costs
+of capital (CoC) in each of the three scenarios. Third, we calculate LCOEs for each scenario using the
+scenario-specific CoC (Figure 1b) and derive the part of the LCOE attributable to financing costs (Figure
+1c).
+We assume that the cost of debt is composed of a long-term IR component (yield of 10-year
+government bond) and a debt margin. We assume that the cost of equity equals the cost of debt plus
+an equity premium. To represent the changes in CoC due to IR changes, we vary the long-term IR
+component according to the interest rate scenario while using technology-specific debt margins and
+equity premiums from Egli et al.21. The three interest rate scenarios are (cf. Figure 1a): First, a “flat”
+scenario, where IR remain at the 2018 average (0.49%). Second, a “moderate” scenario, where IR
+increase at the speed at which they decreased in the post-crisis period to attain 2.15% in 2023. Third,
+an “extreme” scenario, where IR increase at twice the speed of the post-crisis decrease to attain 4.29%
+in 2023. Note that the “moderate” scenario is in line with the 2018 forecasts of major financial
+institutions (see methods).
+
+3
+
+a. Long-term interest rate level in Germany (Yield of 10 year government bond)
+Yield (%)
+6.0
+5.5
+5.0
+4.5
+4.0
+3.5
+3.0
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+-0.5
+1998
+
+Pre-crisis: constant trend
+(10 years)
+
+Post-crisis: downward trend
+(10 years)
+
+Scenarios
+(5 years)
+
+Pre-crisis 10-years average
+2018 average
+Flat
+
+2000
+
+2002
+
+2004
+
+b. Levelized cost of electricity (LCOE)
+
+2006
+
+2008
+
+2010
+
+2012
+
+2014
+
+2016
+
+2018
+
+2020
+
+2022
+
+c. Share of financing cost in LCOE by scenario
+Flat
+
+LCOE (€/MWh)
+60
+Solar PV
+
+Moderate
+
+Extreme
+
+LCOE (€/MWh)
+60
+50
+
+55
+
+50
+-2%
+
+Solar PV
+
+12%
++11%
+
+12%
+
+40
+
+20
+
+88%
+
+89%
+
+0
+2018
+
+2022
+
+LCOE (€/MWh)
+60
+Wind onshore
+
+88%
+
+81%
+
+88%
+
+72%
+
+10
+
+-10%
+
+2020
+
+28%
+
+12%
+
+30
+
+45
+
+40
+2018
+
+19%
+
+11%
+
+2020
+
+2022 2018
+
+2020
+
+2022
+
+2018
+
+2020
+
+LCOE (€/MWh)
+60
+
++25%
+
++9%
+
+50
+-2%
+
+45
+
+Wind onshore
+
+50
+55
+
+2022
+
+40
+
+34%
+16%
+
+15%
+
+16%
+
+24%
+
+16%
+
+84%
+
+85%
+
+84%
+
+76%
+
+84%
+
+30
+20
+
+66%
+
+10
+40
+2018
+
+2020
+
+2022
+
+0
+2018
+
+2020
+
+2022 2018
+
+2020
+
+2022
+
+2018
+
+Extreme scenario
+
+Financing cost (by scenario)
+
+Moderate scenario
+
+Capital and operating expenditures
+
+2020
+
+2022
+
+Flat scenario
+
+Fig 1: Interest rate dynamics and their effects on the levelised cost of renewable energy-based electricity generation. Fig 1a:
+Historical development of long-term interest rates (black solid line) in Germany and future scenarios. IR recovery scenarios
+are based on historic estimates. The moderate scenario (green dashed line) features the same upward slope as the downward
+slope of the post-crisis trend. The extreme scenario (red dashed line) doubles that slope. The flat scenario (blue dashed line)
+assumes constant interest rates. b: Solar PV (top) and on-shore wind (bottom) LCOE developments for 2018 and five years
+
+4
+
+into the future in the three IR scenarios (using the same colour codes as in a); c: Share of financing cost in the LCOE of solar
+PV (top) and wind (bottom) across all three scenarios (using the same colour coding as in a and b).
+
+Our results (Figure 1b) show that, in the moderate scenario, the LCOE-reducing learning curve effects
+of solar PV are almost entirely offset by the LCOE-increasing effects of the rising IR. In the extreme IR
+recovery scenario, the LCOE rise by 11%, with financing cost contributing up to 28% to the LCOE (Figure
+1c). For wind, the IR effects are even larger (Figure 1b), outweighing the learning effects and resulting
+in an increased LCOE of 9% (moderate) and 25% (extreme recovery scenario). In this scenario, financing
+costs contribute over one third of the LCOE (Figure 1c). In other words, while the window of extremely
+low IR helped RE to become cheap, rising IR could mean that the decreasing cost trend of RE might be
+reversed – also because cost reductions along the learning curve through continued incremental
+technological innovation are becoming less important (especially in the case of wind).
+Viability of investments in subsidy-free renewables
+To realize the sustainable energy transition in time to meet the Paris targets and SDG 13, key
+scenarios5,6 show that is necessary that RE are deployed rapidly, displacing FF-based electricity in the
+mid- to long-term, and eventually stranding FF-assets. For this to happen, investments in subsidy-free
+new RE capacity (relying on income from the wholesale market) need to remain attractive. To this end,
+the LCOE of new RE plants need to be lower or equal to the short-run marginal costs of the pricesetting plants in wholesale markets. Whether rising IRs deteriorate the viability of subsidy-free RE
+investments therefore also depends on the effect of IR hikes on the short-run marginal costs of pricesetting plants, i.e., typically FF plants using lignite, hard coal, or natural gas26 (for more details see
+methods).
+Theoretical analysis suggests that variations of the IR could have the following effects on commodity
+prices30–35: First, higher IRs could increase the supply of commodities since investors earn more interest
+with the revenues they receive from selling resources compared to leaving them in the ground. Second,
+commodity supply could also be increased because holding commodity inventories has higher
+opportunity costs and thus inventory levels are reduced. A related point is that speculators leave
+commodity markets if the IR is high since alternative investments offer higher returns at low risk
+(treasury bills). Empirical estimates tend to support theoretical findings that higher interest rates
+reduce commodity prices in general and energy commodities (most studies focus on oil) in particular,
+although estimated parameters are for the most part not significant or small32,36–40. For this article, the
+impact on natural gas and hard coal prices is decisive. To the best of our knowledge, there is no
+estimate for coal. The only estimate for natural gas37 finds a negative relationship, but estimated
+parameters are not significant. Further, one study38 also considers a fuel commodity price index that
+includes oil, gas and coal, detecting a negative impact of an IR increase on this index. The difficulties
+to find evidence for an IR effect on commodities might be explained by complex interactions between
+the IR and commodity prices34. Not only do shocks of the IR affect commodity prices, but exogenous
+shocks of commodity prices also affect the economic activity and due to market interactions the IR as
+well41. Moreover, central banks may respond to commodity price shocks (or the implied inflation)
+which further complicates the interaction between fuel prices and the interest rate42,43. Whether
+central banks systematically respond to oil price shocks is, however, controversial as more recent work
+does not support this relationship44.
+Given the lack of clear evidence we resort to theory and assume a generally negative effect of IR on
+the price of fossils. To account for uncertainty and divergent results of the empirical literature, we
+cover a range of fuel price changes from –7.5% to + 2.5% for hard coal and natural gas for each 1%point of interest rate increase (see methods). We keep the marginal cost of lignite that is used in minemouth plants constant. This serves as input for modelling the effect of IR developments on the
+5
+
+marginal cost of FF-based electricity generation in the three IR scenarios. We further consider the
+range of thermal efficiencies in Germany’s electricity generation park for plant types using lignite, hard
+coal, and gas in combined cycle gas turbine (CCGT) setups, as in most cases one of these technologies
+sets the price. ETS emission prices are held constant at 2018 levels (see method).
+€/MWh
+
+Flat IR scenario
+
+Moderate IR scenario
+
+Extreme IR scenario
+
+2023
+
+2023
+
+2023
+
+70
+60
+
+50
+40
+30
+20
+10
+0
+
+Wind onshore LCOE
+
+Lignite plant marginal cost range
+
+Solar PV LCOE
+
+Hard-coal plant marginal cost range
+
+CCGT gas plant marginal cost range
+Fig 2: Projected range of short-run marginal cost of fossil fuel-based vis-à-vis LCOE of renewable energy-based electricity
+generation in 2023. a, assuming a flat interest rate, where ranges represent different thermal efficiencies b, assuming a
+moderate rise in interest rates, where ranges relate to the combination of thermal efficiencies and IR-fuel cost elasticities; c,
+assuming an extreme rise in interest rates, where ranges relate to the combination of thermal efficiencies and IR-fuel cost
+elasticities.
+
+The following three observations can be made based on our cost projections (Figure 2): First, assuming
+constant carbon prices, lignite plants’ marginal cost remain out of reach for both solar PV and wind
+LCOE across all scenarios. Second, the LCOE of solar PV is lower than the marginal cost of gas- and of
+almost all hard-coal plants in a flat interest rate scenario (Figure 2a). With rising interest rates, the
+viability of solar PV investments in a wholesale market-based setting deteriorates. In the moderate IR
+rise scenario, solar PV LCOE remain lower than running gas plants’ and the upper half of the hard coal
+plants’ cost range (Figure 2b). In the extreme IR rise scenario, solar PV LCOE cease to be comparable
+with running hard coal power plants and only undercut the upper half of the gas plants’ marginal cost
+range (Figure 2c). Third, wind onshore LCOE are below the marginal cost of gas and less efficient hardcoal plants only if IRs remain at today’s levels (Figure 2a). With moderately rising interest rates (Figure
+2b), wind investments become less viable. LCOE are above the marginal cost of even the least efficient
+hard coal plants. In the extreme IR rise scenario, wind onshore LCOE are even higher than the marginal
+cost of most gas plants (Figure 2c). In sum, the comparisons show that an increase in interest rates
+would substantially deteriorate the economic viability of RE investment that need to earn their LCOE
+from wholesale market prices set by fossil fuel plants.
+Sustainable energy transition at risk
+Our findings have important ramifications for the policy mix driving the sustainable energy transition
+in Europe. If governments of EU countries abandon their RE deployment policies, comparatively higher
+costs of RE would need to be absorbed by the EU ETS. However, the long-term economic performance
+6
+
+of the EU ETS may be hampered by distortions such as myopic decision-making by investors and the
+limited credibility of the government-imposed emissions cap45. Hence, while allowance prices in the
+EU ETS are currently recovering, it is possible that history will repeat itself46, and prices may collapse
+again as observed several times in the past.
+From the perspective of ensuring a continuous transition, relying on the EU ETS in its current state
+alone might thus be a risky strategy. Importantly, even short-term slumps of RE deployment due to
+deteriorated economic viability might have negative long-term consequences for sustainable
+developments and related goals. Industry slumps and consequential layoffs would have a negative
+impact on decent jobs and economic growth (SDG 8), often result in the loss of hard-earned
+technological capabilities and tacit knowledge in technology development, manufacturing, project
+development, and financing (SDG 9), resulting in increased technology adjustment costs47. Given the
+global importance of the European RE technology industry, the effect could have worldwide
+implications.
+In consequence, abandoning RE deployment policies in the face of rising IR is bad timing and could
+jeopardize the sustainable energy transition. To prevent this, we recommend a ‘thermostatic policy’
+strategy48, which – like a thermostat – automatically counterbalances potential increases in IR. The
+most direct policy measure to address rising IRs would be to couple the provision of subsidized loans
+with IRs, e.g., financed via issuing green bonds49. For instance, the European Investment Bank (EIB),
+which has played a major role in financing RE plants50,51, could provide such subsidized loans in
+response to rising IRs. However, subsidized loans could crowd out private finance and create problems
+in calibrating subsidy levels to avoid over- or under-installations of RE (e.g., in case of unexpected
+changes of fuel cost of competing FF-based electricity generation).
+Recommendations for policy makers and researchers
+In view of these results, we recommend a two-stage policy strategy, supported by new energy models.
+In the short run, RE auction policies could work like a thermostat: as long as financing conditions
+remain favourable, bids will continue to yield market prices (or premiums of zero), representing a zerocost policy. In case IRs increase, bids will go up again, reflecting worsened financing conditions.
+Competitive auctions for RE could thus ensure continued RE capacity additions while avoiding the
+above-mentioned calibration problems in a cost-effective way. Hence, instead of phasing out RE
+policies, governments should keep or – where not yet in place – introduce such auction policies.
+Sophisticated auction policies, e.g., using contracts for differences, could further improve the financing
+conditions52. Importantly, while the past role of RE deployment policies was to induce innovation, the
+new role would be to safeguard RE deployment – and thus the SDGs and the Paris targets – against the
+negative consequences of rising IRs.
+In the longer run, a durable price floor could be introduced in the EU ETS to remedy the current abovementioned distortions (as is the case in the Californian ETS). Ideally, such a floor would over time
+become high enough to ensure RE deployment even in times of high IRs, allowing RE auctions to be
+eventually phased out. The continuous deployment of RE assured by the near-term auction policies,
+would likely increase the political feasibility of an ETS price floor due to positive feedback effects, such
+as increased political support for RE and decreased influence of the fossil fuel industry9,53,54. New
+models are required to understand which price floor levels could sustain renewable deployment and
+how energy market and policy risks not considered here would factor into financing costs. Such models
+should also consider broader general equilibrium effects not accounted for in the partial equilibrium
+perspective taken here.
+
+7
+
+This line of research should extend into a broader research stream, bringing this issue to policy makers’
+attention and exploring the full scope of implications. The reason most policy makers are unaware of
+the implications of higher IRs is that models they typically use for energy and climate-related decisionmaking ignore IR dynamics. Future model-based research should therefore incorporate IR dynamics
+and explicitly cover aspects of thermostatic policy strategies, including how to deal with the potential
+trade-off between rising policy costs and adjustment costs resulting from potential RE industry slumps.
+Moreover, political scientists should consider the fact that IRs can change the cost dynamics of RE,
+which in turn affects the dynamics of energy and climate politics. In addition, researchers should
+explore potential new roles of public and central banks in addressing macroeconomic risks to the clean
+energy transition that could jeopardize the Paris targets, attainment of SDG 7, and sustainable
+development more broadly.
+In parallel, a second stream of research needs to consider the lost revenue from stranded fossil fuels.
+The question whether to compensate asset owners or not is an ethical (and political) one that is
+difficult to answer. On the one hand, according to the “polluter pays principle”, the costs of avoiding
+pollution need to be carried by the polluters, implying no compensation. On the other hand, from a
+political economy perspective, displacement of workers creates a strong incentive for politicians to
+compensate workers or regions. In the case of the German coal phase-out, heavy compensations
+alongside with structural aid were brokered by a coal phase-out commission55. A sustainable energy
+transition requires considering all stakeholders and making tradeoffs, including between the affected
+SDGs, such as clean energy (SDG 7), climate action (SDG 13), decent work (SDG 8), and reduced
+inequalities (SDG 10)4. Importantly, the effectiveness of other policies addressing these SDGs might
+also be affected by IR changes. Further research analysing the effect of IRs on attaining these SDGs and
+on their tradeoffs could help facilitating the debate.
+
+8
+
+Methods
+We calculate the levelized cost of electricity (LCOE) for solar photovoltaics (PV) and onshore wind
+plants in Germany in three steps. First, we use historical government bond yields to develop three
+future interest rate scenarios for five years (2019 to 2023). Second, we project technology- and timespecific future costs of capital (CoC) in each of the three scenarios. Third, we calculate LCOEs for each
+scenario using the CoCs and other parameters and derive the part of the LCOE attributable to financing
+costs. The approach, data sources, and assumptions for each step are described in the following.
+Interest rate scenarios
+In the first step, we use monthly data on 10-year German government bond yields from July 1998 to
+June 2018 (20 years)56. We define a “pre-financial crisis” and a “post-financial crisis” period of 120
+months (10 years) each, using the month with the highest yield (June 2008, at 4.52%) as the separator.
+The pre-financial crisis period covers the time from July 1998 to June 2008, and the post-financial crisis
+period covers the time from July 2008 to June 2018. The separator month is three months before
+Lehman Brothers filed for Chapter 11 bankruptcy protection, which marks the peak of the financial
+crisis in the US that subsequently spread to the Euro-zone57. We calculate the average over the 10year pre-crisis period and use it as a reference point for the level that long-term interest rates could
+reach again in a rebound. Specifically, we define three scenarios: First, a flat scenario in which longterm interest rates stay constant at the 2018 average of 0.49%. Second, a moderate scenario in which
+long-term interest rates rise at the same rate at which they decreased in the 10 years during and after
+the financial crisis, reaching 50% of the pre-crisis average (i.e., 2.15%) in 2023. Third, an extreme
+scenario in which long-term interest rates rise at twice the rate at which they previously declined,
+reaching the pre-crisis average (i.e., 4.29%) in 2023. For comparison, the moderate scenario (0.97% in
+December 2019) is in line with several financial institutions’ 2019 outlooks on the long-term interest
+rate (i.e., 10-year German government bond), which project a level of 0.8% in July 2019 and 1.0% in
+the fourth quarter of 2019 or the end of 2019, respectively25,58,59.
+Cost of capital of RET
+In the second step, we use the three interest rate scenarios and project-level data on PV and wind
+financing conditions to calculate technology- and time-specific costs of capital21. We build on the
+methodology of Egli et al.21, calculating the after-tax CoC using equation [1], in which E and D denote
+equity and debt investment, respectively; V signifies the total investment sum; KD and KE refer to the
+cost of debt and the cost of equity, respectively; and T represents the corporate tax rate. The leverage
+ratio is equal to D/V.
+CoC  K D
+
+D
+V
+
+(1  T )  K E
+
+E
+V
+
+(1)
+
+Again following Egli et al.21, we split the cost of debt into a long-term interest rate-component (IR) and
+the debt margin (DM), as shown in equation [2]. Furthermore, we follow the energy-finance
+literature60 in defining the cost of equity as the cost of debt plus an equity premium (EP), as shown in
+equation [3].
+
+K D  IR  DM
+
+(2)
+
+KE  IR  DM  EP
+
+(3)
+
+9
+
+The cost of debt and the cost of equity change over time depending on the interest rate scenario. All
+other indicators, namely the debt margin, the equity premium, the leverage ratio, and the tax rate, are
+held constant. We use the technology-specific 2017 average values from Egli et al.21 for the former
+three and the German corporate tax rate in 2017 for the latter. All parameters are summarized in
+Supplementary Tables S1 and S2.
+LCOE model for RET
+In the third step, we parametrize an LCOE model for both technologies in each year (2019 to 2023)
+using equation [4]. Note that this formulation of LCOE represents a cash flow perspective and hence
+does not account for depreciation61.
+t  25
+
+LCOE 
+
+CtOPEX
+t
+t 1 (1  CoC )
+t  25
+FLH t
+
+t
+t 1 (1  CoC )
+
+C CAPEX  
+
+C CAPEX denotes the initial investment cost per MW (CAPEX) at t   , CtOPEX
+
+(4)
+
+represents the
+
+operation and maintenance costs per MW per year (OPEX) from t   to t  25 (constant), and
+
+FLHt signifies the full-load hours of the asset per year from t   to t  25 (constant). The
+discount rate CoC is the technology- and time-specific cost of capital. We calculate future
+investment costs (EUR/MW) using global cumulative installed capacity by combining global capacity
+data in 2017 from IRENA62 with deployment scenarios for the years 2018 to 2023 from IEA63. As a
+starting point, we use German investment costs in 201864. The future investment costs are then
+calculated using a one-factor learning curve commonly used in the literature65 and learning rates
+specific to the German context 64. We further parametrize the LCOE model by using data for Germany
+in 2018 for full-load hours, operation and maintenance cost (EUR/MW p.a.), and asset lifetime64. We
+use solar PV full-load hours for central Germany and onshore wind values for northern Germany. We
+assume that full-load hours, operation and maintenance costs, and asset lifetime stay constant for
+both technologies from 2018 to 2023. All parameters are summarized in Supplementary Tables S1 and
+S2.
+Finally, we follow the approach of Egli et al.21 in splitting the LCOE into a CAPEX/OPEX component and
+a financing-cost component (cf. Figure 1c, main text). The latter consists of debt service (i.e., principal
+repayment and interest rate payment) and returns to equity. We do so by estimating an LCOE with 0%
+cost of capital for both technologies in each year. We define the difference between the LCOE
+estimated using our technology- and time-specific cost of capital and the LCOE estimated using 0% cost
+of capital as the financing cost share  , according to equation [5].
+
+  LCOE  LCOECoC0
+
+(5)
+
+Comparison of RE LCOE with marginal cost of FF plants
+In the final step, we compare the projected LCOE of solar PV and onshore wind with the short-run
+marginal cost of fossil fuel-based plants. Generally, the viability of RE investments depends on a
+comparison of their LCOE with expected electricity wholesale market prices, both of which could be
+affected by interest rate changes. While near-zero marginal cost will allow RE plants to produce
+electricity before FF plants are dispatched, investments in new RE capacity are only viable if market
+prices allow them to earn their full LCOE. Following the merit order principle, the wholesale price that
+10
+
+subsidy-free RE plants can earn is an average of prices set by the different marginal plants depending
+on the market situation (given that investment costs of these marginal plants are sunk and thus are
+neither considered for dispatch nor decommissioning decisions). In Europe, wholesale price levels
+dropped over the last decade due to higher renewable penetration and lower cost of emission
+certificates and fuels26,27. However, Germany and its neighboring countries still have overcapacities
+from an investment boom in the 2000s27,28 and only recently consider capacity payments to incentivize
+new dispatchable capacity once it will be needed29. Thus, short-run marginal costs of existing FF plants
+will very likely continue setting market prices. In the German case, price setting plants are typically
+either lignite-based plants, hard coal-based plants, or combined cycle gas turbine (CCGT) plants26. For
+our analysis we are agnostic which of these technologies sets the price during how much of the time
+where the RET produce electricity, but compare RE LCOE to the marginal cost of all three technologies.
+The marginal costs of FF plants in EUR per MWh are calculated as
+
+MC 
+
+C fuel
+
+
+
+
+
+C emissions  EF
+
+
+
+ CVOM
+
+(6)
+
+Where Cfuel are fuel costs (in EUR/MWhthermal), 𝜂 is the thermal efficiency (in MWhelelctric/MWhthermal),
+Cemissions are the CO2 ETS emission certificate costs (EUR/t), EF is the CO2 emissions factor (t/MWhthermal),
+and CVOM are variable operations and maintenance costs (EUR/MWhelectric). Parameters are taken from
+recent studies on electricity generation cost in Germany and held constant across scenarios (except
+for fuel prices, see below). Values and sources are summarized in Supplementary Table S3. The ranges
+for thermal efficiencies reflects the fact that within each technology group, power plants of different
+age and efficiency currently exist in Germany, yielding a range of marginal costs per FF-based plant
+type.
+For CO2 emissions cost, we assume constant EU ETS costs at the average market price for in 2018
+(closing ECX EUA futures prices, continuous contract #1. Non-adjusted price based on spot-month
+continuous contract calculations). For fuel costs, the flat scenario is based on price projections for 2023
+based on multiple market studies as compiled in ref. For the moderate and extreme scenarios, we
+model a change of fuel costs with changes in the general interest rate level. The exact effect size
+depends on the temporal dimension. Typically, models estimate the reaction to a shock over time 35.
+Estimated effects of a 100 bps decrease of the interest rate on the oil price range from around 0% to
+7% for months 1 to 47 after the shock. Depending on the model specification, the maximum effect
+ranges from 2.1% to 14.4% and occurs four to six months after the shock. For a commodity index, the
+range is 0.7% to 6.0% for the maximum effect (3 to 15 months after the shock). Given that the
+theoretical and empirical literature describes a negative fuel price/interest rate elasticity but is
+inconclusive regarding the precise quantification of the elasticity (see above), we model a fuel price
+change between – 7.5% and + 2.5% for each 100 bps of interest rate increase for hard coal and natural
+gas (which are commodities). For our argument, this range is a conservative reading of the empirical
+literature as it even allows for a positive effect, which is typically not empirically observed, and as it
+limits the negative effect to the baseline estimation of Anzuini et al.35, while alternative estimations
+produce a twice as high negative effect size.
+In contrast to hard coal and natural gas, lignite is generally not traded but mined on-site (a noncommodity), so the fuel price is considered independent of the interest rate level. Overall, it should be
+kept in mind that the present analysis depicts the situation in Europe where an installed base of fossil
+fuel-based power plants competes with newly erected RET plants – which is why marginal costs are
+compared to levelized full costs (LCOE) of the latter.
+11
+
+Data Availability
+All data and the models used for this paper are provided in the supplementary information.
+
+12
+
+References
+1.
+2.
+3.
+4.
+5.
+
+6.
+7.
+8.
+
+9.
+10.
+11.
+12.
+
+13.
+
+14.
+15.
+16.
+17.
+18.
+19.
+
+20.
+21.
+
+Giang, A. & Selin, N. E. Benefits of mercury controls for the United States. Proc. Natl. Acad. Sci.
+113, 286–291 (2016).
+Peng, W. et al. Managing China’s coal power plants to address multiple environmental
+objectives. Nat. Sustain. 1, 693–701 (2018).
+Edenhofer, O. et al. IPCC Special Report on Renewable Energy Sources and Climate Change
+Mitigation. (2011).
+Fuso Nerini, F. et al. Mapping synergies and trade-offs between energy and the Sustainable
+Development Goals. Nat. Energy 3, 10–15 (2018).
+Rogelj, J. et al. in Global warming of 1.5°C. An IPCC Special Report [...] (ed. Masson-Delmotte,
+V., P. Zhai, H.-O. Pörtner, D. Roberts, J. Skea, P.R. Shukla, A. Pirani, W. Moufouma-Okia, C.
+Péan, R. Pidcock, S. Connors, J.B.R. Matthews, Y. Chen, X. Zhou, M.I. Gomis, E. Lonnoy, T.
+Maycock, M. Tignor, and T. W.) 82pp (Intergovernmental Panel on Climate Change, 2018).
+Luderer, G. et al. Residual fossil CO2 emissions in 1.5–2 °C pathways. Nat. Clim. Chang. 8, 626–
+633 (2018).
+Ralon, P., Taylor, M., Ilas, A., Diaz-Bone, H. & Kairies, K.-P. Electricity storage and renewables:
+costs and market to 2030. IRENA (2017).
+Trancik, J., Brown, P., Jean, J., Kavlak, G. & Klemun, M. Technology improvement and
+emissions reductions as mutually reinforcing efforts. Institute for Data, Sytems, and Society,
+Massachusetts Institute of Technology (2015). doi:10.1007/s13398-014-0173-7.2
+Schmidt, T. S. & Sewerin, S. Technology as a driver of climate and energy politics. Nat. Energy
+2, 17084 (2017).
+Kost, C., Shammugam, S., Jülich, V., Nguyen, H.-T. & Schlegel, T. Stromgestehungskosten
+Erneuerbare Energien. Fraunhofer ISE 44 (2018).
+Wronski, M. Renewables 2.0: The Subsidy-Free Revolution. (2018).
+Marketscreener. BayWa : First Subsidy-Free Solar Park Under Construction in Germany.
+(2019). Available at: https://www.marketscreener.com/BAYWA-AG-435730/news/BayWaFirst-Subsidy-Free-Solar-Park-Under-Construction-in-Germany-28666080/. (Accessed: 8th July
+2019)
+PVtech. EnBW developing 175MW subsidy-free solar project in Germany. (2019). Available at:
+https://www.pv-tech.org/news/enbw-developing-175mw-pv-project-in-germany. (Accessed:
+8th July 2019)
+Obama, B. The irreversible momentum of clean energy. Science (80-. ). (2017).
+Clark, P. The Big Green Bang: how renewable energy became unstoppable. Financial Times
+(2017).
+Bassi, S., Carvalho, M., Doda, B. & Fankhauser, S. Credible, effective and publicly acceptable
+policies to decarbonise the European Union. (2017).
+Pfeifer, S. Subsidy-free renewable projects on ‘cusp of breakthrough’. Financial Times (2018).
+Aurora Energy Reserach. Managing merchant risk in renewables. (2018).
+Government of the UK. Green finance: mobilising investment in clean energy and sustainable
+development: Government Response to the Committee’s Sixth Report - Environmental Audit
+Committee - House of Commons. (2018).
+CDU, CSU, SPD. Koalitionsvertrag: Ein neuer Aufbruch für Europa Eine neue Dynamik für
+Deutschland Ein neuer Zusammenhalt für unser Land. (2018).
+Egli, F., Steffen, B. & Schmidt, T. S. A dynamic analysis of financing conditions for renewable
+energy technologies. Nat. Energy 3, 1084–1092 (2018).
+13
+
+22.
+23.
+24.
+25.
+26.
+27.
+28.
+29.
+
+30.
+31.
+32.
+33.
+34.
+35.
+36.
+37.
+
+38.
+39.
+40.
+41.
+42.
+43.
+44.
+
+Steffen, B. The importance of project finance for renewable energy projects. Energy Econ. 69,
+280–294 (2018).
+Schmidt, T. S. Low-carbon investment risks and de-risking. Nat. Clim. Chang. 4, 237–239
+(2014).
+Hirth, L. & Steckel, J. C. The role of capital costs in decarbonizing the electricity sector.
+Environ. Res. Lett. 11, 114010 (2016).
+Swiss Re Institute. Global Economic Outlook. (2018).
+Kallabis, T., Pape, C. & Weber, C. The plunge in German electricity futures prices - Analysis
+using a parsimonious fundamental model. Energy Policy 95, 280–290 (2016).
+Keles, D., Bublitz, A., Zimmermann, F., Genoese, M. & Fichtner, W. Analysis of design options
+for the electricity market: The German case. Appl. Energy 183, 884–901 (2016).
+Fraunhofer ISI, TEP, Consentec & r2b. Definition und Monitoring der Versorgungssicherheit an
+den europäischen Strommärkten (Projekt NR. 047/16). (2019).
+Bublitz, A., Keles, D., Zimmermann, F., Fraunholz, C. & Fichtner, W. A survey on electricity
+market design: Insights from theory and real-world implementations of capacity
+remuneration mechanisms. Energy Econ. 80, 1059–1078 (2019).
+Frankel, J. A. & Hardouvelis, G. A. Commodity Prices, Money Surprises and Fed Credibility. J.
+Money, Credit Bank. 17, 425–438 (1985).
+Frankel, J. A. Expectations and Commodity Price Dynamics: The Overshooting Model: Reply.
+Am. J. Agric. Econ. 69, 856–856 (1986).
+Frankel, J. A. Effects of speculation and interest rates in a ‘carry trade’ model of commodity
+prices. J. Int. Money Financ. 42, 88–112 (2014).
+Barsky, R. B. & Kilian, L. in NBER/Macroeconomics Annual (eds. Bernanke, B. S. & Rogoff, K.)
+16, 137–183 (MIT Press, 2002).
+Kilian, L. & Zhou, X. Oil Prices , Exchange Rates and Interest Rates. CESifo Work. Pap. No. 7484
+(2019).
+Anzuini, A., Lombardi, M. & Pagano, P. The Impact of Monetary Policy Shocks on Commodity
+Prices. papers.ssrn.com 17, 121–145 (2013).
+Arango, L. E., Arias, F. & Flórez, A. Determinants of commodity prices. Appl. Econ. 44, 135–145
+(2012).
+Chiou–Wei, S. Z., Chen, S. H. & Zhu, Z. Energy and agricultural commodity markets interaction:
+An analysis of crude oil, natural gas, corn, soybean, and ethanol prices. Energy J. 40, 265–296
+(2019).
+Hammoudeh, S., Nguyen, D. K. & Sousa, R. M. US monetary policy and sectoral commodity
+prices. J. Int. Money Financ. 57, 61–85 (2015).
+Huang, W., Mollick, A. V. & Nguyen, K. H. Dynamic responses and tail-dependence among
+commodities, the US real interest rate and the dollar. Empir. Econ. 53, 959–997 (2017).
+Ratti, R. A. & Vespignani, J. L. Oil prices and global factor macroeconomic variables. Energy
+Econ. 59, 198–212 (2016).
+Bodenstein, M., Erceg, C. J. & Guerrieri, L. Oil shocks and external adjustment. J. Int. Econ. 83,
+168–184 (2011).
+Bodenstein, M., Guerrieri, L. & Kilian, L. Monetary policy responses to oil price fluctuations.
+IMF Econ. Rev. 60, 470–504 (2012).
+Bernanke, B. S., Gertler, M. & Watson, M. Systematic Monetary Policy and the Effects of Oil
+Price Shocks. Brookings Pap. Econ. Act. 1, 91–142 (1997).
+Kilian, L. & Lewis, L. T. Does the Fed Respond to Oil Price Shocks? Econ. J. 121, 1047–1072
+(2011).
+14
+
+45.
+
+46.
+47.
+
+48.
+49.
+50.
+
+51.
+
+52.
+53.
+54.
+55.
+56.
+57.
+58.
+59.
+60.
+61.
+62.
+63.
+64.
+65.
+
+Fuss, S. et al. A Framework for Assessing the Performance of Cap-and-Trade Systems: Insights
+from the European Union Emissions Trading System. Rev. Environ. Econ. Policy 12, 220–241
+(2018).
+Flachsland, C. et al. Avoid history repeating: The case for an EU ETS price floor revisited.
+submitted (2019).
+Vogt-Schilb, A., Meunier, G. & Hallegatte, S. When starting with the most expensive option
+makes sense: Optimal timing, cost and sectoral allocation of abatement investment. J.
+Environ. Econ. Manage. 88, 210–233 (2018).
+Cashore, B. & Howlett, M. Punctuating Which Equilibrium? Understanding Thermostatic Policy
+Dynamics in Pacific Northwest Forestry. Am. J. Pol. Sci. 51, 532–551 (2007).
+Edenhofer, O. Klima, Kohle, Kapital - Oekonomische Hebel in der internationalen Klimapolitik.
+Aus Politik und Zeitgeschichte (2018).
+Geddes, A., Schmidt, T. S. & Steffen, B. The multiple roles of state investment banks in lowcarbon energy finance: An analysis of Australia, the UK and Germany. Energy Policy 115, 158–
+170 (2018).
+Steffen, B. & Schmidt, T. S. A quantitative analysis of 10 multilateral development banks’
+investment in conventional and renewable power generation technologies from 2006 to
+2015. Nat. Energy 4, 75–82 (2019).
+May, N., Neuhoff, K. & Richstein, J. C. Affordable Electricity Supply via Contracts for Difference
+for Renewable Energy. DIW Wkly. Rep. 8, 251–259 (2018).
+Pahle, M. et al. Sequencing to ratchet up climate policy stringency. Nat. Clim. Chang. 8, 861–
+867 (2018).
+Meckling, J., Kelsey, N., Biber, E. & Zysman, J. Winning coalitions for climate policy. Science
+(80-. ). 349, 1170–1171 (2015).
+Edenhofer, O. & Pahle, M. The German Coal Phase Out: Buying out polluters, not (yet) buying
+into carbon pricing. EAERE Mag. 11–14 (2019).
+OECD. Main Economic Indicators - complete database. Main Economic Indicators (database)
+(2016). doi:http://dx.doi.org/10.1787/data-00052-en
+Gorton, G. & Metrick, A. Getting Up to Speed on the Financial Crisis: A One-WeekendReader’s Guide. J. Econ. Lit. 50, 128–150 (2012).
+Deka. Macro Research Economic Forecasts. (2018).
+Commerzbank Economic Research. Commerzbank forecasts. (2018).
+Donovan, C. & Nuñez, L. Figuring what’s fair: The cost of equity capital for renewable energy
+in emerging markets. Energy Policy In Press,
+Comello, S., Reichelstein, S. & Sahoo, A. The road ahead for solar PV power. Renew. Sustain.
+Energy Rev. 92, 744–756 (2018).
+IRENA. Renewable capacity statistics 2017. (2017).
+IEA. Renewables 2018 Market analysis and forecast from 2018 to 2023. (2018).
+Fraunhofer ISE. Stromgestehungskosten Erneuerbare Energien. (2018).
+Rubin, E. S., Azevedo, I. M. L., Jaramillo, P. & Yeh, S. A review of learning rates for electricity
+supply technologies. Energy Policy 86, 198–218 (2015).
+
+Corresponding author
+For correspondence and requests please refer to Tobias S. Schmidt.
+
+15
+
+Acknowledgements
+This research was conducted as part of the EU’s Horizon 2020 research and innovation programme
+project INNOPATHS under grant agreement No. 730403. As such, it was partly supported by the Swiss
+State Secretariat for Education, Research and Innovation (SERI) under contract number 16.0222. The
+opinions expressed and arguments employed herein do not necessarily reflect the official views of the
+Swiss Government. M.P.’s contribution was also supported by Stiftung Mercator Foundation under the
+research project AHEAD. We gratefully acknowledge all funding.
+Author contributions
+All authors developed the research idea. B.S., F.E. and T.S.S. compiled the data and developed the
+model. All authors interpreted the results. T.S.S. together with all authors wrote the paper. M.P. and
+T.S.S. secured project funding.
+Competing interests
+The authors declare no competing interests.
+
+16
+
+Supplementary Materials for
+Adverse effects of rising interest rates on sustainable energy
+transitions
+Tobias S. Schmidt1*, Bjarne Steffen1*, Florian Egli1*, Michael Pahle2, Oliver Tietjen2,4, Ottmar
+Edenhofer2,3,4
+1
+
+Energy Politics Group, ETH Zurich
+Potsdam Institute for Climate Impact Research
+3
+Mercator Research Institute on Global Commons and Climate Change
+4
+TU Berlin
+2
+
+* tobiasschmidt@ethz.ch *bjarne.steffen@gess.ethz.ch *florian.egli@gess.ethz.ch
+
+1
+
+Note S1: Data and model
+All input data and models used are available online in the Excel file “Data and model Schmidt et al.,
+Nat. Sust. (2019)”. The file contains a “read me” sheet, explaining the content of the data and
+calculation sheets. Sources for input values can be found in the references of this Supplementary
+Information.
+
+2
+
+Table S1: Time-varying input parameters for the LCOE model.
+Solar PV
+Investment cost
+EUR/MW (CAPEX)
+
+2018
+
+2019
+
+2020
+
+2021
+
+2022
+
+2023
+
+700,000
+
+672,962
+
+649,490
+
+630,075
+
+610,476
+
+593,024
+
+Cost of capital
+
+1.55%
+
+1.552.12%*
+
+1.552.68%*
+
+1.553.24%*
+
+1.553.80%*
+
+1.554.36%*
+
+Onshore wind
+Investment cost
+EUR/MW (CAPEX)
+
+2018
+
+2019
+
+2020
+
+2021
+
+2022
+
+2023
+
+1,750,000
+
+1,739,264
+
+1,728,588
+
+1,718,645
+
+1,710,085
+
+1,702,698
+
+1.892.46%*
+* = depending on the interest rate scenario
+
+1.893.03%*
+
+1.893.61%*
+
+1.894.18%*
+
+1.894.75%*
+
+Cost of capital
+
+1.89%
+
+Table S2: Constant input parameters for the LCOE model.
+Variable (source)
+Leverage ratio 6
+Debt margin 6
+Equity premium 6
+Asset lifetime 10
+Learning rate 10
+Full-load hours p.a. 10
+Operation and maintenance cost (OPEX) 10
+Tax rate 12
+
+Solar PV
+0.87
+1.03%
+3.26%
+25 years
+15%
+1,105
+17,500 €/MW
+0.30
+
+Onshore wind
+0.82
+1.10%
+3.84%
+25 years
+5%
+2,500
+30,000 €/MW
+0.30
+
+Table S3: Input parameters for the marginal cost model.
+Variable (source)
+Thermal efficiency 13,14
+Emission factor14
+Variable O&M cost 15
+CO2 emissions cost
+Fuel cost in flat scenario15
+
+Lignite plant
+0.37 – 0.43
+0.404
+5
+15.92
+1.8
+
+Hard coal plant
+0.37 – 0.46
+0.339
+5
+15.92
+11.34
+
+CCGT plant
+0.52 – 0.62
+0.202
+4
+15.92
+26.3
+
+unit
+MWhelelctric/MWhthermal
+t/MWhthermal
+EUR/MWhelectric
+EUR/t
+EUR/MWhthermal
+
+3
+
+References
+1.
+
+OECD. Main Economic Indicators - complete database. Main Economic Indicators (database)
+(2016). doi:http://dx.doi.org/10.1787/data-00052-en
+
+2.
+
+Gorton, G. & Metrick, A. Getting Up to Speed on the Financial Crisis: A One-Weekend-Reader’s
+Guide. J. Econ. Lit. 50, 128–150 (2012).
+
+3.
+
+Deka. Macro Research Economic Forecasts. (2018).
+
+4.
+
+Commerzbank Economic Research. Commerzbank forecasts. (2018).
+
+5.
+
+Swiss Re Institute. Global Economic Outlook. (2018).
+
+6.
+
+Egli, F., Steffen, B. & Schmidt, T. S. A dynamic analysis of financing conditions for renewable
+energy technologies. Nat. Energy 3, 1084–1092 (2018).
+
+7.
+
+Donovan, C. & Nuñez, L. Figuring what’s fair: The cost of equity capital for renewable energy in
+emerging markets. Energy Policy 40, 49–58 (2012).
+
+8.
+
+IRENA. Renewable capacity statistics 2017. (2017).
+
+9.
+
+IEA. Renewables 2018 Market analysis and forecast from 2018 to 2023. (2018).
+
+10.
+
+Fraunhofer ISE. Stromgestehungskosten Erneuerbare Energien. (2018).
+
+11.
+
+Rubin, E. S., Azevedo, I. M. L., Jaramillo, P. & Yeh, S. A review of learning rates for electricity
+supply technologies. Energy Policy 86, 198–218 (2015).
+
+12.
+
+OECD. Statutory corporate income tax rate. 2018
+
+13.
+
+Görner, K. & Sauer, D. U. Konventionelle Kraftwerke - Technologiesteckbrief zur Analyse
+„Flexibilitätskonzepte für die Stromversorgung 2050 “. Energiesysteme der Zukunft (2016).
+
+14.
+
+VGB Powertech. Levelised Cost of Electricity 2015. (2015).
+
+15.
+
+Kost, C., Shammugam, S., Jülich, V., Nguyen, H.-T. & Schlegel, T. Stromgestehungskosten
+Erneuerbare Energien. Fraunhofer ISE 44 (2018).
+
+4
+
+

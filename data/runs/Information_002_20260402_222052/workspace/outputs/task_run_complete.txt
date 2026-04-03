@@ -1,0 +1,17 @@
+Executed: python3 code/run_analysis.py from the workspace root.
+
+Verification: the script completed successfully with exit code 0 and reported analysis over 17 tasks. It generated multiple substantive analysis artifacts under outputs/ and three figures under report/images/.
+
+Produced outputs:
+- outputs/analysis_provenance.json
+- outputs/analysis_summary.json
+- outputs/paper_context_summary.txt
+- outputs/placeholder_mismatch_table.csv
+- outputs/related_work_inventory.json
+- outputs/source_snippets.json
+- outputs/task_score_table.csv
+- report/images/task_total_scores.png
+- report/images/score_dimension_averages.png
+- report/images/reviewer_placeholder_averages.png
+
+These artifacts document the parsed benchmark tasks, scoring summaries, source-text snippets, related-work inventory, and visualization figures for the Hartree-Fock benchmark analysis in this workspace.

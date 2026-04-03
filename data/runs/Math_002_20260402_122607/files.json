@@ -1,0 +1,3124 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "mapf_core.py",
+    "path": "code/mapf_core.py",
+    "type": "file",
+    "size": 22026,
+    "mtime": 1775133038.0,
+    "exported": true
+  },
+  {
+    "name": "run_experiments.py",
+    "path": "code/run_experiments.py",
+    "type": "file",
+    "size": 13841,
+    "mtime": 1775133040.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "empty",
+    "path": "data/empty",
+    "type": "directory"
+  },
+  {
+    "name": "empty_maps_453_25_25",
+    "path": "data/empty/empty_maps_453_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_empty_1.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_1.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_10.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_10.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_11.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_11.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_12.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_12.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_13.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_13.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_14.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_14.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_15.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_15.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_16.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_16.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_17.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_17.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_18.npy",
+    "path": "data/empty/empty_maps_453_25_25/eval_map_empty_18.npy",
+    "type": "file",
+    "size": 36123,
+    "mtime": 1715292958.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 40 more items",
+    "path": "data/empty/empty_maps_453_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "empty_maps_469_25_25",
+    "path": "data/empty/empty_maps_469_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_empty_1.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_1.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_10.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_10.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_11.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_11.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_12.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_12.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_13.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_13.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_14.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_14.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_15.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_15.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_16.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_16.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_17.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_17.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_18.npy",
+    "path": "data/empty/empty_maps_469_25_25/eval_map_empty_18.npy",
+    "type": "file",
+    "size": 36699,
+    "mtime": 1715289392.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 40 more items",
+    "path": "data/empty/empty_maps_469_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "empty_maps_484_25_25",
+    "path": "data/empty/empty_maps_484_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_empty_1.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_1.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_10.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_10.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_11.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_11.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_12.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_12.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_13.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_13.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_14.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_14.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_15.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_15.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_16.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_16.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_17.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_17.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_18.npy",
+    "path": "data/empty/empty_maps_484_25_25/eval_map_empty_18.npy",
+    "type": "file",
+    "size": 37239,
+    "mtime": 1715298654.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 40 more items",
+    "path": "data/empty/empty_maps_484_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "empty_maps_500_25_25",
+    "path": "data/empty/empty_maps_500_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_empty_1.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_1.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_10.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_10.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_11.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_11.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_12.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_12.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_13.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_13.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_14.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_14.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_15.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_15.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_16.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_16.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_17.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_17.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_empty_18.npy",
+    "path": "data/empty/empty_maps_500_25_25/eval_map_empty_18.npy",
+    "type": "file",
+    "size": 37815,
+    "mtime": 1715273570.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 40 more items",
+    "path": "data/empty/empty_maps_500_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_60_10_10_0.175",
+    "path": "data/maps_60_10_10_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/maps_60_10_10_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1770198138.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/maps_60_10_10_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maze",
+    "path": "data/maze",
+    "type": "directory"
+  },
+  {
+    "name": "maze_maps_125_25_25",
+    "path": "data/maze/maze_maps_125_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_maze_1.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_1.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_10.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_10.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_100.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_100.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_11.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_11.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_12.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_12.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_13.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_13.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_14.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_14.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_15.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_15.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_16.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_16.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_17.npy",
+    "path": "data/maze/maze_maps_125_25_25/eval_map_maze_17.npy",
+    "type": "file",
+    "size": 24446,
+    "mtime": 1714675494.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/maze/maze_maps_125_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maze_maps_141_25_25",
+    "path": "data/maze/maze_maps_141_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_maze_1.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_1.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_10.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_10.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_100.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_100.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_11.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_11.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_12.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_12.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_13.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_13.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_14.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_14.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_15.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_15.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_16.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_16.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_17.npy",
+    "path": "data/maze/maze_maps_141_25_25/eval_map_maze_17.npy",
+    "type": "file",
+    "size": 25006,
+    "mtime": 1714664450.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/maze/maze_maps_141_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maze_maps_156_25_25",
+    "path": "data/maze/maze_maps_156_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_maze_1.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_1.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_10.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_10.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_100.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_100.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_11.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_11.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_12.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_12.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_13.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_13.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_14.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_14.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_15.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_15.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_16.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_16.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_17.npy",
+    "path": "data/maze/maze_maps_156_25_25/eval_map_maze_17.npy",
+    "type": "file",
+    "size": 25531,
+    "mtime": 1714502510.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/maze/maze_maps_156_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maze_maps_172_25_25",
+    "path": "data/maze/maze_maps_172_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_maze_1.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_1.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_10.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_10.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_100.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_100.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_11.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_11.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_12.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_12.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_13.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_13.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_14.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_14.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_15.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_15.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_16.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_16.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_maze_17.npy",
+    "path": "data/maze/maze_maps_172_25_25/eval_map_maze_17.npy",
+    "type": "file",
+    "size": 26091,
+    "mtime": 1714668574.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/maze/maze_maps_172_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "random_large",
+    "path": "data/random_large",
+    "type": "directory"
+  },
+  {
+    "name": "maps_1250_50_50_0.175",
+    "path": "data/random_large/maps_1250_50_50_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610238.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610238.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610246.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610238.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610238.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610238.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610238.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610238.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610238.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_large/maps_1250_50_50_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 124819,
+    "mtime": 1708610238.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_large/maps_1250_50_50_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_1375_50_50_0.175",
+    "path": "data/random_large/maps_1375_50_50_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610268.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_large/maps_1375_50_50_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 129319,
+    "mtime": 1708610260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_large/maps_1375_50_50_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_1500_50_50_0.175",
+    "path": "data/random_large/maps_1500_50_50_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610282.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610284.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610292.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610284.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610284.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610284.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610284.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610284.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610284.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_large/maps_1500_50_50_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 133819,
+    "mtime": 1708610284.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_large/maps_1500_50_50_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_1625_50_50_0.175",
+    "path": "data/random_large/maps_1625_50_50_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610304.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610306.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610314.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610306.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610306.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610306.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610306.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610306.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610306.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_large/maps_1625_50_50_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 138319,
+    "mtime": 1708610306.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_large/maps_1625_50_50_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "random_medium",
+    "path": "data/random_medium",
+    "type": "directory"
+  },
+  {
+    "name": "maps_312_25_25_0.175",
+    "path": "data/random_medium/maps_312_25_25_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115228.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115228.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115230.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115228.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115228.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115228.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115228.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115230.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115230.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_medium/maps_312_25_25_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1708115230.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_medium/maps_312_25_25_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_344_25_25_0.175",
+    "path": "data/random_medium/maps_344_25_25_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_medium/maps_344_25_25_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1708115252.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_medium/maps_344_25_25_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_375_25_25_0.175",
+    "path": "data/random_medium/maps_375_25_25_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115272.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115272.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115274.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115272.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115272.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115272.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115272.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115272.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115272.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_medium/maps_375_25_25_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 33315,
+    "mtime": 1708115272.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_medium/maps_375_25_25_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_406_25_25_0.175",
+    "path": "data/random_medium/maps_406_25_25_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_medium/maps_406_25_25_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 34431,
+    "mtime": 1708115294.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_medium/maps_406_25_25_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "random_small",
+    "path": "data/random_small",
+    "type": "directory"
+  },
+  {
+    "name": "maps_50_10_10_0.175",
+    "path": "data/random_small/maps_50_10_10_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_small/maps_50_10_10_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 5144,
+    "mtime": 1708099616.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_small/maps_50_10_10_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_55_10_10_0.175",
+    "path": "data/random_small/maps_55_10_10_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_small/maps_55_10_10_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 5319,
+    "mtime": 1708099630.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_small/maps_55_10_10_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_60_10_10_0.175",
+    "path": "data/random_small/maps_60_10_10_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_small/maps_60_10_10_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 5494,
+    "mtime": 1708099644.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_small/maps_60_10_10_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "maps_65_10_10_0.175",
+    "path": "data/random_small/maps_65_10_10_0.175",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_1.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_1.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_10.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_10.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_100.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_100.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_11.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_11.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_12.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_12.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_13.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_13.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_14.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_14.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_15.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_15.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_16.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_16.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_17.npy",
+    "path": "data/random_small/maps_65_10_10_0.175/eval_map_17.npy",
+    "type": "file",
+    "size": 5669,
+    "mtime": 1708099660.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/random_small/maps_65_10_10_0.175/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "room",
+    "path": "data/room",
+    "type": "directory"
+  },
+  {
+    "name": "room_maps_250_25_25",
+    "path": "data/room/room_maps_250_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_room_1.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_1.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_10.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_10.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_11.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_11.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_12.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_12.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_13.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_13.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_14.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_14.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_15.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_15.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_16.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_16.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_17.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_17.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_18.npy",
+    "path": "data/room/room_maps_250_25_25/eval_map_room_18.npy",
+    "type": "file",
+    "size": 28821,
+    "mtime": 1715289106.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 40 more items",
+    "path": "data/room/room_maps_250_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "room_maps_281_25_25",
+    "path": "data/room/room_maps_281_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_room_1.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_1.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_10.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_10.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_11.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_11.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_12.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_12.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_13.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_13.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_14.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_14.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_15.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_15.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_16.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_16.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_17.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_17.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_18.npy",
+    "path": "data/room/room_maps_281_25_25/eval_map_room_18.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1715286024.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 40 more items",
+    "path": "data/room/room_maps_281_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "room_maps_312_25_25",
+    "path": "data/room/room_maps_312_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_room_1.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_1.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_10.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_10.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_11.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_11.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_12.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_12.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_13.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_13.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_14.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_14.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_15.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_15.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_16.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_16.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_17.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_17.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_18.npy",
+    "path": "data/room/room_maps_312_25_25/eval_map_room_18.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1715282772.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 40 more items",
+    "path": "data/room/room_maps_312_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "room_maps_344_25_25",
+    "path": "data/room/room_maps_344_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_room_1.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_1.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_10.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_10.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_11.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_11.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_12.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_12.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_13.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_13.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_14.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_14.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_15.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_15.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_16.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_16.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_17.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_17.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_room_18.npy",
+    "path": "data/room/room_maps_344_25_25/eval_map_room_18.npy",
+    "type": "file",
+    "size": 32199,
+    "mtime": 1715279562.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 40 more items",
+    "path": "data/room/room_maps_344_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "warehouse",
+    "path": "data/warehouse",
+    "type": "directory"
+  },
+  {
+    "name": "warehouse_maps_266_25_25",
+    "path": "data/warehouse/warehouse_maps_266_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_warehouse_1.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_10.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_10.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_100.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_100.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_11.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_11.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_12.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_12.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_13.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_13.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_14.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_14.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_15.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_15.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_16.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_16.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_17.npy",
+    "path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_17.npy",
+    "type": "file",
+    "size": 29391,
+    "mtime": 1714591620.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/warehouse/warehouse_maps_266_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "warehouse_maps_281_25_25",
+    "path": "data/warehouse/warehouse_maps_281_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_warehouse_1.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_1.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_10.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_10.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_100.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_100.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_11.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_11.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_12.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_12.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_13.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_13.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_14.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_14.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_15.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_15.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_16.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_16.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_17.npy",
+    "path": "data/warehouse/warehouse_maps_281_25_25/eval_map_warehouse_17.npy",
+    "type": "file",
+    "size": 29931,
+    "mtime": 1714574666.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/warehouse/warehouse_maps_281_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "warehouse_maps_297_25_25",
+    "path": "data/warehouse/warehouse_maps_297_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_warehouse_1.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_1.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596258.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_10.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_10.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596258.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_100.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_100.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596260.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_11.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_11.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596258.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_12.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_12.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596258.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_13.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_13.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596258.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_14.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_14.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596258.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_15.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_15.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596258.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_16.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_16.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596258.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_17.npy",
+    "path": "data/warehouse/warehouse_maps_297_25_25/eval_map_warehouse_17.npy",
+    "type": "file",
+    "size": 30507,
+    "mtime": 1714596258.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/warehouse/warehouse_maps_297_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "warehouse_maps_312_25_25",
+    "path": "data/warehouse/warehouse_maps_312_25_25",
+    "type": "directory"
+  },
+  {
+    "name": "eval_map_warehouse_1.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_1.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_10.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_10.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_100.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_100.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_11.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_11.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_12.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_12.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_13.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_13.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_14.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_14.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_15.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_15.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_16.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_16.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "eval_map_warehouse_17.npy",
+    "path": "data/warehouse/warehouse_maps_312_25_25/eval_map_warehouse_17.npy",
+    "type": "file",
+    "size": 31047,
+    "mtime": 1714571416.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 90 more items",
+    "path": "data/warehouse/warehouse_maps_312_25_25/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "dataset_summary.csv",
+    "path": "outputs/dataset_summary.csv",
+    "type": "file",
+    "size": 349,
+    "mtime": 1775133036.0,
+    "exported": true
+  },
+  {
+    "name": "experiment_config.json",
+    "path": "outputs/experiment_config.json",
+    "type": "file",
+    "size": 633,
+    "mtime": 1775133036.0,
+    "exported": true
+  },
+  {
+    "name": "experiment_results.csv",
+    "path": "outputs/experiment_results.csv",
+    "type": "file",
+    "size": 13021,
+    "mtime": 1775133034.0,
+    "exported": true
+  },
+  {
+    "name": "family_method_summary.csv",
+    "path": "outputs/family_method_summary.csv",
+    "type": "file",
+    "size": 897,
+    "mtime": 1775133036.0,
+    "exported": true
+  },
+  {
+    "name": "method_summary.csv",
+    "path": "outputs/method_summary.csv",
+    "type": "file",
+    "size": 236,
+    "mtime": 1775133036.0,
+    "exported": true
+  },
+  {
+    "name": "selected_maps.csv",
+    "path": "outputs/selected_maps.csv",
+    "type": "file",
+    "size": 4729,
+    "mtime": 1775133036.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3377714,
+    "mtime": 1773914907.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1847864,
+    "mtime": 1773914907.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 2390378,
+    "mtime": 1773914907.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2474814,
+    "mtime": 1773914907.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 16965870,
+    "mtime": 1773914907.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "dataset_overview.png",
+    "path": "report/images/dataset_overview.png",
+    "type": "file",
+    "size": 166590,
+    "mtime": 1775133036.0,
+    "exported": true
+  },
+  {
+    "name": "main_results.png",
+    "path": "report/images/main_results.png",
+    "type": "file",
+    "size": 179753,
+    "mtime": 1775133038.0,
+    "exported": true
+  },
+  {
+    "name": "scaling_results.png",
+    "path": "report/images/scaling_results.png",
+    "type": "file",
+    "size": 173057,
+    "mtime": 1775133036.0,
+    "exported": true
+  },
+  {
+    "name": "validation_delta.png",
+    "path": "report/images/validation_delta.png",
+    "type": "file",
+    "size": 66292,
+    "mtime": 1775133036.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 10786,
+    "mtime": 1775133041.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 7094,
+    "mtime": 1775103967.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,97 @@
+{
+  "Carrier Density Data": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  },
+  "Conventional Superfluid Stiffness": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  },
+  "Quantum Geometric Superfluid Stiffness": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  },
+  "Experimental Superfluid Stiffness Hole": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  },
+  "Experimental Superfluid Stiffness Electron": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  },
+  "Temperature Array": {
+    "actual_length": 100,
+    "expected_length": 100,
+    "status": "ok"
+  },
+  "BCS Model Data": {
+    "actual_length": 95,
+    "expected_length": 100,
+    "status": "mismatch"
+  },
+  "Nodal Superconductor Data": {
+    "actual_length": 95,
+    "expected_length": 100,
+    "status": "mismatch"
+  },
+  "Power Law n=2.0 Data": {
+    "actual_length": 95,
+    "expected_length": 100,
+    "status": "mismatch"
+  },
+  "Power Law n=2.5 Data": {
+    "actual_length": 90,
+    "expected_length": 100,
+    "status": "mismatch"
+  },
+  "Power Law n=3.0 Data": {
+    "actual_length": 90,
+    "expected_length": 100,
+    "status": "mismatch"
+  },
+  "Experimental Data with Noise": {
+    "actual_length": 110,
+    "expected_length": 100,
+    "status": "mismatch"
+  },
+  "DC Current Array": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  },
+  "Ginzburg-Landau Model": {
+    "actual_length": 60,
+    "expected_length": 50,
+    "status": "mismatch"
+  },
+  "Linear Meissner Model": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  },
+  "Experimental DC Data": {
+    "actual_length": 85,
+    "expected_length": 50,
+    "status": "mismatch"
+  },
+  "Microwave Power Array": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  },
+  "Microwave Current Amplitude": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  },
+  "Experimental Microwave Data": {
+    "actual_length": 50,
+    "expected_length": 50,
+    "status": "ok"
+  }
+}

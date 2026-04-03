@@ -1,0 +1,8 @@
+{
+  "in_paper": 1.5,
+  "prompt_quality": 1.8125,
+  "follow_instructions": 1.875,
+  "physics_logic": 2.0,
+  "math_derivation": 1.875,
+  "final_answer_accuracy": 1.75
+}

@@ -1,0 +1,23 @@
+Executed: `python code/run_analysis.py` from the workspace root.
+
+Run status: completed successfully with exit code 0. The script performed the task-specific random-circuit-sampling analysis, computing per-instance XEB fidelities from matched counts/amplitudes and MB ideal-bitstring success probabilities from the verification files. The run reported:
+- XEB records analyzed: 500
+- MB records analyzed: 950
+- Missing XEB count/amplitude pairs logged: 400
+
+Produced output artifacts under outputs/:
+- outputs/xeb_instance_results.csv — per-(N,d,r) XEB fidelity estimates and uncertainties
+- outputs/mb_instance_results.csv — per-(N,d,r) MB success probabilities and uncertainties
+- outputs/aggregate_results.csv — aggregated means/SEM by setting
+- outputs/missing_pairs.csv — unmatched auxiliary-file pairs, mainly XEB counts lacking amplitudes
+- outputs/analysis_summary.json — structured run summary and headline metrics
+- outputs/analysis_notes.txt — brief methodological notes
+
+Produced figures under report/images/:
+- report/images/data_overview_by_setting.png
+- report/images/xeb_fidelity_vs_depth_N40.png
+- report/images/xeb_fidelity_vs_size_d12.png
+- report/images/xeb_instance_spread_N40.png
+- report/images/mb_success_vs_depth.png
+
+Verification: substantive analysis outputs and figures were generated successfully. No report/report.md was written in this step.

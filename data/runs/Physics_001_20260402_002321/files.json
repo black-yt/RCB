@@ -1,0 +1,149 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 35037,
+    "mtime": 1775131208.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "MATBG Superfluid Stiffness Core Dataset.txt",
+    "path": "data/MATBG Superfluid Stiffness Core Dataset.txt",
+    "type": "file",
+    "size": 19467,
+    "mtime": 1770189695.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "results_summary.json",
+    "path": "outputs/results_summary.json",
+    "type": "file",
+    "size": 720,
+    "mtime": 1775131206.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3666801,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 225641,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3542674,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 17317606,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_carrier_density.png",
+    "path": "report/images/fig1_carrier_density.png",
+    "type": "file",
+    "size": 154103,
+    "mtime": 1775131206.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_temperature.png",
+    "path": "report/images/fig2_temperature.png",
+    "type": "file",
+    "size": 206096,
+    "mtime": 1775131206.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_current.png",
+    "path": "report/images/fig3_current.png",
+    "type": "file",
+    "size": 87255,
+    "mtime": 1775131206.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_summary.png",
+    "path": "report/images/fig4_summary.png",
+    "type": "file",
+    "size": 296216,
+    "mtime": 1775131206.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_quadratic_scaling.png",
+    "path": "report/images/fig5_quadratic_scaling.png",
+    "type": "file",
+    "size": 102808,
+    "mtime": 1775131206.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 19830,
+    "mtime": 1775131209.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5571,
+    "mtime": 1775060601.0,
+    "exported": true
+  }
+]

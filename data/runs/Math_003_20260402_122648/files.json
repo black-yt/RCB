@@ -1,0 +1,225 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 21098,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "defs.txt",
+    "path": "data/defs.txt",
+    "type": "file",
+    "size": 8156,
+    "mtime": 1770192796.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "imo_ag_30.txt",
+    "path": "data/imo_ag_30.txt",
+    "type": "file",
+    "size": 8772,
+    "mtime": 1770343778.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "rules.txt",
+    "path": "data/rules.txt",
+    "type": "file",
+    "size": 2785,
+    "mtime": 1770343778.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "paper_text",
+    "path": "outputs/paper_text",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.txt",
+    "path": "outputs/paper_text/paper_000.txt",
+    "type": "file",
+    "size": 40074,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.txt",
+    "path": "outputs/paper_text/paper_001.txt",
+    "type": "file",
+    "size": 61314,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.txt",
+    "path": "outputs/paper_text/paper_002.txt",
+    "type": "file",
+    "size": 24844,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.txt",
+    "path": "outputs/paper_text/paper_003.txt",
+    "type": "file",
+    "size": 75658,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "proofs",
+    "path": "outputs/proofs",
+    "type": "directory"
+  },
+  {
+    "name": "aggregate_stats.json",
+    "path": "outputs/aggregate_stats.json",
+    "type": "file",
+    "size": 952,
+    "mtime": 1775133012.0,
+    "exported": true
+  },
+  {
+    "name": "problem_stats.json",
+    "path": "outputs/problem_stats.json",
+    "type": "file",
+    "size": 12670,
+    "mtime": 1775133012.0,
+    "exported": true
+  },
+  {
+    "name": "summary.csv",
+    "path": "outputs/summary.csv",
+    "type": "file",
+    "size": 4444,
+    "mtime": 1775133012.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2215244,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 550976,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 165489,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2682222,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "best_rule_gaps.png",
+    "path": "report/images/best_rule_gaps.png",
+    "type": "file",
+    "size": 90164,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "goal_distribution.png",
+    "path": "report/images/goal_distribution.png",
+    "type": "file",
+    "size": 51862,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "initial_fact_counts.png",
+    "path": "report/images/initial_fact_counts.png",
+    "type": "file",
+    "size": 73241,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "proof_depths.png",
+    "path": "report/images/proof_depths.png",
+    "type": "file",
+    "size": 33842,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "solver_comparison.png",
+    "path": "report/images/solver_comparison.png",
+    "type": "file",
+    "size": 42893,
+    "mtime": 1775133014.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 11495,
+    "mtime": 1775133015.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4788,
+    "mtime": 1775104008.0,
+    "exported": true
+  }
+]

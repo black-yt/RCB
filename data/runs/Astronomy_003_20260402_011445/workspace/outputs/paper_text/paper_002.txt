@@ -1,0 +1,1200 @@
+                                 PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+
+
+            Surrogate models for precessing binary black hole simulations with unequal masses
+
+            Vijay Varma ,1,* Scott E. Field,2 Mark A. Scheel,1 Jonathan Blackman,1 Davide Gerosa ,3 Leo C. Stein,4
+                                        Lawrence E. Kidder ,5 and Harald P. Pfeiffer 6
+            1
+             TAPIR 350-17, California Institute of Technology, 1200 East California Boulevard, Pasadena, California 91125, USA
+                            2
+                              Department of Mathematics, Center for Scientific Computing and Visualization Research,
+                                       University of Massachusetts, Dartmouth, Massachusetts 02747, USA
+                3
+                  School of Physics and Astronomy and Institute for Gravitational Wave Astronomy, University of Birmingham,
+                                                     Birmingham, B15 2TT, United Kingdom
+                     4
+                       Department of Physics and Astronomy, University of Mississippi, University, Mississippi 38677, USA
+                        5
+                          Center for Radiophysics and Space Research, Cornell University, Ithaca, New York 14853, USA
+           6
+             Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am Mühlenberg 1, Potsdam 14476, Germany
+
+                                               (Received 25 July 2019; published 10 October 2019)
+
+                   Only numerical relativity simulations can capture the full complexities of binary black hole mergers. These
+                simulations, however, are prohibitively expensive for direct data analysis applications such as parameter
+                estimation. We present two fast and accurate surrogate models for the outputs of these simulations: the first
+                model, NRSur7dq4, predicts the gravitational waveform and the second model, NRSur7dq4Remnant, predicts
+                the properties of the remnant black hole. These models extend previous seven-dimensional, noneccentric
+                precessing models to higher mass ratios and have been trained against 1528 simulations with mass ratios
+                q  4 and spin magnitudes χ1 , χ2  0.8, with generic spin directions. The waveform model, NRSur7dq4,
+                which begins about 20 orbits before merger, includes all   4 spin-weighted spherical harmonic modes, as
+                well as the precession frame dynamics and spin evolution of the black holes. The final black hole model,
+                NRSur7dq4Remnant, models the mass, spin, and recoil kick velocity of the remnant black hole. In their training
+                parameter range, both models are shown to be more accurate than existing models by at least an order of
+                magnitude, with errors comparable to the estimated errors in the numerical relativity simulations. We also show
+                that the surrogate models work well even when extrapolated outside their training parameter space range, up to
+                mass ratios q = 6.
+
+                DOI: 10.1103/PhysRevResearch.1.033015
+
+
+                       I. INTRODUCTION                                       For interpreting detected signals, model waveforms are
+                                                                         used in comparison with detector data so we can infer the
+   As the LIGO [1] and Virgo [2] detectors reach their de-
+                                                                         properties of the source [12–14]. The mass and spin of
+sign sensitivity, gravitational wave (GW) detections [3–9] are
+                                                                         the remnant determine the black hole ringdown frequencies,
+becoming routine [10,11]. To maximize the science output of
+                                                                         which are used in testing general relativity [15–17]. In ad-
+the data collected by the network of detectors, it is crucial
+                                                                         dition, the recoil kick is astrophysically important because it
+to accurately model the source of the GWs. Among the most
+                                                                         can cause the remnant BH to be ejected from its host galaxy
+important sources for these detectors are binary black hole
+                                                                         [18–20].
+(BBH) systems, in which two black holes (BHs) lose energy
+                                                                             Unfortunately, NR simulations are too expensive to be di-
+through GWs, causing them to inspiral and eventually merge.
+                                                                         rectly used in data analysis applications and incorporated into
+   Numerical relativity (NR) simulations are necessary to
+                                                                         astrophysical models. As a result, several approximate models
+accurately model the late inspiral and merger stages of the
+                                                                         that are much faster to evaluate have been developed for both
+BBH evolution. These simulations accurately solve Einstein’s
+                                                                         waveforms [21–31] and remnant properties [18,19,32–50].
+equations to predict the evolution of the BBH spacetime. The
+                                                                         These models typically assume an underlying phenomenology
+most important outputs of NR simulations are the gravita-
+                                                                         based on physical motivations and calibrate any remaining
+tional waveform and the mass, spin, and recoil kick velocity
+                                                                         free parameters to NR simulations.
+of the remnant BH left after the merger.
+                                                                             Among BBHs, systems with BH spins that are misaligned
+                                                                         with respect to the orbital angular momentum are complicated
+                                                                         to model analytically or semianalytically. For these systems,
+ *
+     vvarma@caltech.edu                                                  the spins interact with both the orbital angular momentum
+                                                                         and each other, causing the system to precess about the
+Published by the American Physical Society under the terms of the        direction of the total angular momentum [51]. This precession
+Creative Commons Attribution 4.0 International license. Further          is imprinted on the waveform as characteristic modulations
+distribution of this work must maintain attribution to the author(s)     in the amplitude and frequency of the GWs and can be used
+and the published article’s title, journal citation, and DOI.            to extract information about the spins of the source. One
+
+2643-1564/2019/1(3)/033015(17)                               033015-1                            Published by the American Physical Society
+VIJAY VARMA et al.                                                                    PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+important application of the extracted spins is to distinguish
+between formation channels of BBHs [52–55].
+    The precessing BBH problem for quasicircular orbits
+is parametrized by seven parameters: the mass ratio q =
+m1 /m2  1 and two spin vectors χ1,2 , where the index 1
+(2) refers to the heavier (lighter) BH. The total mass scales
+out of the problem and does not constitute an additional
+parameter for modeling. The surrogate models of Ref. [56]
+for the gravitational waveform and Ref. [57] for the remnant
+properties were the first to model the seven-dimensional space
+of generically precessing BBH systems, although restricted
+to mass ratios q  2 and dimensionless spin magnitudes
+χ1,2  0.8. Trained directly against numerical simulations,
+these models do not need to introduce additional assumptions
+about the underlying phenomenology of the waveform or
+remnant properties that necessarily introduce some systematic
+error. Through cross-validation studies, it was shown that both
+these models achieve accuracies comparable to the numerical
+simulations themselves [56,57], and as a result, are the most
+accurate models currently available for precessing systems,
+within their parameter space of validity.                                   FIG. 1. The real part of the (2,2) and (2,1) modes of the grav-
+    In this paper, we present extensions of the above surrogate         itational waveform in the inertial (top), coprecessing (middle), and
+models to larger mass ratios. Our new surrogate models are              coorbital (bottom) frames. In the inertial frame, the amplitude of
+called NRSur7dq4 and NRSur7dq4Remnant, for the gravita-                 the (2,1) mode can be comparable to that of the (2,2) mode. In
+tional waveform and remnant properties, respectively. They              the coprecessing frame, on the other hand, the (2,2) mode always
+are trained against 1528 precessing NR simulations with mass            dominates. In addition, most effects of precession are removed by
+ratios q  4, spin magnitudes χ1 , χ2  0.8, and generic spin           the rotation and the waveform in the coprecessing frame resembles
+directions. Both models are made publicly available through             that of a nonprecessing system. In the co-orbital frame, finally, the
+the gwsurrogate [58] and surfinBH [59] PYTHON packages;                 waveform is further simplified and does not oscillate about zero.
+example evaluation codes are provided at Refs. [60] and [59],           Mass ratio and initial spins used to produce this figure are indicated
+respectively, for NRSur7dq4 and NRSur7dq4Remnant.                       in the text within the figure.
+    The rest of the paper is organized as follows. Section II
+covers some preliminaries to set up the modeling prob-
+lem for precessing BBH systems. Section III describes the               radiation is strongest along the directions parallel and an-
+training simulations. Section IV describes the NRSur7dq4                tiparallel to L̂. Therefore, for nonprecessing systems, the
+waveform surrogate model. Section V describes the NR-                   quadrupole modes ( = 2, m = ±2) dominate the sum in
+Sur7dq4Remnant remnant properties surrogate model. Sec-                 Eq. (1), but the nonquadrupole modes can become important
+tion VI compares these models against NR simulations to                 at large mass ratios or ι close to π /2 [61–70].
+assess their accuracy. Finally, Sec. VII presents some con-                 By contrast, for precessing systems the direction of L
+cluding remarks. In Appendix A, we examine how accurate                 varies due to precession [51] and so there is not a fixed axis
+these models are when extrapolated beyond mass ratio q = 4,             along which the radiation is dominant. The standard practice
+and in Appendix B, we investigate some features in the error            is to choose ẑ of the source frame along the direction of L (or
+distribution of the NR simulations.                                     the total angular momentum) at a reference time or frequency.
+                                                                            Heuristically, one can think of a precessing system as a
+           II. PRELIMINARIES AND NOTATION                               nonprecessing system with time-dependent frame rotations
+                                                                        applied to it. In this noninertial frame, the rotation causes
+   It is convenient to combine the two polarizations of the             mixing of power between modes of fixed . For example, the
+waveform into a single complex, dimensionless strain h =                power of the (2, ±2) modes leaks into the (2, ±1) and (2,0)
+h+ − ih× and to represent the waveform on a sphere as a sum             modes. This means that all  = 2 modes can be dominant
+of spin-weighted spherical harmonic modes:                              in Eq. (1). While this rotating-frame picture ignores some
+                           ∞ 
+                                                                        dynamical features such as nutation, it accounts for most of
+                            l
+                                                                        the effects of precession in the waveform.
+         h (t, ι, ϕ0 ) =              h m (t ) −2Ym (ι, ϕ0 ).   (1)
+                                                                            By the same logic, one could apply a time-dependent
+                           =2 m=−l
+                                                                        rotation to a precessing system such that ẑ always lies along
+Here, −2Ym are the spin = −2 weighted spherical harmonics,             L̂(t ). In this noninertial frame, referred to as the coprecessing
+and ι and ϕ0 are the polar and azimuthal angles on the sky in           frame [71–73], the radiation is always strongest along ẑ, and
+the source frame.                                                       the ( = 2, m = ±2) modes are dominant. In fact, since most
+   For nonprecessing systems, the direction of orbital angular          precessional effects are accounted for by the frame rotation,
+momentum (L) is fixed and the ẑ direction of the source frame          the waveform in the coprecessing frame is qualitatively
+is chosen to be along L̂ by convention. The gravitational               similar to that of a nonprecessing system (cf. Fig. 1). This
+
+                                                                  033015-2
+SURROGATE MODELS FOR PRECESSING BINARY BLACK …                                      PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+observation has been exploited in the literature                      of chosen parameters. This is done iteratively for 370
+[21,24,27,56,74] to simplify the modeling of precessing               additional parameters. The new simulations have identifiers
+systems. Here, we proceed similarly, using the coprecessing           SXS:BBH:1346-1350 and SXS:BBH:1514-2082 and are
+frame described in Ref. [73] and denoting the strain in this          made publicly available through the SXS public catalog [83].
+frame as h copr
+           m .                                                       The parameter space covered by the 890 + 64 + 574 = 1528
+   The waveform can be made even simpler, and therefore               NR simulations used in this work is shown in Fig. 2. Note that
+easier to model, by applying an additional rotation about the         not all of these are independent simulations: For 154 of these
+z axis of the coprecessing frame by an amount equal to the            cases, we have q = 1, with χ1 = χ2 ; for each of these cases,
+instantaneous orbital phase:                                          we effectively obtain an additional simulation by exchanging
+                                copr                                  the labels of the two BHs.
+                    m (t ) = h m (t ) e
+                  h coorb                        .
+                                         imφ(t )
+                                                               (2)
+                                                                          The start time of these simulations varies between 4693M
+Here, we define the orbital phase,                                    and 5234M before the peak of the waveform amplitude, where
+                                       copr                       M = m1 + m2 is the total Christodoulou mass measured close
+                   arg h copr
+                         2,−2 (t ) − arg h 2,2 (t )                   to the beginning of the simulation at the “relaxation time”
+          φ(t ) =                                   ,          (3)
+                                    4                                 [84]. The initial orbital parameters are chosen through an
+using the coprecessing frame strain. The waveform h coorb             iterative procedure [85] such that the orbits are quasicircular;
+                                                        m (t )
+corresponds to a new frame, called the co-orbital frame, in           the largest eccentricity for these simulations is 9.8 × 10−4 ,
+which the BHs are always on the x axis, with the heavier BH           while the median value is 3.8 × 10−4 .
+on the positive x axis.1 More importantly, the waveform in
+the co-orbital frame is nearly nonoscillatory, simplifying the                        B. Data extracted from simulations
+modeling problem greatly. Figure 1 shows an example of a
+                                                                         We make use of the following quantities extracted from
+waveform in the inertial, coprecessing, and co-orbital frames.
+                                                                      the NR simulations: the waveform modes h m (t ), component
+                                                                      spins χ(t ), mass ratio q, remnant mass m f , spin χ f , and kick
+                    III. NR SIMULATIONS                               velocity v f .
+   Our NR simulations are performed using the spectral                   The waveform is extracted at several extraction spheres at
+Einstein code (SpEC) [75–80] developed by the SXS [81]                varying finite radii from the origin and then extrapolated to
+Collaboration.                                                        future null infinity [84,86]. Then, the extrapolated waveforms
+                                                                      are corrected to account for the initial drift of the center
+                                                                      of mass [87,88]. The time steps during the simulations are
+                  A. Parameter space coverage
+                                                                      chosen nonuniformly using an adaptive time stepper [84].
+    We use 890 precessing NR simulations used in the con-             Using cubic splines, we interpolate the real and imaginary
+struction of the surrogate models of Refs. [56,57], which             parts of the waveform modes to a uniform time step of 0.1M;
+provide coverage in the q  2 and χ1 , χ2  0.8 regions of the        this is dense enough to capture all frequencies of interest,
+parameter space. We also make use of 64 aligned-spin simu-            including near merger. The interpolated waveform at future
+lations with q  4 and χ1 , χ2  0.8 used in the construction         null infinity, scaled to unit mass and unit distance, is denoted
+of the surrogate model presented in Ref. [82]. Finally, we per-       as h m (t ) in this paper.
+formed 574 new simulations with 2 < q  4, χ1 , χ2  0.8,                The component spins χ1,2 (t ) and masses m1,2 are evaluated
+and generic spin directions. The parameters for the first 204 of      on the apparent horizons [77] of the BHs. The masses at the
+these are chosen based on sparse grids as detailed in Appendix        relaxation time [84] are used to define the mass ratio q =
+A of Ref. [56]. The remaining parameters are chosen as                m1 /m2 . Unless otherwise specified, all masses in this paper
+follows. We randomly sample 1000 points uniformly in mass             are given in units of the total mass M = m1 + m2 at relaxation.
+ratio, spin magnitude, and spin direction on the sphere. We           The spins are interpolated onto the same time array2 as used
+compute the distance between points a and b using the metric          for the waveform, using cubic splines.
+                 a       2                    2                     The remnant mass m f and spin χ f are determined from
+                  q − qb          χai − χbi                        the common apparent horizon long after ringdown, as detailed
+          ds =
+            2
+                              +                       ,      (4)
+                    q          i∈{1,2}
+                                           χ                         in Ref. [84]. The remnant kick velocity is derived from con-
+                                                                      servation of momentum, v f = −P rad /m f [90]. The radiated
+where q = 4 − 1 = 3 and χ = 0.8 are the ranges of                   momentum flux P rad is integrated [91] from the strain h m .
+these parameters. These normalization factors are somewhat
+arbitrary, although any choice of order unity should provide a
+reasonable criteria for point selection. For each sampled
+parameter, we compute the minimum distance to all                      2
+                                                                         The waveforms at future null infinity use a time coordinate t that is
+previously chosen parameters. We then add the sampled
+                                                                      different from the simulation time t˜ at which the spins are measured
+parameter maximizing this minimum distance to the set                 in the near zone [84]. In this paper, we identify t with t˜. While
+                                                                      this identification is gauge dependent, the spin directions are already
+                                                                      gauge dependent. We, however, note that the spin and orbital angular
+ 1                                                                    momentum vectors in the damped harmonic gauge used by SpEC
+   Here, the BH positions are defined from the waveform at fu-
+ture null infinity and do not necessarily correspond to the (gauge-   agree quite well with the corresponding vectors in post-Newtonian
+dependent) coordinate BH positions in the NR simulation.              (PN) theory [89].
+
+                                                                033015-3
+VIJAY VARMA et al.                                                                    PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+
+
+
+   FIG. 2. Parameters of the 1528 NR simulations used in the construction of the surrogate models in this paper. We show the distribution of
+mass ratio q and the spin components in standard spherical polar coordinates (χ , θ, φ) at −4300M from the waveform amplitude peak. The
+index 1 (2) refers to the heavier (lighter) BH.
+
+
+        C. Postprocessing the output of NR simulations                      We then truncate the waveform and spin time series by
+   After extracting the strain and spins from the simulations,          dropping all times t < −4300M to exclude the initial tran-
+we apply the following postprocessing steps before building             sients known as “junk radiation.” After the truncation, the
+the surrogate models.                                                   reference time t = −4300M is also the start time of the
+   First, we shift the time arrays of all waveforms such that           data.
+t = 0 occurs at the peak (see Ref. [56] for how the peak is                 For t > −100M, the spin measurements from the apparent
+determined) of the total waveform amplitude, defined as                 horizons start to become unreliable as the horizons become
+                                                                        highly distorted. Following Ref. [56], starting at t = −100M,
+                                                                       we extend the spins to later times using PN spin evolution
+                    A(t ) =      |h m (t )|2 .            (5)
+                                                                        equations. This evolution is done even past the merger stage,
+                                m
+                                                                        into the ringdown. We stress that the extended spins are
+   Then we rotate the waveform modes such that at a ref-                unphysical but are a useful parametrization to construct fits
+erence time t0 = −4300M, the inertial frame coincides with              at late times.
+the co-orbital frame. This means that the ẑ direction of the               Finally, we apply a smoothing filter (see Eq. (6) of
+inertial frame is along the principal eigenvector of the angular        Ref. [56]) on the spin time series to remove fast oscillations
+momentum operator [73] at the reference time. In addition,              taking place on the orbital time scale. This smoothing helps
+the x̂ direction of the inertial frame is along the line of             improve the numerical stability of the ordinary differential
+separation from the lighter BH to the heavier BH (in other              equation (ODE) integrations described in Sec. IV B. Note that
+words, the orbital phase is zero). The spin vectors χ1,2 (t ) are       we use the filtered spins for the waveform surrogate (Sec. IV)
+also transformed into the same inertial frame.                          but not for the remnant surrogate (Sec. V), for which we just
+
+                                                                 033015-4
+SURROGATE MODELS FOR PRECESSING BINARY BLACK …                                            PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+
+                                                                           strain h coorb
+                                                                                    ,m . We construct an independent surrogate model
+                                                                           for each of these data pieces and refer to the combination of
+                                                                           these models as the co-orbital frame surrogate.
+                                                                              As described in Ref. [56], for each waveform data piece,
+                                                                           we construct a linear basis using singular value decomposition
+                                                                           with an rms tolerance of 3 × 10−4 . We then construct an
+                                                                           empirical time interpolant with the same number of empirical
+                                                                           time nodes as basis functions for that data piece [92–94].
+                                                                           The empirical time nodes are chosen as a subset of the 2000
+                                                                           co-orbital time values (ticoorb ) and are specific to each data
+                                                                           piece. Finally, for each empirical time node, we construct
+                                                                           a parametric fit for the waveform data piece. The fits are
+                                                                           parametrized as functions of the mass ratio and the spins in the
+                                                                           co-orbital frame at that time. We describe our fitting procedure
+                                                                           in Sec. IV C. At evaluation time, the co-orbital frame spins at
+                                                                           any time are obtained using the dynamics surrogate described
+                                                                           in Sec. IV B.
+
+
+   FIG. 3. The top panel shows the real part of the (2,2) and (2, −2)
+modes of the waveform in the co-orbital frame. Notice that the orbital                            B. Dynamics surrogate
+timescale oscillations of these two modes have opposite signs. The              The surrogate described in Sec. IV A only models the strain
+bottom panel shows the real parts of h +           −
+                                         2,2 and h 2,2 [cf. Eq. (6)], we   in the co-orbital frame. We also need to model the following
+take advantage of the above fact to move most of the oscillations          quantities:
+from the larger to the smaller data piece.                                      (1) the orbital phase in the coprecessing frame, which is
+                                                                           required to transform the strain from the co-orbital frame to
+                                                                           the coprecessing frame [cf. Eq. (2)];
+use the unfiltered spins since there are no ODE integrations                    (2) the quaternions describing the coprecessing frame,
+involved.                                                                  which are required to transform the strain from the coprecess-
+                                                                           ing frame to the inertial frame;
+                 IV. WAVEFORM SURROGATE                                         (3) the spins as a function of time, which are used in the
+                                                                           evaluation of the parametric fits described in Sec. IV C.
+   To construct the waveform surrogate, we closely follow the                   We refer to the model for these quantities as the dynamics
+model of Ref. [56], with some modifications to adapt it to                 surrogate. Using the fitting method of Sec. IV C, we first
+higher mass ratios. We refer to the new waveform model as                  construct parametric fits for ω(t ), coorb     x,y (t ), and χ̇1,2 (t ) at
+                                                                                                                                          coorb
+NRSur7dq4.                                                                 selected time nodes referred to as the dynamical time nodes
+                                                                           tidyn . Here, χ̇coorb
+                                                                                            1,2 (t ) are the time derivatives of the coprecess-
+                  A. Co-orbital frame surrogate                            ing frame spins transformed to the co-orbital frame, ω(t ) is
+    We find that the surrogate accuracy improves when work-                dφ/dt [cf. Eq. (3)], and coorb     x,y (t ) is the angular velocity of
+ing with slowly varying functions, rather than oscillatory ones.           the coprecessing frame, transformed to the co-orbital frame.
+Therefore, we first decompose the strain into several “data                These quantities are described in more detail in Sec. III of
+pieces,” each of which is a slowly varying function of time,               Ref. [56]. Note that coorb    z     (t ) ∼ 0. For the dynamical time
+and build a surrogate for each of them. At evaluation time,                nodes tidyn , we chose 238 time values such that there are
+we combine the various data pieces to reconstruct the inertial             approximately 10 nodes per orbit (see Appendix B of Ref. [56]
+frame strain. To reduce the cost of these transformations, we              for details).
+first downsample the inertial frame strain onto a set of 2000                   We use a fourth-order Adams-Bashforth scheme to inte-
+time values ticoorb that are approximately uniformly spaced in             grate ω(tidyn ), coorbx,y (ti
+                                                                                                        dyn
+                                                                                                            ), and χ̇coorb
+                                                                                                                       1,2 (ti
+                                                                                                                              dyn
+                                                                                                                                  ) over the set of
+the orbital phase (using the method described in Appendix B                dynamical time nodes tidyn providing the time evolution of
+of Ref. [56]).                                                             the orbital phase φ(tidyn ), the coprecessing frame quaternions
+    As described in Sec. II, the waveform is simpler in the
+                                                                           Q̂(tidyn ), and the component spins in the co-orbital frame
+co-orbital frame. A further simplification is possible by con-                       dyn
+sidering combinations of m > 0 and m < 0 counterparts of a                 χcoorb
+                                                                              1,2 (ti    ). This involves solving a coupled ODE as described
+fixed  mode:                                                              in Sec. V of Ref. [56]. At each step of the ODE integration,
+                                         coorb ∗                           the co-orbital frame spins at the current node tidyn are first
+                                 ,m ± h ,−m
+                               h coorb
+                     h ±m =              .               (6)              obtained. These are then used to evaluate the parametric fits
+                                 2                                         for the derivative quantities mentioned above. Note that the
+Figure 3 shows an example of the simplification obtained with              spins used in the dynamics surrogate are the filtered spins
+this combination. For all m = 0 modes, we model the real                  mentioned in Sec. III C; this improves the accuracy of the
+and imaginary parts of h ±
+                         m . For m = 0 modes, we directly                 ODE integration by making the spin time derivatives easier
+model the real and imaginary parts of the co-orbital frame                 to model.
+
+                                                                     033015-5
+VIJAY VARMA et al.                                                                           PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+                           C. Parametric fits                                 Note that at this time, the inertial frame coincides with
+   For the co-orbital frame surrogate of Sec. IV A, we need                   the co-orbital frame. These values are used to initialize the
+to construct parametric fits at various empirical time nodes                  dynamics surrogate described in Sec. IV B, which predicts
+for the different data pieces. Similarly, for the dynamics                    the coprecessing frame quaternions Q̂(tidyn ), the orbital phase
+surrogate of Sec. IV B, we need to construct fits for various                 φ(tidyn ) in the coprecessing frame, and the coorbital frame
+time derivatives at the dynamical time nodes tidyn . We use the               spins χcoorb
+                                                                                        1,2 (ti
+                                                                                                dyn
+                                                                                                    ) at the dynamic time nodes tidyn . We then
+same procedure for each of these fits. Let us refer to the data               use cubic splines to interpolate these quantities on to the
+to be fitted as y(), where  is a seven-dimensional set of                   time array for the co-orbital frame surrogate ticoorb , giving us
+parameters.                                                                   Q̂(ticoorb ), φ(ticoorb ), and χcoorb
+                                                                                                                 1,2 (ti
+                                                                                                                        coorb
+                                                                                                                              ).
+   For each of these fits, the seven parameters  must                           The co-orbital frame surrogate described in Sec. IV A is
+contain information on mass ratio q and co-orbital frame                      used to predict the strain in the co-orbital frame. This involves
+spins χcoorb
+        1,2 (ti ) at the time corresponding to the fit. Following             evaluating the fits at the empirical time nodes for this surro-
+Ref. [57], we parametrize the fits using                                      gate using χcoorb
+                                                                                              1,2 (ti
+                                                                                                       coorb
+                                                                                                             ) and q. Then, the orbital phase φ(ticoorb )
+                                                                            is used to transform the strain from the co-orbital frame to
+  = log(q), χ1x    coorb
+                          , χ1y
+                             coorb
+                                   , χ̂ coorb , χ2x
+                                                 coorb
+                                                       , χ2y
+                                                          coorb
+                                                                , χacoorb ,
+                                                                              the coprecessing frame [cf. Eq. (2)]. Finally, the coprecessing
+                                                                       (7)    frame quaternions Q̂(ticoorb ) are used to transform the strain
+where χ̂  coorb
+             is the spin parameter entering the GW phase at                   from the coprecessing frame to the inertial frame (this in-
+leading order [12,26,95,96] in the PN expansion                               volves Wigner matrices; see Appendix A of Ref. [73]). This
+                                                                              gives us h m (ticoorb ), which is interpolated onto any required
+                      χeff
+                       coorb
+                             − 38η χ1zcoorb
+                                            + χ2z coorb
+                                                        /113                  time array t using cubic splines to get h m (t ).
+         χ̂ coorb =                                          ,         (8)
+                                1 − 76η/113
+                               qχ coorb + χ2z coorb
+                      χeff
+                       coorb
+                             = 1z                   ,                  (9)                       V. REMNANT SURROGATE
+                                     1+q
+                                    q                                              To construct the remnant properties surrogate, we closely
+                             η=             ,                        (10)
+                                 (1 + q)2                                     follow the model of Ref. [57]. We refer to the new model
+                                                                              presented here as NRSur7dq4Remnant.
+and χacoorb is the “antisymmetric spin”
+                                                                                   We model the remnant mass m f , spin χ f , and kick velocity
+                    χacoorb = 21 χ1z
+                                  coorb
+                                        − χ2z
+                                           coorb
+                                                 .                   (11)     v f . Before constructing the fits, χ f and v f are transformed
+                                                                              into the co-orbital frame at t = −100M. We model each com-
+We empirically found this parametrization to perform
+                                                                              ponent of the vectors independently. The fits are parametrized
+more accurately than the more intuitive choice ref56 =
+                                                                              by the same  of Eq. (7), but using the component spins at
+[q, χ1xcoorb
+             , χ1y
+                coorb
+                      , χ1z
+                         coorb
+                               , χ2x
+                                  coorb
+                                        , χ2y
+                                           coorb
+                                                 , χ2z
+                                                    coorb
+                                                          ] used in
+                                                                              t = −100M. Unlike the waveform surrogate case, we do not
+Ref. [56].
+                                                                              filter out orbital-timescale oscillations. The filtered spins were
+    Fits are constructed using the forward-stepwise greedy
+                                                                              found to be necessary for the accuracy of the time integration
+fitting method described in Appendix A of Ref. [74]. We
+                                                                              in Sec. IV B, which is not necessary here because the remnant
+choose the basis functions to be a tensor product of one-
+                                                                              properties can evaluated from the BBH parameters at a single
+dimensional (1D) monomials in the components of . The
+                                                                              time t = −100M.
+components of  are first affine mapped to the interval [−1, 1]
+                                                                                   All fits are performed using Gaussian process regres-
+before constructing the tensor product. We consider up to
+                                                                              sion (GPR), as described in the supplementary materials of
+cubic powers in log(q) and up to quadratic powers in the
+                                                                              Ref. [57]. We find that GPR fitting is, in most cases, more
+spin parameters. We find that going to higher powers does
+                                                                              accurate but also significantly more expensive than the poly-
+not significantly improve the fit accuracy within the training
+                                                                              nomial fitting method described in Sec. IV C. GPR becomes
+region, but the mass ratio extrapolation errors estimated in
+                                                                              impractical to use for the waveform surrogate as there are
+Appendix A become much larger.
+                                                                              hundreds of fits that need to be evaluated to generate the
+    It is always possible to improve the accuracy of a fit by
+                                                                              waveform. For the remnant fits, however, the additional cost
+adding more basis functions. However, this can lead to overfit-
+                                                                              of GPR is acceptable because one is only fitting seven quan-
+ting when the data contain some noise. Our source of noise is
+                                                                              tities (m, χ f , v f ). In addition, GPR naturally provides error
+mostly due to NR truncation error, but also systematic errors
+                                                                              estimates which can be useful in data analysis applications.
+such as waveform extrapolation and residual eccentricity. In
+                                                                              The efficacy of the GPR error estimate in reproducing the
+order to safeguard against overfitting, we perform 10 trial fits,
+                                                                              underlying error of the surrogate models was investigated
+leaving a random 10% of the dataset out as validation points
+                                                                              thoroughly in the supplementary materials of Ref. [57].
+in each trial, to determine the set of basis functions used in
+                                                                                   Although NRSur7dq4Remnant is parameterized internally
+constructing the final fit. We allow a maximum of 100 basis
+                                                                              by input spins specified in the co-orbital frame at t = −100M,
+functions for each fit. See Appendix A of Ref. [74] for more
+                                                                              we allow the user to specify input spins at earlier times and
+details.
+                                                                              in the inertial frame; this case is handled by two additional
+                                                                              levels of spin evolution. Given the inertial-frame input spins
+                       D. Surrogate evaluation                                at an initial orbital frequency f0 , we first evolve the spins using
+  To evaluate the surrogate, we begin with a user-specified                   a post-Newtonian (PN) approximant—3.5PN SpinTaylorT4
+mass ratio q and spins χcoorb
+                        1,2 at the initial time t = −4300M.                   [89,97,98]—until we reach the domain of validity of the
+
+                                                                        033015-6
+SURROGATE MODELS FOR PRECESSING BINARY BLACK …                                             PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+
+
+
+                             (a) Flat noise mismatches                                     (b) LIGO noise mismatches
+
+    FIG. 4. Mismatches for NRSur7dq4 and SEOBNRv3 models, when compared against precessing NR simulations using all   5 modes
+with mass ratios q  4 and spin magnitudes χ1 , χ2  0.8. The NRSur7dq4 errors shown are out-of-sample errors. Also shown are the NR
+resolution errors. Mismatches are computed at several sky locations using all available modes for each model:   4 for NRSur7dq4, and  = 2
+for SEOBNRv3. The NR error is computed using all   5 modes from the two highest available resolutions. Left panel: Mismatches computed
+using a flat noise curve. The square (triangle) markers at the top indicate the median (95th percentile) values. Right panel: Mismatches
+computed using the Advanced LIGO design sensitivity noise curve, as a function of total mass. The dashed (solid) lines indicate the median
+(95th percentile) values over different NR simulations and points in the sky.
+
+
+
+more accurate NRSur7dq4 (t = −4300M from the peak). We                        the real part, and Sn ( f ) is the one-sided power spectral density
+then use the dynamics surrogate of NRSur7dq4 to evolve the                    of a GW detector. We taper the time domain waveform using
+spins until t = −100M. These spins are then transformed to                    a Planck window [99] and then zero pad to the nearest power
+the co-orbital frame and used to evaluate the remnant fits.                   of 2. We further zero pad the waveform to increase the length
+Thus, spins can be specified at any given orbital frequency                   by a factor of 8 before performing the Fourier transform. The
+and are evolved consistently before estimating the final BH                   tapering at the start of the waveform is done over 1.5 cycles
+properties. Note that NRSur7dq4 uses the filtered spins, while                of the (2,2) mode. The tapering at the end is done over the last
+NRSur7dq4Remnant expects unfiltered spins at t = −100M,                       30M. Note that our model contains times up to 100M after the
+but we find that the errors introduced by this discrepancy are                peak of the waveform amplitude, and the signal has essentially
+negligible compared to the errors due to PN spin evolution.                   died down by the last 30M. We take fmin to be twice the
+                                                                              waveform angular velocity (as defined by Ref. [100]) at the
+                          VI. RESULTS                                         end of the initial tapering window, and fmax is chosen to
+                                                                              be four times the waveform angular velocity at t = 0; the
+    We evaluate the accuracy of our surrogate models by                       extra factor of 4 is chosen to resolve up to m = 4 spherical-
+comparing them against the waveform and remnant properties                    harmonic modes, with an extra margin of a factor of 2.
+from the NR simulations used in this work. For this, we                       We compute mismatches with a flat noise curve (Sn = 1)
+perform a 20-fold cross-validation study to compute “out-of-                  as well as with the advanced-LIGO design sensitivity noise
+sample” errors as follows. We first randomly divide the 1528                  curve [101]. Mismatches are computed following the pro-
+training simulations into 20 groups of ≈76 simulations each.                  cedure described in Appendix D of Ref. [74]. In partic-
+For each group, we build a trial surrogate using the ≈1452                    ular, we optimize over shifts in time, polarization angle,
+remaining training simulations and test against these ≈76                     and initial orbital phase. Both plus and cross polarizations
+validation ones, which may include points on the boundary                     are treated on an equal footing by using a two-detector
+of the training set.                                                          setup where one detector sees only the plus and the other
+                                                                              only the cross polarization. We compute the mismatches at
+                 A. Waveform surrogate errors                                 37 points uniformly distributed on the sky in the source
+                                                                              frame, and we use all available modes of a given waveform
+   To estimate the difference between two waveforms, h 1 and
+                                                                              model.
+h 2 , we use the mismatch
+                                                                                 Figure 4 summarizes the out-of-sample mismatches for
+                                       h 1 , h 2                             NRSur7dq4 against the NR waveforms. In Fig. 4(a), we show
+               MM = 1 −                                        ,      (12)    mismatches computed using a flat noise curve. We compare
+                                 h 1 , h 1 h 2 , h 2
+                                fmax               ∗                         this with the truncation error in the NR waveforms them-
+                                        h̃ 1 ( f )h̃ 2 ( f )                  selves, estimated by computing the mismatch between the
+            h 1 , h 2 = 4Re                                   df ,   (13)
+                                fmin         Sn ( f )                         two highest available resolutions of each NR simulation. The
+                                                                              errors in the surrogate model are well within the estimated
+where h̃ ( f ) indicates the Fourier transform of the complex                 truncation errors of the NR simulations. In addition, we also
+strain h (t ), ∗ indicates a complex conjugation, Re indicates                show the errors for the waveform model SEOBNRv3 [24,31],
+
+                                                                        033015-7
+VIJAY VARMA et al.                                                                        PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+
+
+
+    FIG. 5. The plus polarization of the waveforms for the cases that result in the largest mismatch for NRSur7dq4 (top) and SEOBNRv3
+(bottom) in Fig. 4(a). We also show the corresponding NR waveforms. Each waveform is projected using all available modes for that model,
+along the direction that results in the largest mismatch for NRSur7dq4 (SEOBNRv3) in the top (bottom) panel. Note that NRSur7dq4 is
+evaluated using trial surrogates that are not trained using these cases. The binary parameters and the direction in the source frame are indicated
+in the figure text. All waveforms are time shifted such that the peak of the total amplitude occurs at t = 0 [using all available modes, according
+to Eq. (5)]. The waveform modes are then rotated to have their orbital angular momentum aligned with the z axis and such that the orbital
+phase is equal to zero at t = −4300M.
+
+
+
+which also includes spin precession effects.3 The surrogate                expect the actual truncation error to be closer to the errors
+errors are at least an order of magnitude lower than those of              reproduced by the surrogate model (which is trained on the
+SEOBNRv3.                                                                  high-resolution data set) in Fig. 4(a). Evidence for these
+    Apart from SEOBNRv3, another model commonly used                       claims is provided in Appendix B.
+in data analysis applications is IMRPhemomPv2 [27]. IM-                        Figure 4(b) shows mismatches computed using the Ad-
+RPhemomPv2 was shown to be comparable in accuracy to                       vanced LIGO design sensitivity noise curve [101]. In this
+SEOBNRv3 in Ref. [56], at least in order of magnitude.                     case, results depend on the total mass M of the system.
+Therefore, for simplicity, we do not show comparisons of                   Consequently, we show the median and 95th percentile values
+IMRPhemomPv2 to NR here. Note that updated versions of                     at different M, rather than full histograms. Once again, the
+both SEOBNRv3 (based on Ref. [22]) and IMRPhemomPv2                        surrogate errors are comparable to those of the NR simulations
+(see Ref. [21]) are under development but are not currently                and are at least an order of magnitude lower than that of
+available publicly. We note that these models are calibrated               SEOBNRv3. Over the mass range 50–200M , mismatches
+only against aligned-spin NR simulations, using a much                     for NRSur7dq4 are always  8 × 10−3 at the 95 percentile
+smaller set of simulations than our model. Both these factors              level.
+contribute to the accuracy of these models. On the other hand,                 Figure 5 shows a comparison of waveforms computed via
+these models are expected to be valid for larger mass ratios               NRSur7dq4, SEOBNRv3, and NR for the cases that lead to
+and spin magnitudes than our model, although their accuracy                the largest error for NRSur7dq4 and SEOBNRv3 in Fig. 4(a).
+in that region is unknown due to lack of sufficient number of              The surrogate shows reasonable agreement with NR, even for
+simulations.                                                               its worst case, while SEOBNRv3 shows a noticeably larger
+    We note that the NR truncation mismatch distribution in                deviation in both cases.
+Fig. 4(a) has a tail extending to MM ∼ 0.1. We find that                       In Figs. 4 and 5, we use all available modes for NR-
+these cases occur when the spins of the two highest resolutions            Sur7dq4 and SEOBNRv3. NRSur7dq4 models all modes  
+of the simulation are inconsistent with each other because of              4, while SEOBNRv3 models only the  = 2 modes. For the
+unresolved effects during junk-radiation emission, meaning                 NR waveforms in Figs. 4 and 5, we include all modes  
+that the two resolutions represent different physical systems.             5 to account for the error due to neglecting  > 4 modes
+This means that comparing the resolutions for these cases                  in NRSur7dq4. To better understand what fraction of the
+gives us an error estimate that is too conservative and does               SEOBNRv3 error comes from neglecting modes with  > 2,
+not reflect the actual truncation error of the simulations. We             we repeat the calculations leading to the SEOBNRv3 his-
+                                                                           togram in Fig. 4(a) in Fig. 6, while restricting all waveforms
+                                                                           to  = 2. While there is a noticeable move toward lower
+ 3
+   Note that SEOBNRv3 spins are specified at a reference frequency,        mismatches when restricted to  = 2, the median and 95th
+rather than a time before merger. We choose the reference frequency        percentile values change only marginally, suggesting that
+such that the waveform begins at t = −4300M before the waveform            the main error source for SEOBNRv3 are the  = 2 modes
+amplitude peak [as defined in Eq. (5)].                                    themselves.
+
+                                                                    033015-8
+SURROGATE MODELS FOR PRECESSING BINARY BLACK …                                      PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+                                                                       error is likely to be close to the errors reproduced by the
+                                                                       surrogate.
+                                                                           The NRSur7dq4Remnant fits in Fig. 7 are evaluated using
+                                                                       the NR spins at t = −100M as inputs. In typical applications,
+                                                                       one may have access to the spins only at the start of the wave-
+                                                                       form, rather than at t = −100M. For this case, as described in
+                                                                       Sec. V, we use a combination of PN and NRSur7dq4 to evolve
+                                                                       the spins from any given starting frequency to t = −100M.
+                                                                       These spins are then used to evaluate the NRSur7dq4Remnant
+                                                                       fits. Thus, spins can be specified at any given orbital frequency
+                                                                       and are evolved consistently before estimating the final BH
+                                                                       properties. This is a crucial improvement (introduced by
+                                                                       Ref. [57]) over previous results, which, being calibrated solely
+                                                                       to nonprecessing systems, suffer from ambiguities regarding
+   FIG. 6. Same as Fig. 4(a) but using only  = 2 modes for NR
+                                                                       the time and frequency at which spins are defined.
+when compared to SEOBNRv3. The blue histogram from Fig. 4(a),
+                                                                           Figure 8 shows the errors in NRSur7dq4Remnant when
+where SEOBNRv3 is compared to NR with all   5 modes, is
+                                                                       the spins are specified at an orbital frequency f0 = 10 Hz.
+reproduced here for comparison. The square (triangle) markers at the
+top indicate the median (95th percentile) values.
+                                                                       These errors are computed by comparing against 23 long NR
+                                                                       (3 × 104 M to 105 M in length) simulations [84] with mass
+                                                                       ratios q  4 and generically oriented spins with magnitudes
+                                                                       χ1 , χ2 ∼ 0.5. None of these simulations were used to train the
+                  B. Remnant surrogate errors                          fits. Longer PN evolutions are needed at lower total masses,
+    We evaluate the accuracy of the remnant surrogate NR-              and the errors are therefore larger. These errors will decrease
+Sur7dq4Remnant by comparing against the NR simulations                 with an improved spin evolution procedure. Note, however,
+through a cross-validation study as in Sec. VI A. Out-of-              that our predictions are still more accurate than those of
+sample errors for the remnant properties predicted by NR-              existing fitting formulas (cf. Fig. 7).
+Sur7dq4Remnant are shown in Fig. 7. The 95th percentile
+errors are ≈5 × 10−4 M for mass, ≈2 × 10−3 for spin mag-
+nitude, ≈4−3 radians for spin direction, ≈4 × 10−4 c for kick
+                                                                                            VII. CONCLUSION
+magnitude, and ≈0.2 rad for kick direction. Our errors are
+at the same level as the NR resolution error, estimated by                We present NR surrogate models for precessing BBH
+comparing the two highest NR resolutions. The largest errors           systems with generic spins and unequal masses. In particular,
+in the kick direction can be of order ≈1 rad. The bottom-right         we model the two most-used outputs of NR simulations:
+panel of Fig. 7 shows the joint distribution of kick magnitude         the gravitational waveform and the properties (mass, spin,
+and kick direction error for NRSur7dq4Remnant, showing                 and recoil kick) of the final BH formed after the merger.
+that direction errors are larger at low kick magnitudes. Our           Trained against 1528 NR simulations with mass ratios q  4,
+error in kick direction is below ≈0.2 rad whenever v f                spin magnitudes χ1,2  0.8, and generic spin directions, both
+2 × 10−3 c.                                                            these models are shown to reproduce the NR simulations with
+    We also compare the performance of our fits against several        accuracies comparable to those of the simulations themselves.
+existing fitting formulas for remnant mass, spin, and kick                The waveform model, NRSur7dq4, includes all spin-
+which we denote as follows: HBMR ([32,33] with nM = nJ =               weighted spherical harmonic modes up to  = 4. The preces-
+3), UIB [34], HL [35], HLZ [36], and CLZM ([37–41] as sum-             sion frame dynamics and spin evolution of the BHs are also
+marized in Ref. [42]). To partially account for spin precession,       modeled as by-products. Through a cross-validation study,
+these fits are corrected as described in Ref. [102] and used           we show that the mismatches for NRSur7dq4 against NR
+in current LIGO-Virgo analyses [6,103]: Spins are evolved              computed with the Advanced LIGO design sensitivity noise
+using PN from relaxation to the Schwarzschild innermost                curve are always  8 × 10−3 at the 95 percentile level over the
+stable circular orbit, and final UIB and HL spins are postpro-         mass range 50–200M . This is at least an order of magnitude
+cessed by adding the sum of the in-plane spins in quadrature.          improvement over existing waveform models. NRSur7dq4 is
+Figure 7 shows that our procedure to predict remnant mass,             made publicly available through the gwsurrogate [58] PYTHON
+spin magnitude, and kick magnitude for precessing systems is           package, with example evaluation code at Ref. [60].
+more accurate than these existing fits by at least an order of            For the final BH model, NRSur7dq4Remnant, the 95th
+magnitude.                                                             percentile errors are ≈5 × 10−4 M for mass, ≈2 × 10−3 for
+    Our fits appear to outperform the NR simulations when              spin magnitude, and ≈4 × 10−4 c for kick magnitude. Once
+estimating the spin direction. Once again, this is due to the          again, these are lower than that of existing models by at least
+post-junk-radiation initial spins of the two highest resolutions       an order of magnitude. In addition, we also model the spin
+being inconsistent with each other for some of our simula-             and kick directions. Moreover, the GPR methods employed
+tions, so that different resolutions represent different physical      here naturally provide error estimates along with the fitted
+systems (cf. Appendix B). Therefore, the errors estimated by           values. These uncertainty estimates can be incorporated into
+comparing the two highest resolutions is a poor estimate of the        data analysis applications to marginalize over systematic un-
+actual truncation error for these cases. The actual truncation         certainties. NRSur7dq4Remnant is made publicly available
+
+                                                                 033015-9
+VIJAY VARMA et al.                                                                                     PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+
+
+                           NRSur7dq4Remnant                                                         NRSur7dq4Remnant
+                           HBMR                                                                     CLZM
+                           UIB                                                                      NR
+                           HL
+                           NR
+
+
+
+
+                 10−6    10−5    10−4    10−3    10−2       10−1     100                    10−4    10−3        10−2     10−1           100    101
+                                        Δmf [M ]                                                                 Δvf [0.001 c]
+
+
+
+                           NRSur7dq4Remnant                                                          NRSur7dq4Remnant
+                           HBMR                                                                      NR
+                           UIB
+                           HL
+                           NR
+
+
+
+
+                 10−6    10−5    10−4     10−3     10−2     10−1     100                    10−4    10−3       10−2            10−1      100   101
+                                          Δχf                                                              cos−1 (v̂f · v̂f ) [radians]
+
+
+
+                           NRSur7dq4Remnant                                               10.0
+                           NR
+                                                                           vf [0.001 c]
+
+
+
+
+                                                                                           1.0
+
+
+                                                                                           0.1
+                                                                                                    NRSur7dq4Remnant
+
+                 10−6    10−5     10−4     10−3        10−2   10−1   100                    10−4    10−3       10−2            10−1      100   101
+                                cos−1 (χ̂f · χ̂f ) [radians]                                              cos−1 (v̂f · v̂f ) [radians]
+
+
+    FIG. 7. Error histograms for NRSur7dq4Remnant for the remnant mass, spin magnitude, spin direction, kick magnitude, and kick direction
+for precessing BBH with mass ratios q  4 and spin magnitudes χ1 , χ2  0.8. The direction error is the angle between the predicted vector
+and a fiducial vector, taken to be the high-resolution NR case and indicated by . Square (triangle) markers indicate median (95th percentile)
+values. Also shown are the NR resolution errors and errors for different existing fitting formulas. In the bottom-right panel, we show the joint
+distribution of kick magnitude and kick-direction error.
+
+
+through the surfinBH [59] PYTHON package, which includes                                     Another important limitation of these models is that they
+an example evaluation code.                                                               are restricted to the same length as the NR simulations (start-
+                                                                                          ing time of ≈4300M before the peak or about 20 orbits).
+                                                                                          For LIGO, assuming a starting GW frequency of 20 Hz, the
+                          A. Future work                                                  (2, 2) mode of the surrogate is valid for total masses M 
+    In Appendix A, we test the performance of these surrogate                             66M . This number, however, depends on the mass ratio.
+models when extrapolated outside their training range to q =                              Figure 9 shows the mass range of validity of NRSur7dq4 as
+6. We find that our models become worse at these mass                                     a function of mass ratio. We compare this with the param-
+ratios but are still comparable or better than existing models.                           eters of the 10 BBH detections seen by LIGO and Virgo
+Unfortunately, suitable precessing simulations are currently                              in the first two observing runs [9]. NRSur7dq4 sufficiently
+not available for testing at intermediate mass ratios 4 < q < 6.                          covers the posterior spread of most but not all of these detec-
+In general, we advise caution with extrapolation. A natural                               tions, the main limitation being the number of orbits covered
+improvement of both NRSur7dq4 and NRSur7dq4Remnant is                                     by the model. However, see Ref. [104] for an example of NR
+to extend their range of validity with new training simulations                           surrogates used in data analysis with GW signals.
+at higher mass ratios and spin magnitudes. We note, however,                                 A promising avenue to extend the length of the waveforms
+that both these regimes are increasingly expensive to model                               is to “hybridize” the simulations using PN waveforms in
+in NR.                                                                                    the early inspiral. This approach already was found to be
+
+                                                                       033015-10
+SURROGATE MODELS FOR PRECESSING BINARY BLACK …                                            PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+
+               102                                                           such as these will contribute to turning GW astronomy into
+                          Δvf [0.001 c]          cos−1 (v̂f · v̂f )         high precision science.
+               101        Δχf                    cos−1 (χ̂f · χ̂f )
+
+               100                               Δmf [M ]                                      ACKNOWLEDGMENTS
+
+              10−1                                                              We thank Dan Hemberger, Kevin Barkett, Marissa Walker,
+                                                                             Matt Giesler, Nils Deppe, Francois Hebert, Maria Okounkova,
+      Error
+
+
+
+
+              10−2                                                           and Geoffrey Lovelace for helping carry out the new SpEC
+                                                                             simulations used in this work. V.V. and M.S. are supported
+              10−3
+                                                                             by the Sherman Fairchild Foundation and NSF Grants No.
+              10−4                                                           PHY–170212 and No. PHY–1708213 at Caltech. L.E.K. ac-
+                                                                             knowledges support from the Sherman Fairchild Founda-
+              10−5                                                           tion and NSF Grant No. PHY-1606654 at Cornell. S.E.F is
+                     35          55             75               95          partially supported by NSF Grant No. PHY-1806665. This
+                                      M [M ]                                work used the Extreme Science and Engineering Discov-
+                                                                             ery Environment (XSEDE), which is supported by National
+    FIG. 8. Errors for NRSur7dq4Remnant in predicting remnant                Science Foundation Grant No. ACI-1548562. This research
+properties when spins are specified at an orbital frequency of f0 =          is part of the Blue Waters sustained-petascale computing
+10 Hz. For four different total masses, we compute the differences           project, which is supported by the National Science Foun-
+between the surrogate prediction of various remnant properties with          dation (Awards No. OCI-0725070 and No. ACI-1238993)
+the value obtained in the NR simulation. For each mass, these differ-        and the state of Illinois. Blue Waters is a joint effort of the
+ences are shown as a vertical histogram. Note that the distributions         University of Illinois at Urbana-Champaign and its National
+in these plots are normalized to have a fixed height, not fixed area.        Center for Supercomputing Applications. Simulations were
+                                                                             performed on NSF/NCSA Blue Waters under allocation NSF
+                                                                             PRAC–1713694; on the Wheeler cluster at Caltech, which
+successful for the case of aligned-spin BBH [82] but still                   is supported by the Sherman Fairchild Foundation and by
+needs to be generalized to precessing spins. Furthermore, it                 Caltech; and on XSEDE resources Bridges at the Pittsburgh
+is not clear if the current length of the NR simulations is                  Supercomputing Center, Comet at the San Diego Supercom-
+sufficient to guarantee good attachment of the PN and NR                     puter Center, and Stampede and Stampede2 at the Texas
+waveforms for precessing BBH.                                                Advanced Computing Center, through Allocation No. TG-
+   Despite these limitations, in their regime of validity, the               PHY990007N. Computations for building the model were
+models presented in the paper are the most accurate models                   performed on Wheeler.
+currently available for precessing BBHs. As shown in this
+paper, our models rival the accuracy of the NR simulations,                         APPENDIX A: EVALUATING SURROGATES
+while being very cheap to evaluate. As more BBHs are de-                                  AT LARGER MASS RATIOS
+tected at higher signal-to-noise ratios, fast yet accurate models
+                                                                                 In this Appendix, we assess the performance of the NR-
+                                                                             Sur7dq4 and NRSur7dq4Remnant models when evaluated at
+                                                                             mass ratio q = 6. Doing so is effectively an extrapolation
+                                                                             because q = 6 is outside the training range of the surrogates
+                                                                             (q  4). The surrogate models are compared against 100 NR
+                                                                             simulations with q = 6 and generically precessing spins with
+                                                                             magnitudes χ1 , χ2  0.8. These simulations have been as-
+                                                                             signed the identifiers SXS:BBH:2164–SXS:BBH:2263 and
+                                                                             are made publicly available through the SXS public catalog
+                                                                             [83].
+                                                                                 Figure 10 shows the q = 6 extrapolation mismatches for
+                                                                             NRSur7dq4. Also shown are the mismatches for SEOB-
+                                                                             NRv3 when compared against the same simulations. The
+                                                                             mismatches are computed in the same manner as in Fig. 4(a),
+                                                                             which we reproduce here for comparison. The surrogate er-
+                                                                             rors become noticeably worse when extrapolating to q = 6,
+    FIG. 9. The shaded region shows the regime of validity of the            but are still much smaller than the corresponding errors for
+(2,2) mode of NRSur7dq4 with a starting frequency of 20 Hz. Also             SEOBNRv3.
+shown are the parameter ranges for the 10 BBH signals seen by                    Figure 11 shows the performance of NRSur7dq4Remnant
+LIGO and Virgo during the first two observing runs [9]. The markers          when extrapolating to q = 6. We show the errors when the
+indicate the median values of the marginalized posteriors for the            fits are evaluated using the NR spins at t = −100M as well
+detector frame total mass M and mass ratio q. The error bars indicate        as when the spins are specified at the start of the NR simu-
+the range between the 5th percentile and 95th percentile values of the       lations. In the latter case, we use the extrapolated dynamics
+posteriors.                                                                  surrogate of NRSur7dq4 to evolve the spins to t = −100M
+
+                                                                       033015-11
+VIJAY VARMA et al.                                                                   PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+
+
+                                                                                       NRSur7dq4Remnant
+                                                                                       q=6 extrap.
+                                                                                       q=6 extrap. + spin ev.
+                                                                                       min(HBMR, UIB, HL)
+
+
+
+
+                                                                             10−6          10−5       10−4             10−3         10−2
+                                                                                                     Δmf [M ]
+
+
+                                                                                       NRSur7dq4Remnant
+   FIG. 10. Mismatch histogram when extrapolating the NR-                              q=6 extrap.
+Sur7dq4 waveform model to mass ratio q = 6. Also shown are mis-                        q=6 extrap. + spin ev.
+matches for SEOBNRv3. The mismatches are computed using a flat                         min(HBMR, UIB, HL)
+noise curve. The training range errors from Fig. 4(a) are reproduced
+here for comparison. The square (triangle) markers indicate median
+(95th percentile) values.
+
+
+and then evaluate the fits. We reproduce the training range                  10−6       10−5       10−4         10−3     10−2       10−1
+errors from Fig. 7 for comparison. Also shown are the er-                                                 Δχf
+rors for the existing fitting formulas described in Sec. VI B
+when compared against the same simulations. We find that
+                                                                                       NRSur7dq4Remnant
+NRSur7dq4Remnant performs noticeably worse when extrap-
+                                                                                       q=6 extrap.
+olated to q = 6 but is still slightly better than the existing
+                                                                                       q=6 extrap. + spin ev.
+fitting formulas, except for the final spin where the existing
+                                                                                       CLZM
+fitting formulas perform slightly better.
+    In general, we find that the NRSur7dq4 and NR-
+Sur7dq4Remnant models become worse with extrapolation to
+q = 6 but are still better or comparable to existing models.
+Unfortunately, we do not have enough suitable precessing
+simulations with 4 < q < 6 with which to test at what mass                   10−6   10−5    10−4   10−3 10−2 10−1             100   101
+                                                                                                   Δvf [0.001 c]
+ratio the degradation of these surrogate models becomes sig-
+nificant. We leave these tests, as well as extending the models            FIG. 11. Error histograms of the remnant mass, spin magnitude,
+to larger mass ratios by adding NR simulations, to future              and kick magnitude when extrapolating NRSur7dq4Remnant to mass
+work.                                                                  ratio q = 6. The training range errors from Fig. 7 are reproduced here
+                                                                       for comparison. We show errors using the NR spins at t = −100M
+      APPENDIX B: ON THE HIGH MISMATCH TAIL                            (yellow) as well as the initial NR spins (blue) as inputs for the model.
+                   IN NR ERRORS                                        Also shown are the errors for existing fitting formulas described in
+                                                                       Sec. VI B; for the final mass and spin, we only show the minimum
+    The histogram of NR errors in Fig. 4(a) shows a significant        error among the HBMR, UIB, and HL fits. The square (triangle)
+tail to the right, i.e., at large mismatches. In Sec. VI A, this       markers indicate median (95th percentile) values.
+tail was attributed to different resolutions of the same NR
+simulation having different physical parameters, namely the
+“initial” spins, which are measured at the relaxation time             systems, so the difference in waveforms between the two
+[84] after the poorly resolved junk-radiation transients have          resolutions fails to be a good estimate of the truncation error
+settled. In this Appendix, we provide some evidence for this           in the simulations.
+claim. Figure 12 shows the maximum mismatch (with a flat                   Figure 12 suggests that the high NR mismatch tail of
+noise curve) over points in the sky versus the difference              Fig. 4(a) is artificially large, and if the two resolutions were
+in the relaxation-time dimensionless spins between the two             to correspond to the same physical system, the tail would
+highest resolutions. We refer to the two highest resolutions           be shorter. We test this in Fig. 13, where we compare the
+as HiRes and MedRes, and their corresponding relaxation-               surrogate against the MedRes simulations, but use the spins
+time dimensionless spins are denoted by (χHiRes 1    , χHiRes
+                                                        2     ) and    of the MedRes simulation (χMedRes1     , χMedRes
+                                                                                                                 2      ) to evaluate the
+(χ1MedRes
+          , χ2
+             MedRes
+                    ), respectively. We note that the largest mis-     surrogate. The surrogate mismatches against the HiRes sim-
+match occurs when the spin difference is largest between the           ulations as well as the NR resolution mismatches (HiRes vs
+two resolutions. For a significant fraction of the simulations,        MedRes) are reproduced from Fig. 4(a) for comparison. We
+the spins can be different by about 0.1; for these cases the           note that the surrogate mismatches when compared against the
+two resolutions essentially represent two different physical           MedRes simulations always lie below ≈10−2 and do not have
+
+                                                                 033015-12
+SURROGATE MODELS FOR PRECESSING BINARY BLACK …                                                                      PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+
+                             100                                          10−1
+
+
+
+
+                                                                             Maximum mismatch
+                            10−1                                          10−2
+     |χ2HiRes − χMedRes
+                 2      |
+
+
+
+
+                            10−2                                          10−3
+
+
+                            10−3                                          10−4
+
+
+                            10−4 −4                                       10−5
+                              10       10−3      10−2     10−1      100
+                                         |χHiRes
+                                            1    −  χ MedRes
+                                                      1      |
+
+
+    FIG. 12. Dependence of the NR resolution error on the difference
+                                                                                                          FIG. 14. NR resolution mismatches for the simulation leading
+in the relaxation-time spins of the two highest resolutions (labeled
+                                                                                                      to the largest NR mismatch in Fig. 4(a). The different samples in
+HiRes and MedRes). The horizontal (vertical) axis shows the differ-
+                                                                                                      the histogram correspond to comparisons at different angles on the
+ence between the spin of the heavier (lighter) BH. The colors show
+                                                                                                      sky. The blue histogram shows the current resolution errors when
+the largest (flat noise) mismatch between the waveforms of the two
+                                                                                                      the two resolutions start with the same initial data at the start of
+resolutions over different points in the sky. Large mismatches occur
+                                                                                                      the simulation. All points in the blue histogram are the same as
+when the difference between the relaxation-time spins of the two
+                                                                                                      those included in Fig. 4(a). The green histogram shows the resolution
+resolutions is large.
+                                                                                                      errors for the same case when the two resolutions start with the same
+                                                                                                      initial data at ≈1000M after start, at which point the junk radiation
+the high mismatch tail seen for the NR resolution mismatches.                                         has left the simulation domain.
+In this test, we are treating the surrogate, which is trained
+on the HiRes simulations, as a proxy for the HiRes dataset.
+                                                                                                      These transients result from initial data that do not precisely
+Evaluating the surrogate with the parameters of a MedRes
+                                                                                                      represent a snapshot of a binary that has evolved from t =
+simulation is treated as a proxy for performing the HiRes
+                                                                                                      −∞. The transients quickly leave the simulation domain
+simulation with the same parameters. Therefore, the green
+                                                                                                      after about one or two binary orbits. It is computationally
+histogram in Fig. 13 can be treated as the “true” resolution
+                                                                                                      expensive to resolve the high spatial and temporal frequencies
+error when the parameters of the resolutions are the same.
+                                                                                                      of the transients, so we typically choose not to resolve these
+As expected for this case, this estimate of the resolution error
+                                                                                                      transients at all, and instead we simply discard the initial
+agrees with the errors for the surrogate model (red histogram).
+                                                                                                      part of the waveform. Because some of the transients carry
+    Together, Figs. 12 and 13 show that the high NR mismatch
+                                                                                                      energy and angular momentum down the BHs, the masses
+tail in Fig. 4(a) is due to the difference in the parameters of
+                                                                                                      and spins are modified, so we measure “initial” masses and
+the different NR resolutions. We believe this difference arises
+                                                                                                      spins at a relaxation time [84] deemed sufficiently late that
+from spurious initial transients known as “junk radiation.”
+                                                                                                      the transients have decayed away. Because we do not fully
+                                                                                                      resolve the transients, their effect on the masses and spins are
+                                                                                                      not always convergent with resolution.
+                                                                                                         This issue should ideally be resolved with improved, junk-
+                                   NRSur7dq4 vs HiRes                                                 free initial data (see Ref. [105] for steps in this direction). In
+                                   NRSur7dq4 vs MedRes                                                the meantime, we propose a change in how SpEC performs
+                                   NR                                                                 different resolutions for the same simulation. Currently, initial
+                                                                                                      data are constructed by solving the Einstein constraint equa-
+                                                                                                      tions [77,106]. The same constraint-satisfying initial data are
+                                                                                                      then interpolated onto several grids of different resolution, and
+                                                                                                      Einstein’s equations are evolved on each grid independently.
+                                                                                                      Our proposal is to first evolve the initial data using the
+                                                                                                      high resolution grid until the transients leave the simulation
+                                                                                                      domain, then interpolate the data at that time onto grids of
+     10 7                      10 6   10 5   10 4 10 3       10 2    10 1    100
+                                                                                                      lower resolution, and evolve Einstein’s equations on these
+                                              mismatch
+                                                                                                      lower resolution grids independently. This way all resolutions
+   FIG. 13. Mismatch histograms for NRSur7dq4 when compared                                           start with the same initial data at a time after transients
+against the two highest available NR simulations (referred to as                                      have decayed away instead of at the start of the simula-
+HiRes and MedRes). Also shown are mismatches between the two                                          tion, and the masses and spins of the black holes should be
+resolutions (labeled NR). The “NRSur7dq4 vs HiRes” and NR                                             convergent.
+errors are the same as the red and black histograms, respectively,                                       This proposal is tested in Fig. 14 for the case leading to the
+in Fig. 4(a). These are flat noise mismatches, computed at several                                    largest NR mismatch in Fig. 4(a). We perform the resolution
+points in the sky. The square (triangle) markers indicate median (95th                                branching at t ∼ 1000M after the start of the high-resolution
+percentile) values.                                                                                   simulation. The outer boundary is at ≈600M and this is
+
+                                                                                                033015-13
+VIJAY VARMA et al.                                                                    PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+sufficient time for junk radiation to leave the simulation              when the resolution branching is done postjunk, as the resolu-
+domain. We find that the mismatches decrease significantly              tions now correspond to the same physical system.
+
+
+
+
+  [1] J. Aasi et al. (LIGO Scientific Collaboration), Advanced           [15] B. P. Abbott et al. (LIGO Scientific and Virgo Collaborations),
+      LIGO, Class. Quantum Grav. 32, 074001 (2015).                           Tests of General Relativity with GW150914, Phys. Rev. Lett.
+  [2] F. Acernese et al. (Virgo Collaboration), Advanced Virgo: A             116, 221101 (2016); 121 129902(E) (2018).
+      second-generation interferometric gravitational wave detector,     [16] B. P. Abbott et al. (LIGO Scientific and Virgo Collaboration),
+      Class. Quantum Grav. 32, 024001 (2015).                                 Tests of general relativity with the binary black hole signals
+  [3] B. P. Abbott et al. (LIGO Scientific and Virgo Collaborations),         from the LIGO-Virgo Catalog GWTC-1, arXiv:1903.04467
+      Observation of Gravitational Waves from a Binary Black Hole             [gr-qc].
+      Merger, Phys. Rev. Lett. 116, 061102 (2016).                       [17] A. Ghosh, N. K. Johnson-Mcdaniel, A. Ghosh, C. K. Mishra,
+  [4] B. P. Abbott et al. (LIGO Scientific and Virgo Collabora-               P. Ajith, W. Del Pozzo, C. P. L. Berry, A. B. Nielsen,
+      tions), GW170817: Observation of Gravitational Waves from               and L. London, Testing general relativity using gravita-
+      a Binary Neutron Star Inspiral, Phys. Rev. Lett. 119, 161101            tional wave signals from the inspiral, merger, and ringdown
+      (2017).                                                                 of binary black holes, Class. Quantum Grav. 35, 014002
+  [5] B. P. Abbott et al. (LIGO Scientific and Virgo Collaborations),         (2018).
+      GW151226: Observation of Gravitational Waves from a 22-            [18] M. Campanelli, C. O. Lousto, Y. Zlochower, and D. Merritt,
+      Solar-Mass Binary Black Hole Coalescence, Phys. Rev. Lett.              Maximum Gravitational Recoil, Phys. Rev. Lett. 98, 231102
+      116, 241103 (2016).                                                     (2007).
+  [6] B. P. Abbott et al. (LIGO Scientific and Virgo Collabora-          [19] J. A. Gonzalez, M. Hannam, U. Sperhake, B. Bruegmann, and
+      tions), GW170104: Observation of a 50-Solar-Mass Binary                 S. Husa, Supermassive Recoil Velocities for Binary Black-
+      Black Hole Coalescence at Redshift 0.2, Phys. Rev. Lett. 118,           Hole Mergers with Antialigned Spins, Phys. Rev. Lett. 98,
+      221101 (2017); 121, 129901(E) (2018).                                   231101 (2007).
+  [7] B. P. Abbott et al. (LIGO Scientific and Virgo Collaborations),    [20] D. Gerosa and A. Sesana, Missing black holes in brightest
+      GW170608: Observation of a 19-solar-mass binary black hole              cluster galaxies as evidence for the occurrence of superkicks
+      coalescence, Astrophys. J. 851, L35 (2017).                             in nature, Mon. Not. Roy. Astron. Soc. 446, 38 (2015).
+  [8] B. P. Abbott et al. (LIGO Scientific and Virgo Collaborations),    [21] S. Khan, K. Chatziioannou, M. Hannam, and F. Ohme, Phe-
+      GW170814: A Three-Detector Observation of Gravitational                 nomenological model for the gravitational-wave signal from
+      Waves from a Binary Black Hole Coalescence, Phys. Rev. Lett.            precessing binary black holes with two-spin effects, Phys. Rev.
+      119, 141101 (2017).                                                     D 100, 024059 (2019).
+  [9] B. P. Abbott et al. (LIGO Scientific and Virgo Collaborations),    [22] R. Cotesta, A. Buonanno, A. Bohé, A. Taracchini, I. Hinder,
+      GWTC-1: A Gravitational-Wave Transient Catalog of Com-                  and S. Ossokine, Enriching the symphony of gravitational
+      pact Binary Mergers Observed by LIGO and Virgo during the               waves from binary black holes by tuning higher harmonics,
+      First and Second Observing Runs, Phys. Rev. X 9, 031040                 Phys. Rev. D 98, 084028 (2018).
+      (2019).                                                            [23] L. London, S. Khan, E. Fauchon-Jones, C. García, M.
+ [10] B. P. Abbott et al. (KAGRA, LIGO Scientific, and                        Hannam, S. Husa, X. Jiménez-Forteza, C. Kalaghatgi, F.
+      VIRGO Collaborations), Prospects for observing and lo-                  Ohme, and F. Pannarale, First Higher-Multipole Model
+      calizing gravitational-wave transients with Advanced LIGO,              of Gravitational Waves from Spinning and Coalescing
+      Advanced Virgo, and KAGRA, Living Rev. Rel. 21, 3                       Black-Hole Binaries, Phys. Rev. Lett. 120, 161102
+      (2018).                                                                 (2018).
+ [11] B. P. Abbott et al. (LIGO Scientific and Virgo Collaborations),    [24] Y. Pan, A. Buonanno, A. Taracchini, L. E. Kidder, A. H.
+      Binary black hole population properties inferred from the first         Mroué, H. P. Pfeiffer, M. A. Scheel, and B. Szilágyi, Inspiral-
+      and second observing runs of Advanced LIGO and Advanced                 merger-ringdown waveforms of spinning, precessing black-
+      Virgo, arXiv:1811.12940 [astro-ph.HE].                                  hole binaries in the effective-one-body formalism, Phys. Rev.
+ [12] C. Cutler and E. E. Flanagan, Gravitational waves from merg-            D 89, 084006 (2014).
+      ing compact binaries: How accurately can one extract the           [25] A. Bohé et al., Improved effective-one-body model of
+      binary’s parameters from the inspiral wave form? Phys. Rev.             spinning, nonprecessing binary black holes for the era
+      D 49, 2658 (1994).                                                      of gravitational-wave astrophysics with advanced detectors,
+ [13] B. P. Abbott et al. (LIGO Scientific and Virgo Collaborations),         Phys. Rev. D 95, 044028 (2017).
+      Properties of the Binary Black Hole Merger GW150914,               [26] S. Khan, S. Husa, M. Hannam, F. Ohme, M. Pürrer, X. Jiménez
+      Phys. Rev. Lett. 116, 241102 (2016).                                    Forteza, and A. Bohé, Frequency-domain gravitational waves
+ [14] J. Veitch, V. Raymond, B. Farr, W. Farr, P. Graff, S. Vitale,           from nonprecessing black-hole binaries. II. A phenomenolog-
+      B. Aylott, K. Blackburn, N. Christensen, M. Coughlin et al.,            ical model for the advanced detector era, Phys. Rev. D 93,
+      Parameter estimation for compact binaries with ground-based             044007 (2016).
+      gravitational-wave observations using the LALInference soft-       [27] M. Hannam, P. Schmidt, A. Bohé, L. Haegel, S. Husa,
+      ware library, Phys. Rev. D 91, 042003 (2015).                           F. Ohme, G. Pratten, and M. Pürrer, Simple Model of
+
+                                                                  033015-14
+SURROGATE MODELS FOR PRECESSING BINARY BLACK …                                       PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+     Complete Precessing Black-Hole-Binary Gravitational Wave-          [44] F. Herrmann, I. Hinder, D. M. Shoemaker, P. Laguna,
+     forms, Phys. Rev. Lett. 113, 151101 (2014).                             and R. A. Matzner, Binary black holes: Spin dynam-
+[28] A. Taracchini, A. Buonanno, Y. Pan, T. Hinderer, M. Boyle,              ics and gravitational recoil, Phys. Rev. D 76, 084032
+     D. A. Hemberger, L. E. Kidder, G. Lovelace, A. H. Mroue,                (2007).
+     H. P. Pfeiffer et al., Effective-one-body model for black-hole     [45] L. Rezzolla, E. Barausse, E. N. Dorband, D. Pollney, C.
+     binaries with generic mass ratios and spins, Phys. Rev. D 89,           Reisswig, J. Seiler, and S. Husa, On the final spin from the
+     061502(R) (2014).                                                       coalescence of two black holes, Phys. Rev. D 78, 044002
+[29] Y. Pan, A. Buonanno, M. Boyle, L. T. Buchman, L. E.                     (2008).
+     Kidder, H. P. Pfeiffer, and M. A. Scheel, Inspiral-merger-         [46] L. Rezzolla, P. Diener, E. N. Dorband, D. Pollney, C.
+     ringdown multipolar waveforms of nonspinning black-hole                 Reisswig, E. Schnetter, and J. Seiler, The final spin from the
+     binaries using the effective-one-body formalism, Phys. Rev.             coalescence of aligned-spin black-hole binaries, Astrophys. J.
+     D 84, 124052 (2011).                                                    674, L29 (2008).
+[30] A. K. Mehta, C. K. Mishra, V. Varma, and P. Ajith,                 [47] M. Kesden, Can binary mergers produce maximally spinning
+     Accurate inspiral-merger-ringdown gravitational waveforms               black holes? Phys. Rev. D 78, 084030 (2008).
+     for nonspinning black-hole binaries including the ef-              [48] W. Tichy and P. Marronetti, The final mass and spin of black
+     fect of subdominant modes, Phys. Rev. D 96, 124010                      hole mergers, Phys. Rev. D 78, 081501(R) (2008).
+     (2017).                                                            [49] E. Barausse and L. Rezzolla, Predicting the direction of the
+[31] S. Babak, A. Taracchini, and A. Buonanno, Validating the                final spin from the coalescence of two black holes, Astrophys.
+     effective-one-body model of spinning, precessing binary black           J. 704, L40 (2009).
+     holes against numerical relativity, Phys. Rev. D 95, 024010        [50] Y. Zlochower and C. O. Lousto, Modeling the remnant mass,
+     (2017).                                                                 spin, and recoil from unequal-mass, precessing black-hole
+[32] F. Hofmann, E. Barausse, and L. Rezzolla, The final spin from           binaries: The intermediate mass ratio regime, Phys. Rev. D 92,
+     binary black holes in quasi-circular orbits, Astrophys. J. 825,         024022 (2015); 94, 029901(E) (2016).
+     L19 (2016).                                                        [51] T. A. Apostolatos, C. Cutler, G. J. Sussman, and K. S. Thorne,
+[33] E. Barausse, V. Morozova, and L. Rezzolla, On the mass                  Spin-induced orbital precession and its modulation of the
+     radiated by coalescing black-hole binaries, Astrophys. J. 758,          gravitational waveforms from merging binaries, Phys. Rev. D
+     63 (2012); 786, 76(E) (2014).                                           49, 6274 (1994).
+[34] X. Jiménez-Forteza, D. Keitel, S. Husa, M. Hannam, S. Khan,        [52] D. Gerosa, M. Kesden, E. Berti, R. O’Shaughnessy, and
+     and M. Pürrer, Hierarchical data-driven approach to fitting             U. Sperhake, Resonant-plane locking and spin alignment in
+     numerical relativity data for nonprecessing binary black holes          stellar-mass black-hole binaries: A diagnostic of compact-
+     with an application to final spin and radiated energy, Phys.            binary formation, Phys. Rev. D 87, 104028 (2013).
+     Rev. D 95, 064024 (2017).                                          [53] S. Vitale, R. Lynch, R. Sturani, and P. Graff, Use of grav-
+[35] J. Healy and C. O. Lousto, Remnant of binary black-hole                 itational waves to probe the formation channels of compact
+     mergers: New simulations and peak luminosity studies, Phys.             binaries, Class. Quantum Grav. 34, 03LT01 (2017).
+     Rev. D 95, 024037 (2017).                                          [54] B. Farr, D. E. Holz, and W. M. Farr, Using spin to understand
+[36] J. Healy, C. O. Lousto, and Y. Zlochower, Remnant mass, spin,           the formation of LIGO and Virgo’s black holes, Astrophys. J.
+     and recoil from spin aligned black-hole binaries, Phys. Rev. D          854, L9 (2018).
+     90, 104004 (2014).                                                 [55] D. Gerosa, E. Berti, R. O’Shaughnessy, K. Belczynski, M.
+[37] J. A. Gonzalez, U. Sperhake, B. Brügmann, M. Hannam, and                Kesden, D. Wysocki, and W. Gladysz, Spin orientations of
+     S. Husa, Total Recoil: The Maximum Kick from Nonspin-                   merging black holes formed from the evolution of stellar
+     ning Black-Hole Binary Inspiral, Phys. Rev. Lett. 98, 091101            binaries, Phys. Rev. D 98, 084036 (2018).
+     (2007).                                                            [56] J. Blackman, S. E. Field, M. A. Scheel, C. R. Galley, C. D. Ott,
+[38] M. Campanelli, C. O. Lousto, Y. Zlochower, and D. Merritt,              M. Boyle, L. E. Kidder, H. P. Pfeiffer, and B. Szilágyi, Nu-
+     Large merger recoils and spin flips from generic black-hole             merical relativity waveform surrogate model for generically
+     binaries, Astrophys. J. 659, L5 (2007).                                 precessing binary black hole mergers, Phys. Rev. D 96, 024058
+[39] C. O. Lousto and Y. Zlochower, Further insight into gravita-            (2017).
+     tional recoil, Phys. Rev. D 77, 044028 (2008).                     [57] V. Varma, D. Gerosa, L. C. Stein, F. Hébert, and H. Zhang,
+[40] C. O. Lousto, Y. Zlochower, M. Dotti, and M. Volonteri,                 High-Accuracy Mass, Spin, and Recoil Predictions of Generic
+     Gravitational recoil from accretion-aligned black-hole bina-            Black-Hole Merger Remnants, Phys. Rev. Lett. 122, 011101
+     ries, Phys. Rev. D 85, 084015 (2012).                                   (2019).
+[41] C. O. Lousto and Y. Zlochower, Nonlinear gravitational recoil      [58] J. Blackman, S. Field, C. Galley, and V. Varma, gwsurrogate,
+     from the mergers of precessing black-hole binaries, Phys. Rev.          https://pypi.python.org/pypi/gwsurrogate/.
+     D 87, 084027 (2013).                                               [59] V. Varma et al., surfinBH, pypi.org/project/surfinBH, doi:
+[42] D. Gerosa and M. Kesden, PRECESSION: Dynamics of                        10.5281/zenodo.1418525.
+     spinning black-hole binaries with PYTHON, Phys. Rev. D 93,         [60] Binary black-hole surrogate waveform catalog, http://www.
+     124066 (2016).                                                          black-holes.org/surrogates/.
+[43] J. Healy and C. O. Lousto, Hangup effect in unequal mass           [61] V. Varma and P. Ajith, Effects of nonquadrupole modes in
+     binary black hole mergers and further studies of their grav-            the detection and parameter estimation of black hole bi-
+     itational radiation and remnant properties, Phys. Rev. D 97,            naries with nonprecessing spins, Phys. Rev. D 96, 124024
+     084002 (2018).                                                          (2017).
+
+                                                                 033015-15
+VIJAY VARMA et al.                                                                    PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+ [62] C. Capano, Y. Pan, and A. Buonanno, Impact of higher har-          [80] M. A. Scheel, M. Boyle, T. Chu, L. E. Kidder, K. D. Matthews,
+      monics in searching for gravitational waves from nonspinning            and H. P. Pfeiffer, High-accuracy waveforms for binary black
+      binary black holes, Phys. Rev. D 89, 102003 (2014).                     hole inspiral, merger, and ringdown, Phys. Rev. D 79, 024003
+ [63] T. B. Littenberg, J. G. Baker, A. Buonanno, and B. J. Kelly,            (2009).
+      Systematic biases in parameter estimation of binary black-hole     [81] Simulating eXtreme spacetimes, http://www.black-holes.org/.
+      mergers, Phys. Rev. D 87, 104003 (2013).                           [82] V. Varma, S. E. Field, M. A. Scheel, J. Blackman, L. E.
+ [64] J. Calderón Bustillo, P. Laguna, and D. Shoemaker, De-                  Kidder, and H. P. Pfeiffer, Surrogate model of hybridized
+      tectability of gravitational waves from binary black holes:             numerical relativity binary black hole waveforms, Phys. Rev.
+      Impact of precession and higher modes, Phys. Rev. D 95,                 D 99, 064045 (2019).
+      104038 (2017).                                                     [83] SXS Collaboration, The SXS Collaboration catalog of gravi-
+ [65] D. A. Brown, P. Kumar, and A. H. Nitz, Template banks                   tational waveforms, http://www.black-holes.org/waveforms.
+      to search for low-mass binary black holes in advanced              [84] M. Boyle et al., The SXS Collaboration catalog of binary
+      gravitational-wave detectors, Phys. Rev. D 87, 082004                   black hole simulations, Class. Quantum Grav. 36, 195006
+      (2013).                                                                 (2019).
+ [66] V. Varma, P. Ajith, S. Husa, J. C. Bustillo, M. Hannam, and M.     [85] A. Buonanno, L. E. Kidder, A. H. Mroue, H. P. Pfeiffer, and A.
+      Pürrer, Gravitational-wave observations of binary black holes:          Taracchini, Reducing orbital eccentricity of precessing black-
+      Effect of nonquadrupole modes, Phys. Rev. D 90, 124004                  hole binaries, Phys. Rev. D 83, 104034 (2011).
+      (2014).                                                            [86] M. Boyle and A. H. Mroue, Extrapolating gravitational-wave
+ [67] P. B. Graff, A. Buonanno, and B. S. Sathyaprakash, Missing              data from numerical simulations, Phys. Rev. D 80, 124045
+      link: Bayesian detection and measurement of intermediate-               (2009).
+      mass black-hole binaries, Phys. Rev. D 92, 022002 (2015).          [87] M. Boyle, Transformations of asymptotic gravitational-wave
+ [68] I. Harry, J. Calderón Bustillo, and A. Nitz, Searching for the          data, Phys. Rev. D 93, 084031 (2016).
+      full symphony of black hole binary mergers, Phys. Rev. D 97,       [88] M. Boyle, Scri, https://github.com/moble/scri.
+      023004 (2018).                                                     [89] S. Ossokine, M. Boyle, L. E. Kidder, H. P. Pfeiffer, M. A.
+ [69] J. Calderón Bustillo, S. Husa, A. M. Sintes, and M. Pürrer,             Scheel, and B. Szilágyi, Comparing post-Newtonian and
+      Impact of gravitational radiation higher order modes on sin-            numerical-relativity precession dynamics, Phys. Rev. D 92,
+      gle aligned-spin gravitational wave searches for binary black           104028 (2015).
+      holes, Phys. Rev. D 93, 084019 (2016).                             [90] D. Gerosa, F. Hébert, and L. C. Stein, Black-hole kicks
+ [70] L. Pekowsky, J. Healy, D. Shoemaker, and P. Laguna, Impact              from numerical-relativity surrogate models, Phys. Rev. D 97,
+      of higher-order modes on the detection of binary black hole             104049 (2018).
+      coalescences, Phys. Rev. D 87, 084008 (2013).                      [91] M. Ruiz, R. Takahashi, M. Alcubierre, and D. Nunez, Multi-
+ [71] P. Schmidt, M. Hannam, S. Husa, and P. Ajith, Tracking the              pole expansions for energy and momenta carried by gravita-
+      precession of compact binaries from their gravitational-wave            tional waves, Gen. Rel. Grav. 40, 2467 (2008).
+      signal, Phys. Rev. D 84, 024046 (2011).                            [92] S. E. Field, C. R. Galley, J. S. Hesthaven, J. Kaye, and
+ [72] R. O’Shaughnessy, B. Vaishnav, J. Healy, Z. Meeks, and D.               M. Tiglio, Fast Prediction and Evaluation of Gravitational
+      Shoemaker, Efficient asymptotic frame selection for binary              Waveforms Using Surrogate Models, Phys. Rev. X 4, 031006
+      black hole spacetimes using asymptotic radiation, Phys. Rev.            (2014).
+      D 84, 124002 (2011).                                               [93] Y. Maday, N. C. Nguyen, A. T. Patera, and S. H. Pau, A gen-
+ [73] M. Boyle, R. Owen, and H. P. Pfeiffer, A geometric approach             eral multipurpose interpolation procedure: The magic points,
+      to the precession of compact binaries, Phys. Rev. D 84, 124011          Commun. Pure Appl. Anal. 8, 383 (2009).
+      (2011).                                                            [94] S. Chaturantabut and D. C. Sorensen, Nonlinear model reduc-
+ [74] J. Blackman, S. E. Field, M. A. Scheel, C. R. Galley, D. A.             tion via discrete empirical interpolation, SIAM J. Sci. Comput.
+      Hemberger, P. Schmidt, and R. Smith, A surrogate model of               32, 2737 (2010).
+      gravitational waveforms from numerical relativity simulations      [95] P. Ajith, Addressing the spin question in gravitational-wave
+      of precessing binary black hole mergers, Phys. Rev. D 95,               searches: Waveform templates for inspiralling compact bi-
+      104023 (2017).                                                          naries with nonprecessing spins, Phys. Rev. D 84, 084037
+ [75] The spectral Einstein code, http://www.black-holes.org/SpEC.            (2011).
+      html.                                                              [96] E. Poisson and C. M. Will, Gravitational waves from in-
+ [76] H. P. Pfeiffer, L. E. Kidder, M. A. Scheel, and S. A. Teukolsky,        spiraling compact binaries: Parameter estimation using sec-
+      A multidomain spectral method for solving elliptic equations,           ond post-Newtonian wave forms, Phys. Rev. D 52, 848
+      Comput. Phys. Commun. 152, 253 (2003).                                  (1995).
+ [77] G. Lovelace, R. Owen, H. P. Pfeiffer, and T. Chu, Binary-          [97] A. Buonanno, Y.-b. Chen, and M. Vallisneri, Detecting grav-
+      black-hole initial data with nearly-extremal spins, Phys. Rev.          itational waves from precessing binaries of spinning compact
+      D 78, 084017 (2008).                                                    objects: Adiabatic limit, Phys. Rev. D 67, 104025 (2003); 74,
+ [78] L. Lindblom, M. A. Scheel, L. E. Kidder, R. Owen, and O.                029904(E) (2006).
+      Rinne, A new generalized harmonic evolution system, Class.         [98] M. Boyle, D. A. Brown, L. E. Kidder, A. H. Mroue, H. P.
+      Quantum Grav. 23, S447 (2006).                                          Pfeiffer, M. A. Scheel, G. B. Cook, and S. A. Teukolsky,
+ [79] B. Szilagyi, L. Lindblom, and M. A. Scheel, Simulations of              High-accuracy comparison of numerical relativity simulations
+      binary black hole mergers using spectral methods, Phys. Rev.            with post-Newtonian expansions, Phys. Rev. D 76, 124038
+      D 80, 124010 (2009).                                                    (2007).
+
+                                                                  033015-16
+SURROGATE MODELS FOR PRECESSING BINARY BLACK …                                       PHYSICAL REVIEW RESEARCH 1, 033015 (2019)
+
+ [99] D. J. A. McKechan, C. Robinson, and B. S. Sathyaprakash,         [103] B. P. Abbott et al. (LIGO Scientific and Virgo Collaboration),
+      A tapering window for time-domain templates and simulated              Binary Black Hole Mergers in the First Advanced LIGO
+      signals in the detection of gravitational waves from coa-              Observing Run, Phys. Rev. X 6, 041015 (2016); 8, 039903(E)
+      lescing compact binaries, Class. Quantum Grav. 27, 084020              (2018).
+      (2010).                                                          [104] P. Kumar, J. Blackman, S. E. Field, M. Scheel, C. R. Galley,
+[100] M. Boyle, Angular velocity of gravitational radiation from             M. Boyle, L. E. Kidder, H. P. Pfeiffer, B. Szilagyi, and S. A.
+      precessing binaries and the corotating frame, Phys. Rev. D 87,         Teukolsky, Constraining the parameters of GW150914 and
+      104006 (2013).                                                         GW170104 with numerical relativity surrogates, Phys. Rev. D
+[101] LIGO Scientific Collaboration, Updated Advanced LIGO sen-              99, 124005 (2019).
+      sitivity design curve, Tech. Rep., 2018, https://dcc.ligo.org/   [105] V. Varma, M. A. Scheel, and H. P. Pfeiffer, Comparison of
+      LIGO-T1800044/public.                                                  binary black hole initial data sets, Phys. Rev. D 98, 104011
+[102] N. K. Johnson-McDaniel, A. Gupta, P Ajith, D. Keitel, O.               (2018).
+      Birnholtz, F. Ohme, and S. Husa, Determining the final spin of   [106] S. Ossokine, F. Foucart, H. P. Pfeiffer, M. Boyle, and
+      a binary black hole system including in-plane spins: Method            B. Szilágyi, Improvements to the construction of binary
+      and checks of accuracy, Tech. Rep. LIGO-T1600168, 2016,                black hole initial data, Class. Quantum Grav. 32, 245010
+      https://dcc.ligo.org/LIGO-T1600168/public.                             (2015).
+
+
+
+
+                                                                 033015-17
+

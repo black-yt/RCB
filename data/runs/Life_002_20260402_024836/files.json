@@ -1,0 +1,222 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "complex_alignment_analysis.py",
+    "path": "code/complex_alignment_analysis.py",
+    "type": "file",
+    "size": 25311,
+    "mtime": 1775133570.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "6n40.pdb",
+    "path": "data/6n40.pdb",
+    "type": "file",
+    "size": 483975,
+    "mtime": 1772677396.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "7xg4.pdb",
+    "path": "data/7xg4.pdb",
+    "type": "file",
+    "size": 2481678,
+    "mtime": 1772677394.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "alignment_summary.json",
+    "path": "outputs/alignment_summary.json",
+    "type": "file",
+    "size": 10198,
+    "mtime": 1775133568.0,
+    "exported": true
+  },
+  {
+    "name": "best_alignment_residue_pairs.csv",
+    "path": "outputs/best_alignment_residue_pairs.csv",
+    "type": "file",
+    "size": 6415,
+    "mtime": 1775133568.0,
+    "exported": true
+  },
+  {
+    "name": "best_superposition_ca_only.pdb",
+    "path": "outputs/best_superposition_ca_only.pdb",
+    "type": "file",
+    "size": 38082,
+    "mtime": 1775133568.0,
+    "exported": false
+  },
+  {
+    "name": "bootstrap_best_alignment.csv",
+    "path": "outputs/bootstrap_best_alignment.csv",
+    "type": "file",
+    "size": 8385,
+    "mtime": 1775133568.0,
+    "exported": true
+  },
+  {
+    "name": "chain_overview.csv",
+    "path": "outputs/chain_overview.csv",
+    "type": "file",
+    "size": 405,
+    "mtime": 1775133568.0,
+    "exported": true
+  },
+  {
+    "name": "chain_pair_alignment_scores.csv",
+    "path": "outputs/chain_pair_alignment_scores.csv",
+    "type": "file",
+    "size": 43054,
+    "mtime": 1775133568.0,
+    "exported": true
+  },
+  {
+    "name": "paper_000.txt",
+    "path": "outputs/paper_000.txt",
+    "type": "file",
+    "size": 63224,
+    "mtime": 1775133568.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.txt",
+    "path": "outputs/paper_001.txt",
+    "type": "file",
+    "size": 53467,
+    "mtime": 1775133568.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.txt",
+    "path": "outputs/paper_002.txt",
+    "type": "file",
+    "size": 64318,
+    "mtime": 1775133568.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.txt",
+    "path": "outputs/paper_003.txt",
+    "type": "file",
+    "size": 44764,
+    "mtime": 1775133568.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 7106522,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2048789,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 2470674,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4291826,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_chain_scores.png",
+    "path": "report/images/figure_chain_scores.png",
+    "type": "file",
+    "size": 344052,
+    "mtime": 1775133570.0,
+    "exported": true
+  },
+  {
+    "name": "figure_data_overview.png",
+    "path": "report/images/figure_data_overview.png",
+    "type": "file",
+    "size": 254222,
+    "mtime": 1775133570.0,
+    "exported": true
+  },
+  {
+    "name": "figure_superposition.png",
+    "path": "report/images/figure_superposition.png",
+    "type": "file",
+    "size": 700533,
+    "mtime": 1775133570.0,
+    "exported": true
+  },
+  {
+    "name": "figure_validation.png",
+    "path": "report/images/figure_validation.png",
+    "type": "file",
+    "size": 306993,
+    "mtime": 1775133570.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 9100,
+    "mtime": 1775133571.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5241,
+    "mtime": 1775069316.0,
+    "exported": true
+  }
+]

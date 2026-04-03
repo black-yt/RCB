@@ -1,0 +1,175 @@
+HHS Public Access
+Author manuscript
+Author Manuscript
+
+Nature. Author manuscript; available in PMC 2019 August 20.
+Published in final edited form as:
+Nature. 2019 February ; 566(7745): 496–502. doi:10.1038/s41586-019-0969-x.
+
+The single cell transcriptional landscape of mammalian
+organogenesis
+Junyue Cao1,2,†, Malte Spielmann1,†, Xiaojie Qiu1,2, Xingfan Huang1,3, Daniel M. Ibrahim4,5,
+Andrew J. Hill1, Fan Zhang6, Stefan Mundlos4,5, Lena Christiansen6, Frank J. Steemers6,
+Cole Trapnell1,7,*, and Jay Shendure1,7,8,*
+1.Department of Genome Sciences, University of Washington, Seattle, Washington, USA
+
+Author Manuscript
+
+2.Molecular and Cellular Biology Program, University of Washington, Seattle, WA, USA.
+3.Department of Computer Science, University of Washington, Seattle, Washington, USA
+4.Max Planck Institute for Molecular Genetics, RG Development & Disease, Berlin, Germany
+5.Institute for Medical and Human Genetics, Charité Universitätsmedizin Berlin, Berlin, Germany
+6.Illumina, San Diego, California, USA
+7.Brotman Baty Institute for Precision Medicine, Seattle, WA 98195
+8.Howard Hughes Medical Institute, Seattle, Washington, USA
+
+Abstract
+Author Manuscript
+
+Mammalian organogenesis is an astonishing process. Within a short window of time, the cells of
+the three germ layers transform into an embryo that includes most major internal and external
+organs. Here we set out to investigate the transcriptional dynamics of mouse organogenesis at
+single cell resolution. With sci-RNA-seq3, we profiled ~2 million cells, derived from 61 embryos
+staged between 9.5 and 13.5 days of gestation, in a single experiment. The resulting ‘mouse
+organogenesis cell atlas’ (MOCA) provides a global view of developmental processes during this
+critical window. We identify hundreds of cell types and 56 trajectories, many of which are detected
+only because of the depth of cellular coverage, and collectively define thousands of corresponding
+marker genes. With Monocle 3, we explore the dynamics of gene expression within cell types and
+
+Author Manuscript
+
+Users may view, print, copy, and download text and data-mine the content in such documents, for the purposes of academic research,
+subject always to the full Conditions of use:http://www.nature.com/authors/editorial_policies/license.html#terms
+*
+Correspondence to: coletrap@uw.edu, shendure@uw.edu.
+†Equally contributing
+Author Contributions J.C. developed techniques and performed sci-RNA-seq3 experiments with assistance from M.S., F.Z., L.C.,
+F.S.; M.S. performed embryo collection and in-situ hybridization validations with assistance from D.I. and S.M.; J.C. and C.T.
+performed computation analysis with assistance from M.S., X.Q. and A.H.; X.Q. and C.T. developed Monocle 3. X.H. developed
+website with assistance from J.C.; J.S. and C.T. supervised the project; J.S., C.T., J.C. and M.S. conceived the project and wrote the
+manuscript.
+Author Information Reprints and permissions information is available at www.nature.com/reprints. L.C., F.Z. and F.S. declare
+competing financial interests in the form of stock ownership and paid employment by Illumina, Inc. One or more embodiments of one
+or more patents and patent applications filed by Illumina may encompass the methods, reagents, and data disclosed in this manuscript.
+Some work in this study may be related to technology described in the following exemplary published patent applications:
+WO2010/0120098 and WO2011/0287435. Readers are welcome to comment on the online version of the paper. Correspondence and
+requests for materials should be addressed to J.S. (shendure@uw.edu) or C.T. (coletrap@uw.edu).
+Supplementary Information is available in the online version of the paper.
+
+Cao et al.
+
+Page 2
+
+Author Manuscript
+
+trajectories over time, including focused analyses of the apical ectodermal ridge, limb
+mesenchyme and skeletal muscle.
+
+Main
+
+Author Manuscript
+
+Most studies of mammalian organogenesis rely on model organisms, and in particular, the
+mouse. Mice develop quickly, with just 21 days between fertilization and birth. The
+implantation of the blastocyst (E4.0) is followed by gastrulation and the formation of germ
+layers (E6.5-E7.5)1,2. At the early-somite stages, the embryo transits from gastrulation to
+early organogenesis, forming the neural plate and heart tube (E8.0–E8.5). In the ensuing
+days (E9.5-E13.5), the embryo expands from hundreds-of-thousands to over ten million
+cells, and concurrently develops nearly all major organ systems. Unsurprisingly, these four
+days have been intensively studied. Indeed, most genes underlying major developmental
+defects can be studied in this window3,4.
+The transcriptional profiling of single cells (scRNA-seq) represents a promising avenue for
+obtaining a global view of developmental processes5–7. For example, scRNA-seq recently
+revealed remarkable heterogeneity in neurons and myocardiocytes during mouse
+development8,9. However, although two scRNA-seq atlases of mouse were recently
+released10,11, they are mostly restricted to adult organs, and do not attempt to characterize
+the emergence and dynamics of cell types during development.
+
+Single cell RNA-seq of 2 million cells
+
+Author Manuscript
+
+Single cell combinatorial indexing (‘sci-’) is a methodological framework involving splitpool barcoding of cells or nuclei12–19. We previously developed sci-RNA-seq and applied it
+to generate 50-fold shotgun coverage of the cellular content of L2 stage Caenorhabditis
+elegans17. A conceptually identical method was recently termed Split-Seq20. To increase the
+throughput, we explored >1,000 experimental conditions (Extended Data Fig. 1ab;
+Methods). The major improvements of the resulting method, sci-RNA-seq3, include: (i)
+Nuclei are extracted directly from fresh tissues without enzymatic treatment, then fixed and
+stored. (ii) For the third level of indexing17, we switched from Tn5 tagmentation to hairpin
+ligation. (iii) Individual enzymatic reactions were optimized. (iv) FACS sorting was replaced
+by dilution, and sonication and filtration steps added to minimize aggregation. Even without
+automation, sci-RNA-seq3 library preparation can be completed through the intensive effort
+of a single individual in one week at a cost of less than $0.01 per cell.
+
+Author Manuscript
+
+We collected 61 C57BL/6 mouse embryos at E9.5, E10.5, E11.5, E12.5 or E13.5, and snap
+froze them in liquid nitrogen. Nuclei from each embryo were isolated and deposited to
+different wells, such that the first index identified the originating embryo of any given cell.
+As a control, we spiked a mixture of human HEK293T and mouse NIH/3T3 nuclei into two
+wells. The resulting sci-RNA-seq3 library was sequenced in a single Illumina NovaSeq run,
+yielding 11 billion reads (Fig. 1a; Extended Data Fig. 1cd).
+From one experiment, we recovered 2,058,652 cells from mouse embryos and 13,359 cells
+from HEK293T or NIH/3T3 cells (UMI (unique molecular identifier) count ≥ 200).
+
+Nature. Author manuscript; available in PMC 2019 August 20.
+
+Cao et al.
+
+Page 3
+
+Author Manuscript
+
+Transcriptomes from human/mouse control wells were overwhelmingly species-coherent
+(3% collisions), with performance similar to previous experiments17 (Extended Data Fig.
+1e–i). A limitation is that only ~7% of cells entering the experiment were ultimately
+profiled, with losses largely consequent to filtration steps intended to remove aggregates of
+nuclei.
+
+Author Manuscript
+
+We profiled a median of 35,272 cells per embryo (Fig. 1b; Extended Data Fig. 1j). Despite
+shallow sequencing (~5,000 raw reads per cell; 46% duplicate rate), we recovered a median
+of 671 UMIs (519 genes) per cell (Extended Data Fig. 1k). 3.7-fold deeper sequencing of a
+subset of wells nearly doubled complexity (to a median of 1,142 UMIs per cell; 87%
+duplicate rate). As we are profiling RNA in nuclei, 59% of UMIs per cell strand-specifically
+mapped to introns, and 25% to exons. Our profiles may thus primarily reflect nascent
+transcription, temporally offset but also predictive21 of the cellular transcriptome. Later
+stage embryos exhibited somewhat reduced UMI counts, possibly reflecting decreasing
+nuclear mRNA content (Extended Data Fig. 1l). We used Scrublet22 to detect 4.3% likely
+doublet cells, corresponding to a doublet estimate of 10.3% including both within- and
+between-cluster doublets (Extended Data Fig. 1mn).
+Based on our rough estimates of the number of cells per embryo at each timepoint
+(Methods), our ‘shotgun cellular coverage’ of the mouse embryo is 0.8× at E9.5 (200K cells/
+embryo; 152K profiled across all replicates), 0.3× at E10.5 (1.1M cells/embryo; 378K
+profiled), 0.2× at E11.5 (2.6M cells/embryo; 616K profiled), 0.08× at E12.5 (6M cells/
+embryo; 475K profiled), and 0.03× at E13.5 (13M cells/embryo; 437K profiled). Thus,
+although we are not yet oversampling17, our depth of profiling is equivalent to 3–80% of the
+cellular content of an individual mouse embryo.
+
+Author Manuscript
+
+Embryos were readily identified as male (n = 31) or female (n = 30) (Extended Data Fig.
+1op). Applying t-stochastic neighbor embedding (t-SNE) to “pseudo-bulk” profiles
+(aggregating the transcriptomes of each embryo’s cells) resulted in five tightly clustered
+groups corresponding to developmental stages (Extended Data Fig. 1q). We also ordered the
+mouse embryos along a pseudotime trajectory23 (Fig. 1c). Two prominent gaps (E9.5-E10.5
+and E11.5-E12.5) suggest particularly dramatic changes during these windows (Extended
+Data Fig. 1rs). In these pseudo-bulk profiles, 12,236 genes were differentially expressed
+across developmental stages (Supplementary Table 1).
+
+Identification of cell types and subtypes
+
+Author Manuscript
+
+We subjected the 2,058,652 single cell transcriptomes to Louvain clustering and t-SNE
+visualization (Fig. 2a). Reassuringly, cells from replicate embryos of the same
+developmental stage were similarly distributed, whereas cells from different stages were not
+(Extended Data Figs. 2a–f). Based on genes specific to each of 40 clusters, we manually
+annotated cell types (Supplementary Table 2). Merging two clusters both corresponding to
+the definitive erythroid lineage and discarding a putative doublet cluster (detected doublet
+rate of 52%) yielded 38 major cell types (Fig. 2b; Extended Data Fig. 2g).
+
+Nature. Author manuscript; available in PMC 2019 August 20.
+
+

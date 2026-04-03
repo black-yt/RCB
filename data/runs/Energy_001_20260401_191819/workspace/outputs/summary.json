@@ -1,0 +1,12 @@
+{
+  "total_cost_USD": 119208682114.07304,
+  "wind_energy_GWh": 2268.594902523,
+  "gas_energy_GWh": 1351.9559020799998,
+  "nuclear_energy_GWh": 403.19999999999993,
+  "storage_discharge_GWh": 2.25,
+  "storage_charge_GWh": 0.0,
+  "load_shed_GWh": 11913.7052318969,
+  "wind_share_pct": 14.232350949805165,
+  "gas_share_pct": 8.481686547767382,
+  "nuclear_share_pct": 2.529532221279097
+}

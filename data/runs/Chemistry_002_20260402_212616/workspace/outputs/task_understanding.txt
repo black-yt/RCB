@@ -1,0 +1,23 @@
+Task objective: carry out an autonomous research analysis focused on HADDOCK3-style integrative biomolecular docking using the provided barnase–barstar complex structure as the concrete structural example and the SKEMPI 2.0 mutation-affinity dataset as an external validation resource. The goal is to produce a reproducible analysis that connects the structural interface in 1BRS to mutation-dependent binding effects and frames the work in the context of HADDOCK/HADDOCK2.x literature on information-driven docking and biomolecular complex modeling.
+
+Available data in this workspace:
+- data/1brs_AD.pdb: processed PDB structure for the barnase–barstar complex (chains A and D), suitable for extracting residues, coordinates, contacts, interface geometry, and distance-based interaction features.
+- data/skempi_v2.csv: large semicolon-delimited SKEMPI 2.0 table of mutation-induced binding affinity changes, with mutation annotations, protein names, temperature, kinetic/thermodynamic fields, and wild-type/mutant affinities.
+- related_work/paper_000.pdf: original HADDOCK paper introducing ambiguity-driven docking with biochemical/biophysical restraints.
+- related_work/paper_001.pdf: HADDOCK2.0 performance and feature paper, relevant for workflow stages, flexibility, and scoring/clustering context.
+- related_work/paper_002.pdf: HADDOCK2.2 web server paper, relevant for practical integrative modeling workflow framing.
+- related_work/paper_003.pdf: recent HADDOCK protein–glycan modeling paper, relevant for broader platform versatility and benchmarking context.
+
+Main planned analysis steps:
+1. Parse the 1BRS PDB structure and identify chains, residue numbering, atom coordinates, and the protein–protein interface between barnase and barstar.
+2. Compute structural descriptors such as residue contacts, minimum inter-chain distances, interface residue sets, and simple exposure/contact summaries.
+3. Parse and clean SKEMPI 2.0, compute binding free-energy change proxies (for example ΔΔG from wild-type and mutant affinities), and isolate entries relevant to the barnase–barstar system if available, while also summarizing the broader dataset for context.
+4. Map mutation positions onto the 1BRS interface where possible and test how structural features from the native complex relate to experimental mutation impact.
+5. Generate publication-quality figures covering data overview, structural/interface analysis, and validation/comparison plots.
+6. Write a research report that interprets the results in the context of HADDOCK’s integrative docking philosophy, scoring, and limitations.
+
+Expected deliverables:
+- Reproducible analysis scripts in code/.
+- Intermediate processed tables and derived structural/validation outputs in outputs/.
+- Final report at report/report.md with methodology, results, discussion, and explicit figure references.
+- Figure files in report/images/, including at minimum overview plots, main structural/result figures, and validation/comparison visualizations.

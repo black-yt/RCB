@@ -1,0 +1,17 @@
+dataset,rows,columns,column_names,unique_peptide,unique_repetition,unique_simulation_name,unique_weight,unique_counts,unique_cell_ids,unique_presented_peptides,unique_presented_hlas,unique_name,unique_num_presented_peptides,unique_population,unique_vaccine,unique_SampleID,unique_PopulationSize,unique_RunTime,unique_cell_id,unique_vaccine_element
+selected,100,5,peptide;repetition;simulation_name;weight;run_time,10.0,10.0,1.0,1.0,,,,,,,,,,,,,
+vaccine,10,3,peptide;counts;weight,10.0,,,1.0,1.0,,,,,,,,,,,,
+cells,28068,6,repetition;cell_ids;presented_peptides;presented_hlas;simulation_name;mutation,,10.0,,,,100.0,164.0,1.0,,,,,,,,,
+final_response,1000,6,name;num_presented_peptides;population;vaccine;p_response;log_p_response,,,,,,,,,100.0,27.0,10.0,1.0,,,,,
+sim_response,1000,6,name;num_presented_peptides;population;vaccine;p_response;log_p_response,,,,,,,,,100.0,27.0,10.0,10.0,,,,,
+runtime,35,3,SampleID;PopulationSize;RunTime,,,,,,,,,,,,,7.0,5.0,28.0,,
+vaccine-elements.scores.100-cells.10x.rep-0.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0
+vaccine-elements.scores.100-cells.10x.rep-1.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0
+vaccine-elements.scores.100-cells.10x.rep-2.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0
+vaccine-elements.scores.100-cells.10x.rep-3.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0
+vaccine-elements.scores.100-cells.10x.rep-4.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0
+vaccine-elements.scores.100-cells.10x.rep-5.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0
+vaccine-elements.scores.100-cells.10x.rep-6.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0
+vaccine-elements.scores.100-cells.10x.rep-7.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0
+vaccine-elements.scores.100-cells.10x.rep-8.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0
+vaccine-elements.scores.100-cells.10x.rep-9.csv,1200,6,cell_id;vaccine_element;log_p_no_response;p_no_response;p_response;log_p_response,,,,,,,,,,,,,,,,100.0,12.0

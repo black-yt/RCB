@@ -1,0 +1,130 @@
+{
+  "empty": {
+    "prioritized_planning": {
+      "instances": 3,
+      "success_rate": 0.0,
+      "mean_runtime_sec": 0.0185,
+      "mean_sum_of_costs": 397.667,
+      "mean_collision_events": 2.0
+    },
+    "hybrid_marl_lns": {
+      "instances": 3,
+      "success_rate": 0.6667,
+      "mean_runtime_sec": 0.045,
+      "mean_sum_of_costs": 396.333,
+      "mean_collision_events": 0.667
+    }
+  },
+  "random_small_top": {
+    "prioritized_planning": {
+      "instances": 3,
+      "success_rate": 1.0,
+      "mean_runtime_sec": 0.0006,
+      "mean_sum_of_costs": 35.0,
+      "mean_collision_events": 0.0
+    },
+    "hybrid_marl_lns": {
+      "instances": 3,
+      "success_rate": 1.0,
+      "mean_runtime_sec": 0.0011,
+      "mean_sum_of_costs": 33.667,
+      "mean_collision_events": 0.0
+    }
+  },
+  "maze": {
+    "prioritized_planning": {
+      "instances": 3,
+      "success_rate": 0.0,
+      "mean_runtime_sec": 0.0305,
+      "mean_sum_of_costs": 309.0,
+      "mean_collision_events": 2.333
+    },
+    "hybrid_marl_lns": {
+      "instances": 3,
+      "success_rate": 1.0,
+      "mean_runtime_sec": 0.0734,
+      "mean_sum_of_costs": 319.333,
+      "mean_collision_events": 0.0
+    }
+  },
+  "random_large": {
+    "prioritized_planning": {
+      "instances": 3,
+      "success_rate": 0.6667,
+      "mean_runtime_sec": 0.0749,
+      "mean_sum_of_costs": 860.333,
+      "mean_collision_events": 0.667
+    },
+    "hybrid_marl_lns": {
+      "instances": 3,
+      "success_rate": 1.0,
+      "mean_runtime_sec": 0.1359,
+      "mean_sum_of_costs": 858.0,
+      "mean_collision_events": 0.0
+    }
+  },
+  "random_medium": {
+    "prioritized_planning": {
+      "instances": 3,
+      "success_rate": 0.6667,
+      "mean_runtime_sec": 0.0096,
+      "mean_sum_of_costs": 319.667,
+      "mean_collision_events": 0.333
+    },
+    "hybrid_marl_lns": {
+      "instances": 3,
+      "success_rate": 1.0,
+      "mean_runtime_sec": 0.0198,
+      "mean_sum_of_costs": 319.333,
+      "mean_collision_events": 0.0
+    }
+  },
+  "random_small": {
+    "prioritized_planning": {
+      "instances": 3,
+      "success_rate": 1.0,
+      "mean_runtime_sec": 0.0006,
+      "mean_sum_of_costs": 32.0,
+      "mean_collision_events": 0.0
+    },
+    "hybrid_marl_lns": {
+      "instances": 3,
+      "success_rate": 1.0,
+      "mean_runtime_sec": 0.0011,
+      "mean_sum_of_costs": 31.333,
+      "mean_collision_events": 0.0
+    }
+  },
+  "room": {
+    "prioritized_planning": {
+      "instances": 3,
+      "success_rate": 0.0,
+      "mean_runtime_sec": 0.0758,
+      "mean_sum_of_costs": 466.0,
+      "mean_collision_events": 2.333
+    },
+    "hybrid_marl_lns": {
+      "instances": 3,
+      "success_rate": 0.6667,
+      "mean_runtime_sec": 0.4529,
+      "mean_sum_of_costs": 486.0,
+      "mean_collision_events": 0.667
+    }
+  },
+  "warehouse": {
+    "prioritized_planning": {
+      "instances": 3,
+      "success_rate": 0.3333,
+      "mean_runtime_sec": 0.0084,
+      "mean_sum_of_costs": 345.0,
+      "mean_collision_events": 0.667
+    },
+    "hybrid_marl_lns": {
+      "instances": 3,
+      "success_rate": 1.0,
+      "mean_runtime_sec": 0.0164,
+      "mean_sum_of_costs": 345.667,
+      "mean_collision_events": 0.0
+    }
+  }
+}

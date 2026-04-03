@@ -1,0 +1,49 @@
+method,family,scenario,map_file,agents,solved,runtime_sec,sum_of_costs,makespan,vertex_collisions,edge_collisions,collision_events,replans,repair_rounds,notes
+prioritized_planning,empty,empty_maps_453_25_25,eval_map_empty_1.npy,20,0,0.020699,394,30,2,0,2,20,0,residual conflicts
+hybrid_marl_lns,empty,empty_maps_453_25_25,eval_map_empty_1.npy,20,0,0.056335,391,30,2,0,2,40,6,residual conflicts
+prioritized_planning,empty,empty_maps_469_25_25,eval_map_empty_9.npy,20,0,0.023592,457,43,3,0,3,20,0,residual conflicts
+hybrid_marl_lns,empty,empty_maps_469_25_25,eval_map_empty_9.npy,20,1,0.051957,456,43,0,0,0,22,2,ok
+prioritized_planning,empty,empty_maps_500_25_25,eval_map_empty_9.npy,20,0,0.011317,342,27,1,0,1,20,0,residual conflicts
+hybrid_marl_lns,empty,empty_maps_500_25_25,eval_map_empty_9.npy,20,1,0.026611,342,27,0,0,0,22,2,ok
+prioritized_planning,random_small_top,maps_60_10_10_0.175,eval_map_1.npy,4,1,0.000937,44,13,0,0,0,4,0,ok
+hybrid_marl_lns,random_small_top,maps_60_10_10_0.175,eval_map_1.npy,4,1,0.001221,41,13,0,0,0,4,1,ok
+prioritized_planning,random_small_top,maps_60_10_10_0.175,eval_map_53.npy,4,1,0.000414,25,9,0,0,0,4,0,ok
+hybrid_marl_lns,random_small_top,maps_60_10_10_0.175,eval_map_53.npy,4,1,0.000933,25,9,0,0,0,4,1,ok
+prioritized_planning,random_small_top,maps_60_10_10_0.175,eval_map_99.npy,4,1,0.000567,36,11,0,0,0,4,0,ok
+hybrid_marl_lns,random_small_top,maps_60_10_10_0.175,eval_map_99.npy,4,1,0.001178,35,11,0,0,0,4,1,ok
+prioritized_planning,maze,maze_maps_125_25_25,eval_map_maze_1.npy,12,0,0.021976,290,41,1,0,1,12,0,residual conflicts
+hybrid_marl_lns,maze,maze_maps_125_25_25,eval_map_maze_1.npy,12,1,0.044818,300,45,0,0,0,12,1,ok
+prioritized_planning,maze,maze_maps_141_25_25,eval_map_maze_99.npy,12,0,0.029468,302,47,3,0,3,12,0,residual conflicts
+hybrid_marl_lns,maze,maze_maps_141_25_25,eval_map_maze_99.npy,12,1,0.067275,308,47,0,0,0,16,2,ok
+prioritized_planning,maze,maze_maps_172_25_25,eval_map_maze_99.npy,12,0,0.040046,335,41,3,0,3,12,0,residual conflicts
+hybrid_marl_lns,maze,maze_maps_172_25_25,eval_map_maze_99.npy,12,1,0.108248,350,45,0,0,0,14,2,ok
+prioritized_planning,random_large,maps_1250_50_50_0.175,eval_map_1.npy,20,1,0.071663,866,79,0,0,0,20,0,ok
+hybrid_marl_lns,random_large,maps_1250_50_50_0.175,eval_map_1.npy,20,1,0.107139,866,79,0,0,0,20,1,ok
+prioritized_planning,random_large,maps_1375_50_50_0.175,eval_map_99.npy,20,1,0.092561,899,71,0,0,0,20,0,ok
+hybrid_marl_lns,random_large,maps_1375_50_50_0.175,eval_map_99.npy,20,1,0.178138,892,71,0,0,0,20,1,ok
+prioritized_planning,random_large,maps_1625_50_50_0.175,eval_map_99.npy,20,0,0.060342,816,57,2,0,2,20,0,residual conflicts
+hybrid_marl_lns,random_large,maps_1625_50_50_0.175,eval_map_99.npy,20,1,0.122359,816,57,0,0,0,20,1,ok
+prioritized_planning,random_medium,maps_312_25_25_0.175,eval_map_1.npy,15,0,0.007696,285,34,1,0,1,15,0,residual conflicts
+hybrid_marl_lns,random_medium,maps_312_25_25_0.175,eval_map_1.npy,15,1,0.015931,285,34,0,0,0,15,1,ok
+prioritized_planning,random_medium,maps_344_25_25_0.175,eval_map_99.npy,15,1,0.011751,364,36,0,0,0,15,0,ok
+hybrid_marl_lns,random_medium,maps_344_25_25_0.175,eval_map_99.npy,15,1,0.023909,363,36,0,0,0,15,1,ok
+prioritized_planning,random_medium,maps_406_25_25_0.175,eval_map_99.npy,15,1,0.009434,310,30,0,0,0,15,0,ok
+hybrid_marl_lns,random_medium,maps_406_25_25_0.175,eval_map_99.npy,15,1,0.019692,310,30,0,0,0,15,1,ok
+prioritized_planning,random_small,maps_50_10_10_0.175,eval_map_1.npy,4,1,0.000268,24,7,0,0,0,4,0,ok
+hybrid_marl_lns,random_small,maps_50_10_10_0.175,eval_map_1.npy,4,1,0.000574,24,7,0,0,0,4,1,ok
+prioritized_planning,random_small,maps_55_10_10_0.175,eval_map_99.npy,4,1,0.000793,39,12,0,0,0,4,0,ok
+hybrid_marl_lns,random_small,maps_55_10_10_0.175,eval_map_99.npy,4,1,0.001234,37,13,0,0,0,4,1,ok
+prioritized_planning,random_small,maps_65_10_10_0.175,eval_map_99.npy,4,1,0.000663,33,9,0,0,0,4,0,ok
+hybrid_marl_lns,random_small,maps_65_10_10_0.175,eval_map_99.npy,4,1,0.001384,33,9,0,0,0,4,1,ok
+prioritized_planning,room,room_maps_250_25_25,eval_map_room_1.npy,17,0,0.084394,452,45,3,0,3,17,0,residual conflicts
+hybrid_marl_lns,room,room_maps_250_25_25,eval_map_room_1.npy,17,0,0.930190,462,50,2,0,2,20,1,residual conflicts
+prioritized_planning,room,room_maps_281_25_25,eval_map_room_9.npy,17,0,0.091825,496,77,1,0,1,17,0,residual conflicts
+hybrid_marl_lns,room,room_maps_281_25_25,eval_map_room_9.npy,17,1,0.264282,522,72,0,0,0,24,3,ok
+prioritized_planning,room,room_maps_344_25_25,eval_map_room_9.npy,17,0,0.051268,450,48,3,0,3,17,0,residual conflicts
+hybrid_marl_lns,room,room_maps_344_25_25,eval_map_room_9.npy,17,1,0.164323,474,62,0,0,0,22,2,ok
+prioritized_planning,warehouse,warehouse_maps_266_25_25,eval_map_warehouse_1.npy,15,0,0.009660,350,40,1,0,1,15,0,residual conflicts
+hybrid_marl_lns,warehouse,warehouse_maps_266_25_25,eval_map_warehouse_1.npy,15,1,0.018120,352,40,0,0,0,15,1,ok
+prioritized_planning,warehouse,warehouse_maps_281_25_25,eval_map_warehouse_99.npy,15,1,0.008003,350,34,0,0,0,15,0,ok
+hybrid_marl_lns,warehouse,warehouse_maps_281_25_25,eval_map_warehouse_99.npy,15,1,0.016993,357,34,0,0,0,15,1,ok
+prioritized_planning,warehouse,warehouse_maps_312_25_25,eval_map_warehouse_99.npy,15,0,0.007539,335,33,1,0,1,15,0,residual conflicts
+hybrid_marl_lns,warehouse,warehouse_maps_312_25_25,eval_map_warehouse_99.npy,15,1,0.014211,328,33,0,0,0,15,1,ok

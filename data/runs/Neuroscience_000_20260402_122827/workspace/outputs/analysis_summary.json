@@ -1,0 +1,102 @@
+{
+  "seed": 42,
+  "train_fraction": 0.7,
+  "n_frames": 1738,
+  "n_engineered_features": 69,
+  "label_summary": [
+    {
+      "label": "Attack",
+      "positive_frames": 587,
+      "positive_fraction": 0.3377445339470656,
+      "bout_count": 120,
+      "median_bout_length_frames": 5.0,
+      "max_bout_length_frames": 6
+    },
+    {
+      "label": "Sniffing",
+      "positive_frames": 232,
+      "positive_fraction": 0.1334867663981588,
+      "bout_count": 48,
+      "median_bout_length_frames": 5.0,
+      "max_bout_length_frames": 5
+    }
+  ],
+  "reference_summary": [
+    {
+      "label": "Attack",
+      "rows": 300,
+      "positive_frames": 49,
+      "positive_fraction": 0.16333333333333333,
+      "mean_probability": 0.14700000000000002
+    },
+    {
+      "label": "Sniffing",
+      "rows": 300,
+      "positive_frames": 11,
+      "positive_fraction": 0.03666666666666667,
+      "mean_probability": 0.033
+    }
+  ],
+  "best_models": [
+    {
+      "label": "Attack",
+      "protocol": "random_split",
+      "model": "random_forest",
+      "train_size": 1216,
+      "test_size": 522,
+      "positive_train": 411,
+      "positive_test": 176,
+      "average_precision": 0.7491681704789108,
+      "roc_auc": 0.9350860483447189,
+      "balanced_accuracy": 0.9354144771413557,
+      "precision": 0.8608247422680413,
+      "recall": 0.9488636363636364,
+      "f1": 0.9027027027027027
+    },
+    {
+      "label": "Attack",
+      "protocol": "temporal_split",
+      "model": "dummy",
+      "train_size": 1216,
+      "test_size": 522,
+      "positive_train": 431,
+      "positive_test": 156,
+      "average_precision": 0.2988505747126437,
+      "roc_auc": 0.5,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "label": "Sniffing",
+      "protocol": "random_split",
+      "model": "random_forest",
+      "train_size": 1216,
+      "test_size": 522,
+      "positive_train": 162,
+      "positive_test": 70,
+      "average_precision": 0.7555110593210643,
+      "roc_auc": 0.9791403286978508,
+      "balanced_accuracy": 0.9465865992414665,
+      "precision": 0.8024691358024691,
+      "recall": 0.9285714285714286,
+      "f1": 0.8609271523178808
+    },
+    {
+      "label": "Sniffing",
+      "protocol": "temporal_split",
+      "model": "random_forest",
+      "train_size": 1216,
+      "test_size": 522,
+      "positive_train": 167,
+      "positive_test": 65,
+      "average_precision": 0.15131490350557877,
+      "roc_auc": 0.4156034337653594,
+      "balanced_accuracy": 0.49781181619256015,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "n_tasks": 17,
+  "mean_total_score": 10.176470588235293,
+  "std_total_score": 2.8336216692963587,
+  "max_total_score": 12.0,
+  "min_total_score": 0.0,
+  "per_dim_means": {
+    "in_paper": 1.5,
+    "prompt_quality": 1.8125,
+    "follow_instructions": 1.875,
+    "physics_logic": 2.0,
+    "math_derivation": 1.875,
+    "final_answer_accuracy": 1.75
+  },
+  "annotator_mean_ph_score": {
+    "Haining": 1.619047619047619,
+    "Will": 1.5657894736842106,
+    "Yasaman": 1.5833333333333333
+  },
+  "annotator_n_ph": {
+    "Haining": 84,
+    "Will": 76,
+    "Yasaman": 84
+  }
+}

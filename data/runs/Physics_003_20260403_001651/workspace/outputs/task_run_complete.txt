@@ -1,0 +1,15 @@
+Executed: python code/run_analysis.py from the workspace root.
+
+Verification: The analysis completed successfully with exit code 0 and printed confirmation that summaries were written to outputs/ and figures were written to report/images/.
+
+Artifacts produced:
+- outputs/raw_data_summary.json — dataset structure and descriptive statistics for pump-off and pump-on spectra.
+- outputs/analysis_metrics.json — Dirac point, replica-band offsets, dispersion-fit metrics, and polarization-fit results.
+- outputs/analysis_summary.txt — concise text summary of the main physical findings.
+- outputs/replica_band_metrics.csv — tabulated per-replica energy, momentum, and intensity metrics.
+- report/images/spectral_overview.png — pump-off, pump-on, and difference-map comparison.
+- report/images/replica_band_analysis.png — Dirac cone / replica-band visualization and dispersion-offset analysis.
+- report/images/polarization_dependence_analysis.png — angular dependence of replica intensity with a twofold fit.
+- report/images/pump_angle_grid.png — overview grid of spectra across pump polarization angles.
+
+Conclusion: Task-specific analysis code was executed successfully, and multiple substantive outputs and figures were generated for later use in the final report.

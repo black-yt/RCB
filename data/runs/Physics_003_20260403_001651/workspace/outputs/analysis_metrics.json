@@ -1,0 +1,117 @@
+{
+  "dirac_point": {
+    "kx_Ainv": -0.3,
+    "energy_eV": -0.042713567839196,
+    "nearest_raw_kx_Ainv": -0.3,
+    "nearest_raw_energy_eV": -0.042713567839196,
+    "pump_off_intensity": 0.6164176954089491
+  },
+  "replica_band_metrics": [
+    {
+      "order": -1,
+      "kx_Ainv": -0.046308724832214765,
+      "energy_eV": -0.290713567839196,
+      "raw_pump_off_intensity": 101.80333389618912,
+      "raw_pump_on_reference_angle_intensity": 107.25758180791456,
+      "processed_intensity": 0.49521670717091265,
+      "energy_offset_from_dirac_eV": -0.248,
+      "momentum_offset_from_dirac_Ainv": 0.2536912751677852,
+      "pump_on_to_pump_off_ratio": 1.0535763191929182,
+      "pump_off_to_dirac_ratio": 165.15316587180365
+    },
+    {
+      "order": -1,
+      "kx_Ainv": 0.046308724832214765,
+      "energy_eV": -0.290713567839196,
+      "raw_pump_off_intensity": 101.80333389618912,
+      "raw_pump_on_reference_angle_intensity": 107.21284362389432,
+      "processed_intensity": 0.4951316941393499,
+      "energy_offset_from_dirac_eV": -0.248,
+      "momentum_offset_from_dirac_Ainv": 0.34630872483221475,
+      "pump_on_to_pump_off_ratio": 1.0531368622291033,
+      "pump_off_to_dirac_ratio": 165.15316587180365
+    },
+    {
+      "order": 1,
+      "kx_Ainv": -0.03422818791946308,
+      "energy_eV": 0.205286432160804,
+      "raw_pump_off_intensity": 105.60944178860568,
+      "raw_pump_on_reference_angle_intensity": 113.30223289801819,
+      "processed_intensity": 0.5244272546110498,
+      "energy_offset_from_dirac_eV": 0.248,
+      "momentum_offset_from_dirac_Ainv": 0.2657718120805369,
+      "pump_on_to_pump_off_ratio": 1.0728418878002488,
+      "pump_off_to_dirac_ratio": 171.32772562368015
+    },
+    {
+      "order": 1,
+      "kx_Ainv": 0.03422818791946308,
+      "energy_eV": 0.205286432160804,
+      "raw_pump_off_intensity": 105.60944178860568,
+      "raw_pump_on_reference_angle_intensity": 113.35249384815457,
+      "processed_intensity": 0.5244228565426068,
+      "energy_offset_from_dirac_eV": 0.248,
+      "momentum_offset_from_dirac_Ainv": 0.33422818791946307,
+      "pump_on_to_pump_off_ratio": 1.0733178012156135,
+      "pump_off_to_dirac_ratio": 171.32772562368015
+    }
+  ],
+  "replica_energy_offsets_eV": [
+    -0.248,
+    -0.248,
+    0.248,
+    0.248
+  ],
+  "pump_photon_energy_eV": 0.248,
+  "mean_absolute_replica_offset_error_vs_pump_energy_eV": 0.0,
+  "dispersion_fit": {
+    "fit_type": "|E-E_D| vs |kx-kx_D| linear fit away from Dirac point",
+    "slope_eV_per_Ainv": 5.501355095853214,
+    "intercept_eV": 0.029817449672780404,
+    "points_used": 189,
+    "mean_processed_intensity": 0.5943321676051854
+  },
+  "polarization_dependence": {
+    "angles_deg": [
+      0.0,
+      30.0,
+      60.0,
+      90.0,
+      120.0,
+      150.0,
+      180.0
+    ],
+    "intensities": [
+      0.5058211223955432,
+      0.49684941462683996,
+      0.4967856820182386,
+      0.5058451334080547,
+      0.4968527213380256,
+      0.49674991595716733,
+      0.5057384656292272
+    ],
+    "max_intensity": 0.5058451334080547,
+    "min_intensity": 0.49674991595716733,
+    "anisotropy_ratio_max_over_min": 1.0183094494004334,
+    "peak_to_peak_fraction_of_mean": 0.018166338782605942,
+    "cos2_fit": {
+      "baseline": 0.5004768482689554,
+      "cos2_coeff": 0.0013045174904078808,
+      "sin2_coeff": 9.370207197086697e-06,
+      "amplitude": 0.0013045511425632157,
+      "phase_radians": 0.003591383834398928,
+      "phase_degrees": 0.20577113632256913,
+      "r_squared": 0.04735111865847086,
+      "predicted": [
+        0.5017813657593633,
+        0.5011372218516308,
+        0.4998327043612229,
+        0.49917233077854756,
+        0.49981647468628015,
+        0.5011209921766879,
+        0.5017813657593633
+      ],
+      "modulation_depth_fraction": 0.002606616364124304
+    }
+  }
+}

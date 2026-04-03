@@ -1,0 +1,33 @@
+{
+  "outputs": [
+    "central_base_summary.csv",
+    "dataset_overview.csv",
+    "m6a_merged_predictions.csv",
+    "m6a_model_comparison.csv",
+    "m6a_pr_curve_nanopolish.csv",
+    "m6a_pr_curve_uncalled4.csv",
+    "m6a_quantile_enrichment.csv",
+    "m6a_roc_curve_nanopolish.csv",
+    "m6a_roc_curve_uncalled4.csv",
+    "m6a_thresholds_nanopolish.csv",
+    "m6a_thresholds_uncalled4.csv",
+    "performance_detailed_metrics.csv",
+    "performance_pairwise_vs_uncalled4.csv",
+    "performance_summary_analysis.csv",
+    "pore_model_correlations.csv",
+    "pore_model_summary.csv",
+    "analysis_summary.json"
+  ],
+  "figures": [
+    "central_base_effects.png",
+    "dataset_overview.png",
+    "gc_vs_current_relationship.png",
+    "m6a_pr_roc_curves.png",
+    "m6a_quantile_enrichment.png",
+    "m6a_score_distributions.png",
+    "performance_benchmarks.png",
+    "performance_relative_to_uncalled4.png",
+    "pore_model_distributions.png"
+  ],
+  "entry_point": "code/run_analysis.py"
+}

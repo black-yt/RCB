@@ -1,0 +1,32 @@
+{
+  "desi_dvrd_points": {
+    "n_points": 7,
+    "z_min": 0.295,
+    "z_max": 2.33,
+    "mean_value": -0.0074285714285714285,
+    "mean_error": 0.008285714285714285,
+    "weighted_mean_value": -0.008473836856539572,
+    "chi2_null_model": 14.436826814058957,
+    "reduced_chi2_null_model": 2.062403830579851
+  },
+  "desi_fap_points": {
+    "n_points": 7,
+    "z_min": 0.295,
+    "z_max": 2.33,
+    "mean_value": 0.004285714285714286,
+    "mean_error": 0.022857142857142857,
+    "weighted_mean_value": 0.0084,
+    "chi2_null_model": 4.0625,
+    "reduced_chi2_null_model": 0.5803571428571429
+  },
+  "sne_mu_points": {
+    "n_points": 7,
+    "z_min": 0.1,
+    "z_max": 0.7,
+    "mean_value": -0.06285714285714286,
+    "mean_error": 0.06571428571428571,
+    "weighted_mean_value": -0.04881179937551645,
+    "chi2_null_model": 7.451927437641724,
+    "reduced_chi2_null_model": 1.0645610625202464
+  }
+}

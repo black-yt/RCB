@@ -1,0 +1,40 @@
+{
+  "records": 832,
+  "years_covered": "2000-2025",
+  "top_5_state_share": 0.7981,
+  "top_8_state_share": 0.9772,
+  "peak_year": {
+    "year": 2003,
+    "records": 49
+  },
+  "trough_year": {
+    "year": 2020,
+    "records": 12
+  },
+  "leading_purpose_tokens": [
+    {
+      "purpose": "augment snowpack",
+      "token_count": 516
+    },
+    {
+      "purpose": "increase precipitation",
+      "token_count": 423
+    },
+    {
+      "purpose": "suppress hail",
+      "token_count": 80
+    },
+    {
+      "purpose": "increase runoff",
+      "token_count": 54
+    },
+    {
+      "purpose": "suppress fog",
+      "token_count": 13
+    },
+    {
+      "purpose": "research",
+      "token_count": 9
+    }
+  ]
+}

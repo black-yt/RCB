@@ -358,12 +358,13 @@ function renderLeaderboard(data) {
   }
 
   function scoreColor(v) {
-    if (v <= 0) return 'transparent';
     const t = Math.max(0, Math.min(100, v)) / 100;
     const hue = t < 0.5 ? t * 2 * 55 : 55 + (t - 0.5) * 2 * 65;
     return `hsl(${hue}, 75%, ${42 + t * 12}%)`;
   }
-  function cellStyle(v) { return v > 0 ? `background:${scoreColor(v)};color:#fff;font-weight:600;` : ''; }
+  function cellStyle(v) {
+    return Number.isFinite(v) ? `background:${scoreColor(v)};color:#fff;font-weight:600;` : '';
+  }
 
   let html = '<table class="leaderboard"><thead><tr><th>Task</th>';
   data.agents.forEach(a => html += `<th>${agentLogoHtml(a, 20)} ${esc(a)}</th>`);
@@ -383,7 +384,7 @@ function renderLeaderboard(data) {
       }
     });
     const f = data.frontier[task];
-    if (f && f > 0) {
+    if (Number.isFinite(f)) {
       html += `<td><span class="score-cell" style="${cellStyle(f)}">${f.toFixed(1)}</span></td>`;
     } else {
       html += '<td class="no-score">-</td>';
@@ -398,7 +399,7 @@ function renderLeaderboard(data) {
     const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : 0;
     html += `<td><span class="score-cell" style="${cellStyle(avg)}">${scores.length ? avg.toFixed(1) : '-'}</span></td>`;
   });
-  const fScores = data.tasks.map(t => data.frontier[t]).filter(v => v != null && v > 0);
+  const fScores = data.tasks.map(t => data.frontier[t]).filter(v => Number.isFinite(v));
   const fAvg = fScores.length ? fScores.reduce((a, b) => a + b, 0) / fScores.length : 0;
   html += `<td><span class="score-cell" style="${cellStyle(fAvg)}">${fScores.length ? fAvg.toFixed(1) : '-'}</span></td>`;
   html += '</tr></tbody></table>';

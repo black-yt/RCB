@@ -1,0 +1,29 @@
+Title: Topological Phases in AB-Stacked MoTe$_2$/WSe$_2$: $\mathbb{Z
+
+Abstract summary:
+We present a theory on the quantum phase diagram of AB-stacked MoTe$_2$/WSe$_2$ using a self-consistent Hartree-Fock calculation performed in the plane-wave basis, motivated by the observation of topological states in this system. At filling factor $\nu=2$ (two holes per moir\'e unit cell), Coulomb interaction can stabilize a $\mathbb{Z}_2$ topological insulator by opening a charge gap. At $\nu=1$, the interaction induces three classes of competing states, spin density wave states, an in-plane ferromagnetic state, and a valley polarized state, which undergo first-order phase transitions tuned by an out-of-plane displacement field. The valley polarized state becomes a Chern insulator for certain displacement fields. Moreover, we predict a topological charge density wave forming a honeycomb lattice with ferromagnetism at $\nu=2/3$. Future directions on this versatile system hosting a rich set of quantum phases are discussed.
+
+Core continuum Hamiltonian equation:
+H_{\tau}=\begin{pmatrix}
+        -\frac{\hbar^2\bm{k}^2}{2m_\mathfrak{b}}+\Delta_{\mathfrak{b}}(\bm{r}) &  \Delta_{\text{T},\tau}(\bm{r})\\
+        \Delta_{\text{T},\tau}^\dag(\bm{r}) & -\frac{\hbar^2\left(\bm{k}-\tau \bm{\kappa}\right)^2}{2m_\mathfrak{t}}+ \Delta_\mathfrak{t}(\bm{r})+V_{z\mathfrak{t}}
+    \end{pmatrix},
+
+Interaction model cue:
+\textit{Coulomb Interactions.---} The bandwidth of the first moir\'e valence band is on the order of $\hbar^2 \bm{\kappa}^2/(2 m_{\mathfrak{b}}) \approx 47 $ meV, while the characteristic Coulomb interaction strength is on the order of $e^2/(\epsilon a_M) \approx 31 $ meV for $a_M  \approx 4.7 $ nm and dielectric constant $\epsilon= 10 $. Therefore, the Coulomb interaction has an energy scale comparable to the bandwidth [Fig.~\ref{fig:1}(c)], which puts the system in the strongly interacting regime with possible interaction-induced quantum phase transitions. We consider the dual-gate screened Coulomb interaction with the momentum-dependent potential $V(q)=2\pi e^2 \tanh(q d)/(\epsilon q)$, where $d$ is the gate-to-sample distance. We set $d=5$ nm \cite{li2021quantum} unless otherwise stated. The dielectric constant $\epsilon$ is of the order of $10-20$ , and we vary $\epsilon$ to illustrate how physical properties depend on the interaction strength.
+
+Tasks analyzed: 17
+Average total task score: 10.18 / 12.00
+Average normalized score: 84.8%
+Best task: Define each term in Potential Hamiltonian (continuum version)
+Lowest-scoring task: task_1
+
+Top placeholder-mismatch count (non-identical filled LLM vs human fields):
+81
+
+Related work inventory:
+- paper_000.pdf (10053.9 KB)
+- paper_001.pdf (1253.6 KB)
+- paper_002.pdf (740.9 KB)
+- paper_003.pdf (3578.8 KB)
+- paper_004.pdf (5863.6 KB)

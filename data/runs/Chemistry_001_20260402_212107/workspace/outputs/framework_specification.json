@@ -1,0 +1,91 @@
+{
+  "task": "Unified multimolecule diffusion architecture for biomolecular complex structure prediction",
+  "inputs": {
+    "protein_sequence_and_structure_tokens": 161,
+    "nucleic_acid_sequence_and_structure_tokens": "supported conceptually by the same residue-token interface",
+    "small_molecule_atoms": 194
+  },
+  "representation": {
+    "protein_nodes": "residue-level tokens with sequence, geometry, and pairwise distance features",
+    "nucleic_acid_nodes": "nucleotide-level tokens using the same equivariant geometric encoder",
+    "ligand_nodes": "atom-level graph with bond order, element type, and 3D coordinates",
+    "cross_modal_edges": "learned attention + distance-conditioned edges across all molecular components"
+  },
+  "diffusion_objective": {
+    "forward_process": "add Gaussian noise to 3D coordinates while preserving token identities and bond graph priors",
+    "reverse_process": "SE(3)-equivariant denoiser predicts coordinate updates and inter-molecular contacts jointly",
+    "losses": [
+      "coordinate denoising loss",
+      "pairwise distance consistency loss",
+      "ligand chemistry / bond-length regularization",
+      "contact-map supervision"
+    ]
+  },
+  "sample_specific_observations": {
+    "putative_contact_residues_top10": [
+      {
+        "residue_id": 148,
+        "residue_name": "MET",
+        "chain_id": "A",
+        "min_distance_to_ligand": 2.5601
+      },
+      {
+        "residue_id": 236,
+        "residue_name": "GLY",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.0899
+      },
+      {
+        "residue_id": 147,
+        "residue_name": "ASN",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.4696
+      },
+      {
+        "residue_id": 275,
+        "residue_name": "ASP",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.5618
+      },
+      {
+        "residue_id": 152,
+        "residue_name": "PHE",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.5683
+      },
+      {
+        "residue_id": 153,
+        "residue_name": "GLU",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.6328
+      },
+      {
+        "residue_id": 276,
+        "residue_name": "GLU",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.8651
+      },
+      {
+        "residue_id": 145,
+        "residue_name": "ASP",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.8838
+      },
+      {
+        "residue_id": 237,
+        "residue_name": "PHE",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.9304
+      },
+      {
+        "residue_id": 188,
+        "residue_name": "TYR",
+        "chain_id": "A",
+        "min_distance_to_ligand": 4.4811
+      }
+    ],
+    "contact_count_within_8A": 48,
+    "ligand_heavy_atoms": 90
+  },
+  "limitation": "Current workspace contains one protein-ligand example and no nucleic acid complex, so the framework is specified and stress-tested structurally rather than trained end-to-end."
+}

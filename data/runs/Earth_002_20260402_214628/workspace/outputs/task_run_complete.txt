@@ -1,0 +1,38 @@
+Analysis execution summary
+==========================
+
+Executed:
+- Command: python code/run_analysis.py
+- Working directory: /mnt/shared-storage-user/yetianlin/ResearchClawBench/workspaces/Earth_002_20260402_214628
+- Result: completed successfully (exit code 0)
+
+What the script did:
+- Loaded 100,000 sampled mangrove reference points from the GeoPackage.
+- Loaded 121 country-level mangrove ecosystem-service records.
+- Read AR6 relative sea-level-rise scenario files for SSP2-4.5, SSP3-7.0, and SSP5-8.5.
+- Assigned nearest coastal SLR rates to mangrove points and country centroids.
+- Computed baseline tropical-cyclone exposure from the provided historical track-point dataset.
+- Applied scenario-specific tropical-cyclone regime-shift multipliers.
+- Combined normalized TC and SLR components into composite risk indices.
+- Exported tabular outputs and generated figures under report/images/.
+
+Verified generated artifacts:
+Outputs/
+- outputs/mangrove_point_risk_sample.csv (23,499,170 bytes)
+- outputs/country_service_risk.csv (58,122 bytes)
+- outputs/top_country_rankings.csv (3,769 bytes)
+- outputs/slr_scenario_summary.csv (331 bytes)
+- outputs/tc_baseline_summary.json (289 bytes)
+- outputs/data_inventory_summary.json (716 bytes)
+- outputs/method_notes.txt (1,910 bytes)
+
+Report images/
+- report/images/composite_risk_map.png (570,743 bytes)
+- report/images/country_risk_services.png (213,494 bytes)
+- report/images/data_overview.png (359,231 bytes)
+- report/images/slr_scenarios.png (95,531 bytes)
+
+Verification note:
+- The analysis completed successfully.
+- Multiple substantive artifacts were generated under both outputs/ and report/images/.
+- report/report.md was not created in this step, per instruction.

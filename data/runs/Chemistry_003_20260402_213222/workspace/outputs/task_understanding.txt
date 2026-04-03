@@ -1,0 +1,24 @@
+Task objective: Build an autonomous research workflow around a machine-learning interatomic potential that captures long-range electrostatics and yields energies, forces, and interpretable latent charges, using the provided benchmark datasets and related papers as guidance.
+
+Available data in this workspace:
+- data/random_charges.xyz: 100 configurations, 128 atoms each, synthetic Coulomb + repulsive LJ system with embedded true ±1 charges; useful for testing whether latent electrostatic representations can recover exact charge structure from energies/forces.
+- data/charged_dimer.xyz: 60 configurations, 8 atoms each, charged molecular dimers at varying separations with forces and energies; useful for binding-curve and long-range interaction analysis beyond short-range cutoffs.
+- data/ag3_chargestates.xyz: 60 configurations, 3 atoms each, Ag3 trimers in charge states +1 and -1 with energies, forces, and charge-state metadata; useful for testing whether models or descriptors can distinguish different global charge states.
+- related_work/paper_000.pdf: Cartesian ACE / CACE MLIP background.
+- related_work/paper_001.pdf: fourth-generation HDNNP with charge equilibration and non-local charge transfer.
+- related_work/paper_002.pdf: density-based long-range electrostatic descriptors for ML force fields.
+- related_work/paper_003.pdf: Ewald-based long-range message passing.
+
+Main planned analysis steps:
+1. Parse all XYZ datasets, extract positions/species/energies/forces/metadata, and create dataset overview statistics and visualizations.
+2. Study the related work to position the task around long-range electrostatics, latent charges, and Ewald/Fourier or descriptor-based mechanisms.
+3. Implement reproducible baseline analyses or lightweight prototype models in code/ to probe electrostatic structure in each dataset.
+4. Evaluate task-specific behaviors: charge recovery on random_charges, separation-dependent binding behavior on charged_dimer, and charge-state discrimination on ag3_chargestates.
+5. Save intermediate metrics/plots to outputs/ and prepare publication-style figures for report/images/.
+6. Write report/report.md with methodology, results, comparisons to the related-work framing, limitations, and conclusions.
+
+Expected deliverables:
+- Analysis scripts in code/.
+- Intermediate processed data, tables, and plots in outputs/.
+- Final report at report/report.md.
+- Figure files in report/images/ referenced from the report using relative paths.

@@ -1,0 +1,261 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "01_data_overview.py",
+    "path": "code/01_data_overview.py",
+    "type": "file",
+    "size": 9424,
+    "mtime": 1775131776.0,
+    "exported": true
+  },
+  {
+    "name": "02_water_rdf.py",
+    "path": "code/02_water_rdf.py",
+    "type": "file",
+    "size": 13581,
+    "mtime": 1775131776.0,
+    "exported": true
+  },
+  {
+    "name": "03_adsorption_scaling.py",
+    "path": "code/03_adsorption_scaling.py",
+    "type": "file",
+    "size": 12099,
+    "mtime": 1775131776.0,
+    "exported": true
+  },
+  {
+    "name": "04_reaction_barriers.py",
+    "path": "code/04_reaction_barriers.py",
+    "type": "file",
+    "size": 12101,
+    "mtime": 1775131776.0,
+    "exported": true
+  },
+  {
+    "name": "05_summary_figures.py",
+    "path": "code/05_summary_figures.py",
+    "type": "file",
+    "size": 9854,
+    "mtime": 1775131776.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "MACE-MP-0_Reproduction_Dataset.txt",
+    "path": "data/MACE-MP-0_Reproduction_Dataset.txt",
+    "type": "file",
+    "size": 3178,
+    "mtime": 1772003774.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "adsorption_data.json",
+    "path": "outputs/adsorption_data.json",
+    "type": "file",
+    "size": 1516,
+    "mtime": 1775131772.0,
+    "exported": true
+  },
+  {
+    "name": "reaction_barriers.json",
+    "path": "outputs/reaction_barriers.json",
+    "type": "file",
+    "size": 619,
+    "mtime": 1775131772.0,
+    "exported": true
+  },
+  {
+    "name": "water_rdf.npz",
+    "path": "outputs/water_rdf.npz",
+    "type": "file",
+    "size": 3462,
+    "mtime": 1775131772.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 579122,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2664200,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 703654,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2314869,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig01_dataset_overview.png",
+    "path": "report/images/fig01_dataset_overview.png",
+    "type": "file",
+    "size": 103869,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "fig02_model_comparison.png",
+    "path": "report/images/fig02_model_comparison.png",
+    "type": "file",
+    "size": 60515,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "fig03_mace_architecture.png",
+    "path": "report/images/fig03_mace_architecture.png",
+    "type": "file",
+    "size": 99373,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "fig04_water_rdf.png",
+    "path": "report/images/fig04_water_rdf.png",
+    "type": "file",
+    "size": 157258,
+    "mtime": 1775131776.0,
+    "exported": true
+  },
+  {
+    "name": "fig05_water_rdf_detail.png",
+    "path": "report/images/fig05_water_rdf_detail.png",
+    "type": "file",
+    "size": 84958,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "fig06_adsorption_scaling.png",
+    "path": "report/images/fig06_adsorption_scaling.png",
+    "type": "file",
+    "size": 226613,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "fig07_surface_structures.png",
+    "path": "report/images/fig07_surface_structures.png",
+    "type": "file",
+    "size": 151114,
+    "mtime": 1775131772.0,
+    "exported": true
+  },
+  {
+    "name": "fig08_reaction_barriers.png",
+    "path": "report/images/fig08_reaction_barriers.png",
+    "type": "file",
+    "size": 251961,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "fig09_barrier_comparison.png",
+    "path": "report/images/fig09_barrier_comparison.png",
+    "type": "file",
+    "size": 134560,
+    "mtime": 1775131772.0,
+    "exported": true
+  },
+  {
+    "name": "fig10_performance_summary.png",
+    "path": "report/images/fig10_performance_summary.png",
+    "type": "file",
+    "size": 136785,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "fig11_learning_curves.png",
+    "path": "report/images/fig11_learning_curves.png",
+    "type": "file",
+    "size": 130708,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "fig12_workflow.png",
+    "path": "report/images/fig12_workflow.png",
+    "type": "file",
+    "size": 157236,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "fig13_finetuning.png",
+    "path": "report/images/fig13_finetuning.png",
+    "type": "file",
+    "size": 95842,
+    "mtime": 1775131774.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 25512,
+    "mtime": 1775131777.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5298,
+    "mtime": 1775056330.0,
+    "exported": true
+  }
+]

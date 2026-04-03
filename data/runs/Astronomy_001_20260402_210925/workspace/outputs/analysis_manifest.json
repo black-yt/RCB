@@ -1,0 +1,22 @@
+{
+  "data_file": "data/DESI_EDE_Repro_Data.txt",
+  "outputs": [
+    "outputs/parameter_constraints.csv",
+    "outputs/model_parameter_shifts.csv",
+    "outputs/distance_dataset_summary.json",
+    "outputs/inferred_model_curves.json",
+    "outputs/model_curve_fit_metrics.json",
+    "outputs/analysis_summary.txt"
+  ],
+  "figures": [
+    "report/images/data_overview.png",
+    "report/images/parameter_constraints_overview.png",
+    "report/images/parameter_shift_significance.png",
+    "report/images/distance_residual_comparison.png",
+    "report/images/residual_fit_metrics.png"
+  ],
+  "notes": [
+    "Residual model curves are transparent reconstructions designed to compare qualitative behavior across models using the extracted Figure 6 points.",
+    "No full Planck/ACT/DESI likelihood refit is possible from the reduced workspace data alone."
+  ]
+}

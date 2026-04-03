@@ -1,0 +1,274 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "01_data_exploration.py",
+    "path": "code/01_data_exploration.py",
+    "type": "file",
+    "size": 9697,
+    "mtime": 1775131164.0,
+    "exported": true
+  },
+  {
+    "name": "02_dids_mfl_framework.py",
+    "path": "code/02_dids_mfl_framework.py",
+    "type": "file",
+    "size": 18078,
+    "mtime": 1775131164.0,
+    "exported": true
+  },
+  {
+    "name": "03_visualizations.py",
+    "path": "code/03_visualizations.py",
+    "type": "file",
+    "size": 24523,
+    "mtime": 1775131164.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "NF-UNSW-NB15-v2_3d.pt",
+    "path": "data/NF-UNSW-NB15-v2_3d.pt",
+    "type": "file",
+    "size": 32733515,
+    "mtime": 1757405180.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "all_results.json",
+    "path": "outputs/all_results.json",
+    "type": "file",
+    "size": 2316,
+    "mtime": 1775131160.0,
+    "exported": true
+  },
+  {
+    "name": "binary_pred.npy",
+    "path": "outputs/binary_pred.npy",
+    "type": "file",
+    "size": 238168,
+    "mtime": 1775131160.0,
+    "exported": false
+  },
+  {
+    "name": "classification_report.json",
+    "path": "outputs/classification_report.json",
+    "type": "file",
+    "size": 1787,
+    "mtime": 1775131160.0,
+    "exported": true
+  },
+  {
+    "name": "cm_pred.npy",
+    "path": "outputs/cm_pred.npy",
+    "type": "file",
+    "size": 238168,
+    "mtime": 1775131142.0,
+    "exported": false
+  },
+  {
+    "name": "cm_true.npy",
+    "path": "outputs/cm_true.npy",
+    "type": "file",
+    "size": 238168,
+    "mtime": 1775131162.0,
+    "exported": false
+  },
+  {
+    "name": "conf_matrix_pred.npy",
+    "path": "outputs/conf_matrix_pred.npy",
+    "type": "file",
+    "size": 238168,
+    "mtime": 1775131124.0,
+    "exported": false
+  },
+  {
+    "name": "conf_matrix_true.npy",
+    "path": "outputs/conf_matrix_true.npy",
+    "type": "file",
+    "size": 238168,
+    "mtime": 1775131162.0,
+    "exported": false
+  },
+  {
+    "name": "data_stats.json",
+    "path": "outputs/data_stats.json",
+    "type": "file",
+    "size": 367,
+    "mtime": 1775131162.0,
+    "exported": true
+  },
+  {
+    "name": "disc_scores.npy",
+    "path": "outputs/disc_scores.npy",
+    "type": "file",
+    "size": 208,
+    "mtime": 1775131162.0,
+    "exported": false
+  },
+  {
+    "name": "pca_components.npy",
+    "path": "outputs/pca_components.npy",
+    "type": "file",
+    "size": 80128,
+    "mtime": 1775131162.0,
+    "exported": false
+  },
+  {
+    "name": "\u2026 5 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2630694,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2581990,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 993448,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3459382,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_dataset_overview.png",
+    "path": "report/images/fig1_dataset_overview.png",
+    "type": "file",
+    "size": 208405,
+    "mtime": 1775131164.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_feature_analysis.png",
+    "path": "report/images/fig2_feature_analysis.png",
+    "type": "file",
+    "size": 265697,
+    "mtime": 1775131164.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_classification_comparison.png",
+    "path": "report/images/fig3_classification_comparison.png",
+    "type": "file",
+    "size": 152694,
+    "mtime": 1775131162.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_confusion_matrix.png",
+    "path": "report/images/fig4_confusion_matrix.png",
+    "type": "file",
+    "size": 260293,
+    "mtime": 1775131162.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_few_shot_curves.png",
+    "path": "report/images/fig5_few_shot_curves.png",
+    "type": "file",
+    "size": 124532,
+    "mtime": 1775131164.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_disentanglement.png",
+    "path": "report/images/fig6_disentanglement.png",
+    "type": "file",
+    "size": 198459,
+    "mtime": 1775131162.0,
+    "exported": true
+  },
+  {
+    "name": "fig7_perclass_f1.png",
+    "path": "report/images/fig7_perclass_f1.png",
+    "type": "file",
+    "size": 175337,
+    "mtime": 1775131164.0,
+    "exported": true
+  },
+  {
+    "name": "fig8_temporal_graph.png",
+    "path": "report/images/fig8_temporal_graph.png",
+    "type": "file",
+    "size": 266823,
+    "mtime": 1775131164.0,
+    "exported": true
+  },
+  {
+    "name": "fig9_roc_pr_curves.png",
+    "path": "report/images/fig9_roc_pr_curves.png",
+    "type": "file",
+    "size": 114802,
+    "mtime": 1775131164.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 24407,
+    "mtime": 1775131165.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5658,
+    "mtime": 1775054472.0,
+    "exported": true
+  }
+]

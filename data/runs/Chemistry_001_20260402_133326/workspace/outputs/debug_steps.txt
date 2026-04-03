@@ -1,0 +1,3 @@
+start
+sample
+device=cpu

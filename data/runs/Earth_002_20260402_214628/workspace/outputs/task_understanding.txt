@@ -1,0 +1,24 @@
+Task objective:
+Develop a global composite risk index for mangroves that combines future tropical cyclone regime shifts with relative sea-level rise, then use it to assess where mangroves and mangrove-linked ecosystem services are most at risk by end-century under climate scenarios.
+
+Available data in this workspace:
+- data/mangroves/gmw_v4_ref_smpls_qad_v12.gpkg: 100,000 sampled Global Mangrove Watch point features (10% sample) representing mangrove extent references for spatial exposure mapping.
+- data/slr/total_ssp245_medium_confidence_rates.nc, total_ssp370_medium_confidence_rates.nc, total_ssp585_medium_confidence_rates.nc: IPCC AR6 regional relative sea-level rise rate products for multiple SSPs.
+- data/tc/tracks_mit_mpi-esm1-2-hr_historical_reduced.nc: reduced historical synthetic tropical cyclone track dataset for baseline cyclone climatology and risk metrics.
+- data/ecosystem/UCSC_CWON_countrybounds.gpkg: country-level mangrove area and ecosystem-service indicators (population/property at risk and benefits, 1996/2010/2015/2020), useful for aggregation and impact interpretation.
+- related_work/paper_000.pdf to paper_004.pdf: references on coastal habitat retreat under sea-level rise, mangrove ecosystem-service prioritization, cyclone impacts on mangroves, future regional cyclone risk shifts, and broader coastal ecosystem vulnerability/resilience.
+
+Main planned analysis steps:
+1. Inspect and load mangrove, SLR, TC, and country/ecosystem-service datasets reproducibly.
+2. Derive mangrove exposure units and aggregate them to countries/regions as needed.
+3. Compute baseline tropical cyclone hazard metrics from historical tracks and define a climate-shift or regime-shift proxy informed by related work.
+4. Extract end-century SLR indicators from the SSP netCDF products.
+5. Normalize and combine cyclone and SLR components into a composite mangrove risk index.
+6. Link the index to mangrove area and ecosystem-service metrics to identify global hotspots, scenario differences, and country/regional rankings.
+7. Produce validation/sanity-check plots, main result maps/figures, and a publication-style written interpretation with caveats.
+
+Expected deliverables:
+- Reproducible analysis scripts in code/.
+- Intermediate processed outputs/tables in outputs/.
+- A final report at report/report.md with methodology, results, discussion, and embedded figure references.
+- Figure files in report/images/ including data overview, main risk results, and comparison/validation visuals.

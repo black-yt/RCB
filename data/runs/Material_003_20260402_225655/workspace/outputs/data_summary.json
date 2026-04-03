@@ -1,0 +1,19 @@
+{
+  "calibration_rows": 295,
+  "vitrimer_rows": 8424,
+  "calibration_tg_exp_range": [
+    171.0,
+    600.0
+  ],
+  "calibration_tg_md_range": [
+    214.2418,
+    626.3676
+  ],
+  "vitrimer_tg_md_range": [
+    307.0142,
+    563.8622
+  ],
+  "unique_acids": 7729,
+  "unique_epoxides": 7667,
+  "combinatorial_density": 0.00014215743791121178
+}

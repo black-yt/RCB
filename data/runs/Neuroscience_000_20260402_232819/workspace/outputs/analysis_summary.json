@@ -1,0 +1,200 @@
+[
+  {
+    "target": "Attack",
+    "n_train": 1216,
+    "n_test": 522,
+    "train_positive_rate": 0.3379934210526316,
+    "test_positive_rate": 0.3371647509578544,
+    "selected_threshold": 0.6359653680628615,
+    "train_metrics": {
+      "threshold": 0.6359653680628615,
+      "accuracy": 0.9991776315789473,
+      "balanced_accuracy": 0.9987834549878345,
+      "precision": 1.0,
+      "recall": 0.9975669099756691,
+      "f1": 0.9987819732034104,
+      "average_precision": 0.9999882174817224,
+      "roc_auc": 0.9999939550558401
+    },
+    "test_metrics": {
+      "threshold": 0.6359653680628615,
+      "accuracy": 0.9061302681992337,
+      "balanced_accuracy": 0.8984826589595376,
+      "precision": 0.850828729281768,
+      "recall": 0.875,
+      "f1": 0.8627450980392157,
+      "average_precision": 0.7647650087732019,
+      "roc_auc": 0.9411127167630058
+    },
+    "reference_metrics": {
+      "reference_rows": 300,
+      "reference_positive_rate": 0.16333333333333333,
+      "reference_average_precision": 1.0,
+      "reference_roc_auc": 1.0,
+      "reference_precision_at_0_5": 1.0,
+      "reference_recall_at_0_5": 1.0,
+      "reference_f1_at_0_5": 1.0
+    },
+    "top_features": [
+      {
+        "feature": "Feature_1",
+        "gini_importance": 0.0966798553961063,
+        "permutation_importance_mean": -0.0400464982687432,
+        "permutation_importance_std": 0.01893025583377681
+      },
+      {
+        "feature": "Unnamed: 0",
+        "gini_importance": 0.09246683428256972,
+        "permutation_importance_mean": -0.038409333188938265,
+        "permutation_importance_std": 0.018396812570257166
+      },
+      {
+        "feature": "Feature_2",
+        "gini_importance": 0.09099077153055271,
+        "permutation_importance_mean": -0.03754677012297626,
+        "permutation_importance_std": 0.017916330306013875
+      },
+      {
+        "feature": "Tail_end_1_y",
+        "gini_importance": 0.07129058895118602,
+        "permutation_importance_mean": -0.049589523951515516,
+        "permutation_importance_std": 0.024531282162399522
+      },
+      {
+        "feature": "Tail_end_1_x",
+        "gini_importance": 0.04578277313016717,
+        "permutation_importance_mean": -0.0137184604892702,
+        "permutation_importance_std": 0.011666000868509456
+      },
+      {
+        "feature": "Tail_base_1_x",
+        "gini_importance": 0.04118427194897246,
+        "permutation_importance_mean": -0.01921167818193762,
+        "permutation_importance_std": 0.011750574994023466
+      },
+      {
+        "feature": "Tail_end_2_x",
+        "gini_importance": 0.029561620744918374,
+        "permutation_importance_mean": -0.030463546287678882,
+        "permutation_importance_std": 0.00913571061257896
+      },
+      {
+        "feature": "Tail_base_1_y",
+        "gini_importance": 0.025089348433688527,
+        "permutation_importance_mean": -0.023922668247883243,
+        "permutation_importance_std": 0.011086426185647268
+      },
+      {
+        "feature": "Lat_right_1_x",
+        "gini_importance": 0.024142708581091483,
+        "permutation_importance_mean": -0.01063951023682912,
+        "permutation_importance_std": 0.006805663114424308
+      },
+      {
+        "feature": "Lat_left_1_x",
+        "gini_importance": 0.02413597073864972,
+        "permutation_importance_mean": -0.011403418193091874,
+        "permutation_importance_std": 0.006927611902501286
+      }
+    ]
+  },
+  {
+    "target": "Sniffing",
+    "n_train": 1216,
+    "n_test": 522,
+    "train_positive_rate": 0.13322368421052633,
+    "test_positive_rate": 0.13409961685823754,
+    "selected_threshold": 0.7377488454811683,
+    "train_metrics": {
+      "threshold": 0.7377488454811683,
+      "accuracy": 0.9991776315789473,
+      "balanced_accuracy": 0.9969135802469136,
+      "precision": 1.0,
+      "recall": 0.9938271604938271,
+      "f1": 0.9969040247678018,
+      "average_precision": 0.9998151844459231,
+      "roc_auc": 0.9999707170801415
+    },
+    "test_metrics": {
+      "threshold": 0.7377488454811683,
+      "accuracy": 0.9521072796934866,
+      "balanced_accuracy": 0.8878318584070797,
+      "precision": 0.835820895522388,
+      "recall": 0.8,
+      "f1": 0.8175182481751825,
+      "average_precision": 0.8380594955969637,
+      "roc_auc": 0.984070796460177
+    },
+    "reference_metrics": {
+      "reference_rows": 300,
+      "reference_positive_rate": 0.03666666666666667,
+      "reference_average_precision": 1.0,
+      "reference_roc_auc": 1.0,
+      "reference_precision_at_0_5": 1.0,
+      "reference_recall_at_0_5": 1.0,
+      "reference_f1_at_0_5": 1.0
+    },
+    "top_features": [
+      {
+        "feature": "Tail_end_2_x",
+        "gini_importance": 0.1080831954602086,
+        "permutation_importance_mean": -0.00436401916841953,
+        "permutation_importance_std": 0.036864689014036514
+      },
+      {
+        "feature": "Tail_base_2_x",
+        "gini_importance": 0.06897371830723902,
+        "permutation_importance_mean": -0.0007657566971098539,
+        "permutation_importance_std": 0.026114311877304803
+      },
+      {
+        "feature": "Tail_end_1_x",
+        "gini_importance": 0.05504839912569547,
+        "permutation_importance_mean": 0.004756436668655018,
+        "permutation_importance_std": 0.03523657659765779
+      },
+      {
+        "feature": "Tail_end_2_y",
+        "gini_importance": 0.054329268647280486,
+        "permutation_importance_mean": 0.014167984983369025,
+        "permutation_importance_std": 0.02931898334533486
+      },
+      {
+        "feature": "Feature_1",
+        "gini_importance": 0.05102212450228893,
+        "permutation_importance_mean": -0.017788952192494035,
+        "permutation_importance_std": 0.01969253791505245
+      },
+      {
+        "feature": "Unnamed: 0",
+        "gini_importance": 0.05031189249780928,
+        "permutation_importance_mean": -0.017242701795998693,
+        "permutation_importance_std": 0.023864646413845402
+      },
+      {
+        "feature": "Center_2_y",
+        "gini_importance": 0.04902458563370336,
+        "permutation_importance_mean": 0.007437520002481951,
+        "permutation_importance_std": 0.02898799168871566
+      },
+      {
+        "feature": "Feature_2",
+        "gini_importance": 0.04771987992378514,
+        "permutation_importance_mean": -0.017562560732611872,
+        "permutation_importance_std": 0.023424095254360098
+      },
+      {
+        "feature": "Tail_base_1_x",
+        "gini_importance": 0.03830025600742645,
+        "permutation_importance_mean": 0.006593538461511001,
+        "permutation_importance_std": 0.025841968291894838
+      },
+      {
+        "feature": "Lat_right_2_y",
+        "gini_importance": 0.028578966911045424,
+        "permutation_importance_mean": 0.007995214125920812,
+        "permutation_importance_std": 0.020730153997436107
+      }
+    ]
+  }
+]

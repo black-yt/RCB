@@ -1,0 +1,8 @@
+empty: type=<class 'numpy.ndarray'>, shape=(25, 25)
+maps_60_10_10_0.175: type=<class 'numpy.ndarray'>, shape=(10, 10)
+maze: type=<class 'numpy.ndarray'>, shape=(25, 25)
+random_large: type=<class 'numpy.ndarray'>, shape=(50, 50)
+random_medium: type=<class 'numpy.ndarray'>, shape=(25, 25)
+random_small: type=<class 'numpy.ndarray'>, shape=(10, 10)
+room: type=<class 'numpy.ndarray'>, shape=(25, 25)
+warehouse: type=<class 'numpy.ndarray'>, shape=(25, 25)

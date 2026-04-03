@@ -1,0 +1,21 @@
+Task objective: Reproduce and analyze the core MATBG superfluid-stiffness experiments from the provided simulated dataset, extracting how DC resistance / microwave-derived response and especially superfluid stiffness vary with carrier density (gate tuning), temperature, and applied current, then use those results to assess quantum-geometry enhancement, non-BCS power-law temperature behavior, and current-induced suppression.
+
+Available data in this workspace:
+- data/MATBG Superfluid Stiffness Core Dataset.txt: structured simulated arrays grouped into three experiment blocks:
+  1) carrier-density dependence with conventional, quantum-geometric, and experimental superfluid stiffness curves for hole/electron doping;
+  2) temperature dependence with BCS, nodal, several power-law models, and noisy experimental data;
+  3) current dependence with DC and microwave responses compared against Ginzburg-Landau / linear-response models.
+- related_work/: four reference PDFs giving context on MATBG superconductivity, unconventional/nodal behavior, topology/quantum geometry contributions to superfluid weight, and device inhomogeneity / twist-angle disorder.
+
+Main planned analysis steps:
+1. Parse the text dataset into clean numerical arrays and separate the three experiment sections.
+2. Reconstruct the key observables and make overview plots for density, temperature, and current sweeps.
+3. Quantify enhancement of experimental stiffness relative to conventional and quantum-geometric expectations.
+4. Fit and compare temperature trends against BCS, nodal, and power-law models to identify the best-supported low-temperature behavior.
+5. Analyze current dependence to test quadratic suppression / nonlinear response and compare with GL or linear alternatives.
+6. Summarize consistency, limitations, and physical interpretation in the context of flat-band superconductivity and quantum geometry.
+
+Expected deliverables:
+- Reproducible analysis scripts in code/.
+- Intermediate processed outputs in outputs/.
+- A report at report/report.md with figures saved in report/images/ covering data overview, main extracted results, and model-comparison / validation plots.

@@ -1,0 +1,49 @@
+{
+  "budget": 10,
+  "budget10_optimal_mean_p_response": 0.9427470300116587,
+  "budget10_optimal_subset": [
+    "mut11",
+    "mut12",
+    "mut15",
+    "mut19",
+    "mut20",
+    "mut26",
+    "mut28",
+    "mut33",
+    "mut39",
+    "mut44"
+  ],
+  "budget10_to_12_gain": 8.586014345168813e-05,
+  "budget12_mean_p_response": 0.9428328901551104,
+  "coverage_at_05": 0.992,
+  "coverage_at_09": 0.887,
+  "coverage_at_095": 0.606,
+  "excluded_elements": [
+    "mut24",
+    "mut8"
+  ],
+  "n_candidates": 12,
+  "n_cells_per_repetition": 100,
+  "n_cells_total": 1000,
+  "n_repetitions": 10,
+  "overall_mean_p_response": 0.9427470300116586,
+  "overall_median_p_response": 0.9630025369027599,
+  "pairwise_iou_mean": 1.0,
+  "pairwise_iou_min": 1.0,
+  "runtime_max_seconds": 17.0,
+  "runtime_median_log10_slope": 1.205083248231503,
+  "runtime_min_seconds": 0.012,
+  "selected_vaccine_elements": [
+    "mut11",
+    "mut12",
+    "mut15",
+    "mut19",
+    "mut20",
+    "mut26",
+    "mut28",
+    "mut33",
+    "mut39",
+    "mut44"
+  ],
+  "validation_max_abs_diff": 2.220446049250313e-16
+}

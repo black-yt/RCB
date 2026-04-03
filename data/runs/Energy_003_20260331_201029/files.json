@@ -1,0 +1,264 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_heew_mini.py",
+    "path": "code/analysis_heew_mini.py",
+    "type": "file",
+    "size": 6838,
+    "mtime": 1775139566.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "HEEW_Mini-Dataset",
+    "path": "data/HEEW_Mini-Dataset",
+    "type": "directory"
+  },
+  {
+    "name": "BN001_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN001_energy.csv",
+    "type": "file",
+    "size": 864793,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN002_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN002_energy.csv",
+    "type": "file",
+    "size": 865508,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN003_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN003_energy.csv",
+    "type": "file",
+    "size": 864713,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN004_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN004_energy.csv",
+    "type": "file",
+    "size": 864135,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN005_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN005_energy.csv",
+    "type": "file",
+    "size": 864894,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN006_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN006_energy.csv",
+    "type": "file",
+    "size": 864329,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN007_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN007_energy.csv",
+    "type": "file",
+    "size": 863540,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN008_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN008_energy.csv",
+    "type": "file",
+    "size": 863672,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN009_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN009_energy.csv",
+    "type": "file",
+    "size": 864278,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN010_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN010_energy.csv",
+    "type": "file",
+    "size": 861505,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 3 more items",
+    "path": "data/HEEW_Mini-Dataset/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "basic_quality_summary.csv",
+    "path": "outputs/basic_quality_summary.csv",
+    "type": "file",
+    "size": 3816,
+    "mtime": 1775139564.0,
+    "exported": true
+  },
+  {
+    "name": "hierarchy_consistency_bn_vs_cn01.csv",
+    "path": "outputs/hierarchy_consistency_bn_vs_cn01.csv",
+    "type": "file",
+    "size": 337,
+    "mtime": 1775139564.0,
+    "exported": true
+  },
+  {
+    "name": "hierarchy_consistency_bn_vs_total.csv",
+    "path": "outputs/hierarchy_consistency_bn_vs_total.csv",
+    "type": "file",
+    "size": 337,
+    "mtime": 1775139564.0,
+    "exported": true
+  },
+  {
+    "name": "Total_energy_cleaned.csv",
+    "path": "outputs/Total_energy_cleaned.csv",
+    "type": "file",
+    "size": 1025306,
+    "mtime": 1775139564.0,
+    "exported": true
+  },
+  {
+    "name": "Total_energy_weather_merged.csv",
+    "path": "outputs/Total_energy_weather_merged.csv",
+    "type": "file",
+    "size": 2017726,
+    "mtime": 1775139564.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3160195,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 4465950,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 555866,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 781692,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig_corr_energy_weather_total.png",
+    "path": "report/images/fig_corr_energy_weather_total.png",
+    "type": "file",
+    "size": 679587,
+    "mtime": 1775139564.0,
+    "exported": true
+  },
+  {
+    "name": "fig_daily_electricity_total.png",
+    "path": "report/images/fig_daily_electricity_total.png",
+    "type": "file",
+    "size": 591651,
+    "mtime": 1775139564.0,
+    "exported": true
+  },
+  {
+    "name": "fig_scatter_pv_elec_temperature.png",
+    "path": "report/images/fig_scatter_pv_elec_temperature.png",
+    "type": "file",
+    "size": 3060421,
+    "mtime": 1775139566.0,
+    "exported": false
+  },
+  {
+    "name": "fig_total_energy_profiles.png",
+    "path": "report/images/fig_total_energy_profiles.png",
+    "type": "file",
+    "size": 523763,
+    "mtime": 1775139564.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 16778,
+    "mtime": 1775139567.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5964,
+    "mtime": 1774959029.0,
+    "exported": true
+  }
+]

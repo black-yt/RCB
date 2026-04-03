@@ -1,21 +1,44 @@
 {
   "tasks": [
     "Astronomy_000",
+    "Astronomy_001",
     "Astronomy_002",
+    "Astronomy_003",
     "Chemistry_000",
+    "Chemistry_001",
+    "Chemistry_002",
+    "Chemistry_003",
     "Earth_000",
+    "Earth_001",
     "Earth_002",
+    "Earth_003",
     "Energy_000",
+    "Energy_001",
     "Energy_002",
+    "Energy_003",
     "Information_000",
+    "Information_001",
+    "Information_002",
+    "Information_003",
     "Life_000",
     "Life_001",
     "Life_002",
+    "Life_003",
     "Material_000",
+    "Material_001",
+    "Material_002",
+    "Material_003",
     "Math_000",
+    "Math_001",
+    "Math_002",
+    "Math_003",
     "Neuroscience_000",
     "Neuroscience_001",
+    "Neuroscience_002",
+    "Neuroscience_003",
     "Physics_000",
+    "Physics_001",
+    "Physics_002",
     "Physics_003"
   ],
   "agents": [
@@ -31,21 +54,81 @@
         "score": 23.5,
         "run_id": "Astronomy_000_20260319_184609"
       },
+      "Astronomy_001": {
+        "score": 27.4,
+        "run_id": "Astronomy_001_20260401_141304"
+      },
+      "Astronomy_002": {
+        "score": 23.5,
+        "run_id": "Astronomy_002_20260401_141959"
+      },
+      "Astronomy_003": {
+        "score": 46.5,
+        "run_id": "Astronomy_003_20260401_143610"
+      },
       "Chemistry_000": {
         "score": 14.75,
         "run_id": "Chemistry_000_20260325_131753"
+      },
+      "Chemistry_001": {
+        "score": 3.5,
+        "run_id": "Chemistry_001_20260401_145553"
+      },
+      "Chemistry_002": {
+        "score": 1.0,
+        "run_id": "Chemistry_002_20260401_154822"
+      },
+      "Chemistry_003": {
+        "score": 18.0,
+        "run_id": "Chemistry_003_20260401_190857"
       },
       "Earth_000": {
         "score": 24.6,
         "run_id": "Earth_000_20260320_014954"
       },
+      "Earth_001": {
+        "score": 33.56,
+        "run_id": "Earth_001_20260401_191305"
+      },
+      "Earth_002": {
+        "score": 31.7,
+        "run_id": "Earth_002_20260401_191349"
+      },
+      "Earth_003": {
+        "score": 1.0,
+        "run_id": "Earth_003_20260401_191636"
+      },
       "Energy_000": {
         "score": 11.3,
         "run_id": "Energy_000_20260320_205623"
       },
+      "Energy_001": {
+        "score": 21.7,
+        "run_id": "Energy_001_20260401_191819"
+      },
+      "Energy_002": {
+        "score": 38.6,
+        "run_id": "Energy_002_20260401_191836"
+      },
+      "Energy_003": {
+        "score": 15.3,
+        "run_id": "Energy_003_20260401_200259"
+      },
       "Information_000": {
         "score": 48.0,
         "run_id": "Information_000_20260325_155748"
+      },
+      "Information_001": {
+        "score": 7.0,
+        "run_id": "Information_001_20260401_192424"
+      },
+      "Information_002": {
+        "score": 27.1,
+        "run_id": "Information_002_20260401_192455"
+      },
+      "Information_003": {
+        "score": 17.75,
+        "run_id": "Information_003_20260401_224112"
       },
       "Life_000": {
         "score": 8.2,
@@ -55,9 +138,45 @@
         "score": 19.55,
         "run_id": "Life_001_20260321_181849"
       },
+      "Life_002": {
+        "score": 6.9,
+        "run_id": "Life_002_20260401_200700"
+      },
+      "Life_003": {
+        "score": 27.6,
+        "run_id": "Life_003_20260401_200717"
+      },
       "Material_000": {
         "score": 14.5,
         "run_id": "Material_000_20260326_144303"
+      },
+      "Material_001": {
+        "score": 23.6,
+        "run_id": "Material_001_20260401_224352"
+      },
+      "Material_002": {
+        "score": 35.1,
+        "run_id": "Material_002_20260401_231210"
+      },
+      "Material_003": {
+        "score": 28.8,
+        "run_id": "Material_003_20260401_232634"
+      },
+      "Math_000": {
+        "score": 26.2,
+        "run_id": "Math_000_20260401_233652"
+      },
+      "Math_001": {
+        "score": 44.1,
+        "run_id": "Math_001_20260401_235039"
+      },
+      "Math_002": {
+        "score": 10.2,
+        "run_id": "Math_002_20260401_235043"
+      },
+      "Math_003": {
+        "score": 29.6,
+        "run_id": "Math_003_20260401_235138"
       },
       "Neuroscience_000": {
         "score": 8.6,
@@ -67,9 +186,25 @@
         "score": 4.95,
         "run_id": "Neuroscience_001_20260321_182515"
       },
+      "Neuroscience_002": {
+        "score": 0.75,
+        "run_id": "Neuroscience_002_20260402_002234"
+      },
+      "Neuroscience_003": {
+        "score": 7.7,
+        "run_id": "Neuroscience_003_20260402_011020"
+      },
       "Physics_000": {
         "score": 27.4,
         "run_id": "Physics_000_20260326_150535"
+      },
+      "Physics_001": {
+        "score": 30.25,
+        "run_id": "Physics_001_20260402_002321"
+      },
+      "Physics_002": {
+        "score": 25.05,
+        "run_id": "Physics_002_20260402_002341"
       },
       "Physics_003": {
         "score": 46.5,
@@ -81,41 +216,161 @@
         "score": 29.4,
         "run_id": "Astronomy_000_20260319_145223"
       },
+      "Astronomy_001": {
+        "score": 20.0,
+        "run_id": "Astronomy_001_20260401_120316"
+      },
+      "Astronomy_002": {
+        "score": 12.7,
+        "run_id": "Astronomy_002_20260401_135149"
+      },
+      "Astronomy_003": {
+        "score": 44.0,
+        "run_id": "Astronomy_003_20260402_011445"
+      },
       "Chemistry_000": {
         "score": 11.0,
         "run_id": "Chemistry_000_20260325_133117"
+      },
+      "Chemistry_001": {
+        "score": 6.2,
+        "run_id": "Chemistry_001_20260402_133326"
+      },
+      "Chemistry_002": {
+        "score": 1.0,
+        "run_id": "Chemistry_002_20260402_133337"
+      },
+      "Chemistry_003": {
+        "score": 12.3,
+        "run_id": "Chemistry_003_20260402_133344"
       },
       "Earth_000": {
         "score": 25.3,
         "run_id": "Earth_000_20260325_142223"
       },
+      "Earth_001": {
+        "score": 40.87,
+        "run_id": "Earth_001_20260402_020635"
+      },
       "Earth_002": {
         "score": 22.6,
         "run_id": "Earth_002_20260321_014305"
+      },
+      "Earth_003": {
+        "score": 0.0,
+        "run_id": "Earth_003_20260402_020613"
       },
       "Energy_000": {
         "score": 13.2,
         "run_id": "Energy_000_20260325_145840"
       },
+      "Energy_001": {
+        "score": 24.5,
+        "run_id": "Energy_001_20260402_021036"
+      },
+      "Energy_002": {
+        "score": 33.0,
+        "run_id": "Energy_002_20260402_021822"
+      },
+      "Energy_003": {
+        "score": 21.5,
+        "run_id": "Energy_003_20260402_021829"
+      },
       "Information_000": {
         "score": 10.0,
         "run_id": "Information_000_20260321_012226"
+      },
+      "Information_001": {
+        "score": 5.6,
+        "run_id": "Information_001_20260402_023436"
+      },
+      "Information_002": {
+        "score": 36.8,
+        "run_id": "Information_002_20260402_023445"
+      },
+      "Information_003": {
+        "score": 15.6,
+        "run_id": "Information_003_20260402_023453"
       },
       "Life_000": {
         "score": 7.55,
         "run_id": "Life_000_20260320_211701"
       },
+      "Life_001": {
+        "score": 12.7,
+        "run_id": "Life_001_20260402_024829"
+      },
+      "Life_002": {
+        "score": 1.5,
+        "run_id": "Life_002_20260402_024836"
+      },
+      "Life_003": {
+        "score": 36.0,
+        "run_id": "Life_003_20260402_025011"
+      },
       "Material_000": {
         "score": 17.5,
         "run_id": "Material_000_20260326_151955"
+      },
+      "Material_001": {
+        "score": 11.55,
+        "run_id": "Material_001_20260402_112556"
+      },
+      "Material_002": {
+        "score": 0.99,
+        "run_id": "Material_002_20260402_113105"
+      },
+      "Material_003": {
+        "score": 21.8,
+        "run_id": "Material_003_20260402_112258"
       },
       "Math_000": {
         "score": 26.65,
         "run_id": "Math_000_20260321_013909"
       },
+      "Math_001": {
+        "score": 39.0,
+        "run_id": "Math_001_20260402_122551"
+      },
+      "Math_002": {
+        "score": 7.4,
+        "run_id": "Math_002_20260402_122607"
+      },
+      "Math_003": {
+        "score": 10.0,
+        "run_id": "Math_003_20260402_122648"
+      },
+      "Neuroscience_000": {
+        "score": 14.0,
+        "run_id": "Neuroscience_000_20260402_122827"
+      },
+      "Neuroscience_001": {
+        "score": 2.55,
+        "run_id": "Neuroscience_001_20260402_122849"
+      },
+      "Neuroscience_002": {
+        "score": 2.0,
+        "run_id": "Neuroscience_002_20260402_134508"
+      },
+      "Neuroscience_003": {
+        "score": 15.8,
+        "run_id": "Neuroscience_003_20260402_124451"
+      },
       "Physics_000": {
         "score": 32.1,
         "run_id": "Physics_000_20260321_011953"
+      },
+      "Physics_001": {
+        "score": 25.7,
+        "run_id": "Physics_001_20260402_124607"
+      },
+      "Physics_002": {
+        "score": 21.4,
+        "run_id": "Physics_002_20260402_124626"
+      },
+      "Physics_003": {
+        "score": 45.0,
+        "run_id": "Physics_003_20260402_125047"
       }
     },
     "EvoScientist": {
@@ -165,33 +420,161 @@
         "score": 14.5,
         "run_id": "Astronomy_000_20260325_124221"
       },
+      "Astronomy_001": {
+        "score": 20.4,
+        "run_id": "Astronomy_001_20260331_192927"
+      },
+      "Astronomy_002": {
+        "score": 10.0,
+        "run_id": "Astronomy_002_20260331_193218"
+      },
+      "Astronomy_003": {
+        "score": 44.2,
+        "run_id": "Astronomy_003_20260331_193503"
+      },
       "Chemistry_000": {
         "score": 16.85,
         "run_id": "Chemistry_000_20260320_193804"
+      },
+      "Chemistry_001": {
+        "score": 0.5,
+        "run_id": "Chemistry_001_20260331_194645"
+      },
+      "Chemistry_002": {
+        "score": 0.0,
+        "run_id": "Chemistry_002_20260331_195151"
+      },
+      "Chemistry_003": {
+        "score": 7.5,
+        "run_id": "Chemistry_003_20260331_195455"
       },
       "Earth_000": {
         "score": 21.5,
         "run_id": "Earth_000_20260325_135520"
       },
+      "Earth_001": {
+        "score": 25.3,
+        "run_id": "Earth_001_20260331_201226"
+      },
+      "Earth_002": {
+        "score": 9.9,
+        "run_id": "Earth_002_20260331_201408"
+      },
+      "Earth_003": {
+        "score": 0.6,
+        "run_id": "Earth_003_20260331_201851"
+      },
       "Energy_000": {
         "score": 9.5,
         "run_id": "Energy_000_20260325_151836"
+      },
+      "Energy_001": {
+        "score": 7.6,
+        "run_id": "Energy_001_20260331_200332"
+      },
+      "Energy_002": {
+        "score": 27.85,
+        "run_id": "Energy_002_20260331_200739"
+      },
+      "Energy_003": {
+        "score": 9.0,
+        "run_id": "Energy_003_20260331_201029"
       },
       "Information_000": {
         "score": 22.7,
         "run_id": "Information_000_20260325_164339"
       },
+      "Information_001": {
+        "score": 1.0,
+        "run_id": "Information_001_20260331_202137"
+      },
+      "Information_002": {
+        "score": 11.5,
+        "run_id": "Information_002_20260331_202504"
+      },
+      "Information_003": {
+        "score": 9.2,
+        "run_id": "Information_003_20260331_202744"
+      },
       "Life_000": {
-        "score": 7.35,
-        "run_id": "Life_000_20260326_143503"
+        "score": 7.95,
+        "run_id": "Life_000_20260401_111247"
+      },
+      "Life_001": {
+        "score": 9.65,
+        "run_id": "Life_001_20260401_111910"
+      },
+      "Life_002": {
+        "score": 4.9,
+        "run_id": "Life_002_20260401_112219"
+      },
+      "Life_003": {
+        "score": 29.3,
+        "run_id": "Life_003_20260401_112646"
       },
       "Material_000": {
         "score": 23.0,
         "run_id": "Material_000_20260321_132712"
       },
+      "Material_001": {
+        "score": 1.75,
+        "run_id": "Material_001_20260401_113052"
+      },
+      "Material_002": {
+        "score": 14.9,
+        "run_id": "Material_002_20260401_115629"
+      },
+      "Material_003": {
+        "score": 12.35,
+        "run_id": "Material_003_20260401_115948"
+      },
+      "Math_000": {
+        "score": 17.7,
+        "run_id": "Math_000_20260401_120618"
+      },
+      "Math_001": {
+        "score": 30.6,
+        "run_id": "Math_001_20260401_121718"
+      },
+      "Math_002": {
+        "score": 0.0,
+        "run_id": "Math_002_20260401_122108"
+      },
+      "Math_003": {
+        "score": 0.0,
+        "run_id": "Math_003_20260401_122803"
+      },
+      "Neuroscience_000": {
+        "score": 7.4,
+        "run_id": "Neuroscience_000_20260401_123535"
+      },
+      "Neuroscience_001": {
+        "score": 1.2,
+        "run_id": "Neuroscience_001_20260401_123958"
+      },
+      "Neuroscience_002": {
+        "score": 0.4,
+        "run_id": "Neuroscience_002_20260401_124612"
+      },
+      "Neuroscience_003": {
+        "score": 4.25,
+        "run_id": "Neuroscience_003_20260401_125606"
+      },
       "Physics_000": {
         "score": 7.8,
         "run_id": "Physics_000_20260326_151123"
+      },
+      "Physics_001": {
+        "score": 27.45,
+        "run_id": "Physics_001_20260401_130120"
+      },
+      "Physics_002": {
+        "score": 10.35,
+        "run_id": "Physics_002_20260401_130518"
+      },
+      "Physics_003": {
+        "score": 31.8,
+        "run_id": "Physics_003_20260401_131002"
       }
     },
     "OpenClaw": {
@@ -199,65 +582,204 @@
         "score": 18.6,
         "run_id": "Astronomy_000_20260325_124153"
       },
+      "Astronomy_001": {
+        "score": 36.0,
+        "run_id": "Astronomy_001_20260402_210925"
+      },
       "Astronomy_002": {
         "score": 11.6,
         "run_id": "Astronomy_002_20260321_184042"
+      },
+      "Astronomy_003": {
+        "score": 47.3,
+        "run_id": "Astronomy_003_20260402_211549"
       },
       "Chemistry_000": {
         "score": 12.85,
         "run_id": "Chemistry_000_20260325_142150"
       },
+      "Chemistry_001": {
+        "score": 0.5,
+        "run_id": "Chemistry_001_20260402_212107"
+      },
+      "Chemistry_002": {
+        "score": 1.0,
+        "run_id": "Chemistry_002_20260402_212616"
+      },
+      "Chemistry_003": {
+        "score": 9.5,
+        "run_id": "Chemistry_003_20260402_213222"
+      },
       "Earth_000": {
         "score": 20.1,
         "run_id": "Earth_000_20260325_144124"
+      },
+      "Earth_001": {
+        "score": 31.38,
+        "run_id": "Earth_001_20260402_214137"
+      },
+      "Earth_002": {
+        "score": 16.8,
+        "run_id": "Earth_002_20260402_214628"
+      },
+      "Earth_003": {
+        "score": 0.9,
+        "run_id": "Earth_003_20260402_215412"
       },
       "Energy_000": {
         "score": 16.0,
         "run_id": "Energy_000_20260325_151822"
       },
+      "Energy_001": {
+        "score": 15.5,
+        "run_id": "Energy_001_20260402_215912"
+      },
       "Energy_002": {
         "score": 31.0,
         "run_id": "Energy_002_20260321_150347"
+      },
+      "Energy_003": {
+        "score": 25.5,
+        "run_id": "Energy_003_20260402_220933"
       },
       "Information_000": {
         "score": 35.1,
         "run_id": "Information_000_20260325_163554"
       },
+      "Information_001": {
+        "score": 0.0,
+        "run_id": "Information_001_20260402_221510"
+      },
+      "Information_002": {
+        "score": 15.8,
+        "run_id": "Information_002_20260402_222052"
+      },
+      "Information_003": {
+        "score": 5.2,
+        "run_id": "Information_003_20260402_222436"
+      },
       "Life_000": {
         "score": 5.4,
         "run_id": "Life_000_20260326_142858"
+      },
+      "Life_001": {
+        "score": 13.35,
+        "run_id": "Life_001_20260402_223418"
       },
       "Life_002": {
         "score": 9.7,
         "run_id": "Life_002_20260321_145056"
       },
+      "Life_003": {
+        "score": 34.5,
+        "run_id": "Life_003_20260402_223914"
+      },
       "Material_000": {
         "score": 12.0,
         "run_id": "Material_000_20260326_145735"
       },
+      "Material_001": {
+        "score": 13.45,
+        "run_id": "Material_001_20260402_224523"
+      },
+      "Material_002": {
+        "score": 6.12,
+        "run_id": "Material_002_20260402_225007"
+      },
+      "Material_003": {
+        "score": 20.1,
+        "run_id": "Material_003_20260402_225655"
+      },
+      "Math_000": {
+        "score": 24.7,
+        "run_id": "Math_000_20260402_230222"
+      },
+      "Math_001": {
+        "score": 23.9,
+        "run_id": "Math_001_20260402_231143"
+      },
+      "Math_002": {
+        "score": 8.6,
+        "run_id": "Math_002_20260402_231652"
+      },
+      "Math_003": {
+        "score": 0.0,
+        "run_id": "Math_003_20260402_232335"
+      },
+      "Neuroscience_000": {
+        "score": 13.2,
+        "run_id": "Neuroscience_000_20260402_232819"
+      },
+      "Neuroscience_001": {
+        "score": 3.75,
+        "run_id": "Neuroscience_001_20260402_233406"
+      },
+      "Neuroscience_002": {
+        "score": 1.0,
+        "run_id": "Neuroscience_002_20260402_234030"
+      },
+      "Neuroscience_003": {
+        "score": 15.05,
+        "run_id": "Neuroscience_003_20260402_235804"
+      },
       "Physics_000": {
         "score": 7.5,
         "run_id": "Physics_000_20260326_151120"
+      },
+      "Physics_001": {
+        "score": 32.0,
+        "run_id": "Physics_001_20260403_000425"
+      },
+      "Physics_002": {
+        "score": 27.45,
+        "run_id": "Physics_002_20260403_001108"
+      },
+      "Physics_003": {
+        "score": 43.3,
+        "run_id": "Physics_003_20260403_001651"
       }
     }
   },
   "frontier": {
     "Astronomy_000": 29.4,
-    "Astronomy_002": 11.6,
+    "Astronomy_001": 36.0,
+    "Astronomy_002": 23.5,
+    "Astronomy_003": 47.3,
     "Chemistry_000": 16.85,
+    "Chemistry_001": 6.2,
+    "Chemistry_002": 1.0,
+    "Chemistry_003": 18.0,
     "Earth_000": 25.3,
-    "Earth_002": 22.6,
+    "Earth_001": 40.87,
+    "Earth_002": 31.7,
+    "Earth_003": 1.0,
     "Energy_000": 16.0,
-    "Energy_002": 31.0,
+    "Energy_001": 24.5,
+    "Energy_002": 38.6,
+    "Energy_003": 25.5,
     "Information_000": 48.0,
+    "Information_001": 7.0,
+    "Information_002": 36.8,
+    "Information_003": 17.75,
     "Life_000": 8.2,
     "Life_001": 19.55,
     "Life_002": 9.7,
+    "Life_003": 36.0,
     "Material_000": 23.0,
+    "Material_001": 23.6,
+    "Material_002": 35.1,
+    "Material_003": 28.8,
     "Math_000": 26.65,
-    "Neuroscience_000": 13.6,
+    "Math_001": 44.1,
+    "Math_002": 10.2,
+    "Math_003": 29.6,
+    "Neuroscience_000": 14.0,
     "Neuroscience_001": 4.95,
+    "Neuroscience_002": 2.0,
+    "Neuroscience_003": 15.8,
     "Physics_000": 32.1,
+    "Physics_001": 32.0,
+    "Physics_002": 27.45,
     "Physics_003": 46.5
   }
 }

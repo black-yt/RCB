@@ -1,0 +1,220 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 27560,
+    "mtime": 1775131824.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "dataset1_cloud_seeding_records",
+    "path": "data/dataset1_cloud_seeding_records",
+    "type": "directory"
+  },
+  {
+    "name": "cloud_seeding_us_2000_2025.csv",
+    "path": "data/dataset1_cloud_seeding_records/cloud_seeding_us_2000_2025.csv",
+    "type": "file",
+    "size": 222719,
+    "mtime": 1772778220.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "us_states.geojson",
+    "path": "data/dataset1_cloud_seeding_records/us_states.geojson",
+    "type": "file",
+    "size": 89263,
+    "mtime": 1772803314.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "annual_summary.csv",
+    "path": "outputs/annual_summary.csv",
+    "type": "file",
+    "size": 373,
+    "mtime": 1775131820.0,
+    "exported": true
+  },
+  {
+    "name": "cloud_seeding_cleaned.csv",
+    "path": "outputs/cloud_seeding_cleaned.csv",
+    "type": "file",
+    "size": 264811,
+    "mtime": 1775131820.0,
+    "exported": true
+  },
+  {
+    "name": "state_summary.csv",
+    "path": "outputs/state_summary.csv",
+    "type": "file",
+    "size": 398,
+    "mtime": 1775131820.0,
+    "exported": true
+  },
+  {
+    "name": "summary_statistics.json",
+    "path": "outputs/summary_statistics.json",
+    "type": "file",
+    "size": 1930,
+    "mtime": 1775131820.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2703757,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 5694400,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 13207937,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 8769749,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 9234814,
+    "mtime": 1773914889.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_annual_activity.png",
+    "path": "report/images/fig1_annual_activity.png",
+    "type": "file",
+    "size": 114163,
+    "mtime": 1775131822.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_spatial_map.png",
+    "path": "report/images/fig2_spatial_map.png",
+    "type": "file",
+    "size": 106790,
+    "mtime": 1775131822.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_purpose_composition.png",
+    "path": "report/images/fig3_purpose_composition.png",
+    "type": "file",
+    "size": 154465,
+    "mtime": 1775131822.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_agent_apparatus.png",
+    "path": "report/images/fig4_agent_apparatus.png",
+    "type": "file",
+    "size": 188001,
+    "mtime": 1775131822.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_seasonal_purpose_time.png",
+    "path": "report/images/fig5_seasonal_purpose_time.png",
+    "type": "file",
+    "size": 143223,
+    "mtime": 1775131824.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_operators.png",
+    "path": "report/images/fig6_operators.png",
+    "type": "file",
+    "size": 239405,
+    "mtime": 1775131822.0,
+    "exported": true
+  },
+  {
+    "name": "fig7_heatmap_year_state.png",
+    "path": "report/images/fig7_heatmap_year_state.png",
+    "type": "file",
+    "size": 79162,
+    "mtime": 1775131822.0,
+    "exported": true
+  },
+  {
+    "name": "fig8_overview_dashboard.png",
+    "path": "report/images/fig8_overview_dashboard.png",
+    "type": "file",
+    "size": 202175,
+    "mtime": 1775131824.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 20877,
+    "mtime": 1775131825.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5528,
+    "mtime": 1775041985.0,
+    "exported": true
+  }
+]

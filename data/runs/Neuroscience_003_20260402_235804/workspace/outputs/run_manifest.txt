@@ -1,0 +1,8 @@
+Main analysis entry point: code/run_analysis.py
+Best subset size: 50
+Generated figures:
+- report/images/data_overview.png
+- report/images/top_feature_scores.png
+- report/images/selected_feature_heatmap.png
+- report/images/embedding_comparison.png
+- report/images/subset_validation.png

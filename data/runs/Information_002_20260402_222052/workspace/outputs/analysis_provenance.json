@@ -1,0 +1,23 @@
+{
+  "inputs": {
+    "instructions": "INSTRUCTIONS.md",
+    "task_understanding": "outputs/task_understanding.txt",
+    "yaml": "data/2111.01152/2111.01152.yaml",
+    "main_tex": "data/2111.01152/2111.01152.tex",
+    "supplement_tex": "data/2111.01152/2111.01152_SM.tex",
+    "related_work_dir": "related_work"
+  },
+  "outputs": {
+    "analysis_summary": "outputs/analysis_summary.json",
+    "task_scores": "outputs/task_score_table.csv",
+    "placeholder_mismatches": "outputs/placeholder_mismatch_table.csv",
+    "source_snippets": "outputs/source_snippets.json",
+    "paper_context_summary": "outputs/paper_context_summary.txt",
+    "related_work_inventory": "outputs/related_work_inventory.json",
+    "figures": [
+      "report/images/task_total_scores.png",
+      "report/images/score_dimension_averages.png",
+      "report/images/reviewer_placeholder_averages.png"
+    ]
+  }
+}

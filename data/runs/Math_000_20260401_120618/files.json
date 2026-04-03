@@ -1,0 +1,189 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 9412,
+    "mtime": 1775136304.0,
+    "exported": true
+  },
+  {
+    "name": "trackers.py",
+    "path": "code/trackers.py",
+    "type": "file",
+    "size": 8796,
+    "mtime": 1775136304.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "simulated_sequence.json",
+    "path": "data/simulated_sequence.json",
+    "type": "file",
+    "size": 6512395,
+    "mtime": 1772429302.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "byte_tracks.csv",
+    "path": "outputs/byte_tracks.csv",
+    "type": "file",
+    "size": 197351,
+    "mtime": 1775136302.0,
+    "exported": true
+  },
+  {
+    "name": "metrics.csv",
+    "path": "outputs/metrics.csv",
+    "type": "file",
+    "size": 192,
+    "mtime": 1775136300.0,
+    "exported": true
+  },
+  {
+    "name": "sparse_tracks.csv",
+    "path": "outputs/sparse_tracks.csv",
+    "type": "file",
+    "size": 1184023,
+    "mtime": 1775136302.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 115276,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8638055,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 2800126,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 871604,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "active_tracks_ByteLike.png",
+    "path": "report/images/active_tracks_ByteLike.png",
+    "type": "file",
+    "size": 52128,
+    "mtime": 1775136302.0,
+    "exported": true
+  },
+  {
+    "name": "active_tracks_SparseHier.png",
+    "path": "report/images/active_tracks_SparseHier.png",
+    "type": "file",
+    "size": 51610,
+    "mtime": 1775136302.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview_counts.png",
+    "path": "report/images/data_overview_counts.png",
+    "type": "file",
+    "size": 69006,
+    "mtime": 1775136302.0,
+    "exported": true
+  },
+  {
+    "name": "metric_f1_comparison.png",
+    "path": "report/images/metric_f1_comparison.png",
+    "type": "file",
+    "size": 31249,
+    "mtime": 1775136302.0,
+    "exported": true
+  },
+  {
+    "name": "metric_ids_comparison.png",
+    "path": "report/images/metric_ids_comparison.png",
+    "type": "file",
+    "size": 39725,
+    "mtime": 1775136302.0,
+    "exported": true
+  },
+  {
+    "name": "track_length_ByteLike.png",
+    "path": "report/images/track_length_ByteLike.png",
+    "type": "file",
+    "size": 35776,
+    "mtime": 1775136302.0,
+    "exported": true
+  },
+  {
+    "name": "track_length_SparseHier.png",
+    "path": "report/images/track_length_SparseHier.png",
+    "type": "file",
+    "size": 32262,
+    "mtime": 1775136302.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15951,
+    "mtime": 1775136305.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5259,
+    "mtime": 1775016378.0,
+    "exported": true
+  }
+]

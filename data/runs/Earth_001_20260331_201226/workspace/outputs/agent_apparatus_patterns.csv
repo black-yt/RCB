@@ -1,0 +1,38 @@
+agent,apparatus,n
+ammonium iodide,ground,1
+calcium chloride,airborne,5
+carbon dioxide,airborne,3
+carbon dioxide,ground,1
+dry ice,airborne,2
+ionized air,airborne,5
+ionized air,ground,12
+silver iodide,airborne,159
+silver iodide,ground,252
+silver iodide,"ground, airborne",110
+"silver iodide, acetone",ground,6
+"silver iodide, ammonium iodide",ground,59
+"silver iodide, ammonium iodide, acetone",ground,15
+"silver iodide, ammonium iodide, ammonium perchlorate, sodium perchlorate, acetone",ground,2
+"silver iodide, ammonium iodide, ammonium perchlorate, sodium precipitate, acetone",ground,1
+"silver iodide, ammonium iodide, ammonium sodium perchlorate, acetone",ground,1
+"silver iodide, ammonium, sodium perchlorate, acetone",ground,1
+"silver iodide, calcium chloride",airborne,23
+"silver iodide, cesium iodide","ground, airborne",2
+"silver iodide, dry ice",airborne,5
+"silver iodide, dry ice","ground, airborne",7
+"silver iodide, hygroscopic",airborne,3
+"silver iodide, hygroscopic","ground, airborne",5
+"silver iodide, hygroscopic aerosols",airborne,12
+"silver iodide, hygroscopic aerosols","ground, airborne",2
+"silver iodide, hygroscopic agents",airborne,5
+"silver iodide, hygroscopic agents","ground, airborne",1
+"silver iodide, hygroscopic materials",airborne,4
+"silver iodide, liquid propane","ground, airborne",1
+"silver iodide, potassium chloride",airborne,2
+"silver iodide, propane","ground, airborne",3
+"silver iodide, silver chloride, potassium iodide",ground,1
+"silver iodide, sodium chloride",airborne,5
+"silver iodide, sodium iodide",ground,108
+"sulfur dioxide, calcium carbonate",airborne,1
+water,airborne,2
+water,ground,1

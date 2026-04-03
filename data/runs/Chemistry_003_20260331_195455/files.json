@@ -1,0 +1,207 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 11026,
+    "mtime": 1775139554.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_chargestates.xyz",
+    "path": "data/ag3_chargestates.xyz",
+    "type": "file",
+    "size": 25976,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "charged_dimer.xyz",
+    "path": "data/charged_dimer.xyz",
+    "type": "file",
+    "size": 55920,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "random_charges.xyz",
+    "path": "data/random_charges.xyz",
+    "type": "file",
+    "size": 768000,
+    "mtime": 1772414960.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_features.npz",
+    "path": "outputs/ag3_features.npz",
+    "type": "file",
+    "size": 2164,
+    "mtime": 1775139552.0,
+    "exported": false
+  },
+  {
+    "name": "ag3_rmse.json",
+    "path": "outputs/ag3_rmse.json",
+    "type": "file",
+    "size": 95,
+    "mtime": 1775139552.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_curve.npz",
+    "path": "outputs/charged_dimer_curve.npz",
+    "type": "file",
+    "size": 1450,
+    "mtime": 1775139552.0,
+    "exported": false
+  },
+  {
+    "name": "latent_q_est.npy",
+    "path": "outputs/latent_q_est.npy",
+    "type": "file",
+    "size": 640,
+    "mtime": 1775139552.0,
+    "exported": false
+  },
+  {
+    "name": "latent_q_true.npy",
+    "path": "outputs/latent_q_true.npy",
+    "type": "file",
+    "size": 1152,
+    "mtime": 1775139552.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1659509,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1792962,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 263549,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6623726,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_charge_embedding_comparison.png",
+    "path": "report/images/ag3_charge_embedding_comparison.png",
+    "type": "file",
+    "size": 119404,
+    "mtime": 1775139554.0,
+    "exported": true
+  },
+  {
+    "name": "ag3_pes_scatter.png",
+    "path": "report/images/ag3_pes_scatter.png",
+    "type": "file",
+    "size": 84715,
+    "mtime": 1775139552.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_binding_curve.png",
+    "path": "report/images/charged_dimer_binding_curve.png",
+    "type": "file",
+    "size": 75247,
+    "mtime": 1775139552.0,
+    "exported": true
+  },
+  {
+    "name": "latent_charge_scatter.png",
+    "path": "report/images/latent_charge_scatter.png",
+    "type": "file",
+    "size": 76560,
+    "mtime": 1775139552.0,
+    "exported": true
+  },
+  {
+    "name": "latent_charge_training_loss.png",
+    "path": "report/images/latent_charge_training_loss.png",
+    "type": "file",
+    "size": 66725,
+    "mtime": 1775139552.0,
+    "exported": true
+  },
+  {
+    "name": "random_charges_overview.png",
+    "path": "report/images/random_charges_overview.png",
+    "type": "file",
+    "size": 230136,
+    "mtime": 1775139554.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13704,
+    "mtime": 1775139555.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6294,
+    "mtime": 1774958095.0,
+    "exported": true
+  }
+]

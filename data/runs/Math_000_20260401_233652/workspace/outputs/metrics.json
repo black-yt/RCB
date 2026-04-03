@@ -1,0 +1,22 @@
+{
+  "ByteTrack": {
+    "MOTA": -0.0106,
+    "MOTP": 0.655,
+    "IDF1": 0.0582,
+    "ID_switches": 12,
+    "FP": 823,
+    "FN": 19376,
+    "TP": 624,
+    "total_gt": 20000
+  },
+  "SparseTrack": {
+    "MOTA": -0.0237,
+    "MOTP": 0.6654,
+    "IDF1": 0.0689,
+    "ID_switches": 28,
+    "FP": 1202,
+    "FN": 19244,
+    "TP": 756,
+    "total_gt": 20000
+  }
+}

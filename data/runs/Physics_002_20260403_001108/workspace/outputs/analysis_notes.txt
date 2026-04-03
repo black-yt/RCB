@@ -1,0 +1,5 @@
+This run computes linear XEB fidelities from matched counts and ideal probabilities,
+and MB ideal-bitstring success probabilities from the MB verification files.
+XEB uncertainty is the standard error of the counts-weighted per-shot estimator x = 2^N p(x) - 1.
+MB uncertainty is the per-instance binomial standard error with an additional 68% Wilson interval.
+Some XEB count files lack matching amplitude files; those are listed in outputs/missing_pairs.csv.

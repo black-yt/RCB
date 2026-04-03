@@ -1,0 +1,45 @@
+{
+  "n_models": 50,
+  "validation_loss": {
+    "mean": 5.314309535159006,
+    "std": 0.0744531644362538,
+    "min": 5.136557016107771,
+    "max": 5.677851685219341
+  },
+  "pca_explained_variance_ratio": [
+    0.06567325153885048,
+    0.04984528418100914,
+    0.03853999948568923
+  ],
+  "n_cell_types": 65,
+  "cluster_count_distribution": {
+    "2": 13,
+    "3": 24,
+    "4": 24,
+    "5": 4
+  },
+  "top_diverse_cell_types": [
+    "Mi3",
+    "Lawf1",
+    "L3",
+    "Tm5c",
+    "TmY10",
+    "T4d",
+    "L2",
+    "T4c",
+    "T5a",
+    "CT1(M10)"
+  ],
+  "top_performance_associated_cell_types": [
+    "TmY4",
+    "T4a",
+    "TmY10",
+    "Lawf1",
+    "R8",
+    "R7",
+    "T4d",
+    "Mi2",
+    "Mi12",
+    "TmY5a"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "dataset_sections": {
+    "property_prediction": 4,
+    "structure_generation": 2,
+    "autonomous_optimization": 6
+  },
+  "property_prediction": {
+    "n_graphs": 93,
+    "feature_names": [
+      "node_mean",
+      "node_std",
+      "node_min",
+      "node_max",
+      "node_median",
+      "node_sq_mean",
+      "node_range",
+      "n_nodes",
+      "n_edges",
+      "avg_degree",
+      "relative_position"
+    ],
+    "metrics": {
+      "train_linear": {
+        "rmse": 0.13273006145319355,
+        "mae": 0.10651159806763304,
+        "r2": 0.026636550416220595
+      },
+      "train_ridge": {
+        "rmse": 0.13273006150605735,
+        "mae": 0.10651153387805361,
+        "r2": 0.02663654964087736
+      },
+      "loo_linear": {
+        "rmse": 0.14756200155030413,
+        "mae": 0.11732891264703652,
+        "r2": -0.2030550988214952
+      },
+      "loo_ridge": {
+        "rmse": 0.14755500922483414,
+        "mae": 0.11732331650745625,
+        "r2": -0.20294108636011443
+      }
+    }
+  },
+  "structure_generation": {
+    "sequence_a": {
+      "mean": 5.520376237623763,
+      "std": 0.2726262952488113,
+      "min": 5.1234,
+      "max": 5.9012
+    },
+    "sequence_b": {
+      "mean": 5.521465346534654,
+      "std": 0.27032915083141945,
+      "min": 5.1234,
+      "max": 5.9012
+    },
+    "correlation": -0.2229737229970093,
+    "generated_count": 200
+  },
+  "optimization": {
+    "bounds": {
+      "temperature": [
+        200.0,
+        500.0
+      ],
+      "time": [
+        10.0,
+        30.0
+      ]
+    },
+    "initial_point": {
+      "temperature": 350.0,
+      "time": 20.0
+    },
+    "best_point": {
+      "temperature": 356.30252100840335,
+      "time": 18.067226890756302,
+      "score": 1.7005144935229324
+    },
+    "iterations": 10,
+    "step_fraction": 0.1,
+    "final_score": 1.6646908527773894
+  }
+}

@@ -1,0 +1,5 @@
+scenario,min_delivered_eur_kg,median_delivered,max_delivered,eu_lcoh_production,eu_lcoh_at_demand,cost_advantage_best,wacc_africa
+Baseline,5.21,6.96,7.86,3.05,3.35,-1.87,0.08
+High Finance Risk,6.29,8.56,9.76,3.49,3.79,-2.5,0.12
+De-Risked,4.49,5.88,6.59,3.05,3.35,-1.14,0.05
+Optimistic 2030,4.06,5.37,6.02,2.46,2.76,-1.3,0.07

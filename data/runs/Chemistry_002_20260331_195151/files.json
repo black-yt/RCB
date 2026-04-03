@@ -1,0 +1,150 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 6998,
+    "mtime": 1775139536.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "1brs_AD.pdb",
+    "path": "data/1brs_AD.pdb",
+    "type": "file",
+    "size": 175527,
+    "mtime": 1772768164.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "skempi_v2.csv",
+    "path": "data/skempi_v2.csv",
+    "type": "file",
+    "size": 1602208,
+    "mtime": 1772768166.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "barnase_barstar_interface_contacts.csv",
+    "path": "outputs/barnase_barstar_interface_contacts.csv",
+    "type": "file",
+    "size": 17116,
+    "mtime": 1775139534.0,
+    "exported": true
+  },
+  {
+    "name": "interface_residues.csv",
+    "path": "outputs/interface_residues.csv",
+    "type": "file",
+    "size": 394,
+    "mtime": 1775139534.0,
+    "exported": true
+  },
+  {
+    "name": "skempi_barnase_barstar_subset.csv",
+    "path": "outputs/skempi_barnase_barstar_subset.csv",
+    "type": "file",
+    "size": 22778,
+    "mtime": 1775139534.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 162669,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 305268,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 599969,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3938436,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "contact_map.png",
+    "path": "report/images/contact_map.png",
+    "type": "file",
+    "size": 234608,
+    "mtime": 1775139536.0,
+    "exported": true
+  },
+  {
+    "name": "distance_distribution.png",
+    "path": "report/images/distance_distribution.png",
+    "type": "file",
+    "size": 128701,
+    "mtime": 1775139536.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15615,
+    "mtime": 1775139537.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5185,
+    "mtime": 1774957911.0,
+    "exported": true
+  }
+]

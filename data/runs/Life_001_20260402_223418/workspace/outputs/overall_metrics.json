@@ -1,0 +1,25 @@
+{
+  "coverage_ratio_threshold_0_5_mean": 0.992,
+  "coverage_ratio_threshold_0_5_min": 0.98,
+  "max_pairwise_iou": 1.0,
+  "mean_cell_response_probability": 0.9427470300116587,
+  "mean_pairwise_iou": 1.0,
+  "median_cell_response_probability": 0.9630025369027599,
+  "min_pairwise_iou": 1.0,
+  "num_selected_elements": 10,
+  "reconstruction_max_abs_error": 2.220446049250313e-16,
+  "runtime_scaling_exponent": 1.2293166766629962,
+  "selected_vaccine_elements": [
+    "mut11",
+    "mut12",
+    "mut15",
+    "mut19",
+    "mut20",
+    "mut26",
+    "mut28",
+    "mut33",
+    "mut39",
+    "mut44"
+  ],
+  "std_cell_response_probability": 0.09153692089155496
+}

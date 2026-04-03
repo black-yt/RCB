@@ -1,0 +1,8 @@
+check,count
+missing_apparatus,4
+missing_target_area,3
+missing_start_date,3
+missing_end_date,7
+season_strings_changed_by_normalization,5
+purpose_strings_changed_by_normalization,3
+records_with_date_anomalies,7

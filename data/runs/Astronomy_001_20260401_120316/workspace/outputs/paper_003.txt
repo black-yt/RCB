@@ -1,0 +1,1593 @@
+Impact of ACT DR6 and DESI DR2 for Early Dark Energy and the Hubble tension
+Vivian Poulin ,1, ∗ Tristan L. Smith ,2, † Rodrigo Calderón ,3, ‡ and Théo Simon 1, §
+
+arXiv:2505.08051v2 [astro-ph.CO] 27 May 2025
+
+1
+Laboratoire univers et particules de Montpellier (LUPM),
+Centre national de la recherche scientifique (CNRS) et Université de Montpellier,
+Place Eugène Bataillon, 34095 Montpellier Cédex 05, France
+2
+Department of Physics and Astronomy, Swarthmore College, 500 College Ave., Swarthmore, PA 19081, USA
+3
+CEICO, Institute of Physics of the Czech Academy of Sciences,
+Na Slovance 1999/2, 182 21, Prague, Czech Republic
+
+The data release six of the Atacama Cosmology Telescope (ACT DR6) and the second data release
+from the Dark Energy Spectroscopic Instrument (DESI DR2) recently became available. In light
+of these data, we update constraints on the Early Dark Energy (EDE) resolution to the Hubble
+tension. While ACT DR6 does not favor EDE over the core cosmological model ΛCDM, it allows
+for a significantly larger maximum contribution of EDE, fEDE , in the pre-recombination era than
+the latest analysis of Planck NPIPE despite increased precision at small angular scales. Moreover,
+EDE rises the value of H0 rs , improving consistency between CMB and DESI DR2 data. We find
+a residual tension with SH0ES of ∼ 2σ for the combination of Planck at ℓ < 1000 + ACT DR6
++ lensing + Pantheon-plus + DESI DR2, a significant decrease from 3.7σ for analyses that use
+NPIPE and SDSS BAO data. A profile likelihood analysis reveals significant prior-volume effects in
+Bayesian analyses which do not include SH0ES, with confidence intervals of fEDE = 0.09 ± 0.03 and
+H0 = 71.0 ± 1.1 km/s/Mpc. When including DESI data, the EDE model with H0 = 73 km/s/Mpc
+provides a better fit than the ΛCDM model with H0 = 68.4 km/s/Mpc. The inclusion of SH0ES
+data rises the preference well above 5σ, with ∆χ2 = −35.4. Our work demonstrates that after ACT
+DR6 and DESI DR2, EDE remains a potential resolution to the Hubble tension.
+
+I.
+
+INTRODUCTION
+
+Early Dark Energy (EDE) [1–3] has emerged as a
+promising framework to resolve the Hubble tension between the value of the Hubble rate H0 inferred from the
+core cosmological model, Λ-cold-dark-matter (ΛCDM),fit
+to Cosmic Microwave Background (CMB) data and that
+measured by calibrating type 1a supernovae (SN1a) by
+the SH0ES collaboration [4] (see Refs. [5, 6] for reviews).
+While the analyses of data from the Atacama Cosmology
+Telescope (ACT) data release 4 (DR4) had a slight preference for EDE over ΛCDM with no residual tensions
+with SH0ES [7–9], analysis of EDE in light of the latest Planck NPIPE data– Public Release 4 (PR4)– [10–
+12] and baryonic acoustic oscillation (BAO) data from
+BOSS significantly reduced the success of this solution,
+only achieving a reduction to the ∼ 3.7σ level [13].
+Recently, the ACT collaboration has determined new
+constraints on the axion-like EDE models from the combination of new DR6 data [14] with Planck public release
+3 (PR3) [15] restricted to multipoles l < 1000 in TT and
+l < 600 in TE/EE (dubbed ‘P-ACT’ dataset), including the ACT DR6 CMB gravitational lensing [16] and
+updated BAO data from DESI DR1 [17]. Contrary to
+previous analyses using ACT DR4 [7, 8, 18], these data
+do not favor EDE over ΛCDM, resulting in upper limits to the maximum fractional EDE contribution to the
+
+∗ vivian.poulin@umontpellier.fr
+† tsmith2@swarthmore.edu
+‡ calderon@fzu.cz
+§ theo.simon@umontpellier.fr
+
+Bayesian
+Frequentist
+Bayesian (w/ SH0ES)
+P-ACT+DESI DR2
+NPIPE+SDSS
+
+68
+
+70
+72
+H0 [km/s/Mpc]
+
+74
+
+FIG. 1: A whisker plot of the Hubble constant reconstructed from NPIPE+SDSS (from Ref. [13]) and PACT+DESI DR2 (this work) in the ‘axion-like’ EDE
+model. All analyses include CMB lensing and Pantheonplus SN1a data. We quote credible and confidence intervals at 68%.
+
+total energy density, fEDE (zc ) < 0.12 at the 95% confidence level (CL) [19]. Yet, those constraints are significantly weaker than those coming from Planck NPIPE
+combined with SDSS BAO data, fEDE (zc ) < 0.061 [13].
+This is unexpected given that the same combination of
+data provide constraints that are as strong as NPIPE
+
+2
+within ΛCDM [14].
+In this paper, we quantify the ability of the EDE model
+to address the Hubble tension in light of the new ACT
+DR6 data and Baryonic Acoustic Oscillation (BAO) data
+from the Dark Energy Spectroscopic Instrument (DESI)
+DR2 [20].1 We contrast those results with previous analyses using NPIPE and BAO data from the Sloan Digital
+Sky Survey (SDSS) [21]. Our main results are presented
+in Fig. 1, where we show the reconstructed Hubble constant from NPIPE and SDSS BAO data, and that from
+the P-ACT and DESI DR2 data, in the EDE model. All
+analyses further include the respective CMB lensing data
+and Pantheon-plus SN1a compilation [22]. In particular,
+we find that the newer data lead to less than a 2σ residual tension with SH0ES– a strong decrease from what
+has been found in the latest pre-DESI and pre-ACT DR6
+analysis, using NPIPE and SDSS BAO data in Ref. [13].
+Furthermore, we show that EDE provides better concordance between CMB and DESI BAO data than ΛCDM,
+in agreement with Ref. [23]. Finally, we perform a profile
+likelihood analysis that reveals the extent to which prior
+volume effects affect the Bayesian analysis of the EDE
+model in light of ACT DR6 data when SH0ES data are
+left out of the analysis. The profile likelihood indicates
+that fEDE (zc ) ̸= 0 at ∼ 2.5σ, and yields values of H0
+within 2σ of the SH0ES-inferred value.
+The rest of the paper is structured as follows. After
+presenting our analysis setup in Sec. II, we discuss in
+Sec. III the impact of the new ACT DR6 data at high-ℓ.
+We then show the impact of the new DESI DR2 data
+compared to BOSS data in Sec. V. We discuss the profile likelihood analysis in Sec. VI before concluding in
+Sec. VII.
+II.
+
+ANALYSIS SETUP
+
+We focus here on the axion-like Early Dark Energy
+(EDE) model, characterized by a modified axion potential [2, 3, 24]:
+V (θ) = m2 f 2 [1 − cos(θ)]3 ,
+
+(1)
+
+where m denotes the axion mass, f represents the axion
+decay constant, and θ ≡ ϕ/f is a rescaled field variable
+constrained within −π ≤ θ ≤ π. The specific choice of
+‘[1 − cos θ]3 ’ leads to an energy density that redshifts
+faster than matter after the field becomes dynamical.
+This toy model is primarily chosen for its flexibility and
+simplicity, but it has been shown that it can be naturally
+embedded within string theory [25, 26]. For alternative
+EDE parameterizations and reviews, we refer the reader
+to Refs. [5, 25, 27–57].
+
+1 For a comparaison of ACT DR6 and DESI DR2 under ΛCDM,
+
+and the implications for dynamical dark energy and neutrino
+masses, we refer the reader to Ref. [? ].
+
+We perform analyses using the public cobaya [58]
+package and analyze chains using getdist [59]. We consider combinations of the high-ℓ TTTEEE Planck PR4
+CamSpec NPIPE likelihood [10, 60] and low-ℓ TT (commander) and EE (sroll2) likelihoods [61, 62], the highℓ TTTEEE ACT DR6 lite data [14], the Planck and
+ACT DR6 lensing likelihoods [16, 63], BAO from DESI
+DR2 [17, 20] and the Pantheon-plus catalog [22]. When
+combining Planck and ACT DR6 we follow the ACT collaboration’s recommendation and impose a cut in the
+multipoles of the various Planck likelihoods.2 We refer to
+Planck data as ‘NPIPE’ for the full likelihood and simply
+as ‘P’ for the cut likelihood, while we refer to ACT DR6
+data as ‘ACT’, lensing data as ‘L’, BAO data as ‘B’ and
+Pantheon-plus SN1a data as ‘S’. In addition, the SH0ES
+Cepheid calibration of the peak SN1a absolute magnitude is modeled as a Gaussian, Mb = −19.253±0.027 [4].
+We refer to it as ‘Mb ’. To assess consistency of the various datasets with SH0ES, we make use of the ‘difference in maximum
+a posteriori’ (DMAP) statistics [64],
+p
+2
+QDMAP ≡ χtot (with SH0ES) − χ2tot (without SH0ES),
+where the two χ2 values are computed at the maximum
+a posteriori points with and without including the SH0ES
+Mb prior. To assess preference3 over ΛCDM we report
+the ∆χ2 ≡ χ2tot (EDE) − χ2tot (ΛCDM).
+To make the Bayesian inference numerically tractable,
+we make use of the emulator of the EDE model4 described in Ref. [66], as is done by the ACT collaboration. We run Monte Carlo Markov chains (MCMC) using the metropolis-hasting algorithm and consider chains
+to be converged when they fulfill the Gelman-Rubin
+criterion R − 1 < 0.01. We take as free parameters the standard six ΛCDM parameters (varied within
+large flat priors), namely the (dimensionless) Hubble rate
+h ≡ H0 /(100km/s/Mpc), the baryon density ωb ≡ Ωb h2 ,
+the cold dark matter density ωcdm ≡ Ωcdm h2 , the optical depth to reionization τreio , as well as the primordial power spectrum tilt ns and amplitude As . We also
+vary the critical redshift below which the field dilutes
+zc ∈ [3, 4.3], the associated EDE fraction corresponding
+to the maximum contribution fEDE (zc ) ∈ [0.001, 0.5] and
+the initial field value θi ≡ ϕi /f ∈ [0.1, 3.1]. We provide
+Bayesian credible intervals of the cosmological parameters for all analyses performed in this work in App. A,
+Tab. I.
+When computing the best fit χ2 , we use the prospect
+package [67].5 Tables listing individual data χ2min are provided in App. A. In addition, for some data combinations,
+
+2 We
+
+use the official ‘PlanckActCut’ likelihood available in
+cobaya, based on PR3
+3 As EDE has three extra free parameters compared to ΛCDM, one
+can compute the ∆AIC= ∆χ2 +6 to quickly gauge the preference
+over ΛCDM [65].
+4 The emulator further includes 3 neutrinos of degenerate mass
+P
+wich
+mν = 0.06 eV.
+5 When computing the best fit χ2 , we follow recommendation of
+the ACT collaboration and make use of the code class ede [68]
+
+3
+we also use prospect to compute the profile likelihood6
+of the maximal EDE fraction fEDE and the Hubble rate
+H0 . This allows us to contrast the Bayesian results that
+are affected by prior volume effects [69–71] to illustrate
+the true constraining power of the data likelihoods.
+
+III.
+
+IMPACT OF ACT DR6 FOR EDE AND THE
+HUBBLE TENSION
+
+We start by comparing the constraints from Planck
+NPIPE to those using the ACT DR6 data. In the left
+panel of Fig. 2 we show the 1D and 2D posterior distributions of fEDE and H0 resulting from the analyses of either Planck NPIPE or Planck+ACT DR6, together with
+lensing and Pantheon-plus data (both with and without
+SH0ES). In this first analysis, we do not include BAO
+data to gauge the sole impact of the ACT DR6 CMB
+data. It is striking that the Planck+ACT DR6 yields
+significantly weaker constraints than the Planck NPIPE
+analysis. In the analyses without the SH0ES prior we
+find roughly 40% weaker constraints and a ≳ 1σ shift to
+h:
+fEDE (zc ) < 0.065, 100h = 67.96+0.51
+−0.93 (NPIPE-LS)
+fEDE (zc ) < 0.092, 100h = 68.68+0.62
+(P-ACT-LS) ,
+−1.2
+where h ≡ H0 /(100 km/s/Mpc). Upper limits are provided at the 95% confidence level (CL) while two-sided
+bounds are provided at 68% C.L. Note that under ΛCDM
+the constraints from P-ACT are as strong as those from
+NPIPE (and 20% stronger than Plik PR3 [15]); hence it
+is not trivial that constraints to EDE get significantly
+weaker. The preference for EDE in those analyses is negligible for NPIPE (∆χ2 = −0.9) and small for P-ACT
+(∆χ2 = −5.0). Furthermore, we find that the inclusion
+of Pantheon-plus appears to strengthen the Bayesian constraints on fEDE compared to what is found by the ACT
+collaboration without those data (fEDE < 0.12) [19].
+The tension with SH0ES computed with the QDMAP
+metric (which captures the non-Gaussianity of the posteriors) is significantly weaker for P-ACT-LS (2.6σ) than
+for NPIPE-LS (3.5σ). For comparison, under ΛCDM the
+same metric yields a 6.2σ tension for P-ACT-LS and 6.5σ
+tension for NPIPE-LS. The residual level of tension is
+similar to that obtained with Plik PR3 [72], despite larger
+statistical power in the P-ACT analysis.
+
+instead of the emulator. In that case, we follow the ACT collaboration and use a single massive neutrinos of mass mν = 0.06 eV
+and two massless ones for both ΛCDM and EDE.
+6 In that case, we use the emulator of the EDE model given the
+long computational time of class ede with high accuracy precision parameters. We compare the use of the full code on some
+specific points in App. C finding reasonable agreements.
+
+When combining with SH0ES, we find
+fEDE (zc ) = 0.113+0.022
+−0.020 , 100h = 71.65 ± 0.81
+(NPIPE-LSMb ) ,
+fEDE (zc ) = 0.127+0.024
+,
+100h
+= 72.11 ± 0.79
+−0.020
+(P-ACT-LSMb ) .
+The inclusion of ACT DR6 thus increases the mean value
+of fEDE (zc ) and h by ∼ 0.5σ, with detection of EDE that
+exceeds the 6.3σ level, leading to a strong preference over
+ΛCDM (∆χ2 = −30.7).
+IV.
+
+A COMPARISON WITH ACT DR4 AND
+NPIPE
+
+The analysis of the previous ACT data release–
+DR4– showed tantalizing evidence for EDE (fEDE (zc ) =
+0.142+0.039
+−0.072 ) along with a significant increase in the mean
+value of H0 (H0 = 74.5+2.5
+−4.4 km/s/Mpc) without including any other data sets [7, 8]. Since ACT DR6 now places
+an upper limit on fEDE despite increase statistical power,
+one might conclude that the new data ‘rule out’ EDE as
+a resolution to the Hubble tension.
+As we now argue, the shift in the EDE constraints
+from DR4 to DR6 is not surprising given that the Planck
+and South Pole Telescope (SPT) measurements [74] of
+the CMB are in significant tension with the best-fit EDE
+cosmology to ACT DR4 [13, 72]. To illustrate this, we
+show a comparison of the residuals of the best-fit ΛCDM
+and EDE models to either P-ACT-LS (+MB for EDE)
+or ACT DR4 and a prior on τreio (with parameters taken
+from Ref. [7]), as well as the NPIPE and DR6 bandpowers in Fig. 3. These residuals have been computed
+with respect to the NPIPE ΛCDM best fit model [11]. A
+similar figure, explicitly comparing ACT DR6 with ACT
+DR4 data residuals, is provided in App. B.
+For all models, the residuals show an enhancement of
+power with respect to the NPIPE ΛCDM best fit model
+as we go to smaller angular scales. This trend is directly
+related to ACT’s preference for a larger scalar spectral
+index7 , ns , compared to Planck – for DR4 the best fit
+ΛCDM value is ns = 1.013 and for P-ACT DR6 it is
+ns = 0.9709, to be compared with NPIPE’s best fit value
+of ns = 0.9635.
+As was previously shown in Ref. [13] it is clear that
+the best fit to ACT DR4 +τreio is strongly excluded by
+NPIPE data, in particular due to much larger power at
+ℓ ∼ 1000 − 2000. If the ACT DR4 best fit EDE model
+continued to be favored by DR6 then there would be a
+
+7 This is also consistent with constraints on the number of effective
+
+neutrino species found for ACT DR4, namely Neff = 2.42 ± 0.41
+[73], and P-ACT DR6, namely Neff = 2.73 ± 0.14 [19]. This
+∼ 2σ preference for Neff < 3 leads to an increase in the photon
+diffusion damping scale with, in turn, an enhancement in power
+at small scales.
+
+4
+
+P-ACT-LBS
++Mb
+P-ACT-LS
++Mb
+
+0.15
+
+fede(zc)
+
+fede(zc)
+
+P-ACT-LS
++Mb
+NPIPE-LS
++Mb
+
+0.10
+0.05
+
+0.15
+0.10
+0.05
+
+68
+
+70
+
+72
+
+74
+
+H0
+
+0.04
+
+0.10
+
+0.16
+
+68
+
+fede(zc)
+
+70
+
+72
+
+74
+
+H0
+
+0.04
+
+0.10
+
+0.16
+
+fede(zc)
+
+FIG. 2: left panel: 1D and 2D posterior distributions of fEDE and H0 resulting from the analyses of either Planck
+(NPIPE) or Planck+ACT DR6 (P-ACT), together with lensing (L) and Pantheon-plus (S) data, both with and
+without SH0ES (Mb ). right panel: Same as left panel, now comparing the use of DESI BAO data (B) in the P-ACT
+analysis.
+
+best-fit CDM
+to P-ACT+LS
+
+best-fit CDM
+to ACT DR4+ reio
+
+best-fit EDE
+to P-ACT+LSMb
+
+best-fit EDE
+to ACT DR4+ reio
+
+ACT DR6
+NPIPE
+
+TT
+C TT / CV
+
+4
+2
+0
+2
+4
+
+500
+
+1000
+
+1500
+
+2000
+
+2500
+
+3000
+
+3500
+
+4000
+
+FIG. 3: The best fit ΛCDM and EDE residuals with respect to the best fit ΛCDM model to NPIPE [11] normalized
+by the cosmic variance (CV) limits for the temperature power spectrum (note that the data may have uncertainties
+smaller than the CV limit since they are binned). We show residuals for the best fit ΛCDM model using P-ACT+LS
+(dashed), the best fit ΛCDM model using ACT DR4 + a prior on τreio (dotted), while for EDE we use P-ACT+LSMb
+(solid) and ACT DR4 + a prior on τreio (dot dashed). The ACT DR4 residuals were computed using the best
+fit parameters given in Ref. [7]. The ACT DR6 bandpowers are marginalized over foreground and other nuisance
+parameters (i.e. the ‘lite’ versions of their respective likelihoods) [14, 73], while the NPIPE bandpowers are computed
+at the best fit foreground model (from Ref. [13]). We note that these bandpowers are not statistically independent,
+especially at ℓ ≳ 2000 where the foreground model leads to strong correlations.
+strong tension with Planck data. BOSS data analyzed
+under the effective field theory of large scale structure
+
+would also strongly exclude this model [68, 75, 76].
+The fact that the ACT DR6 data has a lower ampli-
+
+5
+
+V.
+
+IMPACT OF DESI DR2: THE ROLE OF H0 rs
+
+We now turn to including DESI DR2 data in the analysis. For analyses that use DESI DR1 data, we refer
+the reader to Refs. [6, 66]. We show in the right panel
+of Fig. 2, the 1D and 2D posterior distributions from the
+analyses of P-ACT with and without DESI DR2 data (always including other datasets as described above). The
+inclusion of DESI DR2 data relaxes the constraints to
+fEDE (zc ) by ∼ 20% and further rises the value of h, and
+we find:
++0.64
+fEDE (zc ) < 0.109, 100h = 69.71−1.3
+(P-ACT-LBS) ,
+fEDE (zc ) = 0.126 ± 0.021, 100h = 72.34 ± 0.72
+(P-ACT-LBSMb ) .
+
+The relaxation of the constraints is also reflected in the
+χ2 -statistics, as we find ∆χ2 = −7.0 (without SH0ES)
+and ∆χ2 = −35.4 (with SH0ES) and a QDMAP -tension
+metric of 2.0σ. Comparing our results to those from the
+ACT collaboration we find that they are in good agreement: we find similar a ∆χ2 , though our constraints on
+fEDE (zc ) are ∼ 10% stronger. This slight difference is
+likely due to the inclusion of Pantheon-plus and DESI
+DR2 (instead of DESI DR1) in our analysis.
+It is also instructive to compare our results to the latest
+analysis pre-DESI and pre-ACT DR6 data, performed in
+Ref. [13], where H0 constraints are displayed in Fig. 1.
+This analysis includes data from Planck NPIPE (and
+the low-ℓ TT, EE and lensing likelihoods from Planck
+PR3 [15]), BAO from SDSS [77, 78] and SN1a from
+Pantheon-plus. Therein it was found fEDE (zc ) < 0.061
+and 100h = 68.11+0.47
+−0.82 , in 3.7σ tension with SH0ES.
+Hence, the update of CMB data (including lensing) from
+NPIPE to P-ACT and BAO from SDSS to DESI DR2
+has improved the ability of the EDE model to reduce the
+tension by almost 2σ. The stark contrast between the
+strength of the constraints coming from NPIPE+SDSS
+and those from P-ACT-LBS, and the implication for the
+Hubble tension, warrants further study to clarify the origin of the difference. Similar results were found when
+comparing ACT DR4 data with plik in Ref. [9].
+To understand the role of DESI DR2, we show in
+Fig. 4 the 2D posterior distribution of Ωm -vs-H0 rs reconstructed in various analyses of EDE and ΛCDM. We
+compare in particular the reconstruction from P-ACT
+under ΛCDM and from P-ACT-LSMb under EDE to the
+
+10400
+
+10200
+H0 rs (zd ) [km/s]
+
+tude than ACT DR4 at large multipoles reduces the tension with NPIPE to ∼ 2.6σ, as quantified by the ACT
+collaboration [14]. These differences between ACT DR6
+and NPIPE could be due to statistical fluctuations, but
+they have important implications for models involved in
+resolving the Hubble tension. The next data release of
+the SPT collaboration will be important to clarify the
+situation.
+
+10000
+
+9800
+
+DESI
+P-ACT (ΛCDM)
+P-ACT-LSMb (EDE)
+P-ACT-LBSMb (EDE)
+
+9600
+
+0.28
+
+0.30
+Ωm
+
+0.32
+
+FIG. 4: 2D posterior distribution of Ωm -vs-H0 rs reconstructed in various analyses of EDE and ΛCDM. We compare in particular the reconstruction from P-ACT under
+ΛCDM and from P-ACT-LSMb under EDE to the value
+favored by DESI alone (that is identical under both EDE
+and ΛCDM). We also show the Pantheon-plus SN1a Ωm
+constraint in gray.
+value favored by DESI alone (that is identical under both
+EDE and ΛCDM). We also show the Pantheon-plus SN1a
+Ωm constraint. One can see the known ‘H0 rs -Ωm tension’
+between CMB and DESI BAO, and the ‘Ωm tension’ between BAO and SN1a, that leads to a preference for dynamical dark energy [20, 79]. Interestingly, the EDE cosmology that fits SH0ES predicts a larger value for H0 rs
+and a slightly smaller Ωm in good agreement with DESI
+(see also Refs. [23, 80? , 81]). As a result, the inclusion of
+DESI DR2 data in the analyses increases the preference
+for EDE. Indeed, while the role of EDE is to decrease rs ,
+the dark matter density ωc ≡ Ωc h2 increases in the EDE
+cosmology to preserve the fit to the CMB [6, 82]. This
+impacts the angular diameter distance, necessitating a
+larger increase in H0 than a decrease in rs .
+However, the ‘Ωm tension’ is slightly exacerbated as
+Ωm in the EDE cosmology8 is measured to be Ωm =
+0.2949 ± 0.0034. This is in 2.1σ tension with the value
+inferred from Pantheon-plus and 3.1σ tension with that
+
+8 The analyses we report here include Pantheon-plus,
+
+and thus
+one should be careful in comparing this value of Ωm with that
+inferred from analyzing Pantheon-plus under ΛCDM as it double
+counts information. We checked that leaving Pantheon-plus out
+of the analysis, with SH0ES included as a prior on H0 , as a
+negligible impact on the value of Ωm .
+
+6
+Plik-SDSS
+
+NPIPE-SDSS
+
+P-ACT-LBS
+
+P-ACT-LBS
+
+5
+
+6
+
+2
+
+4
+
+5
+
+2
+
+4
+
+3
+2
+
+2
+
+Plik-SDSS
+
+NPIPE-SDSS
+
+7
+
+3
+
+2
+
+2
+
+0
+66
+
+67
+
+68
+
+69
+
+70
+
+71
+
+H0 [km/s/Mpc]
+
+72
+
+SH0ES
+73
+
+1
+
+1
+
+1
+
+1
+
+74
+
+75
+
+0
+0.00
+
+0.02
+
+0.04
+
+0.06
+
+0.08
+
+0.10
+
+fEDE (zc )
+
+0.12
+
+0.14
+
+0.16
+
+0.18
+
+FIG. 5: Profile likelihood of H0 (left panel) and fEDE (zc ) (right panel) for NPIPE+SDSS, Plik+SDSS and P-ACTDESI. All analyses include Pantheon-plus (uncalibrated) and lensing data.
+
+from DESY5 [83]. This result suggests that EDE cannot
+fully remove the preference for dynamical dark energy in
+analyses that combine CMB, BAO and SN1a. This was
+explicitly shown with DESI DR1 data in previous work
+[6] and is supported by results that use NPIPE and DESI
+DR2 [23, 80]. Though we note that Ref. [6] also found
+that the tension with SH0ES remains unchanged when
+letting the equation of state of DE free to vary. We leave
+a dedicated study of EDE and dynamical dark energy
+with ACT DR6 to future work, as the emulator we use
+[66] was not trained on a cosmology that leaves the DE
+equation of state free to vary.
+VI.
+
+PROFILE LIKELIHOOD ANALYSIS OF
+ACT DR6 AND DESI DATA
+
+We now investigate the impact of prior volume effects in the analysis that does not include a SH0ES
+prior (i.e., that the posterior distributions are significantly affected by our choice of priors [84]). We follow
+Refs. [69, 70] and perform a profile likelihood analysis
+using prospect, shown in Fig. 5. We reproduce the results presented in Ref. [13], that perform the same exercise with NPIPE+SDSS and Plik+SDSS (also including
+Pantheon-plus and Plik lensing data). We build confidence intervals from the profile using the Neyman construction [85], which for 1D profile amounts in computing
+∆χ2 < 1 (3.84) at 68% (95%) C.L. This procedure yields:
++0.030
++1.08
+fEDE (zc ) = 0.090−0.033
+, 100h = 71.96−0.99
+.
+
+These intervals are significantly different than their
+Bayesian counterparts. In particular, one can see that
+in a frequentist analysis, fEDE (zc ) > 0 at ∼ 2.5σ in
+
+the P-ACT-LBS analysis9 , while the Bayesian analysis
+yielded only an upper limit on the EDE fraction. We
+also find a significantly higher value of the Hubble rate
+in the frequentist analysis obtained without information
+from SH0ES. This demonstrates that analyses that include P-ACT are affected by prior volume effects: the
+apparent constraint to fEDE derived in a Bayesian analysis is not driven by a degradation of the fit to the data,
+but by the large fraction of prior volume where the model
+is indistinguishable from ΛCDM and is thus disfavored
+due to unnecessary additional parameters. We stress that
+this is a perfectly valid concern (the region of parameter
+space that can address the tension is small), but it should
+be understood as an important caveat to the Bayesian
+constraints. The profile further illustrates the impact of
+updating CMB and BAO data, as the confidence intervals shift by more than 3σ compared to the NPIPE-SDSS
+analysis and about 1σ compared to the Plik-SDSS analysis. This also corroborates the results of the ACT collaboration, which found significantly better agreement with
+Plik data than NPIPE data.
+Comparing the EDE and ΛCDM fits, the χ2 values presented in Tables II and III (see Appendix A) demonstrate
+that EDE consistently provides a better fit to ACT data
+than ΛCDM across all analyses performed in this work.
+However, when comparing different EDE fits, we observe
+a slight degradation in the ACT χ2 within the combined
+analyses that include SH0ES and DESI data, relative
+to the EDE analysis excluding those datasets (i.e., comparing P-ACT-LS to P-ACT-LSMb and P-ACT-LBSMb
+9 Note that the profile computed with the emulator shows a small
+
+non-gaussianity towards low fEDE (zc ). See App. C for a comparison with the full code.
+
+7
+within the EDE framework). Specifically, the ACT χ2 increases by 2 in P-ACT-LSMb and by 3 in P-ACT-LBSMb .
+On the other hand, the fit to DESI data is improved (even
+under ΛCDM) in the analyses that include SH0ES. Overall, we find that when including DESI data, the EDE
+model with H0 = 73 km/s/Mpc provides a better fit by
+∆χ2 = −3.0 to P-ACT-LBS than the ΛCDM model with
+H0 = 68.4 km/s/Mpc. Without DESI, the value H0 = 73
+km/s/Mpc in EDE is a worse fit by ∆χ2 = +2.5 than
+the ΛCDM fit. For comparison, with NPIPE and SDSS
+BAO, the overall fit is worsened by ∆χ2 = +14.3 [13].
+This confirms that, while ACT data do not favor EDE,
+they are much more permissive to large EDE fraction and
+large H0 values.
+
+VII.
+
+SUMMARY AND CONCLUSIONS
+
+In this paper, we have shown that the combination of
+ACT DR6 data with Planck PR3 (with the TT spectrum
+restricted to ℓ ≤ 1000 and the EE/TE spectra restricted
+to ℓ ≤ 600) and updated BAO measurements from DESI
+DR2 yields constraints on axion-like EDE models that
+are ∼ 40% weaker than those from NPIPE combined
+with SDSS BAO data, despite providing comparable constraints within ΛCDM. The updated data combination
+leads to less than 2σ tension with the SH0ES determination of the Hubble constant, significantly reduced
+compared to the ∼ 3.7σ tension seen with NPIPE and
+SDSS BAO data [21]. The origin of the differences, which
+could be statistical fluctuations in either or both datasets,
+deserves further investigation. We further demonstrate
+that EDE improves the agreement between the CMB
+and DESI DR2 BAO datasets relative to ΛCDM as it
+rises the value of H0 rs , supporting earlier findings with
+NPIPE [23]. However, the value of Ωm in the EDE cosmology that fits SH0ES is in 2σ and 3σ tension with that
+inferred from the Pantheon-plus SN1a and DES-Y5 catalog, respectively. We anticipate that the tension would be
+resolved if one also considers letting the equation of state
+of dark energy free to vary, as found in Ref. [6, 80] with
+NPIPE data, though this remains to be demonstrated
+and the impact for the Hubble tension investigated.
+Finally, we have performed a profile likelihood analysis, demonstrating that the Bayesian upper limits in the
+P-ACT analysis on fEDE are strongly influenced by the
+volume of prior space, with the frequentist analysis (i.e.,
+goodness of fit) yielding a nonzero EDE contribution at
+∼ 2.5σ. In fact, when DESI is included in the analysis, the EDE model with H0 = 73 km/s/Mpc provides a
+better fit by ∆χ2 = −3.0 to the data than the ΛCDM
+model with H0 = 68.4 km/s/Mpc. These results support
+the conclusion that EDE remains a potential resolution
+to the Hubble tension after the release of ACT DR6 and
+DESI DR2 data.
+An enhancement in power at small scales is a generic
+prediction of EDE models (see, e.g., Refs. [9, 56, 86]).
+It is also important to note that not all models that
+
+attempt to resolve the Hubble tension predict this enhancement. For example, Wess-Zumino dark radiation
+(WZDR) model [87] predicts a decrement so that we expect the ACT DR6 data will place stronger limits on
+this model [86]. Upper limits to the effective number
+of strongly interacting dark radiation (i.e. perfect fluid
+dark radiation)– which captures some of the key features
+of WZDR– decreases to Nidr < 0.114 95% CL with PACT from Nidr < 0.379 95% CL using Planck alone. In
+this sense, the ACT DR6 data points us to a subset of
+the models which, so far, have been shown to be partially
+successful at addressing the Hubble tension [88, 89].
+The imminent release of the latest analysis of data from
+the SPT collaboration, which previously showed good
+agreement with Planck, will play a key role in determining whether EDE remains a viable model when attempting to address the Hubble tension.
+Acknowledgments – We thank Boris Bolliet for help
+with the EDE emulator. We thank Adam Riess and
+Marc Kamionkowski for comments on an earlier version of this manuscript. We thank Thibault Louis and
+Hidde Jense for help plotting the ACT DR6 residuals. TLS is supported by NSF Grants No. 2009377
+and No. 2308173. RC is funded by the Czech Ministry of Education, Youth and Sports (MEYS) and European Structural and Investment Funds (ESIF) under project number CZ.02.01.01/00/22 008/0004632. TS
+and VP acknowledges the European Union’s Horizon Europe research and innovation programme under the Marie
+Sklodowska-Curie Staff Exchange grant agreement No
+101086085 – ASYMMETRY. This work received funding
+support from the European Research Council (ERC) under the European Union’s HORIZON-ERC-2022 (grant
+agreement no. 101076865). We gratefully acknowledge
+support from the CNRS/IN2P3 Computing Center (Lyon
+- France) for providing computing and data-processing
+resources needed for this work.
+
+Appendix A: Summary tables
+
+We report credible intervals for all parameters in Tab. I
+in the various analyses performed in this work. We list
+individual χ2 contribution for all data sets in Tab. II for
+the ΛCDM model and Tab. III for the EDE model.
+
+Appendix B: DR4 vs DR6
+
+The shift in posterior distributions for EDE going from
+ACT DR4 to DR6 can be better understood by comparing their respective bandpowers. Fig. 6 shows these bandpowers as well as the best fit residuals of ΛCDM fit to
+P-ACT+LS and EDE fit to P-ACT+LSMb and to ACT
+DR4 + a prior on τreio [7] with respect to the ΛCDM best
+fit to ACT DR4 + a prior on τreio [7, 73].
+
+8
+NPIPE-LS
+
+P-ACT-LS
+
+P-ACT-LBS
+
+SH0ES prior?
+
+no
+
+yes
+
+no
+
+yes
+
+no
+
+yes
+
+100h
+
+67.96(68.45)+0.51
+−0.93
+
+71.65(71.96) ± 0.81
+
+68.68(69.76)+0.62
+−1.2
+
+72.11(72.12) ± 0.79
+
+69.71(70.98)+0.64
+−1.3
+
+72.34(72.49) ± 0.72
+
+fede (zc )
+
+< 0.065(0.043)
+
+0.113(0.122) ± 0.022
+
+< 0.092(0.075)
+
+0.127(0.134)+0.024
+−0.020
+
+< 0.109(0.0902)
+
+0.126(0.133) ± 0.021
+
+log10 zc
+
+3.62(3.82)+0.27
+−0.30
+
+3.616(3.574)+0.070
+−0.14
+
+3.54(3.55)+0.13
+−0.22
+
+3.548(3.554)+0.039
+−0.033
+
+3.54(3.549)+0.11
+−0.18
+
+3.550(3.563) ± 0.043
+
+θi
+
+− − (2.92)
+
+2.69(2.817)+0.26
++0.026
+
+− − (2.65)
+
+2.59(2.690)+0.19
+−0.039
+
+− − (2.708)
+
+2.67(2.716)+0.12
+−0.082
+
+0.1299(0.1311) ± 0.0027
+
+0.1231(0.1272)+0.0018
+−0.0039
+
+0.1323(0.1334) ± 0.0031
+
+0.1226(0.1272)+0.0021
+−0.0049
+
+0.1315(0.1322) ± 0.0029
+
+Ωc h
+
+2
+
+Ωb h2
+
+0.1221(0.1237)+0.0013
+−0.0027
+
++0.00015
++0.00014
+0.02228(0.02235)+0.00015
+−0.00018 0.02264(0.02253) ± 0.00020 0.02259(0.02264)−0.00018 0.02286(0.02279) ± 0.00016 0.02268(0.02273)−0.00017 0.02285(0.02285) ± 0.00016
+
+109 As
+
+2.114(2.118)+0.022
+−0.025
+
+2.157(2.156)+0.022
+−0.026
+
+2.126(2.145) ± 0.024
+
+2.160(2.159)+0.021
+−0.025
+
+2.142(2.150)+0.023
+−0.026
+
+2.164(2.163) ± 0.023
+
+ns
+
+0.9669(0.9715)+0.0045
+−0.0067
+
+0.9882(0.9878) ± 0.0060
+
+0.9753(0.9795)+0.0055
+−0.0070
+
+0.9907(0.9894) ± 0.0052
+
+0.9805(0.9853)+0.0055
+−0.0069
+
+0.9917(0.9912) ± 0.0050
+
+τreio
+
+0.0574(0.0575)+0.0052
+−0.0061
+
+0.0609(0.0586)+0.0057
+−0.0065
+
+0.0585(0.0582)+0.0053
+−0.0061
+
+0.0597(0.0589)+0.0052
+−0.0064
+
+0.0625(0.0608)+0.0055
+−0.0061
+
+0.0614(0.0597)+0.0054
+−0.0062
+
+Ωm
+
+0.3127(0.3127) ± 0.0062
+
+0.2971(0.2979) ± 0.0057
+
+0.3090(0.3094) ± 0.0060
+
+0.2985(0.3015) ± 0.0055
+
+0.2989(0.2989) ± 0.0036
+
+0.2949(0.2963) ± 0.0034
+
+χ2 (EDE) − χ2 (ΛCDM)
+
+−0.9
+
+−30.7
+
+−5.0
+
+−36.5
+
+−7.0
+
+QDMAP
+
+3.5σ
+
+2.6σ
+
+−35.4
+2.0σ
+
+TABLE I: Credible interval and best fit values (in parentheses) in the EDE model reconstructed from analyses of
+Planck PR4 (NPIPE), ACT DR6 combined with Planck (P-ACT), CMB lensing (L), Pantheon-plus (S) and DESI DR2
+BAO (B). We report results with and without the SH0ES prior on Mb . For parameters with two-sided constraints,
+we report the mean and 1σ errors. For parameters with one-sided contraints, we report the 2σ limits.
+First we note that the lowest multipole bins in the polarization data from ACT DR4 – in particular for the
+EE power spectrum– were identified as driving the preference for non-zero fEDE (zc ) when using ACT DR4 + a
+prior on τreio [7]. The removal of these bins from the DR6
+data release leaves open the question of how EDE may
+have fit the new data had they been present. However,
+it is important to note that, when the ACT DR4 data
+are combined with other CMB and LSS data sets, the
+preference for non-zero fEDE (zc ) persists while the role
+that the DR4 low multipole EE power spectrum plays is
+significantly reduced [8, 9].
+
+Appendix C: Profile likelihoods
+
+Fig. 6 shows that when going from ACT DR4 to DR6
+we not only see a significant decrease in the size of the
+error bars but also a systematic shift in the means so that
+the TT and EE power spectra are lower and TE power
+spectrum is higher in DR6. In addition, the residuals
+indicate that there is a slight phase shift between the
+best fit models to the two data releases.
+
+We show in Fig. 7 the profile likelihood of H0 for our
+baseline analysis that uses the EDE emulator developed
+in Ref. [66] and ACT lite data, compared with the profile likelihoods reconstructed from the use of the code
+class ede [68] when analyzing the same datasets, as
+well as the use of the emulator when analyzing the full
+ACT mf-like likelihood. All analyses include the ‘PACT’ data, DESI DR2, lensing and Pantheon-plus (uncalibrated). As the full code is much slower due to the
+necessary increase in theoretical precision, we run a very
+sparse profile at five values of H0 ∈ [68, 73] together with
+a search for the global best-fit. When using full ACT
+data with the emulator, we run instead at fifteen values
+of H0 within the same range. Though there are some
+fluctuations in the profiles, all analyses lead to similar
+best-fit models and confidence level. In particular, they
+all allow for H0 = 73 km/s/Mpc at ∼ 2σ. Note that the
+full data appears to disfavor ΛCDM slightly more than
+the lite data.
+
+[1] T. Karwal and M. Kamionkowski, Phys. Rev. D94,
+103523 (2016), arXiv:1608.01309.
+[2] V. Poulin, T. L. Smith, T. Karwal,
+and
+M. Kamionkowski, Phys. Rev. Lett. 122, 221301
+(2019), arXiv:1811.04083.
+[3] T. L. Smith, V. Poulin, and M. A. Amin, Phys. Rev. D
+101, 063523 (2020), arXiv:1908.06995 [astro-ph.CO].
+[4] A. G. Riess et al., (2021), arXiv:2112.04510 [astroph.CO].
+[5] M. Kamionkowski and A. G. Riess,
+(2022),
+arXiv:2211.04492 [astro-ph.CO].
+[6] V. Poulin, T. L. Smith, R. Calderón, and T. Simon,
+(2024), arXiv:2407.18292 [astro-ph.CO].
+[7] J. C. Hill et al., (2021), arXiv:2109.04451 [astro-ph.CO].
+
+[8] V. Poulin, T. L. Smith, and A. Bartlett, Phys. Rev. D
+104, 123550 (2021), arXiv:2109.06229 [astro-ph.CO].
+[9] T. L. Smith, M. Lucca, V. Poulin, G. F. Abellan,
+L. Balkenhol, K. Benabed, S. Galli, and R. Murgia,
+(2022), arXiv:2202.09379 [astro-ph.CO].
+[10] Y. Akrami et al. (Planck), Astronomy and Astrophysics
+643, A42 (2020), arXiv:2007.04997 [astro-ph.CO].
+[11] E. Rosenberg, S. Gratton, and G. Efstathiou, Mon. Not.
+Roy. Astron. Soc. 517, 4620 (2022), arXiv:2205.10869
+[astro-ph.CO].
+[12] M. Tristram et al., (2023), arXiv:2309.10034 [astroph.CO].
+[13] G. Efstathiou, E. Rosenberg, and V. Poulin, Phys.
+Rev. Lett. 132, 221002 (2024), arXiv:2311.00524 [astro-
+
+9
+
+best-fit CDM
+to P-ACT+LS
+
+best-fit EDE
+to P-ACT+LSMb
+
+best-fit EDE
+to ACT DR4+ reio
+
+ACT DR6
+ACT DR4
+
+TT
+C TT / CV
+
+4
+2
+0
+2
+
+EE
+C EE / CV
+
+4
+2
+0
+2
+
+TE
+C TE / CV
+
+4
+2
+0
+2
+4
+
+500
+
+1000
+
+1500
+
+2000
+
+2500
+
+3000
+
+3500
+
+4000
+
+FIG. 6: The best fit ΛCDM and EDE residuals with respect to the best fit ΛCDM model to ACT DR4 + τreio [7]
+normalized by the cosmic variance (CV) limits for each power spectrum (note that the data may have uncertainties
+smaller than the CV limit since they are binned). We show residuals for the best fit ΛCDM model using P-ACT+LS
+(dashed), the best fit ΛCDM model using ACT DR4 + a prior on τreio (dotted), while for EDE we use P-ACT+LSMb
+(solid) and ACT DR4 + a prior on τreio (dot dashed). The ACT DR4 residuals were computed using parameters
+given in Ref. [7]. Both the ACT DR4 and DR6 bandpowers are marginalized over foreground and other nuisance
+parameters (i.e. the ‘lite’ versions of their respective likelihoods) [14, 73]. These bandpowers are not statistically
+independent, especially at ℓ ≳ 2000 where the foreground model leads to strong correlations.
+
+ph.CO].
+[14] T. Louis et al. (ACT), (2025), arXiv:2503.14452 [astroph.CO].
+[15] N. Aghanim et al., Astronomy & Astrophysics 641, A6
+(2020), arXiv:1807.06209.
+[16] M. S. Madhavacheril et al. (ACT), Astrophys. J. 962,
+113 (2024), arXiv:2304.05203 [astro-ph.CO].
+[17] A. G. Adame et al. (DESI), (2024), arXiv:2404.03002
+[astro-ph.CO].
+[18] R. E. Smith, J. A. Peacock, A. Jenkins, S. D. M. White,
+C. S. Frenk, F. R. Pearce, P. A. Thomas, G. Efstathiou,
+and H. M. P. Couchmann (VIRGO Consortium), Mon.
+Not. Roy. Astron. Soc. 341, 1311 (2003), arXiv:astroph/0207664.
+
+[19] E. Calabrese et al. (ACT), (2025), arXiv:2503.14454
+[astro-ph.CO].
+[20] M. Abdul Karim et al. (DESI), (2025), arXiv:2503.14738
+[astro-ph.CO].
+[21] G. Efstathiou, (2024), arXiv:2408.07175 [astro-ph.CO].
+[22] D. Brout et al., Astrophys. J. 938, 110 (2022),
+arXiv:2202.04077 [astro-ph.CO].
+[23] E. Chaussidon, M. White, A. de Mattia, R. Gsponer,
+S. Ahlen, D. Bianchi, D. Brooks, T. Claybaugh, S. Cole,
+A. Cuceu, A. de la Macorra, P. Doel, S. Ferraro,
+A. Font-Ribera, J. E. Forero-Romero, E. Gaztañaga,
+S. G. A. Gontcho, G. Gutierrez, J. Guy, C. Hahn, H. K.
+Herrera-Alcantar, K. Honscheid, M. Ishak, D. Kirkby,
+T. Kisner, A. Kremin, M. Landriau, L. L. Guil-
+
+10
+
+ΛCDM
+Data
+
+NPIPE-LS
+
+P-ACT-LS
+
+planck NPIPE highl CamSpec.TTTEEE 10541.3 10545.6
+
+—
+
+P-ACT-LBS
+
+—
+
+—
+
+—
+
+act dr6 cmbonly.PlanckActCut
+
+—
+
+—
+
+221.4 221.4
+
+220.9 222.8
+
+act dr6 cmbonly.ACTDR6CMBonly
+
+—
+
+—
+
+157.5 160.6
+
+159.5 161.1
+
+act dr6 lenslike.ACTDR6LensLike
+
+19.8
+
+20.0
+
+19.7
+
+19.8
+
+planck 2018 lowl.EE sroll2
+
+390.0
+
+391.5
+
+390.1 391.2
+
+391.2 391.7
+
+planck 2018 lowl.TT
+
+23.8
+
+22.7
+
+22.6
+
+21.9
+
+sn.pantheonplus
+
+20.0
+
+21.9
+
+19.9
+
+21.3
+
+1403.6 1406.4 1403.9 1406.8 1405.7 1407.6
+
+bao.desi bao all
+
+—
+
+—
+
+—
+
+—
+
+12.6
+
+10.4
+
+H0.riess2022Mb
+
+—
+
+34.2
+
+—
+
+31.5
+
+—
+
+29.2
+
+χ2tot
+
+12378.5 12420.4 2215.2 2253.4 2231.6 2264.0
+
+TABLE II: χ2min contribution from each data set in the ΛCDM model.
+
+EDE
+Data
+
+NPIPE-LS
+
+P-ACT-LS
+
+planck NPIPE highl CamSpec.TTTEEE 10540.6 10547.4
+
+–
+
+P-ACT-LBS
+–
+
+–
+
+–
+
+act dr6 cmbonly.PlanckActCut
+
+–
+
+–
+
+217.7 218.3
+
+217.7 218.6
+
+act dr6 cmbonly.ACTDR6CMBonly
+
+–
+
+–
+
+155.7 157.7
+
+157.2 158.7
+
+act dr6 lenslike.ACTDR6LensLike
+
+20.3
+
+20.8
+
+20.3 20.96
+
+20.0
+
+planck 2018 lowl.EE sroll2
+
+390.2
+
+390.4
+
+390.3 390.5
+
+390.6 390.5
+
+planck 2018 lowl.TT
+
+22.5
+
+21.3
+
+21.8
+
+21.2
+
+sn.pantheonplus
+
+21.1
+
+20.5
+
+21.0
+
+1404.0 1406.6 1404.4 1405.8 1406.3 1406.9
+
+ba.desi bao all
+
+–
+
+–
+
+–
+
+–
+
+11.6
+
+10.9
+
+H0.riess2022Mb
+
+–
+
+3.2
+
+–
+
+2.5
+
+–
+
+1.5
+
+χ2tot
+
+12377.6 12389.7 2210.2 2216.9 2224.6 2228.6
+
+TABLE III: χ2min contribution from each data set in the EDE model.
+
+11
+5
+
+P-ACT-LBS
+
+full CLASS / ACT lite
+
+emulator / full ACT
+
+2
+
+4
+
+2
+
+3
+2
+
+1
+
+1
+0
+66
+
+67
+
+68
+
+69
+
+70
+
+71
+
+H0 [km/s/Mpc]
+
+72
+
+SH0ES
+73
+
+74
+
+75
+
+FIG. 7: Profile likelihood of H0 for our baseline analysis
+that uses the EDE emulator developed in Ref. [66] and
+ACT lite data, compared with the profile likelihood reconstructed from the use of the code class ede [68] when
+analyzing the same datasets, and the use of the emulator
+when analyzing the full ACT mf-like likelihood.
+
+lou, M. E. Levi, R. Miquel, J. Moustakas, G. Niz,
+W. J. Percival, F. Prada, I. Pérez-Ràfols, A. J. Ross,
+G. Rossi, E. Sanchez, D. Schlegel, H. Seo, D. Sprayberry, M. Walther,
+and B. A. Weaver,
+(2025),
+arXiv:2503.24343 [astro-ph.CO].
+[24] M. Kamionkowski, J. Pradler, and D. G. E. Walker,
+Phys. Rev. Lett. 113, 251302 (2014), arXiv:1409.0549
+[hep-ph].
+[25] E. McDonough and M. Scalisi, (2022), arXiv:2209.00011
+[hep-th].
+[26] M. Cicoli, M. Licheri, R. Mahanta, E. McDonough, F. G.
+Pedro, and M. Scalisi, (2023), arXiv:2303.03414 [hepth].
+[27] P. Agrawal, F.-Y. Cyr-Racine, D. Pinner, and L. Randall, (2019), arXiv:1904.01016.
+[28] M.-X. Lin, G. Benevento, W. Hu, and M. Raveri, Phys.
+Rev. D 100, 063542 (2019), arXiv:1905.12618 [astroph.CO].
+[29] S. Alexander and E. McDonough, Phys. Lett. B 797,
+134830 (2019), arXiv:1904.08912 [astro-ph.CO].
+[30] J. Sakstein and M. Trodden, Phys. Rev. Lett. 124,
+161301 (2020), arXiv:1911.11760 [astro-ph.CO].
+[31] A. Gogoi, R. Kumar Sharma, P. Chanda, and S. Das,
+Astrophysical Journal 915, 132 (2021), arXiv:2005.11889
+[astro-ph.CO].
+[32] F. Niedermann and M. S. Sloth, Phys. Rev. D 103,
+L041303 (2021), arXiv:1910.10739 [astro-ph.CO].
+[33] F. Niedermann and M. S. Sloth, Phys. Rev. D 102,
+063527 (2020), arXiv:2006.06686 [astro-ph.CO].
+[34] F. Niedermann and M. S. Sloth, Phys. Rev. D 105,
+063509 (2022), arXiv:2112.00770 [hep-ph].
+[35] G. Ye and Y.-S. Piao, Phys. Rev. D 101, 083507 (2020),
+arXiv:2001.02451 [astro-ph.CO].
+
+[36] K. V. Berghaus and T. Karwal, Phys. Rev. D 101, 083537
+(2020), arXiv:1911.06281 [astro-ph.CO].
+[37] K. Freese and M. W. Winkler, Phys. Rev. D 104, 083533
+(2021), arXiv:2102.13655 [astro-ph.CO].
+[38] M. Braglia, W. T. Emond, F. Finelli, A. E. Gumrukcuoglu, and K. Koyama, Phys. Rev. D 102, 083513
+(2020), arXiv:2005.14053 [astro-ph.CO].
+[39] V. I. Sabla and R. R. Caldwell, Phys. Rev. D 103, 103506
+(2021), arXiv:2103.04999 [astro-ph.CO].
+[40] V. I. Sabla and R. R. Caldwell, Phys. Rev. D 106, 063526
+(2022), arXiv:2202.08291 [astro-ph.CO].
+[41] A. Gómez-Valent, Z. Zheng, L. Amendola, V. Pettorino,
+and C. Wetterich, Phys. Rev. D 104, 083536 (2021),
+arXiv:2107.11065 [astro-ph.CO].
+[42] A. Moss, E. Copeland, S. Bamford, and T. Clarke,
+(2021), arXiv:2109.14848 [astro-ph.CO].
+[43] E. Guendelman, R. Herrera, and D. Benisty, Phys. Rev.
+D 105, 124035 (2022), arXiv:2201.06470 [gr-qc].
+[44] T. Karwal, M. Raveri, B. Jain, J. Khoury,
+and
+M. Trodden, arXiv e-prints , arXiv:2106.13290 (2021),
+arXiv:2106.13290.
+[45] E. McDonough, M.-X. Lin, J. C. Hill, W. Hu, and
+S. Zhou, (2021), arXiv:2112.09128 [astro-ph.CO].
+[46] H. Wang and Y.-S. Piao, (2022), arXiv:2209.09685
+[astro-ph.CO].
+[47] S. Alexander, H. Bernardo, and M. W. Toomey, (2022),
+arXiv:2207.13086 [astro-ph.CO].
+[48] S. Nakagawa, F. Takahashi, and W. Yin, (2022),
+arXiv:2209.01107 [astro-ph.CO].
+[49] A. Gómez-Valent, Z. Zheng, L. Amendola, C. Wetterich, and V. Pettorino, (2022), arXiv:2207.14487
+[astro-ph.CO].
+[50] H. Mohseni Sadjadi and V. Anari,
+(2022),
+arXiv:2205.15693 [gr-qc].
+[51] K. Kojima and Y. Okubo, Phys. Rev. D 106, 063540
+(2022), arXiv:2205.13777 [astro-ph.CO].
+[52] T. Rudelius, (2022), arXiv:2203.05575 [hep-th].
+[53] V. K. Oikonomou, Phys. Rev. D 103, 044036 (2021),
+arXiv:2012.00586 [astro-ph.CO].
+[54] S. X. Tian and Z.-H. Zhu, Phys. Rev. D 103, 043518
+(2021), arXiv:2102.06399 [gr-qc].
+[55] M. Maziashvili, Astropart. Phys. 145, 102792 (2023),
+arXiv:2111.07288 [astro-ph.CO].
+[56] V. Poulin, T. L. Smith, and T. Karwal, (2023),
+arXiv:2302.09032 [astro-ph.CO].
+[57] E. McDonough, J. C. Hill, M. M. Ivanov, A. La Posta,
+and M. W. Toomey, (2023), arXiv:2310.19899 [astroph.CO].
+[58] J. Torrado and A. Lewis, Journal of Cosmology and
+Astroparticle Physics 05, 057 (2021), arXiv:2005.05290
+[astro-ph.IM].
+[59] A. Lewis, (2019), arXiv:1910.13970 [astro-ph.IM].
+[60] E. Rosenberg, S. Gratton, and G. Efstathiou, arXiv
+e-prints , arXiv:2205.10869 (2022), arXiv:2205.10869
+[astro-ph.CO].
+[61] N. Aghanim et al. (Planck), Astron. Astrophys. 641, A5
+(2020), arXiv:1907.12875 [astro-ph.CO].
+[62] L. Pagano, J. M. Delouis, S. Mottet, J. L. Puget,
+and L. Vibert, Astron. Astrophys. 635, A99 (2020),
+arXiv:1908.09856 [astro-ph.CO].
+[63] N. Aghanim et al. (Planck), Astron. Astrophys. 641, A6
+(2020), [Erratum: Astron.Astrophys. 652, C4 (2021)],
+arXiv:1807.06209 [astro-ph.CO].
+
+12
+[64] M. Raveri and W. Hu, Phys. Rev. D 99, 043506 (2019),
+arXiv:1806.04649 [astro-ph.CO].
+[65] H. Akaike, IEEE Transactions on Automatic Control 19,
+716 (1974).
+[66] F. J. Qu, K. M. Surrao, B. Bolliet, J. C. Hill, B. D.
+Sherwin, and H. T. Jense, (2024), arXiv:2404.16805
+[astro-ph.CO].
+[67] E. B. Holm, A. Nygaard, J. Dakin, S. Hannestad, and
+T. Tram, Mon. Not. Roy. Astron. Soc. 535, 3686 (2024),
+arXiv:2312.02972 [astro-ph.CO].
+[68] J. C. Hill, E. McDonough, M. W. Toomey,
+and
+S. Alexander, Phys. Rev. D 102, 043507 (2020),
+arXiv:2003.07355 [astro-ph.CO].
+[69] L. Herold, E. G. M. Ferreira, and E. Komatsu, Astrophys. J. Lett. 929, L16 (2022), arXiv:2112.12140 [astroph.CO].
+[70] L. Herold and E. G. M. Ferreira, Phys. Rev. D 108,
+043513 (2023), arXiv:2210.16296 [astro-ph.CO].
+[71] T. Karwal, Y. Patel, A. Bartlett, V. Poulin, T. L.
+Smith, and D. N. Pfeffer, (2024), arXiv:2401.14225
+[astro-ph.CO].
+[72] T. L. Smith and V. Poulin, (2023), arXiv:2309.03265
+[astro-ph.CO].
+[73] S. Aiola et al. (ACT), JCAP 12, 047 (2020),
+arXiv:2007.07288 [astro-ph.CO].
+[74] L. Balkenhol et al. (SPT-3G), (2022), arXiv:2212.05642
+[astro-ph.CO].
+[75] G. D’Amico, L. Senatore, P. Zhang, and H. Zheng, JCAP
+05, 072 (2021), arXiv:2006.12420 [astro-ph.CO].
+[76] T. Simon, P. Zhang, V. Poulin, and T. L. Smith,
+Phys. Rev. D. In press (2022), arXiv:2208.05930 [astroph.CO].
+
+[77] J. E. Bautista et al. (eBOSS), Mon. Not. Roy. Astron.
+Soc. 500, 736 (2020), arXiv:2007.08993 [astro-ph.CO].
+[78] B. Reid et al., Mon. Not. Roy. Astron. Soc. 455, 1553
+(2016), arXiv:1509.06529 [astro-ph.CO].
+[79] X. T. Tang, D. Brout, T. Karwal, C. Chang, V. Miranda,
+and M. Vincenzi, Astrophys. J. Lett. 983, L27 (2025),
+arXiv:2412.04430 [astro-ph.CO].
+[80] Y.-H. Pang, X. Zhang, and Q.-G. Huang, (2025),
+arXiv:2503.21600 [astro-ph.CO].
+[81] S. H. Mirpoorian, K. Jedamzik, and L. Pogosian, (2025),
+arXiv:2504.15274 [astro-ph.CO].
+[82] S. Vagnozzi, arXiv e-prints , arXiv:2105.10425 (2021),
+arXiv:2105.10425.
+[83] T. M. C. Abbott et al. (DES), (2024), arXiv:2401.02929
+[astro-ph.CO].
+[84] T. L. Smith, V. Poulin, J. L. Bernal, K. K. Boddy,
+M. Kamionkowski, and R. Murgia, Phys. Rev. D 103,
+123542 (2021), arXiv:2009.10740 [astro-ph.CO].
+[85] J. Neyman, Phil. Trans. Roy. Soc. Lond. A 236, 333
+(1937).
+[86] T. L. Smith and N. Schöneberg,
+(2025),
+arXiv:2503.20002 [astro-ph.CO].
+[87] D. Aloni, A. Berlin, M. Joseph, M. Schmaltz, and
+N. Weiner, (2021), arXiv:2111.00014 [astro-ph.CO].
+[88] N. Schöneberg, G. Franco Abellán, A. Pérez Sánchez,
+S. J. Witte, V. Poulin, and J. Lesgourgues, (2021),
+arXiv:2107.10291 [astro-ph.CO].
+[89] A. R. Khalife, M. B. Zanjani, S. Galli, S. Günther,
+J. Lesgourgues, and K. Benabed, JCAP 04, 059 (2024),
+arXiv:2312.09814 [astro-ph.CO].
+
+

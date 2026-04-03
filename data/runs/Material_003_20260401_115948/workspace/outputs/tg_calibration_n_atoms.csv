@@ -1,0 +1,296 @@
+name,n_atoms
+Poly(acrylamide),7
+Poly(N-isopropyl acrylamide),10
+Poly(N-octyl acrylamide),15
+Poly(N-tert-butyl acrylamide),11
+Poly(N-sec-butyl acrylamide),11
+Poly(acrylic acid),7
+Poly(butyl acrylate),11
+Poly(2-cyanoethyl acrylate),11
+Poly(cyclohexyl acrylate),13
+Poly(ethyl acrylate),9
+Poly(2-ethylhexyl acrylate),15
+Poly(hexyl acrylate),13
+Poly(isobutyl acrylate),11
+Poly(isopropyl acrylate),10
+Poly(methyl acrylate),8
+Poly(n-octyl acrylate),15
+Poly(propyl acrylate),10
+Poly(sec-butyl acrylate),11
+Poly(octadecyl acrylate),25
+Poly(tert-butyl acrylate),11
+Poly(acrylonitrile),6
+Poly(methacrylonitrile),7
+Poly(butylene adipate),16
+Poly(ethylene adipate),14
+Poly(propylene adipate),15
+Poly(butylene),6
+Poly(butylethylene),8
+Poly(cyclohexylethylene),10
+Polyethylene,4
+Poly(1-nonene),11
+Poly(hexylethylene),10
+Poly(isobutene),6
+Poly(isobutylethylene),8
+Poly(isopropylethylene),7
+Poly(2-methylbut-1-ene),7
+Poly(1-decene),12
+PoIy(1-heptene),9
+Poly(propylene),5
+Poly(1-pentene),7
+Poly(tert-butylethylene),8
+Nylon 3 - Poly(propiolactam),7
+Nylon 6 - Poly(caprolactam),10
+Nylon 8 - Polycapryllactam,12
+Nylon 10 - Poly(ω-decanamide),14
+Nylon 11 - Poly(ω-undecanamide),15
+Nylon 12 - Poly(ω-dodecanamide),16
+Nylon 4-6 - Poly(tetramethylene adipamide) ,16
+Nylon 6-6 - Poly(hexamethylene adipamide),18
+Nylon 6-9 - Poly(hexamethylene azelamide),21
+Nylon 6-10 - Poly(hexamethylene sebacamide),22
+Nylon 6-12 - Poly(hexamethylene dodecanediamide),24
+Nylon 10-10 - Poly(decamethylene sebacamide),26
+Poly(p-pentamethylenedibenzoic anhydride),24
+Poly(p-tetramethylenedibenzoic anhydride),23
+Poly(1-2-butadiene),6
+Poly(1-4-butadiene),6
+Polycyclopentene,7
+Poly(1-ethyl-1-4-butadiene),8
+Polyisoprene,7
+Poly(dimethyl fumarate),12
+Poly(diethyl fumarate),14
+Poly(dipropyl fumarate),16
+Poly(methyl cyanoacrylate),10
+Poly(ethyl cyanoacrylate),11
+Poly(butyl cyanoacrylate),13
+Poly(hexyl cyanoacrylate),15
+Poly(octyl cyanoacrylate),17
+Bisphenol-A diglycidyl ether epoxy or phenoxy resin,23
+Bisphenol-F Diglycidyl Ether Epoxy Resin,21
+Poly(bis-A diglycidyl ether- alt - ethylenediamine),31
+Poly(bisphenol-A diglycidyl ether-alt-1-6-diamino hexane),35
+Poly(bisphenol-A diglycidyl ether-alt-1-8-diamino octane),37
+Poly(bisphenol A isophthalate),29
+Poly(Bisphenol A terephthalate),29
+Poly(tetramethylene isophthalate),18
+Poly(1-4-butylene sebacate),20
+Poly(1-4-butylene succinate),14
+Poly(butylene terephthalate),18
+Poly(ethylene sebacate),18
+Poly(ethylene succinate),12
+Poly(caprolactone),10
+Poly(cyclohexanedimethylene terephthalate),22
+Poly(ethylene isophthalate),16
+Poly(ethylene 2-6-naphthalate),20
+Poly(ethylene phthalate),16
+Poly(ethylene terephthalate),16
+Poly(1-6-hexylene sebacate),22
+Poly(hexylene succinate),16
+Polyhydroxybutyrate,8
+Poly(γ-butyrolactone),7
+Polylactic acid,7
+Poly(1-3-propylene succinate),13
+Poly(trimethylene terephthalate),17
+Polyacetal,4
+Poly(3-butoxypropylene oxide),11
+Poly(ethylene glycol),5
+Poly(hexamethylene oxide),9
+Poly(3-methoxypropylene oxide),8
+Poly[oxy(hexyloxymethyl)ethylene],13
+Poly(oxymethylene-oxyethylene),7
+Poly(oxymethylene-oxytetramethylene),9
+Poly(propylene glycol),6
+Poly(tetrahydrofuran),7
+Poly(trimethylene glycol),6
+Poly(ether ketone),17
+Poly(ether ketone ketone),25
+Poly(ether ether ketone),24
+Poly(ethyleneketone),6
+Poly(propyleneketone),7
+Poly(2-hydroxyethyl acrylate),10
+Poly(2-hydroxyethyl methacrylate),11
+Poly(2-hydroxypropyl methacrylate),12
+Poly(dimethyl itaconate),13
+Poly[di(n-propyl) itaconate],17
+Poly[di(n-butyl) itaconate],18
+Poly[di(n-propyl) itaconate],23
+Polymethacrylamide,8
+Poly(N-tert-butyl methacrylamide),12
+Poly(butyl methacrylate),12
+Poly(cyclohexyl methacrylate),14
+Poly(decyl methacrylate),18
+Poly(dodecyl methacrylate),20
+Poly(ethyl methacrylate),10
+Poly(hexyl methacrylate),14
+Poly(isobutyl methacrylate),12
+Poly(isopropyl methacrylate),11
+Poly(methyl methacrylate),9
+Poly(octadecyl methacrylate),26
+Poly(Octyl methacrylate),16
+Poly(2-phenylethyl methacrylate),16
+Poly(phenyl methacrylate),14
+Poly(propyl methacrylate),11
+Poly(sec-butyl methacrylate),12
+Poly(4-tert-butylcyclohexyl methacrylate),18
+Poly(tert-butyl methacrylate),12
+Poly(2-methoxystyrene),12
+Poly(α-methylstyrene),11
+Poly(2-methylstyrene),11
+Poly(3-methylstyrene),11
+Poly(4-methylstyrene),11
+Polystyrene,10
+Poly(4-tert-butylstyrene),14
+Poly(p-phenylene vinylene),10
+Poly(2-6-dimethyl-p-phenylene oxide),11
+Poly(2-6-diphenyl-p-phenylene oxide),21
+Poly(vinylalcohol),5
+Poly(4-hydroxystyrene),11
+Poly(vinyl butyral),12
+Poly(vinyl formal),9
+Poly(vinyl acetate),8
+Poly(vinyl benzoate),13
+Poly(vinyl formate),7
+Poly(vinyl propionate),9
+Poly(vinyl methyl ketone),7
+Poly(vinyl phenyl ketone),12
+Poly(vinylpyrrolidone),10
+Poly(2-n-butyl-1-4-butadiene),10
+Poly(vinyl n-octyl ether),13
+Poly(2-n-propyl-1-4-butadiene),9
+Poly(2-ethyl-1-4-butadiene),8
+Poly(vinyl n-decyl ether),15
+Polyisoprene,7
+Polyoxyoctamethylene,11
+Poly(tetramethylene adipate),16
+Poly(vinyl 2-ethylhexyl ether),13
+Poly(vinyl n-pentyl ether),10
+Poly(vinyl n-hexyl ether),11
+Polypentadiene,7
+Poly(n-heptyl acrylate),14
+Poly(e-caprolactone),10
+Poly(n-nonyl acrylate),16
+Poly(decamethylene adipate),22
+Poly(oxycarbonyl-3-methylpentamethylene),11
+Poly(2-isopropyl-1-4-butadiene),9
+Poly(2-octyl acrylate),15
+Poly(ethylene azelate),17
+Poly(ethylene adipate),14
+Poly(2-heptyl acrylate),14
+Poly(6-methyl-1 -heptene),10
+Poly(ethylene sebacate),18
+Poly(vinyl isobutyl ether),9
+Poly(3-pentyl acrylate),12
+Poly(5-methyl-1-hexene),9
+Poly(p-n-hexoxymethyl styrene),18
+Poly(vinyl butyrate),10
+Poly(p-n-butyl styrene),14
+Poly(2-ethylbutyl methacrylate),14
+Poly(o-n-octoxy styrene),19
+Poly(2-t-butyl-1-4-butadiene),10
+Poly(2-methoxyethyl methacrylate),12
+Poly(p-n-propoxymethyl styrene),15
+Poly(ethyl-p-xylylene),12
+Poly(neopentyl methacrylate),13
+Poly(12-aminododecanoic acid),16
+Poly(4-cyclohexyl- 1 -butene),12
+Poly(hexamethylene sebacamide),22
+Poly(11-aminoundecanoic acid),15
+Poly(3-phenoxypropylene oxide),13
+Poly(10-aminodecanoic acid),14
+Poly(3-3-dimethylbutyl methacrylate),14
+Poly[oxy(m-phenylene)],9
+Poly(decamethylene sebacamide),26
+Poly(N-butyl acrylamide),11
+Poly(p-n-butoxy styrene),15
+Poly(9-aminononanoic acid),13
+Poly(8-aminocaprylic acid),12
+Poly(methyl-p-xylylene),11
+Poly(vinyl isobutyral),9
+Poly(p-isopentoxy styrene),16
+Poly(7-aminoheptanoic acid),11
+Poly(hexamethylene adipamide),18
+Poly(3-cyclopentyl- 1 -propene),10
+Poly(3-phenyl- 1-propene),11
+Poly(p-xylylene),10
+Poly(ethylene- 1-4-naphthalenedicarboxylate),20
+Poly(p-n-propoxy styrene),14
+Poly(ethylene-1-5-naphthalenedicarboxylate),20
+Poly(vinyl propional),8
+Poly(3-cyclohexyl- 1-propene),11
+Poly(vinyl cyclopentane),9
+Poly(p-methoxymethyl styrene),13
+Poly(ethylene oxybenzoate),14
+Poly[oxy(p-phenylene)],9
+Poly(p-sec-butyl styrene),14
+Poly(p-ethoxy styrene),13
+Poly(2-methyl-5-t-butyl styrene),15
+Poly(p-isopropyl styrene),13
+Poly(p-methoxy styrene),12
+Poly(4-methoxy-2-methyl styrene),13
+Poly(cyano-p-xylylene),12
+Poly(m-xylylene adipamide),20
+Poly(1-4-cyclohexylidene dimethylene terephthalate),22
+Poly(2-5-dimethyl-p-xylylene),12
+Phenoxy resin,23
+Poly(o-ethyl styrene),12
+Poly(3-5-dimethyl styrene),12
+Poly(o-vinyl pyridine),10
+Poly(3-4-dimethyl styrene),12
+Resin F,29
+Poly(2-4-dimethyl styrene),12
+Poly(p-methoxycarbonyl styrene),14
+Poly(p-xylylene sebacamide),24
+Poly[2-2-butane bis{4-(2-methylphenyl)}carbonate],24
+Poly(a-p-dimethyl styrene),12
+Poly[1-1-butane bis(4-phenyl)carbonate],22
+Poly(m-hydroxymethyl styrene),12
+Polyetherimide 1,45
+Poly(hexamethylene isophthalamide),20
+Poly[1-1-ethane bis(4-phenyl)carbonate],20
+Poly[2-2-butane bis(4-phenyl)carbonate],22
+Poly[2-2-pentane bis(4-phenyl)carbonate],23
+Poly(m-phenylene isophthalate),20
+Poly(p-phenyl styrene),16
+Poly(p-hydroxymethyl styrene),12
+Poly(p-vinyl pyridine),10
+Poly(2-5-dimethyl styrene),12
+Poly[methane bis(4-phenyl)carbonate],19
+Poly(p-hydroxybenzoate),11
+Poly[4-4-heptane bis(4-phenyl)carbonate],25
+Poly[1-1-(2-methyl propane) bis(4-phenyl)carbonate],22
+Poly(N-vinyl carbazole),17
+Bisphenol-A polycarbonate,21
+Poly(p-vinyl naphthalene),14
+Poly(a-vinyl naphthalene),14
+Poly(o-hydroxymethyl styrene),12
+Poly [1-1 -cyclopentane bis(4-phenyl)carbonate],23
+Poly(oxyterephthaloyloxy-2-methyl-1-4-phenyleneisopropylidene-3-methyl-1-4-phenylene),31
+Poly[1-1-cyclohexane bis(4-phenyl)carbonate],24
+Poly[1-1-(1-phenylethane) bis(4-phenyl)carbonate],26
+Poly[2-2-propane bis{4-(2-6-dimethylphenyl)} carbonate],25
+Poly(bisphenol-A terephthalate),29
+Poly[N-N'-(m-m'-oxydiphenylene-oxy-m-phenylene)pyromellitimide],38
+Polyetherimide 3,45
+Polycarbonate 2,25
+Polyetherimide 4,46
+Polyimide 10,40
+Polycarbonate 3,28
+Polyetherimide 5,44
+Polyquinoline 5,48
+Polyquinoline 1,41
+Poly[3-5-(4-phenyl-1-2-4-triazole)-1-4-phenylene-3-5-(4-phenyl-1-2-4-triazole)-1-3-phenylene],36
+Poly(m-phenylene isophthalamide),20
+Polyquinoline 2,53
+Torlon,29
+Polyquinoline 9,41
+Polyquinoline 6,60
+Poly(quinoxaline-2-7-diylquinoxaline-7-2-diyl-p-terphenyl-4-4'-ylene),40
+Poly(quinoxaline-2-7-diyloxyquinoxaline-7-2-diyl-1-4-phenylene),29
+Polyquinoline 7,47
+Poly(quinoxaline-2-7-diylcarbonylquinoxaline-7-2-diyl-1-4-phenylene),30
+Polyquinoline 3,48
+Poly(p-phenylene terephthalamide),20
+Vitrimer-DGEBA-AA,37
+Vitrimer-DGEAC-SA,37
+Vitrimer-DGEBA-SA,41

@@ -1,0 +1,26 @@
+{
+  "resolution_distribution": {
+    "median": 0.0004249407871194731,
+    "q95": 0.003122652402503906,
+    "fraction_below_1e-3": 0.7773333333333333,
+    "fraction_above_1e-2": 0.002
+  },
+  "mode_growth": {
+    "ell2_median": 0.00029969399389983696,
+    "ell8_median": 0.0022674572547313277,
+    "ell8_to_ell2_median_ratio": 7.565908229342601,
+    "ell2_q95": 0.0006735590986490886,
+    "ell8_q95": 0.013664879842188086
+  },
+  "extrapolation_behavior": {
+    "N2vsN3_median": 2.0311833782851758e-05,
+    "N2vsN4_median": 5.34385905352434e-05,
+    "median_ratio": 2.6309092082251513,
+    "N2vsN3_fraction_below_1e-4": 0.9475,
+    "N2vsN4_fraction_below_1e-4": 0.705
+  },
+  "limitations": [
+    "The provided inputs are synthetic summary datasets rather than full binary-parameter metadata or raw waveforms.",
+    "Interpretation is therefore limited to statistical error characterization, not direct astrophysical dependence on mass ratio, spin, or eccentricity."
+  ]
+}

@@ -1,0 +1,190 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 4575,
+    "mtime": 1775139822.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "006.nc",
+    "path": "data/006.nc",
+    "type": "file",
+    "size": 18247988,
+    "mtime": 1772070968.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "20231012-06_input_netcdf.nc",
+    "path": "data/20231012-06_input_netcdf.nc",
+    "type": "file",
+    "size": 36492716,
+    "mtime": 1772070968.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "cascade_evaluation.txt",
+    "path": "outputs/cascade_evaluation.txt",
+    "type": "file",
+    "size": 71,
+    "mtime": 1775139818.0,
+    "exported": true
+  },
+  {
+    "name": "cascade_lat_correction_stage23.npy",
+    "path": "outputs/cascade_lat_correction_stage23.npy",
+    "type": "file",
+    "size": 101488,
+    "mtime": 1775139818.0,
+    "exported": false
+  },
+  {
+    "name": "cascade_W_stage1.npy",
+    "path": "outputs/cascade_W_stage1.npy",
+    "type": "file",
+    "size": 39888,
+    "mtime": 1775139818.0,
+    "exported": false
+  },
+  {
+    "name": "stats_fuxi.txt",
+    "path": "outputs/stats_fuxi.txt",
+    "type": "file",
+    "size": 137,
+    "mtime": 1775139818.0,
+    "exported": true
+  },
+  {
+    "name": "stats_input.txt",
+    "path": "outputs/stats_input.txt",
+    "type": "file",
+    "size": 134,
+    "mtime": 1775139818.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 959881,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1724303,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 8061234,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4863089,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "comparison_diff_level30.png",
+    "path": "report/images/comparison_diff_level30.png",
+    "type": "file",
+    "size": 301327,
+    "mtime": 1775139822.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview_fuxi_level30.png",
+    "path": "report/images/data_overview_fuxi_level30.png",
+    "type": "file",
+    "size": 333585,
+    "mtime": 1775139822.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview_input_level30.png",
+    "path": "report/images/data_overview_input_level30.png",
+    "type": "file",
+    "size": 332415,
+    "mtime": 1775139818.0,
+    "exported": true
+  },
+  {
+    "name": "vertical_variance_structure.png",
+    "path": "report/images/vertical_variance_structure.png",
+    "type": "file",
+    "size": 81594,
+    "mtime": 1775139822.0,
+    "exported": true
+  },
+  {
+    "name": "zonal_mean_comparison_level30.png",
+    "path": "report/images/zonal_mean_comparison_level30.png",
+    "type": "file",
+    "size": 219681,
+    "mtime": 1775139820.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15741,
+    "mtime": 1775139823.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5311,
+    "mtime": 1774959531.0,
+    "exported": true
+  }
+]

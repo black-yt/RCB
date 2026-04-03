@@ -1,0 +1,19 @@
+Task objective: build a binary classifier that predicts whether a query neuron segment and an adjacent candidate segment from an over-segmented fly-brain EM volume belong to the same neuron and should be merged, with the broader goal of reducing manual proofreading in connectomics.
+
+Available data in this workspace:
+- data/train_simulated.csv: 84,000 training rows, 20 numeric feature columns (0-19), binary label, and degradation category.
+- data/test_simulated.csv: 72,000 held-out rows with the same schema.
+- The classes are imbalanced (many more label 0 than label 1), and degradation is balanced across Mixed, Misalignment, Average, and Missing Sections.
+- related_work/: four PDFs, including a connectomics segmentation paper plus general representation-learning / architecture references relevant to learned feature extraction, metric learning, and segmentation.
+
+Planned analysis steps:
+1. Inspect feature distributions, class imbalance, and degradation-specific behavior.
+2. Establish reproducible baselines with standard supervised models for tabular binary classification.
+3. Tune and compare stronger models, likely including tree-based ensembles and/or neural models, using validation procedures that check both overall and degradation-stratified performance.
+4. Analyze feature importance / error patterns and robustness across degradation types.
+5. Generate publication-quality figures and summarize findings, limitations, and the recommended final model.
+
+Expected deliverables:
+- Reproducible analysis code in code/.
+- Intermediate outputs, metrics, and model artifacts in outputs/.
+- A final report at report/report.md with linked figures saved under report/images/, including data overview plots, main performance results, and comparison/validation visualizations.

@@ -1,0 +1,232 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 36533,
+    "mtime": 1775131914.0,
+    "exported": true
+  },
+  {
+    "name": "data_preprocessing.py",
+    "path": "code/data_preprocessing.py",
+    "type": "file",
+    "size": 14297,
+    "mtime": 1775131914.0,
+    "exported": true
+  },
+  {
+    "name": "diffusion_framework.py",
+    "path": "code/diffusion_framework.py",
+    "type": "file",
+    "size": 20749,
+    "mtime": 1775131914.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "sample",
+    "path": "data/sample",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r",
+    "path": "data/sample/2l3r",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r_ligand.sdf",
+    "path": "data/sample/2l3r/2l3r_ligand.sdf",
+    "type": "file",
+    "size": 13842,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2l3r_protein.pdb",
+    "path": "data/sample/2l3r/2l3r_protein.pdb",
+    "type": "file",
+    "size": 211329,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_results.json",
+    "path": "outputs/analysis_results.json",
+    "type": "file",
+    "size": 1387,
+    "mtime": 1775131910.0,
+    "exported": true
+  },
+  {
+    "name": "ca_coords.npy",
+    "path": "outputs/ca_coords.npy",
+    "type": "file",
+    "size": 3992,
+    "mtime": 1775131910.0,
+    "exported": false
+  },
+  {
+    "name": "contact_map.npy",
+    "path": "outputs/contact_map.npy",
+    "type": "file",
+    "size": 207496,
+    "mtime": 1775131910.0,
+    "exported": false
+  },
+  {
+    "name": "dist_matrix.npy",
+    "path": "outputs/dist_matrix.npy",
+    "type": "file",
+    "size": 207496,
+    "mtime": 1775131910.0,
+    "exported": false
+  },
+  {
+    "name": "ligand_coords.npy",
+    "path": "outputs/ligand_coords.npy",
+    "type": "file",
+    "size": 4784,
+    "mtime": 1775131910.0,
+    "exported": false
+  },
+  {
+    "name": "structural_summary.json",
+    "path": "outputs/structural_summary.json",
+    "type": "file",
+    "size": 958,
+    "mtime": 1775131910.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3651992,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 3634495,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5515632,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 569417,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure1_data_overview.png",
+    "path": "report/images/figure1_data_overview.png",
+    "type": "file",
+    "size": 319338,
+    "mtime": 1775131914.0,
+    "exported": true
+  },
+  {
+    "name": "figure2_framework_architecture.png",
+    "path": "report/images/figure2_framework_architecture.png",
+    "type": "file",
+    "size": 188490,
+    "mtime": 1775131912.0,
+    "exported": true
+  },
+  {
+    "name": "figure3_diffusion_process.png",
+    "path": "report/images/figure3_diffusion_process.png",
+    "type": "file",
+    "size": 720943,
+    "mtime": 1775131912.0,
+    "exported": true
+  },
+  {
+    "name": "figure4_structural_analysis.png",
+    "path": "report/images/figure4_structural_analysis.png",
+    "type": "file",
+    "size": 376042,
+    "mtime": 1775131912.0,
+    "exported": true
+  },
+  {
+    "name": "figure5_prediction_evaluation.png",
+    "path": "report/images/figure5_prediction_evaluation.png",
+    "type": "file",
+    "size": 463813,
+    "mtime": 1775131912.0,
+    "exported": true
+  },
+  {
+    "name": "figure6_representation_analysis.png",
+    "path": "report/images/figure6_representation_analysis.png",
+    "type": "file",
+    "size": 555531,
+    "mtime": 1775131912.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 32639,
+    "mtime": 1775131915.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5562,
+    "mtime": 1775026553.0,
+    "exported": true
+  }
+]

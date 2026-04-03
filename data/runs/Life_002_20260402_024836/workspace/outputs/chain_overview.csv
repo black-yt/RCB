@@ -1,0 +1,14 @@
+structure,chain,molecule_type,molecule_name,length
+7xg4,A,protein,CSF1,241
+7xg4,B,protein,CSF3,219
+7xg4,C,protein,CSF2,329
+7xg4,D,protein,CSF2,331
+7xg4,E,protein,CSF2,324
+7xg4,F,protein,CSF2,324
+7xg4,G,protein,CSF2,280
+7xg4,H,protein,CSF5,234
+7xg4,I,nucleic_acid,CRRNA,0
+7xg4,J,nucleic_acid,NTS,0
+7xg4,K,nucleic_acid,TS,0
+7xg4,L,protein,CSF4,594
+6n40,A,protein,"MEMBRANE PROTEIN, MMPL FAMILY PROTEIN",726

@@ -1,0 +1,11 @@
+mean_p_response,0.9427470300116586
+median_p_response,0.9630025369027599
+std_p_response,0.09153692089155507
+coverage_50,0.992
+coverage_80,0.98
+coverage_90,0.887
+mean_iou,1.0
+std_iou,0.0
+runtime_slope,1.2293166766629962
+runtime_r2,0.8805943476891152
+n_core_mutations,10.0

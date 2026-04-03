@@ -1,0 +1,8 @@
+{
+  "calibration_gp_cv_mae": 41.82744943429536,
+  "calibration_gp_cv_rmse": 53.31685123207793,
+  "calibration_gp_cv_r2": 0.6791976765145333,
+  "graph_vae_test_mae": 21.6434428345177,
+  "graph_vae_test_rmse": 27.505696024705482,
+  "graph_vae_test_r2": 0.18533366395703987
+}

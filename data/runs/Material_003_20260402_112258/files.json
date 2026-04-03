@@ -1,0 +1,230 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_fast_pipeline.py",
+    "path": "code/run_fast_pipeline.py",
+    "type": "file",
+    "size": 15624,
+    "mtime": 1775133026.0,
+    "exported": true
+  },
+  {
+    "name": "run_pipeline.py",
+    "path": "code/run_pipeline.py",
+    "type": "file",
+    "size": 36360,
+    "mtime": 1775133026.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "tg_calibration.csv",
+    "path": "data/tg_calibration.csv",
+    "type": "file",
+    "size": 23515,
+    "mtime": 1773033792.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "tg_vitrimer_MD.csv",
+    "path": "data/tg_vitrimer_MD.csv",
+    "type": "file",
+    "size": 917247,
+    "mtime": 1773033792.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "gp_calibration_curve.csv",
+    "path": "outputs/gp_calibration_curve.csv",
+    "type": "file",
+    "size": 11100,
+    "mtime": 1775133020.0,
+    "exported": true
+  },
+  {
+    "name": "gp_calibration_cv_predictions.csv",
+    "path": "outputs/gp_calibration_cv_predictions.csv",
+    "type": "file",
+    "size": 15925,
+    "mtime": 1775133024.0,
+    "exported": true
+  },
+  {
+    "name": "graph_vae_test_predictions.csv",
+    "path": "outputs/graph_vae_test_predictions.csv",
+    "type": "file",
+    "size": 385296,
+    "mtime": 1775133022.0,
+    "exported": true
+  },
+  {
+    "name": "graph_vae_train_predictions.csv",
+    "path": "outputs/graph_vae_train_predictions.csv",
+    "type": "file",
+    "size": 1856136,
+    "mtime": 1775133022.0,
+    "exported": false
+  },
+  {
+    "name": "graph_vae_training_history.csv",
+    "path": "outputs/graph_vae_training_history.csv",
+    "type": "file",
+    "size": 1218,
+    "mtime": 1775133020.0,
+    "exported": true
+  },
+  {
+    "name": "graph_vae_val_predictions.csv",
+    "path": "outputs/graph_vae_val_predictions.csv",
+    "type": "file",
+    "size": 327467,
+    "mtime": 1775133022.0,
+    "exported": true
+  },
+  {
+    "name": "inverse_design_candidates.csv",
+    "path": "outputs/inverse_design_candidates.csv",
+    "type": "file",
+    "size": 3232,
+    "mtime": 1775133024.0,
+    "exported": true
+  },
+  {
+    "name": "summary_metrics.json",
+    "path": "outputs/summary_metrics.json",
+    "type": "file",
+    "size": 272,
+    "mtime": 1775133020.0,
+    "exported": true
+  },
+  {
+    "name": "tg_calibration_clean.csv",
+    "path": "outputs/tg_calibration_clean.csv",
+    "type": "file",
+    "size": 31302,
+    "mtime": 1775133022.0,
+    "exported": true
+  },
+  {
+    "name": "vitrimer_calibrated_predictions.csv",
+    "path": "outputs/vitrimer_calibrated_predictions.csv",
+    "type": "file",
+    "size": 1230331,
+    "mtime": 1775133024.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 577093,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8227164,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3334613,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4004940,
+    "mtime": 1773914905.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "candidate_structures.png",
+    "path": "report/images/candidate_structures.png",
+    "type": "file",
+    "size": 34952,
+    "mtime": 1775133024.0,
+    "exported": true
+  },
+  {
+    "name": "gp_calibration_overview.png",
+    "path": "report/images/gp_calibration_overview.png",
+    "type": "file",
+    "size": 1021743,
+    "mtime": 1775133024.0,
+    "exported": true
+  },
+  {
+    "name": "graph_vae_results.png",
+    "path": "report/images/graph_vae_results.png",
+    "type": "file",
+    "size": 745221,
+    "mtime": 1775133024.0,
+    "exported": true
+  },
+  {
+    "name": "inverse_design_candidates.png",
+    "path": "report/images/inverse_design_candidates.png",
+    "type": "file",
+    "size": 141585,
+    "mtime": 1775133024.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 10860,
+    "mtime": 1775133027.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5048,
+    "mtime": 1775100178.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,753 @@
+Unified triquark equations
+A. N. Kvinikhidze1, 2, ∗ and B. Blankleider2 , †
+1
+
+Andrea Razmadze Mathematical Institute of Tbilisi State University,
+6, Tamarashvili Str., 0186 Tbilisi, Georgia
+
+arXiv:2305.19024v1 [hep-ph] 30 May 2023
+
+2
+
+College of Science and Engineering,
+
+Flinders University, Bedford Park, SA 5042, Australia
+(Dated: May 31, 2023)
+
+Abstract
+We derive covariant equations describing the three-quark bound state in terms of quark and
+diquark degrees of freedom. The equations are exact in the approximation where three-body forces
+are neglected. A feature of these equations is that they unify two often-used but seemingly unrelated
+approaches that model baryons as quark-diquark systems; namely, (i) the approach using Poincaré
+covariant quark+diquark Faddeev equations driven by a one-quark-exchange kernel [pioneered by
+Cahill et al., Austral. J. Phys. 42, 129 (1989) and Reinhardt, Phys. Lett. B 244, 316 (1990)], and (ii)
+the approach using the quasipotential quark-diquark bound-state equation where the kernel consists
+of the lowest-order contribution from an underlying quark-quark potential [pioneered by Ebert et
+al., Z. Phys. C 76 111 (1997)]. In particular, we show that each of these approaches corresponds
+to the unified equations with its kernel taken in different, non-overlapping, approximations.
+
+∗
+
+sasha kvinikhidze@hotmail.com
+
+†
+
+boris.blankleider@flinders.edu.au
+
+1
+
+I.
+
+INTRODUCTION
+
+The use of diquarks as effective degrees of freedom in describing hadrons has a long
+history, as evidenced by a number of reviews over the last thirty years [1–4]. Documented
+are different quark-diquark approaches for baryons, but to the best of our knowledge, no
+attempt has been made for their comparison on the basis of quantum field theory. In the
+present work, we would like to make such a comparison, demonstrating that two of the
+most often-used quark-diquark models of baryons, which have usually been considered as
+separate, unrelated models of baryons, are in fact two non-overlapping parts of the same
+quark-diquark model.
+The first of these models, proposed more than thirty years ago [5, 6], is based on a
+description of three quarks using covariant Faddeev equations where the quark-quark t
+matrix is approximated by one or more diquark-pole terms (i.e., terms with a pole at the
+diquark mass, and with a residue that is expressed as an outer product of form factors Γ
+and Γ̄ for the transition between the diquark and two free quarks). The resulting coupled
+set of bound-state equations are illustrated in Fig. 1. Sometimes referred to as Poincaré
+covariant quark+diquark Faddeev equations [4, 7], and sometimes as quark-diquark BetheSalpeter equations [8, 9], they have been used extensively over the years, see [7–18] for a
+representative selection of works.
+The second model, proposed more that 25 years ago [19], is a relativistic description of
+the quark-diquark system using quasipotential equations (we will refer to it as the “quasipotential quark-diquark model”), which has likewise been often used over the years [19–29].
+
+Γc
+Φa
+
+=
+
+Φc
+Γ̄a
+
+FIG. 1. Poincaré covariant quark+diquark Faddeev equations of Ref. [5, 6]. The amplitudes Φa
+and Φc are Faddeev components coupling the baryon to quark (single line) and diquark (doubleline) states. The equation kernel corresponds to one-quark-exchange, with Γc and Γ̄a being vertex
+functions describing the disinegration and formation of the diquark.
+
+2
+
+Kb
+Φa
+
+=
+
+Φc
+Γ̄a
+
+Γc
+
+FIG. 2. Equations corresponding to the quasipotential quark-diquark model of Ref. [19]. Similar
+to Fig. 1, amplitudes Φa and Φc are Faddeev components coupling the baryon to quark-diquark
+states, with Γc and Γ̄a being diquark vertex functions. However, the kernel of this equation involves
+a single scattering of two quarks (quarks a and c in this case) via a potential Kb .
+
+In this model one first constructs a quark-quark potential of the form
+Vqq = Vgluon + Vconf
+
+(1)
+
+where Vgluon is the quark-quark (qq) one-gluon-exchange potential and Vconf is a local confining potential, and then uses this to construct the quark-diquark potential which then forms
+the kernel of a relativistic quark-diquark quasipotential equation for the baryon. Illustrated
+in Fig. 2, this bound-state equation again has the form of a Faddeev equation, but with
+a kernel corresponding to a single rescattering of two quarks via potential Vqq (specified in
+the diagram as quarks a and c scattering via a potential Kb (= Vqq ) with quark b being a
+spectator).
+In the following, we derive covariant triquark bound-state equations that are exact for the
+case where three-body forces are neglected. These equations are illustrated in Fig. 3, and
+have the form of Faddeev equations where the kernel consists of an infinite series involving
+successive numbers of quark-exchanges between quark-diquark states. It is evident that the
+Poincaré covariant quark+diquark Faddeev equations of Ref. [5, 6] correspond to keeping just
+the first term in the infinite series, and the quasipotential equations of Ref. [19] correspond
+to keeping just the second term in this series. As such, our triquark equations unify these
+two popular approaches for modeling baryons in terms of quark and diquark degrees of
+freedom. Moreover, it is evident that these two approaches should not be viewed as unrelated
+competing models of baryons, but rather, as different approximations of the same model.
+Indeed, any competition between these models at describing data, needs to be assessed
+by comparing their kernels, as these are non-overlapping terms appearing in the unified
+equations.
+3
+
+Γc
+Φa
+
+=
+
+
+
+Kb
++ ...
+
++
+Γ̄a
+
+Γ̄a
+
+
+
+Φc
+
+Γc
+
+FIG. 3. Unified quark+diquark equations derived in this paper. The kernel of this equation is an
+infinite series whose first two terms, separately, correspond to the model of Ref. [5, 6] as illustrated
+in Fig. 1, and the model of Ref. [19] as illustrated in Fig. 2, respectively.
+
+Ideally, the two approaches should be combined, with a kernel that is the sum of the first
+two terms of the infinite series illustrated in Fig. 3. Additionally, in light of the unification
+embodied in Fig. 3, all sorts of form-factors (electromagnetic, axial-vector, pseudoscalar,
+etc.) should also be unified correspondingly. This can be done by gauging the equation of
+Fig. 3 [30], thereby obtaining contributions to the baryon form factors coming from both of
+the first two kernels in this figure. By contrast, the current situation is that the baryon form
+factors are being pursued intensively in each of the two approaches separately (just in the
+last few years, the Poincaré covariant quark+diquark Faddeev equations have been used to
+calculate such form factors in Refs. [31–38] and the quasipotential quark-diquark approach
+has been used to calculate them in Refs. [39–46]).
+It is worth noting that analogous unified equations were derived for the tetraquark [47].
+
+II.
+
+DERIVATION
+A.
+
+Triquark equations for distinguishable quarks
+
+For clarity of presentation, we first consider the case of three distinguishable quarks. To
+describe such a system where only pairwise interactions are taken into account, we follow
+the formulation of Faddeev [48]. Thus, assigning labels 1, 2 and 3 to the quarks, and using
+a notation where (abc) is a cyclic permutation of (123), the three-body (3q) kernel, K, is
+written as
+K=
+
+X
+
+Ka
+
+(2)
+
+a
+
+where Ka is the kernel where quarks b and c are interacting while quark a is a spectator, as
+illustrated in Fig. 4.
+4
+
+q
+K1 = q
+q
+
+1
+2 ,
+3
+
+q
+K2 = q
+q
+
+2
+3 ,
+1
+
+q
+K3 = q
+q
+
+3
+1
+2
+
+FIG. 4. Structure of the terms Ka (a = 1, 2, 3) making up the three-body kernel K where only twobody forces are included. The coloured circles represent two-body kernels Kbc for the scattering of
+quarks b and c, as indicated.
+
+The 3q bound-state wave function for distinguishable quarks is then
+Ψ = G0 KΨ
+
+(3)
+
+where G0 is the fully disconnected part of the full 3q Green function G. The three-body
+kernels Ka can be used to define the Faddeev components Ψa as
+Ψa = G0 Ka Ψ,
+
+(4)
+
+X
+
+(5)
+
+so that
+Ψ=
+
+Ψa .
+
+a
+
+From Eq. (3) follow Faddeev’s equations for the components,
+Ψa =
+
+X
+
+G0 Ta δ̄ab Ψb
+
+(6)
+
+b
+
+where δ̄ab = 1 − δab and Ta is the t matrix corresponding to kernel Ka , so that
+Ta = Ka + Ka G0 Ta .
+
+(7)
+
+Assuming that the qq interaction admits the creation of a diquark, the Green function Ga
+describing the scattering of quarks b and c, will contain a corresponding pole at the diquark
+mass, so that one can write
+Ga = GPa + GR
+a
+
+(8)
+
+where GPa is the Green function’s pole term while GR
+a is its regular part. Then, because
+Ta = Ka + Ka Ga Ka ,
+
+(9)
+
+Ta = Ka + TaP + TaC
+
+(10)
+
+the t matrix Ta can be written as
+
+5
+
+where TaP is Ta ’s pole term, while the sum Ka + TaC constitutes its regular part. It is
+important to note that there is no overcounting in this decomposition; that is, the terms
+Ka , TaP and TaC do not overlap. Note that in the case of unconfined quarks, the analytic
+structure of Ta would be represented by its pole part, TaP , its part with the 2q branch point,
+TaC , and the part Ka again with a branch point, but above the 2q mass.
+We write Eq. (6) in matrix form as
+Ψ =TΨ
+
+(11)
+
+where Ψ is a column matrix of elements Ψa , and T is a square matrix whose (a, b)’th element
+is Tab = G0 Ta δ̄ab . Similarly we write Eq. (10) in matrix form as
+T =K+TP +TC
+
+(12)
+
+where Kab = G0 Ka δ̄ab , TabP = G0 TaP δ̄ab , and TabC = G0 Ta C δ̄ab . Equation (11) can then be
+recast as
+Ψ = (1 − K − T C )−1 T P Ψ .
+
+(13)
+
+Using the separable form of the pole term,
+TaP = Γa Da Γ̄a
+
+(14)
+
+where Γa (similarly Γ̄a ) and Da are the diquark form factor and propagator, respectively,
+Eq. (13) implies that
+Φa =
+
+X
+bc
+
+
+
+Γ̄a δ̄ab (1 − K − T C )−1 bc G0 Γc Dc Φc
+
+(15)
+
+where
+Φa =
+
+X
+
+Γ̄a δ̄ab Ψb .
+
+(16)
+
+b
+
+Expanding the inverse term in Eq. (15) as
+(1 − K − T C )−1 = 1 + K + T C + . . . ,
+
+(17)
+
+X
+
+(18)
+
+we obtain
+Φa =
+
+Γ̄a δ̄ab (δbc + G0 Kb δ̄bc + . . . )G0 Γc Dc Φc ,
+
+bc
+
+6
+
+which is illustrated in Fig. 3.
+It is apparent that the first two terms of this series correspond to the models of Refs.
+[5, 6] and Ref. [19], respectively. Indeed, keeping just the first term in the series results in
+the bound-state equation
+Φa =
+
+X
+
+Γ̄a δ̄ab G0 Γb Db Φb
+
+(19)
+
+b
+
+which is illustrated in Fig. 1 and coincides with the Poincaré covariant quark+diquark
+Faddeev equations of Ref. [5, 6], and keeping just the second term in the series results in
+the bound-state equation
+Φa =
+
+X
+
+Γ̄a δ̄ab G0 Kb δ̄bc G0 Γc Dc Φc ,
+
+(20)
+
+bc
+
+which is illustrated in Fig. 2 and coincides with the quasipotential quark-diquark equations
+of Ref. [19].
+Although each of the approaches of Refs. [5, 6] and Ref. [19], can be viewed as different
+approximations of the same unified equations, Eq. (18), the reality is that the quark-diquark
+picture of a baryon is described by a kernel that consists of at least the sum of the first two
+terms of the series in Eq. (18). This observation should clarify the true picture of quarkdiquark dynamics in baryons.
+
+B.
+
+Triquark equations for indistinguishable quarks
+
+To take into account the antisymmetry of identical quarks, we first note that the Faddeev
+equations for distinguishable particles, Eq. (6), possess fully antisymmetric solutions (as well
+as symmetric ones) where the component wave functions have the symmetry properties
+P23 Ψ1 = −Ψ1 ,
+
+P12 Ψ1 = −Ψ2 ,
+
+P31 Ψ1 = −Ψ3 ,
+
+P31 Ψ2 = −Ψ2 ,
+
+P23 Ψ2 = −Ψ3 ,
+
+P12 Ψ2 = −Ψ1 ,
+
+P12 Ψ3 = −Ψ3 ,
+
+P31 Ψ3 = −Ψ1 ,
+
+P23 Ψ3 = −Ψ2 ,
+
+(21)
+
+where Pab is the operator that exchanges the quantum numbers of particles a and b. Choosing
+a solution with these symmetry properties, Eq. (6) for Ψ1 reduces to
+Ψ1 = −G0 T1 P12 Ψ1
+7
+
+(22)
+
+where T1 results from antisymmetrizing the t matrix for distinguishable particles, T1d , using
+T1 = (1 − P23 )T1d .
+
+(23)
+
+Equation (22) can be seen most easily by using Eqs. (21):
+Ψ1 = G0 T1d (Ψ2 + Ψ3 ) = G0 T1d (1 − P23 )Ψ2
+= G0 (1 − P23 )T1d Ψ2
+= −G0 (1 − P23 )T1d P12 Ψ1 .
+
+(24)
+
+We can then again express T1 as
+T1 = K1 + T1P + T1C ,
+
+(25)
+
+where T1P and K1 + T1C are the pole and regular parts of T1 , but this time with all quantities
+antisymmetric under the interchange of quark 2 and 3’s quantum numbers. Equation (22)
+can then be recast as
+
+−1 P
+Ψ1 = − 1 + (K1 + T1C )P12
+T1 P12 Ψ1
+
+(26)
+
+T1P = Γ1 D1 Γ̄1 ,
+
+(27)
+
+where K1 = G0 K1 , T1P = G0 T1P , and T1C = G0 T1C . Using the separable form of the pole
+term,
+
+where the diquark form factors are now antisymmetric, P23 Γ1 = −Γ1 and Γ̄1 P23 = −Γ̄1 , we
+obtain the equation for the Faddeev component
+
+−1
+Φ1 = −Γ̄1 P12 1 + G0 (K1 + T1C )P12
+G0 Γ1 D1 Φ1
+
+(28)
+
+where
+
+Φ1 = Γ̄1 P12 Ψ1 .
+Expanding the inverse term in Eq. (28) as
+
+−1
+1 + G0 (K1 + T1C )P12
+= 1 − G0 (K1 + T1C )P12 + . . . ,
+
+leads to the final form of our unified equations for three identical quarks,
+
+
+Φ1 = −Γ̄1 P12 1 − G0 (K1 + T1C )P12 + . . . G0 Γ1 D1 Φ1 .
+
+(29)
+
+(30)
+
+(31)
+
+Keeping only the first two terms of the series for the kernel, and making the further approximation, T1C = 0, leads to the equation
+Φ1 = Γ̄1 P12 [1 + K1 P12 ] Γ1 d1 Φ1
+
+which covers both approaches of Refs. [5, 6] and Ref. [19].
+8
+
+(32)
+
+III.
+
+DISCUSSION
+
+We have derived covariant equations that describe the bound state of the triquark in terms
+of quark and diquark degrees of freedom. These equations are illustrated in Fig. 3, with exact
+expressions given for distinguishable quarks in Eq. (18), and for indistinguishable quarks in
+Eq. (31). An essential aspect of these equations is that they are exact in the approximation
+where only two-body forces are retained. As a result, they are expected to encompass, and
+thus unify, all descriptions of triquarks that use quark and diquark degrees of freedom, and
+that assume two-body forces only.
+It is worth noting that our procedure leading to Eq. (15), and hence to Eq. (18) and
+Eq. (31), is similar to the one used by Alt, Grassbeger, and Sandhas (AGS) to reduce
+three-particle Faddeev equations to that of coupled two-particle equations [49]; however,
+it differs from AGS in its details, and also in one essential way, namely, we have shown
+that the two-body matrix (in three-body space) Ta , can be decomposed into three mutually
+exclusive parts, as in Eq. (10), where the two-body kernel Ka appears explicitly (AGS and
+related prior works, decomposed two-body t matrices into two parts, a separable one, and
+the rest). It is just this decomposition of Ta into three-parts involving Ka , that has led to
+the unification of previous works, as outlined above.
+This unification is demonstrated explicitly for two of the most prominent and longest-used
+approaches in the literature, namely the one using the covariant quark+diquark Faddeev
+equations of Refs. [5, 6], and the one using quasipotential quark-diquark equations of Ref.
+[19]. In particular, the covariant quark+diquark Faddeev equations correspond to keeping
+just the first term of the kernel in our equations [the one-quark-exchange diagram in Fig. 3],
+and the quasipotential quark-diquark equations correspond to keeping just the second term
+of the kernel in our equations [the qq rescattering diagram in Fig. 3]. It is noteworthy that
+our equations reveal that these two approaches, which have been pursued separately for
+more than 25 years in order to model not only bound states of baryons, but also various
+types of baryon form factors (electromagnetic, axial-vector, scalar, etc.), use equations with
+two, different, non-overlapping, kernels. Our equations indicate that it is the sum of the
+first two terms in the kernel (at least) that should have been used instead. Although this
+is not an issue for cases where only one pair of quarks (out of three possible pairs) can
+form a diquark, in which case only the kernel of the quasipotential quark-diquark equations
+9
+
+contributes [19, 22], it may be a serious problem for other case, like that of three identical
+quarks where both kernels contribute and therefore should be summed [29].
+
+ACKNOWLEDGMENTS
+
+A.N.K. was supported by the Shota Rustaveli National Science Foundation (Grant No.
+FR17-354).
+
+[1] M. Anselmino, E. Predazzi, S. Ekelin, S. Fredriksson, and D. B. Lichtenberg, Diquarks,
+Rev. Mod. Phys. 65, 1199 (1993).
+[2] R. Alkofer and L. von Smekal, The infrared behavior of qcd green’s functions:
+
+Con-
+
+finement, dynamical symmetry breaking, and hadrons as relativistic bound states,
+Phys. Rept. 353, 281 (2001), arXiv:hep-ph/0007355.
+[3] G. Eichmann,
+
+H. Sanchis-Alepuz,
+
+R. Williams,
+
+R. Alkofer, and C. S. Fischer,
+
+Baryons as relativistic three-quark bound states, Prog. Part. Nucl. Phys. 91, 1 (2016),
+arXiv:1606.09602 [hep-ph].
+[4] M. Y. Barabanov et al., Diquark correlations in hadron physics: Origin, impact and evidence,
+Prog. Part. Nucl. Phys. 116, 103835 (2021), arXiv:2008.07630 [hep-ph].
+[5] R. T. Cahill,
+
+C. D. Roberts, and J. Praschifka, Baryon Structure and QCD,
+
+Austral. J. Phys. 42, 129 (1989).
+[6] H. Reinhardt, Hadronization of Quark Flavor Dynamics, Phys. Lett. B 244, 316 (1990).
+[7] C. Chen, L. Chang, C. D. Roberts, S. Wan, and D. J. Wilson, Spectrum of hadrons with
+strangeness, Few Body Syst. 53, 293 (2012), arXiv:1204.2553 [nucl-th].
+[8] M. Oettel, L. Von Smekal, and R. Alkofer, Relativistic three quark bound states in separable
+two quark approximation, Comput. Phys. Commun. 144, 63 (2002), arXiv:hep-ph/0109285.
+[9] G. Eichmann, C. S. Fischer, and H. Sanchis-Alepuz, Light baryons and their excitations,
+Phys. Rev. D 94, 094033 (2016), arXiv:1607.05748 [hep-ph].
+[10] M.
+
+Oettel,
+
+G.
+
+Hellstern,
+
+R.
+
+Alkofer,
+
+and
+
+H.
+
+Reinhardt,
+
+Octet
+
+and
+
+decuplet
+
+baryons in a covariant and confining diquark-quark model, Phys. Rev. C 58, 2459 (1998),
+arXiv:nucl-th/9805054.
+
+10
+
+[11] S. Ahlig,
+
+R. Alkofer,
+
+C. S. Fischer, M. Oettel,
+
+H. Reinhardt, and H. Weigel,
+
+Production processes as a tool to study parameterizations of quark confinement,
+Phys. Rev. D 64, 014004 (2001), arXiv:hep-ph/0012282.
+[12] G. Eichmann, A. Krassnigg, M. Schwinzerl, and R. Alkofer, A covariant view on the nucleons’
+quark core, Annals Phys. 323, 2505 (2008), arXiv:0712.2666 [hep-ph].
+[13] D. Nicmorus, G. Eichmann, A. Krassnigg, and R. Alkofer, Delta-baryon mass in a covariant
+Faddeev approach, Phys. Rev. D 80, 054028 (2009), arXiv:0812.1665 [hep-ph].
+[14] D. J. Wilson, I. C. Cloet, L. Chang, and C. D. Roberts, Nucleon and Roper
+electromagnetic elastic and transition form factors, Phys. Rev. C 85, 025205 (2012),
+arXiv:1112.2212 [nucl-th].
+[15] K.-l. Wang, Y.-x. Liu, L. Chang, C. D. Roberts, and S. M. Schmidt, Baryon and meson
+screening masses, Phys. Rev. D 87, 074038 (2013), arXiv:1301.6762 [nucl-th].
+[16] J. Segovia, C. D. Roberts, and S. M. Schmidt, Understanding the nucleon as a Borromean
+bound-state, Phys. Lett. B 750, 100 (2015), arXiv:1506.05112 [nucl-th].
+[17] C. Chen, G. I. Krein, C. D. Roberts, S. M. Schmidt, and J. Segovia, Spectrum
+and structure of octet and decuplet baryons and their positive-parity excitations,
+Phys. Rev. D 100, 054009 (2019), arXiv:1901.04305 [nucl-th].
+∓
+
+[18] L. Liu, C. Chen, and C. D. Roberts, Wave functions of (I, J π ) = ( 12 , 23 ) baryons,
+Phys. Rev. D 107, 014002 (2023), arXiv:2208.12353 [hep-ph].
+[19] D. Ebert, R. N. Faustov, V. O. Galkin, A. P. Martynenko, and V. A. Saleev, Heavy baryons
+in the relativistic quark model, Z. Phys. C 76, 111 (1997), arXiv:hep-ph/9607314.
+[20] D. Ebert, R. N. Faustov, V. O. Galkin, and A. P. Martynenko, Semileptonic decays of doubly
+heavy baryons in the relativistic quark model, Phys. Rev. D 70, 014018 (2004), [Erratum:
+Phys.Rev.D 77, 079903 (2008)], arXiv:hep-ph/0404280.
+[21] D. Ebert, R. N. Faustov, V. O. Galkin, and A. P. Martynenko, Properties of doubly heavy
+baryons in the relativistic quark model, Phys. Atom. Nucl. 68, 784 (2005).
+[22] D. Ebert, R. N. Faustov, and V. O. Galkin, Masses of heavy baryons in the relativistic quark
+model, Phys. Rev. D 72, 034026 (2005), arXiv:hep-ph/0504112.
+[23] D. Ebert, R. N. Faustov, and V. O. Galkin, Masses of excited heavy baryons in the relativistic
+quark model, Phys. Lett. B 659, 612 (2008), arXiv:0705.2957 [hep-ph].
+[24] D. Ebert, R. N. Faustov, and V. O. Galkin, Excited heavy tetraquarks with hidden charm,
+
+11
+
+Eur. Phys. J. C 58, 399 (2008), arXiv:0808.3912 [hep-ph].
+[25] D. Ebert, R. N. Faustov, and V. O. Galkin, Mass spectra of heavy baryons in the relativistic
+quark model, Phys. Atom. Nucl. 72, 178 (2009).
+[26] R. N. Faustov and V. O. Galkin, Strange baryon spectroscopy in the relativistic quark model,
+Phys. Rev. D 92, 054005 (2015), arXiv:1507.04530 [hep-ph].
+[27] R.
+
+N.
+
+Faustov
+
+and
+
+V.
+
+O.
+
+Galkin,
+
+Heavy
+
+baryon
+
+spectroscopy,
+
+EPJ Web Conf. 204, 08001 (2019), arXiv:1811.02232 [hep-ph].
+[28] R. N. Faustov and V. O. Galkin, Heavy Baryon Spectroscopy in the Relativistic Quark Model,
+Particles 3, 234 (2020).
+[29] R. N. Faustov and V. O. Galkin, Triply heavy baryon spectroscopy in the relativistic quark
+model, Phys. Rev. D 105, 014013 (2022), arXiv:2111.07702 [hep-ph].
+[30] A. N. Kvinikhidze and B. Blankleider, Gauging of equations method. i. electromagnetic currents of three distinguishable particles, Phys. Rev. C 60, 044003 (1999),
+arXiv:nucl-th/9901001; Gauging of equations method. ii. electromagnetic currents of three
+identical particles, Phys. Rev. C 60, 044004 (1999), arXiv:nucl-th/9901002.
+[31] C. Chen, Y. Lu, D. Binosi, C. D. Roberts, J. Rodrı́guez-Quintero, and J. Segovia, Nucleon-toRoper electromagnetic transition form factors at large Q2 , Phys. Rev. D 99, 034013 (2019),
+arXiv:1811.08440 [nucl-th].
+[32] Y. Lu, C. Chen, Z.-F. Cui, C. D. Roberts, S. M. Schmidt, J. Segovia, and H. S. Zong,
+Transition form factors: γ ∗ + p → ∆(1232), ∆(1600), Phys. Rev. D 100, 034001 (2019),
+arXiv:1904.03205 [nucl-th].
+[33] Z.-F. Cui, C. Chen, D. Binosi, F. de Soto, C. D. Roberts, J. Rodrı́guez-Quintero, S. M.
+Schmidt, and J. Segovia, Nucleon elastic form factors at accessible large spacelike momenta,
+Phys. Rev. D 102, 014043 (2020), arXiv:2003.11655 [hep-ph].
+[34] C. Chen, C. S. Fischer, C. D. Roberts, and J. Segovia, Form Factors of the Nucleon Axial
+Current, Phys. Lett. B 815, 136150 (2021), arXiv:2011.14026 [hep-ph].
+[35] K. Raya, L. X. Gutiérrez-Guerrero, A. Bashir, L. Chang, Z.-F. Cui, Y. Lu, C. D.
+Roberts, and J. Segovia, Dynamical diquarks in the γ (∗) p → N (1535) 12
+
+−
+
+transition,
+
+Eur. Phys. J. A 57, 266 (2021), arXiv:2108.02306 [hep-ph].
+[36] C. Chen,
+
+C. S. Fischer,
+
+C. D. Roberts, and J. Segovia, Nucleon axial-vector
+
+and pseudoscalar form factors and PCAC relations, Phys. Rev. D 105, 094022 (2022),
+
+12
+
+arXiv:2103.02054 [hep-ph].
+[37] C. Chen and C. D. Roberts, Nucleon axial form factor at large momentum transfers,
+Eur. Phys. J. A 58, 206 (2022), arXiv:2206.12518 [hep-ph].
+[38] P.-L. Yin, C. Chen, C. S. Fischer, and C. D. Roberts, ∆-baryon axialvector and pseudoscalar
+form factors, and associated PCAC relations, (2023), arXiv:2305.09831 [hep-ph].
+[39] R. N. Faustov and V. O. Galkin, Semileptonic decays of Λc baryons in the relativistic quark
+model, Eur. Phys. J. C 76, 628 (2016), arXiv:1610.00957 [hep-ph].
+[40] R. N. Faustov and V. O. Galkin, Rare Λb → nl+ l− decays in the relativistic quark-diquark
+picture, Mod. Phys. Lett. A 32, 1750125 (2017), arXiv:1706.01379 [hep-ph].
+[41] R. N. Faustov and V. O. Galkin, Rare Λb → Λl+ l− and Λb → Λγ decays in the relativistic
+quark model, Phys. Rev. D 96, 053006 (2017), arXiv:1705.07741 [hep-ph].
+[42] R. N. Faustov and V. O. Galkin, Relativistic description of the Ξb baryon semileptonic decays,
+Phys. Rev. D 98, 093006 (2018), arXiv:1810.03388 [hep-ph].
+[43] R. N. Faustov and V. O. Galkin, Semileptonic Ξc baryon decays in the relativistic quark
+model, Eur. Phys. J. C 79, 695 (2019), arXiv:1905.08652 [hep-ph].
+[44] R. N. Faustov and V. O. Galkin, Semileptonic Decays of Heavy Baryons in the Relativistic
+Quark Model, Particles 3, 208 (2020).
+[45] V.
+
+O.
+
+Galkin
+
+and
+
+R.
+
+N.
+
+Faustov,
+
+Semileptonic
+
+Decays
+
+of
+
+Heavy
+
+Baryons,
+
+Phys. Part. Nucl. 51, 625 (2020).
+[46] A. O. Davydov, R. N. Faustov, and V. O. Galkin, Rare radiative Ξb−→ Ξ−γ decay in the
+relativistic quark model, Mod. Phys. Lett. A 37, 2250158 (2022), arXiv:2208.00833 [hep-ph].
+[47] A.
+
+N.
+
+Kvinikhidze
+
+and
+
+B.
+
+Blankleider,
+
+Unified
+
+tetraquark
+
+equations,
+
+Phys. Rev. D 107, 094014 (2023), arXiv:2302.11542 [hep-ph].
+[48] L. D. Faddeev, Scattering theory for a three particle system, Sov. Phys. JETP 12, 1014 (1961).
+[49] E. O. Alt, P. Grassberger, and W. Sandhas, Reduction of the three - particle collision problem
+to multichannel two - particle Lippmann-Schwinger equations, Nucl. Phys. B 2, 167 (1967).
+
+13
+
+

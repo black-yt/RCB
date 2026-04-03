@@ -1,0 +1,15 @@
+{
+  "num_frames": 100,
+  "unique_gt_ids": 200,
+  "mean_gt_per_frame": 200.0,
+  "mean_detections_per_frame": 158.2,
+  "min_detections_per_frame": 142,
+  "max_detections_per_frame": 170,
+  "estimated_detection_rate": 0.791,
+  "score_mean": 0.2656887615315739,
+  "score_std": 0.13003822060107847,
+  "pseudo_depth_mean": 0.6920258583651201,
+  "pseudo_depth_std": 0.1321279419465425,
+  "pairwise_iou_mean_sample": 0.033246829586347906,
+  "pairwise_iou_gt005_ratio_sample": 0.15051186017478152
+}

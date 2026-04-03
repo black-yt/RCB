@@ -1,0 +1,249 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_zoom_proxy.py",
+    "path": "code/analyze_zoom_proxy.py",
+    "type": "file",
+    "size": 22820,
+    "mtime": 1775132916.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "demo_imgs",
+    "path": "data/demo_imgs",
+    "type": "directory"
+  },
+  {
+    "name": "demo1.png",
+    "path": "data/demo_imgs/demo1.png",
+    "type": "file",
+    "size": 179505,
+    "mtime": 1770297040.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "demo2.png",
+    "path": "data/demo_imgs/demo2.png",
+    "type": "file",
+    "size": 2121327,
+    "mtime": 1770297040.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "method_case.png",
+    "path": "data/demo_imgs/method_case.png",
+    "type": "file",
+    "size": 1626509,
+    "mtime": 1770297040.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "mplconfig",
+    "path": "outputs/mplconfig",
+    "type": "directory"
+  },
+  {
+    "name": "fontlist-v390.json",
+    "path": "outputs/mplconfig/fontlist-v390.json",
+    "type": "file",
+    "size": 65187,
+    "mtime": 1775132912.0,
+    "exported": true
+  },
+  {
+    "name": "budget_sensitivity.csv",
+    "path": "outputs/budget_sensitivity.csv",
+    "type": "file",
+    "size": 3934,
+    "mtime": 1775132912.0,
+    "exported": true
+  },
+  {
+    "name": "budget_summary.csv",
+    "path": "outputs/budget_summary.csv",
+    "type": "file",
+    "size": 1186,
+    "mtime": 1775132912.0,
+    "exported": true
+  },
+  {
+    "name": "input_montage.png",
+    "path": "outputs/input_montage.png",
+    "type": "file",
+    "size": 2207933,
+    "mtime": 1775132912.0,
+    "exported": false
+  },
+  {
+    "name": "main_metrics.csv",
+    "path": "outputs/main_metrics.csv",
+    "type": "file",
+    "size": 1046,
+    "mtime": 1775132912.0,
+    "exported": true
+  },
+  {
+    "name": "method_summary.csv",
+    "path": "outputs/method_summary.csv",
+    "type": "file",
+    "size": 340,
+    "mtime": 1775132912.0,
+    "exported": true
+  },
+  {
+    "name": "resolution_sensitivity.csv",
+    "path": "outputs/resolution_sensitivity.csv",
+    "type": "file",
+    "size": 1782,
+    "mtime": 1775132912.0,
+    "exported": true
+  },
+  {
+    "name": "resolution_summary.csv",
+    "path": "outputs/resolution_summary.csv",
+    "type": "file",
+    "size": 565,
+    "mtime": 1775132910.0,
+    "exported": true
+  },
+  {
+    "name": "selection_metadata.json",
+    "path": "outputs/selection_metadata.json",
+    "type": "file",
+    "size": 2261,
+    "mtime": 1775132912.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 4558893,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8166173,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 6663910,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 7823571,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "budget_sensitivity.png",
+    "path": "report/images/budget_sensitivity.png",
+    "type": "file",
+    "size": 151805,
+    "mtime": 1775132912.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 2950130,
+    "mtime": 1775132914.0,
+    "exported": false
+  },
+  {
+    "name": "guided_crop_overlays.png",
+    "path": "report/images/guided_crop_overlays.png",
+    "type": "file",
+    "size": 3257791,
+    "mtime": 1775132916.0,
+    "exported": false
+  },
+  {
+    "name": "method_comparison.png",
+    "path": "report/images/method_comparison.png",
+    "type": "file",
+    "size": 98354,
+    "mtime": 1775132916.0,
+    "exported": true
+  },
+  {
+    "name": "qualitative_reconstructions.png",
+    "path": "report/images/qualitative_reconstructions.png",
+    "type": "file",
+    "size": 3264460,
+    "mtime": 1775132916.0,
+    "exported": false
+  },
+  {
+    "name": "resolution_sensitivity.png",
+    "path": "report/images/resolution_sensitivity.png",
+    "type": "file",
+    "size": 129588,
+    "mtime": 1775132916.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 10798,
+    "mtime": 1775132917.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4815,
+    "mtime": 1775068476.0,
+    "exported": true
+  }
+]

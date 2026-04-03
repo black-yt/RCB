@@ -1,0 +1,37 @@
+{
+  "n_records": 832,
+  "n_projects": 211,
+  "year_min": 2000,
+  "year_max": 2025,
+  "n_years": 26,
+  "n_states": 13,
+  "top_state": {
+    "state": "california",
+    "state_abbrev": "CA",
+    "records": 215,
+    "share_pct": 25.841346153846157
+  },
+  "top_operator": {
+    "operator_affiliation": "north american weather consultants",
+    "records": 201,
+    "share_pct": 24.158653846153847
+  },
+  "top_purpose_mention": {
+    "purpose": "augment snowpack",
+    "records": 516,
+    "share_pct_of_mentions": 46.994535519125684
+  },
+  "top_agent_mention": {
+    "agent": "silver iodide",
+    "records": 795,
+    "share_pct_of_mentions": 69.98239436619718
+  },
+  "top_apparatus_mention": {
+    "apparatus": "ground",
+    "records": 592,
+    "share_pct_of_mentions": 61.73096976016684
+  },
+  "records_missing_control_area": 455,
+  "records_missing_duration": 9,
+  "median_duration_days": 165.0
+}

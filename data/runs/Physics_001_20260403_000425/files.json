@@ -1,0 +1,197 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 18655,
+    "mtime": 1775199740.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "MATBG Superfluid Stiffness Core Dataset.txt",
+    "path": "data/MATBG Superfluid Stiffness Core Dataset.txt",
+    "type": "file",
+    "size": 19467,
+    "mtime": 1770189695.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 2769,
+    "mtime": 1775199736.0,
+    "exported": true
+  },
+  {
+    "name": "current_dc_analysis.csv",
+    "path": "outputs/current_dc_analysis.csv",
+    "type": "file",
+    "size": 7592,
+    "mtime": 1775199736.0,
+    "exported": true
+  },
+  {
+    "name": "current_microwave_analysis.csv",
+    "path": "outputs/current_microwave_analysis.csv",
+    "type": "file",
+    "size": 5079,
+    "mtime": 1775199736.0,
+    "exported": true
+  },
+  {
+    "name": "density_analysis.csv",
+    "path": "outputs/density_analysis.csv",
+    "type": "file",
+    "size": 13927,
+    "mtime": 1775199736.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1177,
+    "mtime": 1775199736.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 2167,
+    "mtime": 1775199736.0,
+    "exported": true
+  },
+  {
+    "name": "temperature_analysis.csv",
+    "path": "outputs/temperature_analysis.csv",
+    "type": "file",
+    "size": 20386,
+    "mtime": 1775199736.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3666801,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 225641,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3542674,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 17317606,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_overview_metrics.png",
+    "path": "report/images/analysis_overview_metrics.png",
+    "type": "file",
+    "size": 63356,
+    "mtime": 1775199738.0,
+    "exported": true
+  },
+  {
+    "name": "current_dependence.png",
+    "path": "report/images/current_dependence.png",
+    "type": "file",
+    "size": 279477,
+    "mtime": 1775199738.0,
+    "exported": true
+  },
+  {
+    "name": "density_dependence.png",
+    "path": "report/images/density_dependence.png",
+    "type": "file",
+    "size": 217414,
+    "mtime": 1775199738.0,
+    "exported": true
+  },
+  {
+    "name": "quadratic_suppression_validation.png",
+    "path": "report/images/quadratic_suppression_validation.png",
+    "type": "file",
+    "size": 134054,
+    "mtime": 1775199738.0,
+    "exported": true
+  },
+  {
+    "name": "temperature_dependence.png",
+    "path": "report/images/temperature_dependence.png",
+    "type": "file",
+    "size": 286381,
+    "mtime": 1775199738.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 18875,
+    "mtime": 1775199741.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5571,
+    "mtime": 1775145865.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "equilibrium_spectrum_figure": "report/images/fig_equilibrium_spectrum.png",
+  "pumped_spectra_figure": "report/images/fig_pumped_spectra_vs_angle.png",
+  "floquet_replicas_figure": "report/images/fig_floquet_replicas_overlay.png",
+  "polarization_dependence_figure": "report/images/fig_polarization_dependence.png",
+  "polarization_fit_parameters": {
+    "A_cos2": 0.1681301335800599,
+    "A_sin2": 0.1655210985992439,
+    "B_offset": 0.3336512321793037
+  }
+}

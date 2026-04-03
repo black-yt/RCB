@@ -1,0 +1,22 @@
+{
+  "inputs": {
+    "fig6": "data/fig6_data.csv",
+    "fig7": "data/fig7_data.csv",
+    "fig8": "data/fig8_data.csv"
+  },
+  "outputs": [
+    "outputs/data_validation_summary.csv",
+    "outputs/fig6_summary_statistics.csv",
+    "outputs/fig7_mode_summary_statistics.csv",
+    "outputs/fig8_extrapolation_summary_statistics.csv",
+    "outputs/mode_trend_analysis.csv",
+    "outputs/extrapolation_order_comparison.csv",
+    "outputs/key_findings.json"
+  ],
+  "figures": [
+    "report/images/figure_resolution_distribution.png",
+    "report/images/figure_mode_comparison.png",
+    "report/images/figure_extrapolation_comparison.png",
+    "report/images/figure_catalog_overview.png"
+  ]
+}

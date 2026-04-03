@@ -1,0 +1,296 @@
+TYPE Hypothesis and Theory
+PUBLISHED 21 October 2022
+DOI 10.3389/fonc.2022.1033145
+
+OPEN ACCESS
+EDITED BY
+
+Xu Wang,
+Afﬁliated Hospital of Jiangsu
+University, China
+REVIEWED BY
+
+Yupeng Wang,
+Southern Medical University, China
+Mario Leonardo Squadrito,
+Vita-Salute San Raffaele University,
+Italy
+Thomas Kerzel,
+Vita-Salute San Raffaele University,
+Italy, in collaboration with
+reviewer MLS
+Ioannis S. Pateras,
+National and Kapodistrian University of
+Athens, Greece
+Maria-Concepcion Gutierrez-Ruiz,
+Autonomous Metropolitan University,
+Mexico
+*CORRESPONDENCE
+
+Hao-zhen Ren
+renhaozhen1984@163.com
+Xing-yu Wu
+xingyuwu@sohu.com
+†
+These authors have contributed
+equally to this work
+
+SPECIALTY SECTION
+
+This article was submitted to
+Molecular and Cellular Oncology,
+a section of the journal
+Frontiers in Oncology
+RECEIVED 31 August 2022
+ACCEPTED 30 September 2022
+PUBLISHED 21 October 2022
+CITATION
+
+Xia J-k, Tang N, Wu X-y and Ren H-z
+(2022) Deregulated bile acids may
+drive hepatocellular carcinoma
+metastasis by inducing an
+immunosuppressive
+microenvironment.
+Front. Oncol. 12:1033145.
+doi: 10.3389/fonc.2022.1033145
+COPYRIGHT
+
+© 2022 Xia, Tang, Wu and Ren. This is
+an open-access article distributed under
+the terms of the Creative Commons
+Attribution License (CC BY). The use,
+distribution or reproduction in other
+forums is permitted, provided the
+original author(s) and the copyright
+owner(s) are credited and that the
+original publication in this journal is
+cited, in accordance with accepted
+academic practice. No use,
+distribution or reproduction is
+permitted which does not comply with
+these terms.
+
+Frontiers in Oncology
+
+Deregulated bile acids may drive
+hepatocellular carcinoma
+metastasis by inducing an
+immunosuppressive
+microenvironment
+Jin-kun Xia 1,2†, Ning Tang 1†, Xing-yu Wu 1*
+and Hao-zhen Ren 1,2*
+1
+Department of Hepatobiliary Surgery, The Afﬁliated Drum Tower Hospital of Nanjing University
+Medical School, Nanjing, China, 2 Institute of Hepatobiliary Surgery, Nanjing University,
+Nanjing, China
+
+Bile acids (BAs) are physiological detergents that can not only promote the
+digestion and absorption of lipids, but also may be a potential carcinogen. The
+accumulation of BAs in the body can lead to cholestatic liver cirrhosis and even
+liver cancer. Recently, studies demonstrated that BAs are highly accumulated in
+metastatic lymph nodes, but not in normal healthy lymph nodes or primary
+tumors. Lymph node metastasis is second only to hematogenous metastasis in
+liver cancer metastasis, and the survival and prognosis of hepatocellular
+carcinoma (HCC) patients with lymph node metastasis are signiﬁcantly worse
+than those without lymph node metastasis. Meanwhile, component of BAs was
+found to signiﬁcantly enhance the invasive potential of HCC cells. However, it is
+still poorly understood how deregulated BAs fuel the metastasis process of
+liver cancer. The tumor microenvironment is a complex cellular ecosystem
+that evolves with and supports tumor cells during their malignant
+transformation and metastasis progression. Aberrant BAs metabolism were
+found to modulate tumor immune microenvironment by preventing natural
+killer T (NKT) cells recruitment and increasing M2-like tumor-associated
+macrophages (TAMs) polarization, thus facilitate tumor immune escape and
+HCC development. Based on these available evidence, we hypothesize that a
+combination of genetic and epigenetic factors in cancerous liver tissue inhibits
+the uptake and stimulates the synthesis of BAs by the liver, and excess BAs
+further promote liver carcinogenesis and HCC metastasis by inducing
+immunosuppressive microenvironment.
+KEYWORDS
+
+bile acids, hepatocellular carcinoma, metastasis, gut microbiota, immunosuppressive
+microenvironment
+
+01
+
+frontiersin.org
+
+Xia et al.
+
+10.3389/fonc.2022.1033145
+
+The tumor immune microenvironment (TIME) refers to the
+microenvironment related to immunological components such
+as T cells, tumor-associated macrophages (TAMs), myeloidderived suppressor (MDSCs), and NK cells within tumors.
+TIME can be divided into three types, namely the inﬁltratedexcluded (I-E) TIMEs, inﬁltrated-inﬂamed (I-I) TIMEs, and
+tertiary lymphoid structures (TLSs) TIMEs according to recent
+human and mouse data. For detailed classiﬁcation and
+explanation, please refer to (12). TIME is an important part of
+the tumor microenvironment. Cancer development and
+progression is inﬂuenced by the immune cell composition in
+TIME and controlled by the host immune system. Most tumors
+undergo a transition from a controllable inﬂammatory response
+to an uncontrollable inﬂammatory response, thereby generating
+a microenvironment suitable for their growth to promote tumor
+proliferation and invasion, metastasis, angiogenesis and immune
+escape (13). The proportion of different immune cells in TIME
+and certain immune system-related biomarkers can be used for
+cancer detection, prognosis and evaluation of treatment
+response (14). In addition, TIME also contains a variety of
+potential cancer therapeutic targets, such as CTLA-4 and PD-1/
+PD-L1, and other immune checkpoint blockade-related targets
+are the current hot spots for tumor targeted therapy (15).
+Meanwhile, crosstalk between cancer cells and immune cells in
+TIME creates an environment that promotes tumor growth and
+metastasis, which is important for tumor initiation and
+progression (16). For example, in TIME, the interaction
+between the ligand PDL1 on the surface of tumor cells and the
+PD-1 receptor on the surface of T cells enables tumor cell
+immunosuppressive signals to be transmitted to the interior of
+T cells, inhibiting the immune function of T cells, thereby
+preventing the immune system attacks tumor cells, resulting in
+immune escape (17). Exploring the regulatory mechanisms of
+the TIME not only deepens our understanding of tumor cells
+behavior, but also has the potential to provide new insights into
+drugs that promote immune checkpoint inhibitors-related antitumor therapy.
+The disruption of local immune homeostasis is an important
+reason for the development of many cancers, including HCC
+(18). It’s reported that a variety of immune cells express BAs
+receptors, and the disorder of BAs balance affects the
+differentiation and function of various immune cells, thereby
+affecting the occurrence and development of HCC (19).
+Recently, researchers observed an interesting phenomenon:
+BAs are highly accumulated in metastatic lymph nodes, but
+not normal healthy lymph nodes or primary tumors, which
+brought us with some new questions: (1) What drives BAs
+accumulation in metastatic lymph nodes? Are the BAs
+produced by the lymph node metastases themselves, or from
+circulating sources? (2) Does high accumulation of BAs in
+metastatic lymph nodes accelerate liver cancer metastasis, and
+
+Introduction
+Liver cancer is one of the common digestive system
+malignant tumors, and its incidence is increasing year by year
+(1). The most common histologic type of liver cancer is
+hepatocellular carcinoma (HCC), which is usually diagnosed
+with a poor prognosis, especially at advanced stages owing to the
+high rate of recurrence and metastasis (2). Although
+considerable progress and advances in the treatments in recent
+decades, including interventional therapy, curative resection,
+liver transplantation, targeted therapy, and immunotherapy,
+prognosis of HCC remains far from satisfying (3). The 5-year
+survival rate of advanced HCC patients remains poor generally
+because of the propensity for metastasis (4). Therefore, it is
+urgent to further elucidate the molecular pathogenesis of HCC
+metastasis in order to develop novel therapeutic treatments and
+improve the survival rate of this malignancy.
+Bile acids (BAs) are a general term for a class of amphiphilic
+molecules produced by cholesterol metabolism, and their functions
+involve lipid digestion, absorption and hormone synthesis (5). In
+the human liver, cholesterol is metabolized to primary BAs,
+including cholic acid (CA) and chenodeoxycholic acid (CDCA),
+and then enters the gut for further conversion to the corresponding
+secondary BAs (6). CA and CDCA undergo biotransformation such
+as dissociation, epimerization, oxidation and 7a dehydroxylation
+activity by intestinal bacteria in the colorectum and hydrolases to
+generate secondary BAs such as deoxycholic acid (DCA) and
+lithocholic acid (LCA) (7). The secondary BAs can also be
+conjugated to taurine or glycine to form conjugated BAs.
+Secondary BAs are highly “aggressive” and toxic, thereby changes
+in BAs composition are the main cause of dysregulated BAs-related
+liver disease (8). About 95% of the secondary BAs are reabsorbed by
+the intestine, return to the liver through the portal vein, and then
+pass through the biliary tract together with the newly synthesized
+conjugated BAs, which is called the hepatoenteral circulation of BAs
+(9). In the physiological state, the above process is subject to a
+sophisticated regulation of a series of positive and negative feedback
+mechanisms. For example, the nuclear farnesoid X receptor (FXR)
+and membrane Takeda G protein-coupled receptor 5 (TGR5) have
+high afﬁnity for BAs, and these receptors coordinate with each other
+to maintain BAs homeostasis (10). The expression level of FXR is
+down-regulated, and the methylation level of TGR5 promoter is upregulated in HCC, revealing the complex role of the genetic and
+epigenetic alterations in HCC environment caused by bile acid
+metabolism disorder. The liver has a high-efﬁciency scavenging
+effect to maintain the concentration of BAs at a low level, so the
+content of BAs in peripheral blood plasma is very small. The
+determination of BAs in plasma can reﬂect the synthesis, uptake
+and secretion functions of hepatocytes. Therefore, alterations in BAs
+composition and distribution can be biomarkers and prognostic
+indicators for liver disease (11).
+
+Frontiers in Oncology
+
+02
+
+frontiersin.org
+
+Xia et al.
+
+10.3389/fonc.2022.1033145
+
+concentrations were signiﬁcantly elevated in patients with
+HCC compared with normal subjects, thus persistence of
+elevated serum total BAs is considered an independent risk
+factor of some HCC patients (23). Elevated serum BAs may be
+mainly caused by leakage of damaged hepatocytes or changes in
+the activity of BAs transfer proteins, not necessarily by upregulation of BAs synthesis. Elevated levels of BAs in the blood
+may further aggravate liver damage due to their cytotoxicity, and
+at the same time act as signaling molecules to promote the
+formation of liver tumors (24). Genetic environment and other
+factors cause bile outﬂow disorder, which can lead to cholestasis,
+resulting in a severe increase in serum and intrahepatic BAs
+levels, especially chenodeoxycholic acid levels, and these patients
+have a higher risk of developing liver cancer in childhood (25).
+During cholestasis, high concentrations of BAs can generate
+reactive oxygen species, damage cell membranes, damage
+mitochondria, and lead to DNA mutations (26). Therefore, the
+repair response of liver inﬂammation and damage caused by
+toxic BAs may promote tumorigenesis.
+
+if so, what is its mechanism? (3) Do accumulated BAs exert some
+kind of ‘signal’ to regulate the TIME, thereby evading immune
+surveillance and promoting HCC metastasis?
+
+Our hypothesis
+We proposed that a combination of genetic and epigenetic
+factors, including gut microbiota, epigenetic regulation,
+hepatocyte function, metabolic reprogramming, and more, in
+cancerous liver tissue inhibits the uptake and stimulates the
+synthesis of BAs by the liver, and excess BAs further promote
+liver carcinogenesis and HCC metastasis by inducing
+immunosuppressive microenvironment (Figure 1).
+
+Justiﬁcation of hypothesis
+BAs are highly accumulated in HCC
+BAs produced in the liver are metabolized by enzymes from
+gut bacteria and are essential for maintaining a healthy gut
+microbiota, balanced lipid, carbohydrate metabolism, and innate
+immunity (20). The production, transport, metabolism and
+excretion of BAs are carefully regulated by the body. The
+determination of BAs in plasma can reﬂect the synthesis,
+uptake and secretion functions of hepatocytes (21). Studies
+found that BAs homeostasis was disrupted during the
+occurrence and development of HCC (22). Serum BAs
+
+Regulations of BAs in HCC
+BAs receptors play an important role in regulating BAs
+synthesis, metabolism and transport. There is a high intracellular
+BAs load during cholestasis, and the main detoxiﬁcation
+pathway is to activate BAs receptors to protect liver cells and
+attenuate BAs toxicity (27). Disorders of nuclear receptor
+regulation and genetic variation may promote the occurrence
+
+FIGURE 1
+
+The graphical hypothesis of our study produced by FigDraw. Aberrant BAs metabolism in hepatocellular carcinoma (HCC) modulate tumor
+immune microenvironment by preventing natural killer T (NKT) cells recruitment and increasing M2-like tumor-associated macrophages (TAMs)
+polarization, thus facilitate liver carcinogenesis and HCC metastasis by inducing immunosuppressive microenvironment.
+
+Frontiers in Oncology
+
+03
+
+frontiersin.org
+
+

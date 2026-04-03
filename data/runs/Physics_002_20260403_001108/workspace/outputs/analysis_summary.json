@@ -1,0 +1,175 @@
+{
+  "workspace": "/mnt/shared-storage-user/yetianlin/ResearchClawBench/workspaces/Physics_002_20260403_001108",
+  "xeb_records": 500,
+  "mb_records": 950,
+  "missing_xeb_pairs": 400,
+  "missing_mb_pairs": 0,
+  "xeb_settings": [
+    [
+      16,
+      12
+    ],
+    [
+      24,
+      12
+    ],
+    [
+      32,
+      12
+    ],
+    [
+      40,
+      8
+    ],
+    [
+      40,
+      10
+    ],
+    [
+      40,
+      12
+    ],
+    [
+      40,
+      14
+    ],
+    [
+      40,
+      16
+    ],
+    [
+      40,
+      18
+    ],
+    [
+      40,
+      20
+    ]
+  ],
+  "mb_settings": [
+    [
+      16,
+      12
+    ],
+    [
+      24,
+      12
+    ],
+    [
+      32,
+      12
+    ],
+    [
+      40,
+      8
+    ],
+    [
+      40,
+      10
+    ],
+    [
+      40,
+      12
+    ],
+    [
+      40,
+      14
+    ],
+    [
+      40,
+      16
+    ],
+    [
+      40,
+      18
+    ],
+    [
+      40,
+      20
+    ],
+    [
+      48,
+      12
+    ],
+    [
+      56,
+      8
+    ],
+    [
+      56,
+      10
+    ],
+    [
+      56,
+      12
+    ],
+    [
+      56,
+      14
+    ],
+    [
+      56,
+      16
+    ],
+    [
+      56,
+      18
+    ],
+    [
+      56,
+      20
+    ],
+    [
+      56,
+      24
+    ]
+  ],
+  "figures": {
+    "data_overview": "report/images/data_overview_by_setting.png",
+    "xeb_depth_N40": "report/images/xeb_fidelity_vs_depth_N40.png",
+    "xeb_size_d12": "report/images/xeb_fidelity_vs_size_d12.png",
+    "xeb_instance_spread_N40": "report/images/xeb_instance_spread_N40.png",
+    "mb_depth": "report/images/mb_success_vs_depth.png"
+  },
+  "headline_metrics": {
+    "xeb_N40_d12_mean": 0.4260097944481408,
+    "xeb_N40_d12_sem_across_instances": 0.03903146480066378,
+    "best_xeb_setting": {
+      "protocol": "XEB",
+      "metric": "xeb_fidelity",
+      "N": 16,
+      "d": 12,
+      "num_instances": 50,
+      "mean": 0.7996194809368217,
+      "std": 0.3197196599145104,
+      "sem": 0.04521518792084142,
+      "min_value": 0.05198542430440993,
+      "max_value": 1.4410118468811164
+    },
+    "worst_xeb_setting": {
+      "protocol": "XEB",
+      "metric": "xeb_fidelity",
+      "N": 40,
+      "d": 18,
+      "num_instances": 50,
+      "mean": 0.2661268834768434,
+      "std": 0.29159297053283834,
+      "sem": 0.04123747336201982,
+      "min_value": -0.3759339525970561,
+      "max_value": 0.8103805469133223
+    },
+    "best_mb_setting": {
+      "protocol": "MB",
+      "metric": "ideal_success_prob",
+      "N": 16,
+      "d": 12,
+      "num_instances": 50,
+      "mean": 0.7839999999999999,
+      "std": 0.07853245786791288,
+      "sem": 0.011106166700329607,
+      "min_value": 0.6,
+      "max_value": 1.0
+    },
+    "mb_N40_d12_mean_success": 0.5010000000000001
+  }
+}

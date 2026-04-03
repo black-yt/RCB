@@ -1,0 +1,81 @@
+{
+  "task": "MATBG superfluid stiffness analysis",
+  "data_source": "data/MATBG Superfluid Stiffness Core Dataset.txt",
+  "outputs_generated": [
+    "outputs/density_analysis.csv",
+    "outputs/temperature_analysis.csv",
+    "outputs/current_dc_analysis.csv",
+    "outputs/current_microwave_analysis.csv",
+    "outputs/analysis_summary.json",
+    "report/images/density_dependence.png",
+    "report/images/temperature_dependence.png",
+    "report/images/current_dependence.png",
+    "report/images/quadratic_suppression_validation.png",
+    "report/images/analysis_overview_metrics.png"
+  ],
+  "notes": {
+    "reconstructed_observables": "DC resistance and resonance frequency are reported as stiffness-derived proxies because the provided dataset directly contains superfluid-stiffness traces rather than raw transport/resonator readout channels.",
+    "model_interpretation": "Use the temperature and current fit metrics to assess unconventional power-law behavior and quadratic current suppression."
+  },
+  "density_summary": {
+    "n_points": 50,
+    "peak_density_m^-2": 5000000000000000.0,
+    "peak_experimental_avg_stiffness": 228063826500.0,
+    "mean_exp_to_conventional_ratio": 53.88631828585516,
+    "mean_exp_to_geometric_ratio": 11.645850194749412,
+    "max_hole_electron_fractional_asymmetry": 0.05141823531715919
+  },
+  "temperature_summary": {
+    "Tc_K": 1.0,
+    "Ds0": 100.0,
+    "best_reference_model": "BCS_like_n2",
+    "reference_model_scores": {
+      "BCS_like_n2": {
+        "rmse": 32.18826329600608,
+        "r2": -12.686191797683389
+      },
+      "nodal_linear": {
+        "rmse": 42.093713184879235,
+        "r2": -22.40572007688044
+      },
+      "power_n2": {
+        "rmse": 32.18826329600608,
+        "r2": -12.686191797683389
+      },
+      "power_n2.5": {
+        "rmse": 35.95816077030977,
+        "r2": -16.079787822306802
+      },
+      "power_n3": {
+        "rmse": 42.19105012507674,
+        "r2": -22.514091379389143
+      }
+    },
+    "fitted_power_law": {
+      "n_fit": 0.7855426597018138,
+      "prefactor": 0.305045362581708,
+      "rmse_full_range": 19.535832005612313,
+      "r2_full_range": -4.041402304572152
+    }
+  },
+  "current_summary": {
+    "Ic_nA": 50.0,
+    "Ds0": 100.0,
+    "dc_model_rmse": {
+      "GL": 4.345446291074606,
+      "linear": 22.44768973043256,
+      "quadratic_low_current_fit": 14.761663897081934,
+      "linear_low_current_fit": 9.175404529278596
+    },
+    "dc_quadratic_fit_coefficients_for_Ds0_minus_Ds_vs_I2": [
+      0.036309522810673144,
+      0.6756593961876262
+    ],
+    "mw_quadratic_fit_coefficients_for_Ds0_minus_Ds_vs_I2": [
+      0.030984303404795084,
+      -0.9835219371265693
+    ],
+    "dc_quadratic_r2": 0.7355305517190986,
+    "mw_quadratic_r2": 0.9941624359414655
+  }
+}

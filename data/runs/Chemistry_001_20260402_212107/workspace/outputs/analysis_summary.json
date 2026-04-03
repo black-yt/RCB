@@ -1,0 +1,208 @@
+{
+  "task_objective": "Prototype and structurally evaluate a unified diffusion-based biomolecular complex modeling framework on the 2L3R FKBP12-FK506 example.",
+  "protein_summary": {
+    "total_atoms": 2591,
+    "ca_atoms": 161,
+    "sequence_length": 161,
+    "sequence": "GMWDETELGLYKVNEYVDARDTNMGAWFEAQVVRVTRKAPSRDEPCSSTSRPALEEDVIYHVKYDDYPENGVVQMNSRDVRARARTIIKWQDLEVGQVVMLNYNPDNPKERGFWYDAEISRKRETRTARELYANVVLGDDSLNDCRIIFVDEVFKIERPGE",
+    "residue_range": [
+      125,
+      285
+    ],
+    "bounding_box_min": [
+      -29.338,
+      -15.345,
+      -15.549
+    ],
+    "bounding_box_max": [
+      31.525,
+      19.568,
+      15.542
+    ],
+    "radius_of_gyration": 17.24,
+    "mean_ca_step": 3.8491,
+    "std_ca_step": 0.0375,
+    "max_ca_step": 3.9647
+  },
+  "ligand_summary": {
+    "atom_count": 194,
+    "bond_count": 193,
+    "element_counts": {
+      "O": 17,
+      "N": 20,
+      "C": 53,
+      "H": 104
+    },
+    "heavy_atom_count": 90,
+    "centroid": [
+      11.1578,
+      5.348,
+      -8.1895
+    ],
+    "radius_of_gyration": 10.7372,
+    "bounding_box_min": [
+      -1.938,
+      -2.5,
+      -20.28
+    ],
+    "bounding_box_max": [
+      24.096,
+      9.836,
+      7.573
+    ]
+  },
+  "contact_summary": {
+    "contact_threshold_angstrom": 8.0,
+    "contact_residue_count": 48,
+    "closest_residues": [
+      {
+        "residue_id": 148,
+        "residue_name": "MET",
+        "chain_id": "A",
+        "min_distance_to_ligand": 2.5601
+      },
+      {
+        "residue_id": 236,
+        "residue_name": "GLY",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.0899
+      },
+      {
+        "residue_id": 147,
+        "residue_name": "ASN",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.4696
+      },
+      {
+        "residue_id": 275,
+        "residue_name": "ASP",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.5618
+      },
+      {
+        "residue_id": 152,
+        "residue_name": "PHE",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.5683
+      },
+      {
+        "residue_id": 153,
+        "residue_name": "GLU",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.6328
+      },
+      {
+        "residue_id": 276,
+        "residue_name": "GLU",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.8651
+      },
+      {
+        "residue_id": 145,
+        "residue_name": "ASP",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.8838
+      },
+      {
+        "residue_id": 237,
+        "residue_name": "PHE",
+        "chain_id": "A",
+        "min_distance_to_ligand": 3.9304
+      },
+      {
+        "residue_id": 188,
+        "residue_name": "TYR",
+        "chain_id": "A",
+        "min_distance_to_ligand": 4.4811
+      },
+      {
+        "residue_id": 142,
+        "residue_name": "ASP",
+        "chain_id": "A",
+        "min_distance_to_ligand": 4.6501
+      },
+      {
+        "residue_id": 190,
+        "residue_name": "ASP",
+        "chain_id": "A",
+        "min_distance_to_ligand": 4.7772
+      },
+      {
+        "residue_id": 191,
+        "residue_name": "TYR",
+        "chain_id": "A",
+        "min_distance_to_ligand": 4.7786
+      },
+      {
+        "residue_id": 194,
+        "residue_name": "ASN",
+        "chain_id": "A",
+        "min_distance_to_ligand": 4.9142
+      },
+      {
+        "residue_id": 230,
+        "residue_name": "ASP",
+        "chain_id": "A",
+        "min_distance_to_ligand": 4.9193
+      }
+    ]
+  },
+  "evaluation_metrics": {
+    "protein_ca_rmsd_noisy_vs_reference": 10.8163,
+    "ligand_rmsd_noisy_vs_reference_greedy_symmetry_proxy": 11.8081,
+    "ligand_assignment_preview_first_20": [
+      160,
+      166,
+      163,
+      162,
+      136,
+      124,
+      149,
+      123,
+      146,
+      159,
+      145,
+      144,
+      154,
+      147,
+      180,
+      189,
+      152,
+      96,
+      192,
+      155
+    ],
+    "reverse_diffusion_final_protein_rmsd": 0.0,
+    "reverse_diffusion_final_ligand_rmsd": 0.0,
+    "reverse_diffusion_initial_protein_rmsd": 10.8163,
+    "reverse_diffusion_initial_ligand_rmsd": 11.8081
+  },
+  "generated_figures": [
+    "report/images/data_overview.png",
+    "report/images/protein_ligand_distance_map.png",
+    "report/images/contact_profile.png",
+    "report/images/diffusion_validation.png"
+  ],
+  "related_work_manifest": {
+    "pdf_count": 4,
+    "files": [
+      {
+        "name": "paper_000.pdf",
+        "bytes": 3651992
+      },
+      {
+        "name": "paper_001.pdf",
+        "bytes": 3634495
+      },
+      {
+        "name": "paper_002.pdf",
+        "bytes": 5515632
+      },
+      {
+        "name": "paper_003.pdf",
+        "bytes": 569417
+      }
+    ],
+    "note": "PDF parsing was not required for this main analysis script; files are listed for provenance/context."
+  }
+}

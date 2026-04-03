@@ -1,0 +1,33 @@
+{
+  "protein": {
+    "n_atoms": 2591,
+    "n_residues": 161,
+    "n_ca": 161,
+    "ca_sequence": "GMWDETELGLYKVNEYVDARDTNMGAWFEAQVVRVTRKAPSRDEPCSSTSRPALEEDVIYHVKYDDYPENGVVQMNSRDVRARARTIIKWQDLEVGQVVMLNYNPDNPKERGFWYDAEISRKRETRTARELYANVVLGDDSLNDCRIIFVDEVFKIERPGE",
+    "seqres_sequence": "GGMWDETELGLYKVNEYVDARDTNMGAWFEAQVVRVTRKAPSRDEPCSSTSRPALEEDVIYHVKYDDYPENGVVQMNSRDVRARARTIIKWQDLEVGQVVMLNYNPDNPKERGFWYDAEISRKRETRTARELYANVVLGDDSLNDCRIIFVDEVFKIERPGE",
+    "radius_of_gyration": 17.239959312935905,
+    "end_to_end_distance": 8.097772039271048,
+    "n_contacts_8A": 876,
+    "secondary_structure": {
+      "C": 137,
+      "H": 24
+    },
+    "pocket_residues": 62
+  },
+  "ligand": {
+    "n_atoms": 194,
+    "n_bonds": 193,
+    "element_counts": {
+      "O": 17,
+      "N": 20,
+      "C": 53,
+      "H": 104
+    },
+    "radius_of_gyration": 10.73722636255061,
+    "center": [
+      11.15783659793814,
+      5.348000000000001,
+      -8.189456701030926
+    ]
+  }
+}

@@ -1,0 +1,966 @@
+                                                     BSNet: Bi-Similarity Network for Few-shot
+                                                        Fine-grained Image Classification
+                                             Xiaoxu Li, Jijie Wu, Zhuo Sun, Zhanyu Ma, Senior Member, IEEE, Jie Cao, Jing-Hao Xue, Member, IEEE
+
+
+
+
+                                            Abstract—Few-shot learning for fine-grained image classifi-                  on how to learn good feature embeddings, similarity mea-
+                                         cation has gained recent attention in computer vision. Among                    sures [24], or both of them [11]. Due to their simplicity and
+                                         the approaches for few-shot learning, due to the simplicity and                 effectiveness, metric-based methods have achieved the state-
+arXiv:2011.14311v1 [cs.CV] 29 Nov 2020
+
+
+
+
+                                         effectiveness, metric-based methods are favorably state-of-the-
+                                         art on many tasks. Most of the metric-based methods assume a                    of-the-art performance on fine-grained images [22], [23].
+                                         single similarity measure and thus obtain a single feature space.                  Fine-grained image datasets are often used to evaluate
+                                         However, if samples can simultaneously be well classified via                   the performance of few-shot classification algorithms [22],
+                                         two distinct similarity measures, the samples within a class can                [23], [25]–[28], because they generally contain many sub-
+                                         distribute more compactly in a smaller feature space, producing
+                                         more discriminative feature maps. Motivated by this, we propose                 categories and each sub-category includes only a small amount
+                                         a so-called Bi-Similarity Network (BSNet) that consists of a                    of data [29]. Due to the similarity between these small sub-
+                                         single embedding module and a bi-similarity module of two                       categories, a key consideration in few-shot fine-grained image
+                                         similarity measures. After the support images and the query                     classification is how to learn discriminative features from few
+                                         images pass through the convolution-based embedding module,                     labeled images [30]–[32].
+                                         the bi-similarity module learns feature maps according to two
+                                         similarity measures of diverse characteristics. In this way, the                   Metric-based methods in few-shot classification are mostly
+                                         model is enabled to learn more discriminative and less similarity-              built on a single similarity measure [22], [23], [25]–[28].
+                                         biased features from few shots of fine-grained images, such that                Intuitively, features obtained by adapting a single similarity
+                                         the model generalization ability can be significantly improved.                 metric are only discriminative in a single feature space. That
+                                         Through extensive experiments by slightly modifying established
+                                         metric/similarity based networks, we show that the proposed                     is, using one single similarity measure may induce certain
+                                         approach produces a substantial improvement on several fine-                    similarity bias that lowers the generalization ability of the
+                                         grained image benchmark datasets.                                               model, in particular when the amount of training data is small.
+                                            Codes are available at: https://github.com/spraise/BSNet                     Thus, as illustrated in Figure 1, if the obtained features can
+                                           Index Terms—Fine-grained image classification, Deep neural                    simultaneously adapt two similarity measures of diverse char-
+                                         network, Few-shot learning, Metric learning                                     acteristics, the samples within one class can be mapped more
+                                                                                                                         compactly into a smaller feature space. This will result in a
+                                                                                                                         model embedding two diverse similarity measures, generating
+                                                                   I. I NTRODUCTION
+                                                                                                                         more discriminative features than using a single measure.
+                                            Deep learning models have achieved great success in visual                      Motivated by this, we develop a Bi-Similarity Network
+                                         recognition [1]–[3]. These enormous neural networks often                       (BSNet). Within each task generated from a meta-training
+                                         require a large number of labeled instances to learn their                      dataset, the proposed BSNet employs two similarity mea-
+                                         parameters [4]–[6]. However, it is hard to obtain labeled image                 sures, e.g., the Euclidean distance and the cosine distance. To
+                                         in many cases [7]. Furthermore, human can adapt fast based                      be more specific, the proposed BSNet contains two modules
+                                         on transferable knowledge from previous experience and learn                    as illustrated in Figure 2. The first module is a convolution-
+                                         new concepts from only few observations [8]. Thus, it is of                     based embedding module, generating representations of query
+                                         great importance to design deep learning algorithms to have                     and support images. The learned representations are then fed
+                                         such abilities [9]. Few-shot learning [10], [11] rises in response              forward to the second module, i.e. our bi-similarity module,
+                                         to these urgent demands, which aims to learn latent patterns                    producing two similarity measurements between a query im-
+                                         from few labeled images [12].                                                   age and each class. During meta-training process, the total loss
+                                            Many few-shot classification algorithms can be grouped                       is the summation of the losses of both heads, which is used for
+                                         into two branches: meta-learning based methods [13]–[19]                        back-propagating the network’s parameters jointly. We evalu-
+                                         and metric-based methods [20]–[22]. Meta-learning based                         ate the proposed method on several fine-grained benchmark
+                                         methods focus on how to learn good initializations [14],                        datasets. Extensive experiments demonstrate the state-of-the-
+                                         optimizers [23], or parameters. metric-based methods focus                      art performance of the proposed BSNet. Our contributions are
+                                           X. Li, J. Wu and J. Cao are with the School of Computer and Communi-          three-fold:
+                                         cation, Lanzhou University of Technology, Lanzhou 730050, China.
+                                           Z. Ma is with the Pattern Recognition and Intelligent System Laboratory,        1) We propose a BSNet that leverages two similarity
+                                         School of Artificial Intelligence, Beijing University of Posts and Telecommu-        measures and significantly improves the performance
+                                         nications, Beijing 100876, China.                                                    of four state-of-the-art few-shot classification meth-
+                                           Z. Sun and J.-H. Xue are with the Department of Statistical Science,
+                                         University College London, London, WC1E 6BT, U.K.                                    ods [11], [20]–[22] on four benchmark fine-grained
+                                           X. Li, J. Wu and Z. Sun contribute equally.                                        image datasets.
+                   y
+
+                                                                                                                                                                2
+
+
+
+
+                                                       Interaction
+                                                         Interaction                                           llllll
+
+
+
+
+                       Similarity I                                               Similarity II                                   Bi­Similarity                      x
+
+
+Figure 1. Motivation of the proposed Bi-Similarity Network (BSNet). Here we use the Euclidean distance and the cosine distance as the similarity measures in
+feature spaces. The Euclidean distance and the cosine distance are for Similarity I and Similarity II, respectively. Different colors indicate different predicted
+labels; larger balls are class prototypes.
+z
+    2) We demonstrate that the model complexity of BSNet is                       hence proposed infinite mixture prototype networks. Unlike
+       less than the mean value of model complexities of two                      these methods, the proposed BSNet does not learn a prototype,
+       single-similarity networks, even though BSNet contains                     but introduces the bi-similarity idea into the metric-based few-
+       more model parameters.                                                     shot learning models.
+    3) We demonstrate that the proposed BSNet learns discrim-                           c) Learning a distance (or similarity) metric: Instead
+       inative areas of the input images via visualization.                       of using an existing metric, Sung et al. [11] proposed the
+                                                                                  Relation Network to compute similarity scores to measure
+                          II. R ELATED W ORK                                      the similarity between each query image and support images
+                                                                                  from each class. Li et al. [22] constructed an image-to-class
+   Recently, deep neural networks have been carefully re-                         module after a CNN-based embedding module to compute
+designed to solve few-shot learning problems. In this work, we                    the cosine similarity between deep local descriptors of a
+are particularly interested in metric-based few-shot learning                     query image and its neighbors in each class, known as Deep
+models as they are most relevant to the proposed BSNet.                           Nearest Neighbor Neural Network (or DN4 in short). Zhang
+Existing metric-based few-shot learning methods roughly fall                      et al. [38] learned Gaussian distributions for each class via
+into the following three groups according to their innovation:                    incorporating evidence lower bound into the design of loss
+      a) Learning feature embedding given a metric: Koch et                       function and used the posterior densities of query images as the
+al. [33] used a Siamese convolutional neural network for one-                     criterion, which produced quadratic decision boundaries as it
+shot leaning, in which convolution layers are of VGG [34]                         allowed class-specific covariance matrices. It can be viewed as
+styled structure and L1 distance is used to compute the                           learning the Mahalanobis distance in deep feature space. The
+distance between image features. Matching Network [20]                            proposed BSNet is closely related to this group of methods.
+introduced attention mechanisms along with the cosine metric                      To the best of our knowledge, most current studies in few-shot
+on deep features of images. Most of existing methods, for                         learning only focus on a single similarity measure. However,
+instance [11], [21], [35], [36], have benefited from the episodic                 the proposed work constructs a network leveraging one module
+meta-training strategy proposed in [20], learning transferable                    with two similarity measures.
+knowledge from labeled support images to query images
+through this strategy. Wu et al. [37] added a deformed fea-
+                                                                                          III. T HE P ROPOSED B I -S IMILARITY N ETWORK
+ture extractor and dual correlation attention module into the
+Relation Network [11], and proposed position-aware relation                       A. Problem Formulation
+network (or PARN, for short). As a result, PARN outperformed                         Few-shot classification problems are often formalized as C-
+the Relation Network on the Omniglot and Mini-ImageNet                            way K-shot classification problems, in which models are given
+datasets. This group of methods mainly learn a feature rep-                       K labeled images from each of C classes, and required to
+resentation that adapts to a fixed metric. Unlike them, the                       correctly classify unlabeled images. Unlike traditional classi-
+proposed BSNet learns metrics and a feature representation                        fication problems where the label set in training set is identical
+simultaneously.                                                                   to those in the validation and test sets, few-shot classification
+      b) Learning a prototype: Despite of similar meta-                           requires to classify novel classes after training. This requires
+training procedures, these methods are built on different                         that images used for training, validation and testing should
+hypotheses. [21] proposed the Prototype Network that used                         come from disjoint label sets. To be more specific, given
+the Euclidean distance as metric to classify query images to                      a dataset D = {(xi , yi ), yi ∈ L}N      i=1 , we divide it into
+class-specific prototypes, producing linear decision boundaries                   three parts, namely Dtrain = {(xi , yi ), yi ∈ Ltrain }N     train
+                                                                                                                                             i=1     ,
+                                                                                                                    Nval
+in the learned embedding space as it implicitly assumed                           Dval = {(x̃i , ỹi ), ỹi ∈ Lval }i=1 , Dtest = {(xi , yi ), yi∗ ∈
+                                                                                                                                      ∗ ∗
+
+identical covariance matrices for all class-specific Gaussian                     Ltest }N
+                                                                                         i=1 , where (xi , yi ) represents the raw feature vector
+                                                                                           test
+
+
+distributions. Allen et al. [35] further extended the Prototype                   and label information for the ith image. The label sets, Ltrain
+Network [21] by allowing multiple clusters for each class, and                    and Lval and Ltest , are disjoint and their union is L.
+                                                                                                                                                                           3
+
+
+
+                         Embedding module                                     Bi-Similarity module
+
+                                                                                                                  S (1q , c )
+                                                      Support
+                                                                                                                                        1
+                                                      features                      g (q, c)                                   S(q,c)  (S(1q,c)  S(2q,c) )
+                                                                                                                                        2
+                                                                  Query
+                                     f                          features
+
+
+
+
+                                                                                    h ( q , c )
+                                                                                                                  S (2q , c )
+
+
+
+Figure 2. Illustration of the proposed Bi-Similarity Network (BSNet). It consists of one embedding module fφ , followed by a bi-similarity module which
+                                                                                                       k
+outputs two similarity scores between a query image and C class prototypes in C-way K-shot problems. S(q,c) denotes the kth similarity score between the
+qth query image xq and the cth class in a task.
+
+
+
+   Following recent works [11], [20]–[23], we organized our                  the sth support image from class c and the qth query image
+experiments in an episodic meta-training setting. To form a                  in task Ti , respectively.
+task Ti each time during episodic meta-training, we randomly                    2) The Training Procedure: During the meta-training pro-
+select C classes from Ltrain , and randomly select M images                  cess, we assign the qth query image in task Ti according
+within each of these C classes from Dtrain . Within each of                                                         1
+                                                                             to each of the two similarity scores, S(q,c)      2
+                                                                                                                          and S(q,c) . Then
+these selected classes, M images are further separated into two                                                                      (i,1)           (i,2)
+                                                                             we obtain two one-hot vectors, ŷq          and ŷq , as two
+sets with K and M −K images respectively, namely a support                                       1          2
+                                                                             predictions. Here, S(q,c) and S(q,c) refer to the two similarity
+set Si and a query set Qi . Similarly, we can define tasks                                               (i)
+T̃j and Tk∗ on Dval and Dtest for meta-validation and meta-                  scores between xq and the cth class, generated by the
+                                                                                                       (i,1)       (i,2)
+testing scenarios. We aim to train our neural networks to learn              proposed BSNet. The ŷq         and ŷq     only have element 1
+                                                                                          d
+transferable deep bi-similarity knowledge from those meta-                   at arg maxc S(q,c) , d ∈ {1, 2}, for c ∈ {1, · · · , C}. That is,
+learning tasks, tune hyper-parameters through meta-validation,
+and report the generalization accuracy by taking the average                      ŷq(i,1) = [0, · · · ,                     1
+                                                                                                                            |{z}                  , · · · , 0] ,
+of model’s accuracy in meta-testing.                                                                                 1
+                                                                                                           arg maxc S(q,c) , c ∈ {1, · · · , C}
+                                                                                                                                                                         (1)
+                                                                                  ŷq(i,2) = [0, · · · ,                     1                    , · · · , 0] .
+B. Bi-Similarity Network                                                                                                    |{z}
+                                                                                                                     2
+                                                                                                           arg maxc S(q,c) , c ∈ {1, · · · , C}
+   1) An Overview: Our Bi-Similarity Network (BSNet) has
+one embedding module fφ , followed by a bi-similarity module
+                                                                                                                                                                   (i)
+consisting of two similarity measurement branches, gϕ and hγ ,               Then we compute two loss values of the query image xq by
+                                                                                                               (i,1)       (i,2)
+as shown in Figure 2.                                                        comparing the two assignments ŷq       and ŷq     with the one-
+                                                                                         (i)
+   Although we further generalize the proposed BSNet by                      hot vector yq representing its ground-truth label, and take the
+equipping it with other similarity measurements, i.e. [20]–                  average of the two values for back-propagation. The two loss
+[22], we only demonstrate the structure of the proposed                      values are given by
+neural network here to avoid redundant contents. The meta-
+training procedure of the proposed BSNet is summarized in                                           C
+                                                                                                         (i,1)  (i)
+                                                                                                    X
+Algorithm 1. Note that in Algorithm 1, 1(a == b) = 1 if                                 lq(i,1) =     (ŷq,j − yq,j )2 , q = 1, · · · , |Qi | ,
+and only if all elements of a and b are identical since we are                                       j
+
+using one-hot vectors for true/predicted labeling information                                     C                                                                      (2)
+                                                                                                       (i,2)  (i)
+                                                                                                  X
+for every image. A similar procedure, with the exception of                             lq(i,2) =   (ŷq,j − yq,j )2 , q = 1, · · · , |Qi | ,
+updating parameters, is also used for calculating the validation                                     j
+
+and test accuracy.                                                                      lq(i) = (lq(i,1) + lq(i,2) ) ,
+                                 (i)
+   For each task Ti , images {xk }M  k=1 from support set Si
+                                                     (i)
+and query set Qi are fed into fφ , generating fφ (xk ) for all               where |Qi | denotes the total number of query images in Qi .
+images in task Ti . Then images’ representations are further fed                3) The Validation/Testing Procedure: During the valida-
+                                            (i)       (i)
+forward to our bi-similarity module. Let xs,c and xq denote                  tion/test process, we assign the query image to the class
+                                                                                                                                                                     4
+
+
+
+with the maximum average similarity score and generate a                                         where || denotes the concatenation operator. While for the K-
+                               (i)
+corresponding one-hot vector ŷq . That is,                                                      shot scenario, we take the mean of support images’ feature
+                                                                                                 maps from each class to act as C prototypes and concatenate
+ŷq(i) = [0, · · · ,                             1
+                                                |{z}                            , · · · , 0] .   them ahead of the query image’s feature map, and still obtain
+                                                        
+                       arg maxc 21        1
+                                         S(q,c)    2
+                                                + S(q,c) , c ∈ {1, · · · , C}                    C similarity scores for this query image:
+                                                                                         (3)                        K                         
+                                                                                                     1            1 X
+                                                                                                   S(q,c) = gϕ [        fφ (x(i)
+                                                                                                                              s,c )||f  (x
+                                                                                                                                       φ q
+                                                                                                                                          (i)
+                                                                                                                                              ]  , c = 1, · · · C. (5)
+Algorithm 1 Meta-Training procedure for BSNet under C-                                                           K s=1
+way K-shot scenarios                                                                                In addition, we also introduce a cosine similarity module
+Require: Input Model M, Optimizer, Number of episodes B,                                         designed by our own (details in Sec. IV-B). Actually, many
+    Dtrain , C, K.                                                                               previous studies in few-shot classification have adopted the
+ 1: for i from 1 to B do                                                                         cosine distance [22], [23]. In this work, we combine the self-
+ 2:      Generate a task Ti from Dtrain                . Details in                              designed cosine similarity module with the similarity modules
+    Sec. III-A                                                                                   of Matching Network [20], Prototype Network [21], DN4 [22]
+ 3:      Further split Ti into Si and Qi . C × K images for                                      in order to justify effectiveness of the proposed BSNet. The
+    Si , C × (M − K) images for Qi                                                               details of these similarity modules are present in Sec. IV-B.
+ 4:      L(i) ← 0              . Initializing loss for the ith task                                 Our cosine similarity module contains two convolution
+ 5:      A(i) ← 0        . Initializing accuracy for the ith task                                blocks (hem                                     cos
+                                                                                                           γ ) and a cosine similarity layer (hγ ). The cosine
+               (i)              (i)                                                                                                        (i)
+ 6:      for xq in Qi do . xq is the qth query sample in Qi                                      similarity between a query image xq and the cth class,
+                                                            (i)
+ 7:          Compute the C × 2 similarity scores for xq , i.e.                                   conditioned on the support images from class c, is given as
+      d
+    S(q,c) , for d = 1, 2 and c = 1, · · · , C.                                                                             K                             
+                                                                                         (i)                        em 1
+                                                                                                                            X
+                                                                                                     2        cos                    (i)
+                                                                                                                                          em        (i)
+                                                                                                                                                         
+ 8:         Compute two class assignments                                    for       xq :        S(q,c) =hγ hγ               fφ (xs,c ) , hγ fφ (xq ) .
+                1
+      arg maxc S(q,c)               2
+                      and arg maxc S(q,c)                                                                               K s=1
+                                                                                       (i,1)                                                                   (6)
+ 9:             Generate two corresponding one-hot vectors ŷq
+            (i,2)                                                                                Note that a convolution block in our experiments refers to
+      and ŷq     according to Equation (1).                                                     a convolution layer, a batch norm layer, a ReLU layer and
+                                                                       (i)
+10:         Compute the loss of M for Si and xq according                                        with or without a pooling layer. After the model computes
+                                   (i)
+    to Equation (2), denoted by lq .                                                             two similarity scores between the query image and each
+             (i)       (i) (i)
+11:         L ← L + lq                                                                           class, we have two strategies for training and validation/testing
+            A(i) ← A(i) + 1(ŷq == yq )
+                               (i)     (i)       (i)
+12:                                          . ŷq is M’s                                        processes, respectively, which have already been demonstrated
+                     (i)
+    prediction for xq                                                                            in Sec. III-B.
+                   (i)
+                  L
+13:     L(i) ← C×|Qi |
+14:     A(i) ← A
+                          (i)                                                                    D. The Empirical Rademacher Complexity of BSNet
+                |Qi |
+15:     Use L(i) to update M’s parameters according to the                                          We start by introducing some notation. We define a
+    optimizer                       . e.g Adam optimizer                                         single similarity network as a network consisting of a
+                                           1
+                                             PB      (i)                                         feature embedding module and a similarity module. Let
+16: Stop training M. Output mean accuracy B    i=1 A .                                           I (x; Wem1 , Ws1 ) ∈ I, and J (x; Wem2 , Ws2 ) ∈ J denote
+                                                                                                 two different similarity networks which contain the feature
+                                                                                                 embedding module with the same structure, where Wem1 ,
+C. The Design of BSNet
+                                                                                                 Wem2 are the parameters of the feature embeddings of I and
+   In the proposed BSNet, the feature embedding module                                           J, respectively, and Ws1 and Ws2 are the parameters of the
+and the bi-similarity module are key parts that affect overall                                   similarity modules of I and J, respectively. We define the
+performance. In terms of the feature embedding module fφ ,                                       BSNet as learning a common feature embedding for I and
+we adopt convolution-based architecture, and will introduce                                      J and adopting their similarity modules. Therefore, the Bi-
+the detailed design in Sec. IV-B.                                                                similarity can be denoted as Z (x; Ws1 , Ws2 , Wem ) ∈ Z,
+   For the design of bi-similarity module, both of the two                                       where Wem is the parameter of the common feature embed-
+chosen similarity measurements should have good fitting abil-                                    ding. The Rademacher complexity measures the richness of a
+ity. We take the relation module as an example. The relation                                     family of functions which is defined as follows:
+module was proposed in [11], in which a query image’s rep-
+                 (i)
+resentation fφ (xq ) is concatenated to every support image’s                                    Definition 1. [39] Let I denote a family of real valued func-
+                     (i)
+representation fφ (xs,c ). In terms of C-way 1-shot scenario                                     tion and S = {x1 , x2 , . . . , xM } be a fixed sample of size M .
+                                        (i)                                                      Then, the empirical Rademacher complexity           I with respect
+                                                                                                                                                   ofP
+(|Si | = 1), for each query image xq , C × 1 concatenated                                                                                        1    M            
+                                                                                                 to S is defined as R̂S (I) = Eσ supI∈I M              i=1 σi I(xi ) ,
+features are directly fed forward into two further convolution
+                                                                                                 where σ = {σ1 , σ2 , . . . , σM } with σi independently dis-
+blocks and two fully connected layers to get C similarity
+                                                                                                 tributed according to P (σi = 1) = P (σi = −1) = 12 .
+scores:
+                                                                                                 Theorem 1. Let R̂S (I), R̂S (J ), and R̂S (Z) denote the
+                                          
+         1                  (i)
+        S(q,c) = gϕ [fφ (x1,c )||fφ (x(i)
+                                      q   ]  , c = 1, · · · C, (4)                               Rademacher complexities of the single similarity network
+                                                                                                                                       5
+
+
+
+family I, the single similarity network family J , and               into 100 categories (classification annotation commonly used
+the Bi-similarity network
+                           family Z. We have R̂S (Z) ≤              in fine-grained image classification), which are the annota-
+1
+    R̂ S (I) + R̂ S (J )  .                                          tion level we used. Stanford-Cars [41] is also a benchmark
+2
+                                                                     dataset for fine-grained classification, which contains 16,185
+Proof. Here, we introduce a network family P, P (x) =                images of 196 classes of cars, and categories of this dataset
+1
+2 (I(x) + J(x))       ∈ P, then P (x) can be denoted                 are mainly divided based on the brand, model, and year
+by P (x; Ws1 , Ws2 , Wem1 , Wem2 ). Following the notation           of the car. Stanford-Dogs [42] is a challenging and large-
+above, for ∀Z ∈ Z, ∃P ∈ P subject to Z(x) = P (x), so we             scale dataset that aims at fine-grained image categorization,
+have Z ⊂ P. Thus, we have                                            including 20,580 annotated images of 120 breeds of dogs from
+                                                                     around the world. CUB-200-2011 [43] contains 11,788 images
+                 "          M
+                                           #
+                        1 X
+R̂S (Z) = Eσ sup                σi Z(xi )                            from 200 bird species. This dataset is also a classic benchmark
+                   Z∈Z M i=1
+        "                        #                                   for fine-grained image classification.
+                    M
+                1 X
+ ≤ Eσ sup              σi P (xi )                                     B. Implementation Details
+          P ∈P M i=1
+        "                                            #                  In order to prove the effectiveness of the proposed method,
+                        M      
+                     1 X          1          1                        we choose several metric/similarity based few-shot classi-
+ = Eσ        sup            σi      I (xi ) + J (xi )                 fication networks, Matching Network [20], Prototype Net-
+          I∈I,J∈J M i=1           2          2
+          "          M
+                                  #          "        M
+                                                                    # work   [21], Relation Network [11], Deep Nearest Neighbor
+    1             1 X                   1           1 X               Neural Network (or DN4, for short) [22], to be the baseline
+ = Eσ sup               σi I (xi ) + Eσ sup              σi J (xi )
+    2       I∈I M i=1                   2      J∈J M i=1              of the proposed method. At the same time, we combine these
+    1                                                               diverse similarity measurement modules with a self-designed
+ =      R̂S (I) + R̂S (J ) .                                          cosine module to construct the proposed BSNet. We present
+    2
+                                                               (7) details of our experiments in this section, which include in-
+                                                                      formation about experiment parameters, the matching module,
+                                                                      the prototype module, the relation module, the image-to-class
+   This theorem states that even though BSNet has more model
+                                                                      module and the bi-similarity module. Together with Table I,
+parameters, the Rademacher complexity of the proposed BSNet
+                                                                      it provides a detailed summary for all implementations in our
+is no more than the average of the Rademacher complexities
+                                                                      experiments.
+of two individual networks.
+                                                                         All methods are trained from scratch. Some important pa-
+       IV. E XPERIMENTAL R ESULTS AND D ISCUSSIONS                    rameters  during training are shown in Table I. In particular, for
+                                                                      the optimizer of DN4 and bi-similarity experiments involved
+   We evaluate the proposed approach on few-shot classifica- DN4, the learning rate is reduced by half every 100, 000
+tion tasks. This evaluation serves four purposes:                     episodes, while the other methods do not adopt this strategy.
+   • To compare the proposed BSNet with the state-of-                 In all experiments, we use the meta-validation set to select
+      the-art methods on few-shot fine-grained classification the optimal setting. At the meta-testing stage, we report the
+      (Sec. IV-C);                                                    mean accuracy of 600 randomly generated testing episodes as
+   • To investigate the generalization ability of BSNet by            well as 95% confidence intervals. i.e., Mean ± 1.96 × √Std       .
+                                                                                                                                   600
+      changing the backbone network (Sec. IV-D);                      Particularly, in terms of DN4, the above test procedure is
+   • To study the effectiveness of each similarity module in
+                                                                      repeated five times, and the mean accuracy with 95% confi-
+      the proposed BSNet (Sec. IV-E);                                 dence intervals are reported. We will introduce the embedding
+   • To demonstrate that the proposed BSNet can learn
+                                                                      module and several similarity measurement modules used in
+      a reduced number of class-discriminative features our experiments in detail below, as well as the self-defined
+      (Sec. IV-F);                                                    Cosine module and Bi-similarity module proposed by us.
+   • To investigate the effect of changing similarity modules            Embedding module: We construct four convolution blocks
+      on BSNet (Sec. IV-G).                                           to be our embedding module fφ to learn a shared represen-
+                                                                      tation in the proposed BSNet. Following [23], we used the
+A. Datasets                                                           embedding module Conv4 for Matching Network, Prototype
+   We conducted all the experiments on four benchmark Network, Relation Network and Cosine Network. Specifically,
+fine-grained datasets, FGVC-Aircraft, Stanford-Cars, Stanford- each convolution block of Conv4 has 3 × 3 convolution
+Dogs and CUB-200-2011. For each dataset, we divided them of 64 filters, followed by batch normalization and a ReLU
+into meta-training set Dtrain , meta-validation set Dval and activation function. Following [22], we used the embedding
+meta-test set Dtest in a ratio of 2 : 1 : 1. All images in the module Conv64F for DN4. In Conv64F, each convolution
+four datasets are resized to 84 × 84. We did not use boundary block employs 64 3 × 3 convolution filters without padding,
+boxes for all the images.                                             followed by batch normalization and a Leaky ReLU activation
+   FGVC-Aircraft [40] is a classic dataset in fine-grained function. The 2 × 2 max-pooling layer is used in the first
+image classification and recognition research. It contains four- two blocks. After passing through the Conv64F module, a
+level hierarchical notations: model, variant, family and man- 3 × 84 × 84 input image is now represented by a 64 × 21 × 21
+ufacturer. According to the variant level, it can be divided feature map.
+                                                                                                                                                      6
+
+
+
+                                                                    Table I
+                                                E XPERIMENT C ONFIGURATION ( SHOWN IN COLUMNS ).
+
+                                                             Experiment Configuration
+                              Matching Network [20]    Prototype Network [21]     Relation Network [11] Cosine Network               DN4 [22]
+         Input size                                                               3 × 84 × 84
+  Embedding module fφ                                                    Conv4                                                      Con64F
+     Feature map size                                                64 × 19 × 19                                                64 × 21 × 21
+     Similarity module            Matching module         Prototype module            Relation module       Cosine module    Image-to-Class module
+         Optimizer                                           Adam (initial learning rate = 10−3 , weight decay = 0)
+       Loss function                 NLL Loss            Cross Entropy Loss                       MSE Loss                       Cross Entropy Loss
+       Data augment                                        Random Sized Crop, Image Jitter, Random Horizontal Flip
+     Training episodes                                      1-shot: 60, 000, 5-shot: 40, 000                                       300, 000
+Training query sample size                                                 16                                                1-shot: 15, 5-shot: 10
+
+
+                                                                 Table II
+     F IVE - WAY FEW- SHOT CLASSIFICATION PERFORMANCE ON THE Stanford-Cars (C ARS ), Stanford-Dogs (D OGS ), FGVC-Aircraft (A IRCRAFT ) AND
+    CUB-200-2011 (CUB) DATASETS . T HE METHODS INCLUDE : Matching Network (M ATCHING ), Prototype Network (P ROTOTYPE ), Relation Network
+ (R ELATION ) AND Deep Nearest Neighbor Neural Network (DN4) AND THE PROPOSED BSNet. W E REPORT THE MEAN ACCURACY FOR EACH METHOD ,
+                                                ALONG WITH ITS 95% CONFIDENCE INTERVAL .
+
+
+                                      5-Way 5-shot Accuracy (%)                                     5-Way 1-shot Accuracy (%)
+      Model
+                       Cars             Dogs          Aircraft         CUB             Cars            Dogs           Aircraft            CUB
+  Matching [20]    64.74 ± 0.72     59.79 ± 0.72    73.75 ± 0.69   74.57 ± 0.73    44.73 ± 0.77    46.10 ± 0.86    56.74 ± 0.87       60.06 ± 0.88
+  BSNet (M&C)      63.58 ± 0.75     61.61 ± 0.69    75.92 ± 0.76   74.68 ± 0.71    44.93 ± 0.80    45.91 ± 0.81    56.53 ± 0.81       60.73 ± 0.94
+  Prototype [21]   62.14 ± 0.76     61.58 ± 0.71    71.27 ± 0.67   75.06 ± 0.67    36.54 ± 0.74    40.81 ± 0.83    46.68 ± 0.81       50.67 ± 0.88
+  BSNet (P&C)      63.72 ± 0.78     62.61 ± 0.73    77.35 ± 0.68   76.34 ± 0.65    44.56 ± 0.83    43.13 ± 0.85    52.48 ± 0.88       55.81 ± 0.97
+  Relation [11]    68.52 ± 0.78     66.20 ± 0.74    75.18 ± 0.74   77.87 ± 0.64    46.04 ± 0.91    47.35 ± 0.88    62.04 ± 0.92       63.94 ± 0.92
+  BSNet (R&C)      73.47 ± 0.75     68.60 ± 0.73    80.25 ± 0.67   80.99 ± 0.63    54.12 ± 0.96    51.06 ± 0.94    64.83 ± 1.00       65.89 ± 1.00
+   DN4 [22]        87.47 ± 0.47     69.81 ± 0.69    84.07 ± 0.65   84.41 ± 0.58    34.12 ± 0.68    39.08 ± 0.76    60.65 ± 0.95       57.45 ± 0.89
+  BSNet (D&C)      86.88 ± 0.50     71.90 ± 0.68    83.12 ± 0.68   85.39 ± 0.56    40.89 ± 0.77    43.42 ± 0.86    62.86 ± 0.96       62.84 ± 0.95
+
+
+
+   Matching module: The matching module is composed of                    convolution blocks and two full connection layers (or FC,
+three parts: a memory network, a metric module and an atten-              for short). Each convolution block is composed of 3 × 3
+tion module. The memory network uses a simple bidirectional               convolution of 64 filters, followed by batch normalization, a
+LSTM, which further processes the support features from the               ReLU non-linearity function and a 2 × 2 max-pooling. The
+embedding module fφ , so that these features can contain the              padding parameter of both blocks is set to be 0. The first FC
+context information. The metric module uses a cosine distance             layer is followed by a ReLU function, and the second FC
+measure, and a softmax layer is used in the attention module.             layer is followed by a sigmoid function. The input sizes of
+In the process of model training, a single support set and a              the first and the second FC layers are 576 and 8, respectively,
+query sample will be used as input such that feature extraction           and the final output size is 1. During the training process,
+will be carried out at the same time. After that, these features          we concatenated the feature of a query feature to every class
+will be further processed through the memory network, and                 prototype (i.e. mean of support image’s features within each
+then the final prediction value of a query image depends on               class), resulting in 128-dimensional relation pairs. By passing
+distance measurements and the attention module.                           these relation pairs into the relation module, it computes
+   Prototype module: The prototype module is a module                     similarity scores between the query sample and each class.
+which includes an Euclidean distance algorithm to calculate                  Image-to-Class module: Different from other methods,
+the distance of query features and support features from                  we use Conv64F to be the embedding module of image-to-
+the embedding module fφ . The specific calculation formula                class module, of which the output size is 64 × 21 × 21.
+                         2
+is −kfφ (xq ) − fφ (xs )k , where fφ (xq ) represents the flat-           We divide the features into 441 (21 × 21) 64-dimensional
+tened vector of a query feature and fφ (xs ) represents the               local features. The image-to-class module consists of a cosine
+flattened vector of a support prototype feature. For the 1-               measurement module and a K-Nearest-Neighbours classifier
+shot classification, the feature of a support sample within               (KNN for short). The cosine measurement module calculates
+a class is the prototype of the class. For 5-shot, the mean               the cosine distance between each local features of the query
+of the features of all 5 support samples in the same class                sample and each local features of the support samples. In
+is the corresponding class prototype. The Euclidean distance              terms of 5-way 1-shot classification problems, we calculate
+between a query feature and a class prototype represents the              the cosine distance of the local features between the query
+dissimilarity between the query sample and the class.                     sample and each of the 5 support samples, get the cosine
+   Relation module: The relation module consists of two                   distance of size 5 × 441 × 441. Then the KNN classifier takes
+                                                                                                                                    7
+
+
+
+                               Table III                             C. Comparison with State-of-the-art Methods on Few Shot
+F IVE - WAY FEW- SHOT CLASSIFICATION PERFORMANCE OF THE PROPOSED     Classification
+BSNet BY ADJUSTING THE W EIGHTS IN THE LOSS FUNCTION , lq , ON THE
+                                         (1)      (2)
+ CUB-200-2011 DATASET. H ERE lq = λ × lq + β × lq . W E REPORT          To evaluate the performance of the proposed BSNet, we
+     THE MEAN ACCURACY OF 600 RANDOMLY GENERATED TESTING
+                                                                     compare it with several metric/similarity based few-shot clas-
+   EPISODES FOR BSNet (R&C), WITH ITS 95% CONFIDENCE INTERVAL .
+                                                                     sification networks, i.e., Matching Network [20], Prototype
+                                                                     Network [21], Relation Network [11], DN4 [22], on the four
+                              5-Way Accuracy (%)
+             λ     β
+                                                                     images datasets mentioned in Sec. IV-A. Few shot classifi-
+                                CUB-200-2011
+                         1-shot         5-shot
+                                                                     cation results are shown in Table II. BSNet is implemented
+                                                                     by keeping the hγ branch of Bi-similarity module to be our
+             1     0.1   65.65 ± 0.97   78.80 ± 0.70                 cosine module, replacing the gϕ branch by an arbitrary module
+             1     0.3   63.86 ± 0.91   78.83 ± 0.62
+                                                                     among Matching module, Prototype module, Relation module,
+             1     0.5   64.75 ± 0.97   80.01 ± 0.65
+                                                                     and Image-to-Class module in Sec. IV-B, resulting in BSNet
+             1     0.7   63.55 ± 0.97   79.08 ± 0.64
+                                                                     (M&C), BSNet (P&C), BSNet (R&C), and BSNet (D&C) in
+             1     0.9   64.48 ± 1.00   79.08 ± 0.63
+                                                                     Table II, respectively.
+             0.1   1     64.36 ± 0.94   79.22 ± 0.67
+                                                                        Our BSNet outperforms Matching Network on Stanford-
+             0.3   1     64.38 ± 1.00   79.55 ± 0.68
+                                                                     Dogs, FGVC-Aircraft and CUB-200-2011, and achieves com-
+             0.5   1     64.96 ± 0.98   79.41 ± 0.68
+                                                                     parable generalization performance on Stanford-Cars (63.58%
+             0.7   1     63.97 ± 1.02   78.59 ± 0.67
+             0.9   1     64.92 ± 0.96   78.53 ± 0.69
+                                                                     versus 64.74%). To compare with DN4, we combine its
+             1     1     65.89 ± 1.00   80.99 ± 0.63
+                                                                     similarity measurement (i.e. the Image-to-Class module in
+                                                                     Sec. IV-B) with our cosine similarity measurement (i.e. the
+                                                                     Cosine module in Sec. IV-B), which achieves notable 85.39%
+                                                                     on the CUB-200-2011 dataset. It also demonstrates that the
+the category corresponding to the maximum of sum of top-3
+                                                                     proposed BSNet consistently exceeds the Prototype Network
+cosine distances in each class as the prediction category of the
+                                                                     and Relation Network on all of the four fine-grained datasets.
+query sample (i.e. using K = 3). For 5-shot experiments, we
+provide 5 support features of each class with 2205 (21×21×5)            A tougher problem is fine-grained 1-shot classification. We
+64-dimensional local features.                                       also conducted 5-way 1-shot experiments on the four fine-
+   Cosine module: The cosine module (i.e. the cosine similar-        grained datasets. Table II demonstrates that the proposed
+ity branch in Section III-C) consists of two convolution blocks      BSNet achieves the state-of-the-art classification performance
+and a cosine similarity measurement layer. Each convolution          on fine-grained datasets in 1-shot scenarios. That is, the pro-
+block is composed of 3 × 3 convolution of 64 filters, followed       posed BSNet achieves the best classification accuracy on each
+by batch normalization, a ReLU non-linearity activation func-        dataset, 54.12%, 51.06%, 64.83% and 65.89%, respectively.
+tion and a pooling layer. The padding of each block is 1. The           It is found that the proposed BSNet has great improvements
+first convolution block is followed by a 2 × 2 max-poling, and       by combining the deep relation measurement (i.e. the Relation
+the second convolution block is followed by a 2 × 2 avg-pool.        module in Sec. IV-B) and our Cosine module, which consis-
+Our cosine module does not require to concatenate representa-        tently obtains state-of-the-art performance on all of the four
+tions of a query image and class prototypes, and feature maps        fine-grained datasets in 1-shot scenarios. It is also found that
+of the query image and class prototypes are fed independently        the combination of our Cosine module with other few-shot
+to the convolution blocks. Then these new feature maps are           networks boosts the performance (around 2% to 8% in mean
+flattened and pass through a cosine similarity layer to compute      accuracy) with the exception of Matching Network.
+the cosine distance between the query image and each class.             For the two addends in the loss function of BSNet (Equa-
+Cosine similarity scores represent the similarity between query      tion 2), we also tried to tune their weights according to
+                                                                                   (1)          (2)
+samples and each class’s prototype given support samples. For        lq = λ × lq + β × lq . Table III lists the classification
+5-shot learning, a class prototype is the mean of the feature        performance of BSNet (R&C) on the CUB-200-2011 dataset
+maps of 5 support images from an identical class, while it is        when λ and β are set to different values. Firstly, the highest
+directly the feature map of a support image in 1-shot scenarios.     mean value of the classification accuracies is achieved when
+   Bi-similarity module: We combine the self-proposed co-            the weights of the two addends both equal 1. Meanwhile,
+sine module with other modules to build our bi-similarity            we can only observe tiny difference of the standard deviation
+module. That is, hγ is our cosine module, and gϕ can be any          between different settings of the weights. Thus, we simply
+other modules mentioned above. Note that the parameter set-          select equal weights for the two addends in the loss function.
+ting of BSNet’s experiments is the same as that of gϕ similarity
+experiments. In this way, features from the embedded module
+                                                                     D. Few-shot Classification with Different Backbone Networks
+fφ enter into hγ and gϕ respectively, producing bi-similarity
+prediction values. At the meta-training stage, we update our            In the previous experiments, we used feature embedding
+network with the average of the prediction losses of the two         modules Conv4 for the Matching Network, Prototype Network
+similarity branches (Equation (2)). At the meta-testing stage,       and Relation Network, and Con64F for DN4. To further in-
+we use the average of two similarity scores generated by the         vestigate the effectiveness of the proposed BSNet, We changed
+two branches to produce the final prediction (Equation (3)).         the feature embedding module to Conv4, Conv6, and Conv8.
+                                                                                                                                    8
+
+
+
+                                                            Table IV
+  F EW- SHOT CLASSIFICATION OF CHANGING THE BACKBONE NETWORK ON THE S TANFORD -C ARS AND CUB-200-2011 DATASETS . W E REPORT THE
+                             MEAN ACCURACY FOR EACH METHOD , ALONG WITH ITS 95% CONFIDENCE INTERVAL .
+
+
+                                                                            5-Way Accuracy (%)
+                   Backbone           Model                        5-shot                         1-shot
+                                                       Stanford-Cars   CUB-200-2011   Stanford-Cars   CUB-200-2011
+                              Matching Network [20]    64.74 ± 0.72    74.57 ± 0.73   44.73 ± 0.77   60.06 ± 0.88
+                                  BSNet (M&C)          63.58 ± 0.75    74.68 ± 0.71   44.93 ± 0.80   60.73 ± 0.94
+                              Prototype Network [21]   62.14 ± 0.76    75.06 ± 0.67   36.54 ± 0.74   50.67 ± 0.88
+                                   BSNet (P&C)         63.72 ± 0.78    76.34 ± 0.65   44.56 ± 0.83   55.81 ± 0.97
+                    Conv4
+                              Relation Network [11]    68.52 ± 0.78    77.87 ± 0.64   46.04 ± 0.91   63.94 ± 0.92
+                                   BSNet (R&C)         73.47 ± 0.75    80.99 ± 0.63   54.12 ± 0.96   65.89 ± 1.00
+                                     DN4 [22]          86.59 ± 0.54    82.97 ± 0.66   59.57 ± 0.87   64.02 ± 0.92
+                                   BSNet (D&C)         86.68 ± 0.54    84.18 ± 0.64   61.41 ± 0.92   65.20 ± 0.92
+                              Matching Network [20]    71.65 ± 0.72    76.36 ± 0.60   57.00 ± 0.94   61.05 ± 0.93
+                                  BSNet (M&C)          74.50 ± 0.75    78.99 ± 0.65   58.32 ± 0.95   67.60 ± 0.91
+                              Prototype Network [21]   74.55 ± 0.71    80.59 ± 0.61   53.92 ± 0.93   63.63 ± 0.93
+                                   BSNet (P&C)         74.61 ± 0.71    80.51 ± 0.62   54.25 ± 0.96   64.93 ± 0.99
+                    Conv6
+                              Relation Network [11]    72.86 ± 0.73    79.16 ± 0.68   47.36 ± 0.93   62.93 ± 0.97
+                                  BSNet ( R&C)         76.90 ± 0.70    80.32 ± 0.62   55.27 ± 1.00   66.19 ± 0.98
+                                     DN4 [22]          87.04 ± 0.54    83.81 ± 0.65   42.77 ± 0.81   66.13 ± 0.94
+                                   BSNet (D&C)         86.17 ± 0.57    83.43 ± 0.64   57.16 ± 0.97   67.58 ± 0.95
+                              Matching Network [20]    71.84 ± 0.73    74.84 ± 0.62   57.41 ± 0.96   63.44 ± 0.95
+                                  BSNet (M&C)          72.26 ± 0.72    76.96 ± 0.63   57.86 ± 0.91   66.06 ± 0.98
+                              Prototype Network [21]   76.69 ± 0.68    81.44 ± 0.61   57.66 ± 0.99   65.54 ± 0.97
+                                   BSNet (P&C)         76.30 ± 0.70    81.77 ± 0.61   53.19 ± 0.96   65.50 ± 0.99
+                    Conv8
+                              Relation Network [11]    73.09 ± 0.75    78.63 ± 0.66   47.45 ± 0.94   62.47 ± 0.99
+                                   BSNet (R&C)         75.29 ± 0.72    80.60 ± 0.63   53.77 ± 0.94   63.23 ± 1.01
+                                     DN4 [22]          88.14 ± 0.50    84.41 ± 0.63   61.73 ± 0.97   64.26 ± 1.01
+                                   BSNet (D&C)         84.66 ± 0.59    81.06 ± 0.72   61.20 ± 0.97   64.28 ± 1.01
+                              Relation Network [11]    83.85 ± 0.64    81.67 ± 0.58   63.55 ± 1.04   69.95 ± 0.97
+                  ResNet-10
+                                  BSNet (R&C)          84.09 ± 0.66    82.85 ± 0.61   66.97 ± 0.99   69.73 ± 0.97
+                              Relation Network [11]    83.61 ± 0.68    83.04 ± 0.60   61.02 ± 1.04   69.58 ± 0.97
+                  ResNet-18
+                                  BSNet (R&C)          85.28 ± 0.64    83.24 ± 0.60   60.36 ± 0.98   69.61 ± 0.92
+                              Relation Network [11]    89.07 ± 0.56    84.21 ± 0.55   76.35 ± 1.00   71.89 ± 1.04
+                  ResNet-34
+                                  BSNet (R&C)          85.30 ± 0.68    82.12 ± 0.59   72.72 ± 1.02   68.98 ± 1.04
+
+
+
+We run all the compared methods and BSNet on the Stanford-            shot classification. In other cases, BSNet performs better than
+Cars and CUB-200-2011 datasets, respectively. Regarding the           all the compared methods in the 5-way 5-shot classification.
+structure of Conv4 (introduced in Section IV-B), Conv6, and           Moreover, BSNet performs the best in the 5-way 1-shot tasks.
+Conv8, we used the same setting as [23]. The classification           Secondly, when all the methods use Conv8 as the feature
+results are listed in Table IV, from which we can make the            embedding module, the proposed BSNet performs worse than
+following observations:                                               Prototype Network and DN4 in 5-way 1-shot and 5-way 5-shot
+                                                                      tasks, respectively. However, it performs better than Matching
+   Firstly, when all the methods use Conv4 as the feature             Network and Relation Network on Stanford-Cars and CUB-
+embedding module, for the 5-way 5-shot classification on              200-2011 for both the 5-way 5-shot and 5-way 1-shot tasks.
+the Stanford-Cars dataset, the proposed BSNet is inferior
+to the Matching Network. But in other cases, the proposed                In addition to traditional convolutional backbone networks,
+method performs better than the Matching Network, Prototype           we test feature embedding by ResNet-10, ResNet-18 or ResNet-
+Network, Relation Network, and DN4 on the Stanford-Cars and           34, for Relation Network and BSNet on the Stanford-Cars and
+CUB-200-2011 datasets in both the 5-way 5-shot classification         CUB-200-2011 datasets (see Table IV). We used the same
+and the 5-way 1-shot classification scenarios. When all the           setting as [23], except that the epoch number of ResNet-34 is
+methods use Conv6 as the feature embedding module, the                set to 1,800 since this feature embedding network is difficult
+proposed BSNet performs slightly worse than the Prototype             to converge on the training data, especially for BSNet. From
+network and DN4 on CUB-200-2011 dataset, and performs                 Table IV, we find that, when Relation Network and BSNet use
+slightly worse than DN4 on Stanford-Cars in the 5-way 5-              ResNet-10 or ResNet-18 as the feature embedding module,
+                                                                                                                                                                                                                                                                                            9
+
+
+
+
+                                                     : D \    V K R W  $ F F X U D F \                                                                                                     : D \    V K R W  $ F F X U D F \    
+       
+                            5 H O D W L R Q  1 H W Z R U N                    & R V L Q H  1 H W Z R U N          % 6 1 H W   5 	 &                                    5 H O D W L R Q  1 H W Z R U N                    & R V L Q H  1 H W Z R U N          % 6 1 H W   5 	 & 
+                                                                                                                                               
+       
+                                                                                                                                               
+
+                                                                                                                                             
+
+
+                                                                                                                                             
+
+                                                                                                                                               
+       
+                                                                                                                                               
+       
+                & D U V                                 ' R J V                             $ L U F U D I W              & 8 %                                & D U V                                   ' R J V                            $ L U F U D I W               & 8 %
+                                                                        & R Q Y                                                                                                                                        & R Q Y 
+                                                    : D \    V K R W  $ F F X U D F \                                                                                                        : D \    V K R W  $ F F X U D F \    
+                                                                                                                                                      
+                            5 H O D W L R Q  1 H W Z R U N                 & R V L Q H  1 H W Z R U N        % 6 1 H W   5 	 &                                            5 H O D W L R Q  1 H W Z R U N                & R V L Q H  1 H W Z R U N        % 6 1 H W   5 	 & 
+         
+                                                                                                                                                      
+
+                                                                                                                                                      
+         
+                                                                                                                                                      
+
+                                                                                                                                                    
+
+                                                                                                                                                      
+         
+                                                                                                                                                      
+
+                                                                                                                                                    
+                 & D U V                               ' R J V                          $ L U F U D I W            & 8 %                                         & D U V                                  ' R J V                         $ L U F U D I W            & 8 %
+                                                                   5 H V 1 H W                                                                                                                                    5 H V 1 H W   
+
+Figure 3. Ablation study: effectiveness of the two-branch similarity. Five-way few-shot classification performance of Relation Network, Cosine Network and
+the proposed BSNet (R&C), on the Stanford-Cars (Cars), Stanford-Dogs (Dogs), FGVC-Aircraft (Aircraft) and CUB-200-2011 (CUB) datasets. The mean
+accuracy of 600 randomly generated testing episodes for each method is reported.
+
+
+
+   BSNet generally outperforms Relation Network. When                                                                                                                        Table V
+ResNet-34 is chosen, however, Relation Network is better.                                                                                         F IVE - WAY FEW- SHOT CLASSIFICATION PERFORMANCE ON THE
+                                                                                                                                                Stanford-Cars (C ARS ) AND CUB-200-2011 (CUB) DATASETS . T HE
+   In brief, we can conclude that, firstly, when we change                                                                                     METHODS INCLUDE : Matching Network, Prototype Network, Relation
+the feature embedding to Conv4, Conv6, Conv8, ResNet-10,                                                                                     Network, AND THE PROPOSED BSNet BUT WITH TWO OTHER SIMILARITY
+and ResNet-18, BSNet outperforms the compared methods in                                                                                    METRICS . W E REPORT THE MEAN ACCURACY FOR EACH METHOD , ALONG
+                                                                                                                                                               WITH ITS 95% CONFIDENCE INTERVAL .
+most of the cases. Secondly, the performance of all compared
+methods will increase when the embedding layer becomes                                                                                                                                                                               5-Way Accuracy (%)
+deeper, which is consistent with the findings in [23].                                                                                                     Shot                            Model
+                                                                                                                                                                                                                                    Cars                         CUB
+
+E. Ablation Study on Effectiveness of Bi-Similarity Module                                                                                                                      Matching [20]                             64.74 ± 0.72                       74.57 ± 0.73
+                                                                                                                                                                                Prototype [21]                            62.14 ± 0.76                       75.06 ± 0.67
+   To further explore the effect of Bi-similarity module, in                                                                                                                    Relation [11]                             68.52 ± 0.78                       77.87 ± 0.64
+this section, we prune either of two similarity branches in Bi-                                                                                            5-shot
+similarity module. If only keeping Relation similarity branch                                                                                                                   BSNet (M&P)                               68.69 ± 0.70                       78.20 ± 0.64
+and pruning the Cosine similarity branch, we recover the                                                                                                                        BSNet (M&R)                               67.32 ± 0.71                       77.95 ± 0.69
+Relation Network [11]. Similarly, if only keeping our cosine                                                                                                                    BSNet (P&R)                               63.73 ± 0.74                       76.83 ± 0.65
+branch, we obtain a single Cosine module based network,                                                                                                                         Matching [20]                             44.73 ± 0.77                       60.06 ± 0.88
+which is denoted by Cosine Network in this work.                                                                                                                                Prototype [21]                            36.54 ± 0.74                       50.67 ± 0.88
+   We compare the performance of Relation Network, Cosine                                                                                                                       Relation [11]                             46.04 ± 0.91                       63.94 ± 0.92
+                                                                                                                                                           1-shot
+Network and the proposed BSNet with different embedding                                                                                                                         BSNet (M&P)                               38.44 ± 0.75                       52.10 ± 0.90
+modules here, i.e., Conv4 and Resnet-10, on the four fine-                                                                                                                      BSNet (M&R)                               45.92 ± 0.79                       62.70 ± 0.92
+grained datasets. Experimental results of 5-way 5-shot and 5-                                                                                                                   BSNet (P&R)                               41.20 ± 0.83                       52.95 ± 0.98
+way 1-shot tasks are presented in Figure 3. From Figure 3,
+it can be found that firstly, in some cases Relation Network
+performs better than Cosine Network, and in other cases Co-
+sine Network performs better than Relation Network. Secondly,                                                                               in most cases, the proposed BSNet outperforms both of the
+                                                                                                                                                          10
+
+
+
+
+      Cars
+      CUB
+
+
+
+
+                        Relation Network                                Cosine Network                                 BSNet (R&C)
+
+Figure 4. Visualization of similarity scores predicted by Relation Network [11], Cosine Network and the proposed BSNet on the Stanford-Cars (Cars) and
+CUB-200-2011 (CUB) datasets. In each confusion matrix, the vertical axis shows 5 classes in a task, the horizontal axis shows query samples in the 5 classes,
+each class contains 16 query samples. Warmer color means larger similarity score.
+
+                                                                    Table VI
+   F IVE - WAY FEW- SHOT CLASSIFICATION PERFORMANCE ON THE Stanford-Cars AND CUB-200-2011 DATASETS . T HE METHODS INCLUDE : Matching
+ Network, Prototype Network, Relation Network, Cosine Network, AND THE PROPOSED BSNet WITH THREE OR FOUR SIMILARITY METRICS . W E REPORT
+                             THE MEAN ACCURACY FOR EACH METHOD , ALONG WITH ITS 95% CONFIDENCE INTERVAL .
+
+
+                                                            5-Way 5-shot Accuracy (%)           5-Way 1-shot Accuracy (%)
+                                       Model
+                                                         Stanford-Cars     CUB-200-2011       Stanford-Cars    CUB-200-2011
+                              Matching Network [20]      64.74 ± 0.72      74.57 ± 0.73       44.73 ± 0.77     60.06 ± 0.88
+                              Prototype Network [21]     62.14 ± 0.76      75.06 ± 0.67       36.54 ± 0.74     50.67 ± 0.88
+                              Relation Network [11]      68.52 ± 0.78      77.87 ± 0.64       46.04 ± 0.91     63.94 ± 0.92
+                                  Cosine Network         69.98 ± 0.83      77.86 ± 0.68       53.84 ± 0.94     65.04 ± 0.97
+                                 BSNet (M&P&R)           71.53 ± 0.73      79.83 ± 0.63       45.56 ± 0.83     60.28 ± 0.94
+                                 BSNet (M&P&C)           71.50 ± 0.75      79.30 ± 0.61       44.33 ± 0.83     59.18 ± 0.93
+                                 BSNet (M&R&C)           72.70 ± 0.71      80.84 ± 0.67       54.82 ± 0.89     66.13 ± 0.90
+                                 BSNet (P&R&C)           69.20 ± 0.76      79.26 ± 0.62       47.09 ± 0.85     58.98 ± 0.96
+                               BSNet (M&P&R&C)           72.78 ± 0.73      80.94 ± 0.63       48.00 ± 0.87     59.50 ± 0.96
+
+
+
+Relation Network and the Cosine Network.                                        77.87±0.64%, 77.86±0.68% and 80.99±0.63%, respectively.
+                                                                                For each dataset, we randomly select a testing task and
+   We visualize similarity scores obtained by Relation Net-
+                                                                                show the similarity scores of its query images via confusion
+work, Cosine Network, and the proposed BSNet in the 5-
+                                                                                matrices. Please refer to Figure 4 for details.
+way 5-shot experiments. In particular, we fixed the testing
+tasks from the meta-testing set of the Stanford-Cars and                          From Figure 4, it can be observed that on the Stanford-Cars
+CUB-200-2011 datasets, respectively, so that the sequences                      dataset, for the query images from the 4th class, the predicting
+of testing tasks for different methods on each dataset are the                  similarity scores of Relation Network are higher than those
+same. On the Stanford-Cars dataset, the prediction accuracy of                  of Cosine Network; on the CUB-200-2011 dataset, for the
+Relation Network, Cosine Network and the proposed BSNet are                     query images from the 3rd class, the predicting similarity
+68.52±0.78%, 69.98±0.83% and 73.47±0.75%, respectively.                         scores of Cosine Network are higher than those of Relation
+On the CUB-200-2011 dataset, the prediction accuracy of                         Network. However, in both cases, BSNet can predict query
+Relation Network, Cosine Network and the proposed BSNet are                     images correctly by synthesizing the Relation module and the
+                                                                                                                                                  11
+
+
+
+
+      Original
+      Image
+      Matching Prototype
+      Network Network
+      Relation
+      Network
+          DN4
+      Network
+      Cosine
+          BSNet
+
+
+
+
+Figure 5. Feature visualization under Matching Network [20], Prototype Network [21], Relation Network [11], DN4 [22], Cosine Network and the proposed
+BSNet on the Stanford-Cars and Stanford-Dogs datasets. The redder the region, the more class-discriminative it is.
+
+
+
+Cosine module. Similar patterns can also be found in other                  G. Effect of Changing Similarity Modules on BSNet
+tasks.                                                                         To further show the applicability of BSNet, we implemented
+   These results further show that our bi-similarity idea is                BSNet based on two similarity metrics among Prototype mod-
+reasonable and the proposed BSNet is less biased on similarity.             ule, Relation module and Matching module (see Table V). In
+                                                                            addition, we also extended BSNet to a network with three or
+                                                                            four similarity modules (see Table VI).
+F. Feature Visualization                                                       From Table V, we can observe that, for 5-way 5-shot
+                                                                            classification, either BSNet is better than single similarity
+   To further demonstrate that the features learned by the                  metric networks, e.g., BSNet(M&P) outperforms Matching
+proposed BSNet are distributed in a smaller feature space and               Network and Prototype Network on the Stanford-Cars dataset,
+are more discriminative, we use a gradient-based technique,                 or BSNet performs in between the two single similarity
+Grad-CAM [44], to visualize the important regions in the                    metric networks, e.g., BSNet(M&R) underperforms Matching
+original images, which is illustrated in Figure 1.                          Network but outperforms Relation Network on the Stanford-
+   In Figure 5, we randomly select 8 images (4 from Stanford-               Cars dataset. For 5-way 1-shot classification, the accuracy of
+Cars, 4 from Stanford-Dogs) and resize the original images to               BSNet is in between those of the two single similarity metric
+the same size as the output of the embedding layer fφ . The                 networks on the two datasets.
+resized raw images are compared to the outputs of Grad-CAM                     From Table VI, we can see that, when we extend the pro-
+under the setting of Matching Network, Prototype Network,                   posed BSNet to a network with three similarity metrics, it still
+Relation Network, DN4 Network, our Cosine Network and the                   works well on the Stanford-Cars and CUB-200-2011 datasets.
+proposed BSNet. Figure 5 shows that in comparison with other                BSNet either outperforms all single similarity networks, or
+compared methods, the proposed BSNet consistently has a                     performs better than the worst one of three single similarity
+reduced number of class-discriminative regions concentrated                 networks but worse than the best one of three single similarity
+in the regions of “cars” or “dogs”, thus the features learned               networks. When we equip BSNet with four similarity metrics,
+by BSNet are more robust and efficient.                                     similar patterns can be found.
+                                                                                                                                              12
+
+
+
+   In short, the above results indicate that: firstly, when we                                   R EFERENCES
+replace the similarity branch with different similarity metric      [1] Y. LeCun, Y. Bengio, and G. Hinton, “Deep learning,” Nature, vol. 521,
+modules, the improvement over a single similarity network is            no. 7553, p. 436, 2015.
+consistent with that of the BSNet with Relation module and          [2] N. Dvornik, C. Schmid, and J. Mairal, “Diversity with cooperation:
+                                                                        Ensemble methods for few-shot classification,” in Proceedings of the
+Cosine module. Secondly, when we extend BSNet to multiple               IEEE International Conference on Computer Vision, 2019, pp. 3723–
+similarity metrics, the improvement is also consistent with the         3731.
+bi-similarity BSNet.                                                [3] W. Lin, X. He, X. Han, D. Liu, J. See, J. Zou, H. Xiong, and F. Wu,
+                                                                        “Partition-aware adaptive switching neural networks for post-processing
+                                                                        in hevc,” IEEE Transactions on Multimedia, 2019.
+                                                                    [4] K. Simonyan and A. Zisserman, “Very deep convolutional networks for
+H. Discussion                                                           large-scale image recognition,” arXiv preprint arXiv:1409.1556, 2014.
+                                                                    [5] J. Gu, Z. Wang, J. Kuen, L. Ma, A. Shahroudy, B. Shuai, T. Liu,
+   The experimental results have demonstrated the effective-            X. Wang, and G. Wang, “Recent advances in convolutional neural
+ness of BSNet. As listed in Table II and Table IV, in most              networks,” arXiv preprint arXiv:1512.07108, 2015.
+cases, the proposed BSNet can improve the state-of-the-art          [6] W. Lin, Y. Zhou, H. Xu, J. Yan, M. Xu, J. Wu, and Z. Liu, “A tube-and-
+                                                                        droplet-based approach for representing and analyzing motion trajecto-
+metric-based few-shot learning methods. This can be attributed          ries,” IEEE transactions on pattern analysis and machine intelligence,
+to the following properties of BSNet. Firstly, compared with            vol. 39, no. 8, pp. 1489–1503, 2016.
+the single-similarity network, even though the proposed BSNet       [7] X. Li, D. Chang, Z. Ma, Z. Tan, J. Xue, J. Cao, J. Yu, and J. Guo,
+                                                                        “Oslnet: Deep small-sample classification with an orthogonal softmax
+contains more model parameters, it does not necessarily in-             layer,” IEEE Transactions on Image Processing, vol. 29, pp. 6482–6495,
+crease the empirical Rademacher complexity according to the             2020.
+Theorem 1. When a single-similarity based few-shot method           [8] X. Li, Z. Sun, J.-H. Xue, and Z. Ma, “A concise review of recent few-
+                                                                        shot meta-learning methods,” Neurocomputing, 2020.
+has larger model complexity, bi-similarity can reduce the           [9] X. Li, L. Yu, X. Yang, Z. Ma, J.-H. Xue, J. Cao, and J. Guo,
+model complexity, and thus resulting in better generalization           “Remarnet: Conjoint relation and margin learning for small-sample
+performance. Therefore, when a single-similarity network is             image classification,” IEEE Transactions on Circuits and Systems for
+                                                                        Video Technology, 2020.
+excessively flexible, a BSNet with better generalization can be    [10] Y. Lifchitz, Y. Avrithis, S. Picard, and A. Bursuc, “Dense classification
+constructed by simply adding an additional similarity module            and implanting for few-shot learning,” in Proceedings of the IEEE
+with lower model complexity onto the single-similarity net-             Conference on Computer Vision and Pattern Recognition, 2019, pp.
+                                                                        9258–9267.
+work. Secondly, BSNet can learn more discriminative features       [11] F. Sung, Y. Yang, L. Zhang, T. Xiang, P. H. Torr, and T. M. Hospedales,
+than other single-similarity networks, as the feature embedding         “Learning to compare: Relation network for few-shot learning,” in IEEE
+in BSNet needs to meet two distinct similarity measures.                Conference on Computer Vision and Pattern Recognition, 2018, pp.
+                                                                        1199–1208.
+   The experimental results demonstrate the applicability of       [12] S. Gidaris, A. Bursuc, N. Komodakis, P. Pérez, and M. Cord, “Boosting
+BSNet. As listed in Table V and VI, the proposed BSNet either           few-shot visual learning with self-supervision,” in IEEE International
+performs better than all individual similarity networks, or per-        Conference on Computer Vision, 2019, pp. 8059–8068.
+                                                                   [13] L. Bertinetto, J. F. Henriques, J. Valmadre, P. Torr, and A. Vedaldi,
+forms better than the worst one of three individual similarity          “Learning feed-forward one-shot learners,” in Advances in Neural In-
+networks. We can interpret this pattern from the perspective            formation Processing Systems, 2016, pp. 523–531.
+of the Rademacher complexity: the Rademacher complexity            [14] C. Finn, P. Abbeel, and S. Levine, “Model-agnostic meta-learning
+                                                                        for fast adaptation of deep networks,” in International Conference on
+of the proposed BSNet is no more than the average of the                Machine Learning, 2017, pp. 1126–1135.
+Rademacher complexities of two individual networks. Hence,         [15] C. Finn, K. Xu, and S. Levine, “Probabilistic model-agnostic meta-
+according to the relationship between a model generalization            learning,” in Advances in Neural Information Processing Systems, 2018,
+                                                                        pp. 9516–9527.
+error bound and an empirical Rademacher complexity (The-           [16] H. Qi, M. Brown, and D. G. Lowe, “Low-shot learning with imprinted
+orem 3.1 in [45]), when the Rademacher complexity of the                weights,” in IEEE Conference on Computer Vision and Pattern Recog-
+proposed BSNet is lower than both two individual networks,              nition, 2018, pp. 5822–5830.
+                                                                   [17] H. Li, W. Dong, X. Mei, C. Ma, F. Huang, and B.-G. Hu, “LGM-Net:
+the proposed BSNet may perform better than the two individual           Learning to generate matching networks for few-shot learning,” arXiv
+networks; otherwise, BSNet may perform in between the two               preprint arXiv:1905.06331, 2019.
+individual networks. Thus, in terms of the similarity metric       [18] A. Santoro, S. Bartunov, M. Botvinick, D. Wierstra, and T. Lillicrap,
+                                                                        “Meta-learning with memory-augmented neural networks,” in Interna-
+selection for BSNet, it is desirable to have each similarity            tional conference on machine learning, 2016, pp. 1842–1850.
+metric module with lower Rademacher complexity.                    [19] T. Munkhdalai and H. Yu, “Meta networks,” in Proceedings of the 34th
+                                                                        International Conference on Machine Learning, 2017, pp. 2554–2563.
+                                                                   [20] O. Vinyals, C. Blundell, T. Lillicrap, K. Kavukcuoglu, and D. Wierstra,
+                      V. C ONCLUSION                                    “Matching networks for one shot learning,” in Advances in Neural
+                                                                        Information Processing Systems, 2016, pp. 3630–3638.
+   In this paper, we proposed a novel neural network, namely       [21] J. Snell, K. Swersky, and R. Zemel, “Prototypical networks for few-shot
+Bi-Similarity Network, for few-shot fine-grained image classi-          learning,” in Advances in Neural Information Processing Systems, 2017,
+                                                                        pp. 4077–4087.
+fication. The proposed network contains a shared embedding         [22] W. Li, L. Wang, J. Xu, J. Huo, Y. Gao, and J. Luo, “Revisiting local
+module and a bi-similarity module, the structure of which               descriptor based image-to-class measure for few-shot learning,” in IEEE
+contains a parameter sharing mechanism. The Bi-Similarity               Conference on Computer Vision and Pattern Recognition, 2019, pp.
+                                                                        7260–7268.
+Network can learn fewer but more discriminative regions            [23] W.-Y. Chen, Y.-C. Liu, Z. Kira, Y.-C. F. Wang, and J.-B. Huang, “A
+compared with other single metric/similarity based few-shot             closer look at few-shot classification,” in International Conference on
+learning neural networks. Extensive experiments demonstrate             Learning Representations, 2019.
+                                                                   [24] W. Lin, Y. Shen, J. Yan, M. Xu, J. Wu, J. Wang, and K. Lu, “Learning
+that the proposed BSNet outperforms or matches previous                 correspondence structures for person re-identification,” IEEE Transac-
+state-of-the-art performance on fine-grained image datasets.            tions on Image Processing, vol. 26, no. 5, pp. 2438–2453, 2017.
+                                                                                   13
+
+
+
+[25] L. Qiao, Y. Shi, J. Li, Y. Wang, T. Huang, and Y. Tian, “Transductive
+     episodic-wise adaptive metric for few-shot learning,” in IEEE Interna-
+     tional Conference on Computer Vision, 2019, pp. 3603–3612.
+[26] P. Tokmakov, Y.-X. Wang, and M. Hebert, “Learning compositional rep-
+     resentations for few-shot recognition,” in IEEE International Conference
+     on Computer Vision, 2019, pp. 6372–6381.
+[27] F. Hao, F. He, J. Cheng, L. Wang, J. Cao, and D. Tao, “Collect and
+     select: Semantic alignment metric learning for few-shot learning,” in
+     IEEE International Conference on Computer Vision, October 2019.
+[28] X. Li, L. Yu, D. Chang, Z. Ma, and J. Cao, “Dual cross-entropy loss
+     for small-sample fine-grained vehicle classification,” IEEE Transactions
+     on Vehicular Technology, vol. 68, no. 5, pp. 4204–4212, 2019.
+[29] X. Zhang, H. Xiong, W. Zhou, W. Lin, and Q. Tian, “Picking deep
+     filter responses for fine-grained image recognition,” in Proceedings of
+     the IEEE conference on computer vision and pattern recognition, 2016,
+     pp. 1134–1142.
+[30] Z. Ma, D. Chang, J. Xie, Y. Ding, S. Wen, X. Li, Z. Si, and J. Guo,
+     “Fine-grained vehicle classification with channel max pooling modified
+     cnns,” IEEE Transactions on Vehicular Technology, vol. 68, no. 4, pp.
+     3224–3233, 2019.
+[31] X. Zhang, H. Xiong, W. Zhou, W. Lin, and Q. Tian, “Picking neural acti-
+     vations for fine-grained recognition,” IEEE Transactions on Multimedia,
+     vol. 19, no. 12, pp. 2736–2750, 2017.
+[32] D. Chang, Y. Ding, J. Xie, A. K. Bhunia, X. Li, Z. Ma, M. Wu,
+     J. Guo, and Y.-Z. Song, “The devil is in the channels: Mutual-channel
+     loss for fine-grained image classification,” IEEE Transactions on Image
+     Processing, vol. 29, pp. 4683–4695, 2020.
+[33] G. Koch, R. Zemel, and R. Salakhutdinov, “Siamese neural networks for
+     one-shot image recognition,” in ICML deep learning workshop, vol. 2,
+     2015.
+[34] K. Simonyan and A. Zisserman, “Very deep convolutional networks for
+     large-scale image recognition,” in International Conference on Learning
+     Representations, 2015.
+[35] K. R. Allen, E. Shelhamer, H. Shin, and J. B. Tenenbaum, “Infinite mix-
+     ture prototypes for few-shot learning,” arXiv preprint arXiv:1902.04552,
+     2019.
+[36] J. Kim, T. Kim, S. Kim, and C. D. Yoo, “Edge-labeling graph neural
+     network for few-shot learning,” pp. 11–20, 2019.
+[37] Z. Wu, Y. Li, L. Guo, and K. Jia, “PARN: Position-aware relation
+     networks for few-shot learning,” in IEEE International Conference on
+     Computer Vision, 2019, pp. 6659–6667.
+[38] J. Zhang, C. Zhao, B. Ni, M. Xu, and X. Yang, “Variational few-shot
+     learning,” in IEEE International Conference on Computer Vision, 2019,
+     pp. 1685–1694.
+[39] M. Mohri, A. Rostamizadeh, and A. Talwalkar, Foundations of machine
+     learning. MIT press, 2018.
+[40] S. Maji, E. Rahtu, J. Kannala, M. Blaschko, and A. Vedaldi, “Fine-
+     grained visual classification of aircraft,” arXiv preprint arXiv:1306.5151,
+     2013.
+[41] J. Krause, M. Stark, J. Deng, and L. Fei-Fei, “3D object representations
+     for fine-grained categorization,” in IEEE International Conference on
+     Computer Vision Workshops, 2013, pp. 554–561.
+[42] A. Khosla, N. Jayadevaprakash, B. Yao, and F.-F. Li, “Novel dataset for
+     fine-grained image categorization: Stanford dogs,” in CVPR Workshop
+     on Fine-Grained Visual Categorization (FGVC), vol. 2, no. 1, 2011.
+[43] C. Wah, S. Branson, P. Welinder, P. Perona, and S. Belongie, “The
+     Caltech-UCSD Birds-200-2011 dataset,” 2011.
+[44] R. R. Selvaraju, M. Cogswell, A. Das, R. Vedantam, D. Parikh, and
+     D. Batra, “Grad-CAM: Visual explanations from deep networks via
+     gradient-based localization,” in IEEE International Conference on Com-
+     puter Vision, 2017, pp. 618–626.
+[45] M. Mohri, A. Rostamizadeh, and A. Talwalkar, Foundations of machine
+     learning. MIT press, 2012.
+

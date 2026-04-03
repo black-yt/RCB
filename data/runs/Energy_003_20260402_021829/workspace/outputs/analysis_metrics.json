@@ -1,0 +1,12 @@
+{
+  "records": 105120,
+  "entities": 12,
+  "buildings": 10,
+  "time_steps_per_entity": 8760,
+  "outlier_flags": 2,
+  "duplicate_timestamps": 0,
+  "temporal_gap_count": 0,
+  "missing_values": 0,
+  "negative_values": 0,
+  "cn_equals_total": true
+}

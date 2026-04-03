@@ -1,0 +1,196 @@
+{
+  "paper_context": {
+    "title": "Topological Phases in AB-Stacked MoTe$_2$/WSe$_2$: $\\mathbb{Z",
+    "abstract": "We present a theory on the quantum phase diagram of AB-stacked MoTe$_2$/WSe$_2$ using a self-consistent Hartree-Fock calculation performed in the plane-wave basis, motivated by the observation of topological states in this system. At filling factor $\\nu=2$ (two holes per moir\\'e unit cell), Coulomb interaction can stabilize a $\\mathbb{Z}_2$ topological insulator by opening a charge gap. At $\\nu=1$, the interaction induces three classes of competing states, spin density wave states, an in-plane ferromagnetic state, and a valley polarized state, which undergo first-order phase transitions tuned by an out-of-plane displacement field. The valley polarized state becomes a Chern insulator for certain displacement fields. Moreover, we predict a topological charge density wave forming a honeycomb lattice with ferromagnetism at $\\nu=2/3$. Future directions on this versatile system hosting a rich set of quantum phases are discussed.",
+    "core_hamiltonian_equation": "H_{\\tau}=\\begin{pmatrix}\n        -\\frac{\\hbar^2\\bm{k}^2}{2m_\\mathfrak{b}}+\\Delta_{\\mathfrak{b}}(\\bm{r}) &  \\Delta_{\\text{T},\\tau}(\\bm{r})\\\\\n        \\Delta_{\\text{T},\\tau}^\\dag(\\bm{r}) & -\\frac{\\hbar^2\\left(\\bm{k}-\\tau \\bm{\\kappa}\\right)^2}{2m_\\mathfrak{t}}+ \\Delta_\\mathfrak{t}(\\bm{r})+V_{z\\mathfrak{t}}\n    \\end{pmatrix},",
+    "interaction_sentence": "\\textit{Coulomb Interactions.---} The bandwidth of the first moir\\'e valence band is on the order of $\\hbar^2 \\bm{\\kappa}^2/(2 m_{\\mathfrak{b}}) \\approx 47 $ meV, while the characteristic Coulomb interaction strength is on the order of $e^2/(\\epsilon a_M) \\approx 31 $ meV for $a_M  \\approx 4.7 $ nm and dielectric constant $\\epsilon= 10 $. Therefore, the Coulomb interaction has an energy scale comparable to the bandwidth [Fig.~\\ref{fig:1}(c)], which puts the system in the strongly interacting regime with possible interaction-induced quantum phase transitions. We consider the dual-gate screened Coulomb interaction with the momentum-dependent potential $V(q)=2\\pi e^2 \\tanh(q d)/(\\epsilon q)$, where $d$ is the gate-to-sample distance. We set $d=5$ nm \\cite{li2021quantum} unless otherwise stated. The dielectric constant $\\epsilon$ is of the order of $10-20$ , and we vary $\\epsilon$ to illustrate how physical properties depend on the interaction strength."
+  },
+  "score_summary": {
+    "task_count": 17,
+    "average_total_score": 10.176470588235293,
+    "average_score_fraction": 0.8480392156862745,
+    "category_summary": {
+      "other": {
+        "task_count": 1,
+        "avg_total_score": 0.0,
+        "avg_score_fraction": 0.0
+      },
+      "kinetic": {
+        "task_count": 2,
+        "avg_total_score": 9.0,
+        "avg_score_fraction": 0.75
+      },
+      "potential": {
+        "task_count": 2,
+        "avg_total_score": 11.5,
+        "avg_score_fraction": 0.9583333333333333
+      },
+      "second_quantization": {
+        "task_count": 2,
+        "avg_total_score": 11.0,
+        "avg_score_fraction": 0.9166666666666667
+      },
+      "momentum_conversion": {
+        "task_count": 2,
+        "avg_total_score": 11.5,
+        "avg_score_fraction": 0.9583333333333333
+      },
+      "particle_hole": {
+        "task_count": 2,
+        "avg_total_score": 10.5,
+        "avg_score_fraction": 0.875
+      },
+      "hartree_fock": {
+        "task_count": 3,
+        "avg_total_score": 11.0,
+        "avg_score_fraction": 0.9166666666666666
+      },
+      "simplification": {
+        "task_count": 3,
+        "avg_total_score": 11.0,
+        "avg_score_fraction": 0.9166666666666666
+      }
+    },
+    "best_task": {
+      "index": 5,
+      "task": "Define each term in Potential Hamiltonian (continuum version)",
+      "category": "potential",
+      "branch": "",
+      "answer": "$H_{Potential}(r) = \\begin{pmatrix} 2V_b\\sum_{j=1,3,5} \\cos(g_j \\cdot r  +\\psi_b) & w(1+\\omega e^{i g_2 \\cdot r} + \\omega^2 e^{i g_3 \\cdot r}) & 0 & 0 \\\\ w(1+\\omega^{-1}e^{-i g_2 \\cdot r} + \\omega^{-2} e^{-i g_3 \\cdot r}) & V_{zt} & 0 & 0 \\\\ 0 & 0 & 2V_b\\sum_{j=1,3,5} \\cos(g_j \\cdot r  +\\psi_b) & -w(1+\\omega^{-1}e^{-i g_2 \\cdot r} + \\omega^{-2} e^{-i g_3 \\cdot r}) \\\\ 0 & 0 & -w(1+\\omega e^{i g_2 \\cdot r} + \\omega^2 e^{i g_3 \\cdot r}) & V_{zt} \\end{pmatrix}$",
+      "answer_length": 461,
+      "source_count": 3,
+      "in_paper": 2.0,
+      "prompt_quality": 2.0,
+      "follow_instructions": 2.0,
+      "physics_logic": 2.0,
+      "math_derivation": 2.0,
+      "final_answer_accuracy": 2.0,
+      "total_score": 12.0,
+      "max_total": 12,
+      "score_fraction": 1.0
+    },
+    "lowest_task": {
+      "index": 1,
+      "task": "task_1",
+      "category": "other",
+      "branch": "continuum, first-quantized",
+      "answer": "",
+      "answer_length": 0,
+      "source_count": 0,
+      "in_paper": 0.0,
+      "prompt_quality": 0.0,
+      "follow_instructions": 0.0,
+      "physics_logic": 0.0,
+      "math_derivation": 0.0,
+      "final_answer_accuracy": 0.0,
+      "total_score": 0.0,
+      "max_total": 12,
+      "score_fraction": 0.0
+    }
+  },
+  "task_categories": {
+    "other": 1,
+    "kinetic": 2,
+    "potential": 2,
+    "second_quantization": 2,
+    "momentum_conversion": 2,
+    "particle_hole": 2,
+    "hartree_fock": 3,
+    "simplification": 3
+  },
+  "placeholder_mismatch_top_fields": [
+    [
+      "definition_of_variables",
+      12
+    ],
+    [
+      "second_nonint_symbol",
+      4
+    ],
+    [
+      "real|momentum",
+      3
+    ],
+    [
+      "kinetic_symbol",
+      3
+    ],
+    [
+      "potential_symbol",
+      3
+    ],
+    [
+      "single-particle|second-quantized",
+      2
+    ],
+    [
+      "hole_op",
+      2
+    ],
+    [
+      "op",
+      2
+    ],
+    [
+      "second_int_symbol",
+      2
+    ],
+    [
+      "Hartree_Fock_second_quantized_symbol",
+      2
+    ],
+    [
+      "system",
+      1
+    ],
+    [
+      "degrees_of_freedom",
+      1
+    ],
+    [
+      "variable",
+      1
+    ],
+    [
+      "order",
+      1
+    ],
+    [
+      "Note that the sublattice degrees of freedom is suppressed for now and will be stated later",
+      1
+    ]
+  ],
+  "output_figures": [
+    "report/images/task_total_scores.png",
+    "report/images/score_dimension_averages.png",
+    "report/images/reviewer_placeholder_averages.png"
+  ],
+  "related_work_inventory": [
+    {
+      "file_name": "paper_000.pdf",
+      "size_bytes": 10295148,
+      "size_kb": 10053.85546875
+    },
+    {
+      "file_name": "paper_001.pdf",
+      "size_bytes": 1283694,
+      "size_kb": 1253.607421875
+    },
+    {
+      "file_name": "paper_002.pdf",
+      "size_bytes": 758697,
+      "size_kb": 740.9150390625
+    },
+    {
+      "file_name": "paper_003.pdf",
+      "size_bytes": 3664672,
+      "size_kb": 3578.78125
+    },
+    {
+      "file_name": "paper_004.pdf",
+      "size_bytes": 6004349,
+      "size_kb": 5863.6220703125
+    }
+  ],
+  "source_snippet_task_count": 17
+}

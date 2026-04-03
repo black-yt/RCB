@@ -1,0 +1,17 @@
+{
+  "n_buses": 20,
+  "n_links": 23,
+  "n_generators": 43,
+  "n_storage_units": 3,
+  "n_hours": 168,
+  "generator_capacity_mw_by_carrier": {
+    "gas": 10610.582,
+    "nuclear": 3600.0,
+    "onshore wind": 57500.0
+  },
+  "storage_power_mw": 750.0,
+  "storage_energy_mwh": 4500.0,
+  "total_demand_mwh": 15939706.029762119,
+  "peak_system_demand_mw": 142059.8827621259,
+  "issues": []
+}

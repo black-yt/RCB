@@ -1,0 +1,17 @@
+season,records,share_pct
+winter,592,71.15384615384616
+summer,68,8.173076923076923
+"winter, spring",57,6.850961538461539
+"spring, summer, fall",51,6.129807692307692
+"spring, summer",37,4.447115384615385
+"fall, winter",9,1.0817307692307692
+"winter, spring, summer, fall",4,0.4807692307692308
+"winter,spring",3,0.3605769230769231
+"fall,winter",2,0.2403846153846154
+"summer, fall",2,0.2403846153846154
+spring,2,0.2403846153846154
+fall,1,0.1201923076923077
+"spring, summer, fall, winter",1,0.1201923076923077
+"fall, winter, spring",1,0.1201923076923077
+"winter, spring, summer",1,0.1201923076923077
+"winter, summer",1,0.1201923076923077

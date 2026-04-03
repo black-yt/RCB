@@ -1,0 +1,133 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "optimization_vos_experiments.py",
+    "path": "code/optimization_vos_experiments.py",
+    "type": "file",
+    "size": 5035,
+    "mtime": 1775211970.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "complex_optimization_data.npy",
+    "path": "data/complex_optimization_data.npy",
+    "type": "file",
+    "size": 16024503,
+    "mtime": 1770604412.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "solutions.npy",
+    "path": "outputs/solutions.npy",
+    "type": "file",
+    "size": 53449,
+    "mtime": 1775211968.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 656705,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1161056,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 794236,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 883291,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "final_l2_errors.png",
+    "path": "report/images/final_l2_errors.png",
+    "type": "file",
+    "size": 22300,
+    "mtime": 1775211970.0,
+    "exported": true
+  },
+  {
+    "name": "objective_convergence.png",
+    "path": "report/images/objective_convergence.png",
+    "type": "file",
+    "size": 82889,
+    "mtime": 1775211970.0,
+    "exported": true
+  },
+  {
+    "name": "sparsity_fista_vs_true.png",
+    "path": "report/images/sparsity_fista_vs_true.png",
+    "type": "file",
+    "size": 45205,
+    "mtime": 1775211970.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12675,
+    "mtime": 1775211971.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5090,
+    "mtime": 1775017038.0,
+    "exported": true
+  }
+]

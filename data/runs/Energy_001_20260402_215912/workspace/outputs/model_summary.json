@@ -1,0 +1,18 @@
+{
+  "objective_total_cost": 119214682003.7709,
+  "generation_cost": 71629795.28860953,
+  "load_shedding_cost": 119143052208.48058,
+  "total_generation_mwh": 4025877.1228861418,
+  "total_demand_mwh": 15939706.029762119,
+  "total_load_shed_mwh": 11914305.220848057,
+  "total_wind_available_mwh": 4192662.0047798613,
+  "total_wind_generation_mwh": 2270721.2171139508,
+  "total_wind_curtailment_mwh": 1921940.7876659106,
+  "peak_system_demand_mw": 142059.8827621259,
+  "peak_gas_generation_mw": 8047.356581977325,
+  "peak_wind_generation_mw": 15636.215170335243,
+  "peak_nuclear_generation_mw": 2400.0,
+  "max_hourly_load_shed_mw": 116282.80155418332,
+  "solver_status": 0,
+  "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+}

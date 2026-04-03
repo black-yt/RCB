@@ -1,0 +1,278 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "01_eda.py",
+    "path": "code/01_eda.py",
+    "type": "file",
+    "size": 5064,
+    "mtime": 1775132088.0,
+    "exported": true
+  },
+  {
+    "name": "02_train_models.py",
+    "path": "code/02_train_models.py",
+    "type": "file",
+    "size": 9632,
+    "mtime": 1775132088.0,
+    "exported": true
+  },
+  {
+    "name": "03_analysis.py",
+    "path": "code/03_analysis.py",
+    "type": "file",
+    "size": 8399,
+    "mtime": 1775132088.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "test_simulated.csv",
+    "path": "data/test_simulated.csv",
+    "type": "file",
+    "size": 29204490,
+    "mtime": 1772421508.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "train_simulated.csv",
+    "path": "data/train_simulated.csv",
+    "type": "file",
+    "size": 68149042,
+    "mtime": 1772421506.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "degradation_results.json",
+    "path": "outputs/degradation_results.json",
+    "type": "file",
+    "size": 672,
+    "mtime": 1775132084.0,
+    "exported": true
+  },
+  {
+    "name": "eda_summary.json",
+    "path": "outputs/eda_summary.json",
+    "type": "file",
+    "size": 143,
+    "mtime": 1775132084.0,
+    "exported": true
+  },
+  {
+    "name": "feature_importance_Gradient_Boosting.npy",
+    "path": "outputs/feature_importance_Gradient_Boosting.npy",
+    "type": "file",
+    "size": 288,
+    "mtime": 1775132084.0,
+    "exported": false
+  },
+  {
+    "name": "feature_importance_Random_Forest.npy",
+    "path": "outputs/feature_importance_Random_Forest.npy",
+    "type": "file",
+    "size": 288,
+    "mtime": 1775132084.0,
+    "exported": false
+  },
+  {
+    "name": "model_results.json",
+    "path": "outputs/model_results.json",
+    "type": "file",
+    "size": 790,
+    "mtime": 1775132084.0,
+    "exported": true
+  },
+  {
+    "name": "permutation_importance.csv",
+    "path": "outputs/permutation_importance.csv",
+    "type": "file",
+    "size": 967,
+    "mtime": 1775132084.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 7682715,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 540574,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 725080,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 736463,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig10_score_distribution_threshold.png",
+    "path": "report/images/fig10_score_distribution_threshold.png",
+    "type": "file",
+    "size": 86716,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig11_mlp_loss_curve.png",
+    "path": "report/images/fig11_mlp_loss_curve.png",
+    "type": "file",
+    "size": 44569,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig12_degradation_score_distributions.png",
+    "path": "report/images/fig12_degradation_score_distributions.png",
+    "type": "file",
+    "size": 105566,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig13_tsne.png",
+    "path": "report/images/fig13_tsne.png",
+    "type": "file",
+    "size": 177579,
+    "mtime": 1775132084.0,
+    "exported": true
+  },
+  {
+    "name": "fig1_class_degradation.png",
+    "path": "report/images/fig1_class_degradation.png",
+    "type": "file",
+    "size": 99904,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_feature_distributions.png",
+    "path": "report/images/fig2_feature_distributions.png",
+    "type": "file",
+    "size": 131927,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_feature_correlation.png",
+    "path": "report/images/fig3_feature_correlation.png",
+    "type": "file",
+    "size": 51646,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_feature_means_by_label.png",
+    "path": "report/images/fig4_feature_means_by_label.png",
+    "type": "file",
+    "size": 45199,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_roc_pr_curves.png",
+    "path": "report/images/fig5_roc_pr_curves.png",
+    "type": "file",
+    "size": 161974,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_model_comparison.png",
+    "path": "report/images/fig6_model_comparison.png",
+    "type": "file",
+    "size": 66454,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig7_confusion_matrix.png",
+    "path": "report/images/fig7_confusion_matrix.png",
+    "type": "file",
+    "size": 48746,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig8_degradation_performance.png",
+    "path": "report/images/fig8_degradation_performance.png",
+    "type": "file",
+    "size": 56454,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "fig9_feature_importance.png",
+    "path": "report/images/fig9_feature_importance.png",
+    "type": "file",
+    "size": 79976,
+    "mtime": 1775132086.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 19290,
+    "mtime": 1775132089.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5539,
+    "mtime": 1775060554.0,
+    "exported": true
+  }
+]

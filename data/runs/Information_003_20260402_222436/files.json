@@ -1,0 +1,242 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 21466,
+    "mtime": 1775199202.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "NF-UNSW-NB15-v2_3d.pt",
+    "path": "data/NF-UNSW-NB15-v2_3d.pt",
+    "type": "file",
+    "size": 32733515,
+    "mtime": 1757405180.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 621,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "binary_metrics.json",
+    "path": "outputs/binary_metrics.json",
+    "type": "file",
+    "size": 420,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "binary_predictions.csv",
+    "path": "outputs/binary_predictions.csv",
+    "type": "file",
+    "size": 119034,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_summary.json",
+    "path": "outputs/dataset_summary.json",
+    "type": "file",
+    "size": 1306,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "few_shot_results.csv",
+    "path": "outputs/few_shot_results.csv",
+    "type": "file",
+    "size": 359,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "multiclass_metrics.json",
+    "path": "outputs/multiclass_metrics.json",
+    "type": "file",
+    "size": 186,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "multiclass_predictions.csv",
+    "path": "outputs/multiclass_predictions.csv",
+    "type": "file",
+    "size": 118722,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "multiclass_report.txt",
+    "path": "outputs/multiclass_report.txt",
+    "type": "file",
+    "size": 704,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "README.txt",
+    "path": "outputs/README.txt",
+    "type": "file",
+    "size": 621,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1590,
+    "mtime": 1775199198.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 2 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2630694,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2581990,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 993448,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3459382,
+    "mtime": 1773914898.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "binary_confusion.png",
+    "path": "report/images/binary_confusion.png",
+    "type": "file",
+    "size": 37088,
+    "mtime": 1775199200.0,
+    "exported": true
+  },
+  {
+    "name": "binary_results.png",
+    "path": "report/images/binary_results.png",
+    "type": "file",
+    "size": 77866,
+    "mtime": 1775199200.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 155222,
+    "mtime": 1775199200.0,
+    "exported": true
+  },
+  {
+    "name": "feature_embedding.png",
+    "path": "report/images/feature_embedding.png",
+    "type": "file",
+    "size": 109190,
+    "mtime": 1775199200.0,
+    "exported": true
+  },
+  {
+    "name": "few_shot_results.png",
+    "path": "report/images/few_shot_results.png",
+    "type": "file",
+    "size": 74549,
+    "mtime": 1775199200.0,
+    "exported": true
+  },
+  {
+    "name": "multiclass_confusion.png",
+    "path": "report/images/multiclass_confusion.png",
+    "type": "file",
+    "size": 90927,
+    "mtime": 1775199200.0,
+    "exported": true
+  },
+  {
+    "name": "unknown_attack_results.png",
+    "path": "report/images/unknown_attack_results.png",
+    "type": "file",
+    "size": 45492,
+    "mtime": 1775199200.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 18529,
+    "mtime": 1775199203.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5658,
+    "mtime": 1775139876.0,
+    "exported": true
+  }
+]

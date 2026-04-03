@@ -1,0 +1,115 @@
+{
+  "general": {
+    "target_year": 2030,
+    "electrolyzer_specific_energy_kwh_per_kg": 50.0,
+    "export_scale_kt_h2_per_year": 200.0,
+    "africa_to_rotterdam_km": 8500.0
+  },
+  "technology": {
+    "pv": {
+      "capex_eur_per_kw_africa": 450.0,
+      "capex_eur_per_kw_europe": 550.0,
+      "fixed_opex_share": 0.015,
+      "lifetime_years": 25,
+      "cf_intercept": 0.18,
+      "cf_slope": 0.18
+    },
+    "wind": {
+      "capex_eur_per_kw_africa": 1100.0,
+      "capex_eur_per_kw_europe": 1400.0,
+      "fixed_opex_share": 0.03,
+      "lifetime_years": 25,
+      "cf_intercept": 0.18,
+      "cf_slope": 0.36
+    },
+    "electrolyzer": {
+      "capex_eur_per_kw_africa": 500.0,
+      "capex_eur_per_kw_europe": 650.0,
+      "fixed_opex_share": 0.025,
+      "lifetime_years": 20
+    },
+    "buffer_storage": {
+      "eur_per_kg_h2": 0.12
+    }
+  },
+  "infrastructure": {
+    "road_capex_eur_per_km": 600000.0,
+    "road_lifetime_years": 25,
+    "road_fom_share": 0.02,
+    "road_trucking_eur_per_kg_per_km_nh3": 0.00035,
+    "water_pipeline_capex_eur_per_km": 220000.0,
+    "water_pipeline_lifetime_years": 25,
+    "water_pipeline_fom_share": 0.02,
+    "water_use_l_per_kg_h2": 15.0,
+    "freshwater_treatment_eur_per_m3": 0.50,
+    "desalination_eur_per_m3": 1.20
+  },
+  "conversion_chain": {
+    "ammonia_synthesis_eur_per_kg_h2": 0.35,
+    "export_terminal_eur_per_kg_h2": 0.08,
+    "shipping_eur_per_kg_per_km": 0.000026,
+    "ammonia_cracking_eur_per_kg_h2": 0.55,
+    "eu_distribution_eur_per_kg_h2": 0.10
+  },
+  "scenarios": {
+    "base": {
+      "label": "Base finance",
+      "africa_wacc": 0.12,
+      "europe_wacc": 0.06,
+      "infra_capex_multiplier": 1.0,
+      "conversion_capex_multiplier": 1.0,
+      "electrolyzer_capex_multiplier_africa": 1.0,
+      "electrolyzer_capex_multiplier_europe": 1.0
+    },
+    "de_risked_africa": {
+      "label": "African de-risking",
+      "africa_wacc": 0.08,
+      "europe_wacc": 0.06,
+      "infra_capex_multiplier": 1.0,
+      "conversion_capex_multiplier": 1.0,
+      "electrolyzer_capex_multiplier_africa": 1.0,
+      "electrolyzer_capex_multiplier_europe": 1.0
+    },
+    "high_rate_world": {
+      "label": "High-rate world",
+      "africa_wacc": 0.16,
+      "europe_wacc": 0.09,
+      "infra_capex_multiplier": 1.0,
+      "conversion_capex_multiplier": 1.0,
+      "electrolyzer_capex_multiplier_africa": 1.0,
+      "electrolyzer_capex_multiplier_europe": 1.0
+    },
+    "corridor_policy": {
+      "label": "De-risked corridor policy",
+      "africa_wacc": 0.07,
+      "europe_wacc": 0.05,
+      "infra_capex_multiplier": 0.85,
+      "conversion_capex_multiplier": 0.85,
+      "electrolyzer_capex_multiplier_africa": 0.9,
+      "electrolyzer_capex_multiplier_europe": 1.0
+    }
+  },
+  "europe_benchmarks": [
+    {
+      "name": "Iberia",
+      "pv_cf": 0.25,
+      "wind_cf": 0.32,
+      "road_distance_km": 20.0,
+      "water_distance_km": 10.0
+    },
+    {
+      "name": "North Sea",
+      "pv_cf": 0.15,
+      "wind_cf": 0.45,
+      "road_distance_km": 15.0,
+      "water_distance_km": 10.0
+    },
+    {
+      "name": "Central Europe",
+      "pv_cf": 0.14,
+      "wind_cf": 0.28,
+      "road_distance_km": 10.0,
+      "water_distance_km": 10.0
+    }
+  ]
+}

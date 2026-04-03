@@ -1,0 +1,30 @@
+{
+  "device": "cpu",
+  "seed": 7,
+  "protein_ca_residues": 161,
+  "ligand_heavy_atoms": 90,
+  "ligand_bonds": 89,
+  "cross_modal_edges": 256,
+  "contact_residues_within_8A": 36,
+  "note": "The task description states that the protein file contains 107 CA-only residues, but the actual file contains 161 CA atoms with full-atom records in the original chain segment. This study uses the on-disk structure as the source of truth.",
+  "summary_metrics": {
+    "cross-modal": {
+      "protein_rmsd_mean": 1.5944429462790137,
+      "protein_rmsd_median": 1.6509786147608685,
+      "ligand_rmsd_mean": 1.1903256169942784,
+      "ligand_rmsd_median": 1.191630566068015
+    },
+    "identity": {
+      "protein_rmsd_mean": 2.4106274892594497,
+      "protein_rmsd_median": 2.5377963574855773,
+      "ligand_rmsd_mean": 2.285720323612341,
+      "ligand_rmsd_median": 2.4637452741897055
+    },
+    "identity-free": {
+      "protein_rmsd_mean": 1.8321849295637522,
+      "protein_rmsd_median": 1.856992964624275,
+      "ligand_rmsd_mean": 1.4140956151491135,
+      "ligand_rmsd_median": 1.3611051435284693
+    }
+  }
+}

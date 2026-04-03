@@ -1,0 +1,16 @@
+chain,protein,resseq,resname_3,resname_1,residue_id,contact_count_5A,contact_count_8A,closest_partner_distance,closest_partner_residue,is_interface_5A,is_interface_8A
+A,Barnase,102,HIS,H,A:102,8,18,2.805396763383035,D:39,True,True
+D,Barstar,29,TYR,Y,D:29,7,12,2.652377989653812,A:83,True,True
+D,Barstar,35,ASP,D,D:35,7,17,2.877266237246737,A:59,True,True
+D,Barstar,39,ASP,D,D:39,6,17,2.497251489137609,A:83,True,True
+A,Barnase,59,ARG,R,A:59,5,15,2.877266237246737,D:35,True,True
+D,Barstar,33,ASN,N,D:33,5,11,3.2210180067798424,A:102,True,True
+A,Barnase,83,ARG,R,A:83,4,12,2.497251489137609,D:39,True,True
+A,Barnase,104,GLN,Q,A:104,4,8,3.2596266657394977,D:31,True,True
+D,Barstar,38,TRP,W,D:38,4,11,3.263398228840605,A:59,True,True
+D,Barstar,44,TRP,W,D:44,4,14,3.3462265314828863,A:83,True,True
+A,Barnase,103,TYR,Y,A:103,4,13,3.3575641468183446,D:39,True,True
+A,Barnase,38,SER,S,A:38,4,7,3.4991870484442518,D:44,True,True
+A,Barnase,60,GLU,E,A:60,3,11,2.835825981967162,D:34,True,True
+A,Barnase,27,LYS,K,A:27,3,9,2.9486393472244137,D:42,True,True
+D,Barstar,31,GLY,G,D:31,3,8,3.034626995200563,A:102,True,True

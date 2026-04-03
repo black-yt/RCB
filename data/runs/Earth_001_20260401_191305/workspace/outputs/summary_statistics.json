@@ -1,0 +1,97 @@
+{
+  "total_records": 832,
+  "year_range": "2000\u20132025",
+  "n_states": 13,
+  "states": [
+    "california",
+    "colorado",
+    "idaho",
+    "kansas",
+    "montana",
+    "nevada",
+    "north dakota",
+    "oklahoma",
+    "oregon",
+    "south dakota",
+    "texas",
+    "utah",
+    "wyoming"
+  ],
+  "n_operators": 41,
+  "top_states": {
+    "california": 215,
+    "colorado": 142,
+    "utah": 130,
+    "texas": 104,
+    "idaho": 73
+  },
+  "top_operators": {
+    "north american weather consultants": 201,
+    "weather modification inc": 120,
+    "western weather consultants llc": 108,
+    "desert research institute": 62,
+    "atmospherics inc": 52
+  },
+  "purpose_distribution": {
+    "augment snowpack": 504,
+    "increase precipitation": 290,
+    "suppress hail": 25,
+    "research": 6,
+    "suppress fog": 6,
+    "increase runoff": 1
+  },
+  "apparatus_distribution": {
+    "ground": 461,
+    "airborne": 236,
+    "ground & airborne": 131,
+    "unknown": 4
+  },
+  "agent_cat_distribution": {
+    "silver iodide (pure)": 547,
+    "silver iodide + sodium iodide": 108,
+    "silver iodide + ammonium iodide": 78,
+    "silver iodide + hygroscopic": 62,
+    "ionized air": 21,
+    "dry ice / CO\u2082": 6,
+    "other": 5,
+    "hygroscopic salts": 5
+  },
+  "season_distribution": {
+    "winter": 592,
+    "summer": 68,
+    "winter, spring": 57,
+    "spring, summer, fall": 51,
+    "spring, summer": 37,
+    "fall, winter": 9,
+    "winter, spring, summer, fall": 4,
+    "winter,spring": 3
+  },
+  "annual_counts": {
+    "2000": 21,
+    "2001": 22,
+    "2002": 42,
+    "2003": 49,
+    "2004": 47,
+    "2005": 47,
+    "2006": 40,
+    "2007": 42,
+    "2008": 39,
+    "2009": 40,
+    "2010": 34,
+    "2011": 33,
+    "2012": 28,
+    "2013": 31,
+    "2014": 32,
+    "2015": 31,
+    "2016": 34,
+    "2017": 31,
+    "2018": 26,
+    "2019": 19,
+    "2020": 12,
+    "2021": 20,
+    "2022": 29,
+    "2023": 28,
+    "2024": 34,
+    "2025": 21
+  }
+}

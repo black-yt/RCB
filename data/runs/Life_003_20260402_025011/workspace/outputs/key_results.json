@@ -1,0 +1,179 @@
+{
+  "positive_rate_m6a": 0.2048,
+  "performance_best_baseline": [
+    {
+      "Chemistry": "DNA r9.4",
+      "Uncalled4_time_min": 39.5843,
+      "BestBaseline_time_tool": "f5c",
+      "BestBaseline_time_min": 256.9233,
+      "Speedup_vs_best_baseline": 6.4905,
+      "Uncalled4_file_MB": 139.8207,
+      "SmallestBaseline_file_tool": "Tombo",
+      "SmallestBaseline_file_MB": 387.1215,
+      "Compression_vs_smallest_baseline": 2.7687
+    },
+    {
+      "Chemistry": "DNA r10.4",
+      "Uncalled4_time_min": 54.4491,
+      "BestBaseline_time_tool": "f5c",
+      "BestBaseline_time_min": 1573.4686,
+      "Speedup_vs_best_baseline": 28.898,
+      "Uncalled4_file_MB": 118.7086,
+      "SmallestBaseline_file_tool": "f5c",
+      "SmallestBaseline_file_MB": 3718.5816,
+      "Compression_vs_smallest_baseline": 31.3253
+    },
+    {
+      "Chemistry": "RNA001",
+      "Uncalled4_time_min": 114.6677,
+      "BestBaseline_time_tool": "f5c",
+      "BestBaseline_time_min": 144.9719,
+      "Speedup_vs_best_baseline": 1.2643,
+      "Uncalled4_file_MB": 21.2245,
+      "SmallestBaseline_file_tool": "Tombo",
+      "SmallestBaseline_file_MB": 86.6028,
+      "Compression_vs_smallest_baseline": 4.0803
+    },
+    {
+      "Chemistry": "RNA004",
+      "Uncalled4_time_min": 60.1883,
+      "BestBaseline_time_tool": "f5c",
+      "BestBaseline_time_min": 68.3023,
+      "Speedup_vs_best_baseline": 1.1348,
+      "Uncalled4_file_MB": 48.438,
+      "SmallestBaseline_file_tool": "f5c",
+      "SmallestBaseline_file_MB": 536.1037,
+      "Compression_vs_smallest_baseline": 11.0678
+    }
+  ],
+  "position_centrality": [
+    {
+      "model": "DNA R9.4.1 6-mer",
+      "peak_position": 4,
+      "peak_shift": 1.0846,
+      "edge_shift_mean": 0.3593,
+      "peak_to_edge_ratio": 3.0187
+    },
+    {
+      "model": "DNA R10.4.1 9-mer",
+      "peak_position": 5,
+      "peak_shift": 1.0387,
+      "edge_shift_mean": 0.2732,
+      "peak_to_edge_ratio": 3.8021
+    },
+    {
+      "model": "RNA001 R9.4.1 5-mer",
+      "peak_position": 3,
+      "peak_shift": 1.0866,
+      "edge_shift_mean": 0.4102,
+      "peak_to_edge_ratio": 2.6486
+    },
+    {
+      "model": "RNA004 9-mer",
+      "peak_position": 5,
+      "peak_shift": 1.0381,
+      "edge_shift_mean": 0.2731,
+      "peak_to_edge_ratio": 3.8007
+    }
+  ],
+  "m6a_metrics": [
+    {
+      "tool": "uncalled4",
+      "average_precision": 0.9929,
+      "average_precision_ci_low": 0.9904,
+      "average_precision_ci_high": 0.9952,
+      "roc_auc": 0.9979,
+      "roc_auc_ci_low": 0.997,
+      "roc_auc_ci_high": 0.9986,
+      "brier_score": 0.0604,
+      "best_f1": 0.9638,
+      "best_f1_threshold": 0.5239,
+      "recall_at_precision_0.90": 0.9834,
+      "recall_at_precision_0.95": 0.9746
+    },
+    {
+      "tool": "nanopolish",
+      "average_precision": 0.7784,
+      "average_precision_ci_low": 0.7555,
+      "average_precision_ci_high": 0.8025,
+      "roc_auc": 0.9012,
+      "roc_auc_ci_low": 0.8902,
+      "roc_auc_ci_high": 0.912,
+      "brier_score": 0.1156,
+      "best_f1": 0.6984,
+      "best_f1_threshold": 0.4901,
+      "recall_at_precision_0.90": 0.4326,
+      "recall_at_precision_0.95": 0.3398
+    }
+  ],
+  "pore_model_summary": [
+    {
+      "model_id": "dna_r9.4.1",
+      "label": "DNA R9.4.1 6-mer",
+      "modality": "DNA",
+      "chemistry": "R9.4.1",
+      "k": 6,
+      "n_kmers": 4096,
+      "current_mean_mean": 0.0,
+      "current_mean_std": 1.0001,
+      "current_mean_min": -2.8223,
+      "current_mean_max": 2.9036,
+      "current_std_mean": 0.1246,
+      "current_std_std": 0.0143,
+      "dwell_mean": 12.5291,
+      "dwell_std": 8.0597,
+      "dwell_median": 10.0
+    },
+    {
+      "model_id": "dna_r10.4.1",
+      "label": "DNA R10.4.1 9-mer",
+      "modality": "DNA",
+      "chemistry": "R10.4.1",
+      "k": 9,
+      "n_kmers": 262144,
+      "current_mean_mean": 0.0,
+      "current_mean_std": 1.0,
+      "current_mean_min": -3.2789,
+      "current_mean_max": 3.1564,
+      "current_std_mean": 0.125,
+      "current_std_std": 0.0144,
+      "dwell_mean": 12.5407,
+      "dwell_std": 8.0241,
+      "dwell_median": 10.0
+    },
+    {
+      "model_id": "rna_r9.4.1",
+      "label": "RNA001 R9.4.1 5-mer",
+      "modality": "RNA",
+      "chemistry": "RNA001",
+      "k": 5,
+      "n_kmers": 1024,
+      "current_mean_mean": 0.0,
+      "current_mean_std": 1.0005,
+      "current_mean_min": -2.4603,
+      "current_mean_max": 2.4082,
+      "current_std_mean": 0.1247,
+      "current_std_std": 0.014,
+      "dwell_mean": 12.5762,
+      "dwell_std": 8.5343,
+      "dwell_median": 10.0
+    },
+    {
+      "model_id": "rna004",
+      "label": "RNA004 9-mer",
+      "modality": "RNA",
+      "chemistry": "RNA004",
+      "k": 9,
+      "n_kmers": 262144,
+      "current_mean_mean": -0.0,
+      "current_mean_std": 1.0,
+      "current_mean_min": -3.2025,
+      "current_mean_max": 3.318,
+      "current_std_mean": 0.125,
+      "current_std_std": 0.0144,
+      "dwell_mean": 12.514,
+      "dwell_std": 8.0213,
+      "dwell_median": 10.0
+    }
+  ]
+}

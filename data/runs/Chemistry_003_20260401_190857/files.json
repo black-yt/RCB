@@ -1,0 +1,327 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_ag3.py",
+    "path": "code/analysis_ag3.py",
+    "type": "file",
+    "size": 19915,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_ag3_fast.py",
+    "path": "code/analysis_ag3_fast.py",
+    "type": "file",
+    "size": 18527,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_dimer.py",
+    "path": "code/analysis_dimer.py",
+    "type": "file",
+    "size": 10733,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_dimer_fast.py",
+    "path": "code/analysis_dimer_fast.py",
+    "type": "file",
+    "size": 8008,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_random_charges.py",
+    "path": "code/analysis_random_charges.py",
+    "type": "file",
+    "size": 12421,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_rc_fast.py",
+    "path": "code/analysis_rc_fast.py",
+    "type": "file",
+    "size": 18339,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "data_utils.py",
+    "path": "code/data_utils.py",
+    "type": "file",
+    "size": 7234,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "fast_les_model.py",
+    "path": "code/fast_les_model.py",
+    "type": "file",
+    "size": 7577,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "les_model.py",
+    "path": "code/les_model.py",
+    "type": "file",
+    "size": 13248,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "run_all_analyses.py",
+    "path": "code/run_all_analyses.py",
+    "type": "file",
+    "size": 38668,
+    "mtime": 1775131846.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_chargestates.xyz",
+    "path": "data/ag3_chargestates.xyz",
+    "type": "file",
+    "size": 25976,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "charged_dimer.xyz",
+    "path": "data/charged_dimer.xyz",
+    "type": "file",
+    "size": 55920,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "random_charges.xyz",
+    "path": "data/random_charges.xyz",
+    "type": "file",
+    "size": 768000,
+    "mtime": 1772414960.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_results.npy",
+    "path": "outputs/ag3_results.npy",
+    "type": "file",
+    "size": 18071,
+    "mtime": 1775131842.0,
+    "exported": false
+  },
+  {
+    "name": "dimer_results.npy",
+    "path": "outputs/dimer_results.npy",
+    "type": "file",
+    "size": 12838,
+    "mtime": 1775131842.0,
+    "exported": false
+  },
+  {
+    "name": "rc_energies_coulomb.npy",
+    "path": "outputs/rc_energies_coulomb.npy",
+    "type": "file",
+    "size": 928,
+    "mtime": 1775131842.0,
+    "exported": false
+  },
+  {
+    "name": "rc_energies_total.npy",
+    "path": "outputs/rc_energies_total.npy",
+    "type": "file",
+    "size": 928,
+    "mtime": 1775131842.0,
+    "exported": false
+  },
+  {
+    "name": "rc_results.npy",
+    "path": "outputs/rc_results.npy",
+    "type": "file",
+    "size": 142814,
+    "mtime": 1775131842.0,
+    "exported": false
+  },
+  {
+    "name": "rc_true_charges.npy",
+    "path": "outputs/rc_true_charges.npy",
+    "type": "file",
+    "size": 102528,
+    "mtime": 1775131842.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1659509,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1792962,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 263549,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6623726,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig00_summary.png",
+    "path": "report/images/fig00_summary.png",
+    "type": "file",
+    "size": 103440,
+    "mtime": 1775131842.0,
+    "exported": true
+  },
+  {
+    "name": "fig01_rc_overview.png",
+    "path": "report/images/fig01_rc_overview.png",
+    "type": "file",
+    "size": 133627,
+    "mtime": 1775131842.0,
+    "exported": true
+  },
+  {
+    "name": "fig02_rc_parity.png",
+    "path": "report/images/fig02_rc_parity.png",
+    "type": "file",
+    "size": 93269,
+    "mtime": 1775131844.0,
+    "exported": true
+  },
+  {
+    "name": "fig03_rc_latent_charges.png",
+    "path": "report/images/fig03_rc_latent_charges.png",
+    "type": "file",
+    "size": 135475,
+    "mtime": 1775131844.0,
+    "exported": true
+  },
+  {
+    "name": "fig04_rc_training.png",
+    "path": "report/images/fig04_rc_training.png",
+    "type": "file",
+    "size": 48520,
+    "mtime": 1775131844.0,
+    "exported": true
+  },
+  {
+    "name": "fig05_dimer_analysis.png",
+    "path": "report/images/fig05_dimer_analysis.png",
+    "type": "file",
+    "size": 294550,
+    "mtime": 1775131844.0,
+    "exported": true
+  },
+  {
+    "name": "fig06_ag3_overview.png",
+    "path": "report/images/fig06_ag3_overview.png",
+    "type": "file",
+    "size": 89859,
+    "mtime": 1775131844.0,
+    "exported": true
+  },
+  {
+    "name": "fig07_ag3_parity.png",
+    "path": "report/images/fig07_ag3_parity.png",
+    "type": "file",
+    "size": 111808,
+    "mtime": 1775131844.0,
+    "exported": true
+  },
+  {
+    "name": "fig08_ag3_latent.png",
+    "path": "report/images/fig08_ag3_latent.png",
+    "type": "file",
+    "size": 90431,
+    "mtime": 1775131844.0,
+    "exported": true
+  },
+  {
+    "name": "fig09_ag3_training.png",
+    "path": "report/images/fig09_ag3_training.png",
+    "type": "file",
+    "size": 80154,
+    "mtime": 1775131844.0,
+    "exported": true
+  },
+  {
+    "name": "fig10_ag3_comparison.png",
+    "path": "report/images/fig10_ag3_comparison.png",
+    "type": "file",
+    "size": 78586,
+    "mtime": 1775131844.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 25098,
+    "mtime": 1775131847.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6294,
+    "mtime": 1775041737.0,
+    "exported": true
+  }
+]

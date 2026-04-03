@@ -1,0 +1,16 @@
+Task-specific analysis summary
+==============================
+
+EDE raises H0 from 68.12 to 70.90 km/s/Mpc while lowering omega_m from 0.3037 to 0.2999.
+Relative to LCDM, the EDE shift in H0 is 2.68 combined-sigma, whereas w0wa shifts H0 by -2.41 combined-sigma in the opposite direction.
+EDE also increases sigma8 to 0.8283 and ns to 0.9817, with f_EDE = 0.093 ± 0.031 and log10_ac = -3.564 ± 0.075.
+The w0wa solution instead prefers a much higher omega_m = 0.353 and lower H0 = 63.5, emphasizing that late-time dark energy alters the parameter pattern differently from EDE.
+
+Residual-data consistency checks based on inferred curves:
+- desi_dvrd: chi2(null/LCDM residual baseline)=14.44, chi2(EDE)=4.06, chi2(w0wa)=11.59.
+- desi_fap: chi2(null/LCDM residual baseline)=4.06, chi2(EDE)=1.96, chi2(w0wa)=4.82.
+- sne_mu: chi2(null/LCDM residual baseline)=7.45, chi2(EDE)=0.14, chi2(w0wa)=4.54.
+
+Interpretation: within this reduced reproduction dataset, EDE most naturally aligns with a positive H0 shift and mild reductions in omega_m, while w0wa generates a qualitatively different low-H0/high-omega_m direction. The residual comparisons support the paper-level claim that EDE can partially ease the acoustic mismatch without mimicking late-time dark-energy behavior exactly.
+
+Limitation: the workspace only provides best-fit summaries and manually extracted residual points, so this script performs a transparent reconstruction/consistency study rather than a full likelihood-level refit to Planck, ACT, DESI, and Union3.

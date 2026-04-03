@@ -1,0 +1,37 @@
+Execution summary
+- Ran the main task analysis entry point: python code/run_analysis.py
+- Execution completed successfully with exit code 0.
+- The script loaded the NF-UNSW-NB15 temporal graph data, built task-specific temporal/topological features, executed binary intrusion detection, multi-class attack classification, unknown-attack evaluation, and few-shot evaluation, and generated result figures.
+
+Verified produced artifacts
+Outputs written under outputs/:
+- outputs/dataset_summary.json
+- outputs/binary_metrics.json
+- outputs/binary_predictions.csv
+- outputs/multiclass_metrics.json
+- outputs/multiclass_predictions.csv
+- outputs/multiclass_report.txt
+- outputs/unknown_attack_results.csv
+- outputs/few_shot_results.csv
+- outputs/analysis_summary.json
+- outputs/README.txt
+
+Figures written under report/images/:
+- report/images/data_overview.png
+- report/images/feature_embedding.png
+- report/images/binary_results.png
+- report/images/binary_confusion.png
+- report/images/multiclass_confusion.png
+- report/images/unknown_attack_results.png
+- report/images/few_shot_results.png
+
+Key result snapshot
+- Best binary model: rf
+- Binary macro-F1: 0.99605335709899
+- Multi-class macro-F1: 0.6020205681033369
+- Mean unknown-attack macro-F1: 0.8431333270247273
+- Few-shot macro-F1: 1-shot=0.29025469622418903, 5-shot=0.3531638434895212, 10-shot=0.3069069569794308
+
+Verification note
+- At least one substantive output file and multiple substantive figures were successfully generated, so the task analysis completed as requested.
+- report/report.md was not created or modified in this step.

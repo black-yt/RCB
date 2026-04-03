@@ -1,0 +1,29 @@
+model,model_label,parameter,parameter_label,mean,sigma
+lcdm,$\Lambda$CDM,omega_m,$\Omega_m$,0.3037,0.0037
+lcdm,$\Lambda$CDM,H0,$H_0$ [km s$^{-1}$ Mpc$^{-1}$],68.12,0.28
+lcdm,$\Lambda$CDM,sigma8,$\sigma_8$,0.8101,0.0055
+lcdm,$\Lambda$CDM,ns,$n_s$,0.9672,0.0034
+lcdm,$\Lambda$CDM,ombh2,$\omega_b$,0.02229,0.00012
+lcdm,$\Lambda$CDM,ln10As,$\ln(10^{10} A_s)$,3.056,0.014
+lcdm,$\Lambda$CDM,tau,$\tau$,0.0621,0.0075
+ede,EDE,omega_m,$\Omega_m$,0.2999,0.0038
+ede,EDE,H0,$H_0$ [km s$^{-1}$ Mpc$^{-1}$],70.9,1.0
+ede,EDE,sigma8,$\sigma_8$,0.8283,0.0093
+ede,EDE,f_EDE,$f_{\rm EDE}$,0.093,0.031
+ede,EDE,log10_ac,$\log_{10} a_c$,-3.564,0.075
+ede,EDE,ns,$n_s$,0.9817,0.0063
+ede,EDE,ombh2,$\omega_b$,0.02241,0.00018
+ede,EDE,ln10As,$\ln(10^{10} A_s)$,3.067,0.017
+ede,EDE,tau,$\tau$,0.0582,0.0074
+w0wa,$w_0w_a$,omega_m,$\Omega_m$,0.353,0.021
+w0wa,$w_0w_a$,H0,$H_0$ [km s$^{-1}$ Mpc$^{-1}$],63.5,1.9
+w0wa,$w_0w_a$,sigma8,$\sigma_8$,0.78,0.016
+w0wa,$w_0w_a$,w0,$w_0$,-0.42,0.21
+w0wa,$w_0w_a$,wa,$w_a$,-1.75,0.58
+w0wa,$w_0w_a$,ns,$n_s$,0.9632,0.0037
+w0wa,$w_0w_a$,ombh2,$\omega_b$,0.02218,0.00013
+w0wa,$w_0w_a$,ln10As,$\ln(10^{10} A_s)$,3.037,0.013
+w0wa,$w_0w_a$,tau,$\tau$,0.052,0.0071
+ede,EDE,S8,$S_8$,0.8281619384939156,0.010676601192530394
+lcdm,$\Lambda$CDM,S8,$S_8$,0.8150803077754568,0.007434731072422959
+w0wa,$w_0w_a$,S8,$S_8$,0.846099284954195,0.030571516179457955

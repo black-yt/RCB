@@ -1,0 +1,20 @@
+Execution summary:
+- Ran the main analysis entry point with: python code/run_analysis.py
+- The first run exposed a plotting NameError in plot_results (using m instead of method); this was corrected in code/run_analysis.py and the analysis was rerun successfully to completion.
+
+Verified produced artifacts:
+- outputs/dataset_summary.csv — per-map dataset characterization table (263K)
+- outputs/dataset_summary.json — family-level dataset summary
+- outputs/sampled_instances.json — generated MAPF start/goal instances used for evaluation
+- outputs/experiment_results.csv — per-instance planner comparison results
+- outputs/experiment_summary.json — family-level aggregate planner metrics
+- outputs/analysis_summary.txt — concise narrative summary of findings
+- report/images/dataset_overview.png — dataset overview figure
+- report/images/map_family_examples.png — representative map visualization figure
+- report/images/planner_comparison.png — method comparison figure
+- report/images/runtime_vs_cost.png — runtime vs. solution quality trade-off figure
+
+Completion status:
+- Analysis completed successfully.
+- At least one substantive output file and multiple report figures were generated and verified.
+- report/report.md has not been created yet, per instruction.

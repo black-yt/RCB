@@ -1,0 +1,321 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 27757,
+    "mtime": 1775199140.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "dna_r10.4.1_400bps_9mer_uncalled4.csv",
+    "path": "data/dna_r10.4.1_400bps_9mer_uncalled4.csv",
+    "type": "file",
+    "size": 13869488,
+    "mtime": 1772609428.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "dna_r9.4.1_400bps_6mer_uncalled4.csv",
+    "path": "data/dna_r9.4.1_400bps_6mer_uncalled4.csv",
+    "type": "file",
+    "size": 204434,
+    "mtime": 1772609426.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "m6a_labels.csv",
+    "path": "data/m6a_labels.csv",
+    "type": "file",
+    "size": 38905,
+    "mtime": 1772609432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "m6a_predictions_nanopolish.csv",
+    "path": "data/m6a_predictions_nanopolish.csv",
+    "type": "file",
+    "size": 120766,
+    "mtime": 1772609432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "m6a_predictions_uncalled4.csv",
+    "path": "data/m6a_predictions_uncalled4.csv",
+    "type": "file",
+    "size": 119042,
+    "mtime": 1772609432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "performance_summary.csv",
+    "path": "data/performance_summary.csv",
+    "type": "file",
+    "size": 760,
+    "mtime": 1772609430.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "rna004_130bps_9mer_uncalled4.csv",
+    "path": "data/rna004_130bps_9mer_uncalled4.csv",
+    "type": "file",
+    "size": 13868930,
+    "mtime": 1772609430.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "rna_r9.4.1_70bps_5mer_uncalled4.csv",
+    "path": "data/rna_r9.4.1_70bps_5mer_uncalled4.csv",
+    "type": "file",
+    "size": 50124,
+    "mtime": 1772609428.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_manifest.json",
+    "path": "outputs/analysis_manifest.json",
+    "type": "file",
+    "size": 986,
+    "mtime": 1775199136.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 417,
+    "mtime": 1775199134.0,
+    "exported": true
+  },
+  {
+    "name": "central_base_summary.csv",
+    "path": "outputs/central_base_summary.csv",
+    "type": "file",
+    "size": 2517,
+    "mtime": 1775199136.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_overview.csv",
+    "path": "outputs/dataset_overview.csv",
+    "type": "file",
+    "size": 459,
+    "mtime": 1775199136.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_merged_predictions.csv",
+    "path": "outputs/m6a_merged_predictions.csv",
+    "type": "file",
+    "size": 310590,
+    "mtime": 1775199138.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_model_comparison.csv",
+    "path": "outputs/m6a_model_comparison.csv",
+    "type": "file",
+    "size": 236,
+    "mtime": 1775199138.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_pr_curve_nanopolish.csv",
+    "path": "outputs/m6a_pr_curve_nanopolish.csv",
+    "type": "file",
+    "size": 144467,
+    "mtime": 1775199134.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_pr_curve_uncalled4.csv",
+    "path": "outputs/m6a_pr_curve_uncalled4.csv",
+    "type": "file",
+    "size": 111736,
+    "mtime": 1775199134.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_quantile_enrichment.csv",
+    "path": "outputs/m6a_quantile_enrichment.csv",
+    "type": "file",
+    "size": 1337,
+    "mtime": 1775199136.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_roc_curve_nanopolish.csv",
+    "path": "outputs/m6a_roc_curve_nanopolish.csv",
+    "type": "file",
+    "size": 27685,
+    "mtime": 1775199136.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 10 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1895840,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 11834529,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3088444,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 11844346,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "central_base_effects.png",
+    "path": "report/images/central_base_effects.png",
+    "type": "file",
+    "size": 177436,
+    "mtime": 1775199138.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_overview.png",
+    "path": "report/images/dataset_overview.png",
+    "type": "file",
+    "size": 231603,
+    "mtime": 1775199138.0,
+    "exported": true
+  },
+  {
+    "name": "gc_vs_current_relationship.png",
+    "path": "report/images/gc_vs_current_relationship.png",
+    "type": "file",
+    "size": 636327,
+    "mtime": 1775199140.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_pr_roc_curves.png",
+    "path": "report/images/m6a_pr_roc_curves.png",
+    "type": "file",
+    "size": 246295,
+    "mtime": 1775199140.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_quantile_enrichment.png",
+    "path": "report/images/m6a_quantile_enrichment.png",
+    "type": "file",
+    "size": 170108,
+    "mtime": 1775199140.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_score_distributions.png",
+    "path": "report/images/m6a_score_distributions.png",
+    "type": "file",
+    "size": 125745,
+    "mtime": 1775199138.0,
+    "exported": true
+  },
+  {
+    "name": "performance_benchmarks.png",
+    "path": "report/images/performance_benchmarks.png",
+    "type": "file",
+    "size": 195640,
+    "mtime": 1775199138.0,
+    "exported": true
+  },
+  {
+    "name": "performance_relative_to_uncalled4.png",
+    "path": "report/images/performance_relative_to_uncalled4.png",
+    "type": "file",
+    "size": 211252,
+    "mtime": 1775199138.0,
+    "exported": true
+  },
+  {
+    "name": "pore_model_distributions.png",
+    "path": "report/images/pore_model_distributions.png",
+    "type": "file",
+    "size": 363092,
+    "mtime": 1775199140.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 19536,
+    "mtime": 1775199141.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6922,
+    "mtime": 1775140754.0,
+    "exported": true
+  }
+]

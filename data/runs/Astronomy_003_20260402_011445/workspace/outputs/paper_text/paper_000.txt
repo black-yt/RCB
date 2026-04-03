@@ -1,0 +1,1727 @@
+                                                                           Compact binary waveform center-of-mass corrections
+
+                                                                            Charles J. Woodford,1 Michael Boyle,2 and Harald P. Pfeiffer1, 3
+                                            1
+                                                Canadian Institute for Theoretical Astrophysics, University of Toronto, 60 Saint George Street, Toronto, Ontario M5S 3H8, Canada
+                                                          2
+                                                            Cornell Center for Astrophysics and Planetary Science, Cornell University, Ithaca, New York 14853, USA
+                                                            3
+                                                              Albert-Einstein-Institut, Max-Planck-Institut für Gravitationsphysik, D-14476 Potsdam-Golm, Germany
+                                                                                                   (Dated: December 12, 2019)
+                                                              We present a detailed study of the center-of-mass (c.m.) motion seen in simulations produced by the Simulating
+                                                          eXtreme Spacetimes (SXS) collaboration. We investigate potential physical sources for the large c.m. motion
+                                                          in binary black hole simulations and find that a significant fraction of the c.m. motion cannot be explained
+                                                          physically, thus concluding that it is largely a gauge effect. These large c.m. displacements cause mode mixing
+                                                          in the gravitational waveform, most easily recognized as amplitude oscillations caused by the dominant (2, ±2)
+                                                          modes mixing into subdominant modes. This mixing does not diminish with increasing distance from the source;
+                                                          it is present even in asymptotic waveforms, regardless of the method of data extraction. We describe the current
+arXiv:1904.04842v3 [gr-qc] 10 Dec 2019
+
+
+
+
+                                                          c.m.-correction method used by the SXS collaboration, which is based on counteracting the motion of the c.m. as
+                                                          measured by the trajectories of the apparent horizons in the simulations, and investigate potential methods to
+                                                          improve that correction to the waveform. We also present a complementary method for computing an optimal
+                                                          c.m. correction or evaluating any other c.m. transformation based solely on the asymptotic waveform data.
+
+
+                                                                I. INTRODUCTION                                      of 2,018 SXS simulations [10, 11], and investigating possible
+                                                                                                                     improvements to the correction method.
+                                             Binary black hole (BBH) systems have been studied for                                    ~ and a boost ~β will transform the waveform h,
+                                                                                                                        A translation α
+                                         decades, beginning with analytic work and branching out into                measured at some point distant from the source, as
+                                         numerical relativity. With the introduction of gravitational-
+                                                                                                                        h(t) → h t + (~α + ~βt) · n̂ + O |~β|h + O |~α + ~βt|2 ∂2t h ,
+                                                                                                                                                                               
+                                         wave detectors, particularly LIGO, the pursuit of BBH gravi-
+                                         tational waveforms has intensified in an attempt to create and                                                                               (1a)
+                                         fill vast waveform template banks. Gravitational waveforms
+                                         created through numerical relativity are generally the most                              ≈ h(t) + ∂t h(t) (~α + ~βt) · n̂,                  (1b)
+                                         accurate waveforms available, and are used for parameter esti-              where n̂ is the direction to the observer from the source [9]. Note
+                                         mation and to compare and improve semianalytic and analytic                 that this is independent of the distance to the source; even the
+                                         models of BBHs, which in turn are used for gravitational-wave               asymptotic waveform will exhibit this dependence regardless of
+                                         detection and parameter estimation [1–3].                                   any extrapolation, Cauchy-characteristic extraction, or similar
+                                             While numerical-relativity waveforms are the most accurate              techniques that may be applied to the data. We can understand
+                                         BBH waveforms, there are concerns regarding their validity,                 this intuitively by thinking about a sphere surrounding the
+                                         accuracy, and reproducibility. There have been numerous                     source. If we displace the source away from the center of
+                                         discussions on how to measure the accuracy of a numerical rel-              the sphere, an emitted signal will arrive at the part of the sphere
+                                         ativity simulation and some sources of error in the simulations             closest to the source before it will arrive at the opposite side
+                                         have been investigated, including numerical truncation errors,              of the sphere. The difference in arrival times is independent
+                                         error due to extraction at finite radius or imperfect extrapolation         of the radius of the sphere; it only depends on the size of the
+                                         to infinite radius, and errors between simulations of different             displacement. The additional term in Eq. (1b) introduces an
+                                         lengths that otherwise have identical parameters [4–6].                     angular dependence that is not generally included in waveform
+                                             Though not strictly a source of error like those named                  models.
+                                         above, there are also consequences due to the gauge freedom of                 Figure 1 demonstrates the effects of c.m. motion for two
+                                         general relativity that may be confused for errors if not properly          systems from the SXS catalog. The most striking example is
+                                         understood, and will effectively become sources of error if                 the upper pair of panels, which show data from a nonprecessing
+                                         ignored [7–9]. Gauge freedom in general relativity affects all              system with mass ratio 1.23. On physical grounds, there is
+                                         numerical relativity simulations, and thus far no numerical                 nothing to suggest modulations in the mode amplitudes on
+                                         relativity results in the literature have been in a completely              the orbital timescale; this is a relatively symmetric system
+                                         specified gauge due to this inherent gauge freedom. While                   with very low eccentricity. The dominant physical behavior
+                                         a full accounting of the effects of general gauge freedom is                on the orbital timescale is simply rotation, which should have
+                                         beyond the scope of this work, we will address the translation              no effect on the amplitudes of the modes, along with a secular
+                                         and boost degrees of freedom. Reference [9] identified these                increase toward merger. Nonetheless, the raw waveform data
+                                         transformations as important for counteracting the observed                 from the simulation (thin dark lines in the upper left panel)
+                                         motion of the center of mass in simulations produced by the                 shows very clear amplitude modulations of the subdominant
+                                         Simulating eXtreme Spacetimes (SXS) collaboration. Here,                    modes on the orbital timescale. These modulations—like the
+                                         we expand on that analysis, using the recently updated catalog              c.m. trajectories seen in the upper right panel—show no signs
+                                           Mode amplitudes |rh l, m /M|                                        COM trajectories
+                          (2, 2)                                                                                                    Lev1
+               10 1       (2, 1)                                                                                                    Lev2    0.00
+                          (3, 3)                                                                                                    Lev3
+SXS:BBH:0314
+
+
+
+               10 2       (3, 2)                                                                                                    Lev4
+                                                                                                                                              0.05
+                          (3, 1)
+
+
+
+
+                                                                                                                                                   y/M
+               10 3       (4, 4)
+                          (4, 2)                                                                                                              0.10
+               10 4
+                                                                                                                                              0.15
+               10 5
+                      0             1000                2000                 3000                       0.05     0.00     0.05    0.10
+
+                          (2, 2)                                                                                                    Lev1    0.04
+               10 1       (2, 1)                                                                                                    Lev2
+                          (3, 3)                                                                                                    Lev3    0.02
+SXS:BBH:0622
+
+
+
+
+               10 2       (3, 2)
+                          (3, 1)                                                                                                            0.00
+
+
+
+
+                                                                                                                                                   y/M
+               10 3       (4, 4)
+                          (4, 3)
+                          (4, 2)                                                                                                              0.02
+               10 4       (4, 1)
+                                                                                                                                              0.04
+               10 5
+                      0            1000             2000              3000               4000                  0.04 0.02 0.00 0.02
+                                                    (t r )/M                                                         x/M
+
+    FIG. 1. Center-of-mass motion and its effect on waveforms. These plots show data for two systems from the SXS catalog. The upper panels
+    correspond to the nonprecessing system SXS:BBH:0314 [12], which has a mass ratio of 1.23, with spins of 0.31 for the larger BH and −0.46 for
+    the smaller BH, and are aligned with the orbital angular momentum. The lower panels correspond to the precessing system SXS:BBH:0622 [13],
+    which has a mass ratio of 1.2, with randomly oriented spins of magnitude 0.85. The panels on the right side show the c.m. trajectories in the
+    simulation coordinates calculated from the apparent horizons of each black hole for a variety of resolutions. In addition to the roughly circular
+    motion, offsets and drifts are also apparent in each case and are the portions of the motion that we remove using inertial transformations. Note
+    that no convergence is evident, reinforcing the idea that the motion is effectively random. The panels on the left show the dominant mode
+    amplitudes of each system, both before and after c.m. correction—the thin darker lines being the raw waveform data, and the thicker transparent
+    lines being the corrected data. In the nonprecessing case (upper panel), we see modulations in the raw data that are not expected on physical
+    grounds; even the relatively small c.m. motion gives rise to clearly visible effects. No such modulations are visible in the corrected data. In the
+    precessing case (lower panel), modulations are present in both the raw and corrected data, caused by mode mixing due to the precession of the
+    system itself. It is not obvious from this plot alone that the correction makes any improvement to the data. In Sec. IV, we define a quantitative
+    measure of the waveform that very clearly distinguishes the corrected data as a significant improvement.
+
+
+    of convergence with increasing numerical resolution in the                      However, by simply compensating for the inertial part of
+    simulation, even though the initial data for each resolution is              the measured c.m. motion, the modulations can be almost
+    created from identical high-resolution initial data.                         completely eliminated (thick transparent lines in the upper
+       As we discuss below, the c.m. motions found in the SXS cat-               left panel). It is notable that the c.m. only drifts by roughly
+    alog are effectively random and apparently independent of any                0.1M during almost the entire inspiral for the system shown
+    physical parameters of the systems. Therefore, they comprise                 in the upper panels of Fig. 1, but still has such a drastic effect
+    an essentially random source of unmodeled and unphysical con-                on the waveform’s modes. Even though this is only a gauge
+    tributions to waveforms from numerical relativity. In particular,            choice—which we have been trained to consider irrelevant in
+    they are not systematic; the modulations found in waveforms                  principle—in practice, gauge choices must be made consistently
+    for one set of physical parameters will be uncorrelated with the             and systematically for the waveforms to be really useful. In this
+    modulations in waveforms even for nearly identical physical                  sense, we might suggest that the c.m.-centered gauge is really
+    parameters. Clearly, expecting waveform models such as                       an optimal choice.
+    effective-one-body (EOB) [14–19], phenomenological [20–                         A more difficult comparison is for the precessing system
+    22], and surrogate models [23] to accurately represent these                 shown in the lower panels of Fig. 1. The precession already
+    features across a range of physical parameters is tantamount to              mixes the modes drastically, leading to a complicated wave-
+    expecting them to fit large, discontinuous, random signals.                  form with pronounced amplitude modulations, even after c.m.
+
+
+                                                                             2
+COMPACT BINARY WAVEFORM C.M. CORRECTIONS
+
+correction. Clearly the c.m. correction changed the data, but it        the transverse-traceless projection of the metric perturbation
+is not obvious that we can say it was a change for the better—at        caused by the gravitational waves at time t and location (θ, φ)
+least from looking at this plot alone. To make the comparison           relative to the binary, and can be combined into a single
+more quantitative, we introduce a new measure of a waveform’s           complex quantity, given by
+“simplicity” in Sec. IV. Essentially, this quantity measures the
+residual when the waveform is modeled by simple linear-in-                            h(t, θ, φ) B h+ (t, θ, φ) − ih× (t, θ, φ).     (2)
+time amplitudes in the corotating frame [24]. The value of
+this residual is 117 times smaller for the c.m.-corrected data          For each slice in time, the combined perturbation h(t, θ, φ) is
+than for the raw data in this precessing system, showing that           measured on the coordinate sphere. The angular dependence
+the corrected waveform is clearly and objectively better in this        of this measurement can then be expanded in SWSHs. The
+sense at least.                                                         quantity h(t, θ, φ) has a spin weight of −2 [25], and may be
+   To address the miscalculation of the c.m. and its correction,        represented as
+this paper is organized as follows:                                                                 X
+                                                                                       h(t, θ, φ) =    hl,m (t) −2 Yl,m (θ, φ),    (3)
+  i In Sec. II, we discuss the current definition of the c.m. and                                    l,m
+
+    the consequences this definition and its use have on SXS
+                                                                        where the complex quantities hl,m (t) are referred to as modes or
+    gravitational waveforms.
+                                                                        mode weights, and are much more convenient when analyzing
+ ii In Sec. III, we discuss the current method for correcting           BBH than the total perturbation in any particular direction [26,
+    waveform data and selecting an optimal gauge. Any                   27]. Spin-weighted Spherical harmonics are further discussed
+    correlations found between simulation parameters and the            in Appendix A.
+    c.m. correction factors are discussed.                                  The expansion in Eq. (3) depends on orientation of the
+                                                                        spherical coordinates θ, φ and their origin. The customary
+iii In Sec. IV, we discuss a quantitative method for evaluating         choice places the binary at the origin with the binary’s initial
+    the “correctness” of the gauge a waveform is currently in.          orbital plane coinciding with the equatorial plane θ = π/2.
+    We compare the waveform data in its original, unoptimized           For comparable mass, nonprecessing binaries, the quadrupolar
+    gauge to the c.m.-corrected gauge described in Sec. III.            (l, m) = (2, ±2) modes then dominate the waveform. While
+                                                                        the h2,±2 modes are dominant, it is important to consider the
+ iv In Sec. V, we discuss how we may improve the definition
+                                                                        behavior of the other modes present in the waveform. The
+    of the c.m. to find a better correction, potentially leading
+                                                                        other modes may not be used directly for BBH detection
+    to a further optimized choice of gauge. This section also
+                                                                        currently, as they are much smaller in magnitude compared
+    investigates alternative definitions of the c.m. with a focus
+                                                                        to the h2,±2 modes for most systems, but can be important
+    on potential physical causes of c.m. motion like that
+                                                                        for parameter estimation [28–30]. Additionally, there are
+    seen in Fig. 1, including post-Newtonian definitions and
+                                                                        proposals for using higher-order modes in BBH searches [31–
+    considerations of linear-momentum recoil.
+                                                                        33]. Higher-order modes are also useful for verifying the
+ v Finally, we present our findings and results in Sec. VI.             reliability and potentially the accuracy of the waveform. If
+                                                                        the shape, variability, magnitude, or any other characteristic
+                                                                        of the higher order, or subdominant, modes are found to not
+       II. THE NEED FOR C.M. CORRECTIONS
+                                                                        suitably match with theory, then this could indicate a possible
+   One of the primary concerns with BBH simulations with                flaw in the simulation.
+regards to gravitational-wave astronomy is the validity of their            One clear issue is the coordinate system, or gauge choice,
+gravitational waveforms. Above all, the output from a BBH               for the simulation, as spherical harmonics and hence SWSHs
+simulation should result in a reliable, reproducible waveform           depend on the coordinates. The center chosen for the simulation
+that can then be released for public usage. In the case of the          is the c.m. of the system, as calculated and set in the initial
+SXS collaboration, many of the waveforms produced are also              data. It is expected that the c.m. will move slightly throughout
+compressed into a catalog that is released to LIGO for data             the simulation; however, large movements are not expected
+analysis and waveform comparisons with their gravitational              and suggest a flaw in the choice of gauge. If the c.m. moves
+wave detector data.                                                     significantly, there is mode mixing [9]. The dominant effect [9]
+   Gravitational waveforms in the SXS catalog are given in              is leaking of the h2,±2 modes of BBH waveforms into the
+terms of the gravitational-wave strain h, or the Weyl component         higher modes, and this leakage can be at least partially removed
+Ψ4 . In regards to detecting gravitational waves, h and Ψ4              through c.m. drift corrections, as described in Sec. III.
+contain the same information, and the analysis and corrections              Mode mixing is manifested in the waveforms as oscillating
+applied in this work may be applied to either with the same             amplitudes, which can clearly be seen in the left column panels
+results. For simplicity, we will focus on h.                            of Fig. 1, especially for the (2, 1), (3, 1), and (3, 3) modes in
+   Waveforms from SXS are represented by mode weights,                  the top panel for SXS:BBH:0314. Precessing simulations,
+or amplitudes, for spin-weighted spherical harmonics (SW-               like SXS:BBH:0622, are expected to have some amplitude
+SHs). The gravitational-wave strain may be represented by               modulations purely due to the orientation of the system. The
+
+
+                                                                    3
+worse the c.m. calculation is for a simulation, the more altered           physical effects that are expected to cause the c.m. to move, or
+the SWSH representations are, and the worse the mode mixing                imply that the c.m. is not moving at all. The more obvious of
+becomes.                                                                   these physical effects are post-Newtonian (PN) corrections for
+   It is easily seen in Fig. 1 that the applied c.m. correction            the c.m. which may include effects explaining the c.m. motion,
+removes what we will find to be unphysical waveform amplitude              and linear-momentum recoil from the system. PN and linear
+modulations for nonprecessing systems, however for precessing              momentum contributions are examined in Secs. V A and V B.
+systems it is not so clear or obvious. Therefore, especially
+for precessing systems, a quantitative method is required for                III. CENTRE-OF-MASS CORRECTION METHOD
+evaluating the “correctness” of the c.m. and gauge. This is
+discussed in Sec. IV.                                                         Previous work [9, 35] suggests that the c.m. motion is
+   The current definition used during BBH simulations for the              largely a result of gauge choice. Therefore, understanding
+c.m. is the usual Newtonian definition:                                    the c.m. correction begins with understanding the permissible
+                                                                           gauge transformations. More specifically, we are interested
+                                ma       mb
+                     ~xc.m. =      x~a +    x~b ,               (4)        in the gauge transformations that will affect the waveform
+                                M        M                                 measured by distant observers. Because a gravitational-wave
+where M = ma + mb is the total mass of the system, ma and mb               detector will typically be very far from the source, only the
+are the Christodoulou masses [34] of the primary and secondary             asymptotic behavior of the waves is generally considered
+black holes respectively, and ~xa and ~xb are the coordinates of the       relevant—specifically at future null infinity, I + .
+centers for the primary and secondary black hole respectively.                While the asymptotic gauge of waveforms from numerical
+This is a Newtonian expression for the c.m., and from output               relativity has not been extensively investigated, it is certainly
+of the simulations like in Fig. 1, we know is not a perfect                fair to say that no results in the literature thus far have
+description of the optimal c.m.. The tracking of the c.m.                  been in a completely specified gauge. Even the strongest
+throughout the simulations can be seen for SXS:BBH:0314                    claims of “gauge-invariant” asymptotic waveforms [36] are
+and SXS:BBH:0622 in the right column panels of Fig. 1.                     only invariant modulo the infinite-dimensional Bondi-Metzner-
+   The c.m. motion is an effect of the initial data. One aspect            Sachs (BMS) gauge group [37, 38], which is the asymptotic
+of the initial data construction method proposed in Ref. [35] is           symmetry group corresponding to the Bondi gauge condition.
+the elimination of Arnowitt-Deser-Misner (ADM), or spatial,                An important feature of Bondi gauge is that the gravitational
+linear momentum in the initial data for precessing systems,                waves measured by any distant inertial observer (at least over
+namely enforcing P    ~ ADM = 0. The work done in Ref. [35]                a duration short compared to the distance to the source) are
+proposed a new, and now adopted, method for calculating                    approximately given by the asymptotic metric perturbation at
+and constructing the initial data for BBH simulations. The                 fixed spatial coordinates as a function of retarded time in some
+improved method for calculating initial data has far-reaching              member of this gauge class—and conversely, any such function
+effects in Spectral Einstein (SpEC) simulations and most of                corresponds to a signal that could be measured by some distant
+the simulations in the SXS simulation catalog were completed               inertial observer [39]. Essentially, we might think of Bondi
+using this relatively new method. This had the effect of reducing          gauge to be “as simple as possible, but not simpler” for the
+specific components of mode mixing as seen in the gravitational            purposes of gravitational-wave detection. Because the BMS
+waveforms, however as showcased in Fig. 1, significant mode                group alters the waveform while preserving Bondi gauge, we
+mixing is still present.                                                   consider it to be the fundamental symmetry group relevant to
+   As is further discussed in Sec. V B, linear-momentum recoil             gravitational-wave modeling.1
+is an expected physical contribution to the motion of the c.m..               Because BMS transformations preserve the inertial property
+However, unphysical contributions to the linear momentum                   of observers, we cannot expect to counteract all of the c.m.
+in the initial data of simulations introduce unphysical motion             motion seen in Fig. 1—particularly the cyclical behavior.
+in the c.m., essentially imparting spurious linear-momentum                However, in addition to the cyclical behavior, these coordinate
+kicks. By controlling the linear momentum and removing it,                 tracks begin with some overall displacement from the origin,
+this effect from the initial data is removed. However, even                and then drift away from that initial location over the entire
+for simulations with initial data constructed using the method
+described in Ref. [35], significant translations and boosts, and
+the resulting mode mixing, are still present in the gravitational          1 Other possible gauge choices exist. For example, Newman-Unti gauge [40]
+waveforms. This warrants further investigation into the c.m.                 is closely related to Bondi gauge, and is invariant under the same asymptotic
+motion and the application of a c.m. correction.                             symmetry algebra [41]. More generally, it is not even clear that waveforms
+   It had been suggested in Refs. [9, 35] that much of the c.m.              from numerical relativity are actually expressed in either of these well-
+                                                                             defined gauge classes, in which case more general gauge transformations
+motion depicted in the right column panels of Fig. 1, and seen
+                                                                             may be of interest. Ultimately, the gauge freedoms relevant to counteracting
+in all SXS simulations, was largely unphysical and could be                  c.m. motion are simply space translations and boosts. As long as these
+removed from the data. The c.m. correction used to remedy the                transformations are allowed, this discussion of c.m. motion remains relevant.
+unphysical c.m. motion is discussed in the following section.                Previous work [42] suggests that SXS waveforms are consistent with
+Additionally, there are alternative definitions of the c.m. and              waveforms in Bondi gauge, though further research is warranted.
+
+
+
+                                                                       4
+COMPACT BINARY WAVEFORM C.M. CORRECTIONS
+
+course of the inspiral. Thus, we expect that a space translation                           It is clear from the upper-left panel of Fig. 1 that c.m.
+and a boost are needed to negate the effects of some of the                             removal is “helpful” in the sense that it reduces the amplitude
+                                                           ~ and
+c.m. motion. In particular, we will choose the translation α                            oscillations, which are not expected on physical grounds.
+boost ~β to minimize the average of the square of the distance                          Unfortunately, this by-eye analysis is not quantitative, and it
+between the measured c.m. and the origin.2                                              is not clear how it would apply to a precessing system, as
+                                                                                        seen in the lower-left panel of the same figure. We discuss a
+             A. Choosing the translation and boost                                      better measure of how the waveform quality is impacted by c.m.
+  We follow Appendix E of Ref. [9] in choosing the translation                          corrections in Sec. IV.
+~ and boost ~β to minimize the average square of the distance
+α
+between the c.m. measured in the raw data and the origin of                                              B. Choosing the integration region
+the corrected frame. That is, we choose α      ~ and ~β to minimize                          The determination of α  ~ and ~β is made over a subset of the total
+the function                                                                             simulation time, from ti to t f [see Eq. (5)]. Choosing different
+                         Z tf                                                           values of ti and t f may affect the resulting α          ~ and ~β values.
+                    ~
+              Ξ(~α, β) =      |~xc.m. − (~α + ~βt)|2 dt.        (5)                      For the corrections performed on the SXS catalog, a standard
+                                 ti
+                                                                                         subset of the simulation time was chosen. All waveforms
+It is not hard to find the minimum of this quantity analytically.                        had their c.m.-correction values calculated from ti = trelax ,
+We define two moments of the c.m. position                                               the “relaxation” time after which the initial transients have
+                                     Z tf                                                dissipated, to 10% before the end of the inspiral: t f = 0.9tmerger .
+                                 1                                                      These time bounds were chosen to avoid including periods of
+                 h~xc.m. i =              ~xc.m. (t) dt,    (6a)
+                             t f − ti ti                                                 junk radiation as well as the merger and ringdown stages.
+                                     Z tf
+                                 1                                                           However, changing ti , t f by small amounts could change the
+                ht~xc.m. i =              t ~xc.m. (t) dt.  (6b)                         c.m. correction values. As there is epicyclical motion of the
+                             t f − ti ti
+                                                                                         c.m. (as seen in Fig. 1, for example), changing the beginning
+Then, the minimum of Eq. (5) is achieved with                                            or ending time may cause the resulting α           ~ and ~β to change,
+                                                                                         depending on where ti and t f fall on an epicycle. For example,
+             4(t2f + t f ti + ti2 )h~xc.m. i − 6(t f + ti )ht ~xc.m. i
+       ~=
+       α                                                                 ,   (7a)        if ti and t f are separated by an integer number of epicycles, then
+                                (t f − ti )2                                            we might expect any effect from the epicycles on the calculation
+                       12ht ~xc.m. i − 6(t f + ti )h~xc.m. i                             of α~ and ~β to cancel out. However, if ti and t f are separated by
+                  ~β =                                       .               (7b)
+                                    (t f − ti )2                                         a noninteger number of epicycles, especially by a half-integer
+                                                                                         number of epicycles, the epicycles may induce significant bias
+We then apply this transformation to the asymptotic waveform                             in α~ and ~β. The overall number of epicycles included in the
+using the method described in Ref. [9]. Note that this rests                             calculation of α  ~ and ~β may also affect how sensitive they are to
+on implicit assumptions about how directly comparable the                                this bias.
+coordinates of the apparent-horizon data and the asymptotic                                  Here, we compare the size of the c.m. correction using the
+coordinates are. For example, this assumes that the time                                 standard prescription to the size of the correction when ti and/or
+coordinate of the apparent-horizon data and the asymptotic                               t f are changed by half an orbit. This will give us some idea of
+retarded-time coordinate are equal. While there is no rigorous                           the stability of the c.m.-correction procedure. However, it must
+motivation for this assumption, the results of Sec. IV bear out                          be noted that, at a larger scale, the choices of ti and t f are quite
+its approximate validity.                                                                arbitrary. For some purposes, it may be preferable to choose
+   Using this minimization method, the c.m. offsets for every                            those values to range over only the first half of the inspiral,
+public waveform in the SXS catalog have been corrected in                                or even just the ringdown stage. The values used in the SXS
+the waveform data. The first instance of the c.m. corrections                            catalog were chosen for robustness and easy reproducibility.
+to waveforms in the SXS public waveform catalog was in                                       To simplify the comparison, we describe the c.m. motion
+January of 2017. Center-of-mass corrected waveform data                                  using the quantity ~µ, which gives the most distant position of the
+is recommended over non corrected data in all cases, and                                 corrected origin of coordinates throughout the inspiral, relative
+corresponding files are listed in the SXS public waveform                                to the origin used in the simulation. Specifically, we can define
+catalog as files ending in CoM.h5. An overview of the c.m.                              ~µ according to
+correction values is shown in Fig. 2.
+                                                                                                                             if |~α| > |~α + ~βtmerger |,
+                                                                                                            
+                                                                                                            α
+                                                                                                             ~
+                                                                                                       ~µ = 
+                                                                                                            
+                                                                                                                                                              (8)
+                                                                                                            α
+                                                                                                             ~ + βtmerger if |~α| ≤ |~α + ~βtmerger |.
+                                                                                                                  ~
+2 This measure will be invariant under time translation and rotation, which
+                                                                                        For 96% of the simulations in the SXS catalog, we find that ~µ =
+  are generally dealt with separately during gravitational-wave analysis, so we
+  simply ignore those degrees of gauge freedom. Furthermore, it is not at all           ~ + ~βtmerger . The 4% of simulations with ~µ = α
+                                                                                        α                                               ~ have no apparent
+  clear how a higher-order supertranslation should affect the coordinates close         correlations with system parameters, and are effectively random.
+  to the center of a simulation, and so we leave discussion of more general             We also introduce subscripts, so that ~µ00 is the result of this
+  supertranslations to future work.                                                     calculation when using the original values of ti and t f ; ~µ10 is
+
+
+                                                                                    5
+Non-precessing simulations   200
+
+                             150
+
+                             100
+
+                              50
+
+                               0
+                                   10 8   10 5     10 2     101             10 8       10 5       10 2        101             10 8       10 5       10 2       101
+
+
+                             600
+Precessing simulations
+
+
+
+
+                             400
+
+                             200
+
+                               0
+                                   10 8   10 5     10 2     101             10 8       10 5       10 2        101             10 8       10 5       10 2       101
+                                           | |/M                                         ||                                               | |/M
+
+          FIG. 2. Magnitudes of c.m. offsets and drifts for all simulations in the SXS catalog. The top row shows values for nonprecessing systems (i.e.,
+          nonspinning, spin aligned, and spin antialigned) and the bottom row shows values for precessing systems. The horizontal axis for each plot is the
+          magnitude of the c.m. value shown (|~α|, |~β|, or |~δ| = |~α + ~βtmerger |, where tmerger is the first reported instance of a common apparent horizon found
+          between the two BHs) and the vertical axis is the number of simulations that have c.m. values of that bin magnitude. Note that typical values of
+          |~β| are quite small, but accumulate over the course of a simulation to cause a large overall displacement by merger. Blue indicates runs using the
+          initial-data method described in Ref. [35]; orange indicates runs using the previous initial-data method. These results suggest that this procedure
+          improves the initial location of the center of mass, but does little to improve its drift.
+
+
+         the result when moving ti later by half an orbit; ~µ01 is the result             central group is where all equal-mass simulations with equal
+         when moving t f later by half an orbit; and ~µ11 is the result when              but nonzero spins are found, which includes ten systems with
+         moving both ti and t f later by half an orbit.                                   significant precession. Every other type of system is in or near
+                                                                                          the largest group, on the upper right.
+            In Fig. 3, we examine max jk |~µ00 − ~µ jk | as a measure of how
+         robust the c.m. corrections are with respect to these small
+                                                                                              C. Correlations between c.m. correction values and
+         adjustments in the choices of ti and t f . In the great majority
+                                                                                                             physical parameters
+         of systems the c.m. changes by less than 10−2 M. This is,
+         for example, just one tenth the size of the displacements seen                       Along with having c.m. corrected the waveforms, we have
+         in the upper panels of Fig. 1. The median change is 3.1 ×                         also performed an analysis of the values of the boosts and
+         10−3 M, and in all cases is smaller than the median value of |~µ00 |              translations needed by each simulation in the SXS public
+         itself, which is 6.9 × 10−2 M. The systems with the largest c.m.                 waveform catalog.
+         corrections in the SXS catalog change by fractions of a percent,                     No obvious correlations can be seen in Fig. 2 between spin
+         suggesting that the results are certainly stable in the cases where               aligned and precessing systems. We also show a more in-
+         applying a c.m. correction is most important. There are several                   depth correlation plot in Fig. 4, taking more of the simulation
+         cases where the fractional change is greater than 100%, though                    parameters into consideration. It can be seen that typically pre-
+         these are systems with relatively small values of ~µ00 . The                      cessing simulations may have larger overall c.m. displacement,
+         median fractional change is 4.3%. It is also notable that the                    ~δ = α
+                                                                                               ~ + ~βtmerger , and that larger boost values ~β correspond with
+         data points separate roughly into three groups. The group                         larger overall displacement values ~δ for both spin aligned and
+         in the lower left corner of Fig. 3 is comprised exclusively of                    precessing systems.
+         equal-mass nonspinning simulations with various eccentricities,                      Outside of the correlations between the boost ~β and total
+         though several of these are also found in the central group. The                  displacement ~δ of the c.m., there does not appear to be any
+
+
+                                                                                      6
+  COMPACT BINARY WAVEFORM C.M. CORRECTIONS
+
+            100                                                                           IV. QUANTIFYING C.M. CORRECTION USING
+                                                                                                    WAVEFORMS ALONE
+           10 2                                                                          Any discussion of c.m. based on the positions of the
+                                                                                      individual black holes will suffer from the same fundamental
+jk |/M
+
+
+
+
+                                                                                      ambiguity: reliance on coordinates—specifically in the highly
+           10 4                                                                       dynamical region between the two black holes—that are subject
+                            ha   nge                                                  to unknown gauge ambiguities. The only region of the space-
+                         %c
+max| 00
+
+
+
+
+           10 6
+                     100
+                                                                                      time where the gauge freedom is limited in any useful sense is
+   jk
+
+
+
+
+                                                                                      the asymptotic region, in which we assume the only freedom is
+                     10%                                 q = 1, 1 = 2 = 0             given by the BMS group (described in Sec. III). While there are
+           10 8
+                     1%                                  q = 1, 1 = 2 0
+                                                                                      many suggestions in the literature [47–56] for using asymptotic
+                                                                                      information to specify the asymptotic gauge more narrowly,
+                                                         Everything else              they all require more information than is available from most
+          10 10                                                                       catalogs of numerical-relativity waveforms—such as additional
+                  10 7           10 5         10 3           10 1          101
+                                                                                      Newman-Penrose quantities or more precise characterization
+                                            | 00 |/M                                  of the asymptotic behavior of the various fields.
+                                                                                         Here, we present a simplistic but effective measure of c.m.
+ FIG. 3. Comparing the size of c.m. corrections in the SXS catalog,                   effects that can be applied exclusively to asymptotic waveform
+ |~µ00 |, to how much those corrections change under small variations
+                                                                                      data h or Ψ4 . The basic idea is that we expect to be able to
+ in the end points of integration used to compute the c.m. correction.
+ The vertical axis shows the largest change in the c.m. correction if we
+                                                                                      decompose a waveform measured in c.m.-centered coordinates
+ shift ti and/or t f later by half an orbit. The systems with the largest             into modes that are, at least for small portions of the inspiral,
+ c.m. corrections—where these corrections are presumably the most                     given by a slowly changing complex amplitude times a complex
+ important—change by small fractional amounts. On the other hand,                     phase that varies proportionally with the orbital phase. When
+ there are several systems in which the c.m. correction changes by                    the waveform is decomposed in off-center coordinates, those
+ more than the original correction; those systems also have some of                   well-behaved modes mix, so that the amplitude and phase
+ the smaller c.m. corrections in the catalog. The median percentage                   do not behave as expected. Therefore, we will attempt to
+ change is 4% of the original correction, and even the largest individual             model a given waveform in a sort of piecewise fashion that
+ change is smaller than the median value of |~µ00 |.                                  assumes the expected behavior, and simply measure the residual
+                                                                                      between the model and the waveform itself. For a given
+                                                                                      transformation applied to the waveform, we will minimize the
+ other strong correlations present for the current SXS simulation                     residual by adjusting the parameters to the model while keeping
+ catalog. It was expected that precessing, high mass ratio, and                       the waveform fixed. The smaller the minimized residual, the
+ eccentric systems should have vastly different c.m. correction                       more accurately the waveform with that transformation can be
+ values than spin aligned, low mass ratio, and more circular                          modeled in this simple way, and the more nearly we expect
+ systems, however no such correlations are present with this                          that the waveform is decomposed in c.m.-centered coordinates.
+ data set.                                                                            Roughly speaking, we can think of this as a measure of the
+   For Fig. 4, we use the eccentricity e, number of orbits, and                       “simplicity” of the waveform, which is not only in line with our
+ mass ratio q reported by SpEC at the end of the simulation. We                       basic expectations for waveforms in the appropriate coordinates,
+ calculate the effective spin [43–45]                                                 but also a useful measure of how accurately simple waveform
+                                                                                      models (EOB, surrogate, etc.) will be able to capture features
+                  c  S~ a S~ b  ~L   ~χa ma + ~χb mb ~L                         in the numerical waveforms. This criterion is obviously totally
+                                   
+          χeff =            +        · =                · ,               (9)       distinct from any criteria involving the BH positions, but is
+                 GM ma mb |~L|                             |~L|
+                      
+                                                  M
+                      
+                                                                                      important precisely because it provides a complementary way
+                                                                                      of looking at the data. Finding agreement between the results
+  and an effective precession parameter [45, 46]
+                                                                                      of this method and another will lend support to the idea that
+                             c                                                        the other method is suitable.
+                    χp =          max(B1 |S~ a,⊥ |, B2 |S~ b,⊥ |).         (10)
+                           B1Gm2a
+                                                                                                         A. Defining the method
+  Here, M = ma + mb is the total mass of the system, S~i =                               We now describe this method more precisely. The initial
+ G/c ~χi m2i is the angular momentum of the i-th black hole and                       inputs are some translation α    ~ and boost ~β that we wish to
+ ~χi its dimensionless spin, B1 = 2+3mb /2ma , B2 = 2+3ma /2mb ,                      evaluate. We transform the waveform by those inputs and
+  and the subscript ⊥ indicates the quantity perpendicular to the                     denote the result Tα~ ,~β [h]. We then transform to a “corotating
+  orbital angular momentum ~L, e.g., S~ a,⊥ = S~ a − (S~ a · L̂)L̂. Note              frame”, which is a time-dependent frame chosen so that the
+  that χ p gives a measure of how much a system is precessing                         waveform in that frame is varying as slowly as possible [24].
+  during a simulation.                                                                Only the angular velocity of this frame, Ω,~ is determined by the
+
+
+                                                                                  7
+                    0.00+0.35
+                         0.35
+
+
+
+
+                                    0.40+0.40
+                                         0.40
+         1.0
+  p
+
+         0. 5
+
+
+
+
+                                                      2.00+1.63
+                                                           0.99
+         10
+q
+
+          5
+
+
+
+
+                                                                   (   3.48+2.76
+                                                                            2.34 × 10
+                                                                                 )
+                                                                                      4
+    60 015 030
+      0.0 0.0
+e
+
+
+
+
+                                                                                               19.63+3.08
+                                                                                                     1.91
+Orbits
+         30
+
+
+
+
+                                                                                                              0.01+0.01
+                                                                                                                   0.00
+  05 10 .025 .050
+               0
+          | |/M
+
+
+
+
+                                                                                                                             1.34+1.88
+                                                                                                                                  1.15 × 10
+                                                                                                                                            5
+        0
+
+
+
+
+                                                                                                                             (         )
+00 00
+    0.0
+   ||
+
+
+
+
+                                                                                                                                                  0.07+0.09
+   0.0
+
+
+
+
+                                                                                                                                                       0.06
+         0.8
+| |/M
+         0.4
+
+
+                    0
+
+                                1
+
+                                    0.5
+
+                                                1.0
+
+                                                      5
+
+                                                                  10
+
+
+                                                                            5
+
+                                                                                         0
+                                                                                               30
+
+                                                                                                         60
+
+                                                                                                               25
+
+                                                                                                                          50
+
+                                                                                                                                   05
+
+                                                                                                                                             10
+                                                                                                                                                  0.4
+
+                                                                                                                                                              0.8
+                                                                          01
+
+                                                                                         03
+
+
+
+
+                                                                                                              0.0
+
+                                                                                                                       0.0
+
+
+                                                                                                                                  00
+
+                                                                                                                                            00
+                                                                        0.0
+
+                                                                                     0.0
+
+
+
+
+                                                                                                                                 0.0
+
+                                                                                                                                           0.0
+                        eff             p                q                   e                  Orbits         | |/M               ||              | |/M
+
+ FIG. 4. Conter-of-mass correction values and relevant simulation parameters. χeff is the effective spin, χ p is the effective precessing spin, q is the
+                                                                                                                     ~ , ~β, ~δ = α
+ mass ratio, e is the eccentricity, Orbits represents the total number of orbits the simulation had at tmerger , and α            ~ + ~βtmerger are the c.m.
+ correction values representing the spatial translation, boost, and total c.m. displacement respectively. Red represents spin-aligned simulations,
+ and teal represents precessing simulations. The numbers above each column represent the median of each variable over all simulations, with
+ superscripts and subscripts giving the offset (relative to the median) of the 84th and 16th percentiles, respectively.
+
+                                                                                                    n         o
+ condition that the waveform vary slowly; it is integrated in time                       denoted R Tα~ ,~β [h] (t, θ, φ), though we will usually suppress
+ to obtain one such frame [57], but the result is only unique up                         the parameters, and may decompose the angular dependence
+ to an overall rotation. We choose that overall rotation so that                         in terms of SWSH mode weights as usual. This is the quantity
+ the ~z 0 axis of the final corotating frame is aligned as nearly as                     we will be attempting to model.
+ possible throughout the inspiral portion of the waveform with
+ the dominant eigenvector [58, 59] of the matrix
+                                                                                           For the model itself, we first break the inspiral up into
+                      Z       n          o∗  n           o
+         hL(a Lb) i B     L(a Tα~ ,~β [h] Lb) Tα~ ,~β [h] dA,   (11)                     smaller spans of time; we will be modeling the waveforms using
+                          S2
+                                                                                         simple linear-in-time approximations, so we cannot expect to
+ where La is the usual angular-momentum operator. This still                             accurately reproduce the nonlinear evolution over a very long
+ leaves the frame defined only up to an overall rotation about                           portion of the inspiral using just one such model. The relevant
+~z 0 , but such a rotation will have no effect on our results.                           measurement of the waveform’s dynamical behavior is the
+ The transformed waveform in this corotating frame will be                               angular velocity of the corotating frame. More specifically,
+
+
+                                                                                     8
+COMPACT BINARY WAVEFORM C.M. CORRECTIONS
+
+                     ~
+         R Ωz0 = Ω · ~z , and use that to determine a phase
+                            0                                         3
+we define                                                                             antisymmetric parts. For each time span i, we write
+Φz0 = Ωz0 dt. An obvious span of time would be a single
+                                                                                                         Xh
+cycle of this phase, which would include enough data so that                            µi (t, θ, φ) =             i + ṡi (t − ti,c )
+                                                                                                                  sl,m   l,m
+the fit would actually reflect the behavior of the waveform, but                                         l,m
+not so much that we would expect a poor fit due to evolution on                                                            
+                                                                                                                               iσ(m,l) Φz0 (t)
+                                                                                                                                               i
+the inspiral timescale. However, we will essentially be fitting                                 + al,m
+                                                                                                   i   + ȧl,m
+                                                                                                           i   (t − t i,c )   e                  −2 Yl,m (θ, φ). (14)
+
+oscillatory terms with linear models. In the simple case of
+fitting a line to a basic sine function, it is not hard to see that the               Here, each of the coefficients sl,m   l,m l,m        l,m
+                                                                                                                      i , ṡi , si , and ȧi is a complex
+optimal line has the expected slope of zero—independent of the                        constant, we use ti,c = (ti,1 + ti,2 )/2 to mitigate degeneracy
+phase of the sine function—when the fit region is such that the                       between the constant-in-time and linear-in-time terms, and the
+argument of the sine function goes through a phase change of                          function σ is given by
+ϕ ≈ 8.9868 [or other solutions of ϕ = 2 tan(ϕ/2)]. Therefore,                                                               
+we select each span of time so that it extends over a phase Φz0                                                             1
+                                                                                                                                       |m| < l,
+                                                                                                                  σ(m, l) = 
+                                                                                                                            
+                                                                                                                                                               (15)
+of approximately ϕ, thereby determining the difference in time                                                              −1
+                                                                                                                                       |m| = l.
+between ti,1 and ti,2 so that they satisfy
+                                                                                      These signs are chosen because they represent the dominant
+                        Φz0 (ti,2 ) − Φz0 (ti,1 ) = ϕ.                   (12)         behavior of the corresponding terms in the data. Note that the
+                                                                                      symmetry properties imply that once the quantities sl,m
+                                                                                                                                            i , etc.,
+We find that this choice does drastically reduce the oscillations                     are chosen for positive m, they are automatically known for
+in the optimal fit parameters as we shift the fitting window.                         negative m from the relations
+While the individual time spans extend over this range, we
+                                                                                                    i = (−1) s̄i
+                                                                                                   sl,m            ,                    i = (−1) ṡi    ,
+                                                                                                            l l,−m
+find that remaining effects from oscillation are minimized by                                                                         ṡl,m     l ¯l,−m
+                                                                                                                                                              (16a)
+selecting successive time spans to be separated by half of a
+                                                                                              i = (−1) āi
+                                                                                             al,m              ,                     i = (−1) ȧi       .
+                                                                                                      l+1 l,−m
+                                                                                                                                   ȧl,m     l+1 ¯ l,−m
+                                                                                                                                                              (16b)
+period—so that Φz0 changes by exactly π between ti,1 and ti+1,1 :
+                                                                                      Because the m = 0 modes of the SXS waveforms we use are
+                       Φz0 (ti+1,1 ) − Φz0 (ti,1 ) = π.                  (13)
+                                                                                      not considered reliable [6, 11], we simply ignore those modes
+So that the model may be reasonably accurate, without en-                             in both the model and the data. That is, the sum in Eq. (14)
+countering excessive numerical noise or excessively dynamical                         does not include any m = 0 modes. If the sum over modes
+behavior at merger, we limit the region over which we choose                          extends from l = 2 to some maximum l = L, the total number
+these time spans to be the central 80% of time between the                            of (real) degrees of freedom in this model is 4L(L + 1) − 8
+“relaxation time” listed in the waveform metadata and the time                        for each span of time. While the data we use contains up to
+of maximum signal power in the waveform. This establishes                             l = 8, the highest-order modes contribute little to the result,
+t0,1 , and all successive times can be computed from that using                       and drastically increase the number of degrees of freedom
+Eqs. (12) and (13).                                                                   in the problem (and therefore the time taken to optimize the
+                                                                                      model). Therefore, we use only up to l = 6 in constructing
+    Now, we model the waveform “piecewise” on these spans
+                                                                                      the model and evaluating the residual, reducing the degrees of
+of time, though the pieces are overlapping. The advantage
+                                                                                      freedom from 280 to 160 per time span. Finally, because this
+of transforming the waveform as described above is that each
+                                                                                      is still such a large number of degrees of freedom, we limit the
+mode separates [26] into two parts that are symmetric and
+                                                                                      evaluation to only the first two and last two time spans; we find
+antisymmetric under reflection along the z axis. The symmetric
+                                                                                      that including the rest has no significant effect on the result, but
+part varies on an inspiral timescale because the primary
+                                                                                      vastly increases the amount of processing time required. This
+rotational behavior has been factored out by transforming to the
+                                                                                      leaves us with a manageable 640 degrees of freedom in this
+corotating frame; the antisymmetric part is mostly due to spin-
+                                                                                      model.
+orbit coupling and therefore varies most rapidly by a complex
+phase with frequency equal to the rotational frequency of the                            Now, using this model, we define the objective function
+frame itself, though possibly with opposite sign. We model                                             X Z ti,2 Z                                    2
+                                                                                          ~ , ~β = min
+                                                                                                                                  n           o
+these two parts separately as simple linear-in-time complex                            Υ α                                         R Tα~ ,~β [h] − µi dA dt
+                                                                                                    s,ṡ,a, ȧ        ti,1    S2
+quantities, with an additional phase-evolution term for the                                                       i
+                                                                                                                 X Z ti,2 X         n           ol,m    2
+                                                                                                 = min                             R Tα~ ,~β [h] − µl,m
+                                                                                                                                                     i    dt. (17)
+                                                                                                    s,ṡ,a, ȧ        ti,1
+                                                                                                                  i          l,m
+3 This phase is loosely related to the orbital phase of the binary. The angular
+            ~ however, is defined solely with respect to the waveform at I + ,        We will use this function in two ways: first, to simply evaluate Υ
+  velocity Ω,
+  and entirely without reference to any quantities at finite distance in the          for given values of (~α, ~β), where those values are obtained from
+  system. Nonetheless, for reasonably well-behaved coordinate systems, we             the methods described in other sections; second, to minimize
+  would expect it to agree roughly with the orbital phase deduced from the            Υ over possible values of (~α, ~β) to find the optimum c.m.
+  trajectories of the black holes, especially during the early inspiral regime.       correction.
+
+
+                                                                                  9
+                                                                                                            100
+                                 2014 positive
+                                 3 negative
+                                                                                                            10 2
+                    102
+Number of systems
+
+
+
+
+                                                                                              opt )/ 0PN
+                                                                                                            10 4
+
+                    101                                                                                     10 6
+
+
+
+
+                                                                                              ( 0PN
+                                                                                                            10 8
+
+                    100
+                                                                                                           10 10
+                          10 8       10 6           10 4            10 2           100                             10 8      10 6           10 4           10 2     100
+                                            ( raw      0PN )/ raw                                                                   | raw     0PN |/ raw
+
+      FIG. 5. Relative difference between Υraw evaluated on the raw                               FIG. 6. Comparison between the value Υopt for which α          ~ and ~β
+      waveform data and Υ0PN evaluated using the values α  ~ and ~β given by                      are optimized, and Υ0PN evaluated using the values α      ~ and ~β given
+      the simplest Newtonian (0PN) approximation of Eqs. (7)—the same                             by the simplest Newtonian (0PN) approximation—the same c.m.
+      c.m. correction used in the current SXS catalog. In the vast majority                       correction used in the current SXS catalog. The vertical axis shows
+      of cases, the value of Υ decreases substantially (though it actually                        the relative improvement in going from the Newtonian correction to
+      increases very slightly in three cases with significant eccentricity).                      the optimized correction. The dashed diagonal line represents where
+      This suggests that even though Υ and the coordinate-based c.m. are                          the comparisons are equal—the “x = y” line. Optimization improves
+      such entirely different measures and based on completely different                          the results for the great majority of systems by less than 1%. The three
+      data, they agree that the changes introduced by naive c.m. corrections                      exceptions to this rule are particularly long systems.
+      are generally improvements.
+
+                                                                                                  ~β. The results are shown in Fig. 6. Naturally, Υ improves
+                    B. Results for the standard c.m.-correction method
+                                                                                                   in every case because it is specifically being optimized. In
+         We can now compare the value of Υ defined in Eq. (17) for                                 Fig. 6, we see the pattern that the vast majority of systems
+      all the waveforms discussed in the previous sections. First,                                 are changing by small fractions. In this case, there are just
+      we compare its value Υraw in the raw data to its value Υ0PN                                  three systems in which Υ changes at the percent level. These
+      using α~ and ~β as given by Eqs. (7), where ~xc.m. is given by                               are some of the same systems that changed the most in going
+      the Newtonian (0PN) formula. The latter corresponds to the                                   from the raw data to the 0PN-corrected data. These particular
+      technique actually used in the current SXS data, for waveforms                               systems also happen to be extremely long, with significant
+      found in the SXS simulation catalog with file names ending in                                overall accelerations during the inspiral. This suggests that the
+      CoM. The results of this comparison are shown in Fig. 5. One                                 corrections will be sensitive to the precise span of times over
+      unusually short simulation (SXS:BBH:1145 [60]) in the SXS                                   which the corrections are being made, which may explain why
+      catalog did not have enough GW cycles to evaluate Υ properly,                                they continue to change so much by optimization. However,
+      leaving a total of 2,017 systems shown in these figures. The vast                            as discussed in Sec. III B, changing the beginning and ending
+      majority of systems improve significantly by this measure. The                               fractions does not significantly change α ~ and ~β. Nevertheless,
+      notable feature is that even though the naive 0PN c.m. trajectory                            the overall scale of the changes seen in this plot suggests once
+      is so fundamentally different from Υ, this plot suggests that                                again that the naive 0PN c.m. correction is achieving near-
+      they agree in the sense that the 0PN correction improves the                                 optimal results in the vast majority of cases.
+      waveforms for all but three systems—and even for those three
+      the change is very small.4
+         We can also actively optimize Υ over the values of α    ~ and                                        V. IMPROVING THE C.M. CORRECTION
+                                                                                                                      A. Post-Newtonian c.m. definition
+                                                                                                     To characterize the motion seen in the c.m. in the raw
+         4 These three systems are unusual, in that they are quite short (having 13 to 15
+                                                                                                  simulation data, an obvious first step to finding a more accurate
+              orbits before merger, compared to an average of 22), and have eccentricities
+                                                                                                  definition of the c.m. during the simulation is to try low orders
+              (0.215 and higher) that place them among the 12 most eccentric in the SXS
+              catalog. Furthermore, the magnitude of the change in Υ for each of them is          of post-Newtonian (PN) corrections. Note that the c.m. should
+              very small—in the lowest percentile for the entire catalog—which suggests           be near the origin of the coordinate system, with minimal
+              that the negative results may be consistent with numerical error, and in any        motion around the origin from linear-momentum recoil, as
+              case are not cause for much concern.                                                discussed in Sec. V B. 1PN order corrections are analytically
+
+
+                                                                                             10
+  COMPACT BINARY WAVEFORM C.M. CORRECTIONS
+
+           100                                                                    trivial, and are zero for circular systems. However, SXS
+                                                                                  simulations are not perfectly circular and so we investigate
+           10 2                                                                  1PN and 2PN order corrections to the c.m.. We implement the
+                                                                                  PN corrections given by Eq (4.5) in [61]. This formalism goes
+                                                                                  up to 3.5 PN for the c.m. vector in time. The 2PN version of
+0PN |/M
+
+
+
+
+           10 4                                                                   the expression that we used can be found in Appendix B.
+
+                            hange                                                    Using this formalism, the effects of the correction on the
+                         %c
+                                                                                  c.m. are small but measurable at 1PN and significantly
+           10 6
+                     100
+| nPN
+
+
+
+
+                                                                                  different at 2PN for many systems. We are not concerned
+                     10%                                                         with the coordinates of the c.m. itself changing, but of the c.m.
+           10 8                                                                   correction values changing, as discussed in Sec. III. In general,
+                     1%                                           1PN            we assume that the c.m. drifts in a linear fashion and can be
+                                                                  2PN             corrected with a translation α ~ and boost ~β, Our results from the
+          10 10                                                                  1PN and 2PN analysis are shown in Fig. 7, which shows the
+                  10 7           10 5        10 3        10 1       101           relative difference between α   ~ , ~β, and total c.m. displacement
+                                           | 0PN |/M                             ~δ = α~ + ~βtmerger for the 1PN (top panels) correction to the c.m.
+                                                                                  and the 2PN (bottom panels) correction to the c.m.. The 1PN
+  FIG. 7. Differences in the maximum displacements between the c.m.               corrections show small changes for most simulations. However,
+  correction computed using the Newtonian (0PN) c.m. formula and                  the 2PN correction shows more sizable changes in the c.m.
+  the 1PN or 2PN c.m. formulas. The quantity ~µ, defined in Eq. (8),              correction values, which may indicate that including at least up
+  is the largest displacement between the origin of coordinates in the            to 2PN corrections to the c.m. will give better accuracy either
+  simulation and the corrected origin. The post-Newtonian corrections             to the c.m. itself or to the correction factors.
+  change the c.m. correction values by roughly 1% in the majority of
+  cases. Systems with larger changes are consistent with systems that                To see any potential correlations with large 1PN or 2PN
+  are sensitive to small changes in the end points of integration used to         corrections and simulation parameters, we compared the
+  find the c.m. correction, as seen in Fig. 3.                                    relative difference in the c.m. corrections to the eccentricity
+                                                                                  e of the system. As shown in Fig. 8, no correlations between
+                                                                                  the magnitude of the 1PN and 2PN corrections to the c.m. and
+                                                                                  the eccentricity are apparent, despite the definition of the 1PN
+                                                                                  contribution to the c.m. being dependent on e.
+                                                                                     Using the method described in Sec. IV, comparisons of Υ,
+                                                                                  as defined in Eq. (17), between 1PN, 2PN, and the original c.m.
+           100                                                                    correction method (dubbed 0PN), can be found in Fig. 9. The
+                                                                                  striking feature of these plots is that a significant number of
+                                                                                  systems actually have larger values of Υ when including either
+          10 2                                                                    of these corrections. While it is reassuring that the majority
+                                                                                  of systems in each case only exhibit quite small changes—
+0PN |/M
+
+
+
+
+                                                                                  changes of order 10−4 or less in a quantity that already improved
+          10 4                                                                    significantly from the raw data—the 1PN and 2PN corrections
+                                                                                  plots include a large group of systems that change at the percent
+| nPN
+
+
+
+
+                                                                                  level. These systems also happen to be the same systems that
+          10 6                                                                    changed most drastically in going from the raw data to the 0PN-
+                                                                                  corrected data (found near the upper-right corner of the plots),
+                                                                  1PN             and are particularly biased towards increasing values of Υ. That
+          10 8                                                    2PN             is to say, it appears that the 1PN and 2PN corrections do worst
+                                                                                  for the most extreme systems. This should not come as a great
+              10 5         10 4         10 3      10 2     10 1     100           surprise, since those systems tend to be the ones with the most
+                                          Eccentricity                            extreme mass ratios and precession, so that post-Newtonian
+                                                                                  analysis is also expected to be at its least accurate.
+  FIG. 8. Differences between the Newtonian c.m. and the 1PN
+  corrected c.m. and 2PN corrected c.m. correction values versus                                  B. Linear-momentum recoil
+  the eccentricity of the simulation at relaxation time. No correlations
+  are evident between either the 1PN or 2PN correction and eccentricity             Any binary with asymmetric components will emit net linear
+  values.                                                                        momentum in the form of gravitational waves, which will
+                                                                                 cause a recoil of the binary itself. As the system rotates, the
+                                                                                 direction of recoil will also rotate, pushing the c.m. roughly
+                                                                                 in a circle [62, 63]. In principle, this effect could cause the
+
+
+                                                                            11
+              100                                                                             100
+                                 1479 negative                                                                 1376 negative
+              10 2               538 positive                                                 10 2             641 positive
+              10 4                                                                            10 4
+1PN )/ 0PN
+
+
+
+
+                                                                                2PN )/ 0PN
+              10 6                                                                            10 6
+              10 8                                                                            10 8
+( 0PN
+
+
+
+
+                                                                                ( 0PN
+             10 10                                                                           10 10
+             10 12                                                                           10 12
+             10 14                                                                           10 14
+                     10 8          10 6           10 4           10 2   100                          10 8        10 6             10 4            10 2   100
+                                          | raw     0PN |/ raw                                                            | raw      0PN |/ raw
+
+   FIG. 9. Comparison of post-Newtonian contributions for determining the center of mass. These plots show the difference between the value
+   of Υ [Eq. (17)] resulting from the naive 0PN method based on the coordinate trajectories of the apparent horizons and the value of Υ when
+   incorporating 1PN and 2PN effects, as described in the text. The horizontal axes show the relative magnitude of the change when going from the
+   raw data to the corrected waveform. The dashed diagonal line in both plots represents where the comparisons on the horizontal and vertical axes
+   are equal—the “x = y” line. In most cases, the values actually become significantly larger when going from the 0PN value to other values.
+   Those systems are shown as crosses, while systems with smaller values are shown as circles.
+
+
+   epicyclical motion apparent in the c.m. trajectories, which is                      Subtracting the motion described by Eq. (19) out of the c.m.
+   further characterized in Sec. V D. To see if recoil is responsible,              motion and comparing the radius of the measured motion to
+   we use methods described in Refs. [26, 62–64] to investigate the                 that of Eq. (19) immediately shows that the measured c.m.
+   size of the linear-momentum recoil implied by the gravitational-                 motion—specifically the epicyclical motion—is significantly
+   wave emission in these systems.                                                  larger than what can be explained by linear-momentum and c.m.
+      As shown in the right-column panels of Figure 1, the c.m.                     reactions for all simulations. Figure 10 shows a comparison
+   motion follows an overall linear track with additional epicyclical               across the SXS public waveform catalog for the ratio between
+   motion. The linear motion of the c.m. is well understood, and                    the measured c.m. radius about the coordinate origin and the
+   discussed in Sec. III. For this analysis, we assume that the linear              estimated c.m. radius given by Eq. (19). The measured c.m.
+   part of the c.m. motion may be removed from the data without                     radius is calculated by averaging the distance of the c.m. at
+   loss of information, leaving the epicyclical behavior about the                  time t away from the line α  ~ + ~βt between times ti and t f :
+   coordinate origin.                                                                                              Z tf
+                                                                                                               1
+      Blanchet and Faye [62] consider the motion of the c.m. from                              rmeasured =               |~xc.m. − (~α + ~βt)|dt.   (20)
+   linear momentum flux and the flux of the c.m. itself up to 3.5PN                                        t f − ti ti
+   order to calculate the instantaneous c.m. motion induced by                      The results show that the measured radius is typically hundreds
+   these effects, finding the position of the c.m. relative to its                  of times larger than the radius implied by Blanchet and Faye’s
+   average location over an orbit to be                                             analysis.
+                                         4                                             It is also possible to go beyond the analysis in Ref. [62] by
+                            ~ = − 48 G m2a m2b (ma − mb ) λ̂,
+                            G                                           (18)        using the measured gravitational waves to compute the linear-
+                                  5 c7 r 4 ω                                        momentum flux, and compare the acceleration that would cause
+   [cf. Eq. (6.9) in Ref. [62]] leading to a circular motion of the                 to the measured acceleration of the c.m. in the simulation. The
+   c.m. with radius                                                                 acceleration of the c.m., ~ac.m. was calculated by taking two
+                                                                                    time derivatives of the coordinate position of the c.m. after
+                                            4
+                                 ~ = 48 G m2a m2b (ma − mb )
+                      rrecoil = |G|                                     (19)        removing the linear motion:
+                                     5 c7 r 4 ω
+                                                                                                                       d2 
+                                                                                                                            ~xc.m. − (~α + ~βt) .
+                                                                                                                                               
+   for a system comprised of nonspinning BHs in a circular orbit.                                           ~ac.m. =      2
+                                                                                                                                                         (21)
+                                                                                                                       dt
+   Here, pr = |~xa − ~xb | is the distance between the two black holes,
+                                                                                    The linear-momentum flux may be calculated from the gravita-
+   ω = GM/r3 is the Newtonian orbital frequency, and λ̂ is
+                                                                                    tional radiation as [65]
+   the unit vector in the direction of motion of ma [cf. Eq. (25)].
+   An earlier analysis using a simplified model and lower-order                                                 d~p   c2 R2 dh 2
+   approximations can be found in Ref. [63].                                                                        =            r̂,                     (22)
+                                                                                                               dΩ dt G 16π dt
+
+                                                                               12
+      COMPACT BINARY WAVEFORM C.M. CORRECTIONS
+
+
+                    1000                                                  q 1.05                                     q > 1.05
+
+                     800
+Number of systems
+
+
+
+
+                     600
+
+                     400
+
+                     200
+
+                       0
+                           100     102        104           106   108   100        102         104         106     100          102         104       106
+                                         rmeasured /rrecoil                        |aCOM |/|pGW /M|                             |aCOM |/|pGW /M|
+
+      FIG. 10. Comparing measured c.m. motion to motion caused by emission of linear momentum carried away by gravitational waves. The panel
+      on the left shows the average ratio of the measured radius of c.m. motion, given by the time-averaged magnitude of the c.m. epicycles and stated
+      in Eq. (20), to the radius expected from leading-order calculations given by Eq. (19). The center and right panels show the average ratio of the
+      measured c.m. acceleration, given by the second time derivative of the c.m. coordinate positions and stated in Eq. (21), to the acceleration due to
+      asymmetric momentum flux carried by the measured gravitational waves—for near-equal mass ratios and larger mass ratios, respectively. Blue
+      indicates runs using the initial-data method described in Ref. [35], orange indicates runs using the previous initial-data method. In every case,
+      the measured motion is at least an order of magnitude larger than the motion expected from gravitational-wave recoil.
+
+
+      where r̂ is the direction from the source to the point in question,                   We compared the linear-momentum flux divided by the
+      R is the distance from the source to the observation sphere,                       total mass of the system with the measured acceleration of
+      and Ω represents all angles on the sphere. Integrating over all                    the c.m. and find that the values for most of the SXS public
+      angles to find the total linear momentum flux d~p/dt = ~p˙ , we                    waveform catalog do not agree. We further found that the c.m.
+      need to expand h into SWSHs as done in Eq. (3). We can also                        acceleration for nonequal mass systems is consistently larger
+      decompose r̂ accordingly as                                                        than the acceleration found through the linear momentum flux,
+                  r                                                                      confirming that most of the c.m. motion is not due to linear-
+                     2π                                 √                                momentum recoil.
+            r̂ =        (Y1,−1 − Y1,1 , iY1,−1 + iY1,1 , 2Y1,0 ).   (23)
+                      3                                                                     An overview of the ratios between ~ac.m. and ~p˙ /M can be
+                                                                                         seen in Figure 10. Note that linear-momentum recoil in equal
+      Then integrating over all angles gives                                             mass or near-equal mass BBH systems is expected to be very
+                                                              r                          small, and so these systems are isolated as a separate case in
+                                                      3(2l + 1)(2l0 + 1)
+                           c2 R2 X 1,m0 −m l,m ¯ l0 ,m0                                  the middle panel of Figure 10.
+                    ṗ j =                 r̂ ḣ ḣ
+                           G 16π l,l0 ,m,m0 j                4π
+                                                        !           !                                 C. Causes of unphysical c.m. motion
+                                         0 l l0     1      l l0 1
+                                  × (−1)m                             , (24)                If the c.m. motion seen in the SXS BBH simulations cannot
+                                           m −m0 m0 − m 2 −2 0
+                                                                                         be explained by physical processes such as inclusion of PN
+      where the last two factors are Wigner 3-j symbols. The sum over                    terms or linear-momentum recoil, then why is it there? There
+      m0 and most terms in the sum over l0 can be eliminated using                       are two potential causes for the appearance of unphysical
+      properties of the 3-j symbols. Explicit expressions for the cal-                   or erroneous c.m. motion: (i) the presence of uncontrolled
+      culation of the linear momentum flux are given in Appendix C.                      residual linear momentum in the initial data, and (ii) the
+      Our calculation of the linear momentum flux can be found in                        emission of unresolved junk radiation at the beginning of the
+      the open-source package spherical_functions [66].                                  BBH simulation causing effectively random and unphysical
+         Of course, there are multiple methods for calculating the                       coordinate kicks to the system. The presence of uncontrolled
+      linear momentum for a BBH system. We compared our method                           residual linear momentum was addressed and partially rectified
+      with the method proposed in Ref. [64] and originally stated                        in Ref. [35], leading to a new method of creating initial data for
+      in Ref. [65], and found that the two derivations give the same                     the BBH simulations. However, this method was not used for
+      results to within numerical accuracy. This is unsurprising given                   all systems in the SXS catalog, and does not completely resolve
+      that the methods are identical up to the choice of notation. In                    the issues of spurious translations and boosts even when it is
+      particular, the core definition of the total linear momentum                       applied.
+      flux given in Eq. (22) is the same as that given in Eq.(2.11) of                      Another factor that seems to cause c.m. motion starting from
+      Ref. [65].                                                                         early in the simulations appears to be junk radiation, which
+
+
+                                                                                    13
+is an inherent part of BBH simulations. It is the radiation                large epicycles has the potential to affect the reproducibility and
+emitted when a BBH relaxes from its initial-data “snapshot”,                                                 ~ and ~β. Removing the epicycles,
+                                                                           reliability of the calculation of α
+which is only an approximation to the true state of a long binary          or at the very least minimizing them, to calculate a more
+inspiral at the time the simulation starts. Junk radiation is              accurate c.m. correction should further reduce mode mixing.
+physical, in the sense that if the entire spacetime were actually          Of course, epicycle motion cannot be completely subtracted
+in the configuration given by the initial data, it would indeed            from the waveform itself as this would require an acceleration
+emit this radiation as the system evolved. However, it is not              correction, which is not an allowed BMS transformation.
+astrophysical, in the sense that no real system in the universe               To accurately describe the epicycles, we need to define the
+is expected to contain this type of radiation. Junk radiation              corotating coordinate frame. For our simulations, we have three
+contains high frequencies that are largely unresolved in BBH               unit vectors that describe the rotating coordinate frame:
+simulations because of limits of computational power and time.
+                                                                                                           x~a − x~b      ~rab
+As the resolution increases in the simulations, more of the junk                                    n̂ =               =         ,
+radiation is accurately treated. This is a potential cause for the                                       | x~a − x~b | |~rab |
+difference in initial kicks of the c.m., as seen in Fig 2. Even in                                        ~rab × ~ṙab       ~
+                                                                                                                             ω
+                                                                                                    k̂ =                =        ,                (25)
+our higher-resolution simulations, not all of the junk radiation                                                  ~
+                                                                                                         |~rab × ṙab |      ω
+                                                                                                                            |~ |
+is accounted for. This failure to resolve all of the junk radiation
+                                                                                                    λ̂ = −n̂ × k̂,
+possibly contributes to the c.m. kicks observed in SpEC BBH
+simulations.                                                               where n̂ points along the separation vector ~rab , k̂ points along
+   Fortunately, kicks from the emission of unresolved junk                 the orbital angular velocity ω~ , and λ̂ points along the direction
+radiation can be corrected using the gauge transformations                 of rotation.
+discussed in the previous section. The large epicyclical motion               This leads us to a potential method for epicycle removal.
+in the c.m. cannot be accounted for using a BMS gauge                                                                            ~ and boost ~β
+                                                                           First, we calculate the estimated spatial translation α
+transformation like the linear motion of the c.m.. The cause for           from the original c.m. ~xc.m. using the current averaging method
+such large, seemingly unphysical epicyclic motion is unknown,
+and is left for future work.                                                                        ~c1 = ~xc.m. − (~α + ~βt).                    (26)
+
+                                                                           Note that h|~c1 |i = rmeasured as defined in Eq. (20), using the
+                  D. Epicycle quantification                               angle-bracket notation to denote averaging over time, as for the
+    As seen in the right column panels of Figure 1, the c.m.               moments of the c.m. position in Eq. (6). We then calculate the
+motion has both a linear and epicyclic component. The linear               corresponding corotating coordinate frame unit vectors given
+component of the c.m. motion has been discussed and is already             in Eq. (25). These unit vectors are then applied to the original
+considered in the current c.m. correction technique.                       c.m. ~xc.m. as
+    The size of the epicyclic motion in the c.m. cannot be solely
+                                                                                              ~c2 = ~xc.m. − ∆n n̂ − ∆λ λ̂ − ∆k k̂,               (27)
+explained by linear-momentum recoil, as discussed in Sec. V B.
+The leftmost plot in Figure 10 illustrates that the expected               where ∆n = h~c1 (t) · n̂(t)i, ∆λ = h~c1 (t) · λ̂(t)i, ∆k = h~c1 (t) · k̂(t)i,
+radius of the epicycles from linear-momentum recoil, even                  are the time averaged projections of the linearly corrected c.m.
+on an approximate basis, is orders of magnitude smaller than               onto the rotational coordinate system unit vectors. The epicycle-
+what is actually seen, given by rmeasured defined in Eq. (20).             corrected c.m. ~c2 is then fed back into the averaging method to
+The actual size of rmeasured is fairly consistent across the SXS                                             ~ epi and boost ~βepi values, which
+                                                                           get the final spatial-translation α
+simulation catalog regardless of simulation parameters or initial          can then be applied to the waveform data.
+data construction, and tends to be between 0.01 and 0.1 with                  A visual representation of our epicycle-correction method
+an average value of 0.026 in simulation units. There is not a              is shown in Figure 11, which uses the spin aligned system
+significant change in the distribution or magnitude of rmeasured           SXS:BBH:0314 and the precessing system SXS:BBH:0622 as
+between the 0PN, 1PN, or 2PN representations of the c.m..                  sample cases. As seen in the upper two panels on the right,
+    We assume that the epicycle motion seen in the c.m. after              the removal of the epicyclic motion as calculated by the time-
+the translation and boost are applied is from the calculated c.m.,         averaged values ∆n , ∆λ , and ∆k greatly diminishes the large size
+~xc.m. , being displaced from the optimal c.m. by a small amount.          of the epicycles and allows for potentially better optimization
+“Displaced” here means that we assume ~xc.m. is displaced from             of the c.m.-correction values α  ~ and ~β. In these same panels, it
+the optimal c.m. along the separation vector ~rab = ~xa − ~xb , and        can also be seen that not all of the epicycle motion is removed
+not in any other direction.                                                by our method, and in particular there are larger deviations
+    Regardless of the origin of these epicycles, removing them             towards the beginning and end of the simulation data, which
+to calculate the linear c.m. correction should improve the                 are a result of our time-averaged method capturing most but
+quality of the waveforms. Their removal should reduce the error            not all of the epicycle motion. Specifically, the epicycle radius
+associated with the averaging done to calculate the translation            tends to grow with time in most (81% of) SXS simulations.
+and boost correction values. As discussed regarding the choice                Figure 12 shows ~c1 [Eq. (26)] and the projections of ~c1
+of beginning and ending times in Sec. III B, the presence of               onto the n̂, λ̂ unit vectors. These panels show very similar
+
+
+                                                                      14
+    COMPACT BINARY WAVEFORM C.M. CORRECTIONS
+
+                                    Original                        Epicycle Corrected                                    100
+               0.00                               Lev1                        COM trajectory 0.00
+                                                  Lev2                         + t
+                                                  Lev3                                                                    10 2
+SXS:BBH:0314
+
+
+
+                                                  Lev4
+               0.05                                                                               0.05
+
+
+
+
+                                                                                                        y/M
+
+                                                                                                               0PN |/M
+                                                                                                                          10 4
+                                                                                                                                           hange
+                                                                                                                                        %c
+               0.10                                                                               0.10
+                                                                                                                          10 6
+                                                                                                                                    100
+                             0.00    0.03      0.06                 0.00    0.03      0.06
+
+
+
+
+                                                                                                               | epi
+                                                                                                                                    10%
+               0.02                                                                              0.02                     10 8
+                                                                                                                                    1%
+SXS:BBH:0622
+
+
+
+
+                                                  Lev1                        COM trajectory
+                                                  Lev2
+
+
+
+
+                                                                                                        y/M
+                                                  Lev3                         + t
+               0.00                                                                              0.00
+                                                                                                                         10 10
+                                                                                                                                 10 7           10 5     10 3          10 1           101
+               0.02                                                                               0.02                                                 | 0PN |/M
+                      0.04          0.02   0.00              0.04          0.02   0.00
+                                       x/M                                    x/M
+                                                                                                                   FIG. 13. Change in the size of the c.m. correction, ~µ as defined in
+    FIG. 11. Illustration of epicycle correction for the two simulations                                           Eq. (8), when removing epicycles before fitting for the c.m. correction,
+    already shown in Figure 1. The left panels show the Newtonian center                                           as described in Eq. (27). These changes are comparable to, but almost
+    of mass ~xc.m. , whereas the right panels show the epicycle corrected ~c2 .                                    always smaller than, the changes due to variations in the end points
+    The thick dashed lines indicate linear fits to the respective center of                                        of integration as seen in Figure 3; they are also smaller than most of
+    mass trajectories: α ~ + ~βt (left panels) and α~ epi + ~βepi t (right panels).                                the post-Newtonian corrections seen in Figure 7, except for systems
+    Several numerical resolutions are shown (labeled Lev1 to Lev4), and                                            changing here by more than about 10%.
+    data is plotted only for the time-interval [ti , t f ], which is used for the
+    linear center of motion fits.
+                                                                                                                   behavior between resolutions of the same simulation, implying
+                             c1(t) x vs. c1(t) y                     c1(t) n vs. c1(t)                             that the cause of the size of the epicycles is not random, from
+               0.02                                                                          Lev1 0.02             initial conditions, or the junk radiation phase, and that the
+                                                                                             Lev2
+                                                                                             Lev3                  randomness of the initial kick has been completely removed by
+SXS:BBH:0314
+
+
+
+
+                                                                                             Lev4                  the correction applied in Eq. (26).
+               0.00                                                                               0.00
+                                                                                                                      Applying this method to the BBH simulations in the SXS
+                                                                                                                   public simulation catalog, we can calculate α   ~ epi and ~βepi c.m.
+                                                                                                                   correction values. Figure 13 compares the usual “0PN” c.m.
+               0.02                                                                                    0.02
+                                                                                                                   correction with the epicycle-removed values. The values
+                       0.02           0.00            0.02     0.02           0.00            0.02                 plotted involve ~µ, defined in Eq. (8), which is the largest
+               0.01                                                                          Lev1 0.01             displacement between the origin of coordinates in the sim-
+                                                                                             Lev2
+                                                                                             Lev3                  ulation and the corrected origin. We see that epicycle removal
+SXS:BBH:0622
+
+
+
+
+                                                                                                                   changes the c.m. correction values at a scale comparable to the
+               0.00                                                                                   0.00         changes caused by varying the end points of integration used
+                                                                                                                   to determine the c.m., as seen in Figure 3. The changes due to
+                                                                                                                   epicycle removal are generally somewhat smaller than changes
+               0.01                                                                                    0.01        due to varying end points. If we remove the epicycles before
+                       0.01            0.00            0.01 0.01               0.00            0.01                applying those variations, the changes seen in Figure 3 are
+                                                                                                                   reduced by a typical factor of two—though there is no apparent
+    FIG. 12. Contribution to ~xc.m. which cannot be fitted by a linear                                             effect on roughly 10% of systems. Systems that change by more
+    drift. Left panel: Deviation of Newtonian center of mass from a                                                than 10% in this figure are also typically changing by more
+    linear motion, i.e. the quantity ~c1 , plotted in inertial coordinates.                                        than the post-Newtonian changes shown in Figure 7.
+    Right panel: Projection of ~c1 (t) onto the corotating basis vectors
+    n̂ and λ̂. The rotation of ~c1 around the origin visible in the left                                              Using the method outlined in Sec. IV, we also find that we
+    panels is transformed into a nearly constant offset from the origin                                            cannot reliably conclude that the epicycle correction actually
+    in corotating coordinates of the right panels. Shown are multiple                                              makes a significant improvement in the waveforms. The results
+    numerical resolutions (Lev1, Lev2, ...) which fall on top of each other,                                       of the Υ comparisons between the original c.m. correction
+    indicating that the epicyclic dynamics is numerically resolved and                                             method outlined in Sec. ?? and the epicycle removal method
+    independent of the direction of the linear drift. Data is plotted only for                                     in this section can be found in Figure 14. This plot shows that
+    the time-interval [ti , t f ], which is used for the linear center of motion                                   approximately 30% of simulations improve using the epicycle
+    fits.                                                                                                          method, and approximately 70% get worse. This is not enough
+
+
+                                                                                                              15
+              100                                                                  projection in the ±λ̂ direction, ∆λ , averages at −0.44rmeasured
+                            634 negative                                          when considering all simulations in the SXS Catalog. On
+              10 2          1383 positive                                          average, the projection of ~c1 into the ±n̂ direction, ∆n , is smaller
+                                                                                   than ∆λ , with an average ratio ∆λ /∆n for spin aligned systems
+              10 4
+epi )/ 0PN
+
+
+
+
+                                                                                   of −1.43 and −2.48 for precessing systems. The projection in
+                                                                                   the ±k̂ direction, ∆k , is significantly smaller than ∆λ , with an
+              10 6                                                                 average ratio ∆λ /∆k of −3.22 × 103 for spin aligned systems
+              10 8                                                                 and −2.78 for precessing systems.
+( 0PN
+
+
+
+
+                                                                                      Having typically most but not all of the corrected c.m. vector
+             10 10                                                                ~c1 in the direction of −λ̂ does not have an obvious cause. This
+                                                                                   behavior could possibly indicate unaccounted spin-orbit effects
+             10 12                                                                 on the c.m., unknown effects from unresolved junk radiation,
+                                                                                   or additional gauge effects that cannot be compensated for
+             10 14                                                                with BMS transformations. Attributes of ~c1 warrant further
+                     10 8    10 6           10 4           10 2     100            investigation, and are left to future work.
+                                    | raw     0PN |/ raw                              Correlations between ∆n , ∆λ , and ∆k with pertinent simu-
+                                                                                   lation parameters are shown in Figure 15. This plot shows
+   FIG. 14. This plot shows the difference between the value of Υ                  the correlations between ∆n , ∆λ , ∆k , χeff , χ p , and q. A few
+   [Eq. (17)] resulting from the naive 0PN method based on the coordi-             notable correlations are apparent, the most obvious being the
+   nate trajectories of the apparent horizons and the value resulting from         correlation between ∆n and ∆λ . Most simulations tend to
+   the epicycle removal method described in Sec. V D. The horizontal               have negative ∆λ values that grow larger in magnitude with
+   axis shows the relative magnitude of the change when going from the             increasing ∆n , however there is also a cluster of aligned-spin
+   raw data to the corrected waveform, while the vertical axis shows the
+                                                                                   simulations with ∆n , ∆λ values close to zero. Additionally,
+   change when incorporating the epicycle corrections. In most cases, the
+   values of Υ actually become significantly larger when going from the
+                                                                                   ∆λ becomes more negative with increasing q, for q < 5, and
+   0PN value to the epicycle corrected value. Those systems are shown              there are some weak correlations between both c.m. position
+   as crosses, while systems with smaller values are shown as circles.             offsets ∆n , ∆λ with χeff , but not with χ p . ∆k does not appear to
+                                                                                   have any strong correlations. It is apparent that spin aligned
+                                                                                   simulations tend to have ∆k values which are much smaller than
+   of a benefit to warrant the use of the epicycle removal step in                 for precessing simulations. One possible explanation for the
+   all simulations, and implies that the epicycle removal, at this                 c.m. to move out of the orbital plane is momentum flow between
+   stage of BBH simulations, is an unnecessary step in calculating                 the gravitational fields and black holes [67], however we leave
+   and applying the c.m. correction, a somewhat disappointing                      analysis regarding this mechanism to future work. It can also be
+   conclusion.                                                                     seen in Figure 15 that larger ∆k values cluster around ∆n = 0 and
+      As mentioned in Sec. III B, epicycles are also a potential                   ∆λ < 0, which may only be due to ∆n values being symmetric
+   source of instability regarding choice of beginning and ending                  around 0 and ∆λ values being mostly negative. No apparent
+   times ti , t f . Initial investigation into how the epicycle removal            correlations are present for other simulation parameters.
+   method affects changes in the c.m. correction values due to
+   differing ti , t f implies that the epicycle removal method does                                     VI. CONCLUSIONS
+   not diminish changes in the c.m. correction values. This is
+   also an unintuitive and disappointing result, and may imply                       In this work, we have investigated the effects of c.m. motion
+   that other methods are required to calculate the c.m. correction               waveforms, removed unphysical c.m. motion through allowed
+   values α~ and ~β after epicycle removal or a different method for              gauge transformations to the waveforms, and have investigated
+   epicycle removal entirely. We leave such an investigation to                   methods for improving the c.m. correction. Having unphysical
+   future work.                                                                   motion in the c.m. causes mode mixing in the gravitational
+                                                                                  waveforms, and thus a power loss from the dominant (2, ±2)
+                                                                                  modes to the less-dominant, higher-order modes—which is
+                            E. Position of the c.m.                               typically visible as amplitude modulation in the higher-order
+      During the analysis of the epicycles present in the c.m.,                   modes.
+   we investigated the position of the c.m. relative to the two                      We found that the c.m. motion observed in the SXS
+   black holes. We still assumed, that ~xc.m. would lie along the                 simulations cannot be entirely accounted for by PN corrections
+   separation vector between the two black holes or completely in                 or linear-momentum recoil. We also found that the motion of
+   the rotation direction as given in Eq. (18). As seen in Figure 15,             the c.m. does not lie along any one basis vector describing
+   this is not the case. The c.m. deviates significantly between                  the rotating coordinate frame as defined in Eq. (25), and is
+   the rotation vector and the separation vector between the two                  offset from the estimated c.m. within and out of the orbital
+   black holes but typically lies in the negative rotation direction              plane—which is not expected on physical grounds.
+   −λ̂, as predicted by Eq. (18) and the analysis in Ref. [62]. The                  The current method for correcting the c.m. motion uses
+
+
+                                                                             16
+COMPACT BINARY WAVEFORM C.M. CORRECTIONS
+
+                  0.00+0.35
+                       0.35
+
+
+
+
+                                         0.40+0.40
+                                              0.40
+    1. 0
+p
+
+    0. 5
+
+
+
+
+                                                               2.00+1.63
+                                                                    0.99
+    10
+q
+
+     5
+
+
+
+
+                                                                                        0.00+0.02
+                                                                                             0.02
+     5
+   0.0
+n
+
+
+     0
+   0.0
+
+
+
+
+                                                                                                             0.02+0.01
+                                                                                                                  0.01
+     5
+   0.0
+     0
+   0.0
+
+
+
+
+                                                                                                                               0.00+5.55
+                                                                                                                               (    7.64 × 10
+                                                                                                                                         )
+                                                                                                                                              5
+     5
+    00
+ 0.0
+k
+
+
+     0
+    00
+ 0.0
+
+
+
+
+                   0
+
+
+                              1
+
+
+                                        0.5
+
+
+                                                     1.0
+
+
+                                                               5
+
+                                                                           10
+
+
+                                                                                         0
+
+
+                                                                                                     5
+
+
+                                                                                                             0
+
+
+                                                                                                                          5
+
+
+                                                                                                                                     0
+
+
+                                                                                                                                                  5
+                                                                                       0.0
+
+
+                                                                                                    0.0
+
+
+                                                                                                           0.0
+
+
+                                                                                                                         0.0
+
+
+                                                                                                                                    00
+
+
+                                                                                                                                              00
+                                                                                                                                   0.0
+
+
+                                                                                                                                             0.0
+                      eff                    p                    q                         n                                            k
+
+FIG. 15. Comparisons of effective spin χeff as defined in Eq. (9), effective precessing spin χ p as defined in Eq. (10), mass ratio q, and the time
+averaged projections of ~c1 onto n̂, λ̂, and k̂ ; ∆n , ∆λ , ∆k . Red represents spin aligned simulations, and teal represents precessing simulations.
+The numbers above each column represent the median of each variable over all simulations, with superscripts and subscripts giving the offset
+(relative to the median) of the 84th and 16th percentiles, respectively.
+
+
+allowed BMS transformations, namely a spatial translation                       epicycle removal technique did not improve the c.m. correction
+and boost that counteracts the linear motion from the c.m. and                  transformations, and thus would not further improve the
+removes a large amount of the mode mixing from the waveform.                    waveforms or accurately describe the c.m. physically.
+The translation and boost are calculated for all simulations at                    Future work includes investigating spin-orbit effects on
+all resolutions, as the c.m. motion is not consistent between                   the c.m. and the peculiarity of the c.m. position. Further
+different resolutions of the same system.                                       investigation is required specifically on the unaccounted for
+   We attempted to improve the c.m. correction by developing                    size of the radius of the epicycles seen in the c.m. motion,
+a method to remove the large epicycles from the c.m. motion                     which may be due to unknown spin-orbit or unresolved junk
+before calculating the BMS translation and boost. We found that                 radiation effects, and may be corrected with additional gauge
+the resulting changes to the translation and boost values were                  transformations that minimize the epicycles.
+not significant and did not improve the waveforms compared
+to the originally calculated values.
+                                                                                                    ACKNOWLEDGMENTS
+   Last, we introduced a complementary method to quantify
+the effect of the c.m. correction on the waveforms. We                            It is our pleasure to thank Saul Teukolsky for useful con-
+used this method to determine that PN corrections and the                       versations and guidance on this project. We also thank Leo
+
+
+                                                                           17
+Stein for helpful insight and suggestions regarding notation.             where ð is effectively a covariant differentiation operator in the
+This project was supported in part by the Sherman Fairchild               surface of the sphere. ð is defined [25] as
+Foundation, by NSF Grant No. PHY-1606654 at Cornell, and
+                                                                                                       ∂      i ∂
+                                                                                                     (               )
+by NSERC of Canada Grant No. PGSD3-504366-2017 as well                              ðη = −(sin θ)  s
+                                                                                                         +             {(sin θ) s η}   (A4)
+as the Canada Research Chairs Program.                                                                 ∂θ sin θ ∂φ
+   The computations described in this paper were performed
+on the Wheeler cluster at Caltech, which is supported by the              when operating on some function η that has a spin weight s.
+Sherman Fairchild Foundation and by Caltech, and on the GPC                  The above classic method inherits an unfortunate dependency
+and Gravity clusters at the SciNet HPC Consortium, funded                 on the chosen coordinates. In particular, SWSHs cannot be
+by the Canada Foundation for Innovation under the auspices                written as functions on the sphere S 2 ; at best they can only be
+of Compute Canada, the Government of Ontario, Ontario                     written as functions on coordinates of S 2 . As such, SWSHs as
+Research Fund–Research Excellence, and the University of                  defined in Eq. (A3) do not transform among themselves under
+Toronto.                                                                  rotation of the sphere (or, equivalently, rotation of coordinates
+                                                                          of the sphere). That is, a SWSH in a given coordinate system
+                                                                          cannot generally be expressed as a linear combination of
+    Appendix A: Spin-Weighted Spherical Harmonics                         SWSHs in another coordinate system. A more correct method
+   Spin-weighted spherical harmonics (SWSHs) are typically                for defining SWSFs that does not inherit these coordinate-
+used to generalize the well-known standard spherical harmonics.           system dependencies is to represent them as functions from
+Specifically, SWSHs provide a decomposition of general spin-              Spin(3) ≈ SU(2), which in turn maps onto S 2 [68]. By forming
+weighted spherical functions (SWSFs) into a sum of SWSHs.                 a representation of Spin(3), SWSHs defined in this way do
+Spin-weighted spherical functions themselves provide a vital              transform among themselves and still agree with the classic
+way to study waves radiating from bounded regions, and so                 definition. SWSHs may then be defined as
+have an obvious and important application in gravitational-                                                  r
+wave astronomy, which is the focus of this work. Spin-                                                     s   2l + 1 (l)
+                                                                                        s Yl,m (R) := (−1)           Dm,−s (R),       (A5)
+weighed spherical functions play two key roles in this field:                                                    4π
+(1) describing the magnitude of the wave given any direction
+                                                                          where D is a Wigner matrix, which are representations of the
+of emission or observation, and (2) providing polarization
+                                                                          spin group, and R is the Spin(3) argument. Taking R to be in
+information. There are a number of subtleties in defining
+                                                                          the unit-quaternion representation of Spin(3), the D matrices
+SWSFs and hence SWSHs, including dependencies on the
+                                                                          may be expressed as
+chosen coordinate system and the explicit definition of SWSFs.
+   The spin weight of a function is defined by how it transforms                          s
+                                                                                                                  ρ2
+                                                                                             (l + m)!(l − m)! X      l + m0 l − m0
+                                                                                                                           !       !
+under rotation of the spacelike vectors <(mµ ), =(mµ ) where                 Dm0 ,m (R) =
+                                                                               (l)
+
+mµ is a complex null vector tangent to the coordinate sphere                                (l + m0 )!(l − m0 )! ρ=ρ    ρ    l−ρ−m
+                                                                                                                  1
+S 2 . The rotation of these spacelike vectors is given by                                              −ρ l−ρ−m ρ−m +m ρ
+                                                                                                       0              0
+                                                                                            (−1)ρ Rl+m
+                                                                                                   s     R̄ s  Ra     R̄a ,           (A6)
+                         (mµ )0 = eiΨ mµ .                  (A1)
+                                                                          where ρ1 = max(0, m0 − m), ρ2 = min(l + m0 , l − m), and R s
+A function η is then said to have a spin weight s if it transforms        and Ra are the geometric projections of the quaternion into
+as                                                                        symmetric and antisymmetric parts under reflection along
+                                                                          the z axis, which are essentially complex combinations of
+                            η0 = e siΨ η.                   (A2)          components of the quaternion:
+
+In the case of gravitational waves, the metric perturbation h has                R s B Rw + iRz       and      Ra B Ry + iR x .       (A7)
+a spin weight of −2 [25, 27] and this decomposition has been
+used in numerical relativity extensively.                                 The definition given in Eq. (A5) is consistent with the definition
+   The classic definition of SWSHs [25] writes the functions in           of SWSHs typically used within the SXS collaboration and is
+terms of spherical coordinates for S 2 , giving them as explicit          the assumed formulation for this work. For further information
+formulas using polar and azimuthal angles (θ, φ) and using two            on SWSFs and SWSHs, a comprehensive in-depth discussion
+integer variables that define the order of spherical harmonic to          of the history, details, and additional formulations of SWSHs
+be used. The convention used here and in SXS is Yl,m .                    can be found in [68].
+   Spin-weighted spherical harmonics are thus classically
+defined as                                                                   Appendix B: Post-Newtonian Correction to the c.m.
+               h
+                  (l−s)! 1/2 s                                              As discussed in Sec. V A, we used the 1PN and 2PN
+                        i
+                            ð Yl,m ,       0 ≤ s ≤ l,
+               
+               
+      s Yl,m = 
+               
+                (l+s)!
+                                                            (A3)          corrections to the c.m. as outlined in Ref. [61]. The c.m. up to
+               (−1) s (l+s)! 1/2 ð̄−s Y , −l ≤ s ≤ 0,
+                       h     i
+                      (l−s)!         l,m                                 2PN order is given in Eq. (4.5) of Ref. [61] as
+
+
+
+                                                                     18
+COMPACT BINARY WAVEFORM C.M. CORRECTIONS
+
+
+
+
+                            1 i Gma mb ma v2a
+                              "                    !#
+          G   i
+                  = ma yia +   y −          +                                                                                               (B1)
+                           c2 a      2rab     2
+                                                                       5G2 m2a mb 7G2 ma m2b 3ma v4a
+                             "                                !
+                            1 i           7           7
+                          + 4 vaGma mb − (nab va ) − (nab vb ) + yi1 −      2
+                                                                                 +     2
+                                                                                            +
+                           c              4           4                  4rab       4rab       8
+                                                                                                                      !!#
+                                       Gma mb 1            1                    1            19    7          7
+                                   +         − (nab va )2 − (nab va )(nab vb ) + (nab vb )2 + v2a − (va vb ) − v2b          + a ⇐⇒ b
+                                        rab   8            4                    8             8    4          8
+
+
+
+where the superscript i designates the vector component being                 overall denominator M = ma + mb .
+considered; subscripts a, b designate which object is being
+considered; ~y is the position of the body being considered;
+rab = |~ya − ~yb | is the distance between body a and b; ~v is the              Appendix C: Linear Momentum Flux from hl,m modes
+velocity of the body being considered and likewise v is the
+magnitude of the velocity; and ~nab = ~rab /rab . Parentheses                   As mentioned in Sec. V B, our calculation of the linear
+here represent the scalar product of the interior values, e.g.,               momentum flux from the simulations is based on the formalism
+(nab vb ) = ~nab · ~vb .                                                      outlined in [26], which uses the SWSH structure of the
+   Note that this representation of the c.m. position does not                gravitational strain h. Starting from Eq. (24), which gives the
+include an overall division by the total mass of the system, and              general form of the linear momentum flux in hl,m modes, we
+so our calculations deviate from Eq. (B1) only by including an                can evaluate the components of the linear momentum flux:
+
+
+
+                                            r
+                        R2 X                    (2l + 1)(2l0 + 1) l l0 1 l,m ¯ l0 ,m−1 l
+                                                                          !     "                    !                          !#
+                                                                                              l0  1                   l   l0   1
+                                                                                                       − ḣ¯ l ,m+1
+                                                                                                              0
+              ṗ x = −            (−1)m                                     ḣ ḣ
+                       16π l,l0 ,m                      2          2 −2 0              m 1 − m −1                    m −1 − m 1
+                                          r
+                         R2 X                    (2l + 1)(2l0 + 1) l l0 1 l,m ¯ l0 ,m−1 l
+                                                                           !     "                    !                           !#
+                                                                                               l0  1        ¯ l0 ,m+1 l    l0   1
+              ṗy = − i            (−1) m
+                                                                             ḣ ḣ                      + ḣ
+                        16π l,l0 ,m                      2          2 −2 0              m 1 − m −1                    m −1 − m 1
+                     R2 X
+                                                                                !         !
+                                                                       l l0 1 l l0 1
+                             (−1)m ḣl,m ḣ¯ l ,m (2l + 1)(2l0 + 1)
+                                              0
+              ṗz =
+                                                   p
+                                                                                            ,                                               (C1)
+                    16π 0                                             m −m 0 2 −2 0
+                          l,l ,m
+
+
+
+
+where x, y, z refer to the simulation coordinates, with the orbit             conjugate of the mode amplitudes. The matrices throughout
+typically lying in the x − y plane, R is the distance to the                  the summations are Wigner 3-j symbols.
+observation sphere, and ḣ, ḣ¯ are the time derivative and its
+
+
+
+
+ [1] G. Lovelace, C. O. Lousto, J. Healy, M. A. Scheel, A. Garcia,             [7] L. Gualtieri, E. Berti, V. Cardoso, and U. Sperhake, Phys. Rev.
+     R. O’Shaughnessy, M. Boyle, M. Campanelli, D. A. Hemberger,                   D 78, 044024 (2008).
+     L. E. Kidder, H. P. Pfeiffer, B. Szilagyi, S. A. Teukolsky, and           [8] B. J. Kelly and J. G. Baker, Phys. Rev. D 87, 084004 (2013).
+     Y. Zlochower, Classical Quantum Gravity 33, 244002 (2016).                [9] M. Boyle, Phys. Rev. D 93, 084031 (2016).
+ [2] J. Healy et al., Phys. Rev. D 97, 064027 (2018).                         [10] https://www.black-holes.org/waveforms.
+ [3] P. Kumar et al., Phys. Rev. D 89, 042002 (2014).                         [11] M. Boyle and others (SXS Collaboration), Classical Quantum
+ [4] J. Blackman, S. E. Field, M. A. Scheel, C. R. Galley, D. A.                   Gravity 36, 195006 (2019).
+     Hemberger, P. Schmidt, and R. Smith, Phys. Rev. D 95, 104023             [12] G. Lovelace, “Binary black-hole simulation SXS:BBH:0314,”
+     (2017).                                                                       (2019), mass ratio 1.23, with aligned spins.
+ [5] T. Chu, H. Fong, P. Kumar, H. P. Pfeiffer, M. Boyle, D. A.               [13] P. Kumar, “Binary black-hole simulation SXS:BBH:0622,”
+     Hemberger, L. E. Kidder, M. A. Scheel, and B. Szilagyi,                       (2019), mass ratio 1.2, precessing spins of magnitude 0.85 in
+     Classical Quantum Gravity 33, 165001 (2016).                                  random directions.
+ [6] M. Boyle and A. H. Mroué, Phys. Rev. D 80, 124045 (2009).                [14] A. Buonanno and T. Damour, Phys. Rev. D 59, 084006 (1999).
+
+
+
+                                                                         19
+[15] Y. Pan, A. Buonanno, A. Taracchini, L. E. Kidder, A. H. Mroue,             [38] R. K. Sachs, Proc. R. Soc. A 270, 103 (1962).
+     H. P. Pfeiffer, M. A. Scheel, and B. Szilagyi, Phys. Rev. D 89,            [39] A. Strominger, Lectures on the Infrared Structure of Gravity and
+     084006 (2014).                                                                  Gauge Theory (Princeton University Press, Princeton, NJ, 2018)
+[16] A. Taracchini, A. Buonanno, Y. Pan, T. Hinderer, M. Boyle, D. A.                pp. 157–159.
+     Hemberger, L. E. Kidder, G. Lovelace, A. H. Mroué, H. P. Pfeiffer,         [40] E. T. Newman and T. W. J. Unti, J. Math. Phys. (N.Y.) 3, 891
+     M. A. Scheel, B. Szilágyi, N. W. Taylor, and A. Zenginoglu,                     (1962).
+     Phys. Rev. D 89, 061502(R) (2014).                                         [41] G. Barnich and P.-H. Lambert, Adv. Math. Phys. 2012, 197385
+[17] S. Babak, A. Taracchini, and A. Buonanno, Phys. Rev. D95,                       (2012).
+     024010 (2017).                                                             [42] N. W. Taylor, M. Boyle, C. Reisswig, M. A. Scheel, T. Chu, L. E.
+[18] A. Bohé, L. Shao, A. Taracchini, A. Buonanno, S. Babak, I. W.                   Kidder, and B. Szilágyi, Phys. Rev. D 88, 124010 (2013).
+     Harry, I. Hinder, S. Ossokine, M. Pürrer, V. Raymond, T. Chu,              [43] P. Ajith et al., Phys. Rev. Lett. 106, 241101 (2011).
+     H. Fong, P. Kumar, H. P. Pfeiffer, M. Boyle, D. A. Hemberger,              [44] L. Santamaria et al., Phys. Rev. D 82, 064016 (2010).
+     L. E. Kidder, G. Lovelace, M. A. Scheel, and B. Szilágyi, Phys.            [45] B. P. Abbott et al. (Virgo, LIGO Scientific), Phys. Rev. Lett. 116,
+     Rev. D 95, 044028 (2017).                                                       241102 (2016).
+[19] R. Cotesta, A. Buonanno, A. Bohé, A. Taracchini, I. Hinder, and            [46] P. Schmidt, F. Ohme, and M. Hannam, Phys. Rev. D 91, 024043
+     S. Ossokine, Phys. Rev. D 98, 084028 (2018).                                    (2015).
+[20] P. Ajith, S. Babak, Y. Chen, M. Hewitson, B. Krishnan, J. T.               [47] E. T. Newman and R. Penrose, Journal of Mathematical Physics
+     Whelan, B. Brügmann, P. Diener, J. Gonzalez, M. Hannam,                         7, 863 (1966).
+     S. Husa, M. Koppitz, D. Pollney, L. Rezzolla, L. Santamaría,               [48] T. M. Adamo and E. T. Newman, Classical Quantum Gravity 27,
+     A. M. Sintes, U. Sperhake, and J. Thornburg, Classical Quantum                  245004 (2010).
+     Gravity 24, S689 (2007).                                                   [49] T. M. Adamo, E. T. Newman, and C. Kozameh, Living Rev.
+[21] S. Khan, K. Chatziioannou, M. Hannam, and F. Ohme, Phys.                        Relativity 15, 1 (2012).
+     Rev. D 100, 024059 (2019).                                                 [50] E. Deadman and J. M. Stewart, Classical Quantum Gravity 26,
+[22] A. Nagar et al., Phys. Rev. D 98, 104052 (2018).                                065008 (2009).
+[23] V. Varma, S. E. Field, M. A. Scheel, J. Blackman, L. E. Kidder,            [51] C. Kozameh, E. T. Newman, and G. Silva-Ortigoza, Classical
+     and H. P. Pfeiffer, Phys. Rev. D 99, 064045 (2019).                             Quantum Gravity 25, 145001 (2008).
+[24] M. Boyle, Phys. Rev. D 87, 104006 (2013).                                  [52] L. B. Szabados, Living Rev. Relativity 7, 4 (2004).
+[25] E. T. Newman and R. Penrose, J. Math. Phys. (N.Y.) 7, 863                  [53] A. D. Helfer, Gen. Relativ. Gravit. 39, 2125 (2007).
+     (1966).                                                                    [54] T. Dray and M. Streubel, Classical Quantum Gravity 1, 15 (1984).
+[26] M. Boyle, L. E. Kidder, S. Ossokine, and H. P. Pfeiffer,                   [55] A. Ashtekar and J. Winicour, J. Math. Phys. (N.Y.) 23, 2410
+     “Gravitational-wave modes from precessing black-hole binaries,”                 (1982).
+     arXiv:1409.4431.                                                           [56] É. É. Flanagan, D. A. Nichols, L. C. Stein, and J. Vines, Phys.
+[27] P. Ajith, M. Boyle, D. A. Brown, S. Fairhurst, M. Hannam,                       Rev. D 93, 104007 (2016).
+     I. Hinder, S. Husa, B. Krishnan, R. A. Mercer, F. Ohme, C. D.              [57] M. Boyle, Adv. Appl. Clifford Algebras 27, 2345 (2017).
+     Ott, J. S. Read, L. Santamaria, and J. T. Whelan, (2007),                  [58] R. O’Shaughnessy, B. Vaishnav, J. Healy, Z. Meeks, and
+     arXiv:0709.0093.                                                                D. Shoemaker, Phys. Rev. D 84, 124002 (2011).
+[28] V. Varma and P. Ajith, Phys. Rev. D 96, 124024 (2017).                     [59] M. Boyle, R. Owen, and H. P. Pfeiffer, Phys. Rev. D 84, 124011
+[29] J. Lange et al., Phys. Rev. D 96, 104041 (2017).                                (2011).
+[30] K. Chatziioannou et al., Phys. Red. D 100, 104015 (2019).                  [60] G. Lovelace, “Binary black-hole simulation SXS:BBH:1145,”
+[31] L. Pekowsky, J. Healy, D. Shoemaker, and P. Laguna, Phys. Rev.                  (2019), mass ratio 1.25, with aligned but very small spins.
+     D 87, 084008 (2013).                                                       [61] V. C. de Andrade, L. Blanchet, and G. Faye, Classical Quantum
+[32] J. Calderón Bustillo, P. Laguna, and D. Shoemaker, Phys. Rev.                   Gravity 18, 753 (2001).
+     D95, 104038 (2017).                                                        [62] L. Blanchet and G. Faye, Classical Quantum Gravity 36, 085003
+[33] I. Harry, J. C. Bustillo, and A. Nitz, Phys. Rev. D 97, 023004                  (2019).
+     (2018).                                                                    [63] M. J. Fitchett, Mon. Not. R. Astron. Soc. 203, 1049 (1983).
+[34] D. Christodoulou, Phys. Rev. Lett. 25, 1596 (1970).                        [64] D. Gerosa, F. Hébert, and L. C. Stein, Phys. Rev. D 97, 104049
+[35] S. Ossokine, F. Foucart, H. P. Pfeiffer, M. Boyle, and B. Szilágyi,             (2018).
+     Classical Quantum Gravity 32, 245010 (2015).                               [65] M. Ruiz, R. Takahashi, M. Alcubierre, and D. Nunez, Gen.
+[36] C. J. Handmer, B. Szilágyi, and J. Winicour, Classical Quantum                  Relativ. Gravit. 40, 2467 (2008).
+     Gravity 32, 235018 (2015).                                                 [66] https://github.com/moble/spherical_functions.
+[37] H. Bondi, M. G. J. van der Burg, and A. W. K. Metzner, Proc.               [67] D. Keppel, D. A. Nichols, Y. Chen, and K. S. Thorne, Phys. Rev.
+     R. Soc. A 269, 21 (1962).                                                       D 80, 124015 (2009).
+                                                                                [68] M. Boyle, J. Math. Phys. 57, 092504 (2016).
+
+
+
+
+                                                                           20
+

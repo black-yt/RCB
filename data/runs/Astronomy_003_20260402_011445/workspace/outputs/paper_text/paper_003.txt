@@ -1,0 +1,1518 @@
+                                             Eccentric binary black hole surrogate models for the gravitational waveform and
+                                                         remnant properties: comparable mass, nonspinning case
+                                                         Tousif Islam,1, 2, 3, ∗ Vijay Varma,4, 5, 6, † Jackie Lodman,6 Scott E. Field,2, 3
+                                               Gaurav Khanna,1, 3, 7 Mark A. Scheel,6 Harald P. Pfeiffer,8 Davide Gerosa,9 and Lawrence E. Kidder5
+                                                                 1
+                                                              Department of Physics, University of Massachusetts, Dartmouth, MA 02747, USA
+                                                            2
+                                                            Department of Mathematics, University of Massachusetts, Dartmouth, MA 02747, USA
+                                          3
+                                            Center for Scientific Computing and Visualization Research, University of Massachusetts, Dartmouth, MA 02747, USA
+                                                                  4
+                                                                    Department of Physics, Cornell University, Ithaca, New York 14853, USA
+                                                 5
+                                                   Cornell Center for Astrophysics and Planetary Science, Cornell University, Ithaca, New York 14853, USA
+                                               6
+                                                 TAPIR 350-17, California Institute of Technology, 1200 E California Boulevard, Pasadena, CA 91125, USA
+                                                                7
+                                                                  Department of Physics, University of Rhode Island, Kingston, RI 02881, USA
+                                          8
+                                            Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am Mühlenberg 1, Potsdam 14476, Germany
+                                                              9
+                                                                School of Physics and Astronomy & Institute for Gravitational Wave Astronomy,
+                                                                      University of Birmingham, Birmingham, B15 2TT, United Kingdom
+arXiv:2101.11798v2 [gr-qc] 24 Mar 2021
+
+
+
+
+                                                                                            (Dated: March 26, 2021)
+                                                         We develop new strategies to build numerical relativity surrogate models for eccentric binary
+                                                      black hole systems, which are expected to play an increasingly important role in current and future
+                                                      gravitational-wave detectors. We introduce a new surrogate waveform model, NRSur2dq1Ecc, using
+                                                      47 nonspinning, equal-mass waveforms with eccentricities up to 0.2 when measured at a reference
+                                                      time of 5500M before merger. This is the first waveform model that is directly trained on eccentric
+                                                      numerical relativity simulations and does not require that the binary circularizes before merger. The
+                                                      model includes the (2, 2), (3, 2), and (4, 4) spin-weighted spherical harmonic modes. We also build
+                                                      a final black hole model, NRSur2dq1EccRemnant, which models the mass, and spin of the remnant
+                                                      black hole. We show that our waveform model can accurately predict numerical relativity waveforms
+                                                      with mismatches ≈ 10−3 , while the remnant model can recover the final mass and dimensionless spin
+                                                      with absolute errors smaller than ≈ 5 × 10−4 M and ≈ 2 × 10−3 respectively. We demonstrate that
+                                                      the waveform model can also recover subtle effects like mode-mixing in the ringdown signal without
+                                                      any special ad-hoc modeling steps. Finally, we show that despite being trained only on equal-mass
+                                                      binaries, NRSur2dq1Ecc can be reasonably extended up to mass ratio q ≈ 3 with mismatches ' 10−2
+                                                      for eccentricities smaller than ∼ 0.05 as measured at a reference time of 2000M before merger. The
+                                                      methods developed here should prove useful in the building of future eccentric surrogate models over
+                                                      larger regions of the parameter space.
+
+
+                                                            I.       INTRODUCTION                            So far, all GW detections of BBHs are consistent with
+                                                                                                          signals emitted from quasicircular binaries [16–22]. In fact,
+                                            Detection of gravitational waves (GWs) [1, 2] by the          eccentricity has been traditionally ignored in most GW
+                                         LIGO [3] and Virgo [4] detectors has opened a new window         data analyses (for e.g. Refs. [1, 2]). This is motivated by
+                                         in astrophysics to probe binary compact objects – binary         the expectation that even if a binary is formed with a non-
+                                         black holes (BBHs) being the most abundant source for            zero eccentricity, it should circularize before reaching the
+                                         these detectors. Both detection and extraction of source         frequency band of ground based detectors, as eccentricity
+                                         properties from the GW signal relies on the availability of      gets radiated away via GWs during the long inspiral [23].
+                                         accurate inspiral-merger-ringdown (IMR) waveform mod-            However, this assumption may not always hold, especially
+                                         els for BBHs. While numerical relativity (NR) provides           for binaries formed in dense environments like globular
+                                         the most accurate gravitational waveforms for BBHs, they         clusters or galactic nuclei [24–31]. Indeed, recent follow-
+                                         are computationally expensive, taking weeks to months to         up analysis of GW190521 [32] claim this event to be
+                                         generate a single waveform. Data-driven surrogate mod-           consistent with a BBH source with eccentricity ranging
+                                         eling strategies [5–15, 68] have been shown to be capable        from ∼ 0.1 [33] up to ∼ 0.7 [34] (see also [35, 36]).
+                                         of producing waveforms that are nearly indistinguishable            Eccentricity, if present in GW signals, carries precious
+                                         from NR with evaluation times of less than 0.1 seconds.          astrophysical information about the environment in which
+                                         While NR surrogate waveform models for nonspinning [7],          the binary was formed. The detection of an eccentric
+                                         aligned-spin [10], and precessing BBHs [9, 13] are well          merger would not only be a smoking-gun signature of
+                                         developed, NR surrogate modeling of eccentric systems is         sources formed via dynamical encounters, but would point
+                                         completely unexplored.                                           towards specific type of interactions, namely GW cap-
+                                                                                                          tures [37], taking place in those environments. Catching
+                                                                                                          eccentric sources in the mHz regime targeted by the LISA
+                                                                                                          space mission is also a promising avenue to distinguish
+                                         ∗ tislam@umassd.edu
+                                                                                                          astrophysical formation channels [38–44].
+                                         † Klarman fellow
+                                                                                                             Furthermore, ignoring eccentricity in our models can
+                                                                                                                                2
+
+lead to systematic biases if the actual signal corresponds       NRSur2dq1EccRemnant, which can provide accurate pre-
+to an eccentric system [45]. Such biases can also lead           dictions for the final state of eccentric binary mergers.
+to eccentric systems being misidentified as a violation of       This work paves the way forward for building future
+general relativity (GR). Even if all binaries are found to be    eccentric surrogate models: we expect that the meth-
+circular, eccentric models are necessary to place bounds         ods developed here can be applied straightforwardly to
+on the eccentricity. Therefore, including eccentricity in        aligned-spin eccentric BBHs, while the precessing case
+our GW models is important, especially as the detectors          requires significantly more work.
+become more sensitive.                                              The rest of the paper is organized as follows. Sec. II
+   In the last few years, a handful of eccentric inspiral-       describes the NR simulations. Sec. III describes data
+only [46–51] and IMR models [52–57] have become avail-           decomposition, parameterization and construction of the
+able. We highlight some recent eccentric IMR models in           surrogate model. In Sec. IV, we test the surrogate model
+the following. ENIGMA [54, 55] is a nonspinning eccentric        by comparing against NR waveforms. We end with some
+BBH model that attaches an eccentric post-Newtonian              concluding remarks in Sec. V.
+(PN) inspiral to a quasicircular merger based on an NR
+surrogate model [7]. SEOBNRE [57] modifies an aligned-
+spin quasicircular EOB waveform model [58] to include                  II.   NUMERICAL RELATIVITY DATA
+some effects of eccentricity. Similarly, Ref. [56] modifies a
+different aligned-spin EOB multipolar waveform model                NR simulations for this work are performed using the
+for quasicircular BBHs [59, 60] to include some effects          Spectral Einstein Code (SpEC) [69] developed by the
+of eccentricity. The model is then further improved by           Simulating eXterme Spacetimes (SXS) collaboration [70].
+replacing the carrier quasicircular model with a generic         We follow the procedure outlined in Ref. [71] to construct
+eccentric one [61]. In addition to these models, Ref. [62]       initial orbital parameters that result in a desired eccen-
+recently developed a method to add eccentric modulations         tricity. The constraint equations are solved employing
+to existing quasicircular BBH models.                            the extended conformal thin sandwich formalism [72, 73]
+   Notably, all of these models rely on the assumption that      with superposed harmonic Kerr free data [74]. The evo-
+the binary circularizes by the merger time. While this is        lution equations are solved employing the generalized
+approximately true for many expected sources [54, 63],           harmonic formulation [75, 76]. The time steps during
+this necessarily places a limit on the range of validity         the simulations are chosen nonuniformly using an adap-
+of these models. In addition, none of these models are           tive time-stepper [77]. Further details can be found in
+calibrated on eccentric NR simulations, even though their        Ref. [77] and references within. We perform 47 new eccen-
+accuracy is tested by comparing against eccentric simula-        tric NR simulations that have been assigned the identifiers
+tions.                                                           SXS:BBH:2266 - SXS:BBH:2312, and will be made avail-
+   Apart from the waveform prediction, BBH remnant               able through the SXS public catalog [78].
+modeling from eccentric sources is also of crucial astro-           The component BH masses, m1 and m2 , and dimen-
+physical importance [64–67]. For example, recoils from           sionless spins, χ1 and χ2 , are measured on the apparent
+eccentric mergers can be up to 25% higher than the cir-          horizons [77] of the BHs, where index 1 (2) corresponds
+cular case [66, 67], which result in a higher likelihood of      to the heavier (lighter) BH. The component masses at
+ejections from astrophysical hosts like star clusters and        the relaxation time [77] are used to define the mass ratio
+galaxies.                                                        q = m1 /m2 ≥ 1 and total mass M = m1 + m2 . Unless
+   It is, therefore, timely to invest in building faithful ec-   otherwise specified, all masses in this paper are given
+centric BBHs waveform and remnant models that address            in units of the total mass. When training the surrogate
+some of these limitations. In this paper, we develop a           model, we restrict ourselves to q = 1, χ1 , χ2 = 0 in this
+detailed framework for constructing a surrogate model            work.
+with eccentric NR data. We then build a two-dimensional             The waveform is extracted at several extraction spheres
+surrogate model, NRSur2dq1Ecc, over parameters that de-          at varying finite radii from the origin and then extrapo-
+scribe eccentricity for equal-mass, nonspinning systems to       lated to future null infinity [77, 79]. These extrapolated
+demonstrate the efficacy of the proposed methods. This           waveforms are then corrected to account for the initial
+is the first eccentric waveform that is directly trained on      drift of the center of mass [80, 81]. The spin-weighted
+eccentric NR simulations and does not need to assume             spherical harmonic modes at future null infinity, scaled
+that the binary circularizes before merger. The model can        to unit mass and unit distance, are denoted as h`m (t) in
+produce waveforms that are of comparable accuracy to             this paper.
+the NR simulations used to train it. Furthermore, despite           The complex strain h = h+ − ih× is given by:
+being trained only on equal-mass eccentric BBHs, we                                      ∞ X
+                                                                                           l
+find that the model can be reasonably evaluated beyond
+                                                                                         X
+                                                                        h(t, ι, ϕ0 ) =              h`m (t) −2 Y`m (ι, ϕ0 ),   (1)
+its training range upto mass ratio q ≈ 3 provided the                                    `=2 m=−l
+eccentricities are small.
+   In addition to the waveform model, we build a                 where h+ (h× ) is the plus (cross) polarization of the
+surrogate model for the remnant mass and spin,                   waveform, −2 Y`m are the spin = −2 weighted spherical
+                                                                                                                        3
+
+harmonics, and ι and ϕ0 are the polar and azimuthal an-       frequencies of interest, including near merger. The initial
+gles on the sky in the source frame. We model modes with      time of −5500M is chosen so that we can safely eliminate
+(`, m) = (2, 2), (3, 2), (4, 4). Because of the symmetries    spurious initial transients in the waveform, also known as
+of equal-mass, nonspinning BBHs, all odd-m modes are          junk radiation [77], for each waveform in our dataset.
+identically zero, and the m < 0 modes can be obtained            Once all the waveforms are interpolated onto a common
+from the m > 0 modes. Therefore, we model all non-zero        time grid, we perform a frame rotation of the waveform
+` ≤ 3 and (4, ±4) modes, except the m = 0 modes. We           modes about the z-axis such that the orbital phase is zero
+exclude m = 0 memory modes because (non-oscillatory)          at t = −5500M . The orbital phase is obtained from the
+Christodoulou memory is not accumulated sufficiently in       (2, 2) mode [cf. Eq. (14)]. Because of the symmetry of the
+our NR simulations [82]; this defect was recently addressed   equal-mass, equal-spin systems considered here, the odd-
+in both Cauchy characteristic extraction (CCE) [83–85]        m modes are identically zero and so we need not worry
+and extrapolation [86] approaches. The (4, 2) mode, on        about remaining φorb → φorb + π rotational freedom as
+the other hand, was found to have significant numerical       was necessary in Refs. [7–10, 13]. This preprocessing of
+error in the extrapolation procedure [77, 79]. We expect      time and phase ensures that the waveform varies smoothly
+this issue to be resolved with CCE as well. Therefore, in     across the parameter space, which in turn makes modeling
+future models, we should be able to include the m = 0         easier.
+modes as well as modes like the (4,2) mode.
+   The remnant mass mf and spin χf are determined from
+the common apparent horizon long after the ringdown,             B.   Measuring eccentricity and mean anomaly
+as described in Ref. [77]. For nonprecessing systems like
+the ones considered here, the final spin is directed along       Departure of NR orbits from circularity is measured
+the direction of the orbital angular momentum. Unlike         by a time-dependent eccentricity and mean anomaly. Ec-
+previous surrogate models [13, 87, 88], we do not model       centricity takes values between [0, 1] where the boundary
+the recoil kick in this work, as the symmetries of equal-     values correspond to a quasicircular binary and an un-
+mass, nonspinning BBHs restrict the kick to be zero.          bound orbit [89], respectively. Mean anomaly, on the
+                                                              other hand, is bounded by [0, 2π). While it may seem
+                                                              most natural to estimate orbital parameters from the BH
+    III.   SURROGATE METHODOLOGY FOR                          trajectories, this task is complicated by the fact that any
+             ECCENTRIC WAVEFORMS                              such measurement will be impacted by the gauge condi-
+                                                              tions chosen by the NR simulation. We instead choose
+  In this section, we describe our new framework to build     to estimate eccentricity and anomaly parameters directly
+NR surrogate models for eccentric BBHs. We begin by           from the waveform data at future null infinity.
+applying the following post processing steps that simplify
+the modeling procedure.
+                                                                               1.   Measuring eccentricity
+
+           A.   Processing the training data                     Various methods to extract the eccentricity from NR
+                                                              simulations have been proposed in the literature [63, 90–
+  In order to construct parametric fits (cf. Sec. III D)      92]. As the eccentricity evolves during the binary’s or-
+for the surrogate model, it is necessary to align all the     bit [23], these methods use dynamical quantities such as
+waveforms such that their peaks occur at the same time.       some combination of the (2, 2) mode’s amplitude, phase,
+We define the peak of each waveform, τpeak , to be the        or frequency. All of these methods reduce to the eccen-
+time when the quadrature sum,                                 tricity parameter in the Newtonian limit. The estimated
+                                                              value of the eccentricity may differ slightly depending on
+                                                              the method used and the noise in the numerical data.
+                           sX
+               Atot (τ ) =      |h`m (τ )|2 ,         (2)
+                                                              However, as long as they provide a consistent measure-
+                             l,m
+                                                              ment of eccentricity that decays monotonically with time,
+reaches its maximum. Here the summation is taken over         one can use any of the eccentricity estimators for con-
+all the modes being modeled. We then choose a new time        structing a surrogate waveform model. For this work,
+coordinate,                                                   we use the following definition of eccentricity based on
+                                                              orbital frequency [93]:
+                      t = τ − τpeak ,                  (3)
+                                                                                        ωp (t) − ωa (t)
+                                                                                      p         p
+                                                                               e(t) = p                  ,           (4)
+such that Atot (t) for each waveform peaks at t = 0.                                    ωp (t) + ωa (t)
+                                                                                                p
+  Next, we use cubic splines to interpolate the real and
+imaginary parts of the waveform modes onto a common           where ωa and ωp are the orbital frequencies at apocenter
+time grid of [−5500M , 75M ] with a uniform time spac-        (i.e. point of furthest approach) and pericenter (i.e. point
+ing of dt = 0.1M ; this is dense enough to capture all        of closest approach), respectively. Unlike several other
+                                                                                                                                                                                                        4
+
+                         0.2
+
+
+
+
+                                                                                                         Mean Anomaly l(t)
+     Eccentricity e(t)                                                                                                        2π
+                                                                                                                             3π/2
+                         0.1                                                                                                   π
+                                                                                                                             π/2
+                                                                                                                              0.0
+                         0.0   −6000     −5000     −4000     −3000              −2000     −1000   0                                 −6000        −5000        −4000     −3000     −2000     −1000   0
+
+
+
+
+                         0.1                                                                                                  0.1
+                                                                     ωorb (t)
+
+
+
+
+                                                                                                            M ωorb(t)
+ M ωorb(t)
+
+
+
+
+                                                                     ωp (t)
+                  0.05                                               ωa (t)                                                  0.05
+
+
+
+                         0.0                                                                                                  0.0
+                          −6000        −5000     −4000     −3000              −2000     −1000     0                            −6000        −5000           −4000     −3000     −2000     −1000     0
+                                                           t (M )                                                                                                     t (M )
+
+Figure 1. Time evolution of the eccentricity e(t) (upper panel)                                         Figure 2. Time evolution of the mean anomaly l(t) (upper
+and the orbital frequency ωorb (t) (lower panel) for NR Simula-                                         panel) and the orbital frequency ωorb (t) (lower panel) for the
+tion SXS:BBH:2304. ωp and ωa denote, respectively, the the                                              NR Simulation SXS:BBH:2304. Green dashed vertical lines
+orbital frequency at pericenter (local maxima, cyan circles)                                            indicate the times for pericenter passages. The anomaly l(t)
+and apocenter passages (local minima, green circles). From                                              grows linearly with time over [0, 2π) in between two successive
+this data we construct spline interpolants to obtain ωp (t) (cyan                                       pericenters. The red dashed vertical line corresponds to the
+curve) and ωa (t) (green curve). The eccentricity is then esti-                                         reference time tref = −5500M at which the surrogate model
+mated using Eq. (4). The red dashed vertical line corresponds                                           is parametrized.
+to the reference time tref = −5500M at which the surrogate
+model is parameterized.
+                                                                                                        our modeling, however, as we only require an eccentricity
+                                                                                                        value at a reference time while the binary is still in the in-
+eccentricity estimators proposed in literature [63, 90–92],                                             spiral phase. We select a reference time of tref = −5500M
+the one defined in Eq. (4) is normalized and reduces to                                                 and parameterize our waveform model by
+the eccentricity parameter in the Newtonian limit at both
+low and high eccentricities [45].                                                                                                                          eref = e(tref ) .                        (6)
+  We first compute the orbital frequency,
+                                                                                                        While estimating eref , we include the data segment slightly
+                                                        dφorb                                           before tref as this allows us to interpolate, rather than
+                                                 ωorb =       ,                                   (5)   extrapolate, when constructing e(t) in Eq. (4).
+                                                         dt
+where φorb is the orbital phase inferred from the (2,2)
+mode (cf. Eq. (14)), and the derivative is approximated                                                                                     2.           Measuring mean anomaly
+using second-order finite differences. We then find the
+times where ωorb passes through a local maxima (minima)                                                   In the Newtonian context, the mean anomaly l of an
+and associate those to pericenter (apocenter) passages,                                                 eccentric orbit is defined as
+to obtain ωp (ωa ). We find that using the local max-
+                                                                                                                                       t − t0
+ima/minima of the amplitude of the (2, 2) mode to iden-                                                                         l ≡ 2π        ,          (7)
+tify the pericenter/apocenter times leads to a consistent                                                                                P
+value for the eccentricity. We then interpolate ωp and ωa                                               where t0 is a time corresponding to the previous pericenter
+onto the full time grid using cubic splines. This gives us                                              passage and P is the radial period, which is defined to be
+ωp (t) and ωa (t), which are used in Eq. (4).                                                           the time between two successive pericenter passages. In
+   Figure 1 shows an example of the measured eccentricity                                               the Newtonian case P is a constant, but in GR it changes
+for the NR simulation SXS:BBH:2304. We see that our                                                     as the binary inspirals. However, one can continue to use
+method provides a smooth, monotonically decreasing e(t).                                                Eq. (7) as a meaningful measurement of the radial oscil-
+The estimate become unreliable near merger where finding                                                lation’s phase for the purpose of constructing a waveform
+local maxima/minima in ωorb becomes problematic as the                                                  model [53].
+orbit transitions from inspiral to plunge. The estimate                                                    For each NR waveform, we compute the times for
+also becomes problematic whenever the eccentricity is                                                   all pericenter passages using the same procedure as in
+extremely small, thereby preventing the appearance of an                                                Sec. III B 1. We divide the time array into different orbital
+identifiable local maxima/minima. This does not affect                                                  windows defined as [tperi
+                                                                                                                               i  , tperi          peri
+                                                                                                                                     i+1 ), where ti    is the time for
+                                                                                                                                                              5
+
+ith pericenter passage. The orbital period in each window                                                                               10−1
+is given by Pi = tperi    peri
+                               , and the mean anomaly by                                  2π
+                   i+1 − ti
+
+                                  t − tperi
+                    li (t) = 2π        i
+                                            .             (8)
+                                     Pi
+                                                                                         3π/2                                           10−2
+Note that each li (t) grows linearly with time over [0, 2π)
+
+
+
+
+                                                                  Mean Anomaly (lref )
+
+
+
+
+                                                                                                                                               maximum Mismatch
+for the window [tperi
+                   i   , tperi
+                          i+1 ). To obtain the full l(t), we
+simply join each li (t) for consecutive orbits. Finally, the
+value for mean anomaly parameterizing our waveform                                         π                                            10−3
+model is then simply the evaluation of the mean anomaly
+at tref = −5500M .
+                       lref = l(tref ) .                  (9)
+                                                                                         π/2
+                                                                                                                                        10−4
+Figure 2 shows an example application of our method
+to estimate the mean anomaly of the NR simulation
+SXS:BBH:2304.
+                                                                                          0.0
+                                                                                                                                        10−5
+               3.   Targeted parameter space                                                0.000   0.050    0.100     0.150   0.200
+                                                                                                       Eccentricity (eref )
+   In Fig. 3, we show the measured values for eccentricity
+and mean anomaly at tref for all 47 NR waveforms, which          Figure 3. The parameter space covered by the 47 NR wave-
+leads to the following 2d parameter space for our model:         forms (circle markers) used in the construction of our surrogate
+                                                                 model. The axes show the eccentricity and mean anomaly
+   • eccentricity: eref ∈ [0, 0.2];                              values at tref . We also show the dependence of the maximum
+                                                                 (over the sky of the source frame) flat-noise mismatches on the
+   • mean anomaly: lref ∈ [0, 2π).                               parameters eccentricity and mean anomaly (cf. Sec. IV A 2).
+                                                                 The colors indicate the maximum mismatch, which systemati-
+Fig. 3 shows a large gap in the parameter space, which           cally increases near the high eccentricity boundary where few
+reflects an inherent limitation in our current approach          training data points are available.
+to achieve target eccentricity parameters from the initial
+data. The method we use to construct initial orbital pa-
+rameters [71] seeks to achieve target values of (eref , lref )   NR surrogates [7–10, 13]. In order to develop similar
+at a time 500M after the start of the simulation. The            strategies for eccentric waveform data, we have pursued a
+initial orbital frequency is chosen such that time to merger     variety of options. We now summarize the most successful
+is 6000M , as predicted by a leading-order PN calcula-           decomposition technique we have tried, while relegating
+tion. Unfortunately, this is only approximate, leading to        some alternatives to Appendix A.
+different merger times for different simulations. Conse-
+quently, when we estimate the eccentricity parameters
+at tref = −5500M , this is no longer a fixed time from                                      1.   Decomposing the quadrupolar mode h22
+the start of the simulation. The eccentricity parameters
+evolve differently for different simulations during this time,            The complex (2, 2) waveform mode,
+leading to the clustering in Fig. 3. In the future, we plan
+to resolve this using a higher order PN expression, or an                                               h22 = A22 e−iφ22 ,                 (10)
+eccentric waveform model [54–56] to predict the time to
+merger.                                                          can be decomposed into an amplitude, A22 , and phase,
+                                                                 φ22 . For non-precessing systems in quasicircular orbit,
+                                                                 A22 and φ22 are slowly varying functions of time, and
+          C.   Waveform data decomposition                       have therefore been used as waveform data pieces for
+                                                                 many modeling efforts. For eccentric waveforms, however,
+   Building a surrogate model becomes more challenging           both amplitude and phase show highly oscillatory mod-
+for oscillatory and complicated waveform data. One so-           ulations on the orbital time scale (cf. Figs. 1 and 2 for
+lution is to transform or decompose the waveform data            the frequency, which is a time-derivative of the phase).
+into several simpler “waveform data pieces” that also vary       This demands further decomposition of the waveforms
+smoothly over the parameter space. These simpler data            into even simpler data pieces. One natural solution could
+pieces can then be modeled more easily and recombined            have been to build interpolated functions of the local
+to get back the original waveform. Successful decompo-           maxima and minima of A22 and φ22 . The secular trend
+sition strategies have been developed for quasi-circular         of these functions can then be subtracted out from the
+                                                                                                                                   6
+
+original amplitude and phase. The resulting residual                     instantaneous orbital phase:
+amplitude and phase data may be easier to model. Un-
+fortunately, as mentioned in Sec. III B 1, finding the local                                 h`m
+                                                                                              C
+                                                                                                 = h`m eimφorb ,                (13)
+maxima/minima becomes problematic near the merger.                                                     φ22
+                                                                                                φorb =     ,                    (14)
+   We instead follow a simpler approach whereby the                                                     2
+amplitude and phase of a quasicircular q = 1, nonspinning
+NR waveform (SXS:BBH:1155) is used as a proxy for                        where φ22 is the phase of the (2, 2) mode (cf. Eq. (10)),
+the secular trend of the amplitude and phase. We then                    φorb is the orbital phase, and h`m
+                                                                                                         C
+                                                                                                            represents the complex
+compute the residual amplitude and phase,                                modes in the co-orbital frame.
+                                                                           We use the real and imaginary parts of h`m     C
+                                                                                                                             as our
+                      ∆A22 = A22 − A022 ,                       (11)     waveform data pieces for the nonquadrupole modes. As
+                                                                         shown in Fig. 5, the h`m
+                                                                                                C
+                                                                                                   data have less structure, making
+                       ∆φ22 = φ22 − φ022 ,                      (12)     them easier to model. We find that using quasicircular
+                                                                         h`m
+                                                                          C
+                                                                              to subtract off the secular trend does not provide
+where A022 and φ022 are the amplitude and phase of                       any modeling advantage. We, therefore, model the real
+the noneccentric waveform, respectively, which have                      and imaginary parts of h`m  C
+                                                                                                        without any further data
+been aligned according the same procedure outlined in                    decomposition.
+Sec. III A. In the upper-left panel of Fig. 4, we show
+the amplitude of an eccentric waveform (SXS:BBH:2304)
+along with the amplitude of its noneccentric counterpart                            3.   Summary of waveform data pieces
+(SXS:BBH:1155) which traces the secular trend of the
+nonmonotonically increasing eccentric amplitude. The dif-                  To summarize, the full set of waveform data pieces we
+ference of these two amplitudes, ∆A22 , is then plotted in               model is as follows: ∆A22 , ∆φ22 for the (2,2) mode, and
+the lower-left panel. ∆A22 is simpler to model than A22 ,                real and imaginary parts of h`m
+                                                                                                       C
+                                                                                                           for the (3,2) and (4,4)
+as it isolates the oscillatory component1 of A22 . Similarly,            modes.
+in the right panels of Fig. 4, we show the phase evolu-
+tion of the same eccentric waveform (SXS:BBH:2304),
+its noneccentric counterpart (SXS:BBH:1155), and their                             D.    Building the waveform model
+difference ∆φ22 which isolates the oscillatory component
+of φ22 . Note that noneccentric waveform data is plenti-                   We decompose the inertial frame waveform data into
+ful [77] and accurate surrogate models have been built                   many waveform data pieces as summarized in Sec. III C 3.
+for noneccentric NR waveforms [10, 13]. So extending the                 For each of these data pieces, we now build a surrogate
+residual amplitude and phase computation to spinning,                    model using reduced basis, empirical interpolation, and
+unequal-mass systems is straightforward. For instance                    parametric fits across the parameter space. The detailed
+the surrogate model of Ref. [10] can be used to generate                 procedure is outlined in Refs. [5, 9], which we only briefly
+A022 and φ022 for generic aligned-spin systems.                          describe here.
+                                                                           For each waveform data piece, we employ a greedy
+                                                                         algorithm to construct a reduced basis [94] such that the
+                                                                         projection errors (cf. Eq. (5) of Ref. [9]) for the entire
+           2.   Decomposing the higher order modes
+                                                                         data set onto this basis are below a given tolerance. We
+                                                                         use a basis tolerance of 10−2 radians for ∆φ22 , 1.5 × 10−3
+  In this paper, we model the quadrupolar mode and                       for ∆A22 and 2 × 10−5 for the real part of h32   C
+                                                                                                                            . For all
+the higher-order modes differently. For h22 , we model                   other data pieces, basis tolerance is set to 5 × 10−5 .
+data pieces closely associated with the amplitude and                      These choices are made so that we include sufficient
+phase as described above. On the other hand, for higher                  number of basis functions for each data piece [9 for ∆A22 ,
+order modes, we first transform the waveform into a                      12 for ∆φ22 , 7 (5) for the real (imaginary) part of h32  C
+
+co-orbital frame in which the waveform is described by                   and 10 (6) for the real (imaginary) part of h44  C
+                                                                                                                            ] to cap-
+a much simpler and slowly varying function. This is                      ture the underlying physical features in the simulations
+done by applying a time-dependent rotation given by the                  while avoiding over fitting. We perform additional visual
+                                                                         inspection of the basis functions to ensure that they are
+                                                                         not noisy in which case modeling accuracy can become
+                                                                         comprised (cf. Appendix B of Ref. [9]).
+1 In fact, the relatively simple oscillatory behavior of ∆A
+                                                                           The next step is to construct an empirical interpolant
+                                                           22 suggests
+                                                                         in time using a greedy algorithm which picks the most
+  the use of a Hilbert transform for further simplification. However,
+  we found that this does not improve the accuracy of our model.         representative time nodes [5, 95–97]. The number of the
+  Such further simplifications, may become necessary for larger          time nodes for each data piece is equal to the number of
+  eccentricities than considered in this work, as the modulations        basis functions used. The final surrogate-building step is
+  will be more pronounced.                                               to construct parametric fits for each data piece at each
+                                                                                                                             7
+
+         0.4                                                          300
+                      eref = 0.0                                                     eref = 0.0
+                      eref = 0.181                                                   eref = 0.181
+                                                                      200
+   A22
+
+
+
+
+                                                                φ22
+         0.2
+                                                                      100
+
+         0.0                                                             0
+         0.1
+                                                                         0
+                                                                         -2
+
+
+
+
+                                                                  ∆φ22
+  ∆A22
+
+
+
+
+         0.0                                                             -4
+                                                                         -6
+                                                                         -8
+         -0.1
+                −6000 −5000 −4000 −3000 −2000 −1000      0                    −6000 −5000 −4000 −3000 −2000 −1000       0
+                                     t (M )                                                          t (M )
+
+Figure 4. Example decomposition of the amplitude and phase of the (2, 2) mode. Upper left: Amplitude A22 of the eccentric wave-
+form SXS:BBH:2304 (with eccentricity eref = 0.181) along with the amplitude A022 of the noneccentric waveform SXS:BBH:1155.
+Lower left: The residual amplitude ∆A22 = A22 − A022 . Upper right: Phase φ22 of the eccentric waveform SXS:BBH:2304 and
+the phase φ022 of the noneccentric waveform SXS:BBH:1155. Lower right: The residual phase ∆φ22 = φ22 − φ022 . In this work we
+model ∆A22 and ∆φ22
+
+
+of the empirical time nodes across the two-dimensional                          F.   Building the remnant surrogate
+parameter space {eref , lref }. We do this using the Gaussian
+process regression (GPR) fitting method as described in             In addition to the waveform model, we also construct
+Refs. [87, 98].                                                  the first model for the remnant quantities of eccentric
+                                                                 BBHs. The new remnant model, NRSur2dq1EccRemnant,
+                                                                 predicts the final mass mf and the component of the
+           E.     Evaluating the waveform surrogate              final spin, χf z , along the orbital angular momentum di-
+                                                                 rection. The remnant model takes eccentricity eref and
+                                                                 mean anomaly lref as its inputs and maps to the final
+   To evaluate the NRSur2dq1Ecc surrogate model, we
+                                                                 state of the binary. The final mass and spin fits are also
+provide the eccentricity eref and mean anomaly lref as
+                                                                 constructed using the GPR fitting method as described
+inputs. We then evaluate the parametric fits for each
+                                                                 in Refs. [87, 98].
+waveform data pieces at each time node. Next, the empir-
+ical interpolant is used to reconstruct the full waveform
+data pieces (cf. Sec. III C 3).
+   We compute the amplitude and phase of the (2, 2) mode,                                  IV.      RESULTS
+
+                        AS22 = ∆AS22 + A022 ,           (15)       In this section we demonstrate the accuracy of
+                        φS22 = ∆φS22 + φ022 ,           (16)     NRSur2dq1Ecc and NRSur2dq1EccRemnant by comparing
+                                                                 against the eccentric NR simulations described in Sec. II.
+                                                                 We do this by performing a leave-one-out cross-validation
+where ∆AS22 ≈ ∆A22 and ∆φS22 ≈ ∆φ22 are the surrogate            study. In this study, we hold out one NR waveform from
+models for ∆A22 and ∆φ22 respectively while A022 and             the training set and build a trial surrogate from the re-
+φ022 are the amplitude and phase of the quasicircular            maining 46 eccentric NR waveforms. We then evaluate
+NR waveform used in the decompositions [cf. Eqs. (11-            the trial surrogate at the parameter value corresponding
+12)]. We obtain the (2,2) mode complex strain as h22  S
+                                                         =       to the held out data, and compare its prediction with the
+      −iφS
+A22 e 22 .
+  S
+                                                                 highest-resolution NR waveform. We refer to the errors
+   For the nonquadrupole modes, we similarly evaluate            obtained by comparing against the left-out NR waveforms
+the surrogate models for the real and imaginary parts            as cross-validation errors. These represent conservative er-
+                                                C,S
+of the co-orbital frame waveform data pieces h`m    ≈ h`m
+                                                        C
+                                                                 ror estimates for the surrogate models against NR. Since
+and treat it as h`m . Finally, we use Eqs. (10), (13), and
+                  C
+                                                                 we have 47 eccentric NR waveforms, we build 47 trial
+(14) to obtain the surrogate prediction for the inertial         surrogates for each error study. We compare these errors
+frame strain h`m
+               S
+                   for these modes.                              to the NR resolution error, estimated by comparing the
+                                                                                                                                                      8
+
+                                                                                                       2.0
+                                   Real            Imaginary                                                                         NR
+                0.25
+
+
+
+
+                                                                                        Case Density
+                                                                0.25
+
+
+
+
+                                                                                                       1.5
+h22 (r/M )
+                                                                                                                                     NRSur2dq1Ecc
+                0.00                                            0.00
+
+
+
+
+                                                                                                       1.0
+                                                                                                                                     Full Waveform
+             −0.25             (2,2) Mode                      −0.25
+
+
+                                                                                                       0.5
+
+                                                                                                       0.0
+                0.03                                            0.03
+
+                                                                                                             10−5   10−4   10−3   10−2     10−1
+                                                                                                       2.0
+                0.02
+       (r/M )
+
+
+
+
+                                                                0.02
+
+
+
+
+                                                                                        Case Density
+                                                                                                       1.5
+                0.01           (3,2) Mode                       0.01
+
+
+
+
+                                                                                                                                         (2,2) Mode
+   h32
+    C
+
+
+
+
+                                                                                                       1.0
+                0.00                                            0.00
+
+
+
+
+                                                                                                       0.5
+
+                                                                                                       0.0
+                0.02                                            0.02
+                                                                                                             10−5   10−4   10−3   10−2     10−1
+       (r/M )
+
+
+
+
+                                                                                                       1.5
+                0.01           (4,4) Mode
+
+
+
+
+                                                                                        Case Density
+                                                                0.01
+
+
+
+
+                                                                                                       1.0                               (3,2) Mode
+   h44
+    C
+
+
+
+
+                0.00                                            0.00
+
+
+
+
+                                                                                                       0.5
+                       −5000          −3000         −1000 −100            0     50
+                                          t (M )                       t (M )
+                                                                                                       0.0
+                                                                                                             10−5   10−4   10−3   10−2     10−1
+Figure 5.      The waveform modes for NR Simulation                                                    1.5
+SXS:BBH:2304 (eref = 0.181) are shown. The top panel
+                                                                                        Case Density
+
+
+
+shows the dominant (2, 2) mode in the inertial frame. Two                                              1.0                               (4,4) Mode
+higher-order modes (3, 2) and (4, 4) in the co-orbital frame
+are shown in the middle and lower panels respectively. The
+waveform is aligned such that the peak of the amplitude occurs                                         0.5
+at t = 0 and the orbital phase is zero at tref = −5500M .
+                                                                                                       0.0
+                                                                                                             10−5   10−4   10−3   10−2     10−1
+two highest available NR simulations.                                                                                        E
+
+                                                                                       Figure 6. Time-domain leave-one-out errors E, defined in
+                          A.      NRSur2dq1Ecc errors                                  Eq. (17), for the full waveform as well as the individual modes
+                                                                                       considered in the model. For comparison, we also show the
+   1.           Time domain error without time/phase optimization                      NR error between the two highest resolutions. The largest
+                                                                                       errors are found near the parameter domain’s boundary where
+                                                                                       the trial surrogate, built as part of the cross-validation study,
+   In order to quantify the accuracy of NRSur2dq1Ecc, we                               is extrapolating.
+first compute the normalized L2 -norm between the NR
+data and surrogate approximation
+                                      R t2                                             we also show the NR resolution errors. When comput-
+                                  `,m t1 |h`m (t) − h̃`m (t)| dt
+                                                             2
+                               P
+                           1                                                           ing the full waveform error we use all modes included
+                E[h, h̃] =                                       ,              (17)
+                           2
+                                     P R t2
+                                       `,m t1 |hlm (t)| dt                             in the surrogate model (`, m) = (2, 2), (3, 2), (4, 4) in
+                                                       2
+
+                                                                                       Eq. (17). To compute errors for individual modes, we
+where h(t) and h̃(t) correspond to the complex strain for                              restrict the sum in Eq. (17) to only the mode of inter-
+NR and NRSur2dq1Ecc waveforms, respectively. Here, t1                                  est. The NRSur2dq1Ecc errors are comparable to the NR
+and t2 denote the start and end of the waveform data. As                               errors in Fig. 6.
+the NR waveforms are already aligned in time and phase,                                   However, we find that the surrogate errors have an
+the surrogate reproduces this alignment. Therefore, we                                 extended tail around two orders of magnitude larger than
+compute the time-domain error E without any further                                    the largest NR mismatch. While this could imply over-
+time/phase shifts.                                                                     fitting, we find that highest mismatches correspond to the
+  In Fig. 6, we report both the full waveform and indi-                                parameter space adjacent to the higher eccentricity eref
+vidual mode errors for NRSur2dq1Ecc. For comparison,                                   boundary where only few (to none) training waveforms
+                                                                                                                                                   9
+
+
+                 1.0                                                NRSur2dq1Ecc                10 1                 NRSur2dq1Ecc           NR
+                                                                    NR                          10 2
+                                                                                                10 3
+  Case Density
+
+
+
+
+                                                                                     Mismatch
+                 0.5                                                                            10 4
+                                                                                                10 5
+                                                                                                10 6
+                 0.0 −6                                                                         10 7
+                   10          10−5          10−4        10−3          10−2   10−1                     20.0 46.7 73.3 100.0 126.7 153.3 180.0
+                                                Mismatch                                                         Total Mass M [M ]
+Figure 7. Left panel: Flat noise mismatch between the NRSur2dq1Ecc model (following the leave-one-out validation procedure)
+and the highest-resolution NR waveform data. For comparison, we also show the NR resolution error, obtained by comparing
+the two highest available resolutions. Right panel: NRSur2dq1Ecc (validation) mismatches computed using the advanced LIGO
+design sensitivity noise curve, as a function of the total mass of the binary. For comparison, we also show the NR mismatches.
+For each mass, the distribution of mismatches are shown as a smoothed vertical histogram (or a violin). The histograms are
+normalized so that all violins have equal width. The largest errors are found near the parameter domain’s boundary where the
+trial surrogate, built as part of the cross-validation study, is extrapolating.
+
+
+are used. As will be discussed in Sec. IV A 2, the sparsely                              frequency domain, we first taper the time domain wave-
+sampled region of the training domain around (eref =                                     form using a Planck window [100], and then zero-pad to
+0.2, lref . 2) leads to this extended high-error tail in                                 the nearest power of two. The tapering at the start of the
+Fig. 6.                                                                                  waveform is done over 1.5 cycles of the (2, 2) mode. The
+  We further note in Fig. 6 that the highest error in each                               tapering at the end is done over the last 20M . Once
+mode corresponds to the same point in the parameter                                      we obtain the frequency domain waveforms, we com-
+space indicating consistency in our modeling. Further-                                   pute mismatches following the procedure described in
+more, as we only deal with mass ratio q = 1 waveforms,                                   Appendix D of Ref. [9]. The mismatches are optimized
+the contribution of the higher modes are expected to be                                  over shifts in time, polarization angle, and initial orbital
+negligible compared to the dominant (2, 2) mode (see for                                 phase. We compute the mismatches at 37 points uni-
+example, Ref. [99]). Therefore, even though the (3, 3)                                   formly distributed on the sky of the source frame, and
+and (4, 4) modes have larger relative errors compared to                                 use all available modes for the surrogate model.
+the (2, 2) mode, their contribution to the total error is                                   We consider a flat noise curve Sn (f ) = 1 as well as the
+much smaller. This can be verified by comparing the full                                 Advanced-LIGO design sensitivity Zero-Detuned-HighP
+waveform errors to the (2,2) mode errors in Fig. 6.                                      noise curve from Ref. [101]. We take fmin to be the
+                                                                                         frequency of the (2, 2) mode at the end of the initial
+                                                                                                                                   peak          peak
+                                                                                         tapering window while fmax is set at 4f22      , where f22
+                 2.    Frequency domain mismatch with time/phase                         is the frequency of the (2, 2) mode at its peak. This
+                                    optimization                                         ensures that the peak frequencies of all modes considered
+                                                                                         in our model are captured well, and we have confirmed
+  In this section, we estimate leave-one-out cross-                                      that our mismatch values do not change for larger values
+validation errors by computing mismatches between the                                    of fmax . Note that when computing mismatches using
+NR waveform and the trial surrogate waveform in the fre-                                 Advanced LIGO noise curve, for masses below ∼ 70M ,
+quency domain. The frequency domain mismatch between                                     fmin is greater than 20Hz, meaning that the signal starts
+two waveforms, h1 and h2 is defined as:                                                  within the detector sensitivity band.
+                                                                                            The mismatches computed using the flat noise curve are
+                                                      h̃1 (f )h̃2∗ (f )
+                                             Z fmax
+                          hh1 , h2 i = 4Re                              df,   (18)       shown in the left panel of Fig. 7. The histograms include
+                                              fmin        Sn (f )                        mismatches for all 47 NR waveforms and source-frame sky
+                                                                                         locations. We find that the typical surrogate mismatches
+where h̃(f ) indicates the Fourier transform of the com-                                 are 10−5 − 10−3 , which are comparable to but larger than
+plex strain h(t), ∗ indicates a complex conjugation, Re                                  the NR errors. As an example, Fig. 8 shows the surrogate
+indicates the real part, and Sn (f ) is the one-sided power                              and NR waveforms for the case that leads to the largest
+spectral density of a GW detector.                                                       mismatch in the left panel of Fig. 7.
+  Before transforming the time domain waveform to the                                       In Fig. 3, we show the dependence of the mismatches
+                                                                                                                                                         10
+
+
+      Re[h22 ](r/M )            NR            NRSur2dq1Ecc
+                        0.25                                                                                    0.25
+
+
+
+
+                        0.00                                                                                    0.00
+
+
+
+
+                       −0.25     (2,2) Mode                                                                   −0.25
+
+
+
+
+                       0.025                                                                                   0.025
+ Re[h32 ](r/M )
+
+
+
+
+                       0.000                                                                                   0.000
+
+
+
+
+                                 (3,2) Mode
+                  −0.025                                                                                      −0.025
+
+
+
+
+                        0.02                                                                                    0.02
+      Re[h44 ](r/M )
+
+
+
+
+                        0.00                                                                                    0.00
+
+
+
+
+                                 (4,4) Mode
+                       −0.02                                                                                  −0.02
+
+
+
+
+                               −5000           −4000         −3000      −2000                 −1000           −100        −50              0        50
+                                                               t (M )                                                               t (M )
+
+
+Figure 8. Real part of the waveform modes for the case that results in the largest flat noise mismatch (∼ 0.04) for NRSur2dq1Ecc
+(red dashed line) in the left panel of Fig 7. We also show the corresponding NR waveform, SXS:BBH:2308 (black solid line).
+The parameter values for this waveform are: eref = 0.176 and lref = 2.51. Note that this plot is generated using a trial surrogate
+that was not trained using this NR waveform data.
+
+
+on the parameter space. It can be easily recognized
+that the surrogate yields largest errors at and around
+(eref = 0.2, lref . 2) where the training grid becomes                              10−1
+sparse. Further, when these sparse data points themselves
+are left out when computing the cross-validation errors,
+                                                                                    10−2
+the surrogate is effectively extrapolating in parameter
+                                                                                |hlm |
+
+
+
+
+space. This indicates that the surrogate accuracy could
+be improved by adding new NR simulations in this high-                              10−3              (2,2)
+eccentricity region. However, achieving target values of
+eref and lref has proven difficult. We return to this issue                                           (3,2)
+                                                                                         −4
+in the conclusions.                                                                 10                (4,4)
+   The right panel of Fig. 7 shows the mismatches com-
+                                                                                         −100 −80 −60 −40 −20                   0     20       40   60
+puted using advanced LIGO design sensitivity noise
+                                                                                                                       t (M )
+curve [101] for different total masses M of the binary. For
+each M , we compute the mismatches for all 47 NR wave-
+forms and source-frame sky locations and show the distri-                   Figure 9. The absolute values of different spherical-harmonic
+bution of mismatches using vertical histograms known as                     modes are shown as dashed (solid) curves for the surrogate
+violin plots. Over the mass range 20 − 180M , the sur-                      (NR) for SXS:BBH:2308, for which the surrogate produces
+rogate mismatches are at the level of ∼ 10−4 − 10−3 but                     largest flat noise mismatch (∼ 0.04). The parameter values for
+with an extending tail as before. However, we note that                     this waveform are: eref = 0.176 and lref = 2.51. Mode mixing
+these errors are typically smaller than the mismatches for                  for the (3, 2) mode is clearly seen in the ringdown signal of the
+                                                                            NR waveform and is accurately reproduced by the surrogate.
+other eccentric waveform models [54–56].
+
+
+                                                                            black hole perturbed by quasinormal modes; perturba-
+                                     B.   Mode mixing                       tion theory tells us that the angular eigenfunctions for
+                                                                            these modes are the spin-weighted spheroidal harmon-
+   NR waveforms are extracted as spin-weighted spher-                       ics [104, 105]. A spherical harmonic mode h`m can be
+ical harmonic modes [102, 103]. However, during the                         written as a linear combination of all spheroidal harmonic
+ringdown, the system can be considered a single Kerr                        modes with the same m index. During the ringdown, each
+                                                                                                                                                            11
+
+                2.0                                                               1.5
+                             NRSur2dq1EccRemnant                                                         NRSur2dq1EccRemnant
+                             NR                                                                          NR
+                1.5          NRSur3dq8Remnant                                                            NRSur3dq8Remnant
+ Case Density
+
+
+
+
+                                                                   Case Density
+                                                                                  1.0
+
+                1.0
+
+                                                                                  0.5
+                0.5
+
+
+                0.0                                                               0.0
+                      10−6             10−5         10−4    10−3                                       10−5          10−4          10−3                 10−2
+                                        ∆mf (M )                                                                         ∆χf z
+
+Figure 10. Leave-one-out error histograms of NRSur2dq1EccRemnant (red) for the remnant mass mf (left) and remnant spin χf z
+(right). For comparison we plot the NR errors (black), estimated by comparing the two highest resolution NR simulations, and
+errors for the noneccentric model NRSur3dq8cRemnant (green).
+
+
+(spheroidal-harmonic) quasinormal mode decays exponen-                     However, we expect such models to disagree with eccen-
+tially in time, but each spherical-harmonic mode has a                     tric simulations in the more general case of unequal-mass,
+more complicated behavior because it is a superposition                    spinning binaries (see for e.g. Ref. [45]).
+of multiple spheroidal-harmonic modes (of the same m
+index) with different decay rates. This more complicated
+behavior is referred to as mode mixing, since power flows
+between different spherical-harmonic modes [106]. This
+mixing is particularly evident in the (3, 2) mode as sig-
+nificant power of the dominant (2, 2) spherical-harmonic                                                                                  SXS:1371;
+mode can leak into the (3, 2) spherical-harmonic mode.                                                                                    q = 3; eref = 0.050
+As the surrogate accurately reproduces the spherical har-                                    10−1
+                                                                                                                                          SXS:1372;
+                                                                                                                                          q = 3; eref = 0.085
+monic modes from the NR simulations, it is also expected                                                                                  SXS:1373;
+to capture the effect of mode mixing without any addi-                                                                                    q = 3; eref = 0.086
+tional effort [10]. We demonstrate this for an example                                                                                    SXS:1368;
+                                                                                  Mismatch
+
+
+
+
+                                                                                                                                          q = 2; eref = 0.094
+case in Fig. 9 where we plot the amplitude of individual
+                                                                                                                                          SXS:1367;
+modes of the waveform during the ringdown. We show                                                                                        q = 2; eref = 0.092
+that the mode mixing in the (3, 2) mode is effectively                                       10   −2                                      SXS:1366;
+                                                                                                                                          q = 2; eref = 0.093
+recovered by the surrogate model.
+                                                                                                                                          SXS:1365;
+                                                                                                                                          q = 2; eref = 0.055
+                                                                                                                                          SXS:1364;
+                                                                                                                                          q = 2; eref = 0.041
+                       C.      NRSur2dq1EccRemnant errors
+                                                                                             10−3
+   In addition to the waveform surrogate, we also build                                          20       40   60   80   100 120
+a remnant surrogate model, NRSur2dq1EccRemnant, that                                                      Total Mass M (M )
+predicts the mass and spin of the final BH left behind
+after the merger. This is the first such model for eccen-
+tric BBHs (but see e.g. Refs. [66, 67]). Figure 10 shows                  Figure 11. Mismatches against NR for the NRSur2dq1Ecc+
+                                                                          model (a simple extension of NRSur2dq1Ecc) when the surro-
+the cross-validation errors of NRSur2dq1EccRemnant in
+                                                                          gate is evaluated beyond its training parameter range (q = 1).
+predicting the remnant mass and spin. We find that                        The mismatches are shown as a function of the binary total
+NRSur2dq1EccRemnant can predict the final mass and                        mass M (at ι = π/3, ϕ0 = 0.0), and are computed using
+spin with an accuracy of . 5 × 10−4 M and . 2 × 10−3                      the advanced LIGO design sensitivity noise curve. We show
+respectively. We further compute the errors for a nonec-                  mismatches for q = 2 (q = 3) as solid lines (dashed lines). We
+centric remnant model, NRSur3dq8Remnant [87], when                        use star markers to denote waveforms with eref smaller than
+compared against the same eccentric NR simulations,                       ∼ 0.05 and diamond markers for the rest. All eccentricity
+finding that errors in NRSur3dq8Remnant are comparable                    values are computed at a reference time of tref = −2000M .
+with NRSur2dq1EccRemnant errors. This suggests that
+noneccentric remnant models may be sufficient for equal-
+mass nonspinning binaries with eccentricities eref ≤ 0.2.
+                                                                                                                                                                     12
+
+
+                                      NR               NRSur2dq1Ecc+
+                                                                                                                              0.25
+
+
+
+
+        Re[h22 ](r/M)     0.2
+
+
+                          0.0                                                                                                 0.00
+
+
+
+
+                        −0.2               (2,2) Mode                                                                       −0.25
+
+
+
+
+                        0.025                                                                                                0.025
+Re[h32 ](r/M)
+
+
+
+
+                        0.000                                                                                                0.000
+
+
+
+
+                                           (3,2) Mode
+                −0.025                                                                                                      −0.025
+
+
+
+
+                                                                                                                             0.025
+
+
+
+
+                         0.02
+    Re[h44 ](r/M)
+
+
+
+
+                         0.00                                                                                                0.000
+
+
+
+
+                                           (4,4) Mode
+                    −0.02                                                                                                   −0.025
+
+
+
+
+                          −2500                −2000               −1500            −1000               −500                −100       −50          0          50
+                                                                           t (M)                                                              t (M)
+
+
+Figure 12. We show the NRSur2dq1Ecc+ prediction (red dashed line) beyond training range (q = 1) of the surrogate for the
+case that results in the largest mismatch (Fig. 11) in the region defined by eref (at tref = −2000M ) smaller than ∼ 0.05. We
+also show the corresponding NR waveform SXS:BBH:1371 (black solid line). The parameters for this waveform are: q = 3,
+eref = 0.050 and lref = 2.45 (at tref = −2000M ).
+
+
+       D.                 Extending NRSur2dq1Ecc to comparable mass                                φSlm (q, eref , lref )
+                                         systems
+                                                                                                             = ∆φSlm (q = 1, eref , lref ) + φ0lm (q).              (22)
+   We now assess the performance of NRSur2dq1Ecc when                                       The final surrogate prediction, which we view as a new,
+evaluated beyond its training parameter range (q = 1). To                                   simple model NRSur2dq1Ecc+, is then:
+generate surrogate predictions at a given (q, eref , lref ), we
+first evaluate NRSur2dq1Ecc at (q = 1, eref , lref ) and refer                               h`m
+                                                                                              S                                                 S
+                                                                                                 (q, eref , lref ) = ASlm (q, eref , lref )e−iφlm (q,eref ,lref ) . (23)
+to the output as hlm      S
+                            (q = 1, eref , lref ). We then evaluate
+the noneccentric surrogate model NRHybSur3dq8 [10] at                                          To assess the accuracy of NRSur2dq1Ecc+ we compare
+the given mass ratio q and mass ratio q = 1, and refer to                                   against eight publicly available eccentric NR simulations
+the output as h`m    0
+                         (q) and h`m
+                                   0
+                                      (q = 1). We then compute                              with q = 2 and q = 3 [53, 77]. These NR waveforms are
+the difference in amplitude and phase between hlm            S
+                                                               (q =                         shorter in length than the ones used to train our surrogate
+1, eref , lref ) and h`m
+                       0
+                          (q = 1):                                                          model. To ensure fair comparison between surrogate
+                                                                                            predictions and NR waveforms, we build a test surrogate2
+                        ∆ASlm (q = 1, eref , lref )                                         which is parameterized by eref and lref at tref = −2000M .
+                                = ASlm (q = 1, eref , lref ) − A0lm (q = 1) ,      (19)        In Fig. 11, we show mismatches computed using the
+                                                                                            advanced LIGO design sensitivity noise curve, between
+                         ∆φSlm (q = 1, eref , lref )                                        the NRSur2dq1Ecc+ model and eccentric NR data at q =
+                                                                                            2, 3. We include all modes available in the model while
+                                = φSlm (q = 1, eref , lref ) − φ0lm (q = 1).       (20)     computing the mismatch. For simplicity, we only consider
+Even though these amplitude and phase differences are                                       a single point in the source-frame sky, with an inclination
+computed at q = 1, we treat them as a proxy for the                                         angle of π/3. For eref (at tref = −2000M ) smaller than
+modulations due to eccentricity at any q. We then add
+these modulations to the amplitude and phase of h`m
+                                                  0
+                                                    (q),
+the noneccentric surrogate model evaluated at the given
+                                                                                            2 While building the test surrogate, we exclude SXS:BBH:2294
+q, to get the full amplitude and phase:
+                                                                                             (eref = 7 × 10−4 , lref = 5.766 at tref = −5500M ) from the
+                        ASlm (q, eref , lref )                                               training set as the binary circularizes enough by t = −2000M
+                                                                                             such that our eccentricity estimator defined in Eq.(4) becomes
+                                 = ∆ASlm (q = 1, eref , lref ) + A0lm (q) ,        (21)      unreliable.
+                                                                                                                                  13
+
+
+            10−1
+                                                            0.4       {q, eref , lref } = {1, 0.1, 0.0}
+            10−2                                                      {q, eref , lref } = {1, 0.1, π}
+                                                            0.3
+
+
+
+
+                                                   |h22 |(r/M )
+ Mismatch
+
+
+
+            10−3
+                                                            0.2
+            10−4
+
+            10−5                                            0.1
+
+
+            10−6                                            0.0
+                   0.0   π/2    π      3π/2   2π                  −5000         −4000            −3000          −2000   −1000    0
+                               ∆lref                                                                    t(M )
+
+Figure 13. Importance of mean anomaly for waveform modeling and data analysis. Left panel: Flat noise mismatch (optimized
+over time, phase and polarization angle shifts) between NRSur2dq1Ecc predictions with lref = 0.0 and lref = ∆lref , at fixed
+q = 1 and eref = 0.1. While the mismatch, as expected, is ∼ 0 for ∆lref = 0.0 and ∆lref = 2π, it reaches values ∼ 0.1 near
+∆lref = π. Right panel: The (2, 2) amplitude of the waveforms leading to the maximum mismatch, i.e. lref = 0 and lref = π.
+These differences cannot be accounted for by a time or phase shift, therefore, mean anomaly is an important parameter to
+include for waveform modeling and data analysis of eccentric binaries.
+
+
+∼ 0.05, mismatches are always smaller than 10−2 . As we                   for the cases with lref = 0 and lref = π. The clear differ-
+increase eref (at tref = −2000M ) to 0.09, the mismatches                 ences in the amplitude reinforce our assertion that this
+become significantly worse, especially for q = 3, reaching                mismatch cannot be accounted for by a time or frame
+values ∼ 10−1 . As an example, Fig. 12 shows the surrogate                shift.
+prediction (and NR waveform) for the case that leads
+to the largest mismatch in Fig. 11 with eref (at tref =
+−2000M ) smaller than ∼ 0.05.                                                                     V.      CONCLUSION
+  This suggests that our scheme to extend the surrogate
+model to comparable mass systems produces reasonable                         We present NRSur2dq1Ecc, the first eccentric NR sur-
+waveforms for small eccentricities. However, we advise                    rogate waveform model. This model is trained on 47
+caution with extrapolation-type procedures in general.                    NR waveforms of equal-mass nonspinning BBH systems
+                                                                          with eccentricity eref ≤ 0.2, defined at a reference time
+                                                                          tref = −5500M before the waveform peak. The model
+ E.           Importance of mean anomaly for data analysis                includes the (2, 2), (3, 2) and (4, 4) spin-weighted spher-
+                                                                          ical harmonic modes. Due to the symmetries of the
+   Many existing waveform models [54–57] for eccentric                    equal-mass, nonspinning systems considered here, this
+binaries parameterize eccentric characteristics of the wave-              is equivalent to including all ` ≤ 3 and (4, ±4) modes,
+form by only one parameter eref while keeping lref fixed.                 except the m = 0 modes. This is the first eccentric BBH
+We, however, use both eref and lref as parameters in our                  model that is directly trained on eccentric NR simulations
+model. We find that not allowing lref as an indepen-                      and does not require that the binary circularizes before
+dent parameter results in large modeling error, indicating                merger. We also present NRSur2dq1EccRemnant, the first
+that the mean anomaly is important to consider when                       NR surrogate model for the final BH properties of eccen-
+modeling the GW signal from eccentric binaries.                           tric BBH mergers. This model is also trained on the same
+   To demonstrate the importance of mean anomaly also                     set of simulations. We use Gaussian process regression
+in data analysis, we present a simple study. We gener-                    to construct the parametric fits for both models. Both
+ate NRSur2dq1Ecc predictions h`m   S
+                                     (q = 1, eref = 0.1, lref )           NRSur2dq1Ecc and NRSur2dq1EccRemnant will be made
+with lref ∈ [0.0, 2π]. The left panel of Fig. 13 shows mis-               publicly available in the near future.
+matches between the waveform at lref = 0 and various                         Through a leave-one-out cross-validation study, we show
+lref , parametrized by ∆lref = lref − 0. For simplicity, we               that NRSur2dq1Ecc accurately reproduces NR waveforms
+only consider a single point in the source-frame sky, at                  with a typical mismatch of ∼ 10−3 . We further demon-
+ι = π/3, ϕ0 = 0.0. As expected, we find that ∆lref = 0.0                  strate that our remnant model, NRSur2dq1EccRemnant,
+and ∆lref = 2π produce identical waveforms. However,                      can accurately predict the final mass and spin of the
+the mismatch reaches a value of ∼ 0.1 at ∆lref = π. As we                 merger remnant with errors . 5 × 10−4 M and . 2 × 10−3
+already account for allowed time and frame shifts when                    respectively. We showed that despite being trained on
+computing the mismatch, ignoring this difference can lead                 equal-mass binaries, NRSur2dq1Ecc can be reasonably ex-
+to modeling errors or biased parameter estimation. In the                 tended up to mass ratio q ≈ 3 with mismatches ' 10−2
+right panel of Fig. 13, we show the waveform amplitude                    for eccentricities eref . 0.05 at tref = −2000M . Finally,
+                                                                                                                         14
+
+we demonstrate that the mean anomaly, which is often            Foundation under Grant No. DMS-1439786. Simulations
+ignored in waveform modeling and parameter estimation           were performed on the Wheeler cluster at Caltech, which
+of eccentric binaries, is an important parameter to include.    is supported by the Sherman Fairchild Foundation and
+Exclusion of mean anomaly can result in poor modeling           by Caltech; and on CARNiE at the Center for Scien-
+accuracy and/or biased parameter inference.                     tific Computing and Visualization Research (CSCVR) of
+   The NR simulations used for this work were performed         UMassD, which is supported by the ONR/DURIP Grant
+using the Spectral Einstein Code (SpEC) [69]. SpEC’s            No. N00014181255. Computations for building the model
+development efforts have been primarily focused on evo-         were performed on both CARNiE and Wheeler.
+lutions of binary black hole systems in quasi-circular or-
+bits [77]. To efficiently generate accurate training data for
+high eccentricity systems, it may be necessary to improve                             APPENDIX
+certain algorithmic subroutines. For example, as noted in
+Sec. III B 3, we found it difficult to achieve target values      In this Appendix, we describe various alternate model-
+of (eref , lref ) at a reference time before merger. We also    ing strategies we pursued before deciding on the formalism
+noticed that the waveform’s numerical error was notice-         presented in the main text.
+ably larger near pericenters, suggesting better adaptive
+mesh refinement algorithms [107] may be necessary for
+highly eccentric simulations.                                        Appendix A: Choice of data decomposition
+   We have also explored several data decomposition tech-
+niques and parametrizations for building eccentric NR              In this work, we have modeled the amplitude (A22 ) and
+surrogate models, which can guide strategies for future         phase (φ22 ) of the (2, 2) mode by modeling the residual
+models. Our final framework for building eccentric NR           (∆A22 , ∆φ22 ) of these quantities with respect to a quasi-
+surrogates is quite general, and we expect that it can be       circular NR waveform (cf. Sec. III C). Alternatively, one
+applied straightforwardly to higher dimensional param-          could instead model the amplitude and frequency (or their
+eter spaces including unequal masses and aligned-spins.         residuals), and then integrate the frequency to obtain the
+We leave these explorations to future work.                     phase. The frequency of the (2,2) mode is given by
+                                                                                               dφ22
+                                                                                       ω22 =        ,                 (A1)
+               ACKNOWLEDGMENTS                                                                  dt
+                                                                where φ22 is defined in Eq. (10). The corresponding
+  We thank Geraint Pratten for comments on the                  residual is given by:
+manuscript. We thank Nur Rifat and Feroz Shaik for
+helpful discussions. We thank Katerina Chatziioannou                                ∆ω22 = ω22 − ω22
+                                                                                                  0
+                                                                                                     ,                (A2)
+for the implementation of an improved eccentricity con-
+trol system used in many of our simulations. T.I. is            where ω22
+                                                                        0
+                                                                           is the frequency of (2, 2) mode for the quasicir-
+supported by NSF grant PHY-1806665 and a doctoral fel-          cular NR waveform.
+lowship provided by UMassD Graduate Studies. V.V. is               We, therefore, explore four different data decomposition
+supported by a Klarman Fellowship at Cornell, the Sher-         strategies for the (2, 2) mode, summarized below:
+man Fairchild Foundation, and NSF grants PHY–170212                • Model {A22 , φ22 } directly.
+and PHY–1708213 at Caltech. J.L. is supported by the
+Caltech Summer Undergraduate Research Fellowship Pro-              • Model {∆A22 , ∆φ22 } and then add them to the am-
+gram and the Rose Hills Foundation. S.F. is supported                plitude and phase of the quasicircular NR waveform
+by NSF grants No. PHY-1806665 and No. DMS-1912716.                   to obtain {A22 , φ22 }.
+G.K. acknowledges research support from NSF Grants
+No. PHY-2106755 and No. DMS-1912716. M.S. is sup-                  • Model {A22 , ω22 } and integrate the frequency data
+ported by Sherman Fairchild Foundation and by NSF                    to get {A22 , φ22 }.
+Grants PHY-2011961, PHY-2011968, and OAC-1931266                   • Model {∆A22 , ∆ω22 }; add them to the amplitude
+at Caltech. D.G. is supported by European Union H2020                and frequency of the quasicircular NR waveforms,
+ERC Starting Grant No. 945155–GWmining, Leverhulme                   and finally integrate the frequency data to obtain
+Trust Grant No. RPG-2019-350, and Royal Society Grant                {A22 , φ22 }.
+No. RGS-R2-202004. L.K. is supported by the Sherman
+Fairchild Foundation, and NSF Grants PHY-1912081 and              In order to explore the effectiveness of these strategies,
+OAC-1931280 at Cornell. A portion of this work was              we build a separate surrogate model using each strategy.
+carried out while a subset of the authors were in residence     When building the frequency surrogates (ω22 or ∆ω22 )
+at the Institute for Computational and Experimental             we use a basis tolerance of 10−3 rad/M . For A22 (φ22 )
+Research in Mathematics (ICERM) in Providence, RI,              we use the same tolerance as used for ∆A22 (∆φ22 ) in
+during the Advances in Computational Relativity pro-            Section III D. We compute the normalized L2 -norm be-
+gram. ICERM is supported by the National Science                tween the NR data and each surrogate approximation
+                                                                                                                                                       15
+
+                                                                               • {eref , sin(lref /2)},
+                                                  {A22 , φ22 }
+                                                  {∆A22 , ∆φ22 }               • {log10 (1 − eref ), lref },
+                                                  {A22 , ω22 }                 • {log10 (1 − eref ), sin(lref /2)},
+                1.0                               {∆A22 , ∆ω22 }
+                                                                    Here sin(lref /2) is considered because it maps the periodic
+                                                                    parameter lref ∈ [0, 2π) uniquely to the range [0, 1], while
+                                                                    still mapping the physically equivalent points lref = 0
+ Case Density
+
+
+
+
+                                                                    and lref = 2π to the same point (sin(lref /2) = 0). The
+                                                                    same is not true for other possible parameterizations
+                                                                    such as sin(lref ), cos(lref ), or cos(lref /2). log10 (1 − eref ) is
+                0.5                                                 considered because it flattens the spread in eccentricity,
+                                                                    which can be useful if the eccentricity varies over several
+                                                                    orders of magnitude in the NR dataset.
+
+
+                                                                                                                      {log10 (1 − eref ), sin( lref
+                                                                                                                                                2 )}
+                                                                                                                      {log10 (1 − eref ), lref }
+                0.0                                                                                                   {eref , sin( lref
+                      10−4    10−3     10−2    10−1         10−0                                                                    2 )}
+                                                                                    1.0
+                                        E                                                                             {eref , lref }
+
+
+Figure 14. Histograms of surrogate errors (defined in Eqs. (17))
+for the four different decomposition strategies we consider. We      Case Density
+find that modeling the residual amplitude ∆A22 and residual
+phase ∆φ22 yields the least errors.
+                                                                                    0.5
+
+using Eq. (17). In Fig. 14, we show the surrogate errors
+for all four different strategies. We find that modeling the
+frequency ω22 or residual frequency ∆ω22 yields at least
+two-to-three orders of magnitude larger E than when we
+model the phase φ22 or ∆φ22 . Furthermore, modeling
+the residual amplitude ∆A22 proves to be slightly more                              0.0 −5
+                                                                                      10        10−4           10−3              10−2              10−1
+accurate than the case where we model the amplitude A22
+                                                                                                                 E
+directly. Therefore, in the main text, we build surrogate
+models of the residual {∆A22 , ∆φ22 } (cf. Sec. III C).
+                                                                    Figure 15. Histograms of the error for the full waveform, for
+                                                                    the six different fit parameterizations we consider.
+
+                 Appendix B: Choice of fit parameterization            Similarly to the previous section, to explore the effec-
+                                                                    tiveness of these strategies, we build a separate surrogate
+                                                                    model using each strategy. Here, however, we consider all
+   When building the surrogate models in main text, fits            modes included (`, m) = (2, 2), (3, 2), (4, 4) and evaluate E
+across parameter space are required for the waveform                errors [cf. Eq. (17)]. In Fig. 15, we show E errors for each
+model as well as the remnant model (cf. Sec. III D). These          parameterization strategy. We find that while the alter-
+fits are parameterized by the eccentricity (eref ) and mean         native strategies using either log10 (1 − eref ), or sin(lref /2),
+anomaly (lref ) at the reference time tref . While {eref , lref }   or both, may be comparable, none of the them result in
+is a natural choice, we also explore the following choices          errors smaller than the original choice {eref , lref }. As we
+of parameterizations:                                               do not achieve a noticeable improvement with these alter-
+                                                                    native parameterizations, we stick to the original choice
+          • {eref , lref },                                         {eref , lref } in the main text.
+
+
+
+
+     [1] B. P. Abbott et al. (LIGO Scientific, Virgo), “GWTC-1:                      Binary Mergers Observed by LIGO and Virgo during
+         A Gravitational-Wave Transient Catalog of Compact                           the First and Second Observing Runs,” Phys. Rev. X9,
+                                                                                                                            16
+
+     031040 (2019), arXiv:1811.12907 [astro-ph.HE].                   holes: A Gaussian process regression approach,” Phys.
+ [2] R. Abbott et al. (LIGO Scientific, Virgo), “GWTC-2:              Rev. D 101, 063011 (2020), arXiv:1903.09204 [gr-qc].
+     Compact Binary Coalescences Observed by LIGO and            [16] B.P. Abbott et al. (LIGO Scientific, Virgo), “Search for
+     Virgo During the First Half of the Third Observing Run,”         Eccentric Binary Black Hole Mergers with Advanced
+     (2020), arXiv:2010.14527 [gr-qc].                                LIGO and Advanced Virgo during their First and Sec-
+ [3] J. Aasi et al. (LIGO Scientific), “Advanced LIGO,” Class.        ond Observing Runs,” Astrophys. J. 883, 149 (2019),
+     Quant. Grav. 32, 074001 (2015), arXiv:1411.4547 [gr-qc].         arXiv:1907.09384 [astro-ph.HE].
+ [4] F. Acernese et al. (Virgo), “Advanced Virgo: a second-      [17] Isobel M. Romero-Shaw, Paul D. Lasky, and Eric
+     generation interferometric gravitational wave detector,”         Thrane, “Searching for Eccentricity: Signatures of Dy-
+     Class. Quant. Grav. 32, 024001 (2015), arXiv:1408.3978           namical Formation in the First Gravitational-Wave Tran-
+     [gr-qc].                                                         sient Catalogue of LIGO and Virgo,” Mon. Not. Roy.
+ [5] S. E. Field, C. R. Galley, J. S. Hesthaven, J. Kaye, and         Astron. Soc. 490, 5210–5216 (2019), arXiv:1909.05466
+     M. Tiglio, “Fast Prediction and Evaluation of Gravita-           [astro-ph.HE].
+     tional Waveforms Using Surrogate Models,” 4, 031006         [18] Amber K. Lenon, Alexander H. Nitz, and Duncan A.
+     (2014), arXiv:1308.3565 [gr-qc].                                 Brown, “Measuring the eccentricity of GW170817 and
+ [6] Michael Pürrer, “Frequency domain reduced order                  GW190425,” Mon. Not. Roy. Astron. Soc. 497, 1966–
+     models for gravitational waves from aligned-spin com-            1971 (2020), arXiv:2005.14146 [astro-ph.HE].
+     pact binaries,” Class. Quant. Grav. 31, 195010 (2014),      [19] Qian-Yun Yun, Wen-Biao Han, Gang Wang, and Shu-
+     arXiv:1402.4146 [gr-qc].                                         Cheng Yang, “Investigating eccentricities of the binary
+ [7] Jonathan Blackman, Scott E. Field, Chad R. Galley, Béla          black hole signals from the LIGO-Virgo catalog GWTC-
+     Szilágyi, Mark A. Scheel, Manuel Tiglio, and Daniel A.           1,” (2020), arXiv:2002.08682 [gr-qc].
+     Hemberger, “Fast and Accurate Prediction of Numerical       [20] Shichao Wu, Zhoujian Cao, and Zong-Hong Zhu, “Mea-
+     Relativity Waveforms from Binary Black Hole Coales-              suring the eccentricity of binary black holes in GWTC-1
+     cences Using Surrogate Models,” Phys. Rev. Lett. 115,            by using the inspiral-only waveform,” Mon. Not. Roy. As-
+     121102 (2015), arXiv:1502.07758 [gr-qc].                         tron. Soc. 495, 466–478 (2020), arXiv:2002.05528 [astro-
+ [8] Jonathan Blackman, Scott E. Field, Mark A. Scheel,               ph.IM].
+     Chad R. Galley, Christian D. Ott, Michael Boyle,            [21] Alexander H. Nitz, Amber Lenon, and Duncan A.
+     Lawrence E. Kidder, Harald P. Pfeiffer, and Béla Szilá-          Brown, “Search for Eccentric Binary Neutron Star Merg-
+     gyi, “Numerical relativity waveform surrogate model for          ers in the first and second observing runs of Advanced
+     generically precessing binary black hole mergers,” Phys.         LIGO,” Astrophys. J. 890, 1 (2019), arXiv:1912.05464
+     Rev. D96, 024058 (2017), arXiv:1705.07089 [gr-qc].               [astro-ph.HE].
+ [9] Jonathan Blackman, Scott E. Field, Mark A. Scheel,          [22] Antoni Ramos-Buades, Shubhanshu Tiwari, Maria
+     Chad R. Galley, Daniel A. Hemberger, Patricia Schmidt,           Haney, and Sascha Husa, “Impact of eccentricity on
+     and Rory Smith, “A Surrogate Model of Gravitational              the gravitational wave searches for binary black holes:
+     Waveforms from Numerical Relativity Simulations of               High mass case,” Phys. Rev. D 102, 043005 (2020),
+     Precessing Binary Black Hole Mergers,” Phys. Rev. D95,           arXiv:2005.14016 [gr-qc].
+     104023 (2017), arXiv:1701.00550 [gr-qc].                    [23] P. C. Peters, “Gravitational radiation and the motion
+[10] Vijay Varma, Scott E. Field, Mark A. Scheel, Jonathan            of two point masses,” Phys. Rev. 136, B1224–B1232
+     Blackman, Lawrence E. Kidder, and Harald P. Pfeif-               (1964).
+     fer, “Surrogate model of hybridized numerical relativity    [24] Matthew Giesler, Drew Clausen, and Christian D. Ott,
+     binary black hole waveforms,” Phys. Rev. D99, 064045             “Low-mass X-ray binaries from black-hole retaining glob-
+     (2019), arXiv:1812.07865 [gr-qc].                                ular clusters,” Mon. Not. Roy. Astron. Soc. 477, 1853–
+[11] Alvin J.K. Chua, Chad R. Galley, and Michele Vallis-             1879 (2018), arXiv:1708.05915 [astro-ph.HE].
+     neri, “Reduced-order modeling with artificial neurons       [25] Carl L. Rodriguez et al., Phys. Rev. D98, 123005 (2018),
+     for gravitational-wave inference,” Phys. Rev. Lett. 122,         arXiv:1811.04926 [astro-ph.HE].
+     211101 (2019), arXiv:1811.05491 [astro-ph.IM].              [26] Ryan M. O’Leary, Frederic A. Rasio, John M. Fregeau,
+[12] Benjamin D. Lackey, Michael Pürrer, Andrea Taracchini,           Natalia Ivanova, and Richard W. O’Shaughnessy, “Bi-
+     and Sylvain Marsat, “Surrogate model for an aligned-spin         nary mergers and growth of black holes in dense star
+     effective one body waveform model of binary neutron              clusters,” Astrophys. J. 637, 937–951 (2006), arXiv:astro-
+     star inspirals using Gaussian process regression,” Phys.         ph/0508224.
+     Rev. D 100, 024002 (2019), arXiv:1812.08643 [gr-qc].        [27] Johan Samsing, “Eccentric Black Hole Mergers Forming
+[13] Vijay Varma, Scott E. Field, Mark A. Scheel, Jonathan            in Globular Clusters,” Phys. Rev. D 97, 103014 (2018),
+     Blackman, Davide Gerosa, Leo C. Stein, Lawrence E.               arXiv:1711.07452 [astro-ph.HE].
+     Kidder, and Harald P. Pfeiffer, “Surrogate models           [28] Giacomo Fragione and Bence Kocsis, “Black hole mergers
+     for precessing binary black hole simulations with un-            from quadruples,” Mon. Not. Roy. Astron. Soc. 486,
+     equal masses,” Phys. Rev. Research. 1, 033015 (2019),            4781–4789 (2019), arXiv:1903.03112 [astro-ph.GA].
+     arXiv:1905.09300 [gr-qc].                                   [29] Jun Kumamoto, Michiko S. Fujii, and Ataru Tanikawa,
+[14] Sebastian Khan and Rhys Green, “Gravitational-wave               “Gravitational-Wave Emission from Binary Black Holes
+     surrogate models powered by artificial neural net-               Formed in Open Clusters,” Mon. Not. Roy. Astron. Soc.
+     works: The ANN-Sur for waveform generation,” (2020),             486, 3942–3950 (2019), arXiv:1811.06726 [astro-ph.HE].
+     arXiv:2008.12932 [gr-qc].                                   [30] Ryan M. O’Leary, Bence Kocsis, and Abraham Loeb,
+[15] Daniel Williams, Ik Siong Heng, Jonathan Gair, James A.          “Gravitational waves from scattering of stellar-mass black
+     Clark, and Bhavesh Khamesra, “Precessing numerical               holes in galactic nuclei,” Mon. Not. Roy. Astron. Soc.
+     relativity waveform surrogate model for binary black             395, 2127–2146 (2009), arXiv:0807.2638 [astro-ph].
+                                                                                                                            17
+
+[31] László Gondán and Bence Kocsis, “High Eccentricities             Bartos, Kazuyuki Omukai, and Johan Samsing, “Ec-
+     and High Masses Characterize Gravitational-wave Cap-             centric Black Hole Mergers in Active Galactic Nuclei,”
+     tures in Galactic Nuclei as Seen by Earth-based Detec-           (2020), arXiv:2010.10526 [astro-ph.HE].
+     tors,” (2020), arXiv:2011.02507 [astro-ph.HE].              [45] Antoni Ramos-Buades, Sascha Husa, Geraint Pratten,
+[32] R. Abbott et al. (LIGO Scientific, Virgo), “GW190521: A          Héctor Estellés, Cecilio García-Quirós, Maite Mateu-
+     Binary Black Hole Merger with a Total Mass of 150 M ,”           Lucena, Marta Colleoni, and Rafel Jaume, “First sur-
+     Phys. Rev. Lett. 125, 101102 (2020), arXiv:2009.01075            vey of spinning eccentric black hole mergers: Numer-
+     [gr-qc].                                                         ical relativity simulations, hybrid waveforms, and pa-
+[33] Isobel M. Romero-Shaw, Paul D. Lasky, Eric Thrane,               rameter estimation,” Phys. Rev. D 101, 083015 (2020),
+     and Juan Calderon Bustillo, “GW190521: orbital eccen-            arXiv:1909.11011 [gr-qc].
+     tricity and signatures of dynamical formation in a binary   [46] Antoine Klein, Yannick Boetzel, Achamveedu Gopaku-
+     black hole merger signal,” (2020), arXiv:2009.04771              mar, Philippe Jetzer, and Lorenzo de Vittori, “Fourier
+     [astro-ph.HE].                                                   domain gravitational waveforms for precessing ec-
+[34] V. Gayathri, J. Healy, J. Lange, B. O’Brien, M. Szczep-          centric binaries,” Phys. Rev. D98, 104043 (2018),
+     anczyk, I. Bartos, M. Campanelli, S. Klimenko,                   arXiv:1801.08542 [gr-qc].
+     C. Lousto, and R. O’Shaughnessy, “GW190521 as               [47] Srishti Tiwari and Achamveedu Gopakumar, “Combin-
+     a Highly Eccentric Black Hole Merger,”            (2020),        ing post-circular and Padé approximations to compute
+     arXiv:2009.05461 [astro-ph.HE].                                  Fourier domain templates for eccentric inspirals,” Phys.
+[35] Juan Calderón Bustillo, Nicolas Sanchis-Gual, Alejandro          Rev. D102, 084042 (2020), arXiv:2009.11333 [gr-qc].
+     Torres-Forné, and José A. Font, “Confusing head-on and      [48] Blake Moore, Travis Robson, Nicholas Loutrel, and
+     precessing intermediate-mass binary black hole mergers,”         Nicolas Yunes, “Towards a Fourier domain waveform for
+     (2020), arXiv:2009.01066 [gr-qc].                                non-spinning binaries with arbitrary eccentricity,” Class.
+[36] Juan Calderón Bustillo, Nicolas Sanchis-Gual, Alejan-            Quant. Grav. 35, 235006 (2018), arXiv:1807.07163 [gr-
+     dro Torres-Forné, José A. Font, Avi Vajpeyi, Rory                qc].
+     Smith, Carlos Herdeiro, Eugen Radu, and Samson H.W.         [49] Blake Moore and Nicolás Yunes, “A 3PN Fourier Do-
+     Leong, “The (ultra) light in the dark: A potential vec-          main Waveform for Non-Spinning Binaries with Moder-
+     tor boson of 8.7 × 10−13 eV from GW190521,” (2020),              ate Eccentricity,” Class. Quant. Grav. 36, 185003 (2019),
+     arXiv:2009.05376 [gr-qc].                                        arXiv:1903.05203 [gr-qc].
+[37] Michael Zevin, Johan Samsing, Carl Rodriguez, Carl-         [50] Xiaolin Liu, Zhoujian Cao, and Lijing Shao, “Validat-
+     Johan Haster, and Enrico Ramirez-Ruiz, “Eccentric                ing the Effective-One-Body Numerical-Relativity Wave-
+     Black Hole Mergers in Dense Star Clusters: The Role              form Models for Spin-aligned Binary Black Holes along
+     of Binary–Binary Encounters,” Astrophys. J. 871, 91              Eccentric Orbits,” Phys. Rev. D101, 044049 (2020),
+     (2019), arXiv:1810.00901 [astro-ph.HE].                          arXiv:1910.00784 [gr-qc].
+[38] Atsushi Nishizawa, Alberto Sesana, Emanuele Berti, and      [51] Sashwat Tanay, Antoine Klein, Emanuele Berti, and
+     Antoine Klein, “Constraining stellar binary black hole           Atsushi Nishizawa, “Convergence of Fourier-domain tem-
+     formation scenarios with eLISA eccentricity measure-             plates for inspiraling eccentric compact binaries,” Phys.
+     ments,” Mon. Not. Roy. Astron. Soc. 465, 4375–4380               Rev. D100, 064006 (2019), arXiv:1905.08811 [gr-qc].
+     (2017), arXiv:1606.09295 [astro-ph.HE].                     [52] Tanja Hinderer and Stanislav Babak, “Foundations
+[39] Atsushi Nishizawa, Emanuele Berti, Antoine Klein, and            of an effective-one-body model for coalescing binaries
+     Alberto Sesana, “eLISA eccentricity measurements as              on eccentric orbits,” Phys. Rev. D 96, 104048 (2017),
+     tracers of binary black hole formation,” Phys. Rev. D94,         arXiv:1707.08426 [gr-qc].
+     064020 (2016), arXiv:1605.01341 [gr-qc].                    [53] Ian Hinder, Lawrence E. Kidder, and Harald P. Pfeiffer,
+[40] Katelyn Breivik, Carl L. Rodriguez, Shane L. Larson,             “Eccentric binary black hole inspiral-merger-ringdown
+     Vassiliki Kalogera, and Frederic A. Rasio, “Distin-              gravitational waveform model from numerical relativity
+     guishing Between Formation Channels for Binary Black             and post-Newtonian theory,” Phys. Rev. D 98, 044015
+     Holes with LISA,” Astrophys. J. Lett. 830, L18 (2016),           (2018), arXiv:1709.02007 [gr-qc].
+     arXiv:1606.09558 [astro-ph.GA].                             [54] E.A. Huerta et al., “Eccentric, nonspinning, inspiral,
+[41] Xiao Fang, Todd A. Thompson, and Christopher M.                  Gaussian-process merger approximant for the detection
+     Hirata, “The Population of Eccentric Binary Black Holes:         and characterization of eccentric binary black hole merg-
+     Implications for mHz Gravitational Wave Experiments,”            ers,” Phys. Rev. D 97, 024031 (2018), arXiv:1711.06276
+     Astrophys. J. 875, 75 (2019), arXiv:1901.05092 [astro-           [gr-qc].
+     ph.HE].                                                     [55] Zhuo Chen, E.A. Huerta, Joseph Adamo, Roland Haas,
+[42] Carl L. Rodriguez, Pau Amaro-Seoane, Sourav Chatter-             Eamonn O’Shea, Prayush Kumar, and Chris Moore,
+     jee, and Frederic A. Rasio, “Post-Newtonian Dynam-               “Observation of eccentric binary black hole mergers with
+     ics in Dense Star Clusters: Highly-Eccentric, Highly-            second and third generation gravitational wave detector
+     Spinning, and Repeated Binary Black Hole Mergers,”               networks,” (2020), arXiv:2008.03313 [gr-qc].
+     Phys. Rev. Lett. 120, 151101 (2018), arXiv:1712.04937       [56] Danilo Chiaramello and Alessandro Nagar, “Faithful
+     [astro-ph.HE].                                                   analytical effective-one-body waveform model for spin-
+[43] László Gondán, Bence Kocsis, Péter Raffai, and Zsolt             aligned, moderately eccentric, coalescing black hole bina-
+     Frei, “Eccentric Black Hole Gravitational-Wave Capture           ries,” Phys. Rev. D 101, 101501 (2020), arXiv:2001.11736
+     Sources in Galactic Nuclei: Distribution of Binary Pa-           [gr-qc].
+     rameters,” Astrophys. J. 860, 5 (2018), arXiv:1711.09989    [57] Zhoujian Cao and Wen-Biao Han, “Waveform model for
+     [astro-ph.HE].                                                   an eccentric binary black hole based on the effective-one-
+[44] Hiromichi Tagawa, Bence Kocsis, Zoltan Haiman, Imre              body-numerical-relativity formalism,” Phys. Rev. D 96,
+                                                                                                                               18
+
+     044028 (2017), arXiv:1708.00166 [gr-qc].                            Rev. D98, 104011 (2018), arXiv:1808.08228 [gr-qc].
+[58] Andrea Taracchini, Yi Pan, Alessandra Buonanno, En-            [75] Lee Lindblom, Mark A. Scheel, Lawrence E. Kidder,
+     rico Barausse, Michael Boyle, Tony Chu, Geoffrey                    Robert Owen, and Oliver Rinne, “A New generalized
+     Lovelace, Harald P. Pfeiffer, and Mark A. Scheel, “Proto-           harmonic evolution system,” Class. Quant. Grav. 23,
+     type effective-one-body model for nonprecessing spinning            S447–S462 (2006), arXiv:gr-qc/0512093 [gr-qc].
+     inspiral-merger-ringdown waveforms,” Phys. Rev. D 86,          [76] Oliver Rinne, Luisa T. Buchman, Mark A. Scheel, and
+     024011 (2012), arXiv:1202.0790 [gr-qc].                             Harald P. Pfeiffer, “Implementation of higher-order ab-
+[59] Alessandro Nagar et al., “Time-domain effective-one-                sorbing boundary conditions for the Einstein equations,”
+     body gravitational waveforms for coalescing compact                 Class. Quant. Grav. 26, 075009 (2009), arXiv:0811.3593
+     binaries with nonprecessing spins, tides and self-spin ef-          [gr-qc].
+     fects,” Phys. Rev. D 98, 104052 (2018), arXiv:1806.01772       [77] Michael Boyle et al., “The SXS Collaboration catalog of
+     [gr-qc].                                                            binary black hole simulations,” Class. Quant. Grav. 36,
+[60] Alessandro Nagar, Gunnar Riemenschneider, Geraint                   195006 (2019), arXiv:1904.04831 [gr-qc].
+     Pratten, Piero Rettegno, and Francesco Messina, “Multi-        [78] SXS Collaboration, “The SXS collaboration catalog
+     polar effective one body waveform model for spin-aligned            of gravitational waveforms,” http://www.black-holes.
+     black hole binaries,” Phys. Rev. D 102, 024077 (2020),              org/waveforms.
+     arXiv:2001.09082 [gr-qc].                                      [79] Michael Boyle and Abdul H. Mroue, “Extrapolating
+[61] Alessandro Nagar, Alice Bonino, and Piero Rettegno,                 gravitational-wave data from numerical simulations,”
+     “All in one: effective one body multipolar waveform                 Phys. Rev. D80, 124045 (2009), arXiv:0905.3177 [gr-
+     model for spin-aligned, quasi-circular, eccentric, hyper-           qc].
+     bolic black hole binaries,” (2021), arXiv:2101.08624           [80] Michael Boyle, “Transformations of asymptotic
+     [gr-qc].                                                            gravitational-wave data,” Phys. Rev. D93, 084031
+[62] Yoshinta Setyawati and Frank Ohme, “Adding eccentric-               (2016), arXiv:1509.00862 [gr-qc].
+     ity to quasi-circular binary-black-hole waveform models,”      [81] Michael Boyle, “Scri,” https://github.com/moble/
+     (2021), arXiv:2101.11033 [gr-qc].                                   scri.
+[63] Sarah Habib and E.A. Huerta, “Characterization of nu-          [82] Marc Favata, “Post-Newtonian corrections to the
+     merical relativity waveforms of eccentric binary black              gravitational-wave memory for quasi-circular, inspi-
+     hole mergers,” Phys. Rev. D 100, 044016 (2019),                     ralling compact binaries,” Phys. Rev. D 80, 024002
+     arXiv:1904.09295 [gr-qc].                                           (2009), arXiv:0812.0069 [gr-qc].
+[64] Ulrich Sperhake, Emanuele Berti, Vitor Cardoso, Jose A.        [83] Keefe Mitman, Jordan Moxon, Mark A. Scheel, Saul A.
+     Gonzalez, Bernd Bruegmann, and Marcus Ansorg, “Ec-                  Teukolsky, Michael Boyle, Nils Deppe, Lawrence E. Kid-
+     centric binary black-hole mergers: The Transition from              der, and William Throwe, “Computation of displacement
+     inspiral to plunge in general relativity,” Phys. Rev. D             and spin gravitational memory in numerical relativity,”
+     78, 064069 (2008), arXiv:0710.3823 [gr-qc].                         Phys. Rev. D 102, 104007 (2020), arXiv:2007.11562 [gr-
+[65] Ian Hinder, Birjoo Vaishnav, Frank Herrmann, Deirdre                qc].
+     Shoemaker, and Pablo Laguna, “Universality and final           [84] Kevin Barkett, Jordan Moxon, Mark A. Scheel, and Béla
+     spin in eccentric binary black hole inspirals,” Phys. Rev.          Szilágyi, “Spectral Cauchy-Characteristic Extraction of
+     D 77, 081502 (2008), arXiv:0710.5167 [gr-qc].                       the Gravitational Wave News Function,” Phys. Rev. D
+[66] Carlos F. Sopuerta, Nicolas Yunes, and Pablo Laguna,                102, 024004 (2020), arXiv:1910.09677 [gr-qc].
+     “Gravitational recoil velocities from eccentric binary black   [85] Jordan Moxon, Mark A. Scheel, and Saul A. Teukolsky,
+     hole mergers,” Astrophys. J. Lett. 656, L9–L12 (2007),              “Improved Cauchy-characteristic evolution system for
+     arXiv:astro-ph/0611110 [astro-ph].                                  high-precision numerical relativity waveforms,” Phys.
+[67] U. Sperhake, R. Rosca-Mead, D. Gerosa, and E. Berti,                Rev. D 102, 044052 (2020), arXiv:2007.01339 [gr-qc].
+     “Amplification of superkicks in black-hole binaries            [86] Keefe Mitman et al., “Adding Gravitational Memory to
+     through orbital eccentricity,” Phys. Rev. D101, 024044              Waveform Catalogs using BMS Balance Laws,” (2020),
+     (2020), arXiv:1910.01598 [gr-qc].                                   arXiv:2011.01309 [gr-qc].
+[68] Leïla Haegel and Sascha Husa, “Predicting the prop-            [87] Vijay Varma, Davide Gerosa, Leo C. Stein, François
+     erties of black-hole merger remnants with deep neu-                 Hébert, and Hao Zhang, “High-accuracy mass, spin, and
+     ral networks,” Class. Quant. Grav. 37, 135005 (2020),               recoil predictions of generic black-hole merger remnants,”
+     arXiv:1911.01496 [gr-qc].                                           Phys. Rev. Lett. 122, 011101 (2019), arXiv:1809.09125
+[69] “The      Spectral     Einstein     Code,”     http://www.          [gr-qc].
+     black-holes.org/SpEC.html.                                     [88] Vijay Varma, Maximiliano Isi, and Sylvia Biscoveanu,
+[70] “Simulating eXtreme Spacetimes,” http://www.                        “Extracting the Gravitational Recoil from Black Hole
+     black-holes.org/.                                                   Merger Signals,” Phys. Rev. Lett. 124, 101104 (2020),
+[71] Katerina Chatziioannou, Harald P. Pfeiffer, et al.,                 arXiv:2002.00296 [gr-qc].
+     (2021), in preparation.                                        [89] S. Chandrasekhar, The Mathematical Theory of Black
+[72] James W. York, Jr., “Conformal ’thin sandwich’ data                 Holes (Clarendon Press, 1998).
+     for the initial-value problem,” Phys. Rev. Lett. 82, 1350–     [90] James Healy, Carlos O. Lousto, Hiroyuki Nakano, and
+     1353 (1999), arXiv:gr-qc/9810051 [gr-qc].                           Yosef Zlochower, “Post-Newtonian Quasicircular Initial
+[73] Harald P. Pfeiffer and James W. York, Jr., “Extrinsic               Orbits for Numerical Relativity,” Class. Quant. Grav.
+     curvature and the Einstein constraints,” Phys. Rev. D67,            34, 145011 (2017), arXiv:1702.00872 [gr-qc].
+     044022 (2003), arXiv:gr-qc/0207095 [gr-qc].                    [91] Abdul H. Mroue, Harald P. Pfeiffer, Lawrence E. Kid-
+[74] Vijay Varma, Mark A. Scheel, and Harald P. Pfeiffer,                der, and Saul A. Teukolsky, “Measuring orbital eccen-
+     “Comparison of binary black hole initial data sets,” Phys.          tricity and periastron advance in quasi-circular black
+                                                                                                                 19
+
+      hole simulations,” Phys. Rev. D82, 124016 (2010),            “Simulations of Binary Black Hole Mergers Using
+      arXiv:1004.4697 [gr-qc].                                     Spectral Methods,” Phys. Rev. D80, 124010 (2009),
+ [92] Michael Purrer, Sascha Husa, and Mark Hannam,                arXiv:0909.3557 [gr-qc].
+      “An Efficient iterative method to reduce eccentricity in
+      numerical-relativity simulations of compact binary inspi-
+      ral,” Phys. Rev. D 85, 124051 (2012), arXiv:1203.4258
+      [gr-qc].
+ [93] Thierry Mora and Clifford M. Will, “Numerically gener-
+      ated quasiequilibrium orbits of black holes: Circular or
+      eccentric?” Phys. Rev. D 66, 101501 (2002), arXiv:gr-
+      qc/0208089.
+ [94] Scott E. Field, Chad R. Galley, Frank Herrmann, Jan S.
+      Hesthaven, Evan Ochsner, and Manuel Tiglio, “Reduced
+      basis catalogs for gravitational wave templates,” Phys.
+      Rev. Lett. 106, 221102 (2011), arXiv:1101.3765 [gr-qc].
+ [95] Y. Maday, N. .C Nguyen, A. T. Patera, and S. H. Pau,
+      “A general multipurpose interpolation procedure: the
+      magic points,” Communications on Pure and Applied
+      Analysis 8, 383–404 (2009).
+ [96] Saifon Chaturantabut and Danny C Sorensen, “Nonlin-
+      ear model reduction via discrete empirical interpolation,”
+      SIAM Journal on Scientific Computing 32, 2737–2764
+      (2010).
+ [97] Priscilla Canizares, Scott E. Field, Jonathan Gair, Vivien
+      Raymond, Rory Smith, and Manuel Tiglio, “Accelerated
+      gravitational-wave parameter estimation with reduced
+      order modeling,” Phys. Rev. Lett. 114, 071104 (2015),
+      arXiv:1404.6284 [gr-qc].
+ [98] Afura Taylor and Vijay Varma, “Gravitational wave peak
+      luminosity model for precessing binary black holes,”
+      (2020), 10.1103/PhysRevD.102.104047, arXiv:2010.00120
+      [gr-qc].
+ [99] Vijay Varma and Parameswaran Ajith, “Effects of non-
+      quadrupole modes in the detection and parameter esti-
+      mation of black hole binaries with nonprecessing spins,”
+      Phys. Rev. D96, 124024 (2017), arXiv:1612.05608 [gr-
+      qc].
+[100] D. J. A. McKechan, C. Robinson,               and B. S.
+      Sathyaprakash, “A tapering window for time-domain
+      templates and simulated signals in the detection of grav-
+      itational waves from coalescing compact binaries,” Grav-
+      itational waves. Proceedings, 8th Edoardo Amaldi Con-
+      ference, Amaldi 8, New York, USA, June 22-26, 2009,
+      Class. Quant. Grav. 27, 084020 (2010), arXiv:1003.2939
+      [gr-qc].
+[101] LIGO Scientific Collaboration, Updated Advanced LIGO
+      sensitivity design curve, Tech. Rep. (2018) https://dcc.
+      ligo.org/LIGO-T1800044/public.
+[102] E.T. Newman and R. Penrose, “Note on the Bondi-
+      Metzner-Sachs group,” J. Math. Phys. 7, 863–870 (1966).
+[103] J.N. Goldberg, A.J. MacFarlane, E.T. Newman,
+      F. Rohrlich, and E.C.G. Sudarshan, “Spin s spherical
+      harmonics and edth,” J. Math. Phys. 8, 2155 (1967).
+[104] Saul A. Teukolsky, “Perturbations of a rotating black
+      hole. 1. Fundamental equations for gravitational electro-
+      magnetic and neutrino field perturbations,” Astrophys.
+      J. 185, 635–647 (1973).
+[105] S.A. Teukolsky, “Rotating black holes - separable wave
+      equations for gravitational and electromagnetic pertur-
+      bations,” Phys. Rev. Lett. 29, 1114–1118 (1972).
+[106] Emanuele Berti and Antoine Klein, “Mixing of spherical
+      and spheroidal modes in perturbed Kerr black holes,”
+      Phys. Rev. D 90, 064012 (2014), arXiv:1408.1860 [gr-qc].
+[107] Bela Szilagyi, Lee Lindblom, and Mark A. Scheel,
+

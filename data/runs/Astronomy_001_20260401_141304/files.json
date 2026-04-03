@@ -1,0 +1,181 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 26073,
+    "mtime": 1775132212.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "DESI_EDE_Repro_Data.txt",
+    "path": "data/DESI_EDE_Repro_Data.txt",
+    "type": "file",
+    "size": 2010,
+    "mtime": 1772000178.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "parameter_summary.json",
+    "path": "outputs/parameter_summary.json",
+    "type": "file",
+    "size": 1656,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "tension_statistics.txt",
+    "path": "outputs/tension_statistics.txt",
+    "type": "file",
+    "size": 385,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1135737,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 6745329,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5592750,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1107361,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_parameter_comparison.png",
+    "path": "report/images/fig1_parameter_comparison.png",
+    "type": "file",
+    "size": 98663,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_H0_tension.png",
+    "path": "report/images/fig2_H0_tension.png",
+    "type": "file",
+    "size": 45165,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_BAO_residuals.png",
+    "path": "report/images/fig3_BAO_residuals.png",
+    "type": "file",
+    "size": 92165,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_EDE_posteriors.png",
+    "path": "report/images/fig4_EDE_posteriors.png",
+    "type": "file",
+    "size": 251916,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_model_comparison.png",
+    "path": "report/images/fig5_model_comparison.png",
+    "type": "file",
+    "size": 72790,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_SNe_residuals.png",
+    "path": "report/images/fig6_SNe_residuals.png",
+    "type": "file",
+    "size": 61325,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "fig7_tension_summary.png",
+    "path": "report/images/fig7_tension_summary.png",
+    "type": "file",
+    "size": 141144,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "fig8_data_overview.png",
+    "path": "report/images/fig8_data_overview.png",
+    "type": "file",
+    "size": 95413,
+    "mtime": 1775132210.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 22255,
+    "mtime": 1775132213.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5423,
+    "mtime": 1775023984.0,
+    "exported": true
+  }
+]

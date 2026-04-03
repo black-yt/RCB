@@ -1,0 +1,12 @@
+,filename,project,year,season,state,operator_affiliation,agent,apparatus,purpose,target_area,control_area,start_date,end_date
+count,832,832,832.0,832,832,832,832,828,832,829,377,829,825
+unique,832,211,,16,13,41,28,3,17,301,124,280,296
+top,"Western Uintas, Utah_14-1643_12.01.2014-03.31.2015.pdf",central colorado program,,winter,california,north american weather consultants,silver iodide,ground,augment snowpack,central sierra nevada mountains,adjacent areas,11/1/23,12/31/05
+freq,1,21,,592,215,201,521,461,326,18,64,18,15
+mean,,,2011.3221153846155,,,,,,,,,,
+std,,,7.207736941189324,,,,,,,,,,
+min,,,2000.0,,,,,,,,,,
+25%,,,2005.0,,,,,,,,,,
+50%,,,2010.0,,,,,,,,,,
+75%,,,2017.0,,,,,,,,,,
+max,,,2025.0,,,,,,,,,,

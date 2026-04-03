@@ -1,0 +1,3 @@
+reference_case,reference_cost_eur_per_kg,model_case,model_cost_eur_per_kg,comment
+Kenya export to Rotterdam in Müller et al. (2023),7.0,"Best available African sample, base 2030",3.979486690258556,Lower than 2020s Kenya case because this study assumes 2030 CAPEX learning and a high-quality southern African sample.
+Kenya export to Rotterdam in Müller et al. (2023),7.0,"Best available African sample, corridor policy 2030",3.0530835193724024,"Illustrates the combined effect of technology learning, lower WACC, and corridor support on delivered cost."

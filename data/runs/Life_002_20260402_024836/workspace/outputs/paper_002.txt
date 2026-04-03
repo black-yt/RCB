@@ -1,0 +1,1522 @@
+Articles
+
+PDB-wide identification of biological assemblies from
+conserved quaternary structure geometry
+© 2017 Nature America, Inc., part of Springer Nature. All rights reserved.
+
+Sucharita Dey1, David W Ritchie2 & Emmanuel D Levy1
+Protein structures are key to understanding biomolecular
+mechanisms and diseases, yet their interpretation is
+hampered by limited knowledge of their biologically relevant
+quaternary structure (QS). A critical challenge in inferring
+QS information from crystallographic data is distinguishing
+biological interfaces from fortuitous crystal-packing contacts.
+Here, we tackled this problem by developing strategies for
+aligning and comparing QS states across both homologs and
+data repositories. QS conservation across homologs proved
+remarkably strong at predicting biological relevance and is
+implemented in two methods, QSalign and anti-QSalign, for
+annotating homo-oligomers and monomers, respectively. QS
+conservation across repositories is implemented in QSbio
+(http://www.QSbio.org), which approaches the accuracy of
+manual curation and allowed us to predict >100,000 QS states
+across the Protein Data Bank. Based on this high-quality data
+set, we analyzed pairs of structurally conserved interfaces, and
+this analysis revealed a striking plasticity whereby evolutionary
+distant interfaces maintain similar interaction geometries
+through widely divergent chemical properties.
+
+The majority of proteins adopt a quaternary structure (QS) by interacting with copies of themselves, thereby forming homomers1–6.
+These protein complexes are present in virtually all biological
+processes7–9. For example, the well-known oncogene p53 is a
+homomer, as are many transcription factors. In apoptosis, caspase-9 acts as a trigger after homodimer formation10, and it is the
+homotrimeric scaffold of the tumor necrosis factor that induces
+cell death11. Metabolic pathways are no exception; for example,
+most glycolytic enzymes form homomers. Besides being ubiquitous, homomers are common in cellular machines; ATP synthases, proteasomes, chaperones, photosystems, exosomes and
+histones have all evolved from ancestral homomers12.
+Knowledge of biological QS states is thus key for understanding
+protein function and evolution. Currently, the richest source of
+information on protein QS is the Protein Data Bank (PDB), the
+repository for structural information obtained by X-ray crystallography, NMR spectroscopy, and cryo-electron microscopy13,14.
+Structures solved by X-ray crystallography represent, by far, the
+majority of the data; more than 120,000 structures have now been
+
+deposited. However, X-ray crystallography provides the coordinates of only the asymmetric unit (ASU) within the unit cell of a
+crystal. At the molecular level, a crystal is formed as an infinite
+lattice of unit cells (Fig. 1a), and a protein complex may be made
+from one or more ASUs or from parts of one or several ASUs15. A
+critical challenge underlying analysis and interpretation of protein
+structures is discriminating between fortuitous protein–protein
+contacts that arise from crystal packing and evolved contacts that
+make up the biologically relevant QS.
+Much computational work has been devoted to addressing this
+challenge. Several properties of interfaces were found to be important and can be separated into two broad classes. The first class
+comprises physicochemical and shape properties of protein interfaces and includes size15–21, planarity22, atomic packing19,21,23,
+predicted binding free energy15,20, secondary structure24 and the
+composition18,19,21–23,25 or entropy of amino acids26. The second
+class comprises evolutionary conservation, either of individual
+residues27–31 or of the geometry of the interaction interface,
+which can be assessed across different crystal forms32,33 or across
+homologs34,35.
+Historically, the protein QS (PQS) server15 was the first tool to
+provide information on likely biological assemblies of structures
+deposited in the PDB and has since been succeeded by another
+method called PISA20. While the predictions of these servers are
+generally accurate, the hard nature of the problem means that
+~15% of QS states from the PDB do not reflect a biologically
+relevant state20,36. This limitation prompted the development of
+PiQSi36, which contains 1,434 high-confidence and nonredundant manual annotations. However, manual curation is tedious
+and cannot be applied at a PDB-wide scale, which motivated us to
+develop novel automated methods approaching the accuracy of
+manual curation.
+Approaches to superpose structurally related protein chains
+within arbitrary multi-component complexes have been previously reported37–39. Here, we focus on the identification and
+analysis of homologous QSs sharing the same number of subunits,
+on the premise that conservation of QS provides a strong indicator for biological relevance (Fig. 1b). We developed a heuristic
+algorithm named QSalign, which structurally aligns complete QSs
+and infers those that are conserved as being biologically relevant.
+
+1Weizmann Institute of Science, Department of Structural Biology, Rehovot, Israel. 2Inria Nancy, Villers-les-Nancy, France. Correspondence should be addressed to E.D.L.
+
+(emmanuel.levy@weizmann.ac.il).
+
+Received 14 March; accepted 17 October; published online 20 November 2017 ; doi:10.1038/nmeth.4510
+
+nature methods | ADVANCE ONLINE PUBLICATION | 
+
+Articles
+
+© 2017 Nature America, Inc., part of Springer Nature. All rights reserved.
+
+QSalign confirmed the biological relevance of 31,257 homooligomeric QS states from the PDB, with an estimated error rate
+as low as 2.1%. To annotate monomeric proteins, we inverted the
+QSalign approach and used the absence of homomeric homologs
+as predictive information of a protein being monomeric itself. We
+used this method, anti-QSalign, to annotate 46,877 monomeric
+proteins. In addition to comparing QS states across species, we
+integrated QS conservation across methods (PISA20, EPPIC30,
+and QSalign/anti-QSalign). The resulting predictor, named QSbio
+(http://www.QSbio.org), approached the accuracy of manual
+curation. We finally illustrate the use of QSalign in an analysis of
+interface properties of structurally similar but evolutionary distant complexes, which reflects the plasticity of interface properties
+among remote structural homologs.
+RESULTS
+Inferring biological relevance by multichain superposition
+of protein quaternary structure
+Evolutionary conservation is a powerful means to assess function
+and can be applied in the context of QS. Previous work indeed
+reported that structural conservation of interface geometry is a
+strong indicator of functional relevance33. Among dimers, interface conservation directly reflects QS conservation because only
+a single interface is involved. In higher order oligomers, however,
+structural similarity cannot be readily inferred from the similarity
+of pairwise interfaces (Supplementary Fig. 1), and this prompted
+us to assess the structural similarity of full complexes without
+decomposing them into pairwise interfaces.
+The task of superposing full protein complexes presented
+two main obstacles. A first hurdle arose from the size of QSs,
+because structural superposition algorithms have been classically applied to single chain proteins of a few hundred residues
+at most. In contrast, a QS can involve multiple chains that total
+several thousand residues (Fig. 2a). As a solution, we employed
+the Kpax protein structure alignment algorithm40, which we
+found to be fast and robust, even with very large structures. A
+second obstacle arose from the fact that QS information involves
+multiple chains, whose coordinates typically appear in PDB files
+in an arbitrary order. This prompted the development of a heuristic to map chain–chain correspondences (see Online Methods
+and Supplementary Fig. 2). We used this approach to perform
+pairwise structural superpositions between all homo-oligomeric
+assemblies from the PDB, and we also included assemblies predicted by PISA. We focused on potential matches by comparing
+homomers with identical numbers of subunits and domain folds,
+which resulted in >25 million superpositions. We then developed
+a strategy to integrate these data and infer the biological QS of
+protein structures. The overall algorithm is described in detail
+in the Online Methods as well as in Supplementary Figures 3
+and 4. Henceforth, we refer to QSalign as the global method
+that computes structural superposition of protein complexes
+and uses that information to infer the biological relevance of
+assemblies in the PDB.
+Benchmarking QSalign
+We employed a multichain version of the TM-score41 to assess
+whether two QS states were similar. To find the optimal threshold and to examine how sensitive results were with respect to the
+threshold, we benchmarked QSalign using different TM-score
+ | ADVANCE ONLINE PUBLICATION | nature methods
+
+a
+
+Crystal
+
+Lattice
+
+b S. typhi (1ORR)
+
+QS inferred biological
+
+Unit cell
+
+Two possible dimer
+assemblies
+
+A. thaliana (1I2B)
+
+A. thaliana (1I24)
+
+Similar
+QS
+
+Different
+QS
+
+22% seq.
+identity
+
+100% seq.
+identity
+QS inferred biological
+
+Missing
+QS inferred
+non-biological
+
+Figure 1 | Quaternary structure conservation across species points to
+biologically relevant crystal contacts. (a) Protein X-ray diffraction requires
+formation of a crystal. At the molecular level, a crystal is formed by a
+lattice within which the repeated unit is the unit cell. Here, the unit
+cell contains eight copies of the protein (PDB code 1EX2) in contact
+with one another. Identifying biologically relevant contacts among
+these is challenging. For example, the authors of the structure shown 50
+assigned the top dimer as biologically significant, while the method PISA
+predicts the dimeric form underneath to be so. Searching for homologous
+structures reveals the latter to be conserved across species (e.g., PDB
+code 4LU1). (b) Tyvelose epimerase is a tetrameric enzyme in Salmonella
+typhi (PDB code 1ORR). A similar tetramer is found in Arabidopsis thaliana
+(PDB code 1I2B, r.m.s. deviation = 3.55 Å), although the sequences of
+these two tetramers share only 22% identity. Such conservation suggests
+that both tetramers are biologically relevant. This information enables
+subsequent correction of entries showing identical sequence but different
+QS (e.g., PDB code 1I24). Seq., sequence.
+
+cutoff values, from 0.4 to 0.9. For each value, we estimated the
+accuracy of QSalign annotations by comparing them to manual
+annotations from PiQSi. As expected, lower cutoff values gave
+more annotations but also higher error rates (Fig. 2b). Above a
+TM-score of 0.65, however, the error rate remained stable, but
+coverage decreased. We thus chose a cutoff equal to 0.65, at which
+31,257 biological assemblies from the PDB were validated with
+an error rate of 2.1% (Fig. 2b).
+Subsequently, we used each validated assembly to search for
+nonannotated entries with a similar sequence but a different QS.
+By transitivity, we annotated 11,119 such entries to be potentially
+incorrect, as illustrated in Figure 1b. Benchmarking these annotations against PiQSi showed an error rate estimated at 11.5%
+(Fig. 2c). While this error rate is higher than that of 2.1% obtained
+when validating assemblies, these annotations are highly valuable
+because they are specific to erroneous structures.
+We next compared the performance of QSalign to two state-ofthe-art methods, PISA20 and EPPIC30. Using PiQSi as a benchmark data set, the prediction of dimers using PISA and EPPIC
+gave results comparable to published values with 13% and 18%
+error rates, respectively, while we observed an error rate of 4%
+with QSalign. Among higher order oligomers, QSalign showed the
+same error rate of 4%, but values for PISA and EPPIC increased
+to 16% and 32%, respectively. This increase might be due to the
+fact that high-order oligomers involve several interfaces, and
+it becomes less likely to predict all of them correctly. We also
+benchmarked QSalign using a compendium of gold-standard
+
+Articles
+
+Missing
+Conflicting geometry
+
+likely correct
+
+likely erroneous
+
+10
+
+2
+
+0
+
+1
+0.4
+
+0.6
+
+0.8
+
+20
+Error rate (%)
+
+20
+5
+
+No. annotations (×103)
+
+Error rate (%)
+
+30
+
+10
+
+2.1%
+
+QSalign
+
+18
+
+4.0
+
+cGS
+
+9.5
+
+n/a
+
+2.8 (1.9)
+
+PiQSi
+
+16
+
+32
+
+4.0
+
+cGS
+
+17.5
+
+n/a
+
+5.2
+
+QS annotated as
+
+31,2K
+
+20
+
+EPPIC
+
+13
+
+11%
+
+e
+30
+
+10
+
+20
+5
+
+11,1K
+10
+
+2
+
+0
+
+1
+
+0.4
+
+0.6
+
+0.8
+
+Structural similarity (TM-score) cutoff for QS superposition
+
+evo surface
+)
+evo interface
+
+Geometry conservation
+QSs annotated as
+
+PISA
+PiQSi
+
+r = log(
+
+Sequence id = 57%
+TM score = 0.8
+
+© 2017 Nature America, Inc., part of Springer Nature. All rights reserved.
+
+d
+
+Similar sequence
+different QS
+
+Dimers
+
+c
+
+Different sequences
+similar QS
+
+Oligo
+
+b
+
+3
+
+Structural alignment
+of two large QS
+(1A6D and 1Q3S)
+
+No. annotations (×10 )
+
+a
+
+3
+2
+1
+0
+–1
+PiQSi
+
+QSalign
+
+Figure 2 | Quaternary structure superposition and benchmark of predictions. (a) Superposition of two large QSs by QSalign (only half of the structure is
+shown to facilitate visualization). (b) We compared QSalign predictions against a manually curated data set from PiQSi36. QSalign infers two QSs as correct
+when their structural similarity exceeds a TM-score cutoff. We scanned different cutoff values and recorded the error rate (blue line) and the total number
+of QSs annotated (green line) for each. (c) QSalign then searches for proteins with conflicting QSs and infers those as erroneous. (d) Benchmark of QSalign,
+PISA and EPPIC using the same data sets. The number in parentheses corresponds to the error rate after discarding a structure for which recent work confirms
+QSalign prediction. Detailed prediction information for the three methods is given in Supplementary Data 1. (e) Distribution of the ratio (r) of surface over
+interface evolutionary rate for residues of QSs predicted to be biological (green) or nonbiological (magenta) in QSalign and PiQSi. Similar distributions of
+relative interface conservation are observed (MeanPiQSi = 0.70, P = 2.5 × 10−15; MeanQSalign = 0.77, P = 2.6 × 10−6 two-sided Wilcoxon test). Boxplots show
+the interquartile range; whiskers extend to a distance up to 1.5 times the interquartile range or to extreme points if they are closer. evo, evolutionary rate.
+
+data sets, henceforth the ‘cGS’ data set (see Online Methods
+and Supplementary Table 1), and we observed similar results
+(Fig. 2d and Supplementary Data 1).
+QSalign accuracy is supported by residue-level conservation
+information
+In addition to benchmarking QSalign using a manually curated
+set of protein structures, we carried out a global quality assessment by comparing the evolutionary conservation of amino
+acids in biological versus nonbiological interfaces. It is known
+that amino acids present at interaction interfaces tend to be more
+conserved than surface residues of the same protein28–31. Thus, we
+compared the log ratio, r, of surface over interface evolutionary
+rate (see Online Methods). If residues are equally conserved in
+both structural regions, r will be close to 0; whereas higher (or
+lower) conservation of interface residues will yield positive (or
+negative) r values. In nonbiological QS states from PiQSi and
+QSalign, the distribution of r was centered on, or close to 0, which
+indicated that interface residues behaved like surface residues, as
+expected. Among biological complexes, r was above 0 on average
+(MeanPiQSi = 0.70, P = 2.5 × 10−15; MeanQSalign = 0.77, P = 2.6 × 10−6),
+which indicated that residues at biological interfaces are, on average, twice as conserved as surface residues. The similarity of the
+distribution of r observed among curated structures from PiQSi
+and among structures annotated with QSalign further reflects
+the high quality of the annotations derived from the method
+(Fig. 2e). Interestingly, despite the fact that QSalign relies on
+interface geometry conservation to infer biological relevance,
+5.6% of complexes annotated as biologically relevant show r
+values below 0. Among these, the geometry of the interaction
+between subunits is conserved, but the residues mediating the
+interaction are variable.
+
+Annotating monomers with anti-QSalign
+QSalign was unable to annotate monomeric proteins, which by
+definition do not contain conserved interfaces. Nonetheless, by
+‘inverting’ the QSalign principle, we may consider the absence of
+interface in homologs to be predictive of monomeric proteins.
+We call this approach ‘anti-QSalign’.
+Our predictor was based on counts of nonredundant homologs
+having or not having a QS. With this strategy, it is expected that
+protein families with fast-evolving QS will lead to erroneous
+annotations, while families with conserved QS will allow robust
+predictions. As for QSalign, the high degree of redundancy in the
+PDB enabled annotation of a majority of protein structures. We
+found that ~80% of monomeric proteins (46,877) had at least one
+homolog in the 30% to 90% sequence identity range and could
+therefore be classified as being either monomeric or oligomeric
+by anti-QSalign (see Online Methods).
+We benchmarked the predictions of anti-QSalign using both the
+cGS data set (Fig. 3a) and PiQSi (Fig. 3b). In both benchmarks, antiQSalign proved to be a reliable predictor with areas under the curve
+(AUC) of receiver–operator characteristic (ROC) plot equal to 0.94
+(cGS) and 0.9 (PiQSi). These results compared favorably to PISA and
+EPPIC predictions, which showed maximum AUC values of 0.85.
+QSbio integrates predictions and estimates quaternary
+structure confidence on a PDB-wide scale
+Together, QSalign and anti-QSalign enabled annotation of the QS
+state of over 80,000 structures (Supplementary Table 2). Next, we
+asked whether QS conservation across methods could be used to
+create a metapredictor with even higher accuracy and coverage.
+We employed the structural superposition heuristic of QSalign
+to compare QS states across PISA and the PDB, and we also
+mapped interfaces annotated by EPPIC onto the PDB assemblies
+nature methods | ADVANCE ONLINE PUBLICATION | 
+
+Articles
+
+c
+
+1
+
+Agreement
+High confidence
+
+Dimers
+
+EPPIC
+
+Sensitivity
+
+PISA
+
+0.5
+
+13
+18
+6
+4
+2
+
+16
+32
+11
+4
+3
+
+PISA
+EPPIC
+PI+EP
+QSalign
+QSbio
+
+0.10
+0.20
+0.07
+0.18
+0.05
+
+0.23
+0.27
+0.05
+0.11
+0.06
+
+0.39
+0.15
+0.10
+0.13
+0.11
+
+PISA
+EPPIC
+PI+EP
+QSalign
+QSbio
+
+0.79
+0.87
+0.72
+0.9
+0.71
+
+0.89
+0.84
+0.78
+0.97
+0.88
+
+0.88
+0.65
+0.59
+0.98
+0.86
+
+PISA
+EPPIC
+PI+EP
+QSalign
+QSbio
+
+0.85
+0.84
+0.91
+0.9
+0.95
+
+0.83
+0.79
+0.91
+0.93
+0.97
+
+0.74
+0.75
+0.83
+0.92
+0.92
+
+0
+
+1
+
+QS alignments
+PDB
+
+0.5
+
+0
+1
+
+0.5
+
+0
+
+Oligomers
+
+EPPIC
+
+Disagreement
+Low confidence
+
+PISA
+
+Sensitivity
+
+1
+PDB
+
+© 2017 Nature America, Inc., part of Springer Nature. All rights reserved.
+
+0
+
+0
+
+Oligo.
+
+Error rate (%)
+
+0.5
+Specificity
+
+Dim.
+
+16
+16
+8
+13
+4
+
+FRP
+
+1
+
+0.5
+
+Mono.
+PISA
+EPPIC
+PI+EP
+QSalign
+QSbio
+
+TRP
+
+0
+
+PISA
+EPPIC
+PISA+EPPIC
+anti-QSalign
+QSbio
+
+AUC
+
+No. of monomeric vs
+oligomeric homologues
+
+PISA
+0.81
+EPPIC
+0.84
+Anti-QSalign 0.94
+
+0.5
+
+1
+Sensitivity
+
+PDB
+
+Monomers
+
+b
+
+1
+Query
+protein
+
+Sensitivity
+
+a
+
+0.5
+
+0
+1
+
+0.5
+Specificity
+
+0
+
+Figure 3 | Principle of anti-QSalign and benchmark of QSbio. (a) anti-QSalign uses the oligomeric state of homologs to infer whether a protein is
+monomeric or oligomeric. ROC analysis based the cGS data set (144 monomers and 187 oligomers). The AUC for anti-QSalign, PISA and EPPIC is shown
+in graph on right. (b) Benchmark of individual methods and of their integration into QSbio. ROC curves are shown for each method and separately for
+monomers, dimers and higher order oligomers. Values of statistics derived from the benchmark are shown in the table. FPR, false positive rate; TPR, true
+positive rate; AUC, area under the curve. (c) Example of two QS states annotated as correct or incorrect in QSbio. The predictions across methods agree
+for the top QS (green, PDB code 2I56) and disagree for the QS underneath (PDB code 1JQN). Detailed prediction information for the benchmarks of
+panels a and b is provided in Supplementary Data 1.
+
+(see Online Methods, Fig. 3c and Supplementary Fig. 5). The
+comparison of PISA and EPPIC predictions with PDB assemblies
+enabled consensus predictions to be derived from their agreement or disagreement. We expected that a QS supported by both
+methods would be more likely to be biologically relevant than a
+QS supported by only one or neither method.
+Among the structures annotated by QSalign or anti-QSalign,
+QSbio relied on all three methods. For other structures, QSbio
+combined only PISA and EPPIC. We assessed the performance
+of QSbio and saw that integrating predictions gave substantial
+improvements over each method taken individually. Integrating
+PISA and EPPIC (without QSalign/anti-QSalign) improved AUC
+values by 0.06, 0.08 and 0.08 for monomers, dimers and oligomers
+to reach values of 0.91, 0.91 and 0.83, respectively (Fig. 3b). A
+notable improvement is seen among dimers, where the false positive rate is above 0.20 for either PISA or EPPIC, but it decreases
+to 0.05 when both methods agree.
+For structures also annotated by QSalign or anti-QSalign, the
+performance of QSbio was remarkable; among monomer and dimers, the AUC reached 0.95 and 0.97, respectively (Fig. 3b). Among
+higher order oligomers, the predictive power of QSalign was already
+maximal (AUC = 0.92) and only marginally improved in QSbio.
+Overall, QSbio provides QS annotations with a quality
+approaching that of manual curation for 80% of monomeric and
+70% of homo-oligomeric structures, and it provides high-quality
+annotations for the rest of the structures. We estimated error
+rates for each class of prediction within the benchmark, and
+from these error rates we derived five levels of annotation confidence: very high, high, medium, low and very low, corresponding to estimated error rates of 0–2%, 2–5%, 5–15%, 15–50% and
+50–100%. The numbers of structures assigned to each category
+were, respectively: 51,050; 18,217; 14,995; 14,335 and 11,499
+(Supplementary Data 2). These annotations will allow the
+ | ADVANCE ONLINE PUBLICATION | nature methods
+
+scientific community to select high-confidence QSs to carry out
+structural analyses. Equally important, the low-confidence classes
+pinpoint structures in the PDB that may require correction.
+Plasticity of interfaces
+Interaction interfaces place constraints on the structure, chemistry and evolution of proteins. Structurally, subunits may be
+required to maintain a precise orientation relative to each other 42.
+Chemically, a specific composition at the interface is needed for
+binding18,19,21–23, and mutations generally decrease the interaction affinity43. As a result, on average, interfaces are hydrophobic,
+they are enriched in specific sets of amino acids, and their residues are more conserved than those found at the surface27–31.
+There is, however, a large degree of variability around these
+average trends; some interfaces can be as hydrophilic as protein
+surfaces, while others can be less conserved than protein surfaces. It can be hypothesized that such variability reflects different
+structural requirements found across different protein families.
+In that case, structurally similar interfaces should exhibit similar
+physicochemical properties. Alternatively, specific protein families may not require specific physicochemical properties of their
+interface. In that case, physicochemical properties of interfaces
+would be free to diverge despite the need to maintain the subunit
+interaction geometry. To resolve this, we compared the variability
+of interface properties within versus across protein families.
+As an initial case study, we analyzed six dimeric alcohol dehydrogenases, which show high structural similarity, with a mean
+TM-score among pairs equal to 0.81. In these enzymes, NAD
+(or NADP) is used as a cofactor and is in contact with both subunits, so we expected physicochemical and evolutionary properties
+of the dimeric interfaces to be conserved. We analyzed three interface properties (interface propensity, interface hydrophobicity
+and the ratio of interface to surface conservation) among the six
+
+Articles
+1E3I
+
+4DVJ, 31% id
+
+Mus musculus
+
+c
+Complex 1
+
+Rhizobium etli
+
+39,321 pairs of
+interfaces
+
+Complex 2
+
+b 100
+Rank across full data set
+
+a
+
+Propensity (P)
+Hydrophob (H)
+Conservation (C)
+
+1E3I
+3COS 3COS
+1E3I
+
+80
+
+2JHF
+60
+
+2JHF
+4OAQ
+4OAQ 1E3I
+3COS
+2JHF
+4ILK
+
+40
+20
+
+4DVJ
+
+4ILK 4DVJ
+4ILK
+
+4DVJ
+
+0
+
+Variation
+across
+families
+
+1
+0.5
+0
+0 0.5 1 1.5
+Complex 1 (P or H or C)
+
+High R2 :
+variation within family
+is low compared to
+variation across families
+Family-specific constraints
+Low R2 :
+variation within family
+is comparable to
+variation across families
+No family-specific contraints
+
+2
+
+Variation
+within
+families
+
+d
+Correlation (R )
+
+Complex 2 (P or H or C)
+
+© 2017 Nature America, Inc., part of Springer Nature. All rights reserved.
+
+P
+
+1.5
+
+4OAQ
+
+H
+
+C
+
+0.4
+0.3
+0.2
+0.1
+0.0
+P
+
+H C
+
+Figure 4 | Protein interfaces are plastic. (a) We compared the interfaces
+of structurally similar protein complexes and exemplify interface plasticity
+in dimeric alcohol dehydrogenases. Two homologous structures sharing
+31% sequence identity are shown. The interface, shown with spheres, is
+conserved structurally but not chemically. (b) Rank of interface properties
+for six alcohol dehydrogenases denoted by their PDB code, where 0 and
+100 correspond, respectively, to the lowest and highest values seen in any
+complex from the data set. (c) We evaluated interface plasticity across
+the entire data set. The correlation coefficient (R2) of a given property
+for pairs of structures reflects whether that property is constrained in a
+family-specific manner. If pairs of homologous interfaces exhibit similar
+values for the properties examined, a high R2 value is expected. In
+contrast, if there are no family-specific constraints, homologous interfaces
+will be as different from each other as two random interfaces can be,
+and R2 will be low. (d) Correlation coefficients calculated among 21,434
+pairs of structurally similar interfaces with sequences sharing less than
+30% sequence identity. Dot plots from which the correlation values were
+calculated are shown in Supplementary Figure 6. Error bars show the
+95% confidence interval.
+
+members of the family. We then compared how these properties
+varied relative to the entire data set of 39,321 pairs (Fig. 4a). We
+observed that interface properties across the six enzymes spanned
+nearly the entire range seen in the data set (Fig. 4b). For example,
+the human enzyme (PDB code 3COS) has a highly hydrophobic
+interface, while that of Rhizobium etli (PDB code 4DVJ) is predominantly hydrophilic. Similarly, in terms of conservation, the
+interface of the enzyme from Escherichia coli (PDB code 4ILK)
+is 3.9 times more conserved than the rest of the surface, while its
+yeast homolog (PDB code 4OAQ) shows interface conservation
+similar to that of the rest of the surface. Thus, these dimers do not
+need their interface to meet strict family-specific physicochemical requirements. Rather, their interfaces exhibit nearly as much
+variability as is sampled among dimers in general.
+Is such interface plasticity specific to this alcohol dehydrogenase
+family, or is it general to all protein families? To answer this question, we derived a data set of 39,321 pairs of homologous interfaces
+based on the results of QSalign. We then assessed the within-family
+variability of each property relative to the variability across families.
+If variability within families is small compared with the variability
+
+seen across families, the correlation coefficient will be close to one.
+However, if the variability within families is as large as the variability across families (as we observed for alcohol dehydrogenases),
+the correlation coefficient will be close to zero (Fig. 4c). When
+comparing interface properties among homologs sharing 80% to
+90% sequence identity, we observe high correlations, with R2 values
+equal to 0.83, 0.55 and 0.54 for interface conservation, hydrophobicity and propensity, respectively (Supplementary Fig. 6). However,
+the fact that close homologs share interface properties is expected,
+because these homologs have not had sufficient evolutionary time
+to diverge. As sequence identity decreases among the homologs
+being compared, so does the similarity between their interfaces, to
+the point where the interfaces within two homologous assemblies
+are nearly as different as two random interfaces. Indeed, for the
+three interface properties we considered, the correlation among distant homologs gets close to zero (Fig. 4d), even though they share
+the same interface geometry and overall structure. Thus, this result
+generalizes previous observations made on heteromeric and transient interactions44,45 and shows that homo-oligomeric interfaces,
+which are often large and stable, are nevertheless highly plastic.
+DISCUSSION
+We introduced two complementary approaches, QSalign and antiQSalign, which allow QS prediction based on conservation across
+evolution. While we focused on annotating monomers and homooligomers, QS conservation could, in principle, also be applied to
+hetero-oligomers. Such an extension will require additional developments, because complexes with different numbers of subunits
+will need to be compared, and because subunits of different sizes
+make a global measure of structural similarity hard to interpret.
+The main limitation of QSalign and anti-QSalign is their
+requirement for homologous structures, but the high species
+coverage of the PDB allowed annotation of ~80% and ~70%
+of monomeric and homo-oligomeric structures, respectively
+(Supplementary Table 2). We anticipate that these fractions
+will increase with time as more structures are solved. Moreover,
+increasing the number of high-quality QS annotations will be
+important for detailed structural analyses such as the examination
+of structural properties of disease-causing mutations46,47 or the
+investigation of determinants of protein evolution48,49.
+In addition to using QS conservation across evolution, we
+employed QS comparison to integrate predictions of different
+methods with QSbio, which considerably improved the prediction
+accuracy for monomers and dimers. A noteworthy feature of QSbio
+is the confidence estimates that will facilitate the interpretation of
+QS information both for individual structures and for PDB-wide
+data sets serving in structural bioinformatics analyses.
+Methods
+Methods, including statements of data availability and any associated accession codes and references, are available in the online
+version of the paper.
+Note: Any Supplementary Information and Source Data files are available in the
+online version of the paper.
+Acknowledgments
+We thank H. Greenblatt for valued help with operating the computer cluster, and
+we thank O. Dym and S. Rogotner for providing the photo of a protein crystal
+used in Figure 1. We thank J. Sussman for feedback on the work and D. Fass for
+comments on the manuscript. This work was supported by a VATAT fellowship to
+
+nature methods | ADVANCE ONLINE PUBLICATION | 
+
+Articles
+S.D. by the Israel Science Foundation and the I-CORE Program of the Planning and
+Budgeting Committee (grant nos. 1775/12 and 2179/14), by the Marie Curie CIG
+Program to E.D.L. (project no. 711715), by the HFSP Career Development Award to
+E.D.L. (award no. CDA00077/2015), and by a research grant from A.-M. Boucher.
+E.D.L. is incumbent of the Recanati Career Development Chair of Cancer Research.
+AUTHOR CONTRIBUTIONS
+S.D. and E.D.L. designed and performed the experiments. D.W.R. adapted the
+Kpax algorithm to enable the calculations. S.D. and E.D.L. wrote the manuscript
+with input from D.W.R. All authors corrected and approved the final manuscript.
+COMPETING FINANCIAL INTERESTS
+The authors declare no competing financial interests.
+
+© 2017 Nature America, Inc., part of Springer Nature. All rights reserved.
+
+Reprints and permissions information is available online at http://www.nature.
+com/reprints/index.html. Publisher’s note: Springer Nature remains neutral
+with regard to jurisdictional claims in published maps and institutional
+affiliations.
+1.
+
+Goodsell, D.S. & Olson, A.J. Structural symmetry and protein function.
+Annu. Rev. Biophys. Biomol. Struct. 29, 105–153 (2000).
+2. Levy, E.D., Pereira-Leal, J.B., Chothia, C. & Teichmann, S.A. 3D complex: a
+structural classification of protein complexes. PLoS Comput. Biol. 2, e155
+(2006).
+3. Lukatsky, D.B., Shakhnovich, B.E., Mintseris, J. & Shakhnovich, E.I.
+Structural similarity enhances interaction propensity of proteins. J. Mol.
+Biol. 365, 1596–1606 (2007).
+4. André, I., Strauss, C.E., Kaplan, D.B., Bradley, P. & Baker, D. Emergence of
+symmetry in homooligomeric biological assemblies. Proc. Natl. Acad. Sci.
+USA 105, 16148–16152 (2008).
+5. Marsh, J.A. & Teichmann, S.A. Structure, dynamics, assembly, and
+evolution of protein complexes. Annu. Rev. Biochem. 84, 551–575 (2015).
+6. Ahnert, S.E., Marsh, J.A., Hernández, H., Robinson, C.V. & Teichmann, S.A.
+Principles of assembly reveal a periodic table of protein complexes.
+Science 350, aaa2245 (2015).
+7. Nooren, I.M. & Thornton, J.M. Diversity of protein-protein interactions.
+EMBO J. 22, 3486–3492 (2003).
+8. Kühner, S. et al. Proteome organization in a genome-reduced bacterium.
+Science 326, 1235–1240 (2009).
+9. Perica, T. et al. The emergence of protein complexes: quaternary structure,
+dynamics and allostery. Colworth Medal Lecture. Biochem. Soc. Trans. 40,
+475–491 (2012).
+10. Renatus, M., Stennicke, H.R., Scott, F.L., Liddington, R.C. & Salvesen, G.S.
+Dimer formation drives the activation of the cell death protease caspase
+9. Proc. Natl. Acad. Sci. USA 98, 14250–14255 (2001).
+11. Tang, P. Hung M-C, & Klostergaard, J. Human pro-tumor necrosis factor is
+a homotrimer. Biochemistry 35, 8216–8225 (1996).
+12. Pereira-Leal, J.B., Levy, E.D., Kamp, C. & Teichmann, S.A. Evolution of
+protein complexes by duplication of homomeric interactions. Genome Biol.
+8, R51 (2007).
+13. Berman, H.M. et al. The Protein Data Bank. Nucleic Acids Res. 28, 235–
+242 (2000).
+14. Velankar, S. et al. PDBe: improved accessibility of macromolecular structure
+data from PDB and EMDB. Nucleic Acids Res. 44 D1, D385–D395 (2016).
+15. Henrick, K. & Thornton, J.M. PQS: a protein quaternary structure file
+server. Trends Biochem. Sci. 23, 358–361 (1998).
+16. Janin, J. Specific versus non-specific contacts in protein crystals. Nat.
+Struct. Biol. 4, 973–974 (1997).
+17. Carugo, O. & Argos, P. Protein-protein crystal-packing contacts. Protein
+Sci. 6, 2261–2263 (1997).
+18. Ponstingl, H., Henrick, K. & Thornton, J.M. Discriminating between
+homodimeric and monomeric proteins in the crystalline state. Proteins 41,
+47–57 (2000).
+19. Zhu, H., Domingues, F.S., Sommer, I. & Lengauer, T. NOXclass: prediction
+of protein-protein interaction types. BMC Bioinformatics 7, 27 (2006).
+20. Krissinel, E. & Henrick, K. Inference of macromolecular assemblies from
+crystalline state. J. Mol. Biol. 372, 774–797 (2007).
+21. Bernauer, J., Bahadur, R.P., Rodier, F., Janin, J. & Poupon, A. DiMoVo: a
+Voronoi tessellation-based method for discriminating crystallographic and
+biological protein-protein interactions. Bioinformatics 24, 652–658 (2008).
+22. Tsuchiya, Y., Nakamura, H. & Kinoshita, K. Discrimination between
+biological interfaces and crystal-packing contacts. Adv. Appl. Bioinform.
+Chem. 1, 99–113 (2008).
+23. Bahadur, R.P., Chakrabarti, P., Rodier, F. & Janin, J. A dissection of specific
+and non-specific protein-protein interfaces. J. Mol. Biol. 336, 943–955 (2004).
+
+ | ADVANCE ONLINE PUBLICATION | nature methods
+
+24. Pal, A., Chakrabarti, P., Bahadur, R., Rodier, F. & Janin, J. Peptide
+segments in protein-protein interfaces. J. Biosci. 32, 101–111 (2007).
+25. Tina, K.G., Bhadra, R. & Srinivasan, N. PIC: Protein Interactions
+Calculator. Nucleic Acids Res. 35, W473–W4766 (2007).
+26. Liu, Q., Li, Z. & Li, J. Use B-factor related features for accurate
+classification between protein binding interfaces and crystal packing
+contacts. BMC Bioinformatics 15 (Suppl. 16), S3 (2014).
+27. Elcock, A.H. & McCammon, J.A. Identification of protein oligomerization
+states by analysis of interface conservation. Proc. Natl. Acad. Sci. USA 98,
+2990–2994 (2001).
+28. Guharoy, M. & Chakrabarti, P. Conservation and relative importance of
+residues across protein-protein interfaces. Proc. Natl. Acad. Sci. USA 102,
+15447–15452 (2005).
+29. Schärer, M.A., Grütter, M.G. & Capitani, G. CRK: an evolutionary approach
+for distinguishing biologically relevant interfaces from crystal contacts.
+Proteins 78, 2707–2713 (2010).
+30. Baskaran, K., Duarte, J.M., Biyani, N., Bliven, S. & Capitani, G. A PDBwide, evolution-based assessment of protein-protein interfaces. BMC
+Struct. Biol. 14, 22 (2014).
+31. Ashkenazy, H. et al. ConSurf 2016: an improved methodology to estimate
+and visualize evolutionary conservation in macromolecules. Nucleic Acids
+Res. 44, W344–W350 (2016).
+32. Xu, Q. et al. Statistical analysis of interface similarity in crystals of
+homologous proteins. J. Mol. Biol. 381, 487–507 (2008).
+33. Xu, Q. & Dunbrack, R.L. Jr. The protein common interface database
+(ProtCID)—a comprehensive database of interactions of homologous
+proteins in multiple crystal forms. Nucleic Acids Res. 39, D761–D770
+(2011).
+34. Shoemaker, B.A. et al. IBIS (Inferred Biomolecular Interaction Server)
+reports, predicts and integrates multiple types of conserved interactions
+for proteins. Nucleic Acids Res. 40, D834–D840 (2012).
+35. Faure, G., Andreani, J. & Guerois, R. InterEvol database: exploring the
+structure and evolution of protein complex interfaces. Nucleic Acids Res.
+40, D847–D856 (2012).
+36. Levy, E.D. PiQSi: protein quaternary structure investigation. Structure 15,
+1364–1367 (2007).
+37. Sippl, M.J. & Wiederstein, M. Detection of spatial correlations in protein
+structures and molecular complexes. Structure 20, 718–728 (2012).
+38. Koike, R. & Ota, M. SCPC: a method to structurally compare protein
+complexes. Bioinformatics 28, 324–330 (2012).
+39. Mukherjee, S. & Zhang, Y. MM-align: a quick algorithm for aligning
+multiple-chain protein complex structures using iterative dynamic
+programming. Nucleic Acids Res. 37, e83 (2009).
+40. Ritchie, D.W., Ghoorah, A.W., Mavridis, L. & Venkatraman, V. Fast protein
+structure alignment using Gaussian overlap scoring of backbone peptide
+fragment similarity. Bioinformatics 28, 3274–3281 (2012).
+41. Zhang, Y. & Skolnick, J. TM-align: a protein structure alignment
+algorithm based on the TM-score. Nucleic Acids Res. 33, 2302–2309
+(2005).
+42. Perica, T., Chothia, C. & Teichmann, S.A. Evolution of oligomeric state
+through geometric coupling of protein interfaces. Proc. Natl. Acad. Sci.
+USA 109, 8127–8132 (2012).
+43. Moal, I.H. & Fernández-Recio, J. SKEMPI: a structural kinetic and
+energetic database of mutant protein interactions and its use in empirical
+models. Bioinformatics 28, 2600–2607 (2012).
+44. Andreani, J., Faure, G. & Guerois, R. Versatility and invariance in the
+evolution of homologous heteromeric interfaces. PLOS Comput. Biol. 8,
+e1002677 (2012).
+45. Sudha, G., Singh, P., Swapna, L.S. & Srinivasan, N. Weak conservation of
+structural features in the interfaces of homologous transient proteinprotein complexes. Protein Sci. 24, 1856–1873 (2015).
+46. Shi, Z. & Moult, J. Structural and functional impact of cancer-related
+missense somatic mutations. J. Mol. Biol. 413, 495–512 (2011).
+47. David, A. & Sternberg, M.J. The contribution of missense mutations in
+core and rim residues of protein-protein interfaces to human disease. J.
+Mol. Biol. 427, 2886–2898 (2015).
+48. Garcia-Seisdedos, H., Empereur-Mot, C., Elad, N. & Levy, E.D. Proteins
+evolve on the edge of supramolecular self-assembly. Nature 548, 244–247
+(2017).
+49. Bloom, J.D., Drummond, D.A., Arnold, F.H. & Wilke, C.O. Structural
+determinants of the rate of protein evolution in yeast. Mol. Biol. Evol. 23,
+1751–1761 (2006).
+50. Minasov, G. et al. Functional implications from crystal structures of the
+conserved Bacillus subtilis protein Maf with and without dUTP. Proc. Natl.
+Acad. Sci. USA 97, 6328–6333 (2000).
+
+© 2017 Nature America, Inc., part of Springer Nature. All rights reserved.
+
+ONLINE METHODS
+Data sets. The data set of protein structures on which all analyses were performed is based on 3DComplex as of March 2015
+(ref. 2) and consists of 110,498 ‘biological assemblies’ defined
+by the Protein Data Bank. Note that the total number of structures annotated in QSbio is slightly lower (110,096) because
+EPPIC lacks some annotations. The data set is available on the
+3DComplex (version 5) website: http://shmoo.weizmann.ac.il/
+elevy/3dcomplexV5/Home.cgi.
+For each structure, we also included the top prediction
+from PISA20 as of April 2015. EPPIC assignments of interfaces
+were kindly provided by G. Capitani (Paul Scherrer Institute,
+Switzerland) in October 2015.
+Structural superposition of quaternary structures. Structural
+superposition was carried out using Kpax (version 3)40. Briefly,
+Kpax first aligns two structures by placing all possible pairs of
+5-mer fragments at the coordinate origin by exploiting the tetrahedral geometry of their central Cα atoms and by using dynamic
+programming (DP) to find the optimal combination of pairs of
+fragments and hence pairs of central Cα atoms. The aligned Cα
+atoms are then superposed by least-squares fitting, and the resulting
+superposition is refined using further rounds of DP on the atomic
+Gaussian overlap of the superposed Cα pairs. Each Gaussian represents the volume of one Cα atom. Thus, if two Cα atoms overlap
+perfectly, they contribute one volume unit to the overall superposition score; and if two aligned protein chains superpose perfectly,
+then the total Gaussian overlap score directly corresponds to the
+volume of their overlaid Cα atoms. Kpax can align structures with
+multiple chains, but only in the given chain order. To find the
+maximum aligned overlap volume between two multichain oligomers, it is necessary to determine the best chain order of one
+structure with respect to the other. We therefore employed a twostep heuristic procedure to avoid the computational cost of running Kpax repeatedly on different chain order permutations. In
+this procedure, a first alignment and superposition is carried out.
+The coordinates of the superposed QSs are then analyzed to map
+corresponding chains across the two structures. Scores between
+chain pairs are calculated and correspond to the number of Cα
+atoms of one chain closer than 2 Å from any Cα from another
+chain. The highest ranking chain pairs provide correspondences
+that are used to rewrite the PDB file in matching chain order. The
+reordered coordinates are then used in a second round of structural superposition, which yields the final TM-score. Pseudocode
+describing this procedure is provided in a Supplementary Note.
+An executable version of the structural superposition program is
+available at https://github.com/elevywis/QSalign.
+Protein Data Bank superposition of quaternary structures. The
+annotation process of QSalign first required structural superposition of homo-oligomers. To save computation time, we carried
+out structural alignments between potential matches only—that
+is, between pairs of structures sharing structural homology, as
+reflected in their SCOP or PFAM domain architecture, or sharing sequence homology (>30% sequence identity). Ultimately,
+we measured the structural similarity of 25,965,020 QS pairs and
+recorded the TM-score for each, which was stored in a MySQL
+database table. We provide the pseudocode for the comparison of
+
+doi:10.1038/nmeth.4510
+
+one query structure with multiple target structures as a function
+“QSalign” in a Supplementary Note.
+Annotation procedure. The execution of structural alignments
+was followed by an inference process described in the pseudocode
+“QSinfer” (Supplementary Note). Briefly, a query QS was annotated as correct if another structurally similar QS (TM-score >
+threshold) was found for a homolog with less than 80% sequence
+identity. Pairs of QSs sharing more than 80% sequence identity
+were not considered in order to reduce the risk of the same crystal
+packing being formed on account of protein-surface similarity.
+The annotation process was carried out for each symmetry group
+separately, starting with those containing larger numbers of subunits. This condition ensured that a lower order oligomer (e.g., a
+dimer) would be annotated as correct only if no evidence for highorder oligomerization (e.g., a tetramer) was found. Once all QSs
+from a symmetry group were processed, those annotated as correct were used to search for possible errors. The overall strategy
+is described in the pseudocode “QSpropagate” (Supplementary
+Note). The correction step consists of identifying proteins with
+an identical sequence and a structure different from that of a QS
+annotated as being correct (Supplementary Figs. 3 and 4). Then,
+the annotation depends on the number of subunits of the QS to
+be annotated (QS2) and the QS that is supposedly correct (QS1).
+We distinguish three cases: (i) if QS2 has more subunits than QS1,
+we analyze the consistency of QS2 given its number of subunits
+and its symmetry. We call QS2 consistent when the number of
+subunits is expected from the point-group symmetry (e.g., dimer
+for C2, tetramer for D2, etc.). Consistent structures are flagged as
+‘ambiguous’ and are not annotated as errors, while inconsistent
+structures are annotated as errors. (ii) If QS2 has the same number
+of subunits as QS1, we infer that QS2 is incorrect. (iii) When QS2
+has fewer subunits than QS1, we infer that interfaces are missing
+from QS2, which is also annotated as incorrect.
+To optimize the TM-score threshold at which two QSs were
+considered equivalent, we carried out several full cycles of annotation (e.g., inference + propagation steps) using different TMscores cutoff (Fig. 2) and benchmarked the results after each cycle
+based on PiQSi36.
+Benchmarking the annotations of QSalign for TM-score
+optimization. After each cycle of the annotation procedure, we
+counted the number of structures in the following categories:
+TP, annotated as correct by QSalign and PiQSi; FP, annotated as
+correct by QSalign and as incorrect by PiQSi; FN, annotated as
+incorrect by QSalign and as correct by PiQSi; and TN, annotated
+as incorrect by both QSalign and PiQSi. We calculated the error
+rate of ‘correct’ annotations by the false discovery rate FDR =
+FP/(TP + FP) and the error rate of ‘incorrect’ annotations by the
+false omission rate FOR = FN/(FN + TN). The data set of structures on which these rates were calculated was filtered at a level of
+90% sequence identity. In addition, we used only high-confidence
+annotations from PiQSi that did not contain the tag “probable.”
+The resulting number of structures from PiQSi available for the
+benchmark was 1,434.
+Annotating monomers with anti-QSalign. We annotated monomers based on the QS state—either monomeric or oligomeric—of
+
+nature methods
+
+© 2017 Nature America, Inc., part of Springer Nature. All rights reserved.
+
+known homologs. The underlying assumption of this approach is
+that QS is generally conserved during evolution51, so structures
+homologous to a true monomer should be more likely to be monomeric than oligomeric. Thus, for a particular protein sequence,
+the enrichment of monomeric over oligomeric homologs was used
+to derive a probability score to be monomeric. These probabilities
+were estimated based on PDB structures not found in any benchmark, as follows. We defined six bins of ‘numbers of homologs’:
+0, 1, 2, 3–4, 4–8, and >8; and each protein was assigned to two
+such bins, one for the number of monomeric homologs and the
+other for the number of oligomeric homologs. We then recorded
+frequencies of monomers in each bin combination; for example,
+4.4% of monomers have three or four monomeric homologs and a
+single oligomeric homolog. Then, we recorded the same frequencies for oligomers; for example, 0.08% of oligomers have three
+or four monomeric homologs and a single oligomeric homolog.
+The frequencies were subsequently converted into probabilities;
+for example, we estimated that a protein has a probability equal
+to 4.4/(4.4 + 0.08) = 0.98 to be monomeric if it has three or four
+monomeric homologs and a single oligomeric homolog. This
+process is illustrated in Supplementary Figure 7. We considered
+proteins sharing a minimum of 30% and a maximum of 90%
+sequence identity to be homologs. We also imposed a minimum
+of 60% overlap of the sequence alignment relative to the longest
+of the two proteins being aligned.
+Integrating quaternary structure information with QSbio.
+QSbio compares QSs from the PDB with predictions of EPPIC,
+PISA, and QSalign/anti-QSalign when available. The comparison with PISA was carried out by structural superposition, as
+described above, and pairs of QSs with a TM-score above 0.9
+were considered identical. To compare PDB and EPPIC QSs, we
+mapped interface groups from EPPIC onto PDB structures. For
+the mapping, we decomposed each PDB assembly into pairs of
+contacting chains, and each pair was superposed onto the interfaces from EPPIC to identify matching pairs (Supplementary
+Fig. 5). We then derived a weighted score for a PDB structure
+based on its annotation by the different methods. For monomers,
+the score was calculated as: SMONO = 0.4 × antiQSalign + 0.4 ×
+PISA + 0.2 × EPPIC. For oligomers (including dimers), the score
+was calculated as: SOLIGO = 0.7 × QSalign + 0.2 × PISA + 0.1
+× EPPIC. In the benchmark (Fig. 3b), we considered positives
+as those with SMONO ≥ 0.8 or SOLIGO > 0.8 and the negatives as
+those having a score equal to 0. When the annotation of (anti)QSalign was not available, the score was renormalized to 1.0, but
+the same 2:1 weights for PISA and EPPIC were used. We estimated the expected error rates (err) in QSbio by: err = FPR × fN /
+(FPR × fN + TPR × fP), where TPR and FPR are the true and false
+positive rates measured in each score class, and fP and fN are the
+(unknown) fractions of correct and incorrect structures in the
+PDB. We aimed for conservative error rates, so we used a relatively
+high value for fN, with fN = 0.2 and fP = 0.8. Importantly, the
+error rates estimated for each class also depend on the benchmark
+data set and on the assumed pattern of errors in the PDB. In that
+respect, their absolute value should be interpreted with care. We
+do expect, however, that the accuracy rank of the different classes
+will be robust. To reflect this limitation, as well as to simplify
+the use of these predictions by end users, we created five confidence categories: ‘very high’, ‘high’, ‘medium’, ‘low’ and ‘very low’,
+nature methods
+
+corresponding respectively to estimated error rates of 0–2%,
+2–5%, 5–15%, 15–50%, and 50–100%.
+Comparative benchmarks against PiQSi. We compared the set
+of annotations obtained with QSalign and anti-QSalign to predictions derived from PISA and EPPIC. PiQSi annotations refer
+to specific PDB structures. Therefore, we could directly compare
+the annotations of PiQSi to the annotations of PISA and EPPIC
+for the corresponding structure. Positives and negatives were
+counted when the methods supported (positive, P) or did not
+support (negative, N) a particular PDB structure. These predictions, together with PiQSi annotations, allowed a contingency
+table to be created and performance statistics to be derived. ROC
+curves were plotted using R52 and the pROC package53. The numbers of structures (broken down by oligomeric state) used in this
+comparative benchmark are given in Supplementary Table 1,
+and details of predictions are provided in Supplementary
+Data 1.
+The conditions to count positives and negatives depend on
+the oligomeric state of the PDB structure considered. First, for
+monomeric proteins, the conditions for counting positives and
+negatives were:
+anti-QSalign: the ‘monomer probability score’ associated with
+the PDB code was above (positive) or below (negative) 0.4.
+PISA: no assembly was predicted (positive), or an assembly was
+predicted (negative).
+EPPIC: no biological interface was predicted (positive), or at
+least one was (negative).
+Combined PISA + EPPIC: both methods gave a positive prediction (positive) or both gave a negative prediction (negative).
+Disagreements (19% of the cases) were not used to calculate the
+error rate.
+QSbio: SMONO > = 0.8 (positive), or SMONO = 0 (negative).
+Intermediate scores (27% of the cases) were not used to calculate
+the error rate.
+Second, for oligomers with two or more subunits, the conditions for counting positives and negatives were:
+QSalign: the structure is annotated as correct (positive) or
+incorrect (negative).
+PISA: the structure matches (positive, TM-score > 0.9) or does
+not match the PDB structure (negative, TM-score < 0.9).
+EPPIC: when biological interfaces are mapped onto the PDB
+structure, they either maintain all subunits in contact (positive),
+or they do not (negative).
+Combined PISA + EPPIC: both methods gave a positive prediction (positive), or both gave a negative prediction (negative).
+Disagreements (20% and 35% of the cases for dimers and oligomers, respectively) were not used to calculate the error rate.
+QSbio: SOLIGO > 0.8 (positive), or SOLIGO = 0 (negative).
+Intermediate scores (16% and 16% of the cases for dimers and oligomers, respectively) were not used to calculate the error rate.
+Comparative benchmarks against the compendium goldstandard data set cGS. We assembled a second gold standard based on previously published data sets. We used data sets
+published by Bahadur et al.54, Ponstingl et al.18 and Duarte
+et al.55, which gave a total of 338 structures including 144 monomers, 137 dimers, and 57 oligomers (Supplementary Table 1,
+Supplementary Data 1). We call the so-obtained data set the
+doi:10.1038/nmeth.4510
+
+© 2017 Nature America, Inc., part of Springer Nature. All rights reserved.
+
+compendium gold standard (cGS). Note that the data set from
+Duarte et al.55 was used for ‘monomers/nonmonomer’ information only.
+An important difference to note between cGS and PiQSi is that
+we only used ‘PDB code identifiers’ for the cGS and not for actual
+structures. Therefore, we used the ‘number of subunits’ to assess
+predictions. For monomers, the conditions for counting positives
+and negatives were identical to those used in the PiQSi benchmark. For oligomers, however, they differed as follows:
+QSalign: the number of subunits predicted by QSalign is equal
+to the number of subunits in the benchmark data set (positive)
+or is different (negative).
+PISA: the number of subunits in the PISA assembly is equal to
+the number of subunits in the benchmark data set (positive) or
+is different (negative).
+EPPIC: we could not infer the number of subunits solely from
+interface information, and so we were unable to include EPPIC
+in this benchmark.
+Interface properties. We selected pairs of homologous dimers
+matching the following criteria: the TM-score was above 0.65,
+structure resolution was below 2.5 Å, structures were representatives of a nonredundant set filtered at 90% sequence identity, and
+structures were annotated as biological by QSalign. All properties
+were calculated on interface core residues, as defined in Levy56. To
+calculate sequence conservation, each protein was used to search
+for homologs in Uniref90 (ref. 57) and those homologs with >40%
+sequence identity and 80–100% coverage were kept to create a
+multiple alignment using MUSCLE58 with default parameters.
+Alignments with fewer than five sequences were discarded. We
+subsequently used rate4site with default parameters59 to obtain
+amino-acid-specific evolutionary rates. Rates were scaled by subtracting the minimum score to each alignment. Interface core and
+surface evolutionary rates were obtained by averaging the scores
+of residues composing each region. The relative conservation of
+interfaces was obtained by the ratio of evolutionary rate of the
+interface relative to the surface (interface/surface), and these were
+used in Figure 4 and Supplementary Figure 6. In Figure 2e,
+we used log(surface/interface) to obtain symmetric distributions.
+In Figure 2e, r > 0 indicates that the interface is more conserved
+relative to the surface. Interface hydrophobicity was calculated by
+the ratio of hydrophobic residues present at the interface. Interface
+
+doi:10.1038/nmeth.4510
+
+residue propensity was calculated by averaging individual aminoacid propensities taken from Dey et al.60 and normalizing them
+by the size of the interface.
+Statistics. The evolutionary rate distributions (Fig. 2e) were
+compared using a two-sided Wilcoxon test. The confidence
+intervals of Figure 4d were calculated based on Fisher′s Z transform as implemented in the cor.test function of the R statistical
+language.
+Code availability. The code implementing the heuristic procedure to be used with the Kpax algorithm for QS alignment is
+available at https://github.com/elevywis/QSalign.
+Life Sciences Reporting Summary. Further information on
+experimental design and reagents is available in the Life Sciences
+Reporting Summary.
+Data availability statement. All the annotations and confidence
+categories derived from this work are available for download at
+http://www.QSbio.org (for the most up-to-date information) and
+in Supplementary Data 2.
+51. Levy, E.D., Boeri Erba, E., Robinson, C.V. & Teichmann, S.A. Assembly
+reflects evolution of protein complexes. Nature 453, 1262–1265 (2008).
+52. R Core Team. R. A language and environment for statistical computing.
+R Foundation for Statistical Computing, Vienna, Austria https://www.Rproject.org/ (2016).
+53. Robin, X. et al. pROC: an open-source package for R and S+ to analyze
+and compare ROC curves. BMC Bioinformatics 12, 77 (2011).
+54. Bahadur, R.P., Chakrabarti, P., Rodier, F. & Janin, J. Dissecting subunit
+interfaces in homodimeric proteins. Proteins 53, 708–719 (2003).
+55. Duarte, J.M., Srebniak, A., Schärer, M.A. & Capitani, G. Protein interface
+classification by evolutionary analysis. BMC Bioinformatics 13, 334 (2012).
+56. Levy, E.D. A simple definition of structural regions in proteins and its use
+in analyzing interface evolution. J. Mol. Biol. 403, 660–670 (2010).
+57. Suzek, B.E., Wang, Y., Huang, H., McGarvey, P.B. & Wu, C.H. UniRef
+clusters: a comprehensive and scalable alternative for improving sequence
+similarity searches. Bioinformatics 31, 926–932 (2015).
+58. Edgar, R.C. MUSCLE: multiple sequence alignment with high accuracy and
+high throughput. Nucleic Acids Res. 32, 1792–1797 (2004).
+59. Pupko, T., Bell, R.E., Mayrose, I., Glaser, F. & Ben-Tal, N. Rate4Site: an
+algorithmic tool for the identification of functional regions in proteins by
+surface mapping of evolutionary determinants within their homologues.
+Bioinformatics 18 (Suppl. 1), S71–S77 (2002).
+60. Dey, S., Pal, A., Chakrabarti, P. & Janin, J. The subunit interfaces of
+weakly associated homodimeric proteins. J. Mol. Biol. 398, 146–160
+(2010).
+
+nature methods
+
+Initial submission
+
+Revised version
+
+Final submission
+
+Life Sciences Reporting Summary
+Nature Research wishes to improve the reproducibility of the work that we publish. This form is intended for publication with all accepted life
+science papers and provides structure for consistency and transparency in reporting. Every life science submission will use this form; some list
+items might not apply to an individual manuscript, but all fields must be completed for clarity.
+For further information on the points included in this form, see Reporting Life Sciences Research. For further information on Nature Research
+policies, including our data availability policy, see Authors & Referees and the Editorial Policy Checklist.
+
+`
+
+Experimental design
+
+1. Sample size
+Describe how sample size was determined.
+
+Sample size was determined by the available structures in the Protein Data Bank
+and in the 3DComplex database
+
+nature research | life sciences reporting summary
+
+Corresponding author(s): Emmanuel D. Levy
+
+2. Data exclusions
+Describe any data exclusions.
+
+All the available structures were included
+
+3. Replication
+Describe whether the experimental findings were
+reliably reproduced.
+
+NA
+
+4. Randomization
+Describe how samples/organisms/participants were
+allocated into experimental groups.
+
+NA
+
+5. Blinding
+Describe whether the investigators were blinded to
+group allocation during data collection and/or analysis.
+
+NA
+
+Note: all studies involving animals and/or human research participants must disclose whether blinding and randomization were used.
+
+6. Statistical parameters
+For all figures and tables that use statistical methods, confirm that the following items are present in relevant figure legends (or in the
+Methods section if additional space is needed).
+n/a Confirmed
+The exact sample size (n) for each experimental group/condition, given as a discrete number and unit of measurement (animals, litters, cultures, etc.)
+A description of how samples were collected, noting whether measurements were taken from distinct samples or whether the same
+sample was measured repeatedly
+A statement indicating how many times each experiment was replicated
+The statistical test(s) used and whether they are one- or two-sided (note: only common tests should be described solely by name; more
+complex techniques should be described in the Methods section)
+A description of any assumptions or corrections, such as an adjustment for multiple comparisons
+The test results (e.g. P values) given as exact values whenever possible and with confidence intervals noted
+A clear description of statistics including central tendency (e.g. median, mean) and variation (e.g. standard deviation, interquartile range)
+
+See the web collection on statistics for biologists for further resources and guidance.
+
+June 2017
+
+Clearly defined error bars
+
+1
+Nature Methods: doi:10.1038/nmeth.4510
+
+Policy information about availability of computer code
+
+7. Software
+Describe the software used to analyze the data in this
+study.
+
+Data analyses were carried out with custom Perl and R scripts. The core engine of
+the work for structural superposition of quaternary structures is available on
+Github. The predictions resulting from the method are available at www.QSbio.org
+
+For manuscripts utilizing custom algorithms or software that are central to the paper but not yet described in the published literature, software must be made
+available to editors and reviewers upon request. We strongly encourage code deposition in a community repository (e.g. GitHub). Nature Methods guidance for
+providing algorithms and software for publication provides further information on this topic.
+
+` Materials and reagents
+Policy information about availability of materials
+
+8. Materials availability
+Indicate whether there are restrictions on availability of
+unique materials or if these materials are only available
+for distribution by a for-profit company.
+
+N/A
+
+9. Antibodies
+
+nature research | life sciences reporting summary
+
+` Software
+
+Describe the antibodies used and how they were validated N/A
+for use in the system under study (i.e. assay and species).
+
+10. Eukaryotic cell lines
+
+`
+
+a. State the source of each eukaryotic cell line used.
+
+N/A
+
+b. Describe the method of cell line authentication used.
+
+N/A
+
+c. Report whether the cell lines were tested for
+mycoplasma contamination.
+
+N/A
+
+d. If any of the cell lines used are listed in the database
+of commonly misidentified cell lines maintained by
+ICLAC, provide a scientific rationale for their use.
+
+N/A
+
+Animals and human research participants
+
+Policy information about studies involving animals; when reporting animal research, follow the ARRIVE guidelines
+
+11. Description of research animals
+Provide details on animals and/or animal-derived
+materials used in the study.
+
+N/A
+
+Policy information about studies involving human research participants
+
+12. Description of human research participants
+Describe the covariate-relevant population
+characteristics of the human research participants.
+
+N/A
+
+June 2017
+
+2
+Nature Methods: doi:10.1038/nmeth.4510
+
+

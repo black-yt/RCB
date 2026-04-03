@@ -1,0 +1,21 @@
+state_title,apparatus,token_count,state_share
+California,ground,147,0.513986013986014
+California,airborne,139,0.486013986013986
+Colorado,ground,139,0.972027972027972
+Colorado,airborne,4,0.027972027972027972
+Idaho,ground,72,0.7422680412371134
+Idaho,airborne,25,0.25773195876288657
+Kansas,airborne,13,1.0
+Montana,ground,1,1.0
+Nevada,ground,57,0.7307692307692307
+Nevada,airborne,21,0.2692307692307692
+North Dakota,airborne,43,1.0
+Oklahoma,airborne,1,1.0
+Oregon,airborne,1,1.0
+South Dakota,airborne,1,1.0
+Texas,airborne,93,0.9029126213592233
+Texas,ground,10,0.0970873786407767
+Utah,ground,125,0.8741258741258742
+Utah,airborne,18,0.1258741258741259
+Wyoming,ground,41,0.8367346938775511
+Wyoming,airborne,8,0.16326530612244897

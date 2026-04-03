@@ -1,0 +1,90 @@
+{
+  "empty": {
+    "maps": 200,
+    "scenarios": 4,
+    "grid_shapes": [
+      "25x25"
+    ],
+    "mean_obstacle_density": 0.0,
+    "mean_component_count": 1.0,
+    "mean_largest_component_ratio": 1.0,
+    "mean_corridor_ratio": 0.0064
+  },
+  "random_small_top": {
+    "maps": 100,
+    "scenarios": 1,
+    "grid_shapes": [
+      "10x10"
+    ],
+    "mean_obstacle_density": 0.1788,
+    "mean_component_count": 1.43,
+    "mean_largest_component_ratio": 0.9894,
+    "mean_corridor_ratio": 0.2729
+  },
+  "maze": {
+    "maps": 400,
+    "scenarios": 4,
+    "grid_shapes": [
+      "25x25"
+    ],
+    "mean_obstacle_density": 0.4576,
+    "mean_component_count": 1.0,
+    "mean_largest_component_ratio": 1.0,
+    "mean_corridor_ratio": 0.5457
+  },
+  "random_large": {
+    "maps": 400,
+    "scenarios": 4,
+    "grid_shapes": [
+      "50x50"
+    ],
+    "mean_obstacle_density": 0.1762,
+    "mean_component_count": 4.07,
+    "mean_largest_component_ratio": 0.998,
+    "mean_corridor_ratio": 0.1701
+  },
+  "random_medium": {
+    "maps": 400,
+    "scenarios": 4,
+    "grid_shapes": [
+      "25x25"
+    ],
+    "mean_obstacle_density": 0.1734,
+    "mean_component_count": 2.21,
+    "mean_largest_component_ratio": 0.9965,
+    "mean_corridor_ratio": 0.1911
+  },
+  "random_small": {
+    "maps": 400,
+    "scenarios": 4,
+    "grid_shapes": [
+      "10x10"
+    ],
+    "mean_obstacle_density": 0.1787,
+    "mean_component_count": 1.415,
+    "mean_largest_component_ratio": 0.9899,
+    "mean_corridor_ratio": 0.2723
+  },
+  "room": {
+    "maps": 200,
+    "scenarios": 4,
+    "grid_shapes": [
+      "25x25"
+    ],
+    "mean_obstacle_density": 0.1952,
+    "mean_component_count": 1.0,
+    "mean_largest_component_ratio": 1.0,
+    "mean_corridor_ratio": 0.173
+  },
+  "warehouse": {
+    "maps": 400,
+    "scenarios": 4,
+    "grid_shapes": [
+      "25x25"
+    ],
+    "mean_obstacle_density": 0.288,
+    "mean_component_count": 1.0,
+    "mean_largest_component_ratio": 1.0,
+    "mean_corridor_ratio": 0.2315
+  }
+}

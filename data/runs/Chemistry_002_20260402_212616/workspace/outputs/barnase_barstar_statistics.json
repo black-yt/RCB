@@ -1,0 +1,19 @@
+{
+  "single_mutation_count": 49,
+  "single_mutation_median_ddg": 3.064990487400429,
+  "single_mutation_max_ddg": 7.662922851446397,
+  "single_mutation_min_ddg": -0.8884216115209495,
+  "spearman_ddg_vs_min_distance": -0.24424876325002415,
+  "ddg_by_interface_5A": {
+    "False": {
+      "count": 29.0,
+      "median": 2.527629951527089,
+      "mean": 3.265346137771407
+    },
+    "True": {
+      "count": 20.0,
+      "median": 3.7684029330470814,
+      "mean": 3.467699920002885
+    }
+  }
+}

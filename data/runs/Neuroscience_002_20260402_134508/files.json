@@ -1,0 +1,254 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 19265,
+    "mtime": 1775132954.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "test_simulated.csv",
+    "path": "data/test_simulated.csv",
+    "type": "file",
+    "size": 29204490,
+    "mtime": 1772421508.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "train_simulated.csv",
+    "path": "data/train_simulated.csv",
+    "type": "file",
+    "size": 68149042,
+    "mtime": 1772421506.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "bootstrap_confidence_intervals.csv",
+    "path": "outputs/bootstrap_confidence_intervals.csv",
+    "type": "file",
+    "size": 599,
+    "mtime": 1775132948.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_summary.json",
+    "path": "outputs/dataset_summary.json",
+    "type": "file",
+    "size": 484,
+    "mtime": 1775132946.0,
+    "exported": true
+  },
+  {
+    "name": "default_threshold_test_metrics.json",
+    "path": "outputs/default_threshold_test_metrics.json",
+    "type": "file",
+    "size": 373,
+    "mtime": 1775132946.0,
+    "exported": true
+  },
+  {
+    "name": "degradation_metrics_test.csv",
+    "path": "outputs/degradation_metrics_test.csv",
+    "type": "file",
+    "size": 923,
+    "mtime": 1775132946.0,
+    "exported": true
+  },
+  {
+    "name": "feature_importance.csv",
+    "path": "outputs/feature_importance.csv",
+    "type": "file",
+    "size": 579,
+    "mtime": 1775132946.0,
+    "exported": true
+  },
+  {
+    "name": "final_test_metrics.json",
+    "path": "outputs/final_test_metrics.json",
+    "type": "file",
+    "size": 477,
+    "mtime": 1775132946.0,
+    "exported": true
+  },
+  {
+    "name": "model_comparison_validation.csv",
+    "path": "outputs/model_comparison_validation.csv",
+    "type": "file",
+    "size": 557,
+    "mtime": 1775132946.0,
+    "exported": true
+  },
+  {
+    "name": "test_predictions.csv",
+    "path": "outputs/test_predictions.csv",
+    "type": "file",
+    "size": 2507823,
+    "mtime": 1775132948.0,
+    "exported": false
+  },
+  {
+    "name": "threshold_sweep_validation.csv",
+    "path": "outputs/threshold_sweep_validation.csv",
+    "type": "file",
+    "size": 19546,
+    "mtime": 1775132946.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 7682715,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 540574,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 725080,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 736463,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "calibration_plot.png",
+    "path": "report/images/calibration_plot.png",
+    "type": "file",
+    "size": 173535,
+    "mtime": 1775132948.0,
+    "exported": true
+  },
+  {
+    "name": "data_balance.png",
+    "path": "report/images/data_balance.png",
+    "type": "file",
+    "size": 236655,
+    "mtime": 1775132952.0,
+    "exported": true
+  },
+  {
+    "name": "degradation_metrics.png",
+    "path": "report/images/degradation_metrics.png",
+    "type": "file",
+    "size": 222201,
+    "mtime": 1775132952.0,
+    "exported": true
+  },
+  {
+    "name": "feature_correlation_heatmap.png",
+    "path": "report/images/feature_correlation_heatmap.png",
+    "type": "file",
+    "size": 130435,
+    "mtime": 1775132950.0,
+    "exported": true
+  },
+  {
+    "name": "feature_group_distributions.png",
+    "path": "report/images/feature_group_distributions.png",
+    "type": "file",
+    "size": 224863,
+    "mtime": 1775132952.0,
+    "exported": true
+  },
+  {
+    "name": "feature_importance.png",
+    "path": "report/images/feature_importance.png",
+    "type": "file",
+    "size": 135945,
+    "mtime": 1775132950.0,
+    "exported": true
+  },
+  {
+    "name": "model_comparison_curves.png",
+    "path": "report/images/model_comparison_curves.png",
+    "type": "file",
+    "size": 271001,
+    "mtime": 1775132950.0,
+    "exported": true
+  },
+  {
+    "name": "pca_projection.png",
+    "path": "report/images/pca_projection.png",
+    "type": "file",
+    "size": 2260264,
+    "mtime": 1775132952.0,
+    "exported": false
+  },
+  {
+    "name": "threshold_selection.png",
+    "path": "report/images/threshold_selection.png",
+    "type": "file",
+    "size": 289931,
+    "mtime": 1775132950.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12248,
+    "mtime": 1775132955.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5539,
+    "mtime": 1775108708.0,
+    "exported": true
+  }
+]

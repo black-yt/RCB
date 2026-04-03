@@ -1,0 +1,208 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 19560,
+    "mtime": 1775199874.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "sample",
+    "path": "data/sample",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r",
+    "path": "data/sample/2l3r",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r_ligand.sdf",
+    "path": "data/sample/2l3r/2l3r_ligand.sdf",
+    "type": "file",
+    "size": 13842,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2l3r_protein.pdb",
+    "path": "data/sample/2l3r/2l3r_protein.pdb",
+    "type": "file",
+    "size": 211329,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_notes.txt",
+    "path": "outputs/analysis_notes.txt",
+    "type": "file",
+    "size": 334,
+    "mtime": 1775199870.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 4765,
+    "mtime": 1775199870.0,
+    "exported": true
+  },
+  {
+    "name": "diffusion_metrics.json",
+    "path": "outputs/diffusion_metrics.json",
+    "type": "file",
+    "size": 1071,
+    "mtime": 1775199870.0,
+    "exported": true
+  },
+  {
+    "name": "framework_specification.json",
+    "path": "outputs/framework_specification.json",
+    "type": "file",
+    "size": 2955,
+    "mtime": 1775199870.0,
+    "exported": true
+  },
+  {
+    "name": "protein_ligand_contacts.csv",
+    "path": "outputs/protein_ligand_contacts.csv",
+    "type": "file",
+    "size": 3381,
+    "mtime": 1775199870.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 936,
+    "mtime": 1775199870.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 1583,
+    "mtime": 1775199870.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3651992,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 3634495,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5515632,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 569417,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "contact_profile.png",
+    "path": "report/images/contact_profile.png",
+    "type": "file",
+    "size": 149932,
+    "mtime": 1775199872.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 298022,
+    "mtime": 1775199872.0,
+    "exported": true
+  },
+  {
+    "name": "diffusion_validation.png",
+    "path": "report/images/diffusion_validation.png",
+    "type": "file",
+    "size": 508839,
+    "mtime": 1775199872.0,
+    "exported": true
+  },
+  {
+    "name": "protein_ligand_distance_map.png",
+    "path": "report/images/protein_ligand_distance_map.png",
+    "type": "file",
+    "size": 168639,
+    "mtime": 1775199870.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14676,
+    "mtime": 1775199875.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5562,
+    "mtime": 1775136067.0,
+    "exported": true
+  }
+]

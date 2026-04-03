@@ -1,0 +1,492 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 20164,
+    "mtime": 1775200520.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "amplitudes",
+    "path": "data/amplitudes",
+    "type": "directory"
+  },
+  {
+    "name": "N40_verification",
+    "path": "data/amplitudes/N40_verification",
+    "type": "directory"
+  },
+  {
+    "name": "N40_d10_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d10_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d12_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d14_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d14_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d16_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d16_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d18_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d18_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d20_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d20_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d8_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d8_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N_scan_depth12",
+    "path": "data/amplitudes/N_scan_depth12",
+    "type": "directory"
+  },
+  {
+    "name": "N16_d12_XEB",
+    "path": "data/amplitudes/N_scan_depth12/N16_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N24_d12_XEB",
+    "path": "data/amplitudes/N_scan_depth12/N24_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N32_d12_XEB",
+    "path": "data/amplitudes/N_scan_depth12/N32_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d12_XEB",
+    "path": "data/amplitudes/N_scan_depth12/N40_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "results",
+    "path": "data/results",
+    "type": "directory"
+  },
+  {
+    "name": "N40_verification",
+    "path": "data/results/N40_verification",
+    "type": "directory"
+  },
+  {
+    "name": "N40_d10_MB",
+    "path": "data/results/N40_verification/N40_d10_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d10_XEB",
+    "path": "data/results/N40_verification/N40_d10_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d12_MB",
+    "path": "data/results/N40_verification/N40_d12_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d12_XEB",
+    "path": "data/results/N40_verification/N40_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d14_MB",
+    "path": "data/results/N40_verification/N40_d14_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d14_XEB",
+    "path": "data/results/N40_verification/N40_d14_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d16_MB",
+    "path": "data/results/N40_verification/N40_d16_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d16_Transport_1QRB",
+    "path": "data/results/N40_verification/N40_d16_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d16_XEB",
+    "path": "data/results/N40_verification/N40_d16_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d18_MB",
+    "path": "data/results/N40_verification/N40_d18_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "\u2026 10 more items",
+    "path": "data/results/N40_verification/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "N56_depths",
+    "path": "data/results/N56_depths",
+    "type": "directory"
+  },
+  {
+    "name": "N56_d10_MB",
+    "path": "data/results/N56_depths/N56_d10_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d10_XEB",
+    "path": "data/results/N56_depths/N56_d10_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d12_MB",
+    "path": "data/results/N56_depths/N56_d12_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d12_XEB",
+    "path": "data/results/N56_depths/N56_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d14_MB",
+    "path": "data/results/N56_depths/N56_d14_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d14_XEB",
+    "path": "data/results/N56_depths/N56_d14_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d16_MB",
+    "path": "data/results/N56_depths/N56_d16_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d16_Transport_1QRB",
+    "path": "data/results/N56_depths/N56_d16_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d16_XEB",
+    "path": "data/results/N56_depths/N56_d16_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d18_MB",
+    "path": "data/results/N56_depths/N56_d18_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "\u2026 11 more items",
+    "path": "data/results/N56_depths/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "N_scan_depth12",
+    "path": "data/results/N_scan_depth12",
+    "type": "directory"
+  },
+  {
+    "name": "N16_d12_MB",
+    "path": "data/results/N_scan_depth12/N16_d12_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d12_XEB",
+    "path": "data/results/N_scan_depth12/N16_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d16_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d16_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d32_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d32_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d48_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d48_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d4_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d4_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d64_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d64_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d96_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d96_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N24_d12_MB",
+    "path": "data/results/N_scan_depth12/N24_d12_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N24_d12_XEB",
+    "path": "data/results/N_scan_depth12/N24_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "\u2026 38 more items",
+    "path": "data/results/N_scan_depth12/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "aggregate_results.csv",
+    "path": "outputs/aggregate_results.csv",
+    "type": "file",
+    "size": 3089,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_notes.txt",
+    "path": "outputs/analysis_notes.txt",
+    "type": "file",
+    "size": 458,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 2672,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "mb_instance_results.csv",
+    "path": "outputs/mb_instance_results.csv",
+    "type": "file",
+    "size": 251906,
+    "mtime": 1775200516.0,
+    "exported": true
+  },
+  {
+    "name": "missing_pairs.csv",
+    "path": "outputs/missing_pairs.csv",
+    "type": "file",
+    "size": 36151,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1383,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 2129,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "xeb_instance_results.csv",
+    "path": "outputs/xeb_instance_results.csv",
+    "type": "file",
+    "size": 145761,
+    "mtime": 1775200516.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1644579,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2449530,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1696828,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 11841148,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview_by_setting.png",
+    "path": "report/images/data_overview_by_setting.png",
+    "type": "file",
+    "size": 59511,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "mb_success_vs_depth.png",
+    "path": "report/images/mb_success_vs_depth.png",
+    "type": "file",
+    "size": 94246,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "xeb_fidelity_vs_depth_N40.png",
+    "path": "report/images/xeb_fidelity_vs_depth_N40.png",
+    "type": "file",
+    "size": 57055,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "xeb_fidelity_vs_size_d12.png",
+    "path": "report/images/xeb_fidelity_vs_size_d12.png",
+    "type": "file",
+    "size": 52918,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "xeb_instance_spread_N40.png",
+    "path": "report/images/xeb_instance_spread_N40.png",
+    "type": "file",
+    "size": 48368,
+    "mtime": 1775200518.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13437,
+    "mtime": 1775200521.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6103,
+    "mtime": 1775146268.0,
+    "exported": true
+  }
+]

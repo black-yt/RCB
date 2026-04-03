@@ -1,0 +1,95 @@
+{
+  "dataset": {
+    "n_frames": 100,
+    "n_objects_per_frame": 200,
+    "avg_detections_per_frame": 158.2,
+    "detection_rate": 0.7909999999999999
+  },
+  "ByteTrack": {
+    "MOTA": -0.0106,
+    "MOTP": 0.655,
+    "IDF1": 0.0582,
+    "ID_switches": 12,
+    "FP": 823,
+    "FN": 19376,
+    "TP": 624,
+    "total_gt": 20000
+  },
+  "SparseTrack": {
+    "MOTA": -0.0237,
+    "MOTP": 0.6654,
+    "IDF1": 0.0689,
+    "ID_switches": 28,
+    "FP": 1202,
+    "FN": 19244,
+    "TP": 756,
+    "total_gt": 20000
+  },
+  "threshold_sweep": {
+    "thresholds": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7
+    ],
+    "ByteTrack_MOTA": [
+      -0.6558,
+      -0.0106,
+      -0.0106,
+      -0.0106,
+      -0.0106
+    ],
+    "SparseTrack_MOTA": [
+      -0.9336,
+      -0.0237,
+      -0.0237,
+      -0.0237,
+      -0.0237
+    ],
+    "ByteTrack_IDF1": [
+      0.2212,
+      0.0582,
+      0.0582,
+      0.0582,
+      0.0582
+    ],
+    "SparseTrack_IDF1": [
+      0.2218,
+      0.0689,
+      0.0689,
+      0.0689,
+      0.0689
+    ]
+  },
+  "nlayers_sweep": {
+    "n_layers": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "SparseTrack_MOTA": [
+      -0.0408,
+      -0.0237,
+      -0.0408,
+      -0.0258,
+      -0.0524
+    ],
+    "SparseTrack_IDF1": [
+      0.0576,
+      0.0689,
+      0.0576,
+      0.0734,
+      0.0697
+    ],
+    "SparseTrack_ID_switches": [
+      16,
+      28,
+      16,
+      31,
+      28
+    ]
+  }
+}

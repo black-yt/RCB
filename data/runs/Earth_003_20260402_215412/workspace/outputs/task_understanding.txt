@@ -1,0 +1,24 @@
+Task objective:
+Develop and evaluate a cascade machine-learning weather forecasting workflow for 15-day global 6-hourly forecasts from ERA5-style atmospheric states, aligned with the stated scientific goal of using three specialized U-Transformer models to reduce error accumulation and approach ECMWF ensemble-mean skill. In this workspace, the immediate practical goal is to analyze the provided inputs, understand their variable layout and forecast structure, and produce a rigorous report and reproducible code based on the available sample files and related literature.
+
+Available data and references:
+- data/20231012-06_input_netcdf.nc: NetCDF input tensor with dimensions time=2, level=70, lat=181, lon=360; variable names include 13 pressure levels each for Z/T/U/V/R plus 5 surface variables (T2M, U10, V10, MSL, TP).
+- data/006.nc: NetCDF forecast tensor with dimensions time=1, step=1, level=70, lat=181, lon=360; appears to be a 6-hour lead forecast in the same 70-channel variable layout.
+- related_work/paper_000.pdf: review of whether deep learning can replace NWP.
+- related_work/paper_001.pdf: design challenges for ML-based global weather models.
+- related_work/paper_002.pdf: FourCastNet high-resolution global data-driven forecasting.
+- related_work/paper_003.pdf: FengWu medium-range transformer-based weather forecasting beyond 10 days.
+
+Main planned analysis steps:
+1. Inspect metadata, coordinate grids, channel naming, and numerical ranges of the provided NetCDF files.
+2. Compare the input state and forecast output structure to infer how the sample forecast product is organized and what can be validated directly.
+3. Use the related papers to frame a scientifically grounded cascade/U-Transformer-style forecasting methodology and identify relevant evaluation ideas, especially for medium-range skill and error growth.
+4. Build reproducible code in code/ for data loading, descriptive statistics, channel/group analyses, and visualizations.
+5. Generate report-quality figures showing data coverage, variable summaries, spatial patterns, and any feasible forecast-difference or validation diagnostics from the provided files.
+6. Write a publication-style report in report/report.md that explains the task context, data, proposed modeling design, exploratory findings, limitations of the available sample data, and conclusions.
+
+Expected deliverables:
+- Reproducible analysis scripts in code/.
+- Intermediate processed outputs and summaries in outputs/.
+- Figures saved in report/images/ and referenced relatively from report/report.md.
+- Final report/report.md covering methodology, results, discussion, and limitations, with explicit attention to the current workspace inputs rather than a full model-training claim unsupported by the available files.

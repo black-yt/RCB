@@ -1,0 +1,224 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_multimodal_diffusion.py",
+    "path": "code/run_multimodal_diffusion.py",
+    "type": "file",
+    "size": 41831,
+    "mtime": 1775133462.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "sample",
+    "path": "data/sample",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r",
+    "path": "data/sample/2l3r",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r_ligand.sdf",
+    "path": "data/sample/2l3r/2l3r_ligand.sdf",
+    "type": "file",
+    "size": 13842,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2l3r_protein.pdb",
+    "path": "data/sample/2l3r/2l3r_protein.pdb",
+    "type": "file",
+    "size": 211329,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "cross_modal_model.pt",
+    "path": "outputs/cross_modal_model.pt",
+    "type": "file",
+    "size": 1412503,
+    "mtime": 1775133460.0,
+    "exported": false
+  },
+  {
+    "name": "debug_run.log",
+    "path": "outputs/debug_run.log",
+    "type": "file",
+    "size": 0,
+    "mtime": 1775133460.0,
+    "exported": true
+  },
+  {
+    "name": "debug_steps.txt",
+    "path": "outputs/debug_steps.txt",
+    "type": "file",
+    "size": 24,
+    "mtime": 1775133458.0,
+    "exported": true
+  },
+  {
+    "name": "evaluation_metrics.csv",
+    "path": "outputs/evaluation_metrics.csv",
+    "type": "file",
+    "size": 3694,
+    "mtime": 1775133456.0,
+    "exported": true
+  },
+  {
+    "name": "identity_free_model.pt",
+    "path": "outputs/identity_free_model.pt",
+    "type": "file",
+    "size": 1412659,
+    "mtime": 1775133458.0,
+    "exported": false
+  },
+  {
+    "name": "summary_metrics.json",
+    "path": "outputs/summary_metrics.json",
+    "type": "file",
+    "size": 1104,
+    "mtime": 1775133458.0,
+    "exported": true
+  },
+  {
+    "name": "training_history.csv",
+    "path": "outputs/training_history.csv",
+    "type": "file",
+    "size": 243,
+    "mtime": 1775133458.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3651992,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 3634495,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5515632,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 569417,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 345398,
+    "mtime": 1775133460.0,
+    "exported": true
+  },
+  {
+    "name": "example_ligand_recovery.png",
+    "path": "report/images/example_ligand_recovery.png",
+    "type": "file",
+    "size": 681925,
+    "mtime": 1775133460.0,
+    "exported": true
+  },
+  {
+    "name": "native_complex_geometry.png",
+    "path": "report/images/native_complex_geometry.png",
+    "type": "file",
+    "size": 619939,
+    "mtime": 1775133460.0,
+    "exported": true
+  },
+  {
+    "name": "noise_stratified_performance.png",
+    "path": "report/images/noise_stratified_performance.png",
+    "type": "file",
+    "size": 252074,
+    "mtime": 1775133462.0,
+    "exported": true
+  },
+  {
+    "name": "rmsd_comparison.png",
+    "path": "report/images/rmsd_comparison.png",
+    "type": "file",
+    "size": 172535,
+    "mtime": 1775133462.0,
+    "exported": true
+  },
+  {
+    "name": "training_curves.png",
+    "path": "report/images/training_curves.png",
+    "type": "file",
+    "size": 188972,
+    "mtime": 1775133460.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 11551,
+    "mtime": 1775133463.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5562,
+    "mtime": 1775108006.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,247 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 19221,
+    "mtime": 1775199046.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "defs.txt",
+    "path": "data/defs.txt",
+    "type": "file",
+    "size": 8156,
+    "mtime": 1770192796.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "imo_ag_30.txt",
+    "path": "data/imo_ag_30.txt",
+    "type": "file",
+    "size": 8772,
+    "mtime": 1770343778.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "rules.txt",
+    "path": "data/rules.txt",
+    "type": "file",
+    "size": 2785,
+    "mtime": 1770343778.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 5579,
+    "mtime": 1775199042.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.md",
+    "path": "outputs/analysis_summary.md",
+    "type": "file",
+    "size": 2175,
+    "mtime": 1775199042.0,
+    "exported": true
+  },
+  {
+    "name": "definitions_catalog.csv",
+    "path": "outputs/definitions_catalog.csv",
+    "type": "file",
+    "size": 1094,
+    "mtime": 1775199042.0,
+    "exported": true
+  },
+  {
+    "name": "definitions_catalog.json",
+    "path": "outputs/definitions_catalog.json",
+    "type": "file",
+    "size": 23050,
+    "mtime": 1775199042.0,
+    "exported": true
+  },
+  {
+    "name": "parsed_problems.json",
+    "path": "outputs/parsed_problems.json",
+    "type": "file",
+    "size": 147501,
+    "mtime": 1775199042.0,
+    "exported": true
+  },
+  {
+    "name": "problem_level_statistics.csv",
+    "path": "outputs/problem_level_statistics.csv",
+    "type": "file",
+    "size": 2900,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "rules_catalog.csv",
+    "path": "outputs/rules_catalog.csv",
+    "type": "file",
+    "size": 4198,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "rules_catalog.json",
+    "path": "outputs/rules_catalog.json",
+    "type": "file",
+    "size": 10579,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1782,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 2342,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2215244,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 550976,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 165489,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2682222,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "constraint_atom_histogram.png",
+    "path": "report/images/constraint_atom_histogram.png",
+    "type": "file",
+    "size": 34027,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "construction_primitive_frequency.png",
+    "path": "report/images/construction_primitive_frequency.png",
+    "type": "file",
+    "size": 83322,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "definition_arity_distribution.png",
+    "path": "report/images/definition_arity_distribution.png",
+    "type": "file",
+    "size": 40570,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "goal_predicate_distribution.png",
+    "path": "report/images/goal_predicate_distribution.png",
+    "type": "file",
+    "size": 44541,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "problem_complexity_scatter.png",
+    "path": "report/images/problem_complexity_scatter.png",
+    "type": "file",
+    "size": 95354,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "rule_consequent_distribution.png",
+    "path": "report/images/rule_consequent_distribution.png",
+    "type": "file",
+    "size": 66375,
+    "mtime": 1775199044.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 18485,
+    "mtime": 1775199047.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4788,
+    "mtime": 1775143415.0,
+    "exported": true
+  }
+]

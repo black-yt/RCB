@@ -1,0 +1,124 @@
+{
+  "N40_depth_scan": [
+    {
+      "N": 40,
+      "d": 8,
+      "n_instances": 50,
+      "mean_F_XEB": 0.6317,
+      "std_F_XEB": 0.3448,
+      "sem_F_XEB": 0.0488,
+      "CI_95_lo": 0.5329,
+      "CI_95_hi": 0.7261
+    },
+    {
+      "N": 40,
+      "d": 10,
+      "n_instances": 50,
+      "mean_F_XEB": 0.4502,
+      "std_F_XEB": 0.3223,
+      "sem_F_XEB": 0.0456,
+      "CI_95_lo": 0.3666,
+      "CI_95_hi": 0.5441
+    },
+    {
+      "N": 40,
+      "d": 12,
+      "n_instances": 50,
+      "mean_F_XEB": 0.4569,
+      "std_F_XEB": 0.2838,
+      "sem_F_XEB": 0.0401,
+      "CI_95_lo": 0.3802,
+      "CI_95_hi": 0.534
+    },
+    {
+      "N": 40,
+      "d": 14,
+      "n_instances": 50,
+      "mean_F_XEB": 0.3972,
+      "std_F_XEB": 0.26,
+      "sem_F_XEB": 0.0368,
+      "CI_95_lo": 0.3217,
+      "CI_95_hi": 0.4696
+    },
+    {
+      "N": 40,
+      "d": 16,
+      "n_instances": 50,
+      "mean_F_XEB": 0.3681,
+      "std_F_XEB": 0.2772,
+      "sem_F_XEB": 0.0392,
+      "CI_95_lo": 0.2938,
+      "CI_95_hi": 0.4457
+    },
+    {
+      "N": 40,
+      "d": 18,
+      "n_instances": 50,
+      "mean_F_XEB": 0.2661,
+      "std_F_XEB": 0.2916,
+      "sem_F_XEB": 0.0412,
+      "CI_95_lo": 0.1878,
+      "CI_95_hi": 0.3452
+    },
+    {
+      "N": 40,
+      "d": 20,
+      "n_instances": 50,
+      "mean_F_XEB": 0.302,
+      "std_F_XEB": 0.3363,
+      "sem_F_XEB": 0.0476,
+      "CI_95_lo": 0.2142,
+      "CI_95_hi": 0.4031
+    }
+  ],
+  "N_scan_d12": [
+    {
+      "N": 16,
+      "d": 12,
+      "n_instances": 50,
+      "mean_F_XEB": 0.7996,
+      "std_F_XEB": 0.3197,
+      "sem_F_XEB": 0.0452,
+      "CI_95_lo": 0.717,
+      "CI_95_hi": 0.8885
+    },
+    {
+      "N": 24,
+      "d": 12,
+      "n_instances": 50,
+      "mean_F_XEB": 0.6633,
+      "std_F_XEB": 0.2899,
+      "sem_F_XEB": 0.041,
+      "CI_95_lo": 0.5835,
+      "CI_95_hi": 0.7442
+    },
+    {
+      "N": 32,
+      "d": 12,
+      "n_instances": 50,
+      "mean_F_XEB": 0.5645,
+      "std_F_XEB": 0.314,
+      "sem_F_XEB": 0.0444,
+      "CI_95_lo": 0.4787,
+      "CI_95_hi": 0.6545
+    },
+    {
+      "N": 40,
+      "d": 12,
+      "n_instances": 50,
+      "mean_F_XEB": 0.426,
+      "std_F_XEB": 0.276,
+      "sem_F_XEB": 0.039,
+      "CI_95_lo": 0.3525,
+      "CI_95_hi": 0.5022
+    }
+  ],
+  "exponential_decay_fit": {
+    "N": 40,
+    "model": "F(d) = A * exp(-lambda * d)",
+    "A": 0.9456,
+    "lambda": 0.0622,
+    "R_squared": 0.8804,
+    "p_value": 0.001757895033441952
+  }
+}

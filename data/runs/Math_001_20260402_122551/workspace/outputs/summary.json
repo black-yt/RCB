@@ -1,0 +1,103 @@
+{
+  "problem": {
+    "n": 1000,
+    "p": 2000,
+    "lambda1": 0.008,
+    "mu": 0.01,
+    "L": 0.1100000000000003,
+    "condition_number_strong": 11.00000000000003,
+    "sigma_max": 10.000000000000016,
+    "sigma_min_nonzero": 1.0,
+    "lambda_max_lasso": 0.04438774948348783
+  },
+  "reference": {
+    "solver": "sklearn.coordinate_descent",
+    "runtime_sec": 0.02400289900106145,
+    "objective": 0.6182407640654142,
+    "kkt_violation": 2.1750656831187598e-13,
+    "support": {
+      "nnz": 118,
+      "true_nnz": 100,
+      "tp": 67,
+      "fp": 51,
+      "fn": 33,
+      "precision": 0.5677966101694916,
+      "recall": 0.67,
+      "f1": 0.6146788990825688
+    }
+  },
+  "algorithms": {
+    "ista": {
+      "iterations": 1200,
+      "runtime_sec": 0.6041485489986371,
+      "final_objective": 0.6182407640654142,
+      "final_gap": 1e-16,
+      "relative_error": 6.571740280062746e-12,
+      "iterations_to_gap_1e_8": 46,
+      "iterations_to_gap_1e_12": 74,
+      "support": {
+        "nnz": 118,
+        "true_nnz": 100,
+        "tp": 67,
+        "fp": 51,
+        "fn": 33,
+        "precision": 0.5677966101694916,
+        "recall": 0.67,
+        "f1": 0.6146788990825688
+      },
+      "lyapunov_ratio_median": 0.7135442538448554,
+      "objective_ratio_median": 0.7133281426075337
+    },
+    "apg": {
+      "iterations": 300,
+      "runtime_sec": 0.12953887199546443,
+      "final_objective": 0.6182407640654142,
+      "final_gap": 1e-16,
+      "relative_error": 6.571823200081924e-12,
+      "iterations_to_gap_1e_8": 20,
+      "iterations_to_gap_1e_12": 31,
+      "support": {
+        "nnz": 118,
+        "true_nnz": 100,
+        "tp": 67,
+        "fp": 51,
+        "fn": 33,
+        "precision": 0.5677966101694916,
+        "recall": 0.67,
+        "f1": 0.6146788990825688
+      },
+      "lyapunov_ratio_median": 0.4340275347582414,
+      "objective_ratio_median": 0.45462941699373643,
+      "beta": 0.5366750419289206,
+      "theory_rate": 0.6984886554222368
+    },
+    "admm": {
+      "iterations": 400,
+      "runtime_sec": 1.2104462069983128,
+      "final_objective": 0.6182407640654142,
+      "final_gap": 1e-16,
+      "relative_error": 6.571609206855481e-12,
+      "iterations_to_gap_1e_8": 39,
+      "iterations_to_gap_1e_12": 62,
+      "support": {
+        "nnz": 118,
+        "true_nnz": 100,
+        "tp": 67,
+        "fp": 51,
+        "fn": 33,
+        "precision": 0.5677966101694916,
+        "recall": 0.67,
+        "f1": 0.6146788990825688
+      },
+      "lyapunov_ratio_median": 0.6662820030374155,
+      "objective_ratio_median": 0.6656248235240675,
+      "rho": 0.08,
+      "final_primal_residual": 3.2850583533969213e-16,
+      "final_dual_residual": 9.867878089448543e-18
+    }
+  },
+  "solution_error_vs_truth": {
+    "mse": 0.0214229895208001,
+    "relative_l2": 0.6474026035728736
+  }
+}

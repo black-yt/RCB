@@ -1,0 +1,223 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_research.py",
+    "path": "code/run_research.py",
+    "type": "file",
+    "size": 45318,
+    "mtime": 1775132904.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_chargestates.xyz",
+    "path": "data/ag3_chargestates.xyz",
+    "type": "file",
+    "size": 25976,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "charged_dimer.xyz",
+    "path": "data/charged_dimer.xyz",
+    "type": "file",
+    "size": 55920,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "random_charges.xyz",
+    "path": "data/random_charges.xyz",
+    "type": "file",
+    "size": 768000,
+    "mtime": 1772414960.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_chargeaware_coefficients.json",
+    "path": "outputs/ag3_chargeaware_coefficients.json",
+    "type": "file",
+    "size": 577,
+    "mtime": 1775132900.0,
+    "exported": true
+  },
+  {
+    "name": "ag3_latent_charges.csv",
+    "path": "outputs/ag3_latent_charges.csv",
+    "type": "file",
+    "size": 993,
+    "mtime": 1775132902.0,
+    "exported": true
+  },
+  {
+    "name": "ag3_test_predictions.csv",
+    "path": "outputs/ag3_test_predictions.csv",
+    "type": "file",
+    "size": 2103,
+    "mtime": 1775132902.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_latent_charges.csv",
+    "path": "outputs/charged_dimer_latent_charges.csv",
+    "type": "file",
+    "size": 1165,
+    "mtime": 1775132902.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_longrange_coefficients.json",
+    "path": "outputs/charged_dimer_longrange_coefficients.json",
+    "type": "file",
+    "size": 788,
+    "mtime": 1775132902.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_test_predictions.csv",
+    "path": "outputs/charged_dimer_test_predictions.csv",
+    "type": "file",
+    "size": 2013,
+    "mtime": 1775132900.0,
+    "exported": true
+  },
+  {
+    "name": "random_charge_metrics.csv",
+    "path": "outputs/random_charge_metrics.csv",
+    "type": "file",
+    "size": 162,
+    "mtime": 1775132902.0,
+    "exported": true
+  },
+  {
+    "name": "random_charge_sample_predictions.csv",
+    "path": "outputs/random_charge_sample_predictions.csv",
+    "type": "file",
+    "size": 1112,
+    "mtime": 1775132902.0,
+    "exported": true
+  },
+  {
+    "name": "summary_metrics.json",
+    "path": "outputs/summary_metrics.json",
+    "type": "file",
+    "size": 685,
+    "mtime": 1775132900.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1659509,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1792962,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 263549,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6623726,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_ag3_charge_states.png",
+    "path": "report/images/figure_ag3_charge_states.png",
+    "type": "file",
+    "size": 190797,
+    "mtime": 1775132902.0,
+    "exported": true
+  },
+  {
+    "name": "figure_charged_dimer.png",
+    "path": "report/images/figure_charged_dimer.png",
+    "type": "file",
+    "size": 190490,
+    "mtime": 1775132902.0,
+    "exported": true
+  },
+  {
+    "name": "figure_data_overview.png",
+    "path": "report/images/figure_data_overview.png",
+    "type": "file",
+    "size": 274975,
+    "mtime": 1775132902.0,
+    "exported": true
+  },
+  {
+    "name": "figure_random_charge_recovery.png",
+    "path": "report/images/figure_random_charge_recovery.png",
+    "type": "file",
+    "size": 125781,
+    "mtime": 1775132904.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 8258,
+    "mtime": 1775132905.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6294,
+    "mtime": 1775108024.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,225 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "model_lcoh_pipeline.py",
+    "path": "code/model_lcoh_pipeline.py",
+    "type": "file",
+    "size": 6558,
+    "mtime": 1775139802.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "africa_map",
+    "path": "data/africa_map",
+    "type": "directory"
+  },
+  {
+    "name": "ne_10m_admin_0_countries.cpg",
+    "path": "data/africa_map/ne_10m_admin_0_countries.cpg",
+    "type": "file",
+    "size": 5,
+    "mtime": 1627838618.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.dbf",
+    "path": "data/africa_map/ne_10m_admin_0_countries.dbf",
+    "type": "file",
+    "size": 878482,
+    "mtime": 1652071512.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.prj",
+    "path": "data/africa_map/ne_10m_admin_0_countries.prj",
+    "type": "file",
+    "size": 145,
+    "mtime": 1652071512.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.README.html",
+    "path": "data/africa_map/ne_10m_admin_0_countries.README.html",
+    "type": "file",
+    "size": 39383,
+    "mtime": 1773928992.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.shp",
+    "path": "data/africa_map/ne_10m_admin_0_countries.shp",
+    "type": "file",
+    "size": 8806224,
+    "mtime": 1652071512.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.shx",
+    "path": "data/africa_map/ne_10m_admin_0_countries.shx",
+    "type": "file",
+    "size": 2164,
+    "mtime": 1652071512.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "ne_10m_admin_0_countries.VERSION.txt",
+    "path": "data/africa_map/ne_10m_admin_0_countries.VERSION.txt",
+    "type": "file",
+    "size": 7,
+    "mtime": 1652071740.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "hex_final_NA_min.csv",
+    "path": "data/hex_final_NA_min.csv",
+    "type": "file",
+    "size": 4837,
+    "mtime": 1772437760.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "hex_lcoh_results.csv",
+    "path": "outputs/hex_lcoh_results.csv",
+    "type": "file",
+    "size": 9885,
+    "mtime": 1775139798.0,
+    "exported": true
+  },
+  {
+    "name": "hex_lcoh_results.geojson",
+    "path": "outputs/hex_lcoh_results.geojson",
+    "type": "file",
+    "size": 26380,
+    "mtime": 1775139798.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 846927,
+    "mtime": 1773914894.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 3211431,
+    "mtime": 1773914894.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1517737,
+    "mtime": 1773914894.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 566476,
+    "mtime": 1773914894.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 272499,
+    "mtime": 1775139800.0,
+    "exported": true
+  },
+  {
+    "name": "map_lcoh_delivered_baseline.png",
+    "path": "report/images/map_lcoh_delivered_baseline.png",
+    "type": "file",
+    "size": 330542,
+    "mtime": 1775139800.0,
+    "exported": true
+  },
+  {
+    "name": "map_lcoh_delivered_derisked.png",
+    "path": "report/images/map_lcoh_delivered_derisked.png",
+    "type": "file",
+    "size": 328014,
+    "mtime": 1775139800.0,
+    "exported": true
+  },
+  {
+    "name": "map_lcoh_delivered_high_risk.png",
+    "path": "report/images/map_lcoh_delivered_high_risk.png",
+    "type": "file",
+    "size": 336211,
+    "mtime": 1775139800.0,
+    "exported": true
+  },
+  {
+    "name": "scenario_comparison_boxplot.png",
+    "path": "report/images/scenario_comparison_boxplot.png",
+    "type": "file",
+    "size": 99983,
+    "mtime": 1775139800.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 18213,
+    "mtime": 1775139803.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5962,
+    "mtime": 1774958859.0,
+    "exported": true
+  }
+]

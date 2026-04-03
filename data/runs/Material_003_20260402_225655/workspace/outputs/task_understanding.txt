@@ -1,0 +1,21 @@
+Task objective:
+Build an AI-guided inverse-design workflow for recyclable vitrimeric polymers that uses (1) MD-simulated glass transition temperatures (Tg), (2) a Gaussian-process calibration model to map MD Tg to experimental-scale Tg, and (3) a graph-based variational autoencoder to propose new vitrimer chemistries targeting desired Tg values, with the final report framed around candidate generation and experimental-validation relevance.
+
+Available data and inputs in this workspace:
+- data/tg_calibration.csv: 295 calibration polymers with columns name, smiles, tg_exp, tg_md, std. This supports learning and evaluating the MD-to-experiment Tg calibration.
+- data/tg_vitrimer_MD.csv: 8,424 vitrimer combinations with acid, epoxide, tg, std. This is the design space to score after calibration and to mine for chemistry patterns/candidates.
+- related_work/: PDFs covering vitrimer/recyclable thermosets and molecular generative modeling with VAEs, especially continuous molecular representations and polymer design using syntax-directed VAEs.
+
+Main planned analysis steps:
+1. Inspect and clean both datasets; summarize ranges, uncertainties, and molecular/chemical diversity.
+2. Train and validate a Gaussian-process-style calibration model from tg_md to tg_exp using the calibration dataset; quantify prediction accuracy and uncertainty.
+3. Apply the calibration model to vitrimer MD data to estimate experimentally relevant Tg values for all candidate acid/epoxide pairs.
+4. Build molecular graph representations for vitrimer components and develop a graph-VAE or practical graph-based latent-space surrogate for inverse design/generation.
+5. Explore latent space and calibrated Tg trends to identify promising candidate chemistries for target Tg windows.
+6. Produce figures, intermediate outputs, and a publication-style report discussing methodology, results, candidate recommendations, and limitations.
+
+Expected deliverables:
+- Reproducible analysis code in code/.
+- Intermediate datasets, model outputs, and candidate rankings in outputs/.
+- A final report at report/report.md with embedded figures saved under report/images/.
+- Figures should include dataset overview plots, calibration/validation results, and candidate-generation or comparison plots for proposed vitrimer chemistries.

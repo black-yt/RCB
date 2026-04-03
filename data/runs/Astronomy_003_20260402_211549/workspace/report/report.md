@@ -1,0 +1,183 @@
+# Statistical Characterization of Synthetic Numerical-Relativity Waveform Accuracy Metrics for an SXS-Style Binary Black Hole Catalog
+
+## Abstract
+This report analyzes three synthetic datasets designed to emulate numerical-relativity quality-control diagnostics from an SXS-style binary black hole waveform catalog. The goal is not to reconstruct full astrophysical dependence on binary parameters, but to quantify catalog-level accuracy trends relevant to gravitational-wave modeling, surrogate calibration, and waveform-systematics assessment. The analysis focuses on three questions: (1) how accurately the catalog resolves waveforms at its highest numerical resolutions, (2) how waveform discrepancies vary across spherical-harmonic modes \(\ell=2\) through \(\ell=8\), and (3) how waveform differences behave under changes in extrapolation order. The results show that the catalog is dominated by low overall resolution mismatches, with a median discrepancy of \(4.25\times 10^{-4}\) and 77.7% of cases below \(10^{-3}\). However, mode-resolved discrepancies grow strongly with harmonic index: the median mismatch rises by a factor of 7.57 from \(\ell=2\) to \(\ell=8\), while the 95th percentile grows by a factor of 20.3. Extrapolation-order differences are substantially smaller than resolution mismatches overall, but the N=2 versus N=4 comparison is typically 2.63 times larger than N=2 versus N=3. These findings are consistent with the interpretation that the synthetic catalog represents a high-accuracy waveform set whose dominant uncertainties are concentrated in higher-order modes and in more aggressive extrapolation comparisons.
+
+## 1. Introduction
+Binary black hole numerical-relativity catalogs are central to gravitational-wave astronomy. They provide benchmark waveforms for parameter estimation, waveform-model calibration, remnant-property modeling, and tests of strong-field general relativity. In practice, catalog usefulness depends not only on parameter-space coverage but also on quantified numerical uncertainty. Even when full waveform data are unavailable, statistical summaries of resolution differences, mode-by-mode discrepancies, and extrapolation-order comparisons are informative diagnostics of catalog reliability.
+
+The present workspace contains synthetic summary datasets representing these diagnostics for an SXS-style catalog. The accompanying instructions frame the broader scientific goal in terms of catalog construction for binary black hole simulations, but the actual available inputs are narrower: they provide waveform-difference statistics rather than binary parameters, remnant properties, or full strain time series. Accordingly, the scope of this report is a statistical characterization of numerical-accuracy proxies rather than a direct study of waveform physics as a function of mass ratio, spin, or eccentricity.
+
+## 2. Data
+Three CSV files were analyzed.
+
+### 2.1 Highest-resolution waveform-difference distribution
+`data/fig6_data.csv` contains 1500 scalar waveform-difference values, one per synthetic simulation. These represent mismatches between the two highest numerical resolutions after minimal time and phase alignment. Validation confirmed the expected shape of 1500 rows and 1 column, with no missing or nonpositive values. The observed values range from \(8.18\times 10^{-6}\) to \(4.07\times 10^{-2}\).
+
+### 2.2 Mode-resolved waveform-difference distribution
+`data/fig7_data.csv` contains 1500 rows and 7 columns corresponding to modes `ell2` through `ell8`. Validation confirmed the expected 1500\(\times\)7 structure, again with no missing or nonpositive values. Across all entries, values range from \(3.89\times 10^{-5}\) to \(9.86\times 10^{-2}\), indicating broader and higher tails than the catalog-wide single-number mismatch metric.
+
+### 2.3 Extrapolation-order discrepancy distribution
+`data/fig8_data.csv` contains 1200 rows with two columns: `N2vsN3` and `N2vsN4`. These represent waveform differences obtained by comparing extrapolation order 2 against orders 3 and 4, respectively. Validation confirmed the expected 1200\(\times\)2 structure, with values ranging from \(1.24\times 10^{-6}\) to \(3.06\times 10^{-3}\).
+
+A formal validation table was produced in `outputs/data_validation_summary.csv`, and all datasets matched their expected dimensions and column names exactly.
+
+## 3. Methodology
+The analysis was implemented in `code/run_analysis.py` and executed successfully through the command:
+
+```bash
+python code/run_analysis.py
+```
+
+The workflow consisted of four stages.
+
+### 3.1 Data validation
+Each dataset was checked for expected dimensions, expected column names, missing values, and nonpositive entries. This step ensured that log-scale analysis was numerically well defined.
+
+### 3.2 Distributional summary statistics
+For each scalar series, the script computed:
+- minimum and maximum values,
+- mean and standard deviation,
+- geometric mean,
+- log10 mean and log10 standard deviation,
+- quantiles from the 1st to 99th percentile,
+- fractions below \(10^{-4}\) and \(10^{-3}\),
+- fractions above \(10^{-2}\) and \(10^{-1}\).
+
+These statistics were chosen because waveform-difference distributions are highly skewed and therefore benefit from robust summaries and logarithmic characterization.
+
+### 3.3 Mode-trend analysis
+For the mode-resolved data, mode-specific summaries were compared as a function of \(\ell\). The script explicitly tracked how the median, 95th percentile, 99th percentile, and log-space scatter changed with increasing harmonic index, and it computed ratios relative to the \(\ell=2\) mode.
+
+### 3.4 Extrapolation-order comparison
+For the extrapolation-order dataset, the analysis compared N=2 vs N=3 and N=2 vs N=4 using medians, distribution overlays, pointwise ratios, and a rank-based association metric. This was intended to test whether larger extrapolation-order separations systematically produce larger waveform differences.
+
+## 4. Results
+
+## 4.1 Catalog-level resolution mismatches are generally small
+The overall highest-resolution waveform-difference distribution is shown in Figure 1.
+
+![Distribution of highest-resolution waveform differences](images/figure_resolution_distribution.png)
+
+**Figure 1.** Distribution of catalog-wide highest-resolution waveform differences, shown both in raw log-scaled space and in \(\log_{10}\)-transformed space.
+
+The summary statistics indicate a strongly right-skewed but predominantly low-error distribution:
+- median mismatch: \(4.25\times 10^{-4}\),
+- geometric mean: \(4.24\times 10^{-4}\),
+- 95th percentile: \(3.12\times 10^{-3}\),
+- 99th percentile: \(7.16\times 10^{-3}\),
+- maximum: \(4.07\times 10^{-2}\).
+
+Most importantly, 77.7% of simulations lie below \(10^{-3}\), while only 0.2% exceed \(10^{-2}\). This indicates that the catalog-wide synthetic waveform set is dominated by high-accuracy simulations, with only a very small extreme tail of noticeably larger mismatches. The cumulative view in Figure 2 reinforces this conclusion.
+
+![Catalog overview and cumulative accuracy](images/figure_catalog_overview.png)
+
+**Figure 2.** Overview figure showing cumulative catalog-level resolution accuracy, the fraction of high-error realizations by harmonic mode, and median extrapolation discrepancies.
+
+The cumulative distribution suggests that the bulk of simulations occupy a compact low-error regime, which is qualitatively consistent with a mature numerical-relativity catalog intended for downstream data-analysis applications.
+
+## 4.2 Mode-resolved discrepancies increase strongly with harmonic index
+The most pronounced trend in the entire analysis is the systematic growth of waveform differences with spherical-harmonic mode index. Figure 3 shows the full mode-resolved distributional comparison.
+
+![Mode-resolved waveform-difference comparison](images/figure_mode_comparison.png)
+
+**Figure 3.** Mode-resolved waveform-difference distributions for \(\ell=2\) through \(\ell=8\), together with summary curves for the median, interquartile range, and 95th percentile.
+
+The medians increase monotonically:
+- \(\ell=2\): \(2.997\times 10^{-4}\),
+- \(\ell=3\): \(5.442\times 10^{-4}\),
+- \(\ell=4\): \(8.339\times 10^{-4}\),
+- \(\ell=5\): \(1.149\times 10^{-3}\),
+- \(\ell=6\): \(1.576\times 10^{-3}\),
+- \(\ell=7\): \(1.974\times 10^{-3}\),
+- \(\ell=8\): \(2.267\times 10^{-3}\).
+
+Relative to \(\ell=2\), the median mismatch at \(\ell=8\) is larger by a factor of 7.57. The growth is even steeper in the upper tail: the 95th percentile rises from \(6.74\times 10^{-4}\) at \(\ell=2\) to \(1.37\times 10^{-2}\) at \(\ell=8\), a factor of 20.3 increase. The 99th percentile reaches \(3.01\times 10^{-2}\) for \(\ell=8\).
+
+High-error tails also emerge progressively with mode number. The fraction of cases above \(10^{-2}\) is:
+- 0% for \(\ell=2\) through \(\ell=4\),
+- 0.53% for \(\ell=5\),
+- 2.4% for \(\ell=6\),
+- 3.93% for \(\ell=7\),
+- 9.67% for \(\ell=8\).
+
+This trend matters scientifically because higher-order modes are important for precision waveform modeling in asymmetric, precessing, or high-inclination systems, yet they are also numerically more difficult to resolve accurately. The synthetic dataset reproduces that qualitative trade-off clearly: dominant low-order modes remain very accurate, while subdominant higher modes accumulate broader and heavier error tails.
+
+## 4.3 Extrapolation-order differences are small overall but systematically larger for N=2 vs N=4
+Figure 4 compares the two extrapolation-order discrepancy distributions.
+
+![Extrapolation-order discrepancy comparison](images/figure_extrapolation_comparison.png)
+
+**Figure 4.** Distributional and pairwise comparison of extrapolation-order waveform differences for N=2 vs N=3 and N=2 vs N=4.
+
+Both extrapolation metrics are much smaller in scale than the catalog-wide resolution mismatches and most mode-resolved higher-\(\ell\) errors. Their medians are:
+- N=2 vs N=3: \(2.03\times 10^{-5}\),
+- N=2 vs N=4: \(5.34\times 10^{-5}\).
+
+Thus the N=2 vs N=4 median is 2.63 times larger than the N=2 vs N=3 median. The same pattern appears throughout the distribution:
+- 94.75% of N=2 vs N=3 values are below \(10^{-4}\),
+- 70.5% of N=2 vs N=4 values are below \(10^{-4}\).
+
+The pairwise comparison confirms that N=2 vs N=4 is typically larger than N=2 vs N=3:
+- in 72.2% of cases, N=2 vs N=4 > N=2 vs N=3,
+- in 57.2% of cases, N=2 vs N=4 > 2\(\times\)(N=2 vs N=3).
+
+The median log10 difference is 0.426, which corresponds closely to the multiplicative factor above. Interestingly, the rank correlation between the two columns is only about 0.03, implying that although N=2 vs N=4 is usually larger in aggregate, the simulation-by-simulation ordering is weak. In other words, larger discrepancy under one extrapolation comparison does not strongly predict larger discrepancy under the other. For a synthetic dataset, that suggests distribution-level rather than samplewise coupling between the two diagnostics.
+
+## 4.4 Comparative interpretation across all three diagnostics
+Taken together, the results establish a hierarchy of error scales:
+1. **Extrapolation-order differences** are smallest, typically \(10^{-5}\) to \(10^{-4}\).
+2. **Catalog-wide highest-resolution mismatches** are larger, centered around a few \(10^{-4}\).
+3. **High-\(\ell\) mode-specific mismatches** are largest, reaching typical values of a few \(10^{-3}\) and upper tails above \(10^{-2}\).
+
+This ordering supports a practical interpretation relevant to waveform modeling. If one were prioritizing numerical error budgets in a catalog like this, the dominant concern would not be extrapolation-order variation in aggregate. Instead, the main residual uncertainty would likely arise from accurately capturing higher-order harmonic content. That is directly relevant to surrogate construction and to deciding which modes can be trusted or truncated in reduced-order waveform models.
+
+## 5. Discussion
+The synthetic results are internally consistent with expectations for a high-quality binary black hole waveform catalog.
+
+First, the catalog-level mismatch distribution indicates that most simulations are already in a regime of good numerical agreement between their highest resolutions. This is important because global mismatch metrics are often used as a quick quality screen before waveforms are used for calibration or parameter-estimation studies.
+
+Second, the mode-by-mode analysis shows that overall catalog accuracy can conceal substantial structure. A single scalar mismatch statistic may suggest excellent performance, yet higher-order modes can still exhibit materially larger discrepancies. This is not a contradiction; it reflects the fact that global metrics are often dominated by the strongest waveform content, especially the quadrupolar modes. For applications sensitive to weaker harmonics, such as high-mass-ratio or orientation-dependent inference, the mode-resolved view is the more informative diagnostic.
+
+Third, the extrapolation-order comparison suggests that extrapolation systematics remain comparatively small, though they are not negligible. The increase from N=2 vs N=3 to N=2 vs N=4 is exactly the sort of trend one would expect if larger extrapolation-order separation exposes a broader systematic envelope. Still, these discrepancies remain well below the dominant high-\(\ell\) error scales in this dataset.
+
+## 6. Limitations
+This analysis has several important limitations.
+
+1. **Synthetic data only.** The inputs are explicitly synthetic and designed to mimic summary behavior from the literature rather than provide raw simulation outputs.
+2. **No binary-parameter dependence.** Although the overarching task concerns black hole systems characterized by mass ratio, spin vectors, and eccentricity, no such metadata were available in the actual workspace inputs. Therefore the analysis cannot connect waveform accuracy to astrophysical configuration.
+3. **No waveform reconstruction.** The data consist of scalar discrepancy summaries, not strain or Weyl scalar time series. Consequently, the analysis cannot examine merger/ringdown morphology, phase evolution, or mode mixing directly.
+4. **No uncertainty propagation to downstream inference.** While the distributions are suggestive for surrogate modeling and data-analysis use, this report does not propagate these numerical errors into template-bank effects, parameter biases, or remnant-property uncertainties.
+5. **Weak samplewise coupling in extrapolation diagnostics.** The very low rank correlation between the two extrapolation columns suggests caution in over-interpreting simulation-specific comparisons.
+
+## 7. Conclusion
+Within the limits of the available workspace data, this study provides a reproducible statistical characterization of numerical-relativity waveform-accuracy diagnostics for an SXS-style binary black hole catalog. The main conclusions are:
+
+- The catalog-wide highest-resolution mismatch distribution is strongly concentrated at low values, with a median of \(4.25\times 10^{-4}\) and 77.7% of cases below \(10^{-3}\).
+- Waveform discrepancies increase sharply with harmonic mode number, with the \(\ell=8\) median 7.57 times larger than the \(\ell=2\) median and the \(\ell=8\) 95th percentile 20.3 times larger than the \(\ell=2\) counterpart.
+- Extrapolation-order discrepancies are comparatively small, but the N=2 vs N=4 comparison is systematically larger than N=2 vs N=3, with a median ratio of 2.63.
+- The dominant statistical uncertainty pattern in this synthetic catalog is therefore not global resolution failure, nor extrapolation-order instability in aggregate, but the progressive degradation of higher-order mode accuracy.
+
+From the standpoint of gravitational-wave modeling, this suggests that a catalog of this type would likely be adequate for many applications at the level of dominant modes, while requiring greater caution for analyses that depend sensitively on high-\(\ell\) structure. Future extensions with true simulation metadata and waveform-level outputs would allow these statistical findings to be tied directly to astrophysical regions of parameter space and to downstream modeling consequences.
+
+## Reproducibility
+The analysis can be reproduced by running:
+
+```bash
+python code/run_analysis.py
+```
+
+Key generated numerical outputs are stored in:
+- `outputs/data_validation_summary.csv`
+- `outputs/fig6_summary_statistics.csv`
+- `outputs/fig7_mode_summary_statistics.csv`
+- `outputs/fig8_extrapolation_summary_statistics.csv`
+- `outputs/mode_trend_analysis.csv`
+- `outputs/extrapolation_order_comparison.csv`
+- `outputs/key_findings.json`
+
+Figures used in this report are stored in:
+- `images/figure_resolution_distribution.png`
+- `images/figure_catalog_overview.png`
+- `images/figure_mode_comparison.png`
+- `images/figure_extrapolation_comparison.png`

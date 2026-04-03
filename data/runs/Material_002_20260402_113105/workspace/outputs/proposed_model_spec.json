@@ -1,0 +1,26 @@
+{
+  "name": "MACE-MP-X Blueprint",
+  "objective": "Universal atomistic potential pretraining on MPtrj followed by low-data chemistry adaptation.",
+  "architecture": {
+    "base_encoder": "MACE",
+    "many_body_messages": "4-body",
+    "message_passing_iterations": 2,
+    "recommended_extensions": [
+      "energy/force/stress multitask heads",
+      "elemental reference energy refit during cross-functional fine-tuning",
+      "optional charge-aware auxiliary targets when labels exist",
+      "curriculum spanning solids, surfaces, liquids, and reactive structures"
+    ]
+  },
+  "training_hypothesis": {
+    "pretraining_dataset": "MPtrj",
+    "high_fidelity_adaptation": "r2SCAN or task-specific DFT",
+    "fine_tuning_rule": "re-fit atomic reference energies before updating GNN weights",
+    "expected_benefit": "greater than 10x data efficiency versus scratch training, based on related-work evidence"
+  },
+  "benchmark_targets": [
+    "liquid water structure",
+    "transition-metal adsorption scaling relations",
+    "CRBH20 reaction barriers"
+  ]
+}

@@ -1,0 +1,10 @@
+metric,value
+Candidate neoantigen elements,12.0
+Selected vaccine elements,10.0
+Repetitions,10.0
+Cells per repetition,100.0
+Total evaluated cells,1000.0
+Overall mean p_response,0.942747
+Coverage at p>=0.9,0.887
+Mean pairwise IoU,1.0
+Validation max abs diff,2.220446049250313e-16

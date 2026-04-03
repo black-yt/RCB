@@ -1,0 +1,22 @@
+{
+  "Z500": {
+    "ecmwf": 8.0,
+    "cascade": 7.25,
+    "single": 5.5
+  },
+  "T850": {
+    "ecmwf": 7.0,
+    "cascade": 6.5,
+    "single": 5.0
+  },
+  "U10": {
+    "ecmwf": 5.75,
+    "cascade": 5.25,
+    "single": 4.25
+  },
+  "T2M": {
+    "ecmwf": 7.75,
+    "cascade": 7.0,
+    "single": 5.25
+  }
+}

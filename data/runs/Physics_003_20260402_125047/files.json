@@ -1,0 +1,200 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_floquet_graphene.py",
+    "path": "code/analyze_floquet_graphene.py",
+    "type": "file",
+    "size": 16763,
+    "mtime": 1775207392.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "polarization_dependence.png",
+    "path": "data/polarization_dependence.png",
+    "type": "file",
+    "size": 211842,
+    "mtime": 1770710438.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "polarization_dependence_data.csv",
+    "path": "data/polarization_dependence_data.csv",
+    "type": "file",
+    "size": 632,
+    "mtime": 1770710442.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "processed_band_data.json",
+    "path": "data/processed_band_data.json",
+    "type": "file",
+    "size": 35473,
+    "mtime": 1770710438.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "raw_trARPES_data.h5",
+    "path": "data/raw_trARPES_data.h5",
+    "type": "file",
+    "size": 1933136,
+    "mtime": 1770709552.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 2776,
+    "mtime": 1775207388.0,
+    "exported": true
+  },
+  {
+    "name": "equilibrium_cone_fit_points.csv",
+    "path": "outputs/equilibrium_cone_fit_points.csv",
+    "type": "file",
+    "size": 11157,
+    "mtime": 1775207388.0,
+    "exported": true
+  },
+  {
+    "name": "polarization_fit.csv",
+    "path": "outputs/polarization_fit.csv",
+    "type": "file",
+    "size": 919,
+    "mtime": 1775207388.0,
+    "exported": true
+  },
+  {
+    "name": "raw_vs_tabulated_polarization.csv",
+    "path": "outputs/raw_vs_tabulated_polarization.csv",
+    "type": "file",
+    "size": 1339,
+    "mtime": 1775207388.0,
+    "exported": true
+  },
+  {
+    "name": "replica_feature_metrics.csv",
+    "path": "outputs/replica_feature_metrics.csv",
+    "type": "file",
+    "size": 3366,
+    "mtime": 1775207388.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 239854,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1630751,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1078918,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 752873,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_1_data_overview.png",
+    "path": "report/images/figure_1_data_overview.png",
+    "type": "file",
+    "size": 304543,
+    "mtime": 1775207392.0,
+    "exported": true
+  },
+  {
+    "name": "figure_2_dirac_and_sidebands.png",
+    "path": "report/images/figure_2_dirac_and_sidebands.png",
+    "type": "file",
+    "size": 284242,
+    "mtime": 1775207388.0,
+    "exported": true
+  },
+  {
+    "name": "figure_3_polarization_dependence.png",
+    "path": "report/images/figure_3_polarization_dependence.png",
+    "type": "file",
+    "size": 276158,
+    "mtime": 1775207390.0,
+    "exported": true
+  },
+  {
+    "name": "figure_4_angle_difference_maps.png",
+    "path": "report/images/figure_4_angle_difference_maps.png",
+    "type": "file",
+    "size": 280635,
+    "mtime": 1775207390.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14854,
+    "mtime": 1775207393.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5351,
+    "mtime": 1775105447.0,
+    "exported": true
+  }
+]

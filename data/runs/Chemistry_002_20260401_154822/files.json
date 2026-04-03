@@ -1,0 +1,318 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "haddock_air_design.py",
+    "path": "code/haddock_air_design.py",
+    "type": "file",
+    "size": 17842,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "integration_figures.py",
+    "path": "code/integration_figures.py",
+    "type": "file",
+    "size": 7910,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "skempi_analysis.py",
+    "path": "code/skempi_analysis.py",
+    "type": "file",
+    "size": 15151,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "structural_analysis.py",
+    "path": "code/structural_analysis.py",
+    "type": "file",
+    "size": 14965,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "1brs_AD.pdb",
+    "path": "data/1brs_AD.pdb",
+    "type": "file",
+    "size": 175527,
+    "mtime": 1772768164.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "skempi_v2.csv",
+    "path": "data/skempi_v2.csv",
+    "type": "file",
+    "size": 1602208,
+    "mtime": 1772768166.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "air_summary.json",
+    "path": "outputs/air_summary.json",
+    "type": "file",
+    "size": 3702,
+    "mtime": 1775131194.0,
+    "exported": true
+  },
+  {
+    "name": "barnase_barstar.tbl",
+    "path": "outputs/barnase_barstar.tbl",
+    "type": "file",
+    "size": 1948,
+    "mtime": 1775131194.0,
+    "exported": false
+  },
+  {
+    "name": "brs_AD_all_mutations.csv",
+    "path": "outputs/brs_AD_all_mutations.csv",
+    "type": "file",
+    "size": 25557,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "bsa_per_residue.csv",
+    "path": "outputs/bsa_per_residue.csv",
+    "type": "file",
+    "size": 6500,
+    "mtime": 1775131194.0,
+    "exported": true
+  },
+  {
+    "name": "haddock_airs.csv",
+    "path": "outputs/haddock_airs.csv",
+    "type": "file",
+    "size": 1530,
+    "mtime": 1775131194.0,
+    "exported": true
+  },
+  {
+    "name": "interface_residues.csv",
+    "path": "outputs/interface_residues.csv",
+    "type": "file",
+    "size": 3420,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "residue_ddg.csv",
+    "path": "outputs/residue_ddg.csv",
+    "type": "file",
+    "size": 894,
+    "mtime": 1775131194.0,
+    "exported": true
+  },
+  {
+    "name": "single_mutations.csv",
+    "path": "outputs/single_mutations.csv",
+    "type": "file",
+    "size": 16425,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "skempi_summary.json",
+    "path": "outputs/skempi_summary.json",
+    "type": "file",
+    "size": 710,
+    "mtime": 1775131194.0,
+    "exported": true
+  },
+  {
+    "name": "structural_summary.json",
+    "path": "outputs/structural_summary.json",
+    "type": "file",
+    "size": 764,
+    "mtime": 1775131194.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 162669,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 305268,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 599969,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3938436,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig10_bsa_vs_ddg.png",
+    "path": "report/images/fig10_bsa_vs_ddg.png",
+    "type": "file",
+    "size": 90496,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "fig11_air_summary.png",
+    "path": "report/images/fig11_air_summary.png",
+    "type": "file",
+    "size": 203499,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "fig12_workflow.png",
+    "path": "report/images/fig12_workflow.png",
+    "type": "file",
+    "size": 126565,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "fig13_residue_analysis.png",
+    "path": "report/images/fig13_residue_analysis.png",
+    "type": "file",
+    "size": 144272,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "fig1_bsa_per_residue.png",
+    "path": "report/images/fig1_bsa_per_residue.png",
+    "type": "file",
+    "size": 127244,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_residue_properties.png",
+    "path": "report/images/fig2_residue_properties.png",
+    "type": "file",
+    "size": 77800,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_interface_distance_heatmap.png",
+    "path": "report/images/fig3_interface_distance_heatmap.png",
+    "type": "file",
+    "size": 92215,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_ddg_distribution.png",
+    "path": "report/images/fig4_ddg_distribution.png",
+    "type": "file",
+    "size": 84208,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_hotspot_residues.png",
+    "path": "report/images/fig5_hotspot_residues.png",
+    "type": "file",
+    "size": 73965,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_ddg_heatmap.png",
+    "path": "report/images/fig6_ddg_heatmap.png",
+    "type": "file",
+    "size": 66902,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "fig7_double_mutant_additivity.png",
+    "path": "report/images/fig7_double_mutant_additivity.png",
+    "type": "file",
+    "size": 102766,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "fig8_skempi_overview.png",
+    "path": "report/images/fig8_skempi_overview.png",
+    "type": "file",
+    "size": 92841,
+    "mtime": 1775131196.0,
+    "exported": true
+  },
+  {
+    "name": "fig9_air_map.png",
+    "path": "report/images/fig9_air_map.png",
+    "type": "file",
+    "size": 262932,
+    "mtime": 1775131198.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 29620,
+    "mtime": 1775131199.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5185,
+    "mtime": 1775029702.0,
+    "exported": true
+  }
+]

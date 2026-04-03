@@ -1,0 +1,264 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "Together_1_features_extracted.csv",
+    "path": "data/Together_1_features_extracted.csv",
+    "type": "file",
+    "size": 910871,
+    "mtime": 1773033714.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Together_1_machine_results_reference.csv",
+    "path": "data/Together_1_machine_results_reference.csv",
+    "type": "file",
+    "size": 1790428,
+    "mtime": 1773033716.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "Together_1_targets_inserted.csv",
+    "path": "data/Together_1_targets_inserted.csv",
+    "type": "file",
+    "size": 765692,
+    "mtime": 1773033716.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "attack_classification_report.csv",
+    "path": "outputs/attack_classification_report.csv",
+    "type": "file",
+    "size": 162,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "attack_confusion_matrix.csv",
+    "path": "outputs/attack_confusion_matrix.csv",
+    "type": "file",
+    "size": 42,
+    "mtime": 1775139730.0,
+    "exported": true
+  },
+  {
+    "name": "attack_feature_importances.csv",
+    "path": "outputs/attack_feature_importances.csv",
+    "type": "file",
+    "size": 1680,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "attack_precision_recall_curve.csv",
+    "path": "outputs/attack_precision_recall_curve.csv",
+    "type": "file",
+    "size": 4520,
+    "mtime": 1775139730.0,
+    "exported": true
+  },
+  {
+    "name": "behavior_summary_metrics.csv",
+    "path": "outputs/behavior_summary_metrics.csv",
+    "type": "file",
+    "size": 89,
+    "mtime": 1775139730.0,
+    "exported": true
+  },
+  {
+    "name": "merged_features_labels.csv",
+    "path": "outputs/merged_features_labels.csv",
+    "type": "file",
+    "size": 785007,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "sniffing_classification_report.csv",
+    "path": "outputs/sniffing_classification_report.csv",
+    "type": "file",
+    "size": 162,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "sniffing_confusion_matrix.csv",
+    "path": "outputs/sniffing_confusion_matrix.csv",
+    "type": "file",
+    "size": 42,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "sniffing_feature_importances.csv",
+    "path": "outputs/sniffing_feature_importances.csv",
+    "type": "file",
+    "size": 1688,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "sniffing_precision_recall_curve.csv",
+    "path": "outputs/sniffing_precision_recall_curve.csv",
+    "type": "file",
+    "size": 3531,
+    "mtime": 1775139730.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3024514,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 9125934,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 4320154,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3464361,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 9435744,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "attack_confusion_matrix.png",
+    "path": "report/images/attack_confusion_matrix.png",
+    "type": "file",
+    "size": 57896,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "attack_feature_importances_top20.png",
+    "path": "report/images/attack_feature_importances_top20.png",
+    "type": "file",
+    "size": 155044,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "attack_precision_recall_curve.png",
+    "path": "report/images/attack_precision_recall_curve.png",
+    "type": "file",
+    "size": 54976,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "class_balance.png",
+    "path": "report/images/class_balance.png",
+    "type": "file",
+    "size": 90021,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "feature_histograms.png",
+    "path": "report/images/feature_histograms.png",
+    "type": "file",
+    "size": 215103,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "sniffing_confusion_matrix.png",
+    "path": "report/images/sniffing_confusion_matrix.png",
+    "type": "file",
+    "size": 53708,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "sniffing_feature_importances_top20.png",
+    "path": "report/images/sniffing_feature_importances_top20.png",
+    "type": "file",
+    "size": 155136,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "sniffing_precision_recall_curve.png",
+    "path": "report/images/sniffing_precision_recall_curve.png",
+    "type": "file",
+    "size": 55001,
+    "mtime": 1775139732.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14763,
+    "mtime": 1775139733.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5524,
+    "mtime": 1775018135.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,7 @@
+This workspace only provides one two-step input sample and one +6h forecast sample, not a full multi-year training corpus. Accordingly, the analysis is designed as a rigorous exploratory and validation-oriented study rather than an unsupported end-to-end model training claim.
+
+Planned scientific framing for the later report:
+- Treat the benchmark objective as a cascade forecasting design problem inspired by FourCastNet and FengWu.
+- Use three specialized U-Transformer stages conceptually partitioned by lead time (short-range, medium-range, extended-range) to limit autoregressive error accumulation.
+- Use the provided files to document variable layout, sample forecast behavior, and practical constraints on evaluation in this workspace.
+- Report quantitative diagnostics that are feasible from the available sample, especially channel-wise weighted RMSE/bias/correlation between the +6h forecast and the latest available input state.

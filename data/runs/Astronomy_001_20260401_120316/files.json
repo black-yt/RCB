@@ -1,0 +1,181 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analysis.py",
+    "path": "code/analysis.py",
+    "type": "file",
+    "size": 15309,
+    "mtime": 1775133006.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "DESI_EDE_Repro_Data.txt",
+    "path": "data/DESI_EDE_Repro_Data.txt",
+    "type": "file",
+    "size": 2010,
+    "mtime": 1772000178.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "distance_residual_points.csv",
+    "path": "outputs/distance_residual_points.csv",
+    "type": "file",
+    "size": 1071,
+    "mtime": 1775133004.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.txt",
+    "path": "outputs/paper_003.txt",
+    "type": "file",
+    "size": 47782,
+    "mtime": 1775133004.0,
+    "exported": true
+  },
+  {
+    "name": "parameter_constraints.csv",
+    "path": "outputs/parameter_constraints.csv",
+    "type": "file",
+    "size": 1352,
+    "mtime": 1775133004.0,
+    "exported": true
+  },
+  {
+    "name": "parameter_shifts_vs_lcdm.csv",
+    "path": "outputs/parameter_shifts_vs_lcdm.csv",
+    "type": "file",
+    "size": 1519,
+    "mtime": 1775133004.0,
+    "exported": true
+  },
+  {
+    "name": "summary_metrics.json",
+    "path": "outputs/summary_metrics.json",
+    "type": "file",
+    "size": 1902,
+    "mtime": 1775133004.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1135737,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 6745329,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5592750,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1107361,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "acoustic_scale_proxy.png",
+    "path": "report/images/acoustic_scale_proxy.png",
+    "type": "file",
+    "size": 92392,
+    "mtime": 1775133006.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 165686,
+    "mtime": 1775133006.0,
+    "exported": true
+  },
+  {
+    "name": "model_specific_constraints.png",
+    "path": "report/images/model_specific_constraints.png",
+    "type": "file",
+    "size": 72192,
+    "mtime": 1775133006.0,
+    "exported": true
+  },
+  {
+    "name": "parameter_constraints.png",
+    "path": "report/images/parameter_constraints.png",
+    "type": "file",
+    "size": 142781,
+    "mtime": 1775133006.0,
+    "exported": true
+  },
+  {
+    "name": "standardized_shifts.png",
+    "path": "report/images/standardized_shifts.png",
+    "type": "file",
+    "size": 71487,
+    "mtime": 1775133006.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 11589,
+    "mtime": 1775133007.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5423,
+    "mtime": 1775016196.0,
+    "exported": true
+  }
+]

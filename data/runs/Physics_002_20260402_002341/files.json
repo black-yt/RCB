@@ -1,0 +1,492 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "statistical_analysis.py",
+    "path": "code/statistical_analysis.py",
+    "type": "file",
+    "size": 9670,
+    "mtime": 1775131218.0,
+    "exported": true
+  },
+  {
+    "name": "xeb_analysis.py",
+    "path": "code/xeb_analysis.py",
+    "type": "file",
+    "size": 17841,
+    "mtime": 1775131218.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "amplitudes",
+    "path": "data/amplitudes",
+    "type": "directory"
+  },
+  {
+    "name": "N40_verification",
+    "path": "data/amplitudes/N40_verification",
+    "type": "directory"
+  },
+  {
+    "name": "N40_d10_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d10_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d12_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d14_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d14_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d16_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d16_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d18_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d18_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d20_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d20_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d8_XEB",
+    "path": "data/amplitudes/N40_verification/N40_d8_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N_scan_depth12",
+    "path": "data/amplitudes/N_scan_depth12",
+    "type": "directory"
+  },
+  {
+    "name": "N16_d12_XEB",
+    "path": "data/amplitudes/N_scan_depth12/N16_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N24_d12_XEB",
+    "path": "data/amplitudes/N_scan_depth12/N24_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N32_d12_XEB",
+    "path": "data/amplitudes/N_scan_depth12/N32_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d12_XEB",
+    "path": "data/amplitudes/N_scan_depth12/N40_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "results",
+    "path": "data/results",
+    "type": "directory"
+  },
+  {
+    "name": "N40_verification",
+    "path": "data/results/N40_verification",
+    "type": "directory"
+  },
+  {
+    "name": "N40_d10_MB",
+    "path": "data/results/N40_verification/N40_d10_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d10_XEB",
+    "path": "data/results/N40_verification/N40_d10_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d12_MB",
+    "path": "data/results/N40_verification/N40_d12_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d12_XEB",
+    "path": "data/results/N40_verification/N40_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d14_MB",
+    "path": "data/results/N40_verification/N40_d14_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d14_XEB",
+    "path": "data/results/N40_verification/N40_d14_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d16_MB",
+    "path": "data/results/N40_verification/N40_d16_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d16_Transport_1QRB",
+    "path": "data/results/N40_verification/N40_d16_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d16_XEB",
+    "path": "data/results/N40_verification/N40_d16_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N40_d18_MB",
+    "path": "data/results/N40_verification/N40_d18_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "\u2026 10 more items",
+    "path": "data/results/N40_verification/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "N56_depths",
+    "path": "data/results/N56_depths",
+    "type": "directory"
+  },
+  {
+    "name": "N56_d10_MB",
+    "path": "data/results/N56_depths/N56_d10_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d10_XEB",
+    "path": "data/results/N56_depths/N56_d10_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d12_MB",
+    "path": "data/results/N56_depths/N56_d12_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d12_XEB",
+    "path": "data/results/N56_depths/N56_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d14_MB",
+    "path": "data/results/N56_depths/N56_d14_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d14_XEB",
+    "path": "data/results/N56_depths/N56_d14_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d16_MB",
+    "path": "data/results/N56_depths/N56_d16_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d16_Transport_1QRB",
+    "path": "data/results/N56_depths/N56_d16_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d16_XEB",
+    "path": "data/results/N56_depths/N56_d16_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N56_d18_MB",
+    "path": "data/results/N56_depths/N56_d18_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "\u2026 11 more items",
+    "path": "data/results/N56_depths/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "N_scan_depth12",
+    "path": "data/results/N_scan_depth12",
+    "type": "directory"
+  },
+  {
+    "name": "N16_d12_MB",
+    "path": "data/results/N_scan_depth12/N16_d12_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d12_XEB",
+    "path": "data/results/N_scan_depth12/N16_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d16_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d16_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d32_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d32_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d48_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d48_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d4_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d4_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d64_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d64_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N16_d96_Transport_1QRB",
+    "path": "data/results/N_scan_depth12/N16_d96_Transport_1QRB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N24_d12_MB",
+    "path": "data/results/N_scan_depth12/N24_d12_MB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "N24_d12_XEB",
+    "path": "data/results/N_scan_depth12/N24_d12_XEB",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "\u2026 38 more items",
+    "path": "data/results/N_scan_depth12/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "summary_statistics.json",
+    "path": "outputs/summary_statistics.json",
+    "type": "file",
+    "size": 2441,
+    "mtime": 1775131216.0,
+    "exported": true
+  },
+  {
+    "name": "xeb_N40_depth_scan.json",
+    "path": "outputs/xeb_N40_depth_scan.json",
+    "type": "file",
+    "size": 10310,
+    "mtime": 1775131216.0,
+    "exported": true
+  },
+  {
+    "name": "xeb_Nscan_d12.json",
+    "path": "outputs/xeb_Nscan_d12.json",
+    "type": "file",
+    "size": 5837,
+    "mtime": 1775131216.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1644579,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2449530,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 1696828,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 11841148,
+    "mtime": 1773914915.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "fig1_xeb_vs_depth_N40.png",
+    "path": "report/images/fig1_xeb_vs_depth_N40.png",
+    "type": "file",
+    "size": 62417,
+    "mtime": 1775131216.0,
+    "exported": true
+  },
+  {
+    "name": "fig2_xeb_vs_N_d12.png",
+    "path": "report/images/fig2_xeb_vs_N_d12.png",
+    "type": "file",
+    "size": 59943,
+    "mtime": 1775131216.0,
+    "exported": true
+  },
+  {
+    "name": "fig3_combined_xeb.png",
+    "path": "report/images/fig3_combined_xeb.png",
+    "type": "file",
+    "size": 92265,
+    "mtime": 1775131216.0,
+    "exported": true
+  },
+  {
+    "name": "fig4_fidelity_distribution_N40.png",
+    "path": "report/images/fig4_fidelity_distribution_N40.png",
+    "type": "file",
+    "size": 67297,
+    "mtime": 1775131218.0,
+    "exported": true
+  },
+  {
+    "name": "fig5_log_fidelity_decay.png",
+    "path": "report/images/fig5_log_fidelity_decay.png",
+    "type": "file",
+    "size": 72420,
+    "mtime": 1775131218.0,
+    "exported": true
+  },
+  {
+    "name": "fig6_scatter_N_scan.png",
+    "path": "report/images/fig6_scatter_N_scan.png",
+    "type": "file",
+    "size": 97044,
+    "mtime": 1775131218.0,
+    "exported": true
+  },
+  {
+    "name": "fig7_data_overview.png",
+    "path": "report/images/fig7_data_overview.png",
+    "type": "file",
+    "size": 56114,
+    "mtime": 1775131218.0,
+    "exported": true
+  },
+  {
+    "name": "fig8_xeb_with_CI.png",
+    "path": "report/images/fig8_xeb_with_CI.png",
+    "type": "file",
+    "size": 154282,
+    "mtime": 1775131216.0,
+    "exported": true
+  },
+  {
+    "name": "fig9_log_fit.png",
+    "path": "report/images/fig9_log_fit.png",
+    "type": "file",
+    "size": 74170,
+    "mtime": 1775131218.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 18278,
+    "mtime": 1775131219.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6103,
+    "mtime": 1775060621.0,
+    "exported": true
+  }
+]

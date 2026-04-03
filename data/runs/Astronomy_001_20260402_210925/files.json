@@ -1,0 +1,213 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 18951,
+    "mtime": 1775199714.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "DESI_EDE_Repro_Data.txt",
+    "path": "data/DESI_EDE_Repro_Data.txt",
+    "type": "file",
+    "size": 2010,
+    "mtime": 1772000178.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_manifest.json",
+    "path": "outputs/analysis_manifest.json",
+    "type": "file",
+    "size": 855,
+    "mtime": 1775199712.0,
+    "exported": true
+  },
+  {
+    "name": "analysis_summary.txt",
+    "path": "outputs/analysis_summary.txt",
+    "type": "file",
+    "size": 1522,
+    "mtime": 1775199710.0,
+    "exported": true
+  },
+  {
+    "name": "distance_dataset_summary.json",
+    "path": "outputs/distance_dataset_summary.json",
+    "type": "file",
+    "size": 896,
+    "mtime": 1775199710.0,
+    "exported": true
+  },
+  {
+    "name": "inferred_model_curves.json",
+    "path": "outputs/inferred_model_curves.json",
+    "type": "file",
+    "size": 3698,
+    "mtime": 1775199712.0,
+    "exported": true
+  },
+  {
+    "name": "model_curve_fit_metrics.json",
+    "path": "outputs/model_curve_fit_metrics.json",
+    "type": "file",
+    "size": 937,
+    "mtime": 1775199710.0,
+    "exported": true
+  },
+  {
+    "name": "model_parameter_shifts.csv",
+    "path": "outputs/model_parameter_shifts.csv",
+    "type": "file",
+    "size": 1030,
+    "mtime": 1775199712.0,
+    "exported": true
+  },
+  {
+    "name": "parameter_constraints.csv",
+    "path": "outputs/parameter_constraints.csv",
+    "type": "file",
+    "size": 490,
+    "mtime": 1775199712.0,
+    "exported": true
+  },
+  {
+    "name": "task_run_complete.txt",
+    "path": "outputs/task_run_complete.txt",
+    "type": "file",
+    "size": 1360,
+    "mtime": 1775199712.0,
+    "exported": true
+  },
+  {
+    "name": "task_understanding.txt",
+    "path": "outputs/task_understanding.txt",
+    "type": "file",
+    "size": 2289,
+    "mtime": 1775199710.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1135737,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 6745329,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5592750,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1107361,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 82591,
+    "mtime": 1775199712.0,
+    "exported": true
+  },
+  {
+    "name": "distance_residual_comparison.png",
+    "path": "report/images/distance_residual_comparison.png",
+    "type": "file",
+    "size": 202154,
+    "mtime": 1775199712.0,
+    "exported": true
+  },
+  {
+    "name": "parameter_constraints_overview.png",
+    "path": "report/images/parameter_constraints_overview.png",
+    "type": "file",
+    "size": 191739,
+    "mtime": 1775199712.0,
+    "exported": true
+  },
+  {
+    "name": "parameter_shift_significance.png",
+    "path": "report/images/parameter_shift_significance.png",
+    "type": "file",
+    "size": 65929,
+    "mtime": 1775199712.0,
+    "exported": true
+  },
+  {
+    "name": "residual_fit_metrics.png",
+    "path": "report/images/residual_fit_metrics.png",
+    "type": "file",
+    "size": 71375,
+    "mtime": 1775199714.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14930,
+    "mtime": 1775199715.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5423,
+    "mtime": 1775135365.0,
+    "exported": true
+  }
+]

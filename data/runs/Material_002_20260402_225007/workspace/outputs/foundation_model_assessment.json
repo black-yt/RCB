@@ -1,0 +1,36 @@
+{
+  "domains": {
+    "liquid_structure": {
+      "benchmark": "Water RDF / MD stability proxy",
+      "primary_signal": "physically plausible condensed-phase setup and molecular geometry",
+      "key_metric": 0.553974283243275
+    },
+    "surface_catalysis": {
+      "benchmark": "Adsorption energy scaling across fcc transition metals",
+      "primary_signal": "smooth cross-metal energetic trends",
+      "key_metric": 0.9999999999999998
+    },
+    "reaction_chemistry": {
+      "benchmark": "Barrier transfer across small-molecule rearrangements",
+      "primary_signal": "consistent transition-state sensitivity",
+      "key_metric": 1.7433333333333334
+    }
+  },
+  "scorecard": {
+    "domain_count": 3,
+    "elements_covered": [
+      "H",
+      "C",
+      "O",
+      "Ni",
+      "Cu",
+      "Rh",
+      "Pd",
+      "Ir",
+      "Pt"
+    ],
+    "elements_covered_count": 9,
+    "benchmark_diversity": "molecule + liquid + surface + reaction",
+    "fine_tuning_readiness_assessment": "The provided benchmarks span structural, catalytic, and reactive regimes, making them suitable as low-data adaptation probes once a pretrained universal potential is available."
+  }
+}

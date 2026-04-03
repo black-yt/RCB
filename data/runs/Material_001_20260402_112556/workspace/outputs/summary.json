@@ -1,0 +1,70 @@
+{
+  "assumptions": {
+    "property_reconstruction": "The property block was reconstructed into 97 pseudo-samples by aligning the first 97 cells of the serialized 13x9 grid with the 97 target values, while treating the 5-node complete graph and constant composition token as shared context.",
+    "optimization_objective": "The optimization landscape is a synthetic surrogate used only to validate autonomous optimization code paths because the source file supplies bounds and schedule metadata but no empirical response surface."
+  },
+  "property_model_summary": [
+    {
+      "model": "Lag8Baseline",
+      "rmse_mean": 0.0,
+      "rmse_std": 0.0,
+      "mae_mean": 0.0,
+      "mae_std": 0.0,
+      "r2_mean": 1.0,
+      "r2_std": 0.0
+    },
+    {
+      "model": "RandomForest",
+      "rmse_mean": 0.04745591930478277,
+      "rmse_std": 0.04676721410475701,
+      "mae_mean": 0.042174953884507885,
+      "mae_std": 0.04149900487081218,
+      "r2_mean": 0.9863125361007976,
+      "r2_std": 0.019349163795807086
+    },
+    {
+      "model": "Ridge",
+      "rmse_mean": 0.24531669874327636,
+      "rmse_std": 0.10179170987542904,
+      "mae_mean": 0.2022585628401258,
+      "mae_std": 0.08802292716368244,
+      "r2_mean": 0.7802565857343466,
+      "r2_std": 0.17412103387696892
+    },
+    {
+      "model": "KNN",
+      "rmse_mean": 0.29640020231903186,
+      "rmse_std": 0.05492226002116047,
+      "mae_mean": 0.2530694285714286,
+      "mae_std": 0.030433564255034382,
+      "r2_mean": 0.6982680202363506,
+      "r2_std": 0.1378123517694253
+    },
+    {
+      "model": "DummyMean",
+      "rmse_mean": 0.5526127967894512,
+      "rmse_std": 0.029738435255139656,
+      "mae_mean": 0.5041971428571429,
+      "mae_std": 0.029706103183126026,
+      "r2_mean": -0.0019618382345744758,
+      "r2_std": 0.0029617059187278115
+    }
+  ],
+  "best_property_model": "RandomForest",
+  "generation_stats": {
+    "training_unique_points": 7.0,
+    "generated_candidates": 20.0,
+    "mean_nearest_distance": 0.060923501837518455,
+    "training_mean_a": 5.520376237623763,
+    "training_mean_b": 5.521465346534654,
+    "generated_mean_a": 5.5785558302141025,
+    "generated_mean_b": 5.71196153225736
+  },
+  "optimization_stats": {
+    "initial_objective": 0.725953686317964,
+    "best_objective": 0.8490239728694431,
+    "improvement_pct": 16.95291157975813,
+    "best_temperature_C": 351.26050420168065,
+    "best_time_h": 21.260504201680675
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "dataset": {
+    "meta": "Lasso Regression Problem with Condition Number 10",
+    "n_samples": 1000,
+    "n_features": 2000,
+    "condition_number": 10.000000000000009,
+    "lipschitz_exact": 0.10000000000000014,
+    "lipschitz_power_iteration": 0.09984349373366108,
+    "true_support_size": 100
+  },
+  "regularization": {
+    "lambda_max": 0.04438774948348783,
+    "lambda_used": 0.0035510199586790267
+  },
+  "reference_solution": {
+    "objective": 0.2578788234214258,
+    "support_metrics_vs_true": {
+      "tp": 86,
+      "fp": 9,
+      "fn": 14,
+      "precision": 0.9052631578947369,
+      "recall": 0.86,
+      "f1": 0.8820512820512821,
+      "support_size": 95
+    },
+    "relative_error_vs_true": 0.22927282751024128
+  },
+  "algorithms": {
+    "ISTA": {
+      "iterations": 270,
+      "final_objective": 0.2578788234214258,
+      "final_objective_gap": 0.0,
+      "distance_to_reference": 5.970729694006579e-11,
+      "relative_error_vs_true": 0.2292728275129844,
+      "support_metrics_vs_true": {
+        "tp": 86,
+        "fp": 9,
+        "fn": 14,
+        "precision": 0.9052631578947369,
+        "recall": 0.86,
+        "f1": 0.8820512820512821,
+        "support_size": 95
+      },
+      "final_grad_map_norm": 7.594631453333972e-13
+    },
+    "FISTA": {
+      "iterations": 399,
+      "final_objective": 0.2578788234214258,
+      "final_objective_gap": 0.0,
+      "distance_to_reference": 0.0,
+      "relative_error_vs_true": 0.22927282751024128,
+      "support_metrics_vs_true": {
+        "tp": 86,
+        "fp": 9,
+        "fn": 14,
+        "precision": 0.9052631578947369,
+        "recall": 0.86,
+        "f1": 0.8820512820512821,
+        "support_size": 95
+      },
+      "final_grad_map_norm": 3.165843526283727e-13
+    },
+    "ADMM": {
+      "iterations": 66,
+      "final_objective": 0.257878823421426,
+      "final_objective_gap": 1.6653345369377348e-16,
+      "distance_to_reference": 1.421634851975232e-07,
+      "relative_error_vs_true": 0.22927282413067648,
+      "support_metrics_vs_true": {
+        "tp": 86,
+        "fp": 9,
+        "fn": 14,
+        "precision": 0.9052631578947369,
+        "recall": 0.86,
+        "f1": 0.8820512820512821,
+        "support_size": 95
+      },
+      "final_primal_residual": 5.163988184442267e-07,
+      "final_dual_residual": 7.114668111052065e-10
+    }
+  },
+  "generated_files": {
+    "outputs": [
+      "outputs/analysis_histories.npz",
+      "outputs/solutions.npz",
+      "outputs/analysis_summary.json",
+      "outputs/analysis_summary.txt"
+    ],
+    "figures": [
+      "report/images/data_overview.png",
+      "report/images/convergence_comparison.png",
+      "report/images/coefficient_recovery.png",
+      "report/images/top_coefficients.png"
+    ]
+  }
+}

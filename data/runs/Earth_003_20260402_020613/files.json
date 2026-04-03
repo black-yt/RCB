@@ -1,0 +1,182 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_weather_case.py",
+    "path": "code/analyze_weather_case.py",
+    "type": "file",
+    "size": 16649,
+    "mtime": 1775132314.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "006.nc",
+    "path": "data/006.nc",
+    "type": "file",
+    "size": 18247988,
+    "mtime": 1772070968.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "20231012-06_input_netcdf.nc",
+    "path": "data/20231012-06_input_netcdf.nc",
+    "type": "file",
+    "size": 36492716,
+    "mtime": 1772070968.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "channel_metrics.csv",
+    "path": "outputs/channel_metrics.csv",
+    "type": "file",
+    "size": 23311,
+    "mtime": 1775132312.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_summary.json",
+    "path": "outputs/dataset_summary.json",
+    "type": "file",
+    "size": 1087,
+    "mtime": 1775132312.0,
+    "exported": true
+  },
+  {
+    "name": "family_summary.csv",
+    "path": "outputs/family_summary.csv",
+    "type": "file",
+    "size": 1859,
+    "mtime": 1775132312.0,
+    "exported": true
+  },
+  {
+    "name": "key_findings.txt",
+    "path": "outputs/key_findings.txt",
+    "type": "file",
+    "size": 407,
+    "mtime": 1775132312.0,
+    "exported": true
+  },
+  {
+    "name": "zonal_spectra.csv",
+    "path": "outputs/zonal_spectra.csv",
+    "type": "file",
+    "size": 363729,
+    "mtime": 1775132312.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 959881,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1724303,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 8061234,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4863089,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "correlation_audit.png",
+    "path": "report/images/correlation_audit.png",
+    "type": "file",
+    "size": 233700,
+    "mtime": 1775132314.0,
+    "exported": true
+  },
+  {
+    "name": "distribution_audit.png",
+    "path": "report/images/distribution_audit.png",
+    "type": "file",
+    "size": 221172,
+    "mtime": 1775132314.0,
+    "exported": true
+  },
+  {
+    "name": "overview_maps.png",
+    "path": "report/images/overview_maps.png",
+    "type": "file",
+    "size": 2196000,
+    "mtime": 1775132314.0,
+    "exported": false
+  },
+  {
+    "name": "spectra.png",
+    "path": "report/images/spectra.png",
+    "type": "file",
+    "size": 305738,
+    "mtime": 1775132312.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 11495,
+    "mtime": 1775132315.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5311,
+    "mtime": 1775066773.0,
+    "exported": true
+  }
+]

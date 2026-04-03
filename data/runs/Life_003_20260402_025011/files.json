@@ -1,0 +1,276 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 21919,
+    "mtime": 1775133470.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "dna_r10.4.1_400bps_9mer_uncalled4.csv",
+    "path": "data/dna_r10.4.1_400bps_9mer_uncalled4.csv",
+    "type": "file",
+    "size": 13869488,
+    "mtime": 1772609428.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "dna_r9.4.1_400bps_6mer_uncalled4.csv",
+    "path": "data/dna_r9.4.1_400bps_6mer_uncalled4.csv",
+    "type": "file",
+    "size": 204434,
+    "mtime": 1772609426.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "m6a_labels.csv",
+    "path": "data/m6a_labels.csv",
+    "type": "file",
+    "size": 38905,
+    "mtime": 1772609432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "m6a_predictions_nanopolish.csv",
+    "path": "data/m6a_predictions_nanopolish.csv",
+    "type": "file",
+    "size": 120766,
+    "mtime": 1772609432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "m6a_predictions_uncalled4.csv",
+    "path": "data/m6a_predictions_uncalled4.csv",
+    "type": "file",
+    "size": 119042,
+    "mtime": 1772609432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "performance_summary.csv",
+    "path": "data/performance_summary.csv",
+    "type": "file",
+    "size": 760,
+    "mtime": 1772609430.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "rna004_130bps_9mer_uncalled4.csv",
+    "path": "data/rna004_130bps_9mer_uncalled4.csv",
+    "type": "file",
+    "size": 13868930,
+    "mtime": 1772609430.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "rna_r9.4.1_70bps_5mer_uncalled4.csv",
+    "path": "data/rna_r9.4.1_70bps_5mer_uncalled4.csv",
+    "type": "file",
+    "size": 50124,
+    "mtime": 1772609428.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "base_effects_current_mean.csv",
+    "path": "outputs/base_effects_current_mean.csv",
+    "type": "file",
+    "size": 9761,
+    "mtime": 1775133470.0,
+    "exported": true
+  },
+  {
+    "name": "key_results.json",
+    "path": "outputs/key_results.json",
+    "type": "file",
+    "size": 4998,
+    "mtime": 1775133468.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_curves.csv",
+    "path": "outputs/m6a_curves.csv",
+    "type": "file",
+    "size": 618989,
+    "mtime": 1775133468.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_merged_predictions.csv",
+    "path": "outputs/m6a_merged_predictions.csv",
+    "type": "file",
+    "size": 210661,
+    "mtime": 1775133470.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_metrics.csv",
+    "path": "outputs/m6a_metrics.csv",
+    "type": "file",
+    "size": 614,
+    "mtime": 1775133468.0,
+    "exported": true
+  },
+  {
+    "name": "performance_best_baseline_comparison.csv",
+    "path": "outputs/performance_best_baseline_comparison.csv",
+    "type": "file",
+    "size": 711,
+    "mtime": 1775133468.0,
+    "exported": true
+  },
+  {
+    "name": "performance_ratios_vs_uncalled4.csv",
+    "path": "outputs/performance_ratios_vs_uncalled4.csv",
+    "type": "file",
+    "size": 654,
+    "mtime": 1775133468.0,
+    "exported": true
+  },
+  {
+    "name": "pore_model_summary.csv",
+    "path": "outputs/pore_model_summary.csv",
+    "type": "file",
+    "size": 1008,
+    "mtime": 1775133468.0,
+    "exported": true
+  },
+  {
+    "name": "position_sensitivity_current_mean.csv",
+    "path": "outputs/position_sensitivity_current_mean.csv",
+    "type": "file",
+    "size": 2403,
+    "mtime": 1775133468.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1895840,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 11834529,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3088444,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 11844346,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "base_effect_heatmap.png",
+    "path": "report/images/base_effect_heatmap.png",
+    "type": "file",
+    "size": 152403,
+    "mtime": 1775133470.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 326856,
+    "mtime": 1775133470.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_validation.png",
+    "path": "report/images/m6a_validation.png",
+    "type": "file",
+    "size": 269673,
+    "mtime": 1775133470.0,
+    "exported": true
+  },
+  {
+    "name": "performance_benchmark.png",
+    "path": "report/images/performance_benchmark.png",
+    "type": "file",
+    "size": 225149,
+    "mtime": 1775133470.0,
+    "exported": true
+  },
+  {
+    "name": "position_sensitivity.png",
+    "path": "report/images/position_sensitivity.png",
+    "type": "file",
+    "size": 236103,
+    "mtime": 1775133470.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15617,
+    "mtime": 1775133471.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6922,
+    "mtime": 1775069411.0,
+    "exported": true
+  }
+]

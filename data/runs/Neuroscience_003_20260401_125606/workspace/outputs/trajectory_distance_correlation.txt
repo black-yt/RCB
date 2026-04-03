@@ -1,0 +1,2 @@
+Correlation between pseudotime distances and PCA(all) distances: 0.379
+Correlation between pseudotime distances and PCA(top) distances: 0.554

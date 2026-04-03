@@ -1,0 +1,13 @@
+Model rf
+ROC-AUC: 0.9814433611181551
+Average Precision: 0.876195635579963
+
+Classification report (0.5 threshold):
+              precision    recall  f1-score   support
+
+           0       0.94      1.00      0.97     30263
+           1       0.95      0.44      0.60      3337
+
+    accuracy                           0.94     33600
+   macro avg       0.94      0.72      0.79     33600
+weighted avg       0.94      0.94      0.93     33600

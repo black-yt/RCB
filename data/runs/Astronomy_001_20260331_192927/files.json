@@ -1,0 +1,149 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_ede_desi.py",
+    "path": "code/analyze_ede_desi.py",
+    "type": "file",
+    "size": 4669,
+    "mtime": 1775139852.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "DESI_EDE_Repro_Data.txt",
+    "path": "data/DESI_EDE_Repro_Data.txt",
+    "type": "file",
+    "size": 2010,
+    "mtime": 1772000178.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "summary.txt",
+    "path": "outputs/summary.txt",
+    "type": "file",
+    "size": 149,
+    "mtime": 1775139848.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1135737,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 6745329,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5592750,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1107361,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "desi_dvrd_residuals.png",
+    "path": "report/images/desi_dvrd_residuals.png",
+    "type": "file",
+    "size": 68930,
+    "mtime": 1775139850.0,
+    "exported": true
+  },
+  {
+    "name": "desi_fap_residuals.png",
+    "path": "report/images/desi_fap_residuals.png",
+    "type": "file",
+    "size": 71894,
+    "mtime": 1775139850.0,
+    "exported": true
+  },
+  {
+    "name": "ede_params.png",
+    "path": "report/images/ede_params.png",
+    "type": "file",
+    "size": 36969,
+    "mtime": 1775139850.0,
+    "exported": true
+  },
+  {
+    "name": "params_comparison.png",
+    "path": "report/images/params_comparison.png",
+    "type": "file",
+    "size": 131124,
+    "mtime": 1775139850.0,
+    "exported": true
+  },
+  {
+    "name": "sne_mu_residuals.png",
+    "path": "report/images/sne_mu_residuals.png",
+    "type": "file",
+    "size": 65786,
+    "mtime": 1775139850.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15461,
+    "mtime": 1775139853.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5423,
+    "mtime": 1774956567.0,
+    "exported": true
+  }
+]

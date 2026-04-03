@@ -1,0 +1,1203 @@
+{
+  "benchmark_results": {
+    "ddar_only": [
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 27.6,
+        "name": "translated_imo_2000_p1",
+        "year": 2000,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 32.1,
+        "name": "translated_imo_2000_p6",
+        "year": 2000,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": true,
+        "proof_steps": 5,
+        "aux_constructions": 0,
+        "complexity_score": 19.8,
+        "name": "translated_imo_2002_p2a",
+        "year": 2002,
+        "goal_category": "Equal Angles"
+      },
+      {
+        "method": "ddar_only",
+        "success": true,
+        "proof_steps": 9,
+        "aux_constructions": 0,
+        "complexity_score": 19.8,
+        "name": "translated_imo_2002_p2b",
+        "year": 2002,
+        "goal_category": "Equal Angles"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 24.4,
+        "name": "translated_imo_2003_p4",
+        "year": 2003,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 24.1,
+        "name": "translated_imo_2004_p1",
+        "year": 2004,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "ddar_only",
+        "success": true,
+        "proof_steps": 20,
+        "aux_constructions": 0,
+        "complexity_score": 13.0,
+        "name": "translated_imo_2004_p5",
+        "year": 2004,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 27.0,
+        "name": "translated_imo_2005_p5",
+        "year": 2005,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 23.6,
+        "name": "translated_imo_2007_p4",
+        "year": 2007,
+        "goal_category": "Equal Ratios"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 31.6,
+        "name": "translated_imo_2008_p1a",
+        "year": 2008,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 31.6,
+        "name": "translated_imo_2008_p1b",
+        "year": 2008,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 37.9,
+        "name": "translated_imo_2008_p6",
+        "year": 2008,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": true,
+        "proof_steps": 11,
+        "aux_constructions": 0,
+        "complexity_score": 20.2,
+        "name": "translated_imo_2009_p2",
+        "year": 2009,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 24.3,
+        "name": "translated_imo_2010_p2",
+        "year": 2010,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": true,
+        "proof_steps": 20,
+        "aux_constructions": 0,
+        "complexity_score": 20.8,
+        "name": "translated_imo_2010_p4",
+        "year": 2010,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 37.2,
+        "name": "translated_imo_2011_p6",
+        "year": 2011,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "ddar_only",
+        "success": true,
+        "proof_steps": 9,
+        "aux_constructions": 0,
+        "complexity_score": 19.0,
+        "name": "translated_imo_2012_p1",
+        "year": 2012,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": true,
+        "proof_steps": 15,
+        "aux_constructions": 0,
+        "complexity_score": 18.2,
+        "name": "translated_imo_2012_p5",
+        "year": 2012,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 26.4,
+        "name": "translated_imo_2013_p4",
+        "year": 2013,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "ddar_only",
+        "success": true,
+        "proof_steps": 5,
+        "aux_constructions": 0,
+        "complexity_score": 20.0,
+        "name": "translated_imo_2014_p4",
+        "year": 2014,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 25.6,
+        "name": "translated_imo_2015_p3",
+        "year": 2015,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 29.6,
+        "name": "translated_imo_2015_p4",
+        "year": 2015,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 21.9,
+        "name": "translated_imo_2016_p1",
+        "year": 2016,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 20.8,
+        "name": "translated_imo_2017_p4",
+        "year": 2017,
+        "goal_category": "Perpendicularity"
+      },
+      {
+        "method": "ddar_only",
+        "success": true,
+        "proof_steps": 7,
+        "aux_constructions": 0,
+        "complexity_score": 18.2,
+        "name": "translated_imo_2018_p1",
+        "year": 2018,
+        "goal_category": "Parallelism"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 17.0,
+        "name": "translated_imo_2019_p2",
+        "year": 2019,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 28.1,
+        "name": "translated_imo_2019_p6",
+        "year": 2019,
+        "goal_category": "Perpendicularity"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 23.9,
+        "name": "translated_imo_2020_p1",
+        "year": 2020,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 24.1,
+        "name": "translated_imo_2021_p3",
+        "year": 2021,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "ddar_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 21.2,
+        "name": "translated_imo_2022_p4",
+        "year": 2022,
+        "goal_category": "Concyclicity"
+      }
+    ],
+    "alphageometry": [
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 49,
+        "aux_constructions": 3,
+        "complexity_score": 27.6,
+        "name": "translated_imo_2000_p1",
+        "year": 2000,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 54,
+        "aux_constructions": 4,
+        "complexity_score": 32.1,
+        "name": "translated_imo_2000_p6",
+        "year": 2000,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 41,
+        "aux_constructions": 0,
+        "complexity_score": 19.8,
+        "name": "translated_imo_2002_p2a",
+        "year": 2002,
+        "goal_category": "Equal Angles"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 28,
+        "aux_constructions": 0,
+        "complexity_score": 19.8,
+        "name": "translated_imo_2002_p2b",
+        "year": 2002,
+        "goal_category": "Equal Angles"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 48,
+        "aux_constructions": 1,
+        "complexity_score": 24.4,
+        "name": "translated_imo_2003_p4",
+        "year": 2003,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 38,
+        "aux_constructions": 3,
+        "complexity_score": 24.1,
+        "name": "translated_imo_2004_p1",
+        "year": 2004,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 29,
+        "aux_constructions": 0,
+        "complexity_score": 13.0,
+        "name": "translated_imo_2004_p5",
+        "year": 2004,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 53,
+        "aux_constructions": 3,
+        "complexity_score": 27.0,
+        "name": "translated_imo_2005_p5",
+        "year": 2005,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 49,
+        "aux_constructions": 3,
+        "complexity_score": 23.6,
+        "name": "translated_imo_2007_p4",
+        "year": 2007,
+        "goal_category": "Equal Ratios"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 52,
+        "aux_constructions": 3,
+        "complexity_score": 31.6,
+        "name": "translated_imo_2008_p1a",
+        "year": 2008,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 45,
+        "aux_constructions": 5,
+        "complexity_score": 31.6,
+        "name": "translated_imo_2008_p1b",
+        "year": 2008,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "alphageometry",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 37.9,
+        "name": "translated_imo_2008_p6",
+        "year": 2008,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 31,
+        "aux_constructions": 3,
+        "complexity_score": 20.2,
+        "name": "translated_imo_2009_p2",
+        "year": 2009,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 38,
+        "aux_constructions": 0,
+        "complexity_score": 24.3,
+        "name": "translated_imo_2010_p2",
+        "year": 2010,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 41,
+        "aux_constructions": 2,
+        "complexity_score": 20.8,
+        "name": "translated_imo_2010_p4",
+        "year": 2010,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 37.2,
+        "name": "translated_imo_2011_p6",
+        "year": 2011,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 27,
+        "aux_constructions": 0,
+        "complexity_score": 19.0,
+        "name": "translated_imo_2012_p1",
+        "year": 2012,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 32,
+        "aux_constructions": 0,
+        "complexity_score": 18.2,
+        "name": "translated_imo_2012_p5",
+        "year": 2012,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 38,
+        "aux_constructions": 1,
+        "complexity_score": 26.4,
+        "name": "translated_imo_2013_p4",
+        "year": 2013,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 25,
+        "aux_constructions": 3,
+        "complexity_score": 20.0,
+        "name": "translated_imo_2014_p4",
+        "year": 2014,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 34,
+        "aux_constructions": 1,
+        "complexity_score": 25.6,
+        "name": "translated_imo_2015_p3",
+        "year": 2015,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 42,
+        "aux_constructions": 2,
+        "complexity_score": 29.6,
+        "name": "translated_imo_2015_p4",
+        "year": 2015,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 40,
+        "aux_constructions": 3,
+        "complexity_score": 21.9,
+        "name": "translated_imo_2016_p1",
+        "year": 2016,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "alphageometry",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 20.8,
+        "name": "translated_imo_2017_p4",
+        "year": 2017,
+        "goal_category": "Perpendicularity"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 24,
+        "aux_constructions": 0,
+        "complexity_score": 18.2,
+        "name": "translated_imo_2018_p1",
+        "year": 2018,
+        "goal_category": "Parallelism"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 22,
+        "aux_constructions": 0,
+        "complexity_score": 17.0,
+        "name": "translated_imo_2019_p2",
+        "year": 2019,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "alphageometry",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 28.1,
+        "name": "translated_imo_2019_p6",
+        "year": 2019,
+        "goal_category": "Perpendicularity"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 40,
+        "aux_constructions": 3,
+        "complexity_score": 23.9,
+        "name": "translated_imo_2020_p1",
+        "year": 2020,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "alphageometry",
+        "success": true,
+        "proof_steps": 44,
+        "aux_constructions": 2,
+        "complexity_score": 24.1,
+        "name": "translated_imo_2021_p3",
+        "year": 2021,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "alphageometry",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 21.2,
+        "name": "translated_imo_2022_p4",
+        "year": 2022,
+        "goal_category": "Concyclicity"
+      }
+    ],
+    "lm_only": [
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 27.6,
+        "name": "translated_imo_2000_p1",
+        "year": 2000,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 32.1,
+        "name": "translated_imo_2000_p6",
+        "year": 2000,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 19.8,
+        "name": "translated_imo_2002_p2a",
+        "year": 2002,
+        "goal_category": "Equal Angles"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 7,
+        "aux_constructions": 2,
+        "complexity_score": 19.8,
+        "name": "translated_imo_2002_p2b",
+        "year": 2002,
+        "goal_category": "Equal Angles"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 24.4,
+        "name": "translated_imo_2003_p4",
+        "year": 2003,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 6,
+        "aux_constructions": 2,
+        "complexity_score": 24.1,
+        "name": "translated_imo_2004_p1",
+        "year": 2004,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 6,
+        "aux_constructions": 2,
+        "complexity_score": 13.0,
+        "name": "translated_imo_2004_p5",
+        "year": 2004,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 27.0,
+        "name": "translated_imo_2005_p5",
+        "year": 2005,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 23.6,
+        "name": "translated_imo_2007_p4",
+        "year": 2007,
+        "goal_category": "Equal Ratios"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 31.6,
+        "name": "translated_imo_2008_p1a",
+        "year": 2008,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 31.6,
+        "name": "translated_imo_2008_p1b",
+        "year": 2008,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 37.9,
+        "name": "translated_imo_2008_p6",
+        "year": 2008,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 9,
+        "aux_constructions": 0,
+        "complexity_score": 20.2,
+        "name": "translated_imo_2009_p2",
+        "year": 2009,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 4,
+        "aux_constructions": 2,
+        "complexity_score": 24.3,
+        "name": "translated_imo_2010_p2",
+        "year": 2010,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 10,
+        "aux_constructions": 1,
+        "complexity_score": 20.8,
+        "name": "translated_imo_2010_p4",
+        "year": 2010,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 37.2,
+        "name": "translated_imo_2011_p6",
+        "year": 2011,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 19.0,
+        "name": "translated_imo_2012_p1",
+        "year": 2012,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 5,
+        "aux_constructions": 0,
+        "complexity_score": 18.2,
+        "name": "translated_imo_2012_p5",
+        "year": 2012,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 3,
+        "aux_constructions": 1,
+        "complexity_score": 26.4,
+        "name": "translated_imo_2013_p4",
+        "year": 2013,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 10,
+        "aux_constructions": 2,
+        "complexity_score": 20.0,
+        "name": "translated_imo_2014_p4",
+        "year": 2014,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 4,
+        "aux_constructions": 1,
+        "complexity_score": 25.6,
+        "name": "translated_imo_2015_p3",
+        "year": 2015,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 29.6,
+        "name": "translated_imo_2015_p4",
+        "year": 2015,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 21.9,
+        "name": "translated_imo_2016_p1",
+        "year": 2016,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 6,
+        "aux_constructions": 1,
+        "complexity_score": 20.8,
+        "name": "translated_imo_2017_p4",
+        "year": 2017,
+        "goal_category": "Perpendicularity"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 5,
+        "aux_constructions": 0,
+        "complexity_score": 18.2,
+        "name": "translated_imo_2018_p1",
+        "year": 2018,
+        "goal_category": "Parallelism"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 17.0,
+        "name": "translated_imo_2019_p2",
+        "year": 2019,
+        "goal_category": "Concyclicity"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 28.1,
+        "name": "translated_imo_2019_p6",
+        "year": 2019,
+        "goal_category": "Perpendicularity"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 23.9,
+        "name": "translated_imo_2020_p1",
+        "year": 2020,
+        "goal_category": "Congruence"
+      },
+      {
+        "method": "lm_only",
+        "success": true,
+        "proof_steps": 6,
+        "aux_constructions": 0,
+        "complexity_score": 24.1,
+        "name": "translated_imo_2021_p3",
+        "year": 2021,
+        "goal_category": "Collinearity"
+      },
+      {
+        "method": "lm_only",
+        "success": false,
+        "proof_steps": 0,
+        "aux_constructions": 0,
+        "complexity_score": 21.2,
+        "name": "translated_imo_2022_p4",
+        "year": 2022,
+        "goal_category": "Concyclicity"
+      }
+    ]
+  },
+  "proof_lengths": [
+    {
+      "name": "translated_imo_2000_p1",
+      "year": 2000,
+      "complexity": 27.6,
+      "proof_length_estimate": 48,
+      "aux_constructions": 2,
+      "goal_type": "cong",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2000_p6",
+      "year": 2000,
+      "complexity": 32.1,
+      "proof_length_estimate": 56,
+      "aux_constructions": 2,
+      "goal_type": "cong",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2002_p2a",
+      "year": 2002,
+      "complexity": 19.8,
+      "proof_length_estimate": 35,
+      "aux_constructions": 0,
+      "goal_type": "eqangle",
+      "needed_lm": false
+    },
+    {
+      "name": "translated_imo_2002_p2b",
+      "year": 2002,
+      "complexity": 19.8,
+      "proof_length_estimate": 39,
+      "aux_constructions": 0,
+      "goal_type": "eqangle",
+      "needed_lm": false
+    },
+    {
+      "name": "translated_imo_2003_p4",
+      "year": 2003,
+      "complexity": 24.4,
+      "proof_length_estimate": 43,
+      "aux_constructions": 2,
+      "goal_type": "cong",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2004_p1",
+      "year": 2004,
+      "complexity": 24.1,
+      "proof_length_estimate": 35,
+      "aux_constructions": 1,
+      "goal_type": "coll",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2004_p5",
+      "year": 2004,
+      "complexity": 13.0,
+      "proof_length_estimate": 25,
+      "aux_constructions": 0,
+      "goal_type": "cong",
+      "needed_lm": false
+    },
+    {
+      "name": "translated_imo_2005_p5",
+      "year": 2005,
+      "complexity": 27.0,
+      "proof_length_estimate": 47,
+      "aux_constructions": 1,
+      "goal_type": "cyclic",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2007_p4",
+      "year": 2007,
+      "complexity": 23.6,
+      "proof_length_estimate": 41,
+      "aux_constructions": 2,
+      "goal_type": "eqratio",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2008_p1a",
+      "year": 2008,
+      "complexity": 31.6,
+      "proof_length_estimate": 57,
+      "aux_constructions": 4,
+      "goal_type": "cyclic",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2008_p1b",
+      "year": 2008,
+      "complexity": 31.6,
+      "proof_length_estimate": 58,
+      "aux_constructions": 4,
+      "goal_type": "cyclic",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2009_p2",
+      "year": 2009,
+      "complexity": 20.2,
+      "proof_length_estimate": 42,
+      "aux_constructions": 1,
+      "goal_type": "cong",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2010_p2",
+      "year": 2010,
+      "complexity": 24.3,
+      "proof_length_estimate": 47,
+      "aux_constructions": 0,
+      "goal_type": "cong",
+      "needed_lm": false
+    },
+    {
+      "name": "translated_imo_2010_p4",
+      "year": 2010,
+      "complexity": 20.8,
+      "proof_length_estimate": 37,
+      "aux_constructions": 1,
+      "goal_type": "cong",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2012_p1",
+      "year": 2012,
+      "complexity": 19.0,
+      "proof_length_estimate": 30,
+      "aux_constructions": 0,
+      "goal_type": "cong",
+      "needed_lm": false
+    },
+    {
+      "name": "translated_imo_2012_p5",
+      "year": 2012,
+      "complexity": 18.2,
+      "proof_length_estimate": 27,
+      "aux_constructions": 0,
+      "goal_type": "cong",
+      "needed_lm": false
+    },
+    {
+      "name": "translated_imo_2013_p4",
+      "year": 2013,
+      "complexity": 26.4,
+      "proof_length_estimate": 48,
+      "aux_constructions": 1,
+      "goal_type": "coll",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2014_p4",
+      "year": 2014,
+      "complexity": 20.0,
+      "proof_length_estimate": 42,
+      "aux_constructions": 1,
+      "goal_type": "cong",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2015_p3",
+      "year": 2015,
+      "complexity": 25.6,
+      "proof_length_estimate": 46,
+      "aux_constructions": 3,
+      "goal_type": "coll",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2015_p4",
+      "year": 2015,
+      "complexity": 29.6,
+      "proof_length_estimate": 52,
+      "aux_constructions": 2,
+      "goal_type": "coll",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2016_p1",
+      "year": 2016,
+      "complexity": 21.9,
+      "proof_length_estimate": 42,
+      "aux_constructions": 2,
+      "goal_type": "coll",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2018_p1",
+      "year": 2018,
+      "complexity": 18.2,
+      "proof_length_estimate": 25,
+      "aux_constructions": 0,
+      "goal_type": "para",
+      "needed_lm": false
+    },
+    {
+      "name": "translated_imo_2019_p2",
+      "year": 2019,
+      "complexity": 17.0,
+      "proof_length_estimate": 29,
+      "aux_constructions": 0,
+      "goal_type": "cyclic",
+      "needed_lm": false
+    },
+    {
+      "name": "translated_imo_2020_p1",
+      "year": 2020,
+      "complexity": 23.9,
+      "proof_length_estimate": 45,
+      "aux_constructions": 1,
+      "goal_type": "cong",
+      "needed_lm": true
+    },
+    {
+      "name": "translated_imo_2021_p3",
+      "year": 2021,
+      "complexity": 24.1,
+      "proof_length_estimate": 47,
+      "aux_constructions": 1,
+      "goal_type": "coll",
+      "needed_lm": true
+    }
+  ],
+  "baselines": {
+    "Wu method": {
+      "solved": 0,
+      "description": "Algebraic approach, not applicable here"
+    },
+    "Geometer": {
+      "solved": 0,
+      "description": "Rule-based, 0/30"
+    },
+    "Gelernter prover": {
+      "solved": 0,
+      "description": "Early AI prover, 0/30"
+    },
+    "DD+AR (symbolic only)": {
+      "solved": 14,
+      "description": "Deductive + Algebraic rules"
+    },
+    "Human gold medalist": {
+      "solved": 25,
+      "description": "Average gold medalist score"
+    },
+    "AlphaGeometry": {
+      "solved": 25,
+      "description": "Full neuro-symbolic system"
+    }
+  },
+  "alphageometry_ground_truth": {
+    "solved_by_full_ag": [
+      "translated_imo_2000_p1",
+      "translated_imo_2000_p6",
+      "translated_imo_2002_p2a",
+      "translated_imo_2002_p2b",
+      "translated_imo_2003_p4",
+      "translated_imo_2004_p1",
+      "translated_imo_2004_p5",
+      "translated_imo_2005_p5",
+      "translated_imo_2007_p4",
+      "translated_imo_2008_p1a",
+      "translated_imo_2008_p1b",
+      "translated_imo_2009_p2",
+      "translated_imo_2010_p2",
+      "translated_imo_2010_p4",
+      "translated_imo_2012_p1",
+      "translated_imo_2012_p5",
+      "translated_imo_2013_p4",
+      "translated_imo_2014_p4",
+      "translated_imo_2015_p3",
+      "translated_imo_2015_p4",
+      "translated_imo_2016_p1",
+      "translated_imo_2018_p1",
+      "translated_imo_2019_p2",
+      "translated_imo_2020_p1",
+      "translated_imo_2021_p3"
+    ],
+    "solved_by_ddar": [
+      "translated_imo_2002_p2a",
+      "translated_imo_2002_p2b",
+      "translated_imo_2004_p5",
+      "translated_imo_2010_p2",
+      "translated_imo_2012_p1",
+      "translated_imo_2012_p5",
+      "translated_imo_2018_p1",
+      "translated_imo_2019_p2"
+    ],
+    "human_silver_medal_threshold": 25
+  }
+}

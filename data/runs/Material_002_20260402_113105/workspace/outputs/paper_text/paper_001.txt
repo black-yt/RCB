@@ -1,0 +1,1908 @@
+nature machine intelligence
+Article
+
+https://doi.org/10.1038/s42256-023-00716-3
+
+CHGNet as a pretrained universal neural
+network potential for charge-informed
+atomistic modelling
+Received: 2 March 2023
+Accepted: 4 August 2023
+Published online: 14 September 2023
+Check for updates
+
+Bowen Deng1,2, Peichen Zhong 1,2 , KyuJung Jun 1,2, Janosh Riebesell2,3,
+Kevin Han2, Christopher J. Bartel 1,4 & Gerbrand Ceder 1,2
+
+Large-scale simulations with complex electron interactions remain one of
+the greatest challenges for atomistic modelling. Although classical force
+fields often fail to describe the coupling between electronic states and
+ionic rearrangements, the more accurate ab initio molecular dynamics
+suffers from computational complexity that prevents long-time and
+large-scale simulations, which are essential to study technologically
+relevant phenomena. Here we present the Crystal Hamiltonian Graph
+Neural Network (CHGNet), a graph neural network-based machine-learning
+interatomic potential (MLIP) that models the universal potential energy
+surface. CHGNet is pretrained on the energies, forces, stresses and magnetic
+moments from the Materials Project Trajectory Dataset, which consists
+of over 10 years of density functional theory calculations of more than
+1.5 million inorganic structures. The explicit inclusion of magnetic moments
+enables CHGNet to learn and accurately represent the orbital occupancy of
+electrons, enhancing its capability to describe both atomic and electronic
+degrees of freedom. We demonstrate several applications of CHGNet in
+solid-state materials, including charge-informed molecular dynamics in
+LixMnO2, the finite temperature phase diagram for LixFePO4 and Li diffusion
+in garnet conductors. We highlight the significance of charge information
+for capturing appropriate chemistry and provide insights into ionic systems
+with additional electronic degrees of freedom that cannot be observed by
+previous MLIPs.
+
+Large-scale simulations, such as molecular dynamics (MD), are essential tools in the computational exploration of solid-state materials1.
+They enable the study of reactivity, degradation, interfacial reactions,
+transport in partially disordered structures and other heterogeneous phenomena relevant for the application of complex materials in
+technology. Technological relevance of such simulations requires
+rigorous chemical specificity, which originates from the orbital
+
+occupancy of atoms. Despite their importance, accurate modelling of
+electron interactions or their subtle effects in MD simulations remains
+a major challenge. Classical force fields treat the charge as an atomic
+property that is assigned to every atom a priori2,3. Methodology developments in the field of polarizable force fields such as the electronegativity equalization method4, chemical potential equalization5 and
+charge equilibration6 realize charge evolution via the redistribution of
+
+Department of Materials Science and Engineering, University of California Berkeley, Berkeley, CA, USA. 2Materials Sciences Division, Lawrence Berkeley
+National Laboratory, Berkeley, CA, USA. 3Cavendish Laboratory, University of Cambridge, Cambridge, UK. 4Department of Chemical Engineering and
+Materials Science, University of Minnesota, Minneapolis, MN, USA.
+e-mail: zhongpc@berkeley.edu; gceder@berkeley.edu
+
+1
+
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+1031
+
+Article
+
+https://doi.org/10.1038/s42256-023-00716-3
+
+atomic partial charge. However, these empirical methods are often not
+accurate enough to capture complex electron interactions.
+Ab initio molecular dynamics (AIMD) with density functional theory (DFT) can produce high-fidelity results with quantum-mechanical
+accuracy by explicitly computing the electronic structure within the
+density functional approximation. The charge-density distribution
+and corresponding energy can be obtained by solving the Kohn–Sham
+equation7. Long-time and large-scale spin-polarized AIMD simulations
+critical for studying ion migrations, phase transformations and chemical reactions are challenging and extremely computing intensive8,9.
+These difficulties underscore the need for more efficient computational methods in the field that can account for charged ions and their
+orbital occupancy at sufficient time and length scales needed to model
+important phenomena.
+Machine-learning interatomic potentials (MLIPs) such as ænet10,11
+and DeepMD12 have provided promising solutions to bridge the gap
+between expensive electronic structure methods and efficient classical
+interatomic potentials. Specifically, graph neural network (GNN)-based
+MLIPs such as DimeNet13, NequIP14, TeaNet15 and MACE16 have been
+shown to achieve state-of-the-art performance by incorporating invariant/equivariant symmetry constraints and long-range interaction
+through graph convolution17. Most recently, GNN-based MLIPs trained
+on the periodic table (for example, M3GNet) have demonstrated the
+possibility of universal interatomic potentials that may not require
+chemistry-specific training for each new application18–20. However, the
+inclusion of the important effects that valences have on chemical bonding remains a challenge for MLIPs, and the early success derived mostly
+from the inclusion of electrostatics for long-range interactions21–23.
+The importance of an ion’s valence derives from the fact that it can
+engage in very different bonding with its environment depending on its
+electron count. While traditional MLIPs treat the elemental label as the
+basic chemical identity, different valence states of transition-metal ions
+behave as different from each other as different elements. For example, high-spin Mn4+ is a non-bonding spherical ion that almost always
+resides in octahedral coordination by oxygen atoms, whereas Mn3+ is a
+Jahn–Teller active ion that radically distorts its environment, and Mn2+
+is an ion that strongly prefers tetrahedral coordination8. Such strong
+chemical interaction variability across different valence states exists
+for almost all transition-metal ions and requires specification of an ion
+beyond its chemical identity. In addition, the charge state is a degree of
+freedom that can create configurational entropy and whose dynamic
+optimization can lead to strongly coupled charge and ion motion,
+which is impossible to capture with an MLIP that carries only elemental labels. The relevance of explicit electron physics motivates the
+development of a robust MLIP model with charge information built in.
+Charge has been represented in a variety of ways, from a simple
+oxidation state label to continuous-wave functions derived from
+quantum mechanics24. Challenges in incorporating charge information into MLIPs arise from many factors, such as the ambiguity of
+representations25, complexity of interpretation26, scarcity of labels22
+and impracticality of taking charge as an input for energy calculation
+(E({ri}, {qi}), as the charge labels {qi} are generally not a priori available
+as position labels {ri})21. In this work, we define charge as an atomic
+property (atomic charge) that can be inferred from the inclusion of
+magnetic moments (magmoms). We show that by explicitly incorporating the site-specific magmoms as the charge-state constraints into
+the Crystal Hamiltonian Graph Neural Network (CHGNet), one can
+both enhance the latent-space regularization and accurately capture
+electron interactions.
+We demonstrate the charge constraints and latent-space regularization of atomic charge in Na2V2(PO4)3 and show the applications
+of CHGNet in the study of charge transfer and phase transformation in
+LixMnO2, electronic entropy in the LixFePO4 phase diagram, and lithium
+(Li) diffusivity in garnet-type Li superionic conductors Li3+xLa3Te2O12. By
+critically comparing and evaluating the importance of incorporating
+
+charge information in the construction of CHGNet, we offer insights
+into the materials modelling of ionic systems with additional electronic
+degrees of freedom. Our analysis highlights the essential role that charge
+information has in atomistic simulations for solid-state materials.
+
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+1032
+
+Results
+
+CHGNet architecture
+The foundation of CHGNet is a GNN, as shown in Fig. 1, where the graph
+convolution layer is used to propagate atomic information via a set
+of nodes {vi} connected by edges {eij}. The translation, rotation and
+permutation invariance are preserved in GNNs27–29. Figure 1a shows
+the workflow of CHGNet, which takes a crystal structure with unknown
+atomic charges as input and outputs the corresponding energy, forces,
+stress and magmoms. The charge-decorated structure can be inferred
+from the on-site magmoms and atomic orbital theory. The details are
+described in the following section.
+In CHGNet, a periodic crystal structure is converted into an atom
+graph Ga by searching for neighbouring atoms vj within rcut of each atom
+vi in the primitive cell. The edges eij are drawn with information from
+the pairwise distance between vi and vj, as shown in Fig. 1b. Three-body
+interaction can be computed by using an auxiliary bond graph Gb, which
+can be similarly constructed by taking the angle aijk as the pairwise
+information between bonds eij and ejk (Methods). We adopt similar
+approaches to include the angular/three-body information as other
+recent GNN MLIPs13,18,30. Figure 1c shows the architecture of CHGNet,
+which consists of a sequence of basis expansions, embeddings, interaction blocks and output layers (see Methods for details). Figure 1d illustrates the components within an interaction block, where the atomic
+interaction is simulated with the update of atom, bond and angle features via the convolution layers. Figure 1e presents the convolution
+layer in the atom graph. Weighted message passing is used to propagate
+information between atoms, where the message weight eaij from node
+j to node i decays to zero at the graph cut-off radius to ensure smoothness of the potential energy surface13.
+Unlike other GNNs, where the updated atom features {vti } after t
+convolution layers are directly used to predict energies, CHGNet regularizes the node-wise features {vt−1
+} at the t − 1 convolution layer to
+i
+contain the information about magmoms. The regularized features
+{vt−1
+} carry rich information about both local ionic environments and
+i
+charge distribution. Therefore, the atom features {vti } used to predict
+energy, force and stress are charge constrained by their charge-state
+information. As a result, CHGNet can provide charge-state information
+using only the nuclear positions and atomic identities as input, allowing
+the study of charge distribution in atomistic modelling.
+
+Materials Project Trajectory Dataset
+The Materials Project Database contains a vast collection of DFT
+calculations on ~146,000 inorganic materials composed of 89 elements31. To accurately sample the universal potential energy surface,
+we extracted ~1.37 million structure relaxation and static calculations
+tasks from the Materials Project Database, using either the generalized
+gradient approximation (GGA) or GGA + U exchange correlation (Methods). This effort resulted in a comprehensive Materials Project Trajectory (MPtrj) Dataset with 1,580,395 atom configurations, 1,580,395
+energies, 7,944,833 magmoms, 49,295,660 forces and 14,223,555
+stresses. To ensure the consistency of energies within the MPtrj Dataset,
+we applied the GGA/GGA + U mixing compatibility correction, as
+described in ref. 32.
+The distribution of elements in the MPtrj Dataset is illustrated
+in Fig. 2. The lower-left triangle (warm colour) in an element’s
+box indicates the frequency of occurrence of that element in the dataset, and the upper-right triangle (cold colour) represents the number
+of instances where magnetic information is available for the element.
+With over 100,000 occurrences for 60 different elements and more
+than 10,000 instances with magnetic information for 76 different
+
+Article
+
+https://doi.org/10.1038/s42256-023-00716-3
+
+a
+
+?+
+
+?–
+
++
+–
+
+?+
+?–
+
++
+
+b
+
+c G(Z , x )
+
+Atom graph Ga
+
+i
+
+rij
+
+i
+
+vi
+
+eij
+
+ejk
+
+vj
+
+Stress
+
+d
+
+Emb
+
+Emb
+
+Emb
+
+vi0
+
+eij0
+
+a0ijk
+
+vit
+Ga
+eija
+
+Gb
+eijb
+
+eij
+
+aijk
+
+ejk
+
+E, xi, ε
+
+Sum
+
+AutoDiff
+
+vit
+
+Ga
+
+Gb
+
+mijt
+
+eijt+1
+
+eija
+
+WeightedAggr
+
+AngleUpdate
+
+eijt+1
+
+vit+1
+
+fi, σ
+
+Fig. 1 | CHGNet model architecture. a, CHGNet workflow: a crystal structure
+with unknown atomic charge is used as input to predict the energy, force, stress
+and magmoms, resulting in a charge-decorated structure. b, Atom graph: the
+pairwise bond information is drawn between atoms. Bond graph: the pairwise
+angle information is drawn between bonds. c, Graphs run through basis
+expansions and embedding layers to create atom, bond and angle features.
+
+vit || vjt || eijt
+GatedMLP
+
+vit+1
+
+E
+
+eijt
+
+BondConv
+
+mi
+
+Linear
+Ei
+
+t
+aijk
+
+AtomConv
+
+×t – 1
+
+FC
+
+eijt
+
+Convolution layer
+
+vit+1
+
+Interaction block
+
+vit
+
+e
+
+Interaction block
+
+Fourier
+~
+a
+ijk
+
+vit–1
+
+2–
+
+Magmoms
+
+e~ ij
+
+Bond graph Gb
+
+3+
+
+Forces
+
+Θijk
+
+SmoothRBF
+
+vk
+
+Energy
+
+–
+
+–
+
+3–
+
+2+
+
++
+
+Linear
+
++
+
+t+1
+aijk
+
+vit+1
+
+The features are updated through several interaction blocks, and the properties
+are predicted at output layers, where FC denotes a nonlinear fully connected
+layer. d, Interaction block in which the atom, bond and angle share and update
+information. e, Atom convolution layer where neighbouring atom and bond
+information is calculated through weighted message passing and aggregates to
+the atoms.
+
+Materials Project Trajectory Dataset
+
+7
+
+H
+
+He
+
+Li
+
+Be
+
+B
+
+C
+
+N
+
+O
+
+F
+
+Ne
+
+Na
+
+Mg
+
+AI
+
+Si
+
+P
+
+S
+
+CI
+
+Ar
+
+K
+
+Ca
+
+Sc
+
+Ti
+
+V
+
+Cr
+
+Mn
+
+Fe
+
+Co
+
+Ni
+
+Cu
+
+Zn
+
+Ga
+
+Ge
+
+As
+
+Se
+
+Br
+
+Kr
+
+Rb
+
+Sr
+
+Y
+
+Zr
+
+Nb
+
+Mo
+
+Tc
+
+Ru
+
+Rh
+
+Pd
+
+Ag
+
+Cd
+
+In
+
+Sn
+
+Sb
+
+Te
+
+I
+
+Xe
+
+Cs
+
+Ba
+
+Sc
+
+Hf
+
+Ta
+
+W
+
+Re
+
+Os
+
+Ir
+
+Pt
+
+Au
+
+Hg
+
+TI
+
+Pb
+
+Bi
+
+6
+
+10
+
+5
+
+10
+
+10
+
+6
+
+10
+
+5
+
+10
+
+Magmom count
+
+Element count
+
+10
+
+4
+
+10
+
+La
+
+Ce
+
+Pr
+
+Nd
+
+Pm Sm
+
+Ac
+
+Th
+
+Pa
+
+U
+
+Np
+
+Eu
+
+Gd
+
+Tb
+
+Dy
+
+Ho
+
+Er
+
+Tm
+
+Yb
+
+Lu
+
+Pu
+
+4
+
+3
+
+10
+
+Compounds
+Count
+MAD
+
+145,923
+
+Energy
+
+Magmom
+
+Force
+
+Stress
+
+1,580,395
+1,480 eV atom−1
+
+7,944,833
+
+49,295,660
+
+14,223,555
+
+0.336 µB
+
+0.158 eV Å–1
+
+7.553 GPa
+
+Fig. 2 | Element distribution of the MPtrj Dataset. The colour on the lower-left triangle indicates the total number of atoms/ions of an element. The colour on the
+upper right indicates the number of times the atoms/ions are incorporated with magmom labels in the MPtrj dataset. On the lower part of the plot is the count and
+mean absolute deviation (MAD) of energy, magmoms, force and stress.
+
+elements, the MPtrj Dataset provides comprehensive coverage of all
+chemistries, excluding only the noble gases and actinoids. The lower
+boxes in Fig. 2 present the counts and mean absolute deviations of
+energy, force, stress and magmoms in the MPtrj Dataset.
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+Performance evaluation
+CHGNet with 400,438 trainable parameters was trained on the MPtrj
+Dataset with an 8:1:1 training, validation and test set ratio, partitioned
+by materials (Methods). Without training on magmom, we achieved
+1033
+
+Article
+
+Charge constraints and charge inference from magnetic
+moments
+In solid-state materials that contain heterovalent ions, it is crucial to
+distinguish the atomic charge of the ions, as an element’s interaction
+with its environment can depend strongly on its valence state. It is
+well known that the valence of heterovalent ions cannot be directly
+calculated through the DFT charge density because the charge density
+is almost invariant to the valence state due to the hybridization shift
+with neighbouring ligand ions35,36. Furthermore, the accurate representation and encoding of the full charge density is another demanding
+task requiring substantial computational resources26,37. An established
+approach is to rely on the magmom for a given atom site as an indicator of its atomic charge, which can be derived from the difference in
+localized up-spin and down-spin electron densities in spin-polarized
+DFT calculations8,38. Compared with the direct use of charge density,
+magmoms are found to contain more comprehensive information
+regarding the electron orbital occupancy and, therefore, the chemical
+behaviour of ions, as demonstrated in previous studies.
+To rationalize our treatment of the atomic charge, we used a
+NASICON-type Na-ion cathode material Na4V2(PO4)3 as an illustrative example. The phase stability of the (de-)intercalated material
+Na4−xV2(PO4)3 is associated with Na/vacancy ordering and is highly correlated to the charge ordering on the V sites39. We generated a supercell
+structure of Na4V2(PO4)3 with 2,268 atoms and randomly removed half
+of the Na ions to generate the structure with composition Na2V2(PO4)3,
+where half of the V ions are oxidized to a V4+ state. We used CHGNet to
+relax the (de-)intercalated structure and analyse its capability to distinguish the valence states of V atoms with the ionic relaxation (Methods).
+Figure 3a shows the distribution of predicted magmoms on all V
+ions in the unrelaxed (blue) and relaxed (orange) structures. Without
+any prior knowledge about the V-ion charge distribution other than
+learning from the spatial coordination of the V nuclei, CHGNet successfully differentiated the V ions into two groups of V3+ and V4+. Figure 3b
+shows the two-dimensional principal component analysis (PCA) of all
+the latent-space feature vectors of V ions for both unrelaxed and relaxed
+structures after three interaction blocks. The PCA analysis shows two
+well-separated distributions, indicating the latent-space feature vectors of V ions are strongly correlated to the different valence states of
+V. Hence, imposing different magmom labels to the latent space (that
+is, forcing the two orange peaks to converge to the red dashed lines in
+Fig. 3a) would act as the charge constraints for the model by regularizing the latent-space features.
+Because energy, force and stress are calculated from the same feature vectors, the inclusion of magmoms can improve the featurization
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+a
+
+b
+25
+
+CHGNet-relaxed
+
+DFT reference
+
+20
+
+V3+
+
+15
+10
+
+V4+
+
+5
+0
+
+V?+
+1.2
+
+1.4
+
+1.6
+
+Magmom
+
+Second component
+
+Unrelaxed
+
+30
+
+Count
+
+33 meV per atom, 79 meV Å−1 and 0.351 GPa mean absolute errors for
+energy, force and stress on the MPtrj test set of 157,955 structures
+from 14,572 materials. With magmom loss included during training,
+we achieved an improved mean absolute errors of 30 meV per atom,
+77 meV Å−1, 0.348 GPa and 0.032 μB (Bohr magneton) for energy, force,
+stress and magmom, correspondingly.
+To evaluate the robustness of CHGNet as a universal force field,
+we submitted CHGNet to Matbench Discovery33 for out-of-distribution
+material stability prediction. CHGNet achieves state-of-the-art performance in high-throughput stable inorganic crystal discovery compared
+with eight other models submitted to this benchmark at the time of
+writing (Supplementary Fig. 1).
+For a benchmark on CHGNet MD simulations, we applied the
+pretrained CHGNet to MD simulations on Li superionic conductors that
+were previously reported with AIMD34. Supplementary Fig. 2 shows that
+CHGNet systematically agrees with AIMD results on room temperature
+conductivities and activation energies across various structures and
+compositions within the AIMD error bar, and CHGNet successfully
+distinguishes the faster and slower conductors that were identified
+with DFT.
+
+https://doi.org/10.1038/s42256-023-00716-3
+
+0.4
+
+Unrelaxed
+CHGNet-relaxed
+
+V?+
+
+0.2
+
+0
+
+V3+
+V4+
+
+–0.2
+1.8
+
+–0.5
+
+0
+
+0.5
+
+1.0
+
+First component
+
+Fig. 3 | Magmom and hidden-space regularization in Na2V2(PO4)3. a, Magmom
+distribution of the 216 V ions in the unrelaxed structure (blue) and CHGNetrelaxed structure (orange). b, A two-dimensional visualization of the PCA
+on V-ion embedding vectors before the magmom projection layer indicates
+the latent-space clustering is highly correlated with magmoms and charge
+information. The PCA reduction is calculated for both unrelaxed and
+relaxed structures.
+
+of the heterovalent atoms in different local chemical environments
+(for example, V3+ and V4+ show very distinct physics and chemistry)
+and therefore improve the accuracy and expressibility of CHGNet.
+
+Charge disproportionation in LixMnO2 phase transformation
+
+The long-time and large-scale simulation of CHGNet enables studies
+of ionic rearrangements coupled with charge transfer40,41, which is
+crucial for ion mobility and the accurate representation of the interaction between ionic species. As an example, in the LiMnO2 battery
+cathode material, transition-metal migration has a central role in its
+phase transformations, which cause irreversible capacity loss42,43. The
+mechanism of Mn migration is strongly coupled with charge transfer,
+with Mn4+ being an immobile ion, and Mn3+ and Mn2+ generally considered to be more mobile44–46. The dynamics of the coupling of the
+electronic degrees of freedom with those of the ions has been challenging to study but is crucial to understand the phase transformation
+from orthorhombic LiMnO2 (o-LMO, shown in Fig. 4a) to spinel LiMnO2
+(s-LMO), as the timescale and computational cost of such phenomena
+are far beyond any possible ab initio methods.
+In early quasi-static ab initio studies, ref. 40 rationalized the
+remarkable speed at which the phase transformation proceeds at room
+temperature using a charge disproportionation mechanism:
+3+
+2+
+4+
+2Mnoct → Mntet + Mnoct , where the subscript indicates location in
+the tetrahedral (tet) or octahedral (oct) site of a face-centred cubic
+oxygen packing, as shown in Fig. 4a. The hypothesis based on DFT
+calculations was that Mn2+ had a lower energy barrier for migration
+between tetrahedral and octahedral sites and preferred to occupy the
+tetrahedral site. The ability therefore for Mn to dynamically change its
+valence would explain its remarkable room temperature mobility.
+However, ref. 44 showed in a later magnetic characterization experiment that the electrochemically transformed spinel LiMnO2 has
+lower-spin (high-valence) Mn ions on the tetrahedral sites, which suggested the possibility that Mn with higher valence can be stable on
+tetrahedral sites during the phase transformation.
+To demonstrate the ability of CHGNet to fully describe such a
+process, we used the pretrained CHGNet to run a charge-informed MD
+simulation at 1,100 K for 1.5 ns (Methods). The MD simulation started
+from a partially delithiated supercell structure with the o-LMO structure (Li20Mn40O80), which is characterized by peaks at 15°, 26° and 40°
+in the X-ray diffraction (XRD) pattern (the bottom line in Fig. 4b). As
+the simulation proceeded, a phase transformation from orthorhombic
+ordering to spinel-like ordering was observed. Figure 4b shows the
+simulated XRD pattern of MD structures at different time intervals
+1034
+
+Article
+
+https://doi.org/10.1038/s42256-023-00716-3
+
+b
+
+o-LMO
+
+Tetrahedral site Octahedral site
+
+o-LMO
+peaks
+
+c
+
+s-LMO
+peaks
+
+1.5 ns
+1.2 ns
+0.9 ns
+
+Li
+Mn
+O
+
+0.6 ns
+0.3 ns
+
+Average magmom (µB)
+
+a
+
+0 ns
+10
+
+d
+
+20
+
+30
+
+40
+
+3.8
+
+Energy (eV)
+
+Mn3+
+
+3.6
+3.4
+
+Mnoct
+0
+
+50
+
+0.5
+
+1.0
+
+1.5
+
+Time (ns)
+
+Potential energy
+
+–1,059
+
+Magmom (µB)
+
+Mntet
+
+4.0
+
+2θ (°)
+–1,056
+
+Mn2+
+
+4.2
+
+Spinel: 2θ = 18°
+
+Orthorhombic: 2θ = 15°
+
+–1,062
+
+Mn2+
+
+4.5
+4.0
+
+Mn3+
+
+3.5
+
+Mn4+
+
+3.0
+0
+
+0.3
+
+0.6
+
+0.9
+
+1.5
+
+1.2
+
+Time (ns)
+
+e
+
+0.4 ns
+
+1.5 ns
+
+4.40
+4.41
+
+4.25
+4.31
+
+4.20
+4.26
+
+GGA + U
+CHGNet
+
+Mn2+
+Mn3+
+3.65
+3.61
+
+3.79
+3.93
+3.96
+3.78
+
+4.54
+4.58
+
+4.46
+4.45
+4.52
+4.54
+
+4.37
+4.28
+4.40
+4.36
+4.39
+4.34
+
+Fig. 4 | Li0.5MnO2 phase transformation and charge disproportionation.
+a, o-LMO unit cell plotted with the tetrahedral site and the octahedral site.
+b, Simulated XRD pattern of CHGNet MD structures as the system transforms
+from the o-LMO phase to the s-LMO. c, Average magmoms of tetrahedral and
+octahedral Mn ions versus time. d, Top: total potential energy and the relative
+intensity of o-LMO and s-LMO characteristic peaks versus time. The solid black
+
+line is averaged over every 10 ps. Bottom: the histogram of magmoms on all Mn
+ions versus time. The brighter colour indicates more Mn ions distributed at the
+magmom. e, Predicted magmoms (μB) of tetrahedral Mn ions using GGA + U-DFT
+(black) and CHGNet (blue), where the structures are drawn from MD simulation
+at 0.4 ns (left) and 1.5 ns (right).
+
+from 0 to 1.5 ns, with a clear increase in the characteristic spinel peaks
+(18°, 35°) and a decrease in the orthorhombic peak. The simulated
+results agree well with the experimental in situ XRD results42,44.
+Figure 4d shows the CHGNet-predicted energy of the LMO supercell structure as a function of simulation time, together with the peak
+strength at 2θ = 15° and 18°. An explicit correlation between the structural transformation and energy landscape is observed. The predicted
+average potential energy of the spinel phase is approximately 50 meV
+per oxygen lower than that of the starting o-LMO, suggesting that the
+phase transformation to spinel is indeed thermodynamically favoured.
+The advantage of CHGNet is shown in its ability to predict
+charge-coupled physics, as evidenced by the lower plot in Fig. 4d.
+A histogram of the magmoms of all the Mn ions in the structure is
+presented against time. In the early part of the simulation, the magmoms of Mn ions are mostly distributed between 3 μB and 4 μB, which
+correspond to Mn4+ and Mn3+. At approximately 0.8 ns, there is a significant increase in the amount of Mn2+, which is accompanied by a
+decrease in the potential energy and increase in the spinel XRD peaks.
+Following this major transformation point, the Mn3+ ions undergo
+charge disproportionation, resulting in the coexistence of Mn2+, Mn3+
+and Mn4+ in the transformed spinel-like structure.
+One important observation from the long-time charge-informed
+MD simulation is the correlation between ionic rearrangements and
+
+the charge-state evolution. Specifically, we noticed that the timescale
+of charge disproportionation (approximately nanoseconds for the
+emergence of Mn2+) is far longer than the timescale of ion hops (approximately picoseconds for the emergence of Mntet), indicating that the
+migration of Mn to the tetrahedral coordination is less likely related to
+the emergence of Mn2+. Instead, our result indicates that the emergence
+2+
+of Mntet is correlated to the formation of the long-range spinel-like
+ordering. Figure 4c shows the average magmoms of Mntet and Mnoct
+2+
+as a function of time. The result reveals that Mntet only forms over a
+long time period, which cannot be observed using any conventional
+simulation techniques.
+To further validate this hypothesis and the accuracy of CHGNet
+prediction, we used GGA + U and r2SCAN-DFT (Supplementary Fig. 3)
+static calculations to get the magmoms of the structures at 0.4 ns and
+1.5 ns, where the GGA + U results are shown in Fig. 4e. CHGNet (blue)
+shows highly accurate agreements with GGA + U magmoms (black) and
+infers the same Mntet valence states.
+
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+1035
+
+Electronic entropy effect in the phase diagram of LixFePO4
+
+The configurational electronic entropy has a significant effect on the
+temperature-dependent phase stability of mixed-valence oxides, and
+its equilibrium modelling, therefore, requires an explicit indication
+of the atomic charge. However, no current MLIPs can provide such
+
+Article
+a
+
+https://doi.org/10.1038/s42256-023-00716-3
+
+Ea = 0.158 ± 0.018
+
+1,000
+
+E
+
+a =
+
+500
+
+D (cm2 s–1)
+
+Temperature (K)
+
+–6
+
+10
+
+750
+
+250
+
+–8
+
+10
+
+0.
+59
+1
+
+La
+
+5e
+
+Te
+
+V
+
+O
+–10
+
+0
+
+0.25
+
+0.50
+
+0.75
+
+1.00
+
+CHGNet: Li3
+
+x in LixFePO4
+
+Temperature (K)
+
+Li
+±0
+.16
+
+10
+
+0
+
+b
+
+eV
+
+Ea = 0.201 ± 0.0
+96 eV
+
+CHGNet: Li3.125
+
+–12
+
+10
+
+AIMD: Li3.125
+
+1,000
+0.8
+
+750
+
+1.0
+
+1.2
+
+1.4
+
+1.6
+
+1,000/T (K–1)
+
+Fig. 6 | Li diffusivity in garnet Li3La3Te2O12. The CHGNet simulation accurately
+reproduces the dramatic increase in Li-ion diffusivity (D) when a small amount of
+extra Li is stuffed into the garnet structure, qualitatively matching the activated
+diffusion network theory and agreeing well with the DFT-computed activation
+energy (Ea). The unstuffed Li3La3Te2O12 structure is shown for reference.
+
+500
+
+250
+
+0
+0
+
+0.25
+
+0.50
+
+0.75
+
+1.00
+
+x in LixFePO4
+
+Fig. 5 | LixFePO4 phase diagrams from CHGNet. a,b, The phase diagrams are
+calculated with (a) and without (b) electronic entropy on Fe2+ and Fe3+. The
+coloured dots represent the stable phases obtained in semigrand canonical MC.
+The dashed lines indicate the two-phase equilibria between solid solution phases.
+
+information. We demonstrate that using CHGNet, one can infer the
+atomic charge and include the electronic entropy in the computation
+of the temperature-dependent phase diagram of LixFePO4.
+Previous research has shown that the formation of a solid solution in LixFePO4 is mainly driven by electronic entropy rather than
+by Li+/vacancy configurational entropy47. We applied CHGNet as an
+energy calculator to generate two distinct cluster expansions, which
+is a typical approach to studying configurational entropy48. One of
+these is charge decorated (considering Li+/vacancy and Fe2+/Fe3+) and
+another is non-charge decorated (only considering Li+/vacancy without
+consideration of the Fe valence). Semigrand canonical Monte Carlo was
+used to sample these cluster expansions and construct LixFePO4 phase
+diagrams (Methods). The calculated phase diagram with charge decoration in Fig. 5a features a miscibility gap between FePO4 and LiFePO4, with
+a eutectoid-like transition to the solid solution phase at intermediate
+Li concentration, qualitatively matching the experiment result49,50. In
+contrast, the calculated phase diagram without charge decoration
+in Fig. 5b features only a single miscibility gap without any eutectoid
+transitions, in disagreement with experiments. This comparison highlights the importance of explicit inclusion of the electronic degrees
+of freedom, as failure to do so can result in incorrect physics. These
+experiments show how practitioners may benefit from CHGNet with
+atomic charge inference for equilibrium modelling of configurationally
+and electronically disordered systems.
+
+conductivity34. A previous study51 reported that the activation energy of
+Li diffusion in stoichiometric garnet Li3La3Te2O12 decreases from more
+than 1 eV to ~160 meV in a slightly stuffed Li3+δ garnet (δ = 1/48), owing to
+the activated Li diffusion network of face-sharing tetrahedral and
+octahedral sites.
+We performed a zero-shot test to assess the ability of CHGNet
+to capture the effect of such slight compositional change on the
+diffusivity and its activation energy. Figure 6 shows the Arrhenius
+plot from CHGNet-based MD simulations and compares it with AIMD
+results. Our results indicate that not only is the activated diffusion
+network effect precisely captured but also the activation energies from
+CHGNet are in excellent agreement with the DFT results51. This effort
+demonstrates the capability of CHGNet to precisely capture the strong
+interactions between Li ions in activated local environments and the
+ability to simulate highly nonlinear diffusion behaviour. Moreover,
+CHGNet can dramatically decrease the error on simulated diffusivity and enable studies in systems with poor diffusivity such as the
+unstuffed Li3 garnet by extending to nanosecond-scale simulations52.
+
+Discussion
+
+In this section, we showcase the precision of CHGNet for general-purpose
+MD. Lithium-ion diffusivity in fast Li-ion conductors is known to show
+a drastic nonlinear response to compositional change. For example,
+stuffing a small amount of excess Li into stoichiometric compositions can result in orders-of-magnitude improvement of the ionic
+
+Large-scale computational modelling has proven essential in providing
+atomic-level information in materials science, medical science and
+molecular biology. Many technologically relevant applications contain
+heterovalent species, for which a comprehensive understanding of
+the atomic charge involved in the dynamics of processes is of great
+interest. The importance of assigning a valence to ions derives from
+the fundamentally different electronic and bonding behaviour ions
+can exhibit when their electron count changes. Ab initio calculations
+based on DFT are useful for these problems, but the ∼ 𝒪𝒪𝒪N3 ) scaling
+intrinsically prohibits its application to large time and length scales.
+Recent development of MLIPs provides opportunities to increase computational efficiency while maintaining near DFT accuracy. The present
+work presents an MLIP that combines the need to include the electronic
+degrees of freedom with computational efficiency.
+In this work, we developed CHGNet and demonstrated the effectiveness of incorporating magmoms as a proxy for inferring the atomic
+charge in atomistic simulations, which results in the integration of electronic information and the imposition of additional charge constraints
+as a regularization of the MLIP. We highlight the capability of CHGNet in
+
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+1036
+
+Activated Li diffusion network in Li3La3Te2O12
+
+Article
+distinguishing Fe2+/Fe3+ in the study of LixFePO4, which is essential for the
+inclusion of electronic entropy and finite temperature phase stability. In
+the study of LiMnO2, we demonstrate CHGNet’s ability to gain insights
+into the relation between charge disproportionation and phase transformation in a heterovalent transition-metal oxide system from long-time
+charge-informed MD. CHGNet builds on recent advances in graph-based
+MLIPs13,18, but is pretrained with electronic degrees of freedom built in,
+which provides an ideal solution for high-throughput screening and
+atomistic modelling of a variety of technologically relevant oxides,
+including high-entropy materials53,54. As CHGNet is already generalized
+to broad chemistry during pretraining, it can also serve as a data-efficient
+and highly robust model for high-precision simulations when augmented
+with fine-tuning to specific chemistries (Supplementary Section IV.).
+Despite these advances, further improvements can be achieved
+through several efforts. First, the use of magmoms for valence states
+inference does not strictly ensure global charge neutrality. The formal valence assignment depends on how the atomic charges are partitioned24. Second, although magmoms are good heuristics for the
+atomic charge from spin-polarized calculations in ionic systems, it is
+recognized that the atomic charge inference for non-magnetic ions
+may be ambiguous and thus requires extra domain knowledge. As a
+result, for ions with no magmom, the atom-centred magmoms cannot
+accurately reflect their atomic charges and CHGNet will infer charge
+from the environment similar to how other MLIP’s function. It may
+also be possible to enhance the model further by incorporating other
+approaches to charge representation, such as an electron localization
+function55, electric polarization56 and atomic orbital-based partitioning
+(for example, Wannier functions57). These approaches could be used
+for atom feature engineering in latent space.
+In conclusion, CHGNet enables charge-informed atomistic
+simulations amenable to the study of heterovalent systems using
+large-scale computational simulations, expanding opportunities to
+study charge-transfer-coupled phenomena in computational chemistry, physics, biology and materials science.
+
+Methods
+
+Data parsing
+The MPtrj Dataset was parsed from the September 2022 Materials
+Project Database version. We collected all the GGA and GGA + U task
+trajectories under each material-id and followed the criteria below:
+(1) We removed deprecated tasks and only kept tasks with the same
+calculation settings as the primary task, from which the material could be searched on the Materials Project website.
+To verify whether the calculation settings were equal, we confirmed the following: (1) the +U setting must be the same as the
+primary task and (2) the energy of the final frame cannot differ
+by more than 20 meV per atom from the primary task.
+(2) Structures without energy and forces or electronic step convergence were removed.
+(3) Structures with energy higher than 1 eV per atom or lower than
+10 meV per atom relative to the relaxed structure from Materials Project’s ThermoDoc were filtered out to eliminate large
+energy differences caused by variations in Vienna Ab initio
+Simulation Package settings and so on.
+(4) Duplicate structures were removed to maintain a healthy data
+distribution. This removal was achieved using a pymatgen
+StructureMatcher and an energy matcher to tell the difference
+between structures. The screening criteria of the structure and
+energy matchers became more stringent as more structures
+under the same mp-id were added to the MPtrj Dataset.
+Training, validation and test sets of the MPtrj dataset were
+randomly selected based on the 145,923 compounds (based on the
+mp-id). As a result, different DFT tasks and their trajectory frames can
+only be included in the same set conditioned on the compound.
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+https://doi.org/10.1038/s42256-023-00716-3
+
+Model design
+
+In constructing the crystal graph, the default rcut is set to 5 Å, which has
+been shown adequate enough for capturing long-range interactions18.
+The bond graph is constructed with a cut-off of 3 Å for computational
+a
+b
+efficiency. The bond distances rij are expanded to eij̃ and eij̃ for the
+atom graph and the bond graph, respectively, by a trainable smooth
+radial Bessel function (SmoothRBF), as proposed in ref. 13. The SmoothRBF constraints the radial Bessel function and its derivative to
+approach zero at the graph cut-off radius, thus guaranteeing a smooth
+potential energy surface. The angles θijk are expanded by Fourier basis
+̃ with trainable frequency. The atomic numbers
+functions to create aijk
+a
+̃ are then embedded into node v0i , edge e0ij and angle
+Zii, eij̃ and aijk
+features a0ijk (all have 64 feature dimensions by default):
+a
+
+̃ Wa
+v0i = Zi Wv + bv , e0ij = eij̃ We , a0ijk = aijk
+a
+
+b
+
+eaij = eij̃ Wag , ebij = eij̃ Wbg
+a
+
+̃ =√
+eij,n
+
+2 sin(
+5
+
+nπrij
+5
+
+rij
+
+)
+
+⊙ ua 𝒪rij )
+
+1
+
+⎧ √2π
+⎪
+⎪ 1
+̃
+aijk,ℓ
+= √π cos [ℓθijk ]
+⎨
+⎪
+⎪ 1
+⎩ √π sin [𝒪ℓ − N )θijk ]
+
+(1)
+
+if ℓ = 0
+if ℓ = [1, N]
+if ℓ = [N + 1, 2N]
+
+where {W, b} are the trainable weights and bias. The angle is computed
+e ⋅e
+using θijk = arccos ij jk . The ua(rij) is a polynomial envelope function
+|eij ||ejk |
+
+a
+
+to enforce the value, the first and second derivatives of eij̃ to decay
+a
+
+smoothly towards 0 at the atom graph cut-off (u ) and bond graph
+cut-off (ub)13. The eaij and ebij vectors are created to ensure a continuous
+message passing in graph convolutions. The n and ℓ are the expansion
+orders, and we set the maximum orders for both n and ℓ to be 2N + 1 = 9.
+The superscript 0 denotes the index of the interaction block. The ⊙
+represents the element-wise multiplication. The edge vectors etij are
+bidirectional, which is essential for etij and etji to be represented as a
+single node in the bond graph30.
+Different from previous GNN models such as M3GNet18, where
+three-body spherical harmonics features are used to update bond
+features, we explicitly encode and update atoms, bonds and angles
+embeddings through the interaction blocks that operate upon the
+pairwise connections pre-defined in atom graph and bond graph. For
+the atom graph convolution, a weighted message passing layer is
+applied to the concatenated feature vectors 𝒪vti ||vtj ||etij ) from two atoms
+and one bond. For the bond graph convolution, the weighted message
+passing layer is applied to the concatenated feature vectors
+𝒪etij ||etjk ||atijk ||vt+1
+) from two bidirected bonds, the angle between
+j
+them and the atom where the angle is located. For the angle update
+function, we used the same construction for the bond graph message
+vector but without the weighted aggregation step. The mathematical
+form of the atom, bond and angle updates are formulated below:
+vt+1
+= vti + Ltv [∑ eaij ⊙ ϕtv (vti ||vtj ||etij )] ,
+i
+j
+
+et+1
+= etjk + Lte [∑ ebij ⊙ ebjk ⊙ ϕte (etij ||etjk ||atijk ||vt+1
+)] ,
+j
+jk
+i
+
+(2)
+
+= atijk + ϕta (et+1
+||et+1
+||atijk ||vt+1
+at+1
+).
+ij
+j
+ijk,f
+jk
+
+The L is a linear layer and ϕ is the gated multilayer perceptron
+(gatedMLP)29:
+L𝒪x) = xW + b,
+ϕ𝒪x) = (σ ∘ Lgate 𝒪x)) ⊙ 𝒪g ∘ Lcore 𝒪x)) ,
+
+(3)
+
+1037
+
+Article
+
+https://doi.org/10.1038/s42256-023-00716-3
+
+where σ and g are the Sigmoid and SiLU activation functions, respectively. The magmoms are predicted by a linear projection of the atom
+features v3i after three interaction blocks by
+mi = Lm 𝒪v3i ).
+
+(4)
+
+After this layer of charge constraints, the final interaction block with
+only the atom graph convolution updates the atom features. The total
+energy is then calculated by the sum of the nonlinear projections of
+final atom features {v4i }. The forces {fi } and stress (σ) are calculated via
+auto-differentiation of the energy with respect to the atomic Cartesian
+coordinates {xi} and lattice strain tensor (ε):
+Etot = ∑ L3 ∘ g ∘ L2 ∘ g ∘ L1 𝒪v4i ),
+i
+
+fi = −
+σ =
+
+∂Etot
+∂xi
+
+1 ∂Etot
+V
+
+∂ϵ
+
+(5)
+
+,
+.
+
+Phase diagram calculations
+
+Overall, with four atom convolution layers, the pretrained CHGNet
+can capture long-range interaction up to 20 Å with a small computation cost.
+
+Model training
+The model is trained to minimize the summation of Huber loss (with
+δ = 0.1) of energy, force, stress and magmoms:
+2
+
+ℒ𝒪x, x)̂ = {
+
+are found, then the Mn ion is categorized into Mnoct; if fewer than six
+bonding oxygen ions are found, the Mn ion is coarse-grained into Mntet
+for representation of lower coordinated environments. In Fig. 4e, Mn2+
+and Mn3+ are classified by CHGNet magmom threshold of 4.2 μB (ref. 38).
+For the MD simulations of garnet Li3La3Te2O12 systems, a time step
+of 2 fs was used. The NVT ensemble was used as the effect of thermal
+expansion on activation energy is minimal compared with the scale of
+the activated Li diffusion network. We ramped up the temperature to
+the targeted temperature in the NVT ensemble with at least 1 ps. Then,
+after equilibrating the system for 50 ps, the Li self-diffusion coefficients
+were obtained by calculating the mean squared displacements of
+trajectories for at least 2.3 ns. The uncertainty analysis of the diffusion coefficient values was conducted following the empirical error
+estimation scheme proposed in ref. 63. In Li3+δ, the excess lithium was
+stuffed to an intermediate octahedral (48g) site to face-share with the
+fully occupied 24d tetrahedral sites.
+
+0.5 ⋅ 𝒪x − x)̂
+
+if |x − x|̂ < δ
+
+δ ⋅ 𝒪|x − x|̂ − 0.5δ)
+
+otherwise
+
+.
+
+(6)
+
+The loss function is a weighted sum of the contributions from
+energy, forces, stress and magmoms:
+̂
+ℒ = ℒ𝒪E, E ̂ ) + wf ℒ𝒪f, f ̂ ) + wσ ℒ𝒪σ, σ)̂ + wm ℒ𝒪m, m),
+
+(7)
+
+where the weights for the forces, stress and magmoms are set to wf = 1,
+wσ = 0.1 and wm = 0.1, respectively. The DFT energies are normalized
+with elemental reference energies before fitting to CHGNet to decrease
+variances18. The absolute values of DFT magmoms are used for training.
+The batch size is set to 40 and the Adam optimizer is used with 10−3 as
+the initial learning rate. The CosineAnnealingLR scheduler is used to
+adjust the learning rate 10 times per epoch, and the final learning rate
+decays to 10−5 after 20 epochs.
+
+Software interface
+CHGNet was implemented using pytorch 1.12.058, with crystal structure processing from pymatgen59. MD and structure relaxation were
+simulated using the interface to Atomic Simulation Environment60.
+The cluster expansions were performed using the smol package61.
+
+Structure relaxation and molecular dynamics
+All the structure relaxations were optimized by the FIRE optimizer over
+the potential energy surface provided by CHGNet62, where the atom
+positions, cell shape and cell volume were simultaneously optimized
+to reach converged interatomic forces of 0.1 eV Å−1.
+For the MD simulations of the o-LMO to s-LMO phase transformation, the initial structure Li20Mn40O80 was generated by randomly
+removing Li from a Li40Mn40O80 supercell of the orthorhombic structure
+and relaxing with DFT. The MD simulation was run under constant
+number of particles, volume, and temperature (NVT) ensemble, with a
+time step of 2 fs at temperature T = 1,100 K for 1.5 ns. For the simulated
+XRD in Fig. 4b, the structures at 0.0, 0.3, 0.6, 0.9, 1.2 and 1.5 ns were
+coarse-grained to their nearest Wyckoff positions to remove noisy
+peaks. In Fig. 4c, Mnoct and Mntet were determined by counting the number of bonding oxygen ions within 2.52 Å. If six bonding oxygen ions
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+The cluster expansions of LixFePO4 were performed with pair interactions up to 11 Å and triplet interactions up to 7 Å based on the relaxed
+unit cell of LiFePO4. For better energy accuracy, we first fine-tuned
+CHGNet with the Materials Project structures in the Li–Fe–P–O chemical
+space, which decreased the test error from 23 meV per atom to 15 meV
+per atom (Supplementary Section IV). We applied CHGNet to relax 456
+different structures in LixFePO4 (0 ≤ x ≤ 1) and predict the energies and
+magmoms, where the 456 structures were generated via an automatic
+workflow including cluster expansion fitting, canonical cluster expansion Monte Carlo for searching the ground state at varied Li+ composition and CHGNet relaxation. The charge-decorated cluster expansion
+is defined on coupled sublattices over Li+/vacancy and Fe2+/Fe3+ sites,
+where Fe2+ and Fe3+ are treated as different species. In addition, the
+non-charge-decorated cluster expansion is defined only on Li+/vacancy
+sites. In the charge-decorated cluster expansion, Fe2+/Fe3+ is classified
+with magmom in [3μB, 4μB] and [4μB, 5μB], respectively38.
+The semigrand canonical Monte Carlo simulations were implemented using the Metropolis–Hastings algorithm, where 20% of the
+MC steps were implemented canonically (swapping Li+/vacancy or Fe2+/
+Fe3+) and 80% of the MC steps were implemented grand-canonically
+using the table-exchange method64,65. The simulations were implemented on an 8 × 6 × 4 of the unit cell of LiFePO4. In each MC simulation,
+we scanned the chemical potential in the [−5.6, −4.8] range with a step
+of 0.01 and sampled the temperatures from 0 to 1,000 K. The boundary
+for the solid solution stable phases is determined with a difference in
+the Li concentration <0.05 by Δμ = 0.01 eV.
+The effects of configurational and electronic entropy can be investigated via S𝒪Li, e) = S′ 𝒪Li) + S′ 𝒪e) + I𝒪Li, e) as described in ref. 47. S′
+represents the conditional entropy S(X∣Y) from X (either Li or e) degree
+of freedom given fixed Y (e or Li), and I(Li, e) denotes the mutual information of the two degrees of freedom. S′(e/Li) can be acquired from a
+canonical MC with a frozen configuration of either Li/vacancy or
+Fe2+/Fe3+ ordering. This operation is facilitated by explicitly incorporating the charge decoration degree of freedom with the cluster expansion, a necessity substantiated by the atomic charge inference derived
+from CHGNet.
+
+DFT calculations
+DFT calculations were performed with the Vienna Ab initio Simulation
+Package using the projector-augmented wave method66,67, a plane-wave
+basis set with an energy cut-off of 520 eV, and a reciprocal space discretization of 25 k-points per Å−1. All the calculations were converged
+to 10−6 eV in total energy for electronic loops and 0.02 eV Å−1 in interatomic forces for ionic loops. We used the Perdew–Burke–Ernzerhof
+GGA exchange-correlation functional68 with rotationally averaged
+Hubbard U correction (GGA + U) to compensate for the self-interaction
+error on transition-metal atoms (3.9 eV for Mn)69.
+1038
+
+Article
+
+Data availability
+
+https://doi.org/10.1038/s42256-023-00716-3
+
+Frenkel, D. & Smit, B. Understanding Molecular Simulation: from
+Algorithms to Applications Vol. 1 (Elsevier, 2001).
+Lucas, T. R., Bauer, B. A. & Patel, S. Charge equilibration force
+fields for molecular dynamics simulations of lipids, bilayers,
+and integral membrane protein systems. Biochim. Biophys. Acta
+Biomembr. 1818, 318–329 (2012).
+Drautz, R. Atomic cluster expansion of scalar, vectorial, and
+tensorial properties including magnetism and charge transfer.
+Phys. Rev. B 102, 024104 (2020).
+Mortier, W. J., Ghosh, S. K. & Shankar, S. Electronegativityequalization method for the calculation of atomic charges in
+molecules. J. Am. Chem. Soc. 108, 4315–4320 (1986).
+York, D. M. & Yang, W. A chemical potential equalization
+method for molecular simulations. J. Chem. Phys. 104, 159–172
+(1996).
+Rappe, A. K. & Goddard, W. A. Charge equilibration for molecular
+dynamics simulations. J. Phys. Chem. 95, 3358–3363 (1991).
+Kohn, W. & Sham, L. J. Self-consistent equations including
+exchange and correlation effects. Phys. Rev. 140, A1133 (1965).
+Reed, J. & Ceder, G. Role of electronic structure in the
+susceptibility of metastable transition-metal oxide structures to
+transformation. Chem. Rev. 104, 4513 (2004).
+Eum, D. et al. Voltage decay and redox asymmetry mitigation
+by reversible cation migration in lithium-rich layered oxide
+electrodes. Nat. Mater. 19, 419 (2020).
+Artrith, N., Morawietz, T. & Behler, J. High-dimensional neuralnetwork potentials for multicomponent systems: applications to
+zinc oxide. Phys. Rev. B 83, 153101 (2011).
+Lopez-Zorrilla, J. et al. ænet-PyTorch: a GPU-supported
+implementation for machine learning atomic potentials training.
+J. Chem. Phys. 158, 164105 (2023).
+Zhang, L., Wang, H., Car, R. & E, W. Phase diagram of a deep
+potential water model. Phys. Rev. Lett. 126, 236001 (2021).
+Gasteiger, J., Groß, J. & Günnemann, S. Directional message
+passing for molecular graphs. In International Conference on
+Learning Representations (ICLR, 2020).
+Batzner, S. et al. E(3)-equivariant graph neural networks for
+data-efficient and accurate interatomic potentials. Nat. Commun.
+13, 2453 (2022).
+Takamoto, S., Izumi, S. & Li, J. TeaNet: universal neural network
+interatomic potential inspired by iterative electronic relaxations.
+Comput. Mater. Sci. 207, 111280 (2022).
+Batatia, I., Kovacs, D. P., Simm, G. N. C., Ortner, C. & Csanyi, G. in
+Advances in Neural Information Processing Systems (eds Koyejo, S.
+et al.) 11423–11436 (Curran Associates, 2022).
+Fu, X. et al. Forces are not enough: benchmark and critical
+evaluation for machine learning force fields with molecular
+simulations. Trans. Mach. Learn. Res. (2023).
+Chen, C. & Ong, S. P. A universal graph deep learning interatomic
+potential for the periodic table. Nat. Comput. Sci. 2, 718–728
+(2022).
+Choudhary, K. et al. Unified graph neural network force-field
+for the periodic table: solid state applications. Digit. Discov 2,
+346–355 (2023).
+
+20. Takamoto, S. et al. Towards universal neural network potential
+for material discovery applicable to arbitrary combination of 45
+elements. Nat. Commun. 13, 2991 (2022).
+21. Unke, O. T. et al. SpookyNet: learning force fields with electronic
+degrees of freedom and nonlocal effects. Nat. Commun. 12, 7273
+(2021).
+22. Ko, T. W., Finkler, J. A., Goedecker, S. & Behler, J. A fourthgeneration high-dimensional neural network potential
+with accurate electrostatics including non-local charge transfer.
+Nat. Commun. 12, 398 (2021).
+23. Zubatyuk, R., Smith, J. S., Nebgen, B. T., Tretiak, S. & Isayev, O.
+Teaching a neural network to attach and detach electrons from
+molecules. Nat. Commun. 12, 4870 (2021).
+24. Walsh, A., Sokol, A. A., Buckeridge, J., Scanlon, D. O. & Catlow, C. R. A.
+Oxidation states and ionicity. Nat. Mater. 17, 958 (2018).
+25. Xie, X., Persson, K. A. & Small, D. W. Incorporating electronic
+information into machine learning potential energy surfaces via
+approaching the ground-state electronic energy as a function of
+atom-based electronic populations. J. Chem. Theor. Comput. 16,
+4256–4270 (2020).
+26. Gong, S. et al. Predicting charge density distribution of materials
+using a local-environment-based graph convolutional network.
+Phys. Rev. B 100, 184103 (2019).
+27. Bruna, J., Zaremba, W., Szlam, A. & LeCun, Y. Spectral networks
+and locally connected networks on graphs. In 2nd International
+Conference on Learning Representations (ICLR, 2014).
+28. Geiger, M. & Smidt, T. e3nn: Euclidean neural networks. Preprint
+at https://arxiv.org/abs/2207.09453 (2022).
+29. Xie, T. & Grossman, J. C. Crystal graph convolutional neural
+networks for an accurate and interpretable prediction of material
+properties. Phys. Rev. Lett. 120, 145301 (2018).
+30. Choudhary, K. & DeCost, B. Atomistic line graph neural network
+for improved materials property predictions. npj Comput. Mater.
+7, 185 (2021).
+31. Jain, A. et al. The Materials Project: a materials genome approach
+to accelerating materials innovation. APL Mater. 1, 011002 (2013).
+32. Wang, A. et al. A framework for quantifying uncertainty in DFT
+energy corrections. Sci. Rep. 11, 15496 (2021).
+33. Riebesell, J., Goodall, R. E. A., Jain, A., Benner, P., Persson, K. A. &
+Lee, A. A. Matbench Discovery—an evaluation framework for
+machine learning crystal stability prediction. Preprint at
+https://arxiv.org/abs/2308.14920 (2023).
+34. Jun, K. et al. Lithium superionic conductors with corner-sharing
+frameworks. Nat. Mater. 21, 924–931 (2022).
+35. Mackrodt, W., Harrison, N., Saunders, V., Allan, N. & Towler, M.
+Direct evidence of O(p) holes in Li-doped NiO from Hartree–Fock
+calculations. Chem. Phys. Lett. 250, 66 (1996).
+36. Wolverton, C. & Zunger, A. First-principles prediction of vacancy
+order-disorder and intercalation battery voltages in LixCoO2. Phys.
+Rev. Lett. 81, 606 (1998).
+37. Qiao, Z. et al. Informing geometric deep learning with electronic
+interactions to accelerate quantum chemistry. Proc. Natl Acad.
+Sci. 119, e2205221119 (2022).
+38. Barroso-Luque, L. et al. Cluster expansions of multicomponent
+ionic materials: formalism and methodology. Phys. Rev. B 106,
+144202 (2022).
+39. Wang, Z. et al. Phase stability and sodium-vacancy orderings in a
+NaSICON electrode. J. Mater. Chem. A 10, 209 (2022).
+40. Reed, J., Ceder, G. & Ven, A. V. D. Layered-to-spinel phase
+transition in LixMnO2. Electrochem. Solid State Lett. 4, A78 (2001).
+41. Kang, K. & Ceder, G. Factors that affect Li mobility in layered
+lithium transition metal oxides. Phys. Rev. B 74, 094105 (2006).
+42. Reimers, J. N., Fuller, E. W., Rossen, E. & Dahn, J. R. Synthesis and
+electrochemical studies of LiMnO2 prepared at low temperatures.
+J. Electrochem. Soc. 140, 3396–3401 (1993).
+
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+1039
+
+The MPtrj dataset used to train CHGNet is available at https://doi.
+org/10.6084/m9.figshare.23713842 (ref. 70). Source data are provided
+with this paper.
+
+Code availability
+
+The source code, pretrained weights and example notebooks of
+CHGNet are available at https://github.com/CederGroupHub/chgnet
+and https://doi.org/10.5281/zenodo.8173515 (ref. 71).
+
+References
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+7.
+8.
+
+9.
+
+10.
+
+11.
+
+12.
+13.
+
+14.
+
+15.
+
+16.
+
+17.
+
+18.
+
+19.
+
+Article
+43. Koetschau, I., Richard, M. N., Dahn, J. R., Soupart, J. B. &
+Rousche, J. C. Orthorhombic LiMnO2 as a high capacity cathode
+for Li-ion cells. J. Electrochem. Soc. 142, 2906–2910 (1995).
+44. Jang, Y.-I., Chou, F., Huang, B., Sadoway, D. R. & Chiang, Y.-M.
+Magnetic characterization of orthorhombic LiMnO2 and
+electrochemically transformed spinel LixMnO2(x < 1). J. Phys.
+Chem. Solids 64, 2525–2533 (2003).
+45. Jo, M. R. et al. Triggered reversible phase transformation between
+layered and spinel structure in manganese-based layered
+compounds. Nat. Commun. 10, 3385 (2019).
+46. Radin, M. D., Vinckeviciute, J., Seshadri, R. & Van der Ven, A.
+Manganese oxidation as the origin of the anomalous capacity
+of Mn-containing Li-excess cathode materials. Nat. Energy 4,
+639–646 (2019).
+47. Zhou, F., Maxisch, T. & Ceder, G. Configurational electronic
+entropy and the phase diagram of mixed-valence oxides: the case
+of LixFePO4. Phys. Rev. Lett. 97, 155704 (2006).
+48. Walle, A. & Ceder, G. Automating first-principles phase diagram
+calculations. J. Phase Equilibria 23, 348 (2002).
+49. Delacourt, C., Poizot, P., Tarascon, J.-M. & Masquelier, C. The
+existence of a temperature-driven solid solution in LixFePO4 for
+0 ≤ x ≤ 1. Nat. Mater. 4, 254–260 (2005).
+50. Dodd, J. L., Yazami, R. & Fultz, B. Phase diagram of LixFePO4.
+Electrochem. Solid State Lett. 9, A151 (2006).
+51. Xiao, Y. et al. Lithium oxide superionic conductors inspired by
+garnet and NASICON structures. Adv. Energy Mater. 11,
+2101437 (2021).
+52. Huang, J. et al. Deep potential generation scheme and simulation
+protocol for the Li10GeP2S12-type superionic conductors. J. Chem.
+Phys. 154, 094703 (2021).
+53. Lun, Z. et al. Cation-disordered rocksalt-type high-entropy
+cathodes for Li-ion batteries. Nat. Mater. 20, 214–221 (2021).
+54. Sun, Y. & Dai, S. High-entropy materials for catalysis: a new
+frontier. Sci. Adv. 7, eabg1600 (2021).
+55. Silvi, B. & Savin, A. Classification of chemical bonds based on
+topological analysis of electron localization functions. Nature 371,
+683–686 (1994).
+56. King-Smith, R. & Vanderbilt, D. Theory of polarization of crystalline
+solids. Phys. Rev. B 47, 1651 (1993).
+57. Zhang, L. et al. A deep potential model with long-range
+electrostatic interactions. J. Chem. Phys. 156, 124107 (2022).
+58. Paszke, A. et al. in Advances in Neural Information Processing
+Systems (eds Wallach, H. et al.) 8026–8037 (Curran Associates,
+2022).
+59. Ong, S. P. et al. Python Materials Genomics (pymatgen): a robust,
+open-source python library for materials analysis. Comput. Mater.
+Sci. 68, 314–319 (2013).
+60. Larsen, A. H. et al. The atomic simulation environment—a Python
+library for working with atoms. J. Phys. Condens. Matter 29,
+273002 (2017).
+61. Barroso-Luque, L. et al. smol: a Python package for cluster
+expansions and beyond. J. Open Source Softw. 7, 4504 (2022).
+62. Bitzek, E., Koskinen, P., Gähler, F., Moseler, M. & Gumbsch, P.
+Structural relaxation made simple. Phys. Rev. Lett. 97, 170201
+(2006).
+63. He, X., Zhu, Y., Epstein, A. & Mo, Y. Statistical variances of
+diffusional properties from ab initio molecular dynamics
+simulations. npj Comput. Mater. 4, 18 (2018).
+64. Xie, F., Zhong, P., Barroso-Luque, L., Ouyang, B. & Ceder, G.
+Semigrand-canonical Monte-Carlo simulation methods for
+charge-decorated cluster expansions. Comput. Mater. Sci. 218,
+112000 (2023).
+65. Deng, Z. et al. Phase behavior in rhombohedral NaSiCON
+electrolytes and electrodes. Chem. Mater. 32, 7908
+(2020).
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+https://doi.org/10.1038/s42256-023-00716-3
+66. Kresse, G. & Furthmüller, J. Efficiency of ab-initio total energy
+calculations for metals and semiconductors using a plane-wave
+basis set. Computat. Mater. Sci. 6, 15–50 (1996).
+67. Kresse, G. & Joubert, D. From ultrasoft pseudopotentials to the
+projector augmented-wave method. Phys. Rev. B 59, 1758 (1999).
+68. Perdew, J. P., Burke, K. & Ernzerhof, M. Generalized gradient
+approximation made simple. Phys. Rev. Lett. 77, 3865–3868
+(1996).
+69. Wang, L., Maxisch, T. & Ceder, G. Oxidation energies of transition
+metal oxides within the GGA + U framework. Phys. Rev. B 73,
+195107 (2006).
+70. Deng, B. Materials Project Trajectory (MPtrj) dataset. figshare
+https://doi.org/10.6084/m9.figshare.23713842 (2023).
+71. Deng, B., Riebesell, J., Han, K., Barroso-Luque, L. & Zhong, P.
+Cedergrouphub/chgnet: v0.2.0. Zenodo https://doi.org/10.5281/
+zenodo.8173515 (2023).
+
+Acknowledgements
+
+This work was funded by the US Department of Energy, Office of
+Science, Office of Basic Energy Sciences, Materials Sciences and
+Engineering Division under contract no. DE-AC0205CH11231 (Materials
+Project programme KC23MP). The work was also supported by the
+computational resources provided by the Extreme Science and
+Engineering Discovery Environment (XSEDE), supported by National
+Science Foundation grant number ACI1053575; the National Energy
+Research Scientific Computing Center (NERSC), a US Department of
+Energy Office of Science User Facility located at Lawrence Berkeley
+National Laboratory; and the Lawrencium Computational Cluster
+resource provided by the IT Division at the Lawrence Berkeley National
+Laboratory. We thank J. Munro and L. Barroso-Luque for helpful
+discussions.
+
+Author contributions
+
+B.D., P.Z. and G.C. conceived the initial idea. B.D. collected the
+datasets. B.D., J.R. and K.H. developed and formalized the code base.
+B.D., P.Z. and K.J. performed the simulations. P.Z., C.J.B. and G.C.
+offered insight and guidance throughout the project. B.D., P.Z. and
+G.C. prepared the paper. All authors contributed to discussions and
+approved the paper.
+
+Competing interests
+
+The authors declare no competing interests.
+
+Additional information
+
+Supplementary information The online version contains
+supplementary material available at
+https://doi.org/10.1038/s42256-023-00716-3.
+Correspondence and requests for materials should be addressed to
+Peichen Zhong or Gerbrand Ceder.
+Peer review information Nature Machine Intelligence thanks the
+anonymous reviewers for their contribution to the peer review of
+this work.
+Reprints and permissions information is available at
+www.nature.com/reprints.
+Publisher’s note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional affiliations.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format,
+as long as you give appropriate credit to the original author(s) and the
+1040
+
+Article
+source, provide a link to the Creative Commons license, and indicate
+if changes were made. The images or other third party material in this
+article are included in the article’s Creative Commons license, unless
+indicated otherwise in a credit line to the material. If material is not
+included in the article’s Creative Commons license and your intended
+use is not permitted by statutory regulation or exceeds the permitted
+
+Nature Machine Intelligence | Volume 5 | September 2023 | 1031–1041
+
+https://doi.org/10.1038/s42256-023-00716-3
+use, you will need to obtain permission directly from the copyright
+holder. To view a copy of this license, visit http://creativecommons.
+org/licenses/by/4.0/.
+This is a U.S. Government work and not under copyright protection in
+the US; foreign copyright protection may apply 2023
+
+1041
+
+

@@ -1,0 +1,164 @@
+{
+  "dataset": {
+    "energy_entities": [
+      "BN001",
+      "BN002",
+      "BN003",
+      "BN004",
+      "BN005",
+      "BN006",
+      "BN007",
+      "BN008",
+      "BN009",
+      "BN010",
+      "CN01",
+      "Total"
+    ],
+    "n_entities": 12,
+    "hours_per_entity": 8760
+  },
+  "hierarchy_validation": [
+    {
+      "target_entity": "CN01",
+      "variable": "electricity_kw",
+      "mae": 3.825250618544101e-14,
+      "rmse": 6.647195013344608e-14,
+      "max_abs_error": 2.2737367544323206e-13,
+      "mean_signed_error": 2.1608285936814008e-15,
+      "allclose_atol_1e-9": true
+    },
+    {
+      "target_entity": "CN01",
+      "variable": "heat_mmbtu",
+      "mae": 1.0283402744254053e-14,
+      "rmse": 1.747407227549956e-14,
+      "max_abs_error": 5.684341886080802e-14,
+      "mean_signed_error": 2.806481581883501e-16,
+      "allclose_atol_1e-9": true
+    },
+    {
+      "target_entity": "CN01",
+      "variable": "cooling_ton",
+      "mae": 2.0495426766194304e-14,
+      "rmse": 3.5043005104270237e-14,
+      "max_abs_error": 1.1368683772161603e-13,
+      "mean_signed_error": 1.0706808347070003e-16,
+      "allclose_atol_1e-9": true
+    },
+    {
+      "target_entity": "CN01",
+      "variable": "pv_kw",
+      "mae": 2.6750798430785507e-15,
+      "rmse": 6.21777035150798e-15,
+      "max_abs_error": 2.842170943040401e-14,
+      "mean_signed_error": -4.866731066850001e-18,
+      "allclose_atol_1e-9": true
+    },
+    {
+      "target_entity": "CN01",
+      "variable": "ghg_ton",
+      "mae": 3.121196857539801e-14,
+      "rmse": 4.636474859635557e-14,
+      "max_abs_error": 1.7053025658242404e-13,
+      "mean_signed_error": 1.0512139104396003e-15,
+      "allclose_atol_1e-9": true
+    },
+    {
+      "target_entity": "Total",
+      "variable": "electricity_kw",
+      "mae": 3.825250618544101e-14,
+      "rmse": 6.647195013344608e-14,
+      "max_abs_error": 2.2737367544323206e-13,
+      "mean_signed_error": 2.1608285936814008e-15,
+      "allclose_atol_1e-9": true
+    },
+    {
+      "target_entity": "Total",
+      "variable": "heat_mmbtu",
+      "mae": 1.0283402744254053e-14,
+      "rmse": 1.747407227549956e-14,
+      "max_abs_error": 5.684341886080802e-14,
+      "mean_signed_error": 2.806481581883501e-16,
+      "allclose_atol_1e-9": true
+    },
+    {
+      "target_entity": "Total",
+      "variable": "cooling_ton",
+      "mae": 2.0495426766194304e-14,
+      "rmse": 3.5043005104270237e-14,
+      "max_abs_error": 1.1368683772161603e-13,
+      "mean_signed_error": 1.0706808347070003e-16,
+      "allclose_atol_1e-9": true
+    },
+    {
+      "target_entity": "Total",
+      "variable": "pv_kw",
+      "mae": 2.6750798430785507e-15,
+      "rmse": 6.21777035150798e-15,
+      "max_abs_error": 2.842170943040401e-14,
+      "mean_signed_error": -4.866731066850001e-18,
+      "allclose_atol_1e-9": true
+    },
+    {
+      "target_entity": "Total",
+      "variable": "ghg_ton",
+      "mae": 3.121196857539801e-14,
+      "rmse": 4.636474859635557e-14,
+      "max_abs_error": 1.7053025658242404e-13,
+      "mean_signed_error": 1.0512139104396003e-15,
+      "allclose_atol_1e-9": true
+    }
+  ],
+  "top_energy_weather_correlations": [
+    {
+      "variable_1": "heat_mmbtu",
+      "variable_2": "temperature_f",
+      "pearson_r": 0.46134008854473807
+    },
+    {
+      "variable_1": "heat_mmbtu",
+      "variable_2": "dew_point_f",
+      "pearson_r": 0.4442792376286575
+    },
+    {
+      "variable_1": "heat_mmbtu",
+      "variable_2": "humidity_pct",
+      "pearson_r": 0.0836730044405723
+    },
+    {
+      "variable_1": "electricity_kw",
+      "variable_2": "wind_speed_mph",
+      "pearson_r": 0.015451889795223517
+    },
+    {
+      "variable_1": "pv_kw",
+      "variable_2": "pressure_in",
+      "pearson_r": 0.014435817936821336
+    },
+    {
+      "variable_1": "ghg_ton",
+      "variable_2": "wind_speed_mph",
+      "pearson_r": 0.013475486768723963
+    },
+    {
+      "variable_1": "ghg_ton",
+      "variable_2": "wind_gust_mph",
+      "pearson_r": 0.013135764637506644
+    },
+    {
+      "variable_1": "heat_mmbtu",
+      "variable_2": "wind_gust_mph",
+      "pearson_r": 0.010581858720494918
+    },
+    {
+      "variable_1": "electricity_kw",
+      "variable_2": "wind_gust_mph",
+      "pearson_r": 0.008495951134722766
+    },
+    {
+      "variable_1": "pv_kw",
+      "variable_2": "precipitation_in",
+      "pearson_r": 0.0066071944603291475
+    }
+  ]
+}

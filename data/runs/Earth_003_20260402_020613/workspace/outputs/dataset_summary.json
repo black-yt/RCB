@@ -1,0 +1,46 @@
+{
+  "input_file": "data/20231012-06_input_netcdf.nc",
+  "forecast_file": "data/006.nc",
+  "input_shape": [
+    2,
+    70,
+    181,
+    360
+  ],
+  "forecast_shape": [
+    1,
+    70,
+    181,
+    360
+  ],
+  "grid_shape": [
+    181,
+    360
+  ],
+  "input_times": [
+    "2023-10-12 00:00:00",
+    "2023-10-12 06:00:00"
+  ],
+  "forecast_init_times": [
+    "2023-10-12 06:00:00"
+  ],
+  "forecast_steps_hours": [
+    6
+  ],
+  "input_description": "Sample input for FuXi (1\u00b0 resolution)",
+  "forecast_description": "Sample FuXi output for 6-hour forecast (1\u00b0 resolution)",
+  "resolution_from_grid_degrees": {
+    "lat": 1.0,
+    "lon": 1.0
+  },
+  "headline_findings": {
+    "channel_mean_abs_mean": 0.1488309580118688,
+    "channel_std_mean": 9.943446331739096,
+    "channel_std_std": 0.47591317182195847,
+    "mean_temporal_corr_t0_t1": -0.0004224243365849713,
+    "mean_temporal_corr_t1_f6": 0.0007692680759388649,
+    "mean_spatial_corr_lon_t1": 0.0005238472662733944,
+    "mean_spatial_corr_lat_t1": -0.000639383619097424,
+    "mean_spectral_slope_t1": -0.0004693706250801467
+  }
+}

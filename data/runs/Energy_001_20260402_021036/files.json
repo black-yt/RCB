@@ -1,0 +1,279 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_gb_dispatch_analysis.py",
+    "path": "code/run_gb_dispatch_analysis.py",
+    "type": "file",
+    "size": 25204,
+    "mtime": 1775132360.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "buses.csv",
+    "path": "data/buses.csv",
+    "type": "file",
+    "size": 1086,
+    "mtime": 1773033844.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "demand.csv",
+    "path": "data/demand.csv",
+    "type": "file",
+    "size": 60915,
+    "mtime": 1773033844.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "generators.csv",
+    "path": "data/generators.csv",
+    "type": "file",
+    "size": 1386,
+    "mtime": 1773033846.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "links.csv",
+    "path": "data/links.csv",
+    "type": "file",
+    "size": 565,
+    "mtime": 1773033844.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "storage.csv",
+    "path": "data/storage.csv",
+    "type": "file",
+    "size": 109,
+    "mtime": 1773033848.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "wind_cf.csv",
+    "path": "data/wind_cf.csv",
+    "type": "file",
+    "size": 63972,
+    "mtime": 1773033846.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "adequacy_copperplate_dispatch_by_carrier_hourly.csv",
+    "path": "outputs/adequacy_copperplate_dispatch_by_carrier_hourly.csv",
+    "type": "file",
+    "size": 17180,
+    "mtime": 1775132358.0,
+    "exported": true
+  },
+  {
+    "name": "adequacy_copperplate_line_flows_hourly.csv",
+    "path": "outputs/adequacy_copperplate_line_flows_hourly.csv",
+    "type": "file",
+    "size": 66374,
+    "mtime": 1775132354.0,
+    "exported": true
+  },
+  {
+    "name": "adequacy_copperplate_line_loading_hourly.csv",
+    "path": "outputs/adequacy_copperplate_line_loading_hourly.csv",
+    "type": "file",
+    "size": 66275,
+    "mtime": 1775132354.0,
+    "exported": true
+  },
+  {
+    "name": "adequacy_copperplate_load_shedding_by_bus_hourly.csv",
+    "path": "outputs/adequacy_copperplate_load_shedding_by_bus_hourly.csv",
+    "type": "file",
+    "size": 14118,
+    "mtime": 1775132356.0,
+    "exported": true
+  },
+  {
+    "name": "adequacy_copperplate_storage_charge_hourly.csv",
+    "path": "outputs/adequacy_copperplate_storage_charge_hourly.csv",
+    "type": "file",
+    "size": 3409,
+    "mtime": 1775132354.0,
+    "exported": true
+  },
+  {
+    "name": "adequacy_copperplate_storage_discharge_hourly.csv",
+    "path": "outputs/adequacy_copperplate_storage_discharge_hourly.csv",
+    "type": "file",
+    "size": 3099,
+    "mtime": 1775132356.0,
+    "exported": true
+  },
+  {
+    "name": "adequacy_copperplate_storage_energy_hourly.csv",
+    "path": "outputs/adequacy_copperplate_storage_energy_hourly.csv",
+    "type": "file",
+    "size": 4162,
+    "mtime": 1775132352.0,
+    "exported": true
+  },
+  {
+    "name": "adequacy_copperplate_summary.csv",
+    "path": "outputs/adequacy_copperplate_summary.csv",
+    "type": "file",
+    "size": 748,
+    "mtime": 1775132358.0,
+    "exported": true
+  },
+  {
+    "name": "adequacy_copperplate_wind_available_hourly.csv",
+    "path": "outputs/adequacy_copperplate_wind_available_hourly.csv",
+    "type": "file",
+    "size": 60859,
+    "mtime": 1775132354.0,
+    "exported": true
+  },
+  {
+    "name": "adequacy_copperplate_wind_curtailment_hourly.csv",
+    "path": "outputs/adequacy_copperplate_wind_curtailment_hourly.csv",
+    "type": "file",
+    "size": 37498,
+    "mtime": 1775132356.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 49 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1296584,
+    "mtime": 1773914893.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 193879,
+    "mtime": 1773914893.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 406113,
+    "mtime": 1773914893.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6282024,
+    "mtime": 1773914893.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "adequacy_dispatch.png",
+    "path": "report/images/adequacy_dispatch.png",
+    "type": "file",
+    "size": 469019,
+    "mtime": 1775132358.0,
+    "exported": true
+  },
+  {
+    "name": "congestion_storage.png",
+    "path": "report/images/congestion_storage.png",
+    "type": "file",
+    "size": 255920,
+    "mtime": 1775132358.0,
+    "exported": true
+  },
+  {
+    "name": "demand_wind_overview.png",
+    "path": "report/images/demand_wind_overview.png",
+    "type": "file",
+    "size": 251115,
+    "mtime": 1775132358.0,
+    "exported": true
+  },
+  {
+    "name": "network_overview.png",
+    "path": "report/images/network_overview.png",
+    "type": "file",
+    "size": 353552,
+    "mtime": 1775132360.0,
+    "exported": true
+  },
+  {
+    "name": "scenario_comparison.png",
+    "path": "report/images/scenario_comparison.png",
+    "type": "file",
+    "size": 108966,
+    "mtime": 1775132360.0,
+    "exported": true
+  },
+  {
+    "name": "validation_balance.png",
+    "path": "report/images/validation_balance.png",
+    "type": "file",
+    "size": 66845,
+    "mtime": 1775132360.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12808,
+    "mtime": 1775132361.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6355,
+    "mtime": 1775067036.0,
+    "exported": true
+  }
+]

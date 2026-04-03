@@ -1,0 +1,38 @@
+{
+  "mace_architecture": {
+    "four_body_messages": true,
+    "message_passing_iterations": 2,
+    "improved_learning_curve_steepness": true
+  },
+  "mptrj_dataset": {
+    "structures": 1580395,
+    "materials": 145923,
+    "elements_in_mp_database": 89,
+    "force_labels": 49295660,
+    "stress_labels": 14223555,
+    "coverage_summary": "all chemistries except noble gases and actinoids",
+    "elements_over_100k_occurrences": 60,
+    "elements_over_10k_magmom_labels": 76,
+    "chgnet_parameters": 400438
+  },
+  "fine_tuning_examples": {
+    "li_fe_p_o_pre_finetune_meV_per_atom": 23,
+    "li_fe_p_o_post_finetune_meV_per_atom": 15
+  },
+  "cross_functional_transfer": {
+    "mp_r2scan_structures": 238247,
+    "mp_r2scan_materials": 34927,
+    "energy_mae_meV_per_atom": 15,
+    "force_mae_meV_per_A": 36,
+    "scratch_energy_slope": -0.615,
+    "transfer_energy_slope": -0.301,
+    "scratch_force_slope": -0.394,
+    "transfer_force_slope": -0.134,
+    "energy_saturation_training_points": 719996,
+    "force_saturation_training_points": 317475,
+    "correlation_before_atomref": 0.0917,
+    "correlation_after_atomref": 0.925,
+    "ten_x_efficiency_claim": true,
+    "one_k_beats_ten_k_claim": false
+  }
+}
