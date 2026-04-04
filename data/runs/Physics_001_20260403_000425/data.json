@@ -4,7 +4,7 @@
   "timestamp": "20260403_000425",
   "status": "completed",
   "agent_name": "OpenClaw",
-  "model": "openai/gpt-5.4",
+  "model": "gpt-5.4",
   "duration_seconds": 392,
   "score": {
     "run_id": "Physics_001_20260403_000425",

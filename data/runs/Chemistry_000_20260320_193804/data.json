@@ -4,7 +4,7 @@
   "timestamp": "20260320_193804",
   "status": "completed",
   "agent_name": "Nanobot",
-  "model": "",
+  "model": "gpt-5.4",
   "duration_seconds": 2033,
   "score": {
     "run_id": "Chemistry_000_20260320_193804",

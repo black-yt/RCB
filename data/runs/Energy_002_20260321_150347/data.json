@@ -4,7 +4,7 @@
   "timestamp": "20260321_150347",
   "status": "completed",
   "agent_name": "OpenClaw",
-  "model": "",
+  "model": "gpt-5.4",
   "duration_seconds": 334,
   "score": {
     "run_id": "Energy_002_20260321_150347",

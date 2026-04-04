@@ -4,7 +4,7 @@
   "timestamp": "20260401_141304",
   "status": "completed",
   "agent_name": "Claude Code",
-  "model": "claude-sonnet-4-6",
+  "model": "claude-opus-4-6",
   "duration_seconds": 308,
   "score": {
     "run_id": "Astronomy_001_20260401_141304",

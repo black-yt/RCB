@@ -4,7 +4,7 @@
   "timestamp": "20260401_125606",
   "status": "completed",
   "agent_name": "Nanobot",
-  "model": "",
+  "model": "gpt-5.4",
   "duration_seconds": 155,
   "score": {
     "run_id": "Neuroscience_003_20260401_125606",

@@ -4,7 +4,7 @@
   "timestamp": "20260321_181849",
   "status": "completed",
   "agent_name": "Claude Code",
-  "model": "claude-opus-4-6[1m]",
+  "model": "claude-opus-4-6",
   "duration_seconds": 318,
   "score": {
     "run_id": "Life_001_20260321_181849",

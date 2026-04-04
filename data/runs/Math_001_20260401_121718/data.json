@@ -4,7 +4,7 @@
   "timestamp": "20260401_121718",
   "status": "completed",
   "agent_name": "Nanobot",
-  "model": "",
+  "model": "gpt-5.4",
   "duration_seconds": 88,
   "score": {
     "run_id": "Math_001_20260401_121718",

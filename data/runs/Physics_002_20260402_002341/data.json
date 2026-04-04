@@ -4,7 +4,7 @@
   "timestamp": "20260402_002341",
   "status": "completed",
   "agent_name": "Claude Code",
-  "model": "claude-sonnet-4-6",
+  "model": "claude-opus-4-6",
   "duration_seconds": 376,
   "score": {
     "run_id": "Physics_002_20260402_002341",

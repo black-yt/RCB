@@ -4,7 +4,7 @@
   "timestamp": "20260401_191819",
   "status": "completed",
   "agent_name": "Claude Code",
-  "model": "claude-sonnet-4-6",
+  "model": "claude-opus-4-6",
   "duration_seconds": 463,
   "score": {
     "run_id": "Energy_001_20260401_191819",
