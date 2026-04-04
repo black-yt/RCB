@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
@@ -140,11 +141,21 @@ def scan_max_path(root: Path, current_max: int, current_path: str) -> tuple[int,
     if not root.exists():
         return current_max, current_path
     info(f"Scanning path lengths under {root} ...")
-    for path in root.rglob("*"):
-        plen = len(str(path.resolve()))
-        if plen > current_max:
-            current_max = plen
-            current_path = str(path.resolve())
+    stack = [os.fspath(root)]
+    while stack:
+        current = stack.pop()
+        try:
+            with os.scandir(current) as entries:
+                for entry in entries:
+                    path_str = entry.path
+                    plen = len(path_str)
+                    if plen > current_max:
+                        current_max = plen
+                        current_path = path_str
+                    if entry.is_dir(follow_symlinks=False):
+                        stack.append(path_str)
+        except OSError:
+            continue
     return current_max, current_path
 
 
@@ -256,11 +267,6 @@ def run_task_checks(rcb_tasks: list[str], progress_every: int) -> None:
         elif rcb_cl.exists() and not home_cl.exists():
             err(f"{task_id}: Home checklist.json missing")
 
-        # [6] Data files vs source
-        src_data = task_dir / "data"
-        if src_data.exists():
-            sum(1 for f in src_data.rglob("*") if f.is_file())
-
         # [7] related_work exists and non-empty, PDF naming
         rw = task_dir / "related_work"
         if not rw.exists() or not list(rw.iterdir()):
@@ -315,14 +321,9 @@ def run_task_checks(rcb_tasks: list[str], progress_every: int) -> None:
         for ref in path_refs:
             err(f"{task_id}: task description contains stale path: {ref}")
 
-        for path in task_dir.rglob("*"):
-            plen = len(str(path.resolve()))
-            if plen > max_path_len:
-                max_path_len = plen
-                max_path_str = str(path.resolve())
-
     # [11] Path lengths
     log("\n[11] Path length statistics")
+    max_path_len, max_path_str = scan_max_path(TASKS, max_path_len, max_path_str)
     max_path_len, max_path_str = scan_max_path(HOME_DATA, max_path_len, max_path_str)
     max_path_len, max_path_str = scan_max_path(WS, max_path_len, max_path_str)
 
@@ -485,6 +486,36 @@ def run_static_checks(rcb_tasks: list[str], progress_every: int) -> None:
                 f"leaderboard.json: {len(leaderboard['tasks'])} tasks, "
                 f"{len(leaderboard['agents'])} agents"
             )
+            cell_required = {"score", "run_id", "duration_seconds", "cost_usd", "model", "model_display"}
+            cell_errors = 0
+            for agent_name, task_scores in leaderboard.get("scores", {}).items():
+                if not isinstance(task_scores, dict):
+                    err(f"leaderboard.json scores[{agent_name!r}] is not an object")
+                    cell_errors += 1
+                    continue
+                for task_id, entry in task_scores.items():
+                    if not isinstance(entry, dict):
+                        err(f"leaderboard.json scores[{agent_name!r}][{task_id!r}] is not an object")
+                        cell_errors += 1
+                        continue
+                    missing_cell = cell_required - set(entry.keys())
+                    if missing_cell:
+                        err(
+                            f"leaderboard.json scores[{agent_name!r}][{task_id!r}] "
+                            f"missing fields: {sorted(missing_cell)}"
+                        )
+                        cell_errors += 1
+            frontier = leaderboard.get("frontier")
+            if not isinstance(frontier, dict):
+                err("leaderboard.json frontier is not an object")
+                cell_errors += 1
+            else:
+                missing_frontier = [task_id for task_id in leaderboard.get("tasks", []) if task_id not in frontier]
+                if missing_frontier:
+                    err(f"leaderboard.json frontier missing tasks: {missing_frontier[:3]}")
+                    cell_errors += len(missing_frontier)
+            if cell_errors == 0:
+                ok("leaderboard.json cell payloads look complete")
     else:
         warn("leaderboard.json not found")
 
