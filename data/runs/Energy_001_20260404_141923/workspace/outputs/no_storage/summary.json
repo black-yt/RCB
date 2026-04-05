@@ -1,0 +1,20 @@
+{
+  "scenario": "no_storage",
+  "description": "Flexibility sensitivity disabling storage.",
+  "objective_gbp": 59643155899.52892,
+  "total_demand_mwh": 15939706.029762119,
+  "served_mwh": 4025400.8089140616,
+  "unserved_mwh": 11914305.220848057,
+  "unserved_share": 0.747460787457563,
+  "wind_generation_mwh": 2270244.9031418688,
+  "wind_available_mwh": 4192662.004779862,
+  "wind_curtailment_mwh": 1922417.101637992,
+  "wind_curtailment_share": 0.458519456003449,
+  "gas_generation_mwh": 1351955.90577219,
+  "nuclear_generation_mwh": 403200.0,
+  "storage_discharge_mwh": 0.0,
+  "storage_charge_mwh": 0.0,
+  "max_line_utilization": 1.0,
+  "mean_line_utilization": 0.6279743524065515,
+  "peak_unserved_mw": 116282.80155418333
+}

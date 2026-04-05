@@ -1,0 +1,912 @@
+MAPF-LNS2: Fast Repairing for Multi-Agent Path Finding
+via Large Neighborhood Search
+Jiaoyang Li,1Zhe Chen,2Daniel Harabor,2Peter J. Stuckey,2Sven Koenig1
+1University of Southern California, USA
+2Monash University, Australia
+jiaoyanl@usc.edu, fzhe.chen, daniel.harabor, peter.stuckey g@monash.edu, skoenig@usc.edu
+Abstract
+Multi-Agent Path Finding (MAPF) is the problem of plan-
+ning collision-free paths for multiple agents in a shared envi-
+ronment. In this paper, we propose a novel algorithm MAPF-
+LNS2 based on large neighborhood search for solving MAPF
+efﬁciently. Starting from a set of paths that contain collisions,
+MAPF-LNS2 repeatedly selects a subset of colliding agents
+and replans their paths to reduce the number of collisions
+until the paths become collision-free. We compare MAPF-
+LNS2 against a variety of state-of-the-art MAPF algorithms,
+including Prioritized Planning with random restarts, EECBS,
+and PPS, and show that MAPF-LNS2 runs signiﬁcantly faster
+than them while still providing near-optimal solutions in most
+cases. MAPF-LNS2 solves 80% of the random-scenario in-
+stances with the largest number of agents from the MAPF
+benchmark suite with a runtime limit of just 5 minutes, which,
+to our knowledge, has not been achieved by any existing al-
+gorithms.
+1 Introduction
+MAPF (Stern et al. 2019) is the problem of planning
+collision-free paths for multiple agents in a shared envi-
+ronment while minimizing their travel times. It is NP-hard
+to solve optimally and the core problem of many applica-
+tions, such as in warehouse automation, trafﬁc management,
+and robotics. Existing MAPF algorithms include system-
+atic search algorithms (that are exponential-time but guar-
+anteed to ﬁnd optimal or bounded-suboptimal solutions),
+rule-based algorithms (that are usually polynomial-time and
+complete), and prioritized algorithms (that run fast empir-
+ically but are neither complete nor optimal). When facing
+challenging MAPF instances, however, the ﬁrst two types
+of algorithms suffer from either memory-outs or time-outs
+while the last type suffers from incompleteness. One suc-
+cessful technique that can improve the chance of ﬁnding so-
+lutions is to restart the search with a new random seed (Ben-
+newitz, Burgard, and Thrun 2001; Cohen et al. 2018).
+In this work, we propose a different way to improve the
+chance of ﬁnding solutions. Instead of giving up on the pre-
+vious search effort and restarting from scratch, we make use
+of the infeasible set of paths produced by a MAPF algorithm
+and try to repair it via Large Neighborhood Search (Shaw
+Copyright © 2022, Association for the Advancement of Artiﬁcial
+Intelligence (www.aaai.org). All rights reserved.1998). We call the new algorithm MAPF-LNS2. MAPF-
+LNS2 starts from a set of paths that have collisions and re-
+peatedly replans subsets of paths to reduce the overall num-
+ber of collisions until the paths become collision-free. By
+using Prioritized Planning (PP) (Silver 2005) with an efﬁ-
+cient single-agent pathﬁnding algorithm to plan and replan
+paths and a variety of heuristics to select subsets of paths,
+MAPF-LNS2 can solve easy instances as fast as PP and hard
+instances signiﬁcantly faster than PP and other MAPF algo-
+rithms. Even when MAPF-LNS2 fails to ﬁnd collision-free
+paths within the runtime limit, it usually returns paths with
+only a few collisions, which is acceptable in many appli-
+cations (Belov et al. 2020). The main contributions of this
+work are twofold:
+1. We propose an efﬁcient single-agent pathﬁnding algo-
+rithm SIPPS based on SIPP (Phillips and Likhachev
+2011) for ﬁnding a short path that avoids collisions with
+a given set of paths and minimizes the number of col-
+lisions with another given set of paths. We show that
+SIPPS runs 5 times (or more) faster than Space-Time A* ,
+an A*-based algorithm widely used by many MAPF al-
+gorithms. Thus, we demonstrate that SIPPS can speed up
+not only MAPF-LNS2 but also many other MAPF algo-
+rithms, such as EECBS (Li, Ruml, and Koenig 2021).
+2. We propose a suboptimal MAPF algorithm MAPF-LNS2
+that is fast, scalable, and memory-efﬁcient. Although
+it lacks theoretical guarantees, it empirically signiﬁ-
+cantly outperforms a variety of state-of-the-art MAPF
+algorithms, including Prioritized Planning with random
+restarts, EECBS, and PPS (Sajid, Luna, and Bekris
+2012), in terms of both success rates and runtimes.
+MAPF-LNS2 solves 80% of the random-scenario in-
+stances with the largest number of agents from the MAPF
+benchmark suite with a runtime limit of just 5 minutes,
+which, to our knowledge, has not been achieved by any
+existing algorithms. Moreover, when given a longer run-
+time limit of one hour, MAPF-LNS2 can scale to 8,000
+agents on a congested warehouse map.
+2 Background
+Deﬁnition 1 (Multi-Agent Path Finding) .We are given a
+connected graph G= (V;E), a set ofmagentsA=
+fa1;;amg, and a start vertex si2Vand a target vertex
+gi2Vfor each agent ai2A. At each discrete timestep, an
+agent either moves to an adjacent vertex or waits at its cur-
+rent vertex. A collision happens when two agents occupy the
+same vertex or traverse the same edge in opposite directions
+at the same timestep. A plan is a set of pathsfp1;;pmg
+that move the agents from their start vertices to their target
+vertices. Each agent remains at its target vertex after it com-
+pletes its path. A plan is feasible if it contains no collisions
+andinfeasible otherwise. Our task is to ﬁnd a feasible plan
+(also called a solution ) with a small sum of costsPm
+i=1jpij,
+i.e., the sum of the travel times of the agents.
+Due to the many applications of MAPF, numerous MAPF
+algorithms have been proposed in recent years. State-of-
+the-art optimal and bounded-suboptimal algorithms, such as
+CBSH2-RTC (Li et al. 2021c), Lazy CBS (Gange, Hara-
+bor, and Stuckey 2019), BCP (Lam and Le Bodic 2020),
+and EECBS (Li, Ruml, and Koenig 2021), usually deploy
+a strategy called CBS (Sharon et al. 2015), that uses a
+single-agent pathﬁnding algorithm to plan a path for each
+agent ﬁrst and resolves collisions afterwards. They provide
+quality guarantees for their solutions but do not scale to
+large instances as their runtimes are exponential in the num-
+ber of agents. State-of-the-art unbounded-suboptimal algo-
+rithms include prioritized algorithms, such as prioritized
+planning (Erdmann and Lozano-Perez 1986) and PBS (Ma
+et al. 2019), and rule-based algorithms, such as PPS (Sajid,
+Luna, and Bekris 2012), PIBT (Okumura et al. 2019), and
+WSCaS (Wang and Rubenstein 2020). Prioritized algo-
+rithms plan paths based on a priority ordering of the agents
+where lower-priority agents need to avoid collisions with
+higher-priority agents. They are simple and run extremely
+fast but can fail to ﬁnd any solutions for challenging in-
+stances due to their incompleteness. Rule-based algorithms
+move agents toward their target vertices via simple move-
+ment rules. Many of them are polynomial-time and complete
+in theory but can still fail to ﬁnd solutions within a reason-
+able time for large instances.
+The idea of MAPF-LNS2 is that, when a MAPF algorithm
+fails, we obtain an infeasible plan from the algorithm and
+repair it. For instance, for a CBS-style algorithm, each high-
+level search node contains a plan, so we pick the plan with
+the minimum number of collisions. For a prioritized algo-
+rithm, it fails when there is no path for an agent that avoids
+collisions with the paths of higher-priority agents. We retain
+the already-planned paths and plan paths for the remaining
+agents that minimize the number of collisions (instead of
+avoiding collisions) with the already-planned paths.
+3 MAPF-LNS2
+Large Neighborhood Search (LNS) (Shaw 1998) is a popu-
+lar local search technique to improve the solution quality for
+combinatorial optimization problems. Starting from a given
+solution, it destroys part of the solution, called a neighbor-
+hood , and treats the remaining part of the solution as ﬁxed.
+It then repairs the solution and replaces the old solution if
+the repaired solution is better. This procedure is repeated
+until some stopping criterion is met. MAPF-LNS (Li et al.
+2021a) is an anytime MAPF framework that uses LNS toimprove the quality of a solution obtained from a MAPF al-
+gorithm over time. It repeatedly selects a subset of agents
+and replans their paths. Motivated by this work, we propose
+MAPF-LNS2 that can efﬁciently ﬁnd a solution (instead of
+improving a given solution) for a MAPF instance.
+To begin with, MAPF-LNS2 calls a MAPF algorithm to
+solve the instance and obtains a (partial or complete) plan
+from the MAPF algorithm. For each agent that does not yet
+have a path, MAPF-LNS2 plans a path for it that minimizes
+the number of collisions with the existing paths. Details of
+ﬁnding such paths are introduced in Section 4. MAPF-LNS2
+then repeats a repairing procedure until the plan Pbecomes
+feasible. At each iteration, MAPF-LNS2 selects a subset of
+agentsAsAby a neighborhood selection method (see
+Section 5). We denote the paths of the agents in AsasP . It
+then calls a modiﬁed MAPF algorithm to replan the paths of
+the agents in Asto minimize the number of collisions with
+each other and with the paths in PnP . Speciﬁcally, MAPF-
+LNS2 uses a modiﬁcation of Prioritized Planning (PP) as the
+modiﬁed MAPF algorithm.1PP assigns a random priority
+ordering to the agents in Asand replans their paths one at a
+time according to the ordering. Each time, it calls a single-
+agent pathﬁnding algorithm (see Section 4) to ﬁnd a path for
+an agent that minimizes the number of collisions with the
+new paths of the higher-priority agents in Asand the paths
+inPnP . We denote the new paths of the agents in Asas
+P+. Finally, MAPF-LNS2 replaces the old plan Pwith the
+new plan (PnP )[P+iff the number of colliding pairs
+(CP) of the paths in the new plan is no larger than that of the
+old plan.
+4 Pathﬁnding with Dynamic Obstacles
+To make MAPF-LNS2 efﬁcient, we need an efﬁcient single-
+agent pathﬁnding algorithm that can ﬁnd a shortest path
+for an agent that minimizes the number of collisions with
+a given set of paths. Here, we formulate a more general
+problem called Pathﬁnding with Mixed Dynamic Obstacles
+(PMDO). We use half-open interval notation [a;b)to repre-
+sent the contiguous set of integers fxjax^x<bg.
+Deﬁnition 2 (Pathﬁnding with Mixed Dynamic Obstacles) .
+We call (v;t),(e;t), and (v;[t;1))a vertex, edge, and tar-
+get obstacle indicating that vertex v2V, edgee2E, and
+vertexv2Vare occupied at timestep t, from timestep t 1
+to timestept, and at and after timestep t, respectively. Given
+a graphG= (V;E), a start vertex s2V, a target vertex
+g2V, and two ﬁnite sets of obstacles Oh(called hard ob-
+stacles ) andOs(called soft obstacles ), our task is to ﬁnd a
+pathpfromstogthat does not collide with any hard ob-
+stacles. We assume that sat timestep 0 is not occupied by
+any hard obstacles, and gat timestep1is not occupied by
+any hard obstacles either, i.e., there is ﬁnite time from which
+no more hard obstacles occupy g. The objective is to min-
+imize the number of soft collisions , i.e., collisions with the
+soft obstacles, and break ties by the travel time jpj.
+1We have tried to adapt two other MAPF algorithms to replan
+the paths, namely Greedy CBS (Barer et al. 2014) and PBS (Ma
+et al. 2019). But both of them perform worse than PP empirically.
+Figure 1: Examples. a1follows the arrow without waiting.
+4.1 Space-Time A*
+A straightforward algorithm for PMDO is space-time A*,
+which is used by many MAPF algorithms such as ID (Stan-
+dley and Korf 2011) and ECBS (Barer et al. 2014). Space-
+time A* performs an A* search on a time-expanded graph
+where each state in the graph is deﬁned by a vertex vand
+a timestept, representing the agent being at vertex vat
+timestept. The agent can move from state (v;t)to state
+(v0;t0)iff((v;v0)2E_v=v0)^t0=t+ 1holds and the
+move action does not collide with any obstacles in Oh. In
+addition to the regular g-,h-, andf-values, each node in the
+search tree of space-time A* maintains a c-value, that rep-
+resents the number of collisions of the partial path from the
+root node to the current node with obstacles in Os. To ﬁnd
+the optimal solution of a PMDO instance, we sort the nodes
+in the open list in ascending order of their c-values, breaking
+ties by their f-values.
+While space-time A* can solve PMDO correctly, unfor-
+tunately it cannot do so efﬁciently. Consider the instance
+shown in Figure 1(left). If agent a2needs to plan a path that
+minimizes the number of collisions with the path of agent
+a1, space-time A* needs to expand all nodes whose c-values
+are zero before ﬁnding the optimal path, that has one col-
+lision witha1at C2 at timestep 2 (because a1reaches C2
+at timestep 1 and remains there forever). However, there is a
+potentially inﬁnite number of nodes that have zero collisions
+as the time dimension is unbounded. So space-time A* may
+not return a solution in ﬁnite time. Although one can ﬁx this
+issue by restricting space-time A* to generating states only
+with timesteps no greater than the maximum of the timesteps
+of the obstacles maxft2Nj(v;t)2Oh[Os_(e;t)2
+Oh[Os_(v;[t;1))2Oh[Osgand switching to standard
+A* (without the time dimension) afterward (Ma et al. 2019),
+the number of nodes it has to expand can still be large.
+4.2 SIPPS
+Safe Interval Path Planning (SIPP) (Phillips and Likhachev
+2011) is a fast variant of space-time A* that uses time in-
+tervals instead of timesteps to represent the time dimension
+of the problem. It performs an A* search on a time-interval
+graph where each state in the graph is deﬁned by a vertex
+and a safe (time) interval, representing that a particular ver-
+tex is free of hard obstacles during the time interval. For
+each state with vertex vand safe interval [a;b), SIPP al-
+ways prefers the (partial) path that arrives at vas early as
+possible within [a;b)and then waits at vif necessary, since
+this allows SIPP to prune paths that arrive at vat a later
+timestep within [a;b)without losing optimality. SIPP runs
+signiﬁcantly faster than space-time A* empirically (Phillipsand Likhachev 2011; Li et al. 2021b), yet it cannot handle
+soft obstacles. We thus generalize SIPP to Safe Interval Path
+Planning with Soft constraints (SIPPS) for solving PMDO.2
+Safe Intervals Asafe interval for a vertex is a contiguous
+period of time during which (1) there are no hard vertex ob-
+stacles and no hard target obstacles, and (2) there is either
+(a) a soft vertex or target obstacle at every timestep or (b)
+no soft vertex obstacles and no soft target obstacles at any
+timestep. We build a safe interval table T, that maps each
+vertexv2Vto a sequence of safe intervals T[v]. To build
+T[v], we look at all hard and soft vertex and target obstacles
+atvand divide interval [0;1)into a minimum set of dis-
+joint safe intervals in T[v]in chronological order. We do not
+consider edge obstacles here as they are handled elsewhere.
+SIPPS Nodes A nodenin the search tree of SIPPS node n
+consists of four elements, namely a vertex n:v, a safe inter-
+val[n:low;n:high )wheren:low is also called the earliest
+arrival time , an indexn:id indicating that the safe interval
+is (a subset of) the id-th safe interval in T[n:v](i.e., inter-
+valT[n:v][n:id]), and a Boolean ﬂag n:isgoal indicating
+whether the node is a goal node (set to false by default).
+Thef-value of node nis the sum of its g-value andh-value,
+where theg-value is set to n:low and theh-value is a lower
+bound on the minimum travel time from vertex n:vto vertex
+g. Each node nalso maintains a c-value, which is the (un-
+derestimated) number of the soft collisions of the partial path
+from the root node to node n, i.e.,c(n) =c(n0) +cv+ce,
+wheren0is the parent node of n,cvis 1 if the safe interval of
+ncontains soft vertex/target obstacles and 0 otherwise, and
+ceis 1 if ((n0:v;n:v );n:low )2Osand 0 otherwise. If nis
+the root node (i.e., n0does not exist), c(n) =cv. In princi-
+ple, an agent may encounter more than one soft collision if
+it waits within a safe interval that contains soft vertex obsta-
+cles. We ignore such cases for efﬁciency. More discussions
+can be found in the Theoretical Analysis paragraph.
+Main Algorithm Algorithm 1 shows the pseudo-code of
+SIPPS. To begin with, we build Tand generate the root
+node with start vertex sand the ﬁrst safe interval T[s][1]
+fromT[s]and index 1 [Lines 1 and 2]. Tis a lower bound
+on the travel time [Line 3]. If we have hard vertex obstacles
+at target vertex g, thenTis set to one plus the maximum
+timestep of all hard vertex obstacles at g[Line 4] since the
+agent cannot complete its path before all hard vertex obsta-
+cles atghave disappeared. QandPare regular open and
+closed lists, respectively [Line 6]. In order for SIPPS to ﬁnd
+the path with the minimum number of soft collisions (and
+break ties with the minimum travel time), Qsorts its nodes
+in ascending order of their c-values, breaking ties in ascend-
+ing order of their f-values. At every iteration, we pop a node
+nfromQ[Line 8] and return its corresponding path if it is
+a goal node [Line 9]. Function extractPath (n)constructs a
+path by repeatedly moving to the parent node until the root
+node is found. The reversed sequence of vertices of the vis-
+ited nodes is the sequence of vertices visited by the path,
+2To the best of our knowledge, SCIPP (Cohen et al. 2019) is the
+only existing SIPP variant that handles soft obstacles. However, it
+cannot solve PMDO as it cannot handle hard or soft edge obstacles.
+Algorithm 1: SIPPS
+1T  buildSafeIntervalTable (V;Oh;Os);
+2root Node (s;T[s][1];1;false ); // 1 andfalse
+indicate that root:id = 1androot:isgoal =false
+3T 0; // Lower bound on travel time
+4if9t: (g;t)2Ohthen
+T maxftj(g;t)2Ohg+ 1;
+5computeg-,h-,f-, andc-values of root;
+6Q frootg;P ;; // Initialize open and closed
+lists
+7whileQis not empty do
+8n Q:pop ();// Node with the smallest c-value
+9 ifn:isgoal then return extractPath (n);
+10 ifn:v=g^n:lowTthen
+11cfuture jf (g;t)2Osjt>n:lowgj;
+12 ifcfuture = 0then return extractPath (n);
+13n0 a copy ofnwithisgoal set to true;
+14c(n0) c(n0) +cfuture ;
+15 INSERT NODE(n0;Q;P ); // Algorithm 3
+16 EXPAND NODE(n;Q;P;T); // Algorithm 2
+17P P[fng;
+18return “No Solution”;
+with their timesteps being the earliest arrival time of each
+node. If the difference between the earliest arrival times of
+two adjacent nodes is larger than one, we add wait actions
+in between accordingly so that the agent reaches the vertex
+of the former node at the earliest arrival time of the former
+node, waits there, and then move to the vertex of the latter
+node at the earliest arrival time of the latter node. If nis at
+target vertex gwithn:lowT[Lines 10 to 15], it can be
+a goal node, but its c-value does not consider the number of
+additional soft collisions cfuture that the agent encounters
+after timestep n:low during staying at gforever. We thus
+terminate only if cfuture is 0 and generate a goal node that
+considerscfuture otherwise. Finally, we expand n[Line 16]
+and insert it into the closed list P[Line 17].
+Expanding Nodes When expanding a node n(see Algo-
+rithm 2), we ﬁrst store all reachable vertex-index pairs from
+vertexn:vat a timestep within interval [n:low;n:high )in
+I[Lines 1 to 5]. A vertex-index pair (v;id)is reachable
+iff the agent can move to vat a timestep within T[v][id]
+(i.e.,T[v][id]overlaps with [n:low + 1;n:high + 1) ) or
+wait atvfrom interval [n:low;n:high )to intervalT[v][id]
+(i.e.,n:high =T[v][id]:low). For each vertex-index pair
+(v;id)2 I [Line 6], we use [low;high )to represent the
+corresponding interval [Line 7]. We update lowto the ear-
+liest arrival time at vwithin [low;high )without colliding
+with any hard edge obstacles. We jump to the next iteration
+iflowdoes not exist [Line 9]. We then ﬁnd the earliest arrival
+timelow0atvwithin [low;high )without colliding with any
+hard or soft edge obstacles. If low0exists andlow0> low
+[Lines 11 to 15], then the agent will collide with a soft edge
+obstacle if it arrives at vduring [low;low0)and will not if it
+arrives atlow0(and waits at vif necessary). Thus, we gen-Algorithm 2: EXPAND NODE(n;Q;P;T)
+1I ; ;
+2foreachv: (n:v;v )2Edo
+3I I[f (v;id)j
+T[v][id]\[n:low +1;n:high +1)6=;;id2Ng;
+4if9id:T[n:v][id]:low =n:high then
+5I I[f (n:v;id )g; // Indicates wait actions
+6foreach (v;id)2Ido
+7 [low;high ) T [v][id];
+8low earliest arrival time at vwithin
+[low;high )without colliding with edge
+obstacles inOh;
+9 iflowdoes not exist then continue ;
+10low0 earliest arrival time at vwithin
+[low;high )without colliding with edge
+obstacles inOh[Os;
+11 iflow0exists^low0>low then
+12n1 Node (v;[low;low0);id;false );
+13 INSERT NODE(n1;Q;P ); // Algorithm 3
+14n2 Node (v;[low0;high );id;false );
+15 INSERT NODE(n2;Q;P ); // Algorithm 3
+16 else
+17n3 Node (v;[low;high );id;false );
+18 INSERT NODE(n3;Q;P ); // Algorithm 3
+Figure 2: All possible combinations of the relative positions
+of the safe intervals of two nodes n1andn2with the same
+identity. The timeline is from left to right. Without loss of
+generality, we assume that c(n1)<c(n2)in (a), (b), and (d)
+andc(n1)c(n2)in (c), (e), and (f). We do not consider
+the cases of c(n1) =c(n2)in (a), (b), and (d) because they
+are identical to the cases of c(n1) =c(n2)in (f), (e), and
+(c), respectively.
+erate two child nodes, one with safe interval [low;low0)and
+one with safe interval [low0;high ). The former child node
+has one more collision than the latter one. If low0does not
+exist orlow0=low[Lines 16 to 18], then we generate one
+child node as usual (note that the case when low0does not
+exist results in one more collision in the child node than the
+case whenlow0=low).
+Inserting Nodes We say that two nodes n1andn2have
+the same identity , denoted as n1n2, iffn1:v=n2:v,
+n1:id=n2:id, andn1:isgoal =n2:isgoal. We say
+thatn1(weakly) dominates n2, denoted as n1n2, iff
+n1n2,[n1:low;n 1:high )[n2:low;n 2:high ), and
+c(n1)c(n2). We are interested in dominance because,
+Algorithm 3: INSERT NODE(n;Q;P )
+1computeg-,h-,f-, andc-values ofn;
+2N fq2Q[Pjqng;// Nodes identical to n
+3foreachq2N do
+4 ifq:lown:low^c(q)c(n)then //qn
+5 return ; // No need to generate n
+6 else ifn:lowq:low^c(n)c(q)then //nq
+7 deleteqfromQandP; // Pruneq
+8 else ifn:low<q:high^q:low<n:high then
+9 ifn:low<q:low thenn:high =q:low ;
+10 elseq:high =n:low ;
+11insertnintoQ;
+if noden1dominates node n2(e.g., Figure 2(c)), we can
+prunen2without loss of completeness. Moreover, we know
+from Lines 6 to 18 in Algorithm 2 that a node nsatisﬁes
+n:high <T[n:v][n:id]:high iff it is generated on Line 12,
+i.e., there is a twin noden0withn0n,[n0:low;n0:high ) =
+[n:high;T[n:v][n:id]:high ), andc(n0) =c(n) 1. That
+is to say, if the situations in Figures 2(e) and (f) occur, al-
+thoughn1does not dominate n2, there exists a twin node
+n3ofn1such thatn1n2n3,[n1:low;n 1:high )[
+[n3:low;n 3:high )[n2:low;n 2:high ), andc(n3)<
+c(n1)c(n2). We can thus prune n2. Therefore, we gen-
+eralize the deﬁnition of dominance as follow. We say that
+noden1(weakly) dominates noden2, denoted as n1n2,
+iffn1n2,n1:lown2:low, andc(n1)c(n2). We
+can prune a node if it is dominated by another node. For
+situations when two nodes with the same identity have over-
+lapping intervals but no dominance relationship (as in Fig-
+ures 2(b) and (d)), the intersection of the two intervals would
+be explored twice if we expanded both nodes. We know that
+the node with the smaller lower bound always has the larger
+c-value (since, otherwise, the two nodes would have a domi-
+nance relationship), so we can shrink the interval of the node
+with the smaller lower bound by updating its upper bound to
+the lower bound of the the interval of the other node. This
+avoids the duplicate search effort without loss of complete-
+ness. The only unconsidered situation is the one shown in
+Figure 2(a), in which case we have to keep both nodes. In or-
+der to make SIPPS efﬁcient, we use this analysis in SIPPS.
+As shown in Algorithm 3, we ﬁrst compute the values of
+noden[Line 1] and collect all nodes in QandPthat have
+the same identity as n[Line 2]. We need to compare with
+each such node so as to avoid duplicate search effort. Con-
+sider a node q[Line 3]. If it dominates n[Line 4], then we
+do not need to generate nand thus terminate [Line 5]. If it
+is dominated by n[Line 6], then we do not need qand thus
+remove it from QandP[Line 7]. Otherwise, if the safe in-
+tervals of the two nodes overlap [Line 8], then we reset the
+upper bound of the interval with the smaller lower bound to
+the lower bound of the other interval [Lines 9 and 10].
+Heuristics To achieve high efﬁciency, most MAPF algo-
+rithms use the distance d(n:v;g )(i.e., the length of the short-
+est path) from n:vtogas theh-value of node nwhenthey plan paths for single agents, where the distance ta-
+bledis computed during preprocessing. Such a heuristic
+is informed as long as the travel time of the optimal path
+pis not too much larger than d(s;g). Unfortunately, this
+is not always the case for PMDO for two reasons: (1) T
+(which is a lower bound on jpj) can be substantially larger
+thand(s;g)due to hard obstacles at target vertices; and (2)
+T0= maxftj(g;t)2Oh[Osg+1(which is a lower bound
+onjpjwhenphas zero soft collisions) can be substantially
+larger thand(s;g). Therefore, we compute the h-value of a
+non-goal node nas
+h(n) =maxfd(n:v;g );T0 g(n)g; c(n) = 0
+maxfd(n:v;g );T g(n)g; c(n)1;
+whereTis computed on Lines 3 and 4. The h-value of a
+goal node is, of course, 0.
+Theoretical Analysis Below are two theorems for SIPPS.
+The proofs are omitted as they follow the proofs for SIPP.
+Theorem 1. SIPPS guarantees to return a path if one exists
+and “No Solution” otherwise.
+Theorem 2. SIPPS guarantees to return a shortest path with
+zero soft collisions if one exists.
+One limitation of SIPPS is that, if no zero-soft-collision
+path exists, SIPPS may return a path whose number of soft
+collisions is larger than minimum because the c-value ig-
+nores the soft collisions that occur when the agent waits
+within a safe interval that contains soft vertex obstacles. This
+approximation is acceptable since the minimization of the
+number of collisions itself is an approximation of the CP
+minimization (i.e., minimization of the number of colliding
+pairs) used by MAPF-LNS2.3We have considered to mini-
+mize CP in SIPPS directly, but it is extremely inefﬁcient as
+we have to keep track of the set of agents that the partial
+path from the root node to each node collides with, which
+substantially increases the search space.
+Applications Although SIPPS is designed for MAPF-
+LNS2, it can be used by a broad family of MAPF al-
+gorithms as PMDO is a common problem that needs to
+be solved by many MAPF algorithms. Examples include
+the optimal algorithms ID (Standley and Korf 2011) and
+CBS (Sharon et al. 2015), the bounded-suboptimal algo-
+rithm ECBS (Barer et al. 2014), and the prioritized algo-
+rithm PBS (Ma et al. 2019) as well as their variants. With
+small changes to the priority function used by the open list
+of SIPPS (e.g., in CBS, prioritizing nodes with smaller f-
+values and breaking ties towards smaller c-values), SIPPS
+can speed up these MAPF algorithms while preserving their
+solution quality guarantees. Moreover, unlike space-time
+3Empirically, We ran MAPF-LNS2 on the random map with
+400 agents using the setup described in Section 6 and collected
+the results of 84,739 SIPPS runs. Among them, more than 95% of
+runs ﬁnd the minimum-collision paths, and 4% of runs ﬁnd paths
+that contain only one more collision than the minimum (where the
+minimum-collision paths are found by space-time A*). In fact, al-
+though space-time A* guarantees to ﬁnd minimum-collision paths,
+their CPs are occasionally larger than those by SIPPS.
+A*, SIPPS can be applied to continuous-time settings, so it
+can also speed up Continuous-Time CBS (CCBS) (Andrey-
+chuk et al. 2019) and allows one to generalize CCBS to its
+suboptimal variants, e.g., continuous-time ECBS.
+5 Neighborhood Selection
+The selection of good neighborhoods is critical to the suc-
+cess of LNS. Here, we present three neighborhood selection
+methods and introduce adaptive LNS that intelligently com-
+bines these methods. Each method derives from a different
+motivation. Although there might be multiple implementa-
+tions for each motivation, we present the one that works well
+for us and leave the exploration of other implementations for
+future work. We denote the current plan as P, the neighbor-
+hood asAs, and the size of Asas a predeﬁned parameter N.
+Gc= (Vc;Ec)is the collision graph whereVc=fijai2
+AgandEc=f(i;j)jpi2Pcollides with pj2Pg. We
+denote the degree of i2Vcasdeg(i).
+Collision-Based Neighborhoods A straightforward idea
+for generating neighborhoods that can potentially reduce CP
+is to select a subset of agents whose current paths collide
+with each other. To implement this idea, we ﬁrst select a ran-
+dom vertexvfromVcwithdeg(v)>0and ﬁnd the largest
+connected component G0
+c= (V0
+c;E0
+c)ofGcthat contains v.
+There are two cases:
+1. IfjV0
+cjN, we put all agents avwithv2V0
+cintoAs
+and repeatedly add additional agents that might collide
+with some agents in AstoAsuntiljAsj=N. At each
+iteration, we select a random agent from Asand let it
+perform a random walk starting from a random position
+on its path and stop when it collides with another agent,
+which is then added to As.
+2. Otherwise, we select Nvertices from V0
+cvia a random
+walk onG0
+cstarting from vand put the corresponding
+agents intoAs.
+Failure-Based Neighborhoods The second idea is to rea-
+son about why we failed to ﬁnd collision-free paths for some
+agents in the previous LNS iterations. Finding a path for an
+agentaithat does not collide with a given set of paths is
+an essential problem that is repeatedly solved in PP. Thus,
+previous work on PP has already studied this problem thor-
+oughly (C ´ap et al. 2015). Brieﬂy speaking, there are two sce-
+narios that result in failures, namely, (A)aiis blocked by
+the agents from the given set of paths “sitting” at their tar-
+get vertices surrounding ai(seea2in Figure 1(left)), i.e., all
+possible paths for aito reachgiare blocked by some target
+obstacles, and (B)aiis “run over” by the given set of paths
+at (or around) siduring early timesteps (see Figure 1(right)),
+i.e, the agent has no way to go. Therefore, the failure-based
+neighborhood focuses on an agent aithat has collisions and
+a set of agents whose paths visit sior whose target vertices
+are on some path from sitogi. Formally, we ﬁrst select an
+agentai2Awith a probability proportional to deg(i)(i.e.,
+proportional to the number of agents that agent aicollides
+with) and add aitoAs. We then collect two sets of agents
+As=faj2Ajpj2PvisitssigandAg=faj2Ajpvisitsgjg,wherepis the path from sitogithat minimizes
+jAgj. There are three cases:
+1. IfjAs[Agj= 0, then we terminate and return As, be-
+cause we are guaranteed to ﬁnd a path for aithat does
+not collide with any other agents as aican sit atsiuntil
+all other agents reach their target vertices and then move
+togivia pathp.
+2. Otherwise, ifjAs[Agj<N 1, then we add the agents
+inAs[AgtoAsand then repeatedly add additional
+agents toAswhose target vertices are visited by the paths
+of some agents in AsuntiljAsj=N. At each itera-
+tion, we select a random agent ajfromAsand collect
+the agents whose target vertices are visited by pj2P.
+We select a random agent from the collected agents and
+add it toAs.
+3. Otherwise, we add N 1agents toAsusing the following
+rule:
+(a) IfjAsj= 0, we addN 1random agents in AgtoAs.
+(b) Otherwise, ifjAgjN 1, we add the agent in As
+that visitssithe earliest and N 2random agents in
+AgtoAs.
+(c) Otherwise, we add all agents in Agand the ﬁrst N 
+1 jAgjagents inAs(from the sequence of agents in
+ascending order of the timesteps when their paths visit
+si) toAs.
+This rule prefers agents in Agslightly over agents in Asbe-
+cause we ﬁnd empirically that Scenario ( A) occurs more fre-
+quently than Scenario ( B).
+Random Neighborhoods Generating neighborhoods ran-
+domly may sound na ¨ıve but has been shown to be extremely
+effective for many problems (Demir, Bektas, and Laporte
+2012; Song et al. 2020; Li et al. 2021a). Our third idea there-
+fore is to select Nagents randomly, namely each aiwith a
+probability proportional to deg(i) + 1 . We add one here in
+order to give the agents who do not collide with others a
+chance to be selected.
+Adaptive LNS (ALNS) ALNS (Ropke and Pisinger 2006)
+is a strong variant of LNS. It makes use of multiple neigh-
+borhood selection methods by recording their relative suc-
+cess in improving solutions and generating the next neigh-
+borhood with the most promising method. Formally, we
+maintain a weight wifor each neighborhood selection
+methodithat represents its relative success in reducing the
+CP. Initially, we set all wito1. At each iteration, we select
+a methodiwith probability wi=P
+jwjto generate a neigh-
+borhood and replan the paths. After replanning, we set wito
+maxf0;c  c+g+ (1 )wi, wherec andc+are the
+CPs of the plans before and after replanning, respectively,
+and2[0;1]is a user-speciﬁed reaction factor that controls
+how quickly the weights react to the changes in the relative
+success in reducing the CP. We use = 0:1empirically. The
+weights for the other methods remain the same.
+6 Experiments
+We compare MAPF-LNS2 against a representative set
+of scalable state-of-the-art MAPF algorithms, namely the
+mSuccess rate Runtime (s) Runtime per call (ms)
+A* SIPPS A* SIPPS A* SIPPS
+2501.00 1.00 3.37 0.64 5:4917:19 1:111:79
+3001.00 1.00 15.99 2.67 10:928:72 1:942:79
+3500.88 1.00>68 9.25 15:8343:52 2:753:72
+4000.68 0.88>162>7815:2840:95 3:044:23
+Table 1: Comparing SIPPS against A* on the random map.
+Runtime per call is the average runtime of a single A*/SIPPS
+search.
+mSuccess rate Runtime (s)
+R F C A R F C A
+250 1.00 1.00 1.00 1.00 0.80 0.59 0.79 0.64
+300 1.00 1.00 1.00 1.00 13.13 3.41 3.09 2.67
+350 1.00 0.96 1.00 1.00 32.57>22 9.11 9.25
+400 0.48 0.60 0.76 0.88>192>155>128>78
+Table 2: Comparing ALNS (denoted as A) against random
+(denoted as R), failure-based (denoted as F), and collision-
+based (denoted as C) neighborhoods on the random map.
+bounded-suboptimal algorithm EECBS, the prioritized al-
+gorithms PP and PP with random restarts (PPR) (where we
+repeatedly rerun PP with a random priority ordering until
+it ﬁnds a solution), and the rule-based algorithm PPS. In
+addition, in order to show the effectiveness of SIPPS for
+speeding up MAPF algorithms other than MAPF-LNS2, we
+implement a variant of EECBS (denoted as EECBS*) that
+uses SIPPS instead of space-time A*. Both PP and PPRuse
+SIPP to plan paths for single agents (they do not use SIPPS
+as their underlying single-agent problem does not have soft
+obstacles). If not speciﬁed otherwise, MAPF-LNS2 uses PP
+to ﬁnd the initial plans, ALNS to generate neighborhoods
+of sizeN= 8, and SIPPS to plan paths for single agents.
+All implementations4were written in C++ and share the
+same code base. We use the random-scenario instances on
+all 33 maps from the MAPF benchmark suite5, yielding 25
+instances per map and number of agents. We conduct ex-
+periments on Amazon EC2 “m4.xlarge” instances with 16
+GB of memory. If not speciﬁed, the runtime limit is 5 min-
+utes. Due to the space limit, we report results only on the
+random map random-32-32-20 in Experiments 1-3 and the
+warehouse map warehouse-20-40-10-2-2 in Experiment 5.
+Experiment 1 compares two PMDO algorithms. Table 1
+compares MAPF-LNS2 with SIPPS against MAPF-LNS2
+with space-time A* (or A* for short) in terms of their suc-
+cess rates (i.e., percentages of instances solved within the
+runtime limit), average runtimes (with 5 minutes used for
+unsolved instances), and average runtimes per SIPPS/A*
+call with their standard deviations. SIPPS clearly dominates
+A* with a speedup of more than 5 times. It is also more sta-
+ble, e.g., the largest runtime per call for SIPPS is 51ms while
+that of A* is 524ms (not shown in the table). This difference
+is even larger on larger maps.
+4https://github.com/Jiaoyang-Li/MAPF-LNS2
+5https://movingai.com/benchmarks/mapf/mSuccess rate Runtime (s) #runs Init
+PP PPRLNS PPRLNS PPRLNS CP
+100 0.56 1.00 1.00 0.02 0.01 179 105 0.6
+200 0.08 1.00 1.00 6.69 0.14 47,114 262 5
+300 0.00 0.00 1.00>300 2.67 -1,285 61
+400 0.00 0.00 0.88>300>78 - - 316
+Table 3: Comparing MAPF-LNS2 (denoted as LNS) against
+PP and PPRon the random map. We omit the runtime of PP
+as it is equal to the runtime of PPRand MAPF-LNS2 for any
+instance it was able to solve. #runs is the average number of
+times for which we run SIPP(S). Init CP is the average CP
+of the initial plan.
+Experiment 2 compares four neighborhood selection
+methods. Table 2 compares MAPF-LNS2 with ALNS
+against MAPF-LNS2 with the three individual neighbor-
+hood selection methods. As expected, ALNS performs the
+best as it combines the strengths of the other methods and is
+able to use a larger variety of neighborhoods. We also exper-
+imented with different neighborhood sizes N= 4;8;16;32
+but omit the results since they are similar to those of the pre-
+vious work (Li et al. 2021a): there is no global winner, and
+larger neighborhoods have larger chances to ﬁnd better so-
+lutions but require more time to replan, resulting in fewer
+iterations within the runtime limit.
+Experiment 3 compares MAPF-LNS2 against other PP-
+based algorithms, namely PP and PPR. MAPF-LNS2 can be
+viewed as a PP-based algorithm as it uses PP to both ﬁnd
+initial plans and replan. As shown in Table 3, MAPF-LNS2
+performs the best. It rapidly reduces the CP of the initial plan
+generated by PP and, as a result, substantially improves the
+success rate of PP. Its LNS framework is a more efﬁcient ap-
+proach than random restarts since MAPF-LNS2 requires sig-
+niﬁcantly fewer runs of single-agent pathﬁnding than PPR,
+which in turn results in signiﬁcantly higher success rates and
+lower runtimes. Although MAPF-LNS2 failed to solve 3 in-
+stances with 400 agents, its ﬁnal plans in these cases have
+only 1, 1, and 2 CPs (not shown in the table).
+Experiment 4 compares MAPF-LNS2 against the state-
+of-the-art algorithms PPR, PPS, and EECBS (with a sub-
+optimality guarantee of 5) as well as our EECBS* (also
+with a suboptimality guarantee of 5).6We use the instances
+in the random scenario on all 33 maps from the bench-
+mark suite with the largest number of agents, i.e., m=
+minf0:5jVj;1000gfor each map. Figure 3 shows the re-
+sults for each instance, and Figure 4 summarizes the suc-
+cess rates. MAPF-LNS2 solves more than 60% of instances
+within 1 minute and 80% of instances within 5 minutes.
+Its success rate is always the highest for all runtime lim-
+its. The instances that MAPF-LNS2 fail to solve are mostly
+on highly congested maps, such as the maze and room
+maps, and not solved by the other algorithms either in most
+6We picked 5 as the suboptimality guarantee because we in-
+tended to choose a large enough suboptimality guarantee such that,
+if EECBS fails to solve an instance that MAPF-LNS2 has solved,
+it is due to the scalability limit of EECBS rather than it using a
+too-small suboptimality guarantee.
+Figure 3: Runtime and solution quality on all maps. Suboptimality is overestimated byPm
+i=1jpij=Pm
+i=1d(si;gi).
+Figure 4: Success rates on all maps.
+cases. Although PPS solves a few instances that are not
+solved by MAPF-LNS2, its solution quality is always sub-
+stantially worse than that of MAPF-LNS2 (and the other al-
+gorithms). EECBS* ﬁnds solutions of slightly better qual-
+ity than MAPF-LNS2 for some instances, yet its runtime
+is always larger. We did not use EECBS*/PPS to ﬁnd ini-
+tial plans for MAPF-LNS2 because, whenever PP ﬁnds so-
+lutions, it always ﬁnds them faster than EECBS*/PPS, and
+whenever it fails to ﬁnd them, MAPF-LNS2 repairs the plan
+rapidly and result in better success rates and runtimes than
+EECBS*/PPS eventually. In addition, the difference in the
+success rates and runtimes of EECBS and EECBS* clearly
+shows the advantage of SIPPS over space-time A*, espe-
+cially on large maps. The success rate of EECBS* is al-
+most twice that of EECBS for a runtime limit of 5 minutes.
+In terms of memory usage, the memory usage of PPS and
+EECBS(*) increases fast over time (as they generate longer
+and longer paths or a larger and larger search frontier), while
+that of PPRand MAPF-LNS2 stays stable. Thus, PPRand
+MAPF-LNS2 usually end up with a substantially smaller
+memory usage after 5 minutes than PPS and EECBS(*).
+Figure 5: Runtime on the warehouse map. Each dot repre-
+sents the runtime on one instance, with each line and ﬁlled
+area representing the mean and 0.1-quantile values over the
+25 randomly generated instances for each number of agents.
+Experiment 5 examines the effects of a longer runtime
+limit of an hour. Figure 5 shows that MAPF-LNS2 still per-
+forms the best. It plans collision-free paths for 3,000 agents
+within a minute, 5,000 agents within 5 minutes, and 8,000
+agents within a hour.
+7 Summary
+We proposed a suboptimal algorithm MAPF-LNS2 that
+solves MAPF by repeatedly repairing the colliding paths in
+a given set of paths. MAPF-LNS2 solves 80% of the most
+challenging MAPF-benchmark instances within a runtime
+limit of just 5 minutes, which signiﬁcantly outperforms a
+variety of state-of-the-art MAPF algorithms. In addition, the
+single-agent path planner SIPPS used by MAPF-LNS2 runs
+5 times (or more) faster than space-time A* and can be used
+to speed up a variety of MAPF algorithms. For example, it
+almost doubles the success rate of EECBS within 5 minutes
+in our experiments.
+Acknowledgments
+The research at the University of Southern California
+was supported by the National Science Foundation un-
+der grant numbers 1409987, 1724392, 1817189, 1837779,
+and 1935712 as well as a gift from Amazon. The re-
+search at Monash University was partially supported by
+the Australian Research Council under Discovery Grants
+DP190100013 and DP200100025 as well as a gift from
+Amazon. The views and conclusions contained in this doc-
+ument are those of the authors and should not be interpreted
+as representing the ofﬁcial policies, either expressed or im-
+plied, of the sponsoring organizations, agencies, or the U.S.
+government.
+References
+Andreychuk, A.; Yakovlev, K. S.; Atzmon, D.; and Stern, R.
+2019. Multi-Agent Pathﬁnding with Continuous Time. In
+Proceedings of the International Joint Conference on Artiﬁ-
+cial Intelligence (IJCAI) , 39–45.
+Barer, M.; Sharon, G.; Stern, R.; and Felner, A. 2014. Sub-
+optimal Variants of the Conﬂict-Based Search Algorithm for
+the Multi-Agent Pathﬁnding Problem. In Proceedings of the
+Annual Symposium on Combinatorial Search (SoCS) , 19–
+27.
+Belov, G.; Du, W.; de la Banda, M. G.; Harabor, D.; Koenig,
+S.; and Wei, X. 2020. From Multi-Agent Pathﬁnding to 3D
+Pipe Routing. In Proceedings of the Thirteenth International
+Symposium on Combinatorial Search (SoCS) , 11–19.
+Bennewitz, M.; Burgard, W.; and Thrun, S. 2001. Optimiz-
+ing Schedules for Prioritized Path Planning of Multi-Robot
+Systems. In Proceedings of the IEEE International Confer-
+ence on Robotics and Automation (ICRA) , 271–276.
+C´ap, M.; Nov ´ak, P.; Kleiner, A.; and Seleck ´y, M. 2015. Pri-
+oritized Planning Algorithms for Trajectory Coordination of
+Multiple Mobile Robots. IEEE Transactions on Automation
+Science and Engineering , 12(3): 835–849.
+Cohen, L.; Uras, T.; Kumar, T. K. S.; and Koenig, S.
+2019. Optimal and Bounded-Suboptimal Multi-Agent Mo-
+tion Planning. In Proceedings of the International Sympo-
+sium on Combinatorial Search (SoCS) , 44–51.
+Cohen, L.; Wagner, G.; Chan, D. M.; Choset, H.; Sturtevant,
+N. R.; Koenig, S.; and Kumar, T. K. S. 2018. Rapid Ran-
+domized Restarts for Multi-Agent Path Finding Solvers. In
+Proceedings of the International Symposium on Combinato-
+rial Search (SoCS) , 148–152.
+Demir, E.; Bektas, T.; and Laporte, G. 2012. An Adap-
+tive Large Neighborhood Search Heuristic for the Pollution-
+Routing Problem. European Journal of Operational Re-
+search , 223(2): 346–359.
+Erdmann, M.; and Lozano-Perez, T. 1986. On Multiple
+Moving Objects. In Proceedings of the IEEE International
+Conference on Robotics and Automation , volume 3, 1419–
+1424.
+Gange, G.; Harabor, D.; and Stuckey, P. J. 2019. Lazy CBS:
+Implicit Conﬂict-Based Search Using Lazy Clause Gener-
+ation. In Proceedings of the International Conference on
+Automated Planning and Scheduling (ICAPS) , 155–162.Lam, E.; and Le Bodic, P. 2020. New Valid Inequalities in
+Branch-and-Cut-and-Price for Multi-Agent Path Finding. In
+Proceedings of the International Conference on Automated
+Planning and Scheduling (ICAPS) , 184–192.
+Li, J.; Chen, Z.; Harabor, D.; Stuckey, P. J.; and Koenig, S.
+2021a. Anytime Multi-Agent Path Finding via Large Neigh-
+borhood Search. In Proceedings of the International Joint
+Conference on Artiﬁcial Intelligence (IJCAI) , 4127–4135.
+Li, J.; Chen, Z.; Zheng, Y .; Chan, S.-H.; Harabor, D.;
+Stuckey, P. J.; Ma, H.; and Koenig, S. 2021b. Scalable Rail
+Planning and Replanning: Winning the 2020 Flatland Chal-
+lenge. In Proceedings of the International Conference on
+Automated Planning and Scheduling (ICAPS) , 477–485.
+Li, J.; Harabor, D.; Stuckey, P. J.; Ma, H.; Gange, G.; and
+Koenig, S. 2021c. Pairwise Symmetry Reasoning for Multi-
+Agent Path Finding Search. Artiﬁcial Intelligence , 301:
+103574.
+Li, J.; Ruml, W.; and Koenig, S. 2021. EECBS: Bounded-
+Suboptimal Search for Multi-Agent Path Finding. In Pro-
+ceedings of the AAAI Conference on Artiﬁcial Intelligence
+(AAAI) , 12353–12362.
+Ma, H.; Harabor, D.; Stuckey, P. J.; Li, J.; and Koenig, S.
+2019. Searching with Consistent Prioritization for Multi-
+Agent Path Finding. In Proceedings of the AAAI Conference
+on Artiﬁcial Intelligence (AAAI) , 7643–7650.
+Okumura, K.; Machida, M.; D ´efago, X.; and Tamura, Y .
+2019. Priority Inheritance with Backtracking for Iterative
+Multi-Agent Path Finding. In Proceedings of the Interna-
+tional Joint Conference on Artiﬁcial Intelligence (IJCAI) ,
+535–542.
+Phillips, M.; and Likhachev, M. 2011. SIPP: Safe Interval
+Path Planning for Dynamic Environments. In Proceedings
+of the IEEE International Conference on Robotics and Au-
+tomation (ICRA) , 5628–5635.
+Ropke, S.; and Pisinger, D. 2006. An Adaptive Large Neigh-
+borhood Search Heuristic for the Pickup and Delivery Prob-
+lem with Time Windows. Transportation Science , 40(4):
+455–472.
+Sajid, Q.; Luna, R.; and Bekris, K. E. 2012. Multi-Agent
+Pathﬁnding with Simultaneous Execution of Single-Agent
+Primitives. In Proceedings of the Annual Symposium on
+Combinatorial Search (SoCS) .
+Sharon, G.; Stern, R.; Felner, A.; and Sturtevant, N. R. 2015.
+Conﬂict-Based Search for Optimal Multi-Agent Pathﬁnd-
+ing. Artiﬁcial Intelligence , 219: 40–66.
+Shaw, P. 1998. Using Constraint Programming and Local
+Search Methods to Solve Vehicle Routing Problems. In Pro-
+ceedings of the International Conference on Principles and
+Practice of Constraint Programming (CP) , volume 1520,
+417–431.
+Silver, D. 2005. Cooperative Pathﬁnding. In Proceedings of
+the AAAI Conference on Artiﬁcial Intelligence and Interac-
+tive Digital Entertainment Conference (AIIDE) , 117–122.
+Song, J.; lanka, r.; Yue, Y .; and Dilkina, B. 2020. A General
+Large Neighborhood Search Framework for Solving Integer
+Programs. In Proceedings of the Annual Conference on Neu-
+ral Information Processing Systems (NeurIPS) , volume 33,
+20012–20023.
+Standley, T. S.; and Korf, R. E. 2011. Complete Algorithms
+for Cooperative Pathﬁnding Problems. In Proceedings of
+the International Joint Conference on Artiﬁcial Intelligence
+(IJCAI) , 668–673.
+Stern, R.; Sturtevant, N. R.; Felner, A.; Koenig, S.; Ma, H.;
+Walker, T.; Li, J.; Atzmon, D.; Cohen, L.; Kumar, T. K. S.;
+Boyarski, E.; and Bartak, R. 2019. Multi-Agent Pathﬁnd-
+ing: Deﬁnitions, Variants, and Benchmarks. In Proceedings
+of the International Symposium on Combinatorial Search
+(SoCS) , 151–159.
+Wang, H.; and Rubenstein, M. 2020. Walk, Stop, Count, and
+Swap: Decentralized Multi-Agent Path Finding With Theo-
+retical Guarantees. IEEE Robotics and Automation Letters ,
+5(2): 1119–1126.

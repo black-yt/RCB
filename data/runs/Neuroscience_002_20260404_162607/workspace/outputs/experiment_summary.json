@@ -1,0 +1,29 @@
+{
+  "best_model": "hist_gradient_boosting",
+  "train_summary": {
+    "split": "train",
+    "n_rows": 168000,
+    "n_cols": 22,
+    "label_rate": 0.09932738095238096,
+    "missing_values_total": 0,
+    "degradation_counts": {
+      "Mixed": 42000,
+      "Misalignment": 42000,
+      "Average": 42000,
+      "Missing Sections": 42000
+    }
+  },
+  "test_summary": {
+    "split": "test",
+    "n_rows": 72000,
+    "n_cols": 22,
+    "label_rate": 0.10156944444444445,
+    "missing_values_total": 0,
+    "degradation_counts": {
+      "Mixed": 18000,
+      "Misalignment": 18000,
+      "Average": 18000,
+      "Missing Sections": 18000
+    }
+  }
+}

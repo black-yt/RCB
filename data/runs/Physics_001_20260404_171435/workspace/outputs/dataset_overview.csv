@@ -1,0 +1,2 @@
+carrier_density_points,temperature_points,dc_current_points,mw_points,carrier_density_range_1e15_m^-2,temperature_range_K,dc_current_range_nA,mw_current_range_nA
+50,90,50,50,4.5,1.07878788,60.0,21.1054086

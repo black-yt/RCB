@@ -1,0 +1,218 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_vos_experiments.py",
+    "path": "code/run_vos_experiments.py",
+    "type": "file",
+    "size": 9761,
+    "mtime": 1775317562.0,
+    "exported": true
+  },
+  {
+    "name": "run_vos_followup.py",
+    "path": "code/run_vos_followup.py",
+    "type": "file",
+    "size": 1563,
+    "mtime": 1775317562.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "complex_optimization_data.npy",
+    "path": "data/complex_optimization_data.npy",
+    "type": "file",
+    "size": 16024503,
+    "mtime": 1770604412.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "pdf_text",
+    "path": "outputs/pdf_text",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.txt",
+    "path": "outputs/pdf_text/paper_000.txt",
+    "type": "file",
+    "size": 89,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.txt",
+    "path": "outputs/pdf_text/paper_001.txt",
+    "type": "file",
+    "size": 97904,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.txt",
+    "path": "outputs/pdf_text/paper_002.txt",
+    "type": "file",
+    "size": 209607,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.txt",
+    "path": "outputs/pdf_text/paper_003.txt",
+    "type": "file",
+    "size": 28195,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "data_summary.json",
+    "path": "outputs/data_summary.json",
+    "type": "file",
+    "size": 432,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "early_iteration_summary.json",
+    "path": "outputs/early_iteration_summary.json",
+    "type": "file",
+    "size": 1441,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "metrics.json",
+    "path": "outputs/metrics.json",
+    "type": "file",
+    "size": 2092,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "traces.npz",
+    "path": "outputs/traces.npz",
+    "type": "file",
+    "size": 87678,
+    "mtime": 1775317560.0,
+    "exported": false
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 656705,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1161056,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 794236,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 883291,
+    "mtime": 1773914906.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "admm_residuals.png",
+    "path": "report/images/admm_residuals.png",
+    "type": "file",
+    "size": 105503,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "convergence_comparison.png",
+    "path": "report/images/convergence_comparison.png",
+    "type": "file",
+    "size": 136437,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 104248,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "early_iteration_convergence.png",
+    "path": "report/images/early_iteration_convergence.png",
+    "type": "file",
+    "size": 123414,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "recovery_comparison.png",
+    "path": "report/images/recovery_comparison.png",
+    "type": "file",
+    "size": 72153,
+    "mtime": 1775317560.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13184,
+    "mtime": 1775317563.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5090,
+    "mtime": 1775289339.0,
+    "exported": true
+  }
+]

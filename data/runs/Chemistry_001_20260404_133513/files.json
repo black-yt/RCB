@@ -1,0 +1,200 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 15351,
+    "mtime": 1775317734.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "sample",
+    "path": "data/sample",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r",
+    "path": "data/sample/2l3r",
+    "type": "directory"
+  },
+  {
+    "name": "2l3r_ligand.sdf",
+    "path": "data/sample/2l3r/2l3r_ligand.sdf",
+    "type": "file",
+    "size": 13842,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "2l3r_protein.pdb",
+    "path": "data/sample/2l3r/2l3r_protein.pdb",
+    "type": "file",
+    "size": 211329,
+    "mtime": 1753787932.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "dataset_summary.json",
+    "path": "outputs/dataset_summary.json",
+    "type": "file",
+    "size": 823,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "representative_predictions.json",
+    "path": "outputs/representative_predictions.json",
+    "type": "file",
+    "size": 43069,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "run_metrics.csv",
+    "path": "outputs/run_metrics.csv",
+    "type": "file",
+    "size": 981,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "run_metrics.json",
+    "path": "outputs/run_metrics.json",
+    "type": "file",
+    "size": 4270,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "summary_metrics.csv",
+    "path": "outputs/summary_metrics.csv",
+    "type": "file",
+    "size": 227,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3651992,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 3634495,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5515632,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 569417,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "ablation_comparison.png",
+    "path": "report/images/ablation_comparison.png",
+    "type": "file",
+    "size": 93234,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "contact_analysis.png",
+    "path": "report/images/contact_analysis.png",
+    "type": "file",
+    "size": 79349,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview_complex.png",
+    "path": "report/images/data_overview_complex.png",
+    "type": "file",
+    "size": 429160,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "denoising_trajectories.png",
+    "path": "report/images/denoising_trajectories.png",
+    "type": "file",
+    "size": 89760,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "ligand_pose_comparison.png",
+    "path": "report/images/ligand_pose_comparison.png",
+    "type": "file",
+    "size": 686407,
+    "mtime": 1775317732.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14776,
+    "mtime": 1775317735.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5562,
+    "mtime": 1775280913.0,
+    "exported": true
+  }
+]

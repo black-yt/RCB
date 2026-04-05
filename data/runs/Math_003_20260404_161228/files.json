@@ -1,0 +1,297 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_pipeline.py",
+    "path": "code/run_pipeline.py",
+    "type": "file",
+    "size": 17151,
+    "mtime": 1775317600.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "defs.txt",
+    "path": "data/defs.txt",
+    "type": "file",
+    "size": 8156,
+    "mtime": 1770192796.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "imo_ag_30.txt",
+    "path": "data/imo_ag_30.txt",
+    "type": "file",
+    "size": 8772,
+    "mtime": 1770343778.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "rules.txt",
+    "path": "data/rules.txt",
+    "type": "file",
+    "size": 2785,
+    "mtime": 1770343778.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "proofs",
+    "path": "outputs/proofs",
+    "type": "directory"
+  },
+  {
+    "name": "translated_imo_2000_p1.md",
+    "path": "outputs/proofs/translated_imo_2000_p1.md",
+    "type": "file",
+    "size": 939,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "translated_imo_2000_p6.md",
+    "path": "outputs/proofs/translated_imo_2000_p6.md",
+    "type": "file",
+    "size": 1015,
+    "mtime": 1775317600.0,
+    "exported": true
+  },
+  {
+    "name": "translated_imo_2002_p2a.md",
+    "path": "outputs/proofs/translated_imo_2002_p2a.md",
+    "type": "file",
+    "size": 1002,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "translated_imo_2002_p2b.md",
+    "path": "outputs/proofs/translated_imo_2002_p2b.md",
+    "type": "file",
+    "size": 1002,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "translated_imo_2003_p4.md",
+    "path": "outputs/proofs/translated_imo_2003_p4.md",
+    "type": "file",
+    "size": 988,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "translated_imo_2004_p1.md",
+    "path": "outputs/proofs/translated_imo_2004_p1.md",
+    "type": "file",
+    "size": 1037,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "translated_imo_2004_p5.md",
+    "path": "outputs/proofs/translated_imo_2004_p5.md",
+    "type": "file",
+    "size": 982,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "translated_imo_2005_p5.md",
+    "path": "outputs/proofs/translated_imo_2005_p5.md",
+    "type": "file",
+    "size": 972,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "translated_imo_2007_p4.md",
+    "path": "outputs/proofs/translated_imo_2007_p4.md",
+    "type": "file",
+    "size": 1018,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "translated_imo_2008_p1a.md",
+    "path": "outputs/proofs/translated_imo_2008_p1a.md",
+    "type": "file",
+    "size": 980,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 20 more items",
+    "path": "outputs/proofs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 1494,
+    "mtime": 1775317596.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_summary.json",
+    "path": "outputs/dataset_summary.json",
+    "type": "file",
+    "size": 718,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "problem_features.csv",
+    "path": "outputs/problem_features.csv",
+    "type": "file",
+    "size": 1226,
+    "mtime": 1775317598.0,
+    "exported": true
+  },
+  {
+    "name": "rule_matches.json",
+    "path": "outputs/rule_matches.json",
+    "type": "file",
+    "size": 8990,
+    "mtime": 1775317596.0,
+    "exported": true
+  },
+  {
+    "name": "solver_results.csv",
+    "path": "outputs/solver_results.csv",
+    "type": "file",
+    "size": 12554,
+    "mtime": 1775317600.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2215244,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 550976,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 165489,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2682222,
+    "mtime": 1773914908.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "coverage_by_goal.png",
+    "path": "report/images/coverage_by_goal.png",
+    "type": "file",
+    "size": 95985,
+    "mtime": 1775317600.0,
+    "exported": true
+  },
+  {
+    "name": "failure_modes.png",
+    "path": "report/images/failure_modes.png",
+    "type": "file",
+    "size": 84241,
+    "mtime": 1775317600.0,
+    "exported": true
+  },
+  {
+    "name": "goal_distribution.png",
+    "path": "report/images/goal_distribution.png",
+    "type": "file",
+    "size": 52171,
+    "mtime": 1775317600.0,
+    "exported": true
+  },
+  {
+    "name": "problem_length_distribution.png",
+    "path": "report/images/problem_length_distribution.png",
+    "type": "file",
+    "size": 46638,
+    "mtime": 1775317600.0,
+    "exported": true
+  },
+  {
+    "name": "variant_comparison.png",
+    "path": "report/images/variant_comparison.png",
+    "type": "file",
+    "size": 71667,
+    "mtime": 1775317600.0,
+    "exported": true
+  },
+  {
+    "name": "verification_metric_comparison.png",
+    "path": "report/images/verification_metric_comparison.png",
+    "type": "file",
+    "size": 79840,
+    "mtime": 1775317600.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 10539,
+    "mtime": 1775317601.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4788,
+    "mtime": 1775290348.0,
+    "exported": true
+  }
+]

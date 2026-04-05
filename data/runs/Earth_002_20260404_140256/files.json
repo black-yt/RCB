@@ -1,0 +1,279 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_mangrove_risk.py",
+    "path": "code/analyze_mangrove_risk.py",
+    "type": "file",
+    "size": 18087,
+    "mtime": 1775318106.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "ecosystem",
+    "path": "data/ecosystem",
+    "type": "directory"
+  },
+  {
+    "name": "UCSC_CWON_countrybounds.gpkg",
+    "path": "data/ecosystem/UCSC_CWON_countrybounds.gpkg",
+    "type": "file",
+    "size": 2727936,
+    "mtime": 1772711346.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "mangroves",
+    "path": "data/mangroves",
+    "type": "directory"
+  },
+  {
+    "name": "gmw_v4_ref_smpls_qad_v12.gpkg",
+    "path": "data/mangroves/gmw_v4_ref_smpls_qad_v12.gpkg",
+    "type": "file",
+    "size": 10506240,
+    "mtime": 1773108490.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "slr",
+    "path": "data/slr",
+    "type": "directory"
+  },
+  {
+    "name": "total_ssp245_medium_confidence_rates.nc",
+    "path": "data/slr/total_ssp245_medium_confidence_rates.nc",
+    "type": "file",
+    "size": 38104917,
+    "mtime": 1643398496.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "total_ssp370_medium_confidence_rates.nc",
+    "path": "data/slr/total_ssp370_medium_confidence_rates.nc",
+    "type": "file",
+    "size": 40762177,
+    "mtime": 1643398506.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "total_ssp585_medium_confidence_rates.nc",
+    "path": "data/slr/total_ssp585_medium_confidence_rates.nc",
+    "type": "file",
+    "size": 40854540,
+    "mtime": 1643398504.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "tc",
+    "path": "data/tc",
+    "type": "directory"
+  },
+  {
+    "name": "tracks_mit_mpi-esm1-2-hr_historical_reduced.nc",
+    "path": "data/tc/tracks_mit_mpi-esm1-2-hr_historical_reduced.nc",
+    "type": "file",
+    "size": 3448956,
+    "mtime": 1772786828.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "country_risk_summary.csv",
+    "path": "outputs/country_risk_summary.csv",
+    "type": "file",
+    "size": 58606,
+    "mtime": 1775318104.0,
+    "exported": true
+  },
+  {
+    "name": "data_inventory.json",
+    "path": "outputs/data_inventory.json",
+    "type": "file",
+    "size": 434,
+    "mtime": 1775318104.0,
+    "exported": true
+  },
+  {
+    "name": "global_latitudinal_profile.csv",
+    "path": "outputs/global_latitudinal_profile.csv",
+    "type": "file",
+    "size": 4659,
+    "mtime": 1775318104.0,
+    "exported": true
+  },
+  {
+    "name": "mangrove_risk_samples.parquet",
+    "path": "outputs/mangrove_risk_samples.parquet",
+    "type": "file",
+    "size": 10773648,
+    "mtime": 1775318104.0,
+    "exported": false
+  },
+  {
+    "name": "mangrove_risk_samples_preview.csv",
+    "path": "outputs/mangrove_risk_samples_preview.csv",
+    "type": "file",
+    "size": 2185323,
+    "mtime": 1775318104.0,
+    "exported": false
+  },
+  {
+    "name": "risk_correlation_matrix.csv",
+    "path": "outputs/risk_correlation_matrix.csv",
+    "type": "file",
+    "size": 1429,
+    "mtime": 1775318100.0,
+    "exported": true
+  },
+  {
+    "name": "scenario_risk_summary.csv",
+    "path": "outputs/scenario_risk_summary.csv",
+    "type": "file",
+    "size": 311,
+    "mtime": 1775318104.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 5947391,
+    "mtime": 1773914890.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1907880,
+    "mtime": 1773914890.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5073703,
+    "mtime": 1773914890.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1481541,
+    "mtime": 1773914890.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 2017477,
+    "mtime": 1773914890.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_1_data_overview.png",
+    "path": "report/images/figure_1_data_overview.png",
+    "type": "file",
+    "size": 227107,
+    "mtime": 1775318106.0,
+    "exported": true
+  },
+  {
+    "name": "figure_2_global_risk_map.png",
+    "path": "report/images/figure_2_global_risk_map.png",
+    "type": "file",
+    "size": 403288,
+    "mtime": 1775318104.0,
+    "exported": true
+  },
+  {
+    "name": "figure_3_scenario_comparison.png",
+    "path": "report/images/figure_3_scenario_comparison.png",
+    "type": "file",
+    "size": 99237,
+    "mtime": 1775318106.0,
+    "exported": true
+  },
+  {
+    "name": "figure_4_hazard_space.png",
+    "path": "report/images/figure_4_hazard_space.png",
+    "type": "file",
+    "size": 442918,
+    "mtime": 1775318104.0,
+    "exported": true
+  },
+  {
+    "name": "figure_5_top_countries.png",
+    "path": "report/images/figure_5_top_countries.png",
+    "type": "file",
+    "size": 172889,
+    "mtime": 1775318106.0,
+    "exported": true
+  },
+  {
+    "name": "figure_6_latitudinal_profile.png",
+    "path": "report/images/figure_6_latitudinal_profile.png",
+    "type": "file",
+    "size": 262400,
+    "mtime": 1775318106.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14986,
+    "mtime": 1775318107.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5971,
+    "mtime": 1775282576.0,
+    "exported": true
+  }
+]

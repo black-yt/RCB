@@ -1,0 +1,288 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_flow_ensemble.py",
+    "path": "code/analyze_flow_ensemble.py",
+    "type": "file",
+    "size": 15867,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "flow",
+    "path": "data/flow",
+    "type": "directory"
+  },
+  {
+    "name": "0000",
+    "path": "data/flow/0000",
+    "type": "directory"
+  },
+  {
+    "name": "000",
+    "path": "data/flow/0000/000",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "001",
+    "path": "data/flow/0000/001",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "002",
+    "path": "data/flow/0000/002",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "003",
+    "path": "data/flow/0000/003",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "004",
+    "path": "data/flow/0000/004",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "005",
+    "path": "data/flow/0000/005",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "006",
+    "path": "data/flow/0000/006",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "007",
+    "path": "data/flow/0000/007",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "008",
+    "path": "data/flow/0000/008",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "009",
+    "path": "data/flow/0000/009",
+    "type": "directory",
+    "truncated": true
+  },
+  {
+    "name": "\u2026 41 more items",
+    "path": "data/flow/0000/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 1453,
+    "mtime": 1775317646.0,
+    "exported": true
+  },
+  {
+    "name": "checkpoint_inventory.csv",
+    "path": "outputs/checkpoint_inventory.csv",
+    "type": "file",
+    "size": 28545,
+    "mtime": 1775317646.0,
+    "exported": true
+  },
+  {
+    "name": "clustering_inventory.csv",
+    "path": "outputs/clustering_inventory.csv",
+    "type": "file",
+    "size": 5808,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "config_consistency.json",
+    "path": "outputs/config_consistency.json",
+    "type": "file",
+    "size": 94,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "ensemble_summary.csv",
+    "path": "outputs/ensemble_summary.csv",
+    "type": "file",
+    "size": 13344,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "model_hyperparameters.json",
+    "path": "outputs/model_hyperparameters.json",
+    "type": "file",
+    "size": 3286,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 892356,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1263727,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 6544746,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6955532,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_004.pdf",
+    "path": "related_work/paper_004.pdf",
+    "type": "file",
+    "size": 6957184,
+    "mtime": 1773914909.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "checkpoint_size_vs_loss.png",
+    "path": "report/images/checkpoint_size_vs_loss.png",
+    "type": "file",
+    "size": 89803,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "clustering_celltype_coverage.png",
+    "path": "report/images/clustering_celltype_coverage.png",
+    "type": "file",
+    "size": 89419,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "ranked_validation_profile.png",
+    "path": "report/images/ranked_validation_profile.png",
+    "type": "file",
+    "size": 118195,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "syn_strength_vs_loss.png",
+    "path": "report/images/syn_strength_vs_loss.png",
+    "type": "file",
+    "size": 118728,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "time_const_vs_loss.png",
+    "path": "report/images/time_const_vs_loss.png",
+    "type": "file",
+    "size": 108647,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "top_bottom_deciles_comparison.png",
+    "path": "report/images/top_bottom_deciles_comparison.png",
+    "type": "file",
+    "size": 73984,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "top_runs_barplot.png",
+    "path": "report/images/top_runs_barplot.png",
+    "type": "file",
+    "size": 85220,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "validation_loss_distribution.png",
+    "path": "report/images/validation_loss_distribution.png",
+    "type": "file",
+    "size": 137678,
+    "mtime": 1775317648.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 13958,
+    "mtime": 1775317649.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5942,
+    "mtime": 1775290689.0,
+    "exported": true
+  }
+]

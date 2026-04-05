@@ -1,0 +1,11 @@
+{
+  "same_channel_labels": true,
+  "same_latitudes": true,
+  "same_longitudes": true,
+  "input_time_count": 2,
+  "forecast_step_count": 1,
+  "forecast_step_hours": [
+    6
+  ],
+  "can_evaluate_15_day_skill": false
+}

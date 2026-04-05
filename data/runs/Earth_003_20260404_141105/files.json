@@ -1,0 +1,251 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_weather_case.py",
+    "path": "code/analyze_weather_case.py",
+    "type": "file",
+    "size": 16915,
+    "mtime": 1775318056.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "006.nc",
+    "path": "data/006.nc",
+    "type": "file",
+    "size": 18247988,
+    "mtime": 1772070968.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "20231012-06_input_netcdf.nc",
+    "path": "data/20231012-06_input_netcdf.nc",
+    "type": "file",
+    "size": 36492716,
+    "mtime": 1772070968.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "pdf_text",
+    "path": "outputs/pdf_text",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.txt",
+    "path": "outputs/pdf_text/paper_000.txt",
+    "type": "file",
+    "size": 90112,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.txt",
+    "path": "outputs/pdf_text/paper_001.txt",
+    "type": "file",
+    "size": 55530,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.txt",
+    "path": "outputs/pdf_text/paper_002.txt",
+    "type": "file",
+    "size": 98584,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.txt",
+    "path": "outputs/pdf_text/paper_003.txt",
+    "type": "file",
+    "size": 38946,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "channel_summary.csv",
+    "path": "outputs/channel_summary.csv",
+    "type": "file",
+    "size": 1834,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "compatibility_summary.json",
+    "path": "outputs/compatibility_summary.json",
+    "type": "file",
+    "size": 215,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "data_audit.md",
+    "path": "outputs/data_audit.md",
+    "type": "file",
+    "size": 1720,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "data_inventory.json",
+    "path": "outputs/data_inventory.json",
+    "type": "file",
+    "size": 3804,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "extract_pdfs.py",
+    "path": "outputs/extract_pdfs.py",
+    "type": "file",
+    "size": 839,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "feasibility_notes.md",
+    "path": "outputs/feasibility_notes.md",
+    "type": "file",
+    "size": 494,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "global_metrics.json",
+    "path": "outputs/global_metrics.json",
+    "type": "file",
+    "size": 352,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "statistics.csv",
+    "path": "outputs/statistics.csv",
+    "type": "file",
+    "size": 42783,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "top_channel_rankings.json",
+    "path": "outputs/top_channel_rankings.json",
+    "type": "file",
+    "size": 2386,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 959881,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1724303,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 8061234,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 4863089,
+    "mtime": 1773914891.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "channel_distributions.png",
+    "path": "report/images/channel_distributions.png",
+    "type": "file",
+    "size": 166661,
+    "mtime": 1775318054.0,
+    "exported": true
+  },
+  {
+    "name": "channel_structure.png",
+    "path": "report/images/channel_structure.png",
+    "type": "file",
+    "size": 72570,
+    "mtime": 1775318048.0,
+    "exported": true
+  },
+  {
+    "name": "selected_global_maps.png",
+    "path": "report/images/selected_global_maps.png",
+    "type": "file",
+    "size": 15637829,
+    "mtime": 1775318054.0,
+    "exported": false
+  },
+  {
+    "name": "tendency_vs_forecast_scatter.png",
+    "path": "report/images/tendency_vs_forecast_scatter.png",
+    "type": "file",
+    "size": 82150,
+    "mtime": 1775318054.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12495,
+    "mtime": 1775318057.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5311,
+    "mtime": 1775283065.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,4 @@
+model,target_precision,selected_threshold,cv_recall_at_target_precision
+logistic_regression,0.95,0.9999999989572776,5.992688919518188e-05
+random_forest,0.95,0.518455158088261,0.5240007191226703
+hist_gradient_boosting,0.95,0.5210078998921358,0.8075148319050758

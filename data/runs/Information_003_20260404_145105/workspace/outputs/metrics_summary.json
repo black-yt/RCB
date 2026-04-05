@@ -1,0 +1,74 @@
+{
+  "binary": {
+    "logreg": {
+      "accuracy": 0.999775955549581,
+      "precision": 0.9990253411306043,
+      "recall": 1.0,
+      "f1": 0.999512432959532,
+      "roc_auc": 0.9999997843580111,
+      "pr_auc": 0.99999927662835
+    },
+    "dids_mfl": {
+      "accuracy": 0.9995071022090782,
+      "precision": 0.9978582554517134,
+      "recall": 1.0,
+      "f1": 0.9989279797290712,
+      "roc_auc": 0.9999996368134924,
+      "pr_auc": 0.9999987805674982
+    }
+  },
+  "multiclass": {
+    "logreg": {
+      "accuracy": 0.9483353497333871,
+      "macro_f1": 0.5978867850810102,
+      "weighted_f1": 0.9540180857551047
+    },
+    "dids_mfl": {
+      "accuracy": 0.94210691401174,
+      "macro_f1": 0.5853598961051528,
+      "weighted_f1": 0.9479857907895519
+    }
+  },
+  "open_set_unknown": {
+    "unknown_recall": 0.5294117647058824,
+    "unknown_precision": 0.00800711743772242,
+    "unknown_f1": 0.015775635407537247,
+    "threshold": 2.9174771308898926,
+    "unknown_support": 17
+  },
+  "few_shot": {
+    "logreg": {
+      "accuracy": 0.9512031186987498,
+      "macro_f1": 0.57262333576459,
+      "weighted_f1": 0.9548925612426892
+    },
+    "dids": {
+      "accuracy": 0.9400008961778017,
+      "macro_f1": 0.5351227795966268,
+      "weighted_f1": 0.9458801459649454
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "Analysis",
+        "support": 60,
+        "logreg_f1": 0.24390243902439024,
+        "dids_f1": 0.4157303370786517
+      },
+      {
+        "class_id": 1,
+        "class_name": "Backdoor",
+        "support": 48,
+        "logreg_f1": 0.05333333333333334,
+        "dids_f1": 0.08333333333333333
+      },
+      {
+        "class_id": 9,
+        "class_name": "Worms",
+        "support": 17,
+        "logreg_f1": 0.3157894736842105,
+        "dids_f1": 0.0975609756097561
+      }
+    ]
+  }
+}

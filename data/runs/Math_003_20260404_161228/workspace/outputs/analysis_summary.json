@@ -1,0 +1,46 @@
+{
+  "variant_summary": {
+    "full": {
+      "generation_rate": 0.9666666666666667,
+      "avg_constructor_coverage": 0.34738095238095235,
+      "avg_rule_hits": 4.833333333333333,
+      "avg_grounded_step_rate": 0.5777261904761904,
+      "avg_verified_step_rate": 0.37330238095238094
+    },
+    "retrieval_only": {
+      "generation_rate": 0.43333333333333335,
+      "avg_constructor_coverage": 0.34738095238095235,
+      "avg_rule_hits": 1.9333333333333333,
+      "avg_grounded_step_rate": 0.34572619047619046,
+      "avg_verified_step_rate": 0.23410238095238095
+    },
+    "definitions_only": {
+      "generation_rate": 0.03333333333333333,
+      "avg_constructor_coverage": 0.34738095238095235,
+      "avg_rule_hits": 0.0,
+      "avg_grounded_step_rate": 0.2605357142857143,
+      "avg_verified_step_rate": 0.13026785714285716
+    },
+    "no_context": {
+      "generation_rate": 0.0,
+      "avg_constructor_coverage": 0.0,
+      "avg_rule_hits": 0.0,
+      "avg_grounded_step_rate": 0.0,
+      "avg_verified_step_rate": 0.0
+    },
+    "shuffled_retrieval": {
+      "generation_rate": 0.9333333333333333,
+      "avg_constructor_coverage": 0.34738095238095235,
+      "avg_rule_hits": 4.833333333333333,
+      "avg_grounded_step_rate": 0.5777261904761904,
+      "avg_verified_step_rate": 0.27997678571428575
+    }
+  },
+  "failure_modes": {
+    "rule_only_or_low_grounding": 67,
+    "good_coverage": 12,
+    "definition_only": 32,
+    "unverified_plan": 8,
+    "no_definition_no_rule": 31
+  }
+}

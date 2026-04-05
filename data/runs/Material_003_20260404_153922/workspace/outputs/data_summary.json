@@ -1,0 +1,18 @@
+{
+  "n_calibration": 295,
+  "n_vitrimer": 8424,
+  "calibration_parse_rate": 1.0,
+  "calibration_duplicates": 0,
+  "vitrimer_duplicates": 0,
+  "calibration_tg_exp_mean": 334.07966101694916,
+  "calibration_tg_md_mean": 397.92884745762717,
+  "vitrimer_tg_md_mean": 423.96448894824306,
+  "best_model": "gaussian_process",
+  "best_rmse": 27.834740759202433,
+  "gp_uncertainty_error_corr": 0.09060168476545039,
+  "inverse_targets": [
+    350,
+    400,
+    450
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "overall_mean_p_response": 0.9427470300116586,
+  "overall_median_p_response": 0.9630025369027599,
+  "coverage_ge_1": 1.0,
+  "coverage_ge_2": 0.9798994974874372,
+  "coverage_ge_3": 0.8733668341708543,
+  "mean_pairwise_iou": 1.0,
+  "min_pairwise_iou": 1.0,
+  "max_pairwise_iou": 1.0,
+  "runtime_log10_slope": 1.2293166766629962,
+  "consensus_size": 10,
+  "n_unique_selected_elements_across_reps": 10
+}

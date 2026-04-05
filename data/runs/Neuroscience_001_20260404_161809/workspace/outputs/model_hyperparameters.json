@@ -1,0 +1,100 @@
+{
+  "type": "NetworkDir",
+  "network.connectome.type": "ConnectomeFromAvgFilters",
+  "network.connectome.file": "fib25-fib19_v2.2.json",
+  "network.connectome.extent": 15,
+  "network.connectome.n_syn_fill": 1,
+  "network.dynamics.type": "PPNeuronIGRSynapses",
+  "network.dynamics.activation.type": "relu",
+  "network.node_config.bias.type": "RestingPotential",
+  "network.node_config.bias.groupby": [
+    "type"
+  ],
+  "network.node_config.bias.initial_dist": "Normal",
+  "network.node_config.bias.mode": "sample",
+  "network.node_config.bias.requires_grad": true,
+  "network.node_config.bias.mean": 0.5,
+  "network.node_config.bias.std": 0.05,
+  "network.node_config.bias.penalize.activity": true,
+  "network.node_config.bias.seed": 0,
+  "network.node_config.time_const.type": "TimeConstant",
+  "network.node_config.time_const.groupby": [
+    "type"
+  ],
+  "network.node_config.time_const.initial_dist": "Value",
+  "network.node_config.time_const.value": 0.05,
+  "network.node_config.time_const.requires_grad": true,
+  "network.edge_config.sign.type": "SynapseSign",
+  "network.edge_config.sign.initial_dist": "Value",
+  "network.edge_config.sign.requires_grad": false,
+  "network.edge_config.sign.groupby": [
+    "source_type",
+    "target_type"
+  ],
+  "network.edge_config.syn_count.type": "SynapseCount",
+  "network.edge_config.syn_count.initial_dist": "Lognormal",
+  "network.edge_config.syn_count.mode": "mean",
+  "network.edge_config.syn_count.requires_grad": false,
+  "network.edge_config.syn_count.std": 1.0,
+  "network.edge_config.syn_count.groupby": [
+    "source_type",
+    "target_type",
+    "du",
+    "dv"
+  ],
+  "network.edge_config.syn_strength.type": "SynapseCountScaling",
+  "network.edge_config.syn_strength.initial_dist": "Value",
+  "network.edge_config.syn_strength.requires_grad": true,
+  "network.edge_config.syn_strength.scale": 0.01,
+  "network.edge_config.syn_strength.clamp": "non_negative",
+  "network.edge_config.syn_strength.groupby": [
+    "source_type",
+    "target_type"
+  ],
+  "task.type": "Task",
+  "task.dataset.type": "MultiTaskSintel",
+  "task.dataset.tasks": [
+    "flow"
+  ],
+  "task.dataset.boxfilter.extent": 15,
+  "task.dataset.boxfilter.kernel_size": 13,
+  "task.dataset.vertical_splits": 3,
+  "task.dataset.n_frames": 19,
+  "task.dataset.center_crop_fraction": 0.7,
+  "task.dataset.dt": 0.02,
+  "task.dataset.augment": true,
+  "task.dataset.random_temporal_crop": true,
+  "task.dataset.all_frames": false,
+  "task.dataset.resampling": true,
+  "task.dataset.interpolate": true,
+  "task.dataset.p_flip": 0.5,
+  "task.dataset.p_rot": 0.5,
+  "task.dataset.contrast_std": 0.2,
+  "task.dataset.brightness_std": 0.1,
+  "task.dataset.gaussian_white_noise": 0.08,
+  "task.dataset.gamma_std": null,
+  "task.dataset._init_cache": true,
+  "task.dataset.unittest": false,
+  "task.dataset.flip_axes": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "task.decoder.flow.type": "DecoderGAVP",
+  "task.decoder.flow.shape": [
+    8,
+    2
+  ],
+  "task.decoder.flow.kernel_size": 5,
+  "task.decoder.flow.const_weight": 0.001,
+  "task.decoder.flow.n_out_features": null,
+  "task.decoder.flow.p_dropout": 0.5,
+  "task.loss.flow": "l2norm",
+  "task.batch_size": 4,
+  "task.n_iters": 250000,
+  "task.n_folds": 4,
+  "task.fold": 1,
+  "task.seed": 0,
+  "task.task_weight": null
+}

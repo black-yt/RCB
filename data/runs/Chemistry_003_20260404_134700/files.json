@@ -1,0 +1,207 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_electrostatics.py",
+    "path": "code/analyze_electrostatics.py",
+    "type": "file",
+    "size": 14971,
+    "mtime": 1775318094.0,
+    "exported": true
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 15550,
+    "mtime": 1775318094.0,
+    "exported": true
+  },
+  {
+    "name": "run_analysis_clean.py",
+    "path": "code/run_analysis_clean.py",
+    "type": "file",
+    "size": 14885,
+    "mtime": 1775318094.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_chargestates.xyz",
+    "path": "data/ag3_chargestates.xyz",
+    "type": "file",
+    "size": 25976,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "charged_dimer.xyz",
+    "path": "data/charged_dimer.xyz",
+    "type": "file",
+    "size": 55920,
+    "mtime": 1772414962.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "random_charges.xyz",
+    "path": "data/random_charges.xyz",
+    "type": "file",
+    "size": 768000,
+    "mtime": 1772414960.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_cv_metrics.csv",
+    "path": "outputs/ag3_cv_metrics.csv",
+    "type": "file",
+    "size": 329,
+    "mtime": 1775318092.0,
+    "exported": true
+  },
+  {
+    "name": "ag3_predictions.csv",
+    "path": "outputs/ag3_predictions.csv",
+    "type": "file",
+    "size": 10550,
+    "mtime": 1775318092.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_cv_metrics.csv",
+    "path": "outputs/charged_dimer_cv_metrics.csv",
+    "type": "file",
+    "size": 774,
+    "mtime": 1775318092.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_predictions.csv",
+    "path": "outputs/charged_dimer_predictions.csv",
+    "type": "file",
+    "size": 14024,
+    "mtime": 1775318092.0,
+    "exported": true
+  },
+  {
+    "name": "electrostatics_summary.json",
+    "path": "outputs/electrostatics_summary.json",
+    "type": "file",
+    "size": 1470,
+    "mtime": 1775318092.0,
+    "exported": true
+  },
+  {
+    "name": "random_charge_analysis.csv",
+    "path": "outputs/random_charge_analysis.csv",
+    "type": "file",
+    "size": 7170,
+    "mtime": 1775318092.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1659509,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 1792962,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 263549,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 6623726,
+    "mtime": 1773914888.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "ag3_charge_conditioning.png",
+    "path": "report/images/ag3_charge_conditioning.png",
+    "type": "file",
+    "size": 148830,
+    "mtime": 1775318094.0,
+    "exported": true
+  },
+  {
+    "name": "charged_dimer_error_comparison.png",
+    "path": "report/images/charged_dimer_error_comparison.png",
+    "type": "file",
+    "size": 73496,
+    "mtime": 1775318092.0,
+    "exported": true
+  },
+  {
+    "name": "electrostatics_overview.png",
+    "path": "report/images/electrostatics_overview.png",
+    "type": "file",
+    "size": 370253,
+    "mtime": 1775318094.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 11808,
+    "mtime": 1775318095.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6294,
+    "mtime": 1775281620.0,
+    "exported": true
+  }
+]

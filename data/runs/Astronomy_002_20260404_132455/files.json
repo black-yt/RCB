@@ -1,0 +1,221 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_h0dn.py",
+    "path": "code/analyze_h0dn.py",
+    "type": "file",
+    "size": 17598,
+    "mtime": 1775317576.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "H0DN_MinimalDataset.txt",
+    "path": "data/H0DN_MinimalDataset.txt",
+    "type": "file",
+    "size": 2212,
+    "mtime": 1772000208.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_variants.csv",
+    "path": "outputs/analysis_variants.csv",
+    "type": "file",
+    "size": 1521,
+    "mtime": 1775317574.0,
+    "exported": true
+  },
+  {
+    "name": "h0_variant_draws_preview.csv",
+    "path": "outputs/h0_variant_draws_preview.csv",
+    "type": "file",
+    "size": 654655,
+    "mtime": 1775317574.0,
+    "exported": true
+  },
+  {
+    "name": "host_estimates_baseline.csv",
+    "path": "outputs/host_estimates_baseline.csv",
+    "type": "file",
+    "size": 676,
+    "mtime": 1775317574.0,
+    "exported": true
+  },
+  {
+    "name": "host_measurements_tidy.csv",
+    "path": "outputs/host_measurements_tidy.csv",
+    "type": "file",
+    "size": 611,
+    "mtime": 1775317574.0,
+    "exported": true
+  },
+  {
+    "name": "sbf_calibrator_estimates.csv",
+    "path": "outputs/sbf_calibrator_estimates.csv",
+    "type": "file",
+    "size": 430,
+    "mtime": 1775317572.0,
+    "exported": true
+  },
+  {
+    "name": "sbf_hubble_flow_estimates.csv",
+    "path": "outputs/sbf_hubble_flow_estimates.csv",
+    "type": "file",
+    "size": 360,
+    "mtime": 1775317574.0,
+    "exported": true
+  },
+  {
+    "name": "snia_calibrator_estimates.csv",
+    "path": "outputs/snia_calibrator_estimates.csv",
+    "type": "file",
+    "size": 803,
+    "mtime": 1775317574.0,
+    "exported": true
+  },
+  {
+    "name": "snia_hubble_flow_estimates.csv",
+    "path": "outputs/snia_hubble_flow_estimates.csv",
+    "type": "file",
+    "size": 551,
+    "mtime": 1775317574.0,
+    "exported": true
+  },
+  {
+    "name": "summary_results.json",
+    "path": "outputs/summary_results.json",
+    "type": "file",
+    "size": 1532,
+    "mtime": 1775317574.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 5970082,
+    "mtime": 1773914884.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2772955,
+    "mtime": 1773914884.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 6327976,
+    "mtime": 1773914884.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3331484,
+    "mtime": 1773914884.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview_measurements.png",
+    "path": "report/images/data_overview_measurements.png",
+    "type": "file",
+    "size": 85554,
+    "mtime": 1775317576.0,
+    "exported": true
+  },
+  {
+    "name": "host_modulus_gls.png",
+    "path": "report/images/host_modulus_gls.png",
+    "type": "file",
+    "size": 171307,
+    "mtime": 1775317576.0,
+    "exported": true
+  },
+  {
+    "name": "hubble_flow_snia.png",
+    "path": "report/images/hubble_flow_snia.png",
+    "type": "file",
+    "size": 86164,
+    "mtime": 1775317576.0,
+    "exported": true
+  },
+  {
+    "name": "sbf_crosscheck.png",
+    "path": "report/images/sbf_crosscheck.png",
+    "type": "file",
+    "size": 111256,
+    "mtime": 1775317574.0,
+    "exported": true
+  },
+  {
+    "name": "snia_calibrators.png",
+    "path": "report/images/snia_calibrators.png",
+    "type": "file",
+    "size": 141948,
+    "mtime": 1775317576.0,
+    "exported": true
+  },
+  {
+    "name": "variant_comparison.png",
+    "path": "report/images/variant_comparison.png",
+    "type": "file",
+    "size": 125536,
+    "mtime": 1775317576.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12457,
+    "mtime": 1775317577.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5408,
+    "mtime": 1775280295.0,
+    "exported": true
+  }
+]

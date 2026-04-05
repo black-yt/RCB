@@ -1,0 +1,349 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_heew_analysis.py",
+    "path": "code/run_heew_analysis.py",
+    "type": "file",
+    "size": 18584,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "HEEW_Mini-Dataset",
+    "path": "data/HEEW_Mini-Dataset",
+    "type": "directory"
+  },
+  {
+    "name": "BN001_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN001_energy.csv",
+    "type": "file",
+    "size": 864793,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN002_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN002_energy.csv",
+    "type": "file",
+    "size": 865508,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN003_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN003_energy.csv",
+    "type": "file",
+    "size": 864713,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN004_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN004_energy.csv",
+    "type": "file",
+    "size": 864135,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN005_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN005_energy.csv",
+    "type": "file",
+    "size": 864894,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN006_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN006_energy.csv",
+    "type": "file",
+    "size": 864329,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN007_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN007_energy.csv",
+    "type": "file",
+    "size": 863540,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN008_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN008_energy.csv",
+    "type": "file",
+    "size": 863672,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN009_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN009_energy.csv",
+    "type": "file",
+    "size": 864278,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "BN010_energy.csv",
+    "path": "data/HEEW_Mini-Dataset/BN010_energy.csv",
+    "type": "file",
+    "size": 861505,
+    "mtime": 1772637052.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "\u2026 3 more items",
+    "path": "data/HEEW_Mini-Dataset/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "aligned_hourly_panel.csv",
+    "path": "outputs/aligned_hourly_panel.csv",
+    "type": "file",
+    "size": 10119918,
+    "mtime": 1775317332.0,
+    "exported": false
+  },
+  {
+    "name": "cleaning_decisions.json",
+    "path": "outputs/cleaning_decisions.json",
+    "type": "file",
+    "size": 396,
+    "mtime": 1775317326.0,
+    "exported": true
+  },
+  {
+    "name": "cleaning_impact_summary.csv",
+    "path": "outputs/cleaning_impact_summary.csv",
+    "type": "file",
+    "size": 365,
+    "mtime": 1775317326.0,
+    "exported": true
+  },
+  {
+    "name": "correlation_buildings_pearson.csv",
+    "path": "outputs/correlation_buildings_pearson.csv",
+    "type": "file",
+    "size": 2223,
+    "mtime": 1775317326.0,
+    "exported": true
+  },
+  {
+    "name": "correlation_buildings_spearman.csv",
+    "path": "outputs/correlation_buildings_spearman.csv",
+    "type": "file",
+    "size": 2229,
+    "mtime": 1775317332.0,
+    "exported": true
+  },
+  {
+    "name": "correlation_hierarchy_weather.csv",
+    "path": "outputs/correlation_hierarchy_weather.csv",
+    "type": "file",
+    "size": 3755,
+    "mtime": 1775317326.0,
+    "exported": true
+  },
+  {
+    "name": "daily_aligned_panel.csv",
+    "path": "outputs/daily_aligned_panel.csv",
+    "type": "file",
+    "size": 452966,
+    "mtime": 1775317332.0,
+    "exported": true
+  },
+  {
+    "name": "data_audit_notes.json",
+    "path": "outputs/data_audit_notes.json",
+    "type": "file",
+    "size": 7647,
+    "mtime": 1775317332.0,
+    "exported": true
+  },
+  {
+    "name": "data_audit_summary.csv",
+    "path": "outputs/data_audit_summary.csv",
+    "type": "file",
+    "size": 2046,
+    "mtime": 1775317332.0,
+    "exported": true
+  },
+  {
+    "name": "descriptive_statistics.csv",
+    "path": "outputs/descriptive_statistics.csv",
+    "type": "file",
+    "size": 1595,
+    "mtime": 1775317326.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 7 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3160195,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 4465950,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 555866,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 781692,
+    "mtime": 1773914895.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "building_correlation_heatmap.png",
+    "path": "report/images/building_correlation_heatmap.png",
+    "type": "file",
+    "size": 149557,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "data_coverage_heatmap.png",
+    "path": "report/images/data_coverage_heatmap.png",
+    "type": "file",
+    "size": 80243,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "example_series_overlay.png",
+    "path": "report/images/example_series_overlay.png",
+    "type": "file",
+    "size": 395439,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "hierarchy_overlay_timeseries.png",
+    "path": "report/images/hierarchy_overlay_timeseries.png",
+    "type": "file",
+    "size": 204805,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "hierarchy_residual_distribution.png",
+    "path": "report/images/hierarchy_residual_distribution.png",
+    "type": "file",
+    "size": 105065,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "hierarchy_weather_correlation_heatmap.png",
+    "path": "report/images/hierarchy_weather_correlation_heatmap.png",
+    "type": "file",
+    "size": 265900,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "missingness_before_after.png",
+    "path": "report/images/missingness_before_after.png",
+    "type": "file",
+    "size": 74615,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "monthly_correlation_stability.png",
+    "path": "report/images/monthly_correlation_stability.png",
+    "type": "file",
+    "size": 162681,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "monthly_hierarchy_error.png",
+    "path": "report/images/monthly_hierarchy_error.png",
+    "type": "file",
+    "size": 120731,
+    "mtime": 1775317334.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 16668,
+    "mtime": 1775317335.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5964,
+    "mtime": 1775284271.0,
+    "exported": true
+  }
+]

@@ -1,0 +1,307 @@
+{
+  "BN001": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "BN002": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "BN003": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "BN004": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "BN005": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "BN006": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "BN007": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "BN008": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "BN009": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "BN010": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "CN01": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "Total": {
+    "columns": [
+      "Electricity [kW]",
+      "Heat [mmBTU]",
+      "Cooling Energy [Ton]",
+      "PV Power Generation [kW]",
+      "Greenhouse Gas Emission [Ton]"
+    ],
+    "na_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    },
+    "negative_counts": {
+      "Electricity [kW]": 0,
+      "Heat [mmBTU]": 0,
+      "Cooling Energy [Ton]": 0,
+      "PV Power Generation [kW]": 0,
+      "Greenhouse Gas Emission [Ton]": 0
+    }
+  },
+  "Total_weather": {
+    "columns": [
+      "Temperature [\u00b0F]",
+      "Dew Point [\u00b0F]",
+      "Humidity [%]",
+      "Wind Speed [mph]",
+      "Wind Gust [mph]",
+      "Pressure [in]",
+      "Precipitation [in]"
+    ],
+    "na_counts": {
+      "Temperature [\u00b0F]": 0,
+      "Dew Point [\u00b0F]": 0,
+      "Humidity [%]": 0,
+      "Wind Speed [mph]": 0,
+      "Wind Gust [mph]": 0,
+      "Pressure [in]": 0,
+      "Precipitation [in]": 0
+    },
+    "negative_counts": {
+      "Temperature [\u00b0F]": 0,
+      "Dew Point [\u00b0F]": 0,
+      "Humidity [%]": 0,
+      "Wind Speed [mph]": 0,
+      "Wind Gust [mph]": 0,
+      "Pressure [in]": 0,
+      "Precipitation [in]": 0
+    }
+  }
+}

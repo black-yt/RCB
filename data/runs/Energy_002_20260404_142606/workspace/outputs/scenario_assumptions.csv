@@ -1,0 +1,4 @@
+scenario,wacc,electrolyzer_capex_per_kw,ammonia_capex_per_kg_h2_yr,reconversion_capex_per_kg_h2_yr,shipping_per_1000km,europe_h2_cost,policy_credit,description
+baseline,0.1,700,1.2,0.9,0.22,7.2,0.0,"African emerging-market finance conditions, moderate 2030 technology progress."
+derisked,0.06,650,1.1,0.85,0.21,7.4,0.35,Concessional/de-risked finance with contracts-for-difference or export support.
+high_rate,0.14,760,1.25,0.95,0.24,7.6,0.0,Tight global capital markets with higher project finance spreads.

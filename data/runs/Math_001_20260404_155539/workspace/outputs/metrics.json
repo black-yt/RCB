@@ -1,0 +1,76 @@
+{
+  "f_star_reference": 311.1167877003963,
+  "lambda_used": 4.438774948348783,
+  "methods": {
+    "ISTA": {
+      "final_objective": 311.1167877003963,
+      "final_gap": 0.0,
+      "l2_error_to_true": 2.7917546361672128,
+      "l2_error_to_reference": 1.4014822441933638e-10,
+      "nnz": 88,
+      "objective_monotone_violations": 0,
+      "tp": 82,
+      "fp": 6,
+      "fn": 18,
+      "precision": 0.9318181818181818,
+      "recall": 0.82
+    },
+    "FISTA": {
+      "final_objective": 311.1167877003963,
+      "final_gap": 0.0,
+      "l2_error_to_true": 2.7917546511610687,
+      "l2_error_to_reference": 3.945467382975796e-08,
+      "nnz": 88,
+      "objective_monotone_violations": 50,
+      "tp": 82,
+      "fp": 6,
+      "fn": 18,
+      "precision": 0.9318181818181818,
+      "recall": 0.82,
+      "restart_count": 0
+    },
+    "Restarted_FISTA": {
+      "final_objective": 311.1167877003963,
+      "final_gap": 0.0,
+      "l2_error_to_true": 2.791754636106214,
+      "l2_error_to_reference": 2.3724422256870844e-15,
+      "nnz": 88,
+      "objective_monotone_violations": 0,
+      "tp": 82,
+      "fp": 6,
+      "fn": 18,
+      "precision": 0.9318181818181818,
+      "recall": 0.82,
+      "restart_count": 12
+    },
+    "ADMM": {
+      "final_objective": 311.1171817074672,
+      "final_gap": 0.0003940070708949861,
+      "l2_error_to_true": 2.7959560658815468,
+      "l2_error_to_reference": 0.006873793883896477,
+      "nnz": 87,
+      "objective_monotone_violations": 0,
+      "tp": 81,
+      "fp": 6,
+      "fn": 19,
+      "precision": 0.9310344827586207,
+      "recall": 0.81,
+      "final_primal_residual": 0.016645913951701192,
+      "final_dual_residual": 0.0001437687614556607
+    },
+    "Reference_Restarted_FISTA": {
+      "final_objective": 311.1167877003963,
+      "final_gap": 0.0,
+      "l2_error_to_true": 2.7917546361062144,
+      "l2_error_to_reference": 0.0,
+      "nnz": 88,
+      "objective_monotone_violations": 0,
+      "tp": 82,
+      "fp": 6,
+      "fn": 18,
+      "precision": 0.9318181818181818,
+      "recall": 0.82,
+      "restart_count": 28
+    }
+  }
+}

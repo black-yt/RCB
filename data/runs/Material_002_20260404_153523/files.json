@@ -1,0 +1,271 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_mace_mp0_repro.py",
+    "path": "code/analyze_mace_mp0_repro.py",
+    "type": "file",
+    "size": 16741,
+    "mtime": 1775317554.0,
+    "exported": true
+  },
+  {
+    "name": "extract_related_work.py",
+    "path": "code/extract_related_work.py",
+    "type": "file",
+    "size": 602,
+    "mtime": 1775317554.0,
+    "exported": true
+  },
+  {
+    "name": "requirements_repro.txt",
+    "path": "code/requirements_repro.txt",
+    "type": "file",
+    "size": 39,
+    "mtime": 1775317554.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "MACE-MP-0_Reproduction_Dataset.txt",
+    "path": "data/MACE-MP-0_Reproduction_Dataset.txt",
+    "type": "file",
+    "size": 3178,
+    "mtime": 1772003774.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "related_work_text",
+    "path": "outputs/related_work_text",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.txt",
+    "path": "outputs/related_work_text/paper_000.txt",
+    "type": "file",
+    "size": 60587,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "paper_001.txt",
+    "path": "outputs/related_work_text/paper_001.txt",
+    "type": "file",
+    "size": 63078,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "paper_002.txt",
+    "path": "outputs/related_work_text/paper_002.txt",
+    "type": "file",
+    "size": 47965,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "paper_003.txt",
+    "path": "outputs/related_work_text/paper_003.txt",
+    "type": "file",
+    "size": 68532,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "adsorption_metals.csv",
+    "path": "outputs/adsorption_metals.csv",
+    "type": "file",
+    "size": 74,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "adsorption_proxy_long.csv",
+    "path": "outputs/adsorption_proxy_long.csv",
+    "type": "file",
+    "size": 509,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "adsorption_proxy_pivot.csv",
+    "path": "outputs/adsorption_proxy_pivot.csv",
+    "type": "file",
+    "size": 327,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "benchmark_summary.json",
+    "path": "outputs/benchmark_summary.json",
+    "type": "file",
+    "size": 367,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "benchmark_system_summary.csv",
+    "path": "outputs/benchmark_system_summary.csv",
+    "type": "file",
+    "size": 1029,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "gas_phase_coordinates.csv",
+    "path": "outputs/gas_phase_coordinates.csv",
+    "type": "file",
+    "size": 71,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "reaction_barrier_proxy.csv",
+    "path": "outputs/reaction_barrier_proxy.csv",
+    "type": "file",
+    "size": 283,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "reaction_coordinates.csv",
+    "path": "outputs/reaction_coordinates.csv",
+    "type": "file",
+    "size": 1535,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "reaction_reference_barriers.csv",
+    "path": "outputs/reaction_reference_barriers.csv",
+    "type": "file",
+    "size": 59,
+    "mtime": 1775317552.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 2 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 579122,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2664200,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 703654,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 2314869,
+    "mtime": 1773914904.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "figure_adsorption_scaling.png",
+    "path": "report/images/figure_adsorption_scaling.png",
+    "type": "file",
+    "size": 245661,
+    "mtime": 1775317554.0,
+    "exported": true
+  },
+  {
+    "name": "figure_data_overview.png",
+    "path": "report/images/figure_data_overview.png",
+    "type": "file",
+    "size": 251389,
+    "mtime": 1775317554.0,
+    "exported": true
+  },
+  {
+    "name": "figure_element_coverage.png",
+    "path": "report/images/figure_element_coverage.png",
+    "type": "file",
+    "size": 70429,
+    "mtime": 1775317554.0,
+    "exported": true
+  },
+  {
+    "name": "figure_reaction_proxy.png",
+    "path": "report/images/figure_reaction_proxy.png",
+    "type": "file",
+    "size": 136096,
+    "mtime": 1775317554.0,
+    "exported": true
+  },
+  {
+    "name": "figure_water_setup.png",
+    "path": "report/images/figure_water_setup.png",
+    "type": "file",
+    "size": 108978,
+    "mtime": 1775317554.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 16615,
+    "mtime": 1775317555.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5298,
+    "mtime": 1775288123.0,
+    "exported": true
+  }
+]

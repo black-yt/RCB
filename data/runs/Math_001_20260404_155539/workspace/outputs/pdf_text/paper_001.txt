@@ -1,0 +1,3142 @@
+--- PAGE 1 ---
+arXiv:1503.01243v2  [stat.ML]  27 Oct 2015
+A Diﬀerential Equation for Modeling Nesterov’s Accelerate d
+Gradient Method: Theory and Insights
+W eijie Su wjsu@stanford.edu
+Department of Statistics
+Stanford University
+Stanford, CA 94305, USA
+Stephen Boyd boyd@stanford.edu
+Department of Electrical Engineering
+Stanford University
+Stanford, CA 94305, USA
+Emmanuel J. Cand` es candes@stanford.edu
+Departments of Statistics and Mathematics
+Stanford University
+Stanford, CA 94305, USA
+Abstract
+We derive a second-order ordinary diﬀerential equation (ODE) whic h is the limit of Nes-
+terov’s accelerated gradient method. This ODE exhibits approximat e equivalence to Nes-
+terov’s scheme and thus can serve as a tool for analysis. We show t hat the continuous time
+ODE allows for a better understanding of Nesterov’s scheme. As a b yproduct, we obtain
+a family of schemes with similar convergence rates. The ODE interpre tation also suggests
+restarting Nesterov’s scheme leading to an algorithm, which can be r igorously proven to
+converge at a linear rate whenever the objective is strongly conve x.
+Keywords: Nesterov’s accelerated scheme, convex optimization, ﬁrst-orde r methods,
+diﬀerential equation, restarting
+1. Introduction
+In many ﬁelds of machine learning, minimizing a convex funct ion is at the core of eﬃcient
+model estimation. In the simplest and most standard form, we are interested in solving
+minimize f (x),
+where f is a convex function, smooth or non-smooth, and x∈ Rn is the variable. Since
+Newton, numerous algorithms and methods have been proposed to solve the minimization
+problem, notably gradient and subgradient descent, Newton ’s methods, trust region meth-
+ods, conjugate gradient methods, and interior point method s (see e.g. Polyak, 1987; Boyd
+and Vandenberghe, 2004; Nocedal and Wright, 2006; Ruszczy´ nski, 2006; Boyd et al., 2011;
+Shor, 2012; Beck, 2014, for expositions).
+First-order methods have regained popularity as data sets a nd problems are ever in-
+creasing in size and, consequently, there has been much rese arch on the theory and practice
+of accelerated ﬁrst-order schemes. Perhaps the earliest ﬁr st-order method for minimizing
+c⃝ W eijie Su, Stephen Boyd and Emmanuel J. Cand` es.
+
+--- PAGE 2 ---
+Su, Boyd and Cand `
+es
+a convex function f is the gradient method, which dates back to Euler and Lagrang e.
+Thirty years ago, however, in a seminal paper Nesterov propo sed an accelerated gradient
+method (Nesterov, 1983), which may take the following form: starting with x0 and y0 = x0,
+inductively deﬁne
+xk = yk− 1− s∇ f (yk− 1)
+yk = xk + k− 1k + 2 (xk− xk− 1).
+(1)
+For any ﬁxed step size s≤ 1/L , where L is the Lipschitz constant of ∇ f , this scheme
+exhibits the convergence rate
+f (xk)− f ⋆≤ O
+(∥x0− x⋆∥2
+sk2
+)
+. (2)
+Above, x⋆ is any minimizer of f and f ⋆ = f (x⋆). It is well-known that this rate is op-
+timal among all methods having only information about the gr adient of f at consecutive
+iterates (Nesterov, 2004). This is in contrast to vanilla gr adient descent methods, which
+have the same computational complexity but can only achieve a rate of O(1/k ). This
+improvement relies on the introduction of the momentum term xk− xk− 1 as well as the
+particularly tuned coeﬃcient ( k− 1)/ (k + 2)≈ 1− 3/k . Since the introduction of Nesterov’s
+scheme, there has been much work on the development of ﬁrst-o rder accelerated methods,
+see Nesterov (2004, 2005, 2013) for theoretical developmen ts, and Tseng (2008) for a uniﬁed
+analysis of these ideas. Notable applications can be found i n sparse linear regression (Beck
+and Teboulle, 2009; Qin and Goldfarb, 2012), compressed sen sing (Becker et al., 2011) and,
+deep and recurrent neural networks (Sutskever et al., 2013) .
+In a diﬀerent direction, there is a long history relating ordi nary diﬀerential equation
+(ODEs) to optimization, see Helmke and Moore (1996), Schrop p and Singer (2000), and
+Fiori (2005) for example. The connection between ODEs and nu merical optimization is often
+established via taking step sizes to be very small so that the trajectory or solution path
+converges to a curve modeled by an ODE. The conciseness and we ll-established theory of
+ODEs provide deeper insights into optimization, which has l ed to many interesting ﬁndings.
+Notable examples include linear regression via solving diﬀe rential equations induced by
+linearized Bregman iteration algorithm (Osher et al., 2014 ), a continuous-time Nesterov-like
+algorithm in the context of control design (D¨ urr and Ebenbauer, 2012; D¨ urr et al., 2012), and
+modeling design iterative optimization algorithms as nonl inear dynamical systems (Lessard
+et al., 2014).
+In this work, we derive a second-order ODE which is the exact l imit of Nesterov’s
+scheme by taking small step sizes in (1); to the best of our kno wledge, this work is the ﬁrst
+to use ODEs to model Nesterov’s scheme or its variants in this limit. One surprising fact
+in connection with this subject is that a ﬁrst-order scheme is modeled by a second-order
+ODE. This ODE takes the following form:
+¨X + 3
+t
+˙X +∇ f (X) = 0 (3)
+for t > 0, with initial conditions X(0) = x0, ˙X(0) = 0; here, x0 is the starting point
+in Nesterov’s scheme, ˙X ≡ dX/ dt denotes the time derivative or velocity and similarly
+2
+
+--- PAGE 3 ---
+An ODE for Modeling Nesterov’s Scheme
+¨X≡ d2X/ dt2 denotes the acceleration. The time parameter in this ODE is r elated to the
+step size in (1) via t≈ k√ s. Expectedly, it also enjoys inverse quadratic convergence rate
+as its discrete analog,
+f (X(t))− f ⋆≤ O
+(∥x0− x⋆∥2
+t2
+)
+.
+Approximate equivalence between Nesterov’s scheme and the ODE is established later in
+various perspectives, rigorous and intuitive. In the main b ody of this paper, examples and
+case studies are provided to demonstrate that the homogeneo us and conceptually simpler
+ODE can serve as a tool for understanding, analyzing and gene ralizing Nesterov’s scheme.
+In the following, two insights of Nesterov’s scheme are high lighted, the ﬁrst one on
+oscillations in the trajectories of this scheme, and the sec ond on the peculiar constant 3
+appearing in the ODE.
+1.1 F rom Overdamping to Underdamping
+In general, Nesterov’s scheme is not monotone in the objecti ve function value due to the
+introduction of the momentum term. Oscillations or oversho ots along the trajectory of
+iterates approaching the minimizer are often observed when running Nesterov’s scheme.
+Figure 1 presents typical phenomena of this kind, where a two -dimensional convex function
+is minimized by Nesterov’s scheme. Viewing the ODE as a dampi ng system, we obtain
+interpretations as follows.
+Small t. In the beginning, the damping ratio 3 /t is large. This leads the ODE to be an
+overdamped system, returning to the equilibrium without os cillating;
+Large t. As t increases, the ODE with a small 3 /t behaves like an underdamped system,
+oscillating with the amplitude gradually decreasing to zer o.
+As depicted in Figure 1a, in the beginning the ODE curve moves smoothly towards the
+origin, the minimizer x⋆. The second interpretation “ Large t’’ provides partial explanation
+for the oscillations observed in Nesterov’s scheme at later stage. Although our analysis
+extends farther, it is similar in spirit to that carried in O’ Donoghue and Cand` es (2013).
+In particular, the zoomed Figure 1b presents some butterﬂy- like oscillations for both the
+scheme and ODE. There, we see that the trajectory constantly moves away from the origin
+and returns back later. Each overshoot in Figure 1b causes a b ump in the function values,
+as shown in Figure 1c. We observe also from Figure 1c that the p eriodicity captured by the
+bumps are very close to that of the ODE solution. In passing, i t is worth mentioning that
+the solution to the ODE in this case can be expressed via Besse l functions, hence enabling
+quantitative characterizations of these overshoots and bu mps, which are given in full detail
+in Section 3.
+1.2 A Phase T ransition
+The constant 3, derived from ( k + 2)− (k− 1) in (3), is not haphazard. In fact, it is the
+smallest constant that guarantees O(1/t 2) convergence rate. Speciﬁcally, parameterized by
+a constant r, the generalized ODE
+¨X + r
+t
+˙X +∇ f (X) = 0
+3
+
+--- PAGE 4 ---
+Su, Boyd and Cand `
+es
+−0.2 0 0.2 0.4 0.6 0.8 1
+−0.2
+0
+0.2
+0.4
+0.6
+0.8
+x1
+x2
+ 
+ 
+s = 1
+s = 0.25
+ODE
+(a) Trajectories.
+−0.06 −0.04 −0.02 0 0.02 0.04 0.06 0.08
+−0.15
+−0.1
+−0.05
+0
+0.05
+0.1
+0.15
+x1
+x2
+ 
+ 
+s = 0.25
+s = 0.05
+ODE
+(b) Zoomed trajectories.
+0 50 100 150 200 250 300
+10
+−14
+10
+−12
+10
+−10
+10
+−8
+10
+−6
+10
+−4
+10
+−2
+10
+0
+t
+f − f*
+ 
+ 
+s = 1
+s = 0.25
+s = 0.05
+ODE
+(c) Errors f− f ⋆.
+Figure 1: Minimizing f = 2× 10− 2x2
+1 + 5× 10− 3x2
+2, starting from x0 = (1 , 1). The black
+and solid curves correspond to the solution to the ODE. In (c) , for the x-axis we use the
+identiﬁcation between time and iterations, t = k√
+s.
+can be translated into a generalized Nesterov’s scheme that is the same as the original
+(1) except for ( k− 1)/ (k + 2) being replaced by ( k− 1)/ (k + r− 1). Surprisingly, for
+both generalized ODEs and schemes, the inverse quadratic co nvergence is guaranteed if and
+only if r≥ 3. This phase transition suggests there might be deep causes for acceleration
+among ﬁrst-order methods. In particular, for r≥ 3, the worst case constant in this inverse
+quadratic convergence rate is minimized at r = 3.
+Figure 2 illustrates the growth of t2(f (X(t))− f ⋆) and sk2(f (xk)− f ⋆), respectively,
+for the generalized ODE and scheme with r = 1, where the objective function is simply
+f (x) = 1
+2 x2. Inverse quadratic convergence fails to be observed in both Figures 2a and 2b,
+where the scaled errors grow with t or iterations, for both the generalized ODE and scheme.
+0 5 10 15 20 25 30 35 40 45 50
+0
+2
+4
+6
+8
+10
+12
+14
+16
+t
+ 
+ 
+t2(f − f*)
+(a) Scaled errors t2(f (X(t))− f ⋆ ).
+0 500 1000 1500 2000 2500 3000 3500 4000 4500 5000
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+iterations
+ 
+ 
+sk2(f − f*)
+(b) Scaled errors sk2(f (xk)− f ⋆ ).
+Figure 2: Minimizing f = 1
+2 x2 by the generalized ODE and scheme with r = 1, starting
+from x0 = 1. In (b), the step size s = 10− 4.
+1.3 Outline and Notation
+The rest of the paper is organized as follows. In Section 2, th e ODE is rigorously derived
+from Nesterov’s scheme, and a generalization to composite o ptimization, where f may be
+non-smooth, is also obtained. Connections between the ODE a nd the scheme, in terms
+of trajectory behaviors and convergence rates, are summari zed in Section 3. In Section
+4
+
+--- PAGE 5 ---
+An ODE for Modeling Nesterov’s Scheme
+4, we discuss the eﬀect of replacing the constant 3 in (3) by an a rbitrary constant on the
+convergence rate. A new restarting scheme is suggested in Se ction 5, with linear convergence
+rate established and empirically observed.
+Some standard notations used throughout the paper are colle cted here. We denote by
+FL the class of convex functions f with L–Lipschitz continuous gradients deﬁned on Rn,
+i.e., f is convex, continuously diﬀerentiable, and satisﬁes
+∥∇ f (x)−∇ f (y)∥≤ L∥x− y∥
+for any x, y ∈ Rn, where ∥·∥ is the standard Euclidean norm and L > 0 is the Lipschitz
+constant. Next,Sµ denotes the class of µ –strongly convex functions f on Rn with continuous
+gradients, i.e., f is continuously diﬀerentiable and f (x)− µ∥x∥2/ 2 is convex. We set Sµ,L =
+FL∩S µ .
+2. Derivation
+First, we sketch an informal derivation of the ODE (3). Assum e f ∈ FL for L > 0.
+Combining the two equations of (1) and applying a rescaling g ives
+xk+1− xk
+√ s = k− 1
+k + 2
+xk− xk− 1√ s − √ s∇ f (yk). (4)
+Introduce the Ansatz xk≈ X(k√ s) for some smooth curve X(t) deﬁned for t≥ 0. Put
+k = t/√ s. Then as the step size s goes to zero, X(t)≈ xt/ √ s = xk and X(t +√ s)≈
+x(t+√ s)/ √ s = xk+1, and Taylor expansion gives
+(xk+1− xk)/√ s = ˙X(t) + 1
+2
+¨X(t)√ s + o(√ s), (xk− xk− 1)/√ s = ˙X(t)− 1
+2
+¨X(t)√ s + o(√ s)
+and√ s∇ f (yk) =√ s∇ f (X(t)) + o(√ s). Thus (4) can be written as
+˙X(t) + 1
+2
+¨X(t)√ s + o(√ s)
+=
+(
+1− 3√ s
+t
+)(
+˙X(t)− 1
+2
+¨X(t)√ s + o(√ s)
+)
+− √ s∇ f (X(t)) + o(√ s). (5)
+By comparing the coeﬃcients of √ s in (5), we obtain
+¨X + 3
+t
+˙X +∇ f (X) = 0 .
+The ﬁrst initial condition is X(0) = x0. Taking k = 1 in (4) yields
+(x2− x1)/√ s =−√ s∇ f (y1) = o(1).
+Hence, the second initial condition is simply ˙X(0) = 0 (vanishing initial velocity).
+One popular alternative momentum coeﬃcient is θk(θ− 1
+k− 1− 1), where θk are iteratively
+deﬁned as θk+1 =
+(√
+θ4
+k + 4θ2
+k− θ2
+k
+)
+/ 2, starting from θ0 = 1 (Nesterov, 1983; Beck and
+5
+
+--- PAGE 6 ---
+Su, Boyd and Cand `
+es
+Teboulle, 2009). Simple analysis reveals that θk(θ− 1
+k− 1− 1) asymptotically equals 1 − 3/k +
+O(1/k 2), thus leading to the same ODE as (1).
+Classical results in ODE theory do not directly imply the exi stence or uniqueness of the
+solution to this ODE because the coeﬃcient 3 /t is singular at t = 0. In addition, ∇ f is
+typically not analytic at x0, which leads to the inapplicability of the power series meth od for
+studying singular ODEs. Nevertheless, the ODE is well posed : the strategy we employ for
+showing this constructs a series of ODEs approximating (3), and then chooses a convergent
+subsequence by some compactness arguments such as the Arzel ´ a-Ascoli theorem. Below,
+C 2((0,∞ ); Rn) denotes the class of twice continuously diﬀerentiable maps from (0,∞ ) to Rn;
+similarly, C 1([0,∞ ); Rn) denotes the class of continuously diﬀerentiable maps from [ 0,∞ )
+to Rn.
+Theorem 1 For any f∈F ∞ :=∪ L>0FL and any x0∈ Rn, the ODE (3) with initial condi-
+tions X(0) = x0, ˙X(0) = 0 has a unique global solution X∈ C 2((0,∞ ); Rn)∩ C 1([0,∞ ); Rn).
+The next theorem, in a rigorous way, guarantees the validity of the derivation of this ODE.
+The proofs of both theorems are deferred to the appendices.
+Theorem 2 For any f∈F ∞ , as the step size s→ 0, Nesterov’s scheme (1) converges to
+the ODE (3) in the sense that for all ﬁxed T > 0,
+lim
+s→ 0
+max
+0≤ k≤ T
+√ s
+
+xk− X
+(
+k√
+s
+)
+ = 0.
+2.1 Simple Properties
+We collect some elementary properties that are helpful in un derstanding the ODE.
+Time Invariance. If we adopt a linear time transformation, ˜t = ct for some c > 0, by the
+chain rule it follows that
+dX
+d˜t = 1
+c
+dX
+dt , d2X
+d˜t2 = 1
+c2
+d2X
+dt2 .
+This yields the ODE parameterized by ˜t,
+d2X
+d˜t2 + 3
+˜t
+dX
+d˜t +∇ f (X)/c 2 = 0.
+Also note that minimizing f /c 2 is equivalent to minimizing f . Hence, the ODE is invariant
+under the time change. In fact, it is easy to see that time inva riance holds if and only if the
+coeﬃcient of ˙X has the form C/t for some constant C.
+Rotational Invariance. Nesterov’s scheme and other gradient-based schemes are in-
+variant under rotations. As expected, the ODE is also invari ant under orthogonal trans-
+formation. To see this, let Y = QX for some orthogonal matrix Q. This leads to
+˙Y = Q ˙X, ¨Y = Q ¨X and∇ Y f = Q∇ Xf . Hence, denoting by QT the transpose of Q,
+the ODE in the new coordinate system reads QT ¨Y + 3
+t QT ˙Y + QT∇ Y f = 0, which is of the
+same form as (3) once multiplying Q on both sides.
+Initial Asymptotic. Assume suﬃcient smoothness of X such that lim t→ 0 ¨X(t) exists.
+The mean value theorem guarantees the existence of some ξ∈ (0, t ) that satisﬁes ˙X(t)/t =
+( ˙X(t)− ˙X(0))/t = ¨X(ξ). Hence, from the ODE we deduce ¨X(t) + 3 ¨X(ξ) +∇ f (X(t)) = 0.
+6
+
+--- PAGE 7 ---
+An ODE for Modeling Nesterov’s Scheme
+Taking the limit t→ 0 gives ¨X(0) =−∇ f (x0)/ 4. Hence, for small t we have the asymptotic
+form:
+X(t) =−∇ f (x0)t2
+8 + x0 + o(t2).
+This asymptotic expansion is consistent with the empirical observation that Nesterov’s
+scheme moves slowly in the beginning.
+2.2 ODE for Composite Optimization
+It is interesting and important to generalize the ODE to mini mizing f in the composite
+form f (x) = g(x) + h(x), where the smooth part g∈F L and the non-smooth part h :
+Rn→ (−∞ ,∞ ] is a structured general convex function. Both Nesterov (20 13) and Beck
+and Teboulle (2009) obtain O(1/k 2) convergence rate by employing the proximal structure
+of h. In analogy to the smooth case, an ODE for composite f is derived in the appendix.
+3. Connections and Interpretations
+In this section, we explore the approximate equivalence bet ween the ODE and Nesterov’s
+scheme, and provide evidence that the ODE can serve as an amen able tool for interpreting
+and analyzing Nesterov’s scheme. The ﬁrst subsection exhib its inverse quadratic conver-
+gence rate for the ODE solution, the next two address the osci llation phenomenon discussed
+in Section 1.1, and the last subsection is devoted to compari ng Nesterov’s scheme with gra-
+dient descent from a numerical perspective.
+3.1 Analogous Convergence Rate
+The original result from Nesterov (1983) states that, for an y f ∈F L, the sequence {xk}
+given by (1) with step size s≤ 1/L satisﬁes
+f (xk)− f ⋆≤ 2∥x0− x⋆∥2
+s(k + 1)2 . (6)
+Our next result indicates that the trajectory of (3) closely resembles the sequence {xk} in
+terms of the convergence rate to a minimizer x⋆. Compared with the discrete case, this
+proof is shorter and simpler.
+Theorem 3 For any f ∈F ∞ , let X(t) be the unique global solution to (3) with initial
+conditions X(0) = x0, ˙X(0) = 0 . Then, for any t > 0,
+f (X(t))− f ⋆≤ 2∥x0− x⋆∥2
+t2 . (7)
+Proof Consider the energy functional 1 deﬁned asE(t) = t2(f (X(t))− f ⋆) + 2∥X + t ˙X/ 2−
+x⋆∥2, whose time derivative is
+˙E = 2t(f (X)− f ⋆) + t2⟨∇ f, ˙X⟩ + 4
+⟨
+X + t
+2
+˙X− x⋆, 3
+2
+˙X + t
+2
+¨X
+⟩
+.
+1. We may also view this functional as the negative entropy. S imilarly, for the gradient ﬂow ˙X +∇ f (X) = 0,
+an energy function of form Egradient(t) = t(f (X(t)) − f ⋆ ) + ∥X(t) − x⋆ ∥2/2 can be used to derive the
+bound f (X(t)) − f ⋆ ≤ ∥x0− x⋆ ∥2
+2t .
+7
+
+--- PAGE 8 ---
+Su, Boyd and Cand `
+es
+Substituting 3 ˙X/ 2 + t ¨X/ 2 with− t∇ f (X)/ 2, the above equation gives
+˙E = 2t(f (X)− f ⋆) + 4⟨X− x⋆,− t∇ f (X)/ 2⟩ = 2t(f (X)− f ⋆)− 2t⟨X− x⋆,∇ f (X)⟩≤ 0,
+where the inequality follows from the convexity of f . Hence by monotonicity of E and
+non-negativity of 2∥X + t ˙X/ 2− x⋆∥2, the gap satisﬁes
+f (X(t))− f ⋆≤ E(t)t2 ≤ E(0)
+t2 = 2∥x0− x⋆∥2
+t2 .
+Making use of the approximation t≈ k√ s, we observe that the convergence rate in (6) is
+essentially a discrete version of that in (7), providing yet another piece of evidence for the
+approximate equivalence between the ODE and the scheme.
+We ﬁnish this subsection by showing that the number 2 appeari ng in the numerator of
+the error bound in (7) is optimal. Consider an arbitrary f∈F ∞ (R) such that f (x) = x for
+x≥ 0. Starting from some x0 > 0, the solution to (3) is X(t) = x0− t2/ 8 before hitting the
+origin. Hence, t2(f (X(t))− f ⋆) = t2(x0− t2/ 8) has a maximum 2 x2
+0 = 2|x0− 0|2 achieved
+at t = 2√
+x0. Therefore, we cannot replace 2 by any smaller number, and we can expect
+that this tightness also applies to the discrete analog (6).
+3.2 Quadratic f and Bessel F unctions
+For quadratic f , the ODE (3) admits a solution in closed form. This closed for m solution
+turns out to be very useful in understanding the issues raise d in the introduction.
+Let f (x) = 1
+2⟨x, Ax⟩ +⟨b, x⟩, where A∈ Rn× n is a positive semideﬁnite matrix and b is
+in the column space of A because otherwise this function can attain −∞ . Then a simple
+translation in x can absorb the linear term ⟨b, x⟩ into the quadratic term. Since both the
+ODE and the scheme move within the aﬃne space perpendicular t o the kernel of A, without
+loss of generality, we assume that A is positive deﬁnite, admitting a spectral decomposition
+A = QT ΛQ, where Λ is a diagonal matrix formed by the eigenvalues. Repl acing x with Qx,
+we assume f = 1
+2⟨x, Λx⟩ from now on. Now, the ODE for this function admits a simple
+decomposition of form
+¨Xi + 3
+t
+˙Xi + λ iXi = 0, i = 1, . . . , n
+with Xi(0) = x0,i , ˙Xi(0) = 0. Introduce Yi(u) = uXi(u/√ λ i), which satisﬁes
+u2 ¨Yi + u ˙Yi + (u2− 1)Yi = 0.
+This is Bessel’s diﬀerential equation of order one. Since Yi vanishes at u = 0, we see that
+Yi is a constant multiple of J1, the Bessel function of the ﬁrst kind of order one. 2 It has an
+analytic expansion:
+J1(u) =
+∞∑
+m=0
+(− 1)m
+(2m)!!(2m + 2)!! u2m+1,
+2. Up to a constant multiplier, J1 is the unique solution to the Bessel’s diﬀerential equation u2 ¨J1 + u ˙J1 +
+(u2 − 1)J1 = 0 that is ﬁnite at the origin. In the analytic expansion of J1, m!! denotes the double factorial
+deﬁned as m!! = m × (m − 2) × · · · × 2 for even m, or m!! = m × (m − 2) × · · · × 1 for odd m.
+8
+
+--- PAGE 9 ---
+An ODE for Modeling Nesterov’s Scheme
+which gives the asymptotic expansion
+J1(u) = (1 + o(1))u
+2
+when u→ 0. Requiring Xi(0) = x0,i , hence, we obtain
+Xi(t) = 2x0,i
+t√ λ i
+J1(t
+√
+λ i). (8)
+For large t, the Bessel function has the following asymptotic form (see e.g. Watson, 1995):
+J1(t) =
+√
+2
+πt
+(
+cos(t− 3π/ 4) + O(1/t )
+)
+. (9)
+This asymptotic expansion yields (note that f ⋆ = 0)
+f (X(t))− f ⋆ = f (X(t)) =
+n∑
+i=1
+2x2
+0,i
+t2 J1
+(
+t
+√
+λ i
+)2
+= O
+(∥x0− x⋆∥2
+t3√ min λ i
+)
+. (10)
+On the other hand, (9) and (10) give a lower bound:
+lim sup
+t→∞
+t3(f (X(t))− f ⋆)≥ lim
+t→∞
+1
+t
+∫ t
+0
+u3(f (X(u))− f ⋆)du
+= lim
+t→∞
+1
+t
+∫ t
+0
+n∑
+i=1
+2x2
+0,i uJ1(u
+√
+λ i)2du
+=
+n∑
+i=1
+2x2
+0,i
+π√ λ i
+≥ 2∥x0− x⋆∥2
+π
+√
+L
+,
+(11)
+where L =∥A∥2 is the spectral norm of A. The ﬁrst inequality follows by interpreting
+limt→∞ 1
+t
+∫ t
+0 u3(f (X(u))− f ⋆)du as the mean of u3(f (X(u))− f ⋆) on (0 ,∞ ) in certain
+sense.
+In view of (10), Nesterov’s scheme might possibly exhibit O(1/k 3) convergence rate for
+strongly convex functions. This convergence rate is consis tent with the second inequality
+in Theorem 6. In Section 4.3, we prove the O(1/t 3) rate for a generalized version of (3).
+However, (11) rules out the possibility of a higher order con vergence rate.
+Recall that the function considered in Figure 1 is f (x) = 0 . 02x2
+1 + 0. 005x2
+2, starting
+from x0 = (1 , 1). As the step size s becomes smaller, the trajectory of Nesterov’s scheme
+converges to the solid curve represented via the Bessel func tion. While approaching the min-
+imizer x⋆, each trajectory displays the oscillation pattern, as well -captured by the zoomed
+Figure 1b. This prevents Nesterov’s scheme from achieving b etter convergence rate. The
+representation (8) oﬀers excellent explanation as follows. Denote by T1, T 2, respectively,
+the approximate periodicities of the ﬁrst component |X1| in absolute value and the second
+|X2|. By (9), we get T1 = π/ √
+λ 1 = 5 π and T2 = π/ √ λ 2 = 10 π . Hence, as the amplitude
+gradually decreases to zero, the function f = 2x2
+0, 1J1(√
+λ 1t)2/t 2 + 2x2
+0, 2J1(√
+λ 2t)2/t 2 has a
+major cycle of 10 π , the least common multiple of T1 and T2. A careful look at Figure 1c
+reveals that within each major bump, roughly, there are 10 π/T 1 = 2 minor peaks.
+9
+
+--- PAGE 10 ---
+Su, Boyd and Cand `
+es
+3.3 Fluctuations of Strongly Convex f
+The analysis carried out in the previous subsection only app lies to convex quadratic func-
+tions. In this subsection, we extend the discussion to one-d imensional strongly convex
+functions. The Sturm-Picone theory (see e.g. Hinton, 2005) is extensively used all along the
+analysis.
+Let f ∈S µ,L (R). Without loss of generality, assume f attains minimum at x⋆ = 0.
+Then, by deﬁnition µ≤ f ′(x)/x ≤ L for any x̸= 0. Denoting by X the solution to the
+ODE (3), we consider the self-adjoint equation,
+(t3Y ′)′ + t3f ′(X(t))X(t) Y = 0, (12)
+which, apparently, admits a solution Y (t) = X(t). To apply the Sturm-Picone comparison
+theorem, consider
+(t3Y ′)′ + µt 3Y = 0
+for a comparison. This equation admits a solution ˜Y (t) = J1(√ µt )/t . Denote by ˜t1 < ˜t2 <
+··· all the positive roots of J1(t), which satisfy (see e .g. Watson, 1995)
+3. 8317 = ˜t1− ˜t0 > ˜t2− ˜t3 > ˜t3− ˜t4 >···> π,
+where ˜t0 = 0. Then, it follows that the positive roots of ˜Y are ˜t1/√ µ, ˜t2/√ µ, . . . . Since
+t3f ′(X(t))/X (t)≥ µt 3, the Sturm-Picone comparison theorem asserts that X(t) has a root
+in each interval [ ˜ti/√ µ, ˜ti+1/√ µ ].
+To obtain a similar result in the opposite direction, consid er
+(t3Y ′)′ + Lt3Y = 0. (13)
+Applying the Sturm-Picone comparison theorem to (12) and (1 3), we ensure that between
+any two consecutive positive roots of X, there is at least one ˜ti/
+√
+L. Now, we summarize
+our ﬁndings in the following. Roughly speaking, this result concludes that the oscillation
+frequency of the ODE solution is between O(√ µ) and O(
+√
+L).
+Theorem 4 Denote by 0 < t 1 < t 2 <··· all the roots of X(t)− x⋆. Then these roots
+satisfy, for all i≥ 1,
+t1 < 7. 6635√ µ , t i+1− ti < 7. 6635√ µ , t i+2− ti > π√
+L
+.
+3.4 Nesterov’s Scheme Compared with Gradient Descent
+The ansatz t≈ k√
+s in relating the ODE and Nesterov’s scheme is formally conﬁrm ed in
+Theorem 2. Consequently, for any constant tc > 0, this implies that xk does not change
+much for a range of step sizes s if k≈ tc/√ s. To empirically support this claim, we present
+an example in Figure 3a, where the scheme minimizes f (x) = ∥y− Ax∥2/ 2 +∥x∥1 with
+y = (4 , 2, 0) and A(:, 1) = (0 , 2, 4), A (:, 2) = (1 , 1, 1) starting from x0 = (2 , 0) (here
+A(:, j ) is the jth column of A). From this ﬁgure, we are delight to observe that xk with the
+same tc are very close to each other.
+10
+
+--- PAGE 11 ---
+An ODE for Modeling Nesterov’s Scheme
+This interesting square-root scaling has the potential to s hed light on the superiority
+of Nesterov’s scheme over gradient descent. Roughly speaki ng, each iteration in Nesterov’s
+scheme amounts to traveling√ s in time along the integral curve of (3), whereas it is known
+that the simple gradient descent xk+1 = xk− s∇ f (xk) moves s along the integral curve
+of ˙X +∇ f (X) = 0. We expect that for small s Nesterov’s scheme moves more in each
+iteration since √ s is much larger than s. Figure 3b illustrates and supports this claim,
+where the function minimized is f =|x1|3 + 5|x2|3 + 0. 001(x1 + x2)2 with step size s = 0. 05
+(The coordinates are appropriately rotated to allow x0 and x⋆ lie on the same horizontal
+line). The circles are the iterates for k = 1 , 10, 20, 30, 45, 60, 90, 120, 150, 190, 250, 300. For
+Nesterov’s scheme, the seventh circle has already passed t = 15, while for gradient descent
+the last point has merely arrived at t = 15.
+−0.5 0 0.5 1 1.5 2
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+x1
+x2
+ 
+ 
+s = 10−2
+s = 10−3
+s = 10−4
+(a) Square-root scaling of s.
+−0.1 −0.08 −0.06 −0.04 −0.02 0 0.02
+−5
+0
+5
+10
+15
+20
+x 10
+−3
+x1
+x2
+ 
+ 
+Nesterov
+Gradient
+t = 5
+t = 5 t = 15
+t = 15
+(b) Race between Nesterov’s and gradient.
+Figure 3: In (a), the circles, crosses and triangles are xk evaluated at k =⌈1/√ s⌉ ,⌈2/√ s⌉
+and⌈3/√ s⌉, respectively. In (b), the circles are iterations given by N esterov’s scheme or
+gradient descent, depending on the color, and the stars are X(t) on the integral curves for
+t = 5, 15.
+A second look at Figure 3b suggests that Nesterov’s scheme al lows a large deviation
+from its limit curve, as compared with gradient descent. Thi s raises the question of the
+stable step size allowed for numerically solving the ODE (3) in the presence of accumulated
+errors. The ﬁnite diﬀerence approximation by the forward Eul er method is
+X(t + ∆t)− 2X(t) + X(t− ∆t)
+∆t2 + 3
+t
+X(t)− X(t− ∆t)
+∆t +∇ f (X(t)) = 0 , (14)
+which is equivalent to
+X(t + ∆t) =
+(
+2− 3∆t
+t
+)
+X(t)− ∆t2∇ f (X(t))−
+(
+1− 3∆t
+t
+)
+X(t− ∆t). (15)
+Assuming f is suﬃciently smooth, we have ∇ f (x + δx)≈∇ f (x) +∇ 2f (x)δx for small
+perturbations δx, where ∇ 2f (x) is the Hessian of f evaluated at x. Identifying k = t/ ∆t,
+11
+
+--- PAGE 12 ---
+Su, Boyd and Cand `
+es
+the characteristic equation of this ﬁnite diﬀerence scheme i s approximately
+det
+(
+λ 2−
+(
+2− ∆t2∇ 2f− 3∆tt
+)
+λ + 1− 3∆t
+t
+)
+= 0. (16)
+The numerical stability of (14) with respect to accumulated errors is equivalent to this: all
+the roots of (16) lie in the unit circle (see e.g. Leader, 2004 ). When ∇ 2f⪯ LIn (i.e. LIn−
+∇ 2f is positive semideﬁnite), if ∆ t/t small and ∆ t < 2/
+√
+L, we see that all the roots of
+(16) lie in the unit circle. On the other hand, if ∆ t > 2/
+√
+L, (16) can possibly have a root
+λ outside the unit circle, causing numerical instability. Un der our identiﬁcation s = ∆t2, a
+step size of s = 1 /L in Nesterov’s scheme (1) is approximately equivalent to a st ep size of
+∆t = 1/
+√
+L in the forward Euler method, which is stable for numerically integrating (14).
+As a comparison, note that the ﬁnite diﬀerence scheme of the OD E ˙X(t)+∇ f (X(t)) = 0,
+which models gradient descent with updates xk+1 = xk− s∇ f (xk), has the characteristic
+equation det( λ− (1− ∆t∇ 2f )) = 0. Thus, to guarantee − In⪯ 1− ∆t∇ 2f⪯ In in worst
+case analysis, one can only choose ∆ t≤ 2/L for a ﬁxed step size, which is much smaller
+than the step size 2 /
+√
+L for (14) when ∇ f is very variable, i.e., L is large.
+4. The Magic Constant 3
+Recall that the constant 3 appearing in the coeﬃcient of ˙X in (3) originates from ( k +
+2)− (k− 1) = 3. This number leads to the momentum coeﬃcient in (1) taki ng the form
+(k− 1)/ (k + 2) = 1− 3/k + O(1/k 2). In this section, we demonstrate that 3 can be replaced
+by any larger number, while maintaining the O(1/k 2) convergence rate. To begin with, let
+us consider the following ODE parameterized by a constant r:
+¨X + r
+t
+˙X +∇ f (X) = 0 (17)
+with initial conditions X(0) = x0, ˙X(0) = 0. The proof of Theorem 1, which seamlessly
+applies here, guarantees the existence and uniqueness of th e solution X to this ODE.
+Interpreting the damping ratio r/t as a measure of friction 3 in the damping system,
+our results say that more friction does not end the O(1/t 2) and O(1/k 2) convergence rate.
+On the other hand, in the lower friction setting, where r is smaller than 3, we can no
+longer expect inverse quadratic convergence rate, unless s ome additional structures of f are
+imposed. We believe that this striking phase transition at 3 deserves more attention as an
+interesting research challenge.
+4.1 High F riction
+Here, we study the convergence rate of (17) with r > 3 and f∈F ∞ . Compared with (3),
+this new ODE as a damping suﬀers from higher friction. Followi ng the strategy adopted in
+the proof of Theorem 3, we consider a new energy functional de ﬁned as
+E(t) = 2t2
+r− 1 (f (X(t))− f ⋆) + (r− 1)
+
+
+
+X(t) + t
+r− 1
+˙X(t)− x⋆
+
+
+
+
+2
+.
+3. In physics and engineering, damping may be modeled as a for ce proportional to velocity but opposite in
+direction, i.e. resisting motion; for instance, this force may be used as an approximation to the friction
+caused by drag. In our model, this force would be proportiona l to − r
+t
+˙X where ˙X is velocity and r
+t is
+the damping coeﬃcient.
+12
+
+--- PAGE 13 ---
+An ODE for Modeling Nesterov’s Scheme
+By studying the derivative of this functional, we get the fol lowing result.
+Theorem 5 The solution X to (17) satisﬁes
+f (X(t))− f ⋆≤ (r− 1)2∥x0− x⋆∥2
+2t2 ,
+∫ ∞
+0
+t(f (X(t))− f ⋆)dt≤ (r− 1)2∥x0− x⋆∥2
+2(r− 3) .
+Proof Noting r ˙X + t ¨X =− t∇ f (X), we get ˙E equal to
+4t
+r− 1 (f (X)− f ⋆) + 2t2
+r− 1⟨∇ f, ˙X⟩ + 2⟨X + t
+r− 1
+˙X− x⋆, r ˙X + t ¨X⟩
+= 4t
+r− 1 (f (X)− f ⋆)− 2t⟨X− x⋆,∇ f (X)⟩≤− 2(r− 3)t
+r− 1 (f (X)− f ⋆), (18)
+where the inequality follows from the convexity of f . Since f (X)≥ f ⋆, the last display
+implies thatE is non-increasing. Hence
+2t2
+r− 1 (f (X(t))− f ⋆)≤E (t)≤E (0) = ( r− 1)∥x0− x⋆∥2,
+yielding the ﬁrst inequality of this theorem. To complete th e proof, from (18) it follows
+that
+∫ ∞
+0
+2(r− 3)t
+r− 1 (f (X)− f ⋆)dt≤−
+∫ ∞
+0
+dE
+dt dt =E(0)−E (∞ )≤ (r− 1)∥x0− x⋆∥2,
+as desired for establishing the second inequality.
+The ﬁrst inequality is the same as (7) for the ODE (3), except f or a larger constant ( r− 1)2/ 2.
+The second inequality measures the error f (X(t))− f ⋆ in an average sense, and cannot be
+deduced from the ﬁrst inequality.
+Now, it is tempting to obtain such analogs for the discrete Ne sterov’s scheme as well.
+Following the formulation of Beck and Teboulle (2009), we wi sh to minimize f in the
+composite form f (x) = g(x) + h(x), where g∈F L for some L > 0 and h is convex on Rn
+possibly assuming extended value ∞ . Deﬁne the proximal subgradient
+Gs(x) ≜ x− argminz
+(
+∥z− (x− s∇ g(x))∥2/ (2s) + h(z)
+)
+s .
+Parametrizing by a constant r, we propose the generalized Nesterov’s scheme,
+xk = yk− 1− sGs(yk− 1)
+yk = xk + k− 1
+k + r− 1 (xk− xk− 1),
+(19)
+starting from y0 = x0. The discrete analog of Theorem 5 is below.
+Theorem 6 The sequence{xk} given by (19) with 0 < s≤ 1/L satisﬁes
+f (xk)− f ⋆≤ (r− 1)2∥x0− x⋆∥2
+2s(k + r− 2)2 ,
+∞∑
+k=1
+(k + r− 1)(f (xk)− f ⋆)≤ (r− 1)2∥x0− x⋆∥2
+2s(r− 3) .
+13
+
+--- PAGE 14 ---
+Su, Boyd and Cand `
+es
+The ﬁrst inequality suggests that the generalized Nesterov ’s schemes still achieve O(1/k 2)
+convergence rate. However, if the error bound satisﬁes f (xk′)− f ⋆≥ c/k ′2 for some arbi-
+trarily small c > 0 and a dense subsequence {k′}, i.e.,|{k′}∩{ 1, . . . , m }|≥ αm for all m≥ 1
+and some α > 0, then the second inequality of the theorem would be violate d. To see this,
+note that if it were the case, we would have ( k′ + r− 1)(f (xk′)− f ⋆) ≳ 1k′; the sum of the
+harmonic series 1
+k′ over a dense subset of {1, 2, . . . } is inﬁnite. Hence, the second inequality
+is not trivial because it implies the error bound is, in some s ense, O(1/k 2) suboptimal.
+Now we turn to the proof of this theorem. It is worth pointing o ut that, though based
+on the same idea, the proof below is much more complicated tha n that of Theorem 5.
+Proof Consider the discrete energy functional,
+E(k) = 2(k + r− 2)2s
+r− 1 (f (xk)− f ⋆) + (r− 1)∥zk− x⋆∥2,
+where zk = (k + r− 1)yk/ (r− 1)− kxk/ (r− 1). If we have
+E(k) + 2s[(r− 3)(k + r− 2) + 1]
+r− 1 (f (xk− 1)− f ⋆)≤E (k− 1), (20)
+then it would immediately yield the desired results by summi ng (20) over k. That is, by
+recursively applying (20), we see
+E(k) +
+k∑
+i=1
+2s[(r− 3)(i + r− 2) + 1]
+r− 1 (f (xi− 1)− f ⋆)
+≤E (0) = 2(r− 2)2s
+r− 1 (f (x0)− f ⋆) + (r− 1)∥x0− x⋆∥2,
+which is equivalent to
+E(k) +
+k− 1∑
+i=1
+2s[(r− 3)(i + r− 1) + 1]
+r− 1 (f (xi)− f ⋆)≤ (r− 1)∥x0− x⋆∥2. (21)
+Noting that the left-hand side of (21) is lower bounded by 2 s(k + r− 2)2(f (xk)− f ⋆)/ (r− 1),
+we thus obtain the ﬁrst inequality of the theorem. Since E(k)≥ 0, the second inequality
+is veriﬁed via taking the limit k → ∞ in (21) and replacing ( r− 3)(i + r− 1) + 1 by
+(r− 3)(i + r− 1).
+We now establish (20). For s≤ 1/L , we have the basic inequality,
+f (y− sGs(y))≤ f (x) + Gs(y)T (y− x)− s
+2∥Gs(y)∥2, (22)
+for any x and y. Note that yk− 1− sGs(yk− 1) actually coincides with xk. Summing of
+(k− 1)/ (k + r− 2)× (22) with x = xk− 1, y = yk− 1 and ( r− 1)/ (k + r− 2)× (22) with
+x = x⋆, y = yk− 1 gives
+f (xk)≤ k− 1
+k + r− 2 f (xk− 1) + r− 1
+k + r− 2 f ⋆
++ r− 1
+k + r− 2 Gs(yk− 1)T
+(k + r− 2
+r− 1 yk− 1− k− 1
+r− 1 xk− 1− x⋆
+)
+− s
+2∥Gs(yk− 1)∥2
+= k− 1
+k + r− 2 f (xk− 1) + r− 1
+k + r− 2 f ⋆ + (r− 1)2
+2s(k + r− 2)2
+(
+∥zk− 1− x⋆∥2−∥ zk− x⋆∥2
+)
+,
+14
+
+--- PAGE 15 ---
+An ODE for Modeling Nesterov’s Scheme
+where we use zk− 1− s(k + r− 2)Gs(yk− 1)/ (r− 1) = zk. Rearranging the above inequality
+and multiplying by 2 s(k + r− 2)2/ (r− 1) gives the desired (20).
+In closing, we would like to point out this new scheme is equiv alent to setting θk =
+(r− 1)/ (k+r− 1) and letting θk(θ− 1
+k− 1− 1) replace the momentum coeﬃcient ( k− 1)/ (k+r− 1).
+Then, the equal sign “ = ” in the update θk+1 = (
+√
+θ4
+k + 4θ2
+k− θ2
+k)/ 2 has to be replaced by
+an inequality sign “ ≥ ”. In examining the proof of Theorem 1(b) in Tseng (2010), we c an
+get an alternative proof of Theorem 6.
+4.2 Low F riction
+Now we turn to the case r < 3. Then, unfortunately, the energy functional approach for
+proving Theorem 5 is no longer valid, since the left-hand sid e of (18) is positive in general.
+In fact, there are counterexamples that fail the desired O(1/t 2) or O(1/k 2) convergence
+rate. We present such examples in continuous time. Equally, these examples would also
+violate the O(1/k 2) convergence rate in the discrete schemes, and we forego the details.
+Let f (x) = 1
+2∥x∥2 and X be the solution to (17). Then, Y = t
+r− 1
+2 X satisﬁes
+t2 ¨Y + t ˙Y + (t2− (r− 1)2/ 4)Y = 0.
+With the initial condition Y (t) ≈ t
+r− 1
+2 x0 for small t, the solution to the above Bessel
+equation in a vector form of order ( r− 1)/ 2 is Y (t) = 2
+r− 1
+2 Γ((r + 1)/ 2)J(r− 1)/ 2(t)x0. Thus,
+X(t) = 2
+r− 1
+2 Γ((r + 1)/ 2)J(r− 1)/ 2(t)
+t
+r− 1
+2
+x0.
+For large t, the Bessel function J(r− 1)/ 2(t) =
+√
+2/ (πt )
+(
+cos(t− (r− 1)π/ 4− π/ 4) + O(1/t )
+)
+.
+Hence,
+f (X(t))− f ⋆ = O
+(
+∥x0− x⋆∥2/t r)
+,
+where the exponent r is tight. This rules out the possibility of inverse quadrati c convergence
+of the generalized ODE and scheme for all f ∈F L if r < 2. An example with r = 1 is
+plotted in Figure 2.
+Next, we consider the case 2 ≤ r < 3 and let f (x) =|x|(this also applies to multivariate
+f =∥x∥).4 Starting from x0 > 0, we get X(t) = x0− t2
+2(1+r) for t≤
+√
+2(1 + r)x0. Requiring
+continuity of X and ˙X at the change point 0, we get
+X(t) = t2
+2(1 + r) + 2(2(1 + r)x0)
+r+1
+2
+(r2− 1)tr− 1 − r + 3
+r− 1 x0
+for
+√
+2(1 + r)x0 < t ≤
+√
+2c⋆(1 + r)x0, where c⋆ is the positive root other than 1 of ( r−
+1)c + 4c− r− 1
+2 = r + 3. Repeating this process solves for X. Note that t1− r is in the null
+4. This function does not have a Lipschitz continuous gradie nt. However, a similar pattern as in Figure 2
+can be also observed if we smooth |x| at an arbitrarily small vicinity of 0.
+15
+
+--- PAGE 16 ---
+Su, Boyd and Cand `
+es
+space of ¨X + r ˙X/t and satisﬁes t2× t1− r→∞ as t→∞ . For illustration, Figure 4 plots
+t2(f (X(t))− f ⋆) and sk2(f (xk)− f ⋆) with r = 2 , 2. 5, and r = 4 for comparison 5. It is
+clearly that inverse quadratic convergence does not hold fo r r = 2, 2. 5, that is, (2) does not
+hold for r < 3. Interestingly, in Figures 4a and 4d, the scaled errors at p eaks grow linearly,
+whereas for r = 2. 5, the growth rate, though positive as well, seems sublinear .
+0 1 2 3 4 5 6 7 8 9 10
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+4.5
+5
+t
+ 
+ 
+t2(f − f*)
+(a) ODE (17) with r = 2.
+1 2 3 4 5 6 7 8 9 10
+0.5
+1
+1.5
+2
+2.5
+3
+t
+ 
+ 
+t2(f − f*)
+(b) ODE (17) with r = 2. 5.
+1 2 3 4 5 6 7 8
+0.5
+1
+1.5
+2
+t
+ 
+ 
+t2(f − f*)
+(c) ODE (17) with r = 4.
+0 1000 2000 3000 4000 5000 6000 7000 8000 9000 10000
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+4.5
+5
+iterations
+ 
+ 
+sk2(f − f*)
+(d) Scheme (19) with r = 2.
+0 0.5 1 1.5 2 2.5 3 3.5
+x 10
+4
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+iterations
+ 
+ 
+sk2(f − f*)
+(e) Scheme (19) with r = 2. 5.
+0 1000 2000 3000 4000 5000 6000 7000 8000
+0
+0.5
+1
+1.5
+2
+2.5
+iterations
+ 
+ 
+sk2(f − f*)
+(f) Scheme (19) with r = 4.
+Figure 4: Scaled errors t2(f (X(t))− f ⋆) and sk2(f (xk)− f ⋆) of generalized ODEs and
+schemes for minimizing f =|x|. In (d), the step size s = 10− 6, in (e), s = 10− 7, and in (f),
+s = 10− 6.
+However, if f possesses some additional property, inverse quadratic con vergence is still
+guaranteed, as stated below. In that theorem, f is assumed to be a continuously diﬀeren-
+tiable convex function.
+Theorem 7 Suppose 1 < r < 3 and let X be a solution to the ODE (17). If (f− f ⋆)
+r− 1
+2
+is also convex, then
+f (X(t))− f ⋆≤ (r− 1)2∥x0− x⋆∥2
+2t2 .
+Proof Since ( f− f ⋆)
+r− 1
+2 is convex, we obtain
+(f (X(t))− f ⋆)
+r− 1
+2 ≤⟨ X− x⋆,∇ (f (X)− f ⋆)
+r− 1
+2 ⟩ = r− 1
+2 (f (X)− f ⋆)
+r− 3
+2 ⟨X− x⋆,∇ f (X)⟩,
+which can be simpliﬁed to 2
+r− 1 (f (X)− f ⋆) ≤ ⟨X− x⋆,∇ f (X)⟩. This inequality com-
+bined with (18) leads to the monotonically decreasing of E(t) deﬁned for Theorem 5.
+This completes the proof by noting f (X)− f ⋆≤ (r− 1)E(t)/ (2t2)≤ (r− 1)E(0)/ (2t2) =
+(r− 1)2∥x0− x⋆∥2/ (2t2).
+5. For Figures 4d, 4e and 4f, if running generalized Nesterov ’s schemes with too many iterations (e.g. 10 5),
+the deviations from the ODE will grow. Taking a suﬃciently sm all s can solve this issue.
+16
+
+--- PAGE 17 ---
+An ODE for Modeling Nesterov’s Scheme
+4.3 Strongly Convex f
+Strong convexity is a desirable property for optimization. Making use of this property
+carefully suggests a generalized Nesterov’s scheme that ac hieves optimal linear convergence
+(Nesterov, 2004). In that case, even vanilla gradient desce nt has a linear convergence rate.
+Unfortunately, the example given in the previous subsectio n simply rules out such possibility
+for (1) and its generalizations (19). However, from a diﬀeren t perspective, this example
+suggests that O(t− r) convergence rate can be expected for (17). In the next theor em, we
+prove a slightly weaker statement of this kind, that is, a pro vable O(t− 2r
+3 ) convergence rate
+is established for strongly convex functions. Bridging thi s gap may require new tools and
+more careful analysis.
+Let f∈S µ,L (Rn) and consider a new energy functional for α > 2 deﬁned as
+E(t; α ) = tα (f (X(t))− f ⋆) + (2r− α )2tα − 2
+8
+
+
+X(t) + 2t
+2r− α
+˙X− x⋆
+
+
+
+2
+.
+When clear from the context, E(t; α ) is simply denoted as E(t). For r > 3, taking α = 2r/ 3
+in the theorem stated below gives f (X(t))− f ⋆ ≲∥x0− x⋆∥2/t
+2r
+3 .
+Theorem 8 For any f∈S µ,L (Rn), if 2≤ α≤ 2r/ 3 we get
+f (X(t))− f ⋆≤ C∥x0− x⋆∥2
+µ
+α − 2
+2 tα
+for any t > 0. Above, the constant C only depends on α and r.
+Proof Note that ˙E(t; α ) equals
+αt α − 1(f (X)− f ⋆)− (2r− α )tα − 1
+2 ⟨X− x⋆,∇ f (X)⟩ + (α− 2)(2r− α )2tα − 3
+8 ∥X− x⋆∥2
++ (α− 2)(2r− α )tα − 2
+4 ⟨ ˙X, X − x⋆⟩. (23)
+By the strong convexity of f , the second term of the right-hand side of (23) is bounded
+below as
+(2r− α )tα − 1
+2 ⟨X− x⋆,∇ f (X)⟩≥ (2r− α )tα − 1
+2 (f (X)− f ⋆) + µ (2r− α )tα − 1
+4 ∥X− x⋆∥2.
+Substituting the last display into (23) with the awareness o f r≥ 3α/ 2 yields
+˙E≤− (2µ (2r− α )t2− (α− 2)(2r− α )2)tα − 3
+8 ∥X− x⋆∥2+ (α− 2)(2r− α )tα − 2
+8
+d∥X− x⋆∥2
+dt .
+Hence, if t≥ tα :=
+√
+(α− 2)(2r− α )/ (2µ ), we obtain
+˙E(t)≤ (α− 2)(2r− α )tα − 2
+8
+d∥X− x⋆∥2
+dt .
+17
+
+--- PAGE 18 ---
+Su, Boyd and Cand `
+es
+Integrating the last inequality on the interval ( tα , t ) gives
+E(t)≤E (tα ) + (α− 2)(2r− α )tα − 2
+8 ∥X(t)− x⋆∥2− (α− 2)(2r− α )tα − 2
+α
+8 ∥X(tα )− x⋆∥2
+− 1
+8
+∫ t
+tα
+(α− 2)2(2r− α )uα − 3∥X(u)− x⋆∥2du≤E (tα ) + (α− 2)(2r− α )tα − 2
+8 ∥X(t)− x⋆∥2
+≤E (tα ) + (α− 2)(2r− α )tα − 2
+4µ (f (X(t))− f ⋆). (24)
+Making use of (24), we apply induction on α to ﬁnish the proof. First, consider 2 <
+α≤ 4. Applying Theorem 5, from (24) we get that E(t) is upper bounded by
+E(tα ) + (α− 2)(r− 1)2(2r− α )∥x0− x⋆∥2
+8µt 4− α ≤E (tα ) + (α− 2)(r− 1)2(2r− α )∥x0− x⋆∥2
+8µt 4− αα
+.
+(25)
+Then, we bound E(tα ) as follows.
+E(tα )≤ tα
+α (f (X(tα ))− f ⋆) + (2r− α )2tα − 2
+α
+4
+
+
+ 2r− 2
+2r− α X(tα ) + 2tα
+2r− α
+˙X(tα )− 2r− 2
+2r− α x⋆
+
+
+
+2
++ (2r− α )2tα − 2
+α
+4
+
+
+ α− 2
+2r− α X(tα )− α− 2
+2r− α x⋆
+
+
+
+2
+≤ (r− 1)2tα − 2
+α ∥x0− x⋆∥2 + (α− 2)2(r− 1)2∥x0− x⋆∥2
+4µt 4− αα
+, (26)
+where in the second inequality we use the decreasing propert y of the energy functional
+deﬁned for Theorem 5. Combining (25) and (26), we have
+E(t)≤ (r− 1)2tα − 2
+α ∥x0− x⋆∥2 + (α− 2)(r− 1)2(2r + α− 4)∥x0− x⋆∥2
+8µt 4− αα
+= O
+(∥x0− x⋆∥2
+µ
+α − 2
+2
+)
+.
+For t≥ tα , it suﬃces to apply f (X(t))− f ⋆≤E (t)/t 3 to the last display. For t < t α , by
+Theorem 5, f (X(t))− f ⋆ is upper bounded by
+(r− 1)2∥x0− x⋆∥2
+2t2 ≤ (r− 1)2µ
+α − 2
+2 [(α− 2)(2r− α )/ (2µ )]
+α − 2
+2
+2
+∥x0− x⋆∥2
+µ
+α − 2
+2 tα
+= O
+(∥x0− x⋆∥2
+µ
+α − 2
+2 tα
+)
+.
+(27)
+Next, suppose that the theorem is valid for some ˜ α > 2. We show below that this
+theorem is still valid for α := ˜α + 1 if still r≥ 3α/ 2. By the assumption, (24) further
+induces
+E(t)≤E (tα ) + (α− 2)(2r− α )tα − 2
+4µ
+˜C∥x0− x⋆∥2
+µ
+˜α − 2
+2 t ˜α
+≤E (tα ) +
+˜C(α− 2)(2r− α )∥x0− x⋆∥2
+4µ
+α − 1
+2 tα
+18
+
+--- PAGE 19 ---
+An ODE for Modeling Nesterov’s Scheme
+for some constant ˜C only depending on ˜α and r. This inequality with (26) implies
+E(t)≤ (r− 1)2tα − 2
+α ∥x0− x⋆∥2 + (α− 2)2(r− 1)2∥x0− x⋆∥2
+4µt 4− αα
++
+˜C(α− 2)(2r− α )∥x0− x⋆∥2
+4µ
+α − 1
+2 tα
+= O
+(
+∥x0− x⋆∥2/µ
+α − 2
+2
+)
+,
+which verify the induction for t≥ tα . As for t < t α , the validity of the induction follows
+from Theorem 5, similarly to (27). Thus, combining the base a nd induction steps, the proof
+is completed.
+It should be pointed out that the constant C in the statement of Theorem 8 grows with
+the parameter r. Hence, simply increasing r does not guarantee to give a better error bound.
+While it is desirable to expect a discrete analogy of Theorem 8, i.e., O(1/k α ) convergence
+rate for (19), a complete proof can be notoriously complicat ed. That said, we mimic the
+proof of Theorem 8 for α = 3 and succeed in obtaining a O(1/k 3) convergence rate for the
+generalized Nesterov’s schemes, as summarized in the theor em below.
+Theorem 9 Suppose f is written as f = g +h, where g∈S µ,L and h is convex with possible
+extended value∞ . Then, the generalized Nesterov’s scheme (19) with r≥ 9/ 2 and s = 1/L
+satisﬁes
+f (xk)− f ⋆≤ CL∥x0− x⋆∥2
+k2
+√
+L/µ
+k ,
+where C only depends on r.
+This theorem states that the discrete scheme (19) enjoys the error bound O(1/k 3) with-
+out any knowledge of the condition number L/µ . In particular, this bound is much better
+than that given in Theorem 6 if k≫
+√
+L/µ . The strategy of the proof is fully inspired by
+that of Theorem 8, though it is much more complicated and thus deferred to the Appendix.
+The relevant energy functional E(k) for this Theorem 9 is equal to
+s(2k + 3r− 5)(2k + 2r− 5)(4k + 4r− 9)
+16 (f (xk)− f ⋆)
++ 2k + 3r− 5
+16 ∥2(k + r− 1)yk− (2k + 1)xk− (2r− 3)x⋆∥2. (28)
+4.4 Numerical Examples
+We study six synthetic examples to compare (19) with the step sizes are ﬁxed to be 1 /L , as
+illustrated in Figure 5. The error rates exhibits similar pa tterns for all r, namely, decreasing
+while suﬀering from local bumps. A smaller r introduces less friction, thus allowing xk moves
+towards x⋆ faster in the beginning. However, when suﬃciently close to x⋆, more friction
+is preferred in order to reduce overshoot. This point of view explains what we observe in
+these examples. That is, across these six examples, (19) wit h a smaller r performs slightly
+better in the beginning, but a larger r has advantage when k is large. It is an interesting
+question how to choose a good r for diﬀerent problems in practice.
+19
+
+--- PAGE 20 ---
+Su, Boyd and Cand `
+es
+0 500 1000 1500
+10
+−8
+10
+−6
+10
+−4
+10
+−2
+10
+0
+10
+2
+10
+4
+iterations
+f − f*
+ 
+ 
+r = 3
+r = 4
+r = 5
+(a) Lasso with fat design.
+0 50 100 150 200 250 300 350 400 450 500
+10
+−12
+10
+−10
+10
+−8
+10
+−6
+10
+−4
+10
+−2
+10
+0
+10
+2
+10
+4
+iterations
+f − f*
+ 
+ 
+r = 3
+r = 4
+r = 5
+(b) Lasso with square design.
+0 50 100 150
+10
+−20
+10
+−15
+10
+−10
+10
+−5
+10
+0
+10
+5
+iterations
+f − f*
+ 
+ 
+r = 3
+r = 4
+r = 5
+(c) NLS with fat design.
+0 100 200 300 400 500 600 700 800 900
+10
+−20
+10
+−15
+10
+−10
+10
+−5
+10
+0
+10
+5
+iterations
+f − f*
+ 
+ 
+r = 3
+r = 4
+r = 5
+(d) NLS with square design.
+iterations
+0 20 40 60 80 100 120 140 160
+f - f *
+10 -12
+10 -10
+10 -8
+10 -6
+10 -4
+10 -2
+10 0
+10 2
+10 4
+r = 3
+r = 4
+r = 5
+(e) Logistic regression.
+iterations
+0 100 200 300 400 500 600 700 800
+f - f *
+10 -12
+10 -10
+10 -8
+10 -6
+10 -4
+10 -2
+10 0
+10 2
+r = 3
+r = 4
+r = 5
+(f) ℓ1-regularized logistic regression.
+Figure 5: Comparisons of generalized Nesterov’s schemes wi th diﬀerent r.
+Lasso with fat design. Minimize f (x) = 1
+2∥Ax− b∥2 + λ∥x∥1, in which A a 100× 500
+random matrix with i.i.d. standard Gaussian N (0, 1) entries, b generated independently has
+i.i.d.N (0, 25) entries, and the penalty λ = 4. The plot is Figure 5a.
+Lasso with square design. Minimize f (x) = 1
+2∥Ax− b∥2 + λ∥x∥1, where A a 500×
+500 random matrix with i.i.d. standard Gaussian entries, b generated independently has
+i.i.d.N (0, 9) entries, and the penalty λ = 4. The plot is Figure 5b.
+Nonnegative least squares (NLS) with fat design. Minimize f (x) = ∥Ax− b∥2
+subject to x⪰ 0, with the same design A and b as in Figure 5a. The plot is Figure 5c.
+20
+
+--- PAGE 21 ---
+An ODE for Modeling Nesterov’s Scheme
+Nonnegative least squares with sparse design. Minimize f (x) =∥Ax− b∥2 subject
+to x⪰ 0, in which A is a 1000× 10000 sparse matrix with nonzero probability 10% for each
+entry and b is given as b = Ax0 +N (0, I 1000). The nonzero entries of A are independently
+Gaussian distributed before column normalization, and x0 has 100 nonzero entries that are
+all equal to 4. The plot is Figure 5d.
+Logistic regression. Minimize ∑n
+i=1− yiaT
+i x + log(1 + eaT
+i x), in which A = (a1, . . . , a n)T
+is a 500× 100 matrix with i.i.d. N (0, 1) entries. The labels yi∈{ 0, 1} are generated by the
+logistic model: P(Yi = 1) = 1 / (1 + e − aT
+i x0
+), where x0 is a realization of i.i.d. N (0, 1/ 100).
+The plot is Figure 5e.
+ℓ1-regularized logistic regression. Minimize ∑n
+i=1− yiaT
+i x + log(1 + e aT
+i x) + λ∥x∥1, in
+which A = ( a1, . . . , a n)T is a 200 × 1000 matrix with i.i.d. N (0, 1) entries and λ = 5. The
+labels yi are generated similarly as in the previous example, except f or the ground truth x0
+here having 10 nonzero components given as i.i.d. N (0, 225). The plot is Figure 5f.
+5. Restarting
+The example discussed in Section 4.2 demonstrates that Nest erov’s scheme and its gener-
+alizations (19) are not capable of fully exploiting strong c onvexity. That is, this example
+suggests evidence that O(1/ poly(k)) is the best rate achievable under strong convexity. In
+contrast, the vanilla gradient method achieves linear conv ergence O((1− µ/L )k). This draw-
+back results from too much momentum introduced when the obje ctive function is strongly
+convex. The derivative of a strongly convex function is gene rally more reliable than that
+of non-strongly convex functions. In the language of ODEs, a t later stage a too small 3 /t
+in (3) leads to a lack of friction, resulting in unnecessary o vershoot along the trajectory.
+Incorporating the optimal momentum coeﬃcient
+√
+L− √ µ√
+L+√ µ (This is less than ( k− 1)/ (k + 2)
+when k is large), Nesterov’s scheme has convergence rate of O((1−
+√
+µ/L )k) (Nesterov,
+2004), which, however, requires knowledge of the condition number µ/L . While it is rel-
+atively easy to bound the Lipschitz constant L by the use of backtracking, estimating the
+strong convexity parameter µ , if not impossible, is very challenging.
+Among many approaches to gain acceleration via adaptively e stimating µ/L (see Nes-
+terov, 2013), O’Donoghue and Cand` es (2013) proposes a proc edure termed as gradient
+restarting for Nesterov’s scheme in which (1) is restarted w ith x0 = y0 := xk whenever
+f (xk+1) > f (xk). In the language of ODEs, this restarting essentially keep s⟨∇ f, ˙X⟩ nega-
+tive, and resets 3 /t each time to prevent this coeﬃcient from steadily decreasin g along the
+trajectory. Although it has been empirically observed that this method signiﬁcantly boosts
+convergence, there is no general theory characterizing the convergence rate.
+In this section, we propose a new restarting scheme we call th e speed restarting scheme.
+The underlying motivation is to maintain a relatively high v elocity ˙X along the trajectory,
+similar in spirit to the gradient restarting. Speciﬁcally, our main result, Theorem 10, ensures
+linear convergence of the continuous version of the speed re starting. More generally, our
+contribution here is merely to provide a framework for analy zing restarting schemes rather
+than competing with other schemes; it is beyond the scope of t his paper to get optimal
+constants in these results. Throughout this section, we ass ume f∈S µ,L for some 0 < µ≤ L.
+Recall that function f∈S µ,L if f∈F L and f (x)− µ∥x∥2/ 2 is convex.
+21
+
+--- PAGE 22 ---
+Su, Boyd and Cand `
+es
+5.1 A New Restarting Scheme
+We ﬁrst deﬁne the speed restarting time. For the ODE (3), we ca ll
+T = T (x0; f ) = sup
+{
+t > 0 :∀u∈ (0, t ), d∥ ˙X(u)∥2
+du > 0
+}
+the speed restarting time. In words, T is the ﬁrst time the velocity ∥ ˙X∥ decreases. Back to
+the discrete scheme, it is the ﬁrst time when we observe ∥xk+1− xk∥ <∥xk− xk− 1∥. This
+deﬁnition itself does not directly imply that 0 < T < ∞ , which is proven later in Lemmas
+13 and 25. Indeed, f (X(t)) is a decreasing function before time T ; for t≤ T ,
+df (X(t))
+dt =⟨∇ f (X), ˙X⟩ =− 3
+t∥ ˙X∥2− 1
+2
+d∥ ˙X∥2
+dt ≤ 0.
+The speed restarted ODE is thus
+¨X(t) + 3
+tsr
+˙X(t) +∇ f (X(t)) = 0 , (29)
+where tsr is set to zero whenever ⟨ ˙X, ¨X⟩ = 0 and between two consecutive restarts, tsr grows
+just as t. That is, tsr = t− τ, where τ is the latest restart time. In particular, tsr = 0 at
+t = 0. Letting X sr be the solution to (29), we have the following observations.
+• X sr(t) is continuous for t≥ 0, with X sr(0) = x0;
+• X sr(t) satisﬁes (3) for 0 < t < T 1 := T (x0; f ).
+• Recursively deﬁne Ti+1 = T
+(
+X sr
+(∑i
+j=1 Tj
+)
+; f
+)
+for i≥ 1, and ˜X(t) := X sr
+(∑i
+j=1 Tj + t
+)
+satisﬁes the ODE (3), with ˜X(0) = X sr
+(∑i
+j=1 Tj
+)
+, for 0 < t < T i+1.
+The theorem below guarantees linear convergence of X sr. This is a new result in the
+literature (O’Donoghue and Cand` es, 2013; Monteiro et al., 2012). The proof of Theorem 10
+is based on Lemmas 12 and 13, where the ﬁrst guarantees the rat e f (X sr)− f ⋆ decays by a
+constant factor for each restarting, and the second conﬁrms that restartings are adequate.
+In these lemmas we all make a convention that the uninteresti ng case x0 = x⋆ is excluded.
+Theorem 10 There exist positive constants c1 and c2, which only depend on the condition
+number L/µ , such that for any f∈S µ,L , we have
+f (X sr(t))− f ⋆≤ c1L∥x0− x⋆∥2
+2 e− c2t
+√
+L.
+Before turning to the proof, we make a remark that this linear convergence of X sr
+remains to hold for the generalized ODE (17) with r > 3. Only minor modiﬁcations in the
+proof below are needed, such as replacing u3 by ur in the deﬁnition of I(t) in Lemma 25.
+22
+
+--- PAGE 23 ---
+An ODE for Modeling Nesterov’s Scheme
+5.2 Proof of Linear Convergence
+First, we collect some useful estimates. Denote by M (t) the supremum of ∥ ˙X(u)∥/u over
+u∈ (0, t ] and let
+I(t) :=
+∫ t
+0
+u3(∇ f (X(u))−∇ f (x0))du.
+It is guaranteed that M deﬁned above is ﬁnite, for example, see the proof of Lemma 18.
+The deﬁnition of M gives a bound on the gradient of f ,
+∥∇ f (X(t))−∇ f (x0)∥≤ L
+
+
+
+∫ t
+0
+˙X(u)du
+
+
+≤ L
+∫ t
+0
+u∥ ˙X(u)∥
+u du≤ LM (t)t2
+2 .
+Hence, it is easy to see that I can also be bounded via M ,
+∥I(t)∥≤
+∫ t
+0
+u3∥∇ f (X(u))−∇ f (x0)∥du≤
+∫ t
+0
+LM (u)u5
+2 du≤ LM (t)t6
+12 .
+To fully facilitate these estimates, we need the following l emma that gives an upper bound
+of M , whose proof is deferred to the appendix.
+Lemma 11 For t <
+√
+12/L , we have
+M (t)≤ ∥∇ f (x0)∥
+4(1− Lt2/ 12) .
+Next we give a lemma which claims that the objective function decays by a constant
+through each speed restarting.
+Lemma 12 There is a universal constant C > 0 such that
+f (X(T ))− f ⋆≤
+(
+1− Cµ
+L
+)
+(f (x0)− f ⋆).
+Proof By Lemma 11, for t <
+√
+12/L we have
+
+
+
+ ˙X(t) + t
+4∇ f (x0)
+
+
+
+ = 1
+t3∥I(t)∥≤ LM (t)t3
+12 ≤ L∥∇ f (x0)∥t3
+48(1− Lt2/ 12) ,
+which yields
+0≤ t
+4∥∇ f (x0)∥− L∥∇ f (x0)∥t3
+48(1− Lt2/ 12)≤∥ ˙X(t)∥≤ t
+4∥∇ f (x0)∥ + L∥∇ f (x0)∥t3
+48(1− Lt2/ 12) . (30)
+Hence, for 0 < t < 4/ (5
+√
+L) we get
+df (X)
+dt =− 3
+t∥ ˙X∥2− 1
+2
+d
+dt∥ ˙X∥2≤− 3
+t∥ ˙X∥2
+≤− 3
+t
+( t
+4∥∇ f (x0)∥− L∥∇ f (x0)∥t3
+48(1− Lt2/ 12)
+)2
+≤− C1t∥∇ f (x0)∥2,
+23
+
+--- PAGE 24 ---
+Su, Boyd and Cand `
+es
+where C1 > 0 is an absolute constant and the second inequality follows f rom Lemma 25 in
+the appendix. Consequently,
+f
+(
+X(4/ (5
+√ L))
+)
+− f (x0)≤
+∫ 4
+5
+√
+L
+0
+− C1u∥∇ f (x0)∥2du≤− Cµ
+L (f (x0)− f ⋆),
+where C = 16C1/ 25 and in the last inequality we use the µ -strong convexity of f . Thus we
+have
+f
+(
+X
+( 4
+5
+√
+L
+))
+− f ⋆≤
+(
+1− Cµ
+L
+)
+(f (x0)− f ⋆).
+To complete the proof, note that f (X(T ))≤ f (X(4/ (5
+√
+L))) by Lemma 25.
+With each restarting reducing the error f− f ⋆ by a constant a factor, we still need the
+following lemma to ensure suﬃciently many restartings.
+Lemma 13 There is a universal constant ˜C such that
+T≤
+4 exp
+(
+˜CL/µ
+)
+5
+√
+L
+.
+Proof For 4/ (5
+√
+L)≤ t≤ T , we have df (X)
+dt ≤− 3
+t∥ ˙X(t)∥2≤− 3
+t∥ ˙X(4/ (5
+√
+L))∥2, which
+implies
+f (X(T ))− f (x0)≤−
+∫ T
+4
+5
+√
+L
+3
+t∥ ˙X(4/ (5
+√
+L))∥2dt =− 3∥ ˙X(4/ (5
+√
+L))∥2 log 5T
+√
+L
+4 .
+Hence, we get an upper bound for T ,
+T≤ 4
+5
+√
+L
+exp
+(f (x0)− f (X(T ))
+3∥ ˙X(4/ (5
+√
+L))∥2
+)
+≤ 4
+5
+√
+L
+exp
+( f (x0)− f ⋆
+3∥ ˙X(4/ (5
+√
+L))∥2
+)
+.
+Plugging t = 4 / (5
+√
+L) into (30) gives ∥ ˙X(4/ (5
+√
+L))∥≥ C1√
+L∥∇ f (x0)∥ for some universal
+constant C1 > 0. Hence, from the last display we get
+T≤ 4
+5
+√
+L
+exp
+( L(f (x0)− f ⋆)
+3C 2
+1∥∇ f (x0)∥2
+)
+≤ 4
+5
+√
+L
+exp L
+6C 2
+1 µ .
+Now, we are ready to prove Theorem 10 by applying Lemmas 12 and 13.
+Proof Note that Lemma 13 asserts, by time t at least m :=⌊5t
+√
+Le− ˜CL/µ / 4⌋ restartings
+have occurred for X sr. Hence, recursively applying Lemma 12, we have
+f (X sr(t))− f ⋆≤ f (X sr(T1 +···+ Tm))− f ⋆
+≤ (1− Cµ/L ) (f (X sr(T1 +···+ Tm− 1))− f ⋆)
+≤···≤···
+≤ (1− Cµ/L )m(f (x0)− f ⋆)≤ e− Cµm/L (f (x0)− f ⋆)
+≤ c1e− c2t
+√
+L(f (x0)− f ⋆)≤ c1L∥x0− x⋆∥2
+2 e− c2t
+√
+L,
+24
+
+--- PAGE 25 ---
+An ODE for Modeling Nesterov’s Scheme
+where c1 = exp(Cµ/L ) and c2 = 5Cµe − ˜Cµ/L / (4L).
+In closing, we remark that we believe that estimate in Lemma 1 2 is tight, while not for
+Lemma 13. Thus we conjecture that for a large class of f∈S µ,L , if not all, T = O(
+√
+L/µ ).
+If this is true, the exponent constant c2 in Theorem 10 can be signiﬁcantly improved.
+5.3 Numerical Examples
+Below we present a discrete analog to the restarted scheme. T here, kmin is introduced to
+avoid having consecutive restarts that are too close. To com pare the performance of the
+restarted scheme with the original (1), we conduct four simu lation studies, including both
+smooth and non-smooth objective functions. Note that the co mputational costs of the
+restarted and non-restarted schemes are the same.
+Algorithm 1 Speed Restarting Nesterov’s Scheme
+input: x0∈ Rn, y 0 = x0, x − 1 = x0, 0 < s≤ 1/L, k max∈ N+ and kmin∈ N+
+j← 1
+for k = 1 to kmax do
+xk← argminx( 1
+2s∥x− yk− 1 + s∇ g(yk− 1)∥2 + h(x))
+yk← xk + j− 1
+j+2 (xk− xk− 1)
+if ∥xk− xk− 1∥ <∥xk− 1− xk− 2∥ and j≥ kmin then
+j← 1
+else
+j← j + 1
+end if
+end for
+Quadratic. f (x) = 1
+2 xT Ax + bT x is a strongly convex function, in which A is a 500× 500
+random positive deﬁnite matrix and b a random vector. The eigenvalues of A are between
+0. 001 and 1. The vector b is generated as i.i.d. Gaussian random variables with mean 0 and
+variance 25.
+Log-sum-exp.
+f (x) = ρ log
+[ m∑
+i=1
+exp((aT
+i x− bi)/ρ )
+]
+,
+where n = 50, m = 200, ρ = 20. The matrix A = (aij) is a random matrix with i.i.d. stan-
+dard Gaussian entries, and b = (bi) has i.i.d. Gaussian entries with mean 0 and variance 2.
+This function is not strongly convex.
+Matrix completion. f (X) = 1
+2∥Xobs− Mobs∥2
+F + λ∥X∥∗, in which the ground truth M is
+a rank-5 random matrix of size 300 × 300. The regularization parameter is set to λ = 0. 05.
+The 5 singular values of M are 1 , . . . , 5. The observed set is independently sampled among
+the 300× 300 entries so that 10% of the entries are actually observed.
+Lasso in ℓ1–constrained form with large sparse design. f (x) = 1
+2∥Ax− b∥2 s.t.∥x∥1≤
+δ, where A is a 5000× 50000 random sparse matrix with nonzero probability 0 . 5% for each
+25
+
+--- PAGE 26 ---
+Su, Boyd and Cand `
+es
+0 200 400 600 800 1000 1200 1400
+10
+−6
+10
+−4
+10
+−2
+10
+0
+10
+2
+10
+4
+10
+6
+10
+8
+iterations
+f − f*
+ 
+ 
+srN
+grN
+oN
+PG
+(a) min 1
+2 xT Ax + bx.
+0 500 1000 1500
+10
+−12
+10
+−10
+10
+−8
+10
+−6
+10
+−4
+10
+−2
+10
+0
+10
+2
+iterations
+f − f*
+ 
+ 
+srN
+grN
+oN
+PG
+(b) min ρ log(∑m
+i=1 exp((aT
+i x− bi)/ρ )).
+0 20 40 60 80 100 120 140 160 180 200
+10
+−12
+10
+−10
+10
+−8
+10
+−6
+10
+−4
+10
+−2
+10
+0
+10
+2
+iterations
+f − f*
+ 
+ 
+srN
+grN
+oN
+PG
+(c) min 1
+2∥Xobs− Mobs∥2
+F + λ∥X∥∗.
+0 100 200 300 400 500 600 700 800 900 1000 1100
+10
+−10
+10
+−5
+10
+0
+10
+5
+iterations
+f − f*
+ 
+ 
+srN
+grN
+oN
+PG
+(d) min 1
+2∥Ax− b∥2 s.t.∥x∥1≤ C.
+iterations
+0 50 100 150 200 250 300
+f - f *
+10 -10
+10 -5
+10 0
+10 5
+srN
+grN
+oN
+PG
+(e) min 1
+2∥Ax− b∥2 + ∑p
+i=1 λ i|x|(i).
+iterations
+0 200 400 600 800 1000 1200 1400 1600 1800 2000
+f - f *
+10 -10
+10 -5
+10 0
+10 5
+srN
+grN
+oN
+PG
+(f) min 1
+2∥Ax− b∥2 + λ∥x∥1.
+iterations
+0 20 40 60 80 100 120 140 160 180 200
+f - f *
+10 -12
+10 -10
+10 -8
+10 -6
+10 -4
+10 -2
+10 0
+10 2
+srN
+grN
+oN
+PG
+(g) min ∑n
+i=1− yiaT
+i x + log(1 + e aT
+i x) + λ∥x∥1.
+iterations
+0 10 20 30 40 50 60 70 80 90 100
+f - f *
+10 -4
+10 -2
+10 0
+10 2
+10 4
+10 6
+srN
+grN
+oN
+PG
+(h) min ∑n
+i=1− yiaT
+i x + log(1 + e aT
+i x).
+Figure 6: Numerical performance of speed restarting (srN), gradient restarting (grN), the
+original Nesterov’s scheme (oN) and the proximal gradient ( PG).
+26
+
+--- PAGE 27 ---
+An ODE for Modeling Nesterov’s Scheme
+entry and b is generated as b = Ax0 + z. The nonzero entries of A independently follow the
+Gaussian distribution with mean 0 and variance 0 . 04. The signal x0 is a vector with 250
+nonzeros and z is i.i.d. standard Gaussian noise. The parameter δ is set to ∥x0∥1.
+Sorted ℓ1 penalized estimation. f (x) = 1
+2∥Ax− b∥2 +∑p
+i=1 λ i|x|(i), where|x|(1)≥···≥
+|x|(p) are the order statistics of |x|. This is a recently introduced testing and estimation
+procedure (Bogdan et al., 2015). The design A is a 1000× 10000 Gaussian random matrix,
+and b is generated as b = Ax0 + z for 20-sparse x0 and Gaussian noise z. The penalty
+sequence is set to λ i = 1. 1Φ− 1(1− 0. 05i/ (2p)).
+Lasso. f (x) = 1
+2∥Ax− b∥2 + λ∥x∥1, where A is a 1000× 500 random matrix and b is given
+as b = Ax0 + z for 20-sparse x0 and Gaussian noise z. We set λ = 1. 5√ 2 log p.
+ℓ1-regularized logistic regression. f (x) = ∑n
+i=1− yiaT
+i x + log(1 + eaT
+i x) + λ∥x∥1, where
+the setting is the same as in Figure 5f. The results are presen ted in Figure 6g.
+Logistic regression with large sparse design. f (x) = ∑n
+i=1− yiaT
+i x + log(1 + e aT
+i x),
+in which A = (a1, . . . , a n)T is a 10 7× 20000 sparse random matrix with nonzero probability
+0. 1% for each entry, so there are roughly 2 × 108 nonzero entries in total. To generate the
+labels y, we set x0 to be i.i.d. N (0, 1/ 4). The plot is Figure 6h.
+In these examples, kmin is set to be 10 and the step sizes are ﬁxed to be 1 /L . If the
+objective is in composite form, the Lipschitz bound applies to the smooth part. Figure 6
+presents the performance of the speed restarting scheme, th e gradient restarting scheme,
+the original Nesterov’s scheme and the proximal gradient me thod. The objective functions
+include strongly convex, non-strongly convex and non-smoo th functions, violating the as-
+sumptions in Theorem 10. Among all the examples, it is intere sting to note that both speed
+restarting scheme empirically exhibit linear convergence by signiﬁcantly reducing bumps in
+the objective values. This leaves us an open problem of wheth er there exists provable
+linear convergence rate for the gradient restarting scheme as in Theorem 10. It is also
+worth pointing out that compared with gradient restarting, the speed restarting scheme
+empirically exhibits more stable linear convergence rate.
+6. Discussion
+This paper introduces a second-order ODE and accompanying t ools for characterizing Nes-
+terov’s accelerated gradient method. This ODE is applied to study variants of Nesterov’s
+scheme and is capable of interpreting some empirically obse rved phenomena, such as oscil-
+lations along the trajectories. Our approach suggests (1) a large family of generalized Nes-
+terov’s schemes that are all guaranteed to converge at the ra te O(1/k 2), and (2) a restarting
+scheme provably achieving a linear convergence rate whenev er f is strongly convex.
+In this paper, we often utilize ideas from continuous-time O DEs, and then apply these
+ideas to discrete schemes. The translation, however, invol ves parameter tuning and tedious
+calculations. This is the reason why a general theory mappin g properties of ODEs into
+corresponding properties for discrete updates would be a we lcome advance. Indeed, this
+would allow researchers to only study the simpler and more us er-friendly ODEs.
+As evidenced by many examples, the viewpoint of regarding th e ODE as a surrogate
+for Nesterov’s scheme would allow a new perspective for stud ying accelerated methods
+in optimization. The discrete scheme and the ODE are closely connected by the exact
+27
+
+--- PAGE 28 ---
+Su, Boyd and Cand `
+es
+mapping between the coeﬃcients of momentum (e.g. ( k− 1)/ (k + 2)) and velocity (e.g. 3 /t ).
+The derivations of generalized Nesterov’s schemes and the s peed restarting scheme are
+both motivated by trying a diﬀerent velocity coeﬃcient, in wh ich the surprising phase
+transition at 3 is observed. Clearly, such alternatives are endless, and we expect this will
+lead to ﬁndings of many discrete accelerated schemes. In a di ﬀerent direction, a better
+understanding of the trajectory of the ODEs, such as curvatu re, has the potential to be
+helpful in deriving appropriate stopping criteria for term ination, and choosing step size by
+backtracking.
+Acknowledgments
+W. S. was partially supported by a General Wang Yaowu Stanfor d Graduate Fellowship.
+S. B. was partially supported by DARPA XDATA. E. C. was partia lly supported by AFOSR
+under grant F A9550-09-1-0643, by NSF under grant CCF-09638 35, and by the Math + X
+Award from the Simons Foundation. We would like to thank Carl os Sing-Long, Zhou Fan,
+and Xi Chen for helpful discussions about parts of this paper . We would also like to thank
+the associate editor and two reviewers for many constructiv e comments that improved the
+presentation of the paper.
+Appendix A. Proof of Theorem 1
+The proof is divided into two parts, namely, existence and un iqueness.
+Lemma 14 For any f∈F ∞ and any x0∈ Rn, the ODE (3) has at least one solution X
+in C 2(0,∞ )∩ C 1[0,∞ ).
+Below, some preparatory lemmas are given before turning to t he proof of this lemma. To
+begin with, for any δ > 0 consider the smoothed ODE
+¨X + 3
+max(δ, t )
+˙X +∇ f (X) = 0 (31)
+with X(0) = x0, ˙X(0) = 0. Denoting by Z = ˙X, then (31) is equivalent to
+d
+dt
+(X
+Z
+)
+=
+( Z
+− 3
+max(δ,t ) Z−∇ f (X)
+)
+with X(0) = x0, Z (0) = 0. As functions of ( X, Z ), both Z and− 3Z/ max(δ, t )−∇ f (X)) are
+max(1, L ) + 3 /δ -Lipschitz continuous. Hence by standard ODE theory, (31) h as a unique
+global solution in C 2[0,∞ ), denoted by Xδ. Note that ¨Xδ is also well deﬁned at t = 0.
+Next, introduce Mδ(t) to be the supremum of ∥ ˙Xδ(u)∥/u over u∈ (0, t ]. It is easy to see
+that Mδ(t) is ﬁnite because ∥ ˙Xδ(u)∥/u = (∥ ˙Xδ(u)− ˙Xδ(0)∥)/u =∥ ¨Xδ(0)∥ + o(1) for small
+u. We give an upper bound for Mδ(t) in the following lemma.
+Lemma 15 For δ <
+√
+6/L , we have
+Mδ(δ)≤ ∥∇ f (x0)∥
+1− Lδ2/ 6 .
+28
+
+--- PAGE 29 ---
+An ODE for Modeling Nesterov’s Scheme
+The proof of Lemma 15 relies on a simple lemma.
+Lemma 16 For any u > 0, the following inequality holds
+∥∇ f (Xδ(u))−∇ f (x0)∥≤ 1
+2 LMδ(u)u2.
+Proof By Lipschitz continuity,
+∥∇ f (Xδ(u))−∇ f (x0)∥≤ L∥Xδ(u)− x0∥ =
+
+
+
+∫ u
+0
+˙Xδ(v)dv
+
+
+≤
+∫ u
+0
+v∥ ˙Xδ(v)∥
+v dv≤ 1
+2 LMδ(u)u2.
+Next, we prove Lemma 15.
+Proof For 0 < t≤ δ, the smoothed ODE takes the form
+¨Xδ + 3
+δ
+˙Xδ +∇ f (Xδ) = 0 ,
+which yields
+˙Xδe3t/δ =−
+∫ t
+0
+∇ f (Xδ(u))e3u/δ du =−∇ f (x0)
+∫ t
+0
+e3u/δ du−
+∫ t
+0
+(∇ f (Xδ(u))−∇ f (x0))e3u/δ du.
+Hence, by Lemma 16
+∥ ˙Xδ(t)∥
+t ≤ 1
+t e− 3t/δ∥∇ f (x0)∥
+∫ t
+0
+e3u/δ du + 1
+t e− 3t/δ
+∫ t
+0
+1
+2 LMδ(u)u2e3u/δ du
+≤∥∇ f (x0)∥ + LMδ(δ)δ2
+6 .
+Taking the supremum of ∥ ˙Xδ(t)∥/t over 0 < t≤ δ and rearranging the inequality give the
+desired result.
+Next, we give an upper bound for Mδ(t) when t > δ .
+Lemma 17 For δ <
+√
+6/L and δ < t <
+√
+12/L , we have
+Mδ(t)≤ (5− Lδ2/ 6)∥∇ f (x0)∥
+4(1− Lδ2/ 6)(1− Lt2/ 12) .
+Proof For t > δ , the smoothed ODE takes the form
+¨Xδ + 3
+t
+˙Xδ +∇ f (Xδ) = 0 ,
+which is equivalent to
+dt3 ˙Xδ(t)
+dt =− t3∇ f (Xδ(t)).
+29
+
+--- PAGE 30 ---
+Su, Boyd and Cand `
+es
+Hence, by integration, t3 ˙Xδ(t) is equal to
+−
+∫ t
+δ
+u3∇ f (Xδ(u))du+δ3 ˙Xδ(δ) =−
+∫ t
+δ
+u3∇ f (x0)du−
+∫ t
+δ
+u3(∇ f (Xδ(u))−∇ f (x0))du+δ3 ˙Xδ(δ).
+Therefore by Lemmas 16 and 15, we get
+∥ ˙Xδ(t)∥t ≤ t4− δ4
+4t4 ∥∇ f (x0)∥ + 1
+t4
+∫ t
+δ
+1
+2 LMδ(u)u5du + δ4
+t4
+∥ ˙Xδ(δ)∥
+δ
+≤ 1
+4∥∇ f (x0)∥ + 1
+12LMδ(t)t2 +∥∇ f (X0)∥
+1− Lδ2/ 6 ,
+where the last expression is an increasing function of t. So for any δ < t ′ < t, it follows that
+∥ ˙Xδ(t′)∥
+t′ ≤ 1
+4∥∇ f (x0)∥ + 1
+12 LMδ(t)t2 +∥∇ f (x0)∥
+1− Lδ2/ 6 ,
+which also holds for t′≤ δ. Taking the supremum over t′∈ (0, t ) gives
+Mδ(t)≤ 1
+4∥∇ f (x0)∥ + 1
+12LMδ(t)t2 +∥∇ f (X0)∥
+1− Lδ2/ 6 .
+The desired result follows from rearranging the inequality .
+Lemma 18 The function class F ={Xδ :
+[
+0,
+√
+6/L
+]
+→ Rn⏐
+⏐δ =
+√
+3/L/ 2m, m = 0 , 1, . . . }
+is uniformly bounded and equicontinuous.
+Proof By Lemmas 15 and 17, for any t∈ [0,
+√
+6/L ], δ ∈ (0,
+√
+3/L ) the gradient is uniformly
+bounded as
+∥ ˙Xδ(t)∥≤
+√
+6/LM δ(
+√
+6/L )≤
+√
+6/L max
+{∥∇ f (x0)∥
+1− 1
+2
+, 5∥∇ f (x0)∥
+4(1− 1
+2 )(1− 1
+2 )
+}
+= 5
+√
+6/L ∥∇ f (x0)∥.
+Thus it immediately implies that F is equicontinuous. To establish the uniform bounded-
+ness, note that
+∥Xδ(t)∥≤∥ Xδ(0)∥ +
+∫ t
+0
+∥ ˙Xδ(u)∥du≤∥ x0∥ + 30∥∇ f (x0)∥/L.
+We are now ready for the proof of Lemma 14.
+Proof By the Arzel´ a-Ascoli theorem and Lemma 18,F contains a subsequence converging
+uniformly on [0 ,
+√
+6/L ]. Denote by {Xδmi}i∈ N the convergent subsequence and ˘X the limit.
+Above, δmi =
+√
+3/L/ 2mi decreases as i increases. We will prove that ˘X satisﬁes (3) and
+the initial conditions ˘X(0) = x0, ˙˘X(0) = 0.
+30
+
+--- PAGE 31 ---
+An ODE for Modeling Nesterov’s Scheme
+Fix an arbitrary t0∈ (0,
+√
+6/L ). Since∥ ˙Xδmi (t0)∥ is bounded, we can pick a subsequence
+of ˙Xδmi (t0) which converges to a limit, denoted by X D
+t0 . Without loss of generality, assume
+the subsequence is the original sequence. Denote by ˜X the local solution to (3) with X(t0) =
+˘X(t0) and ˙X(t0) = X D
+t0 . Now recall that Xδmi is the solution to (3) with X(t0) = Xδmi (t0)
+and ˙X(t0) = ˙Xδmi (t0) when δmi < t 0. Since both Xδmi (t0) and ˙Xδmi (t0) approach ˘X(t0)
+and X D
+t0 , respectively, there exists ǫ0 > 0 such that
+sup
+t0− ǫ0<t<t0+ǫ0
+∥Xδmi (t)− ˜X(t)∥→ 0
+as i→∞ . However, by deﬁnition we have
+sup
+t0− ǫ0<t<t0+ǫ0
+∥Xδmi (t)− ˘X(t)∥→ 0.
+Therefore ˘X and ˜X have to be identical on ( t0− ǫ0, t 0 + ǫ0). So ˘X satisﬁes (3) at t0. Since t0
+is arbitrary, we conclude that ˘X is a solution to (3) on (0 ,
+√
+6/L ). By extension, ˘X can be
+a global solution to (3) on (0 ,∞ ). It only leaves to verify the initial conditions to complet e
+the proof.
+The ﬁrst condition ˘X(0) = x0 is a direct consequence of Xδmi (0) = x0. To check the
+second, pick a small t > 0 and note that
+∥ ˘X(t)− ˘X(0)∥
+t = lim
+i→∞
+∥Xδmi (t)− Xδmi (0)∥
+t = lim
+i→∞
+∥ ˙Xδmi (ξi)∥
+≤ lim sup
+i→∞
+tMδmi (t)≤ 5t
+√
+6/L ∥∇ f (x0)∥,
+where ξi∈ (0, t ) is given by the mean value theorem. The desired result follo ws from taking
+t→ 0.
+Next, we aim to prove the uniqueness of the solution to (3).
+Lemma 19 For any f∈F ∞ , the ODE (3) has at most one local solution in a neighborhood
+of t = 0.
+Suppose on the contrary that there are two solutions, namely , X and Y , both deﬁned on
+(0, α ) for some α > 0. Deﬁne ˜M (t) to be the supremum of ∥ ˙X(u)− ˙Y (u)∥ over u∈ [0, t ).
+To proceed, we need a simple auxiliary lemma.
+Lemma 20 For any t∈ (0, α ), we have
+∥∇ f (X(t))−∇ f (Y (t))∥≤ Lt ˜M (t).
+Proof By Lipschitz continuity of the gradient, one has
+∥∇ f (X(t))−∇ f (Y (t))∥≤ L∥X(t)− Y (t)∥ = L
+
+
+
+∫ t
+0
+˙X(u)− ˙Y (u)du + X(0)− Y (0)
+
+
+
+≤ L
+∫ t
+0
+∥ ˙X(u)− ˙Y (u)∥du≤ Lt ˜M (t).
+31
+
+--- PAGE 32 ---
+Su, Boyd and Cand `
+es
+Now we prove Lemma 19.
+Proof Similar to the proof of Lemma 17, we get
+t3( ˙X(t)− ˙Y (t)) =−
+∫ t
+0
+u3(∇ f (X(u))−∇ f (Y (u)))du.
+Applying Lemma 20 gives
+t3∥ ˙X(t)− ˙Y (t)∥≤
+∫ t
+0
+Lu4 ˜M (u)du≤ 1
+5 Lt5 ˜M (t),
+which can be simpliﬁed as ∥ ˙X(t)− ˙Y (t)∥≤ Lt2 ˜M (t)/ 5. Thus, for any t′≤ t it is true
+that∥ ˙X(t′)− ˙Y (t′)∥≤ Lt2 ˜M (t)/ 5. Taking the supremum of ∥ ˙X(t′)− ˙Y (t′)∥ over t′∈ (0, t )
+gives ˜M (t)≤ Lt2 ˜M (t)/ 5. Therefore ˜M (t) = 0 for t < min(α,
+√
+5/L ), which is equivalent
+to saying ˙X = ˙Y on [0 , min(α,
+√
+5/L )). With the same initial value X(0) = Y (0) = x0
+and the same gradient, we conclude that X and Y are identical on (0 , min(α,
+√
+5/L )), a
+contradiction.
+Given all of the aforementioned lemmas, the proof of Theorem 1 is simply combining 14
+and 19.
+Appendix B. Proof of Theorem 2
+Identifying√
+s = ∆ t, the comparison between (4) and (15) reveals that Nesterov’ s scheme
+is a discrete scheme for numerically integrating the ODE (3) . However, its singularity of the
+damping coeﬃcient at t = 0 leads to the nonexistence of oﬀ-the-shelf ODE theory for pr oving
+Theorem 2. To address this diﬃculty, we use the smoothed ODE ( 31) to approximate the
+original one; then bound the diﬀerence between Nesterov’s sc heme and the forward Euler
+scheme of (31), which may take the following form:
+X δ
+k+1 = X δ
+k + ∆tZ δ
+k
+Z δ
+k+1 =
+(
+1− 3∆t
+max{δ, k ∆t}
+)
+Z δ
+k− ∆t∇ f (X δ
+k) (32)
+with X δ
+0 = x0 and Z δ
+0 = 0.
+Lemma 21 With step size ∆t =√ s, for any T > 0 we have
+max
+1≤ k≤ T√ s
+∥X δ
+k− xk∥≤ Cδ2 + os(1)
+for some constant C.
+Proof Let zk = (xk+1− xk)/√ s. Then Nesterov’s scheme is equivalent to
+xk+1 = xk +√ szk
+zk+1 =
+(
+1− 3
+k + 3
+)
+zk− √ s∇ f
+(
+xk + 2k + 3
+k + 3
+√ szk
+)
+.
+(33)
+32
+
+--- PAGE 33 ---
+An ODE for Modeling Nesterov’s Scheme
+Denote by ak =∥X δ
+k− xk∥, b k =∥Z δ
+k− zk∥, whose initial values are a0 = 0 and b0 =
+∥∇ f (x0)∥√ s. The idea of this proof is to bound ak via simultaneously estimating ak and
+bk. By comparing (32) and (33), we get the iterative relationsh ip for ak: ak+1≤ ak +√ sbk.
+Denoting by Sk = b0 + b1 +···+ bk, this yields
+ak≤ √ sSk− 1. (34)
+Similarly, for suﬃciently small s we get
+bk+1≤
+⏐
+⏐
+⏐1− 3
+max{δ/√ s, k}
+⏐
+⏐
+⏐bk + L√
+sak +
+(⏐
+⏐
+⏐ 3
+k + 3− 3
+max{δ/√ s, k}
+⏐
+⏐
+⏐ + 2Ls
+)
+∥zk∥
+≤ bk + L√
+sak +
+(⏐
+⏐
+⏐ 3
+k + 3− 3
+max{δ/√ s, k}
+⏐
+⏐
+⏐ + 2Ls
+)
+∥zk∥.
+To upper bound ∥zk∥, denoting by C1 the supremum of
+√
+2L(f (yk)− f ⋆) over all k and s,
+we have
+∥zk∥≤ k− 1
+k + 2∥zk− 1∥ +√ s∥∇ f (yk)∥≤∥ zk− 1∥ + C1
+√ s,
+which gives∥zk∥≤ C1(k + 1)√ s. Hence,
+(⏐
+⏐
+⏐ 3
+k + 3− 3
+max{δ/√ s, k}
+⏐
+⏐
+⏐ + 2Ls
+)
+∥zk∥≤
+{
+C2
+√
+s, k ≤ δ√ s
+C2
+√ s
+k < C2s
+δ , k > δ√ s .
+Making use of (34) gives
+bk+1≤
+{
+bk + LsSk− 1 + C2
+√ s, k ≤ δ/√ s
+bk + LsSk− 1 + C2s
+δ , k > δ/ √ s. (35)
+By induction on k, for k≤ δ/√ s it holds that
+bk≤ C1Ls + C2 + (C1 + C2)
+√
+Ls
+2
+√
+L
+(1+
+√
+Ls)k− 1− C1Ls + C2− (C1 + C2)
+√
+Ls
+2
+√
+L
+(1−
+√
+Ls)k− 1.
+Hence,
+Sk≤ C1Ls + C2 + (C1 + C2)
+√
+Ls
+2L√ s (1+
+√
+Ls)k+ C1Ls + C2− (C1 + C2)
+√
+Ls
+2L√ s (1−
+√
+Ls)k− C2
+L√ s .
+Letting k⋆ =⌊δ/√ s⌋, we get
+lim sup
+s→ 0
+√ sSk⋆ − 1≤ C2eδ
+√
+L + C2e− δ
+√
+L− 2C2
+2L = O(δ2),
+which allows us to conclude that
+ak≤ √ sSk− 1 = O(δ2) + os(1) (36)
+for all k≤ δ/√ s.
+33
+
+--- PAGE 34 ---
+Su, Boyd and Cand `
+es
+Next, we bound bk for k > k ⋆ =⌊δ/√ s⌋. To this end, we consider the worst case of
+(35), that is,
+bk+1 = bk + LsSk− 1 + C2s
+δ
+for k > k ⋆ and Sk⋆ = Sk⋆ +1 = C3δ2/√ s + os(1/√ s) for some suﬃciently large C3. In this
+case, C2s/δ < sS k− 1 for suﬃciently small s. Hence, the last display gives
+bk+1≤ bk + (L + 1)sSk− 1.
+By induction, we get
+Sk≤ C3δ2/√ s + os(1/√ s)
+2
+(
+(1 +
+√
+(L + 1)s)k− k⋆
++ (1−
+√
+(L + 1)s)k− k⋆
+)
+.
+Letting k⋄ =⌊T /√ s⌋, we further get
+lim sup
+s→ 0
+√ sSk⋄≤ C3δ2(e(T − δ)√ L+1 + e− (T − δ)√ L+1)
+2 = O(δ2),
+which yields
+ak≤ √ sSk− 1 = O(δ2) + os(1)
+for k⋆ < k≤ k⋄. Last, combining (36) and the last display, we get the desire d result.
+Now we turn to the proof of Theorem 2.
+Proof Note the triangular inequality
+∥xk− X(k√ s)∥≤∥ xk− X δ
+k∥ +∥X δ
+k− Xδ(k√ s)∥ +∥Xδ(k√ s)− X(k√ s)∥,
+where Xδ(·) is the solution to the smoothed ODE (31). The proof of Lemma 1 4 implies
+that, we can choose a sequence δm→ 0 such that
+sup
+0≤ t≤ T
+∥Xδm (t)− X(t)∥→ 0.
+The second term ∥X δm
+k − Xδm (k√ s)∥ will uniformly vanish as s→ 0 and so does the ﬁrst
+term∥xk− X δm
+k ∥ if ﬁrst s→ 0 and then δm→ 0. This completes the proof.
+Appendix C. ODE for Composite Optimization
+In analogy to (3) for smooth f in Section 2, we develop an ODE for composite optimization,
+minimize f (x) = g(x) + h(x), (37)
+where g∈F L and h is a general convex function possibly taking on the value + ∞ . Provided
+it is easy to evaluate the proximal of h, Beck and Teboulle (2009) propose a proximal
+34
+
+--- PAGE 35 ---
+An ODE for Modeling Nesterov’s Scheme
+gradient version of Nesterov’s scheme for solving (37). It i s to repeat the following recursion
+for k≥ 1,
+xk = yk− 1− sGt(yk− 1)
+yk = xk + k− 1
+k + 2 (xk− xk− 1),
+where the proximal subgradient Gs has been deﬁned in Section 4.1. If the constant step
+size s≤ 1/L , it is guaranteed that (Beck and Teboulle, 2009)
+f (xk)− f ⋆≤ 2∥x0− x⋆∥2
+s(k + 1)2 ,
+which in fact is a special case of Theorem 6.
+Compared to the smooth case, it is not as clear to deﬁne the dri ving force as ∇ f in (3).
+At ﬁrst, it might be a good try to deﬁne
+G(x) = lim
+s→ 0
+Gs(x) = lim
+s→ 0
+x− argminz
+(
+∥z− (x− s∇ g(x))∥2/ (2s) + h(z)
+)
+s ,
+if it exists. However, as implied in the proof of Theorem 24 st ated below, this deﬁnition fails
+to capture the directional aspect of the subgradient. To this end, we deﬁne the subgradi ents
+through the following lemma.
+Lemma 22 (Rockafellar, 1997) For any convex function f and any x, p ∈ Rn, the direc-
+tional derivative limt→ 0+(f (x + sp)− f (x))/s exists, and can be evaluated as
+lim
+s→ 0+
+f (x + sp)− f (x)
+s = sup
+ξ∈ ∂f (x)
+⟨ξ, p⟩.
+Note that the directional derivative is semilinear in p because
+sup
+ξ∈ ∂f (x)
+⟨ξ, cp⟩ = c sup
+ξ∈ ∂f (x)
+⟨ξ, p⟩
+for any c > 0.
+Deﬁnition 23 A Borel measurable function G(x, p ; f ) deﬁned on Rn× Rn is said to be a
+directional subgradient of f if
+G(x, p )∈ ∂f (x),
+⟨G(x, p ), p⟩ = sup
+ξ∈ ∂f (x)
+⟨ξ, p⟩
+for all x, p .
+Convex functions are naturally locally Lipschitz, so ∂f (x) is compact for any x. Con-
+sequently there exists ξ∈ ∂f (x) which maximizes ⟨ξ, p⟩. So Lemma 22 guarantees the
+existence of a directional subgradient. The function G is essentially a function deﬁned on
+Rn× Sn− 1 in that we can deﬁne
+G(x, p ) = G(x, p/ ∥p∥),
+and G(x, 0) to be any element in ∂f (x). Now we give the main theorem. However, note
+that we do not guarantee the existence of solution to (38).
+35
+
+--- PAGE 36 ---
+Su, Boyd and Cand `
+es
+Theorem 24 Given a convex function f (x) with directional subgradient G(x, p ; f ), assume
+that the second order ODE
+¨X + 3t
+˙X + G(X, ˙X) = 0 , X (0) = x0, ˙X(0) = 0 (38)
+admits a solution X(t) on [0, α ) for some α > 0. Then for any 0 < t < α , we have
+f (X(t))− f ⋆≤ 2∥x0− x⋆∥2
+2
+t2 .
+Proof It suﬃces to establish thatE, ﬁrst deﬁned in the proof of Theorem 3, is monotonically
+decreasing. The diﬃculty comes from that E may not be diﬀerentiable in this setting.
+Instead, we study ( E(t + ∆t)−E (t))/ ∆t for small ∆ t > 0. In E, the second term 2 ∥X +
+t ˙X/ 2− x⋆∥2 is diﬀerentiable, with derivative 4⟨X + t
+2
+˙X− x⋆, 3
+2
+˙X + t
+2
+¨X⟩. Hence,
+2∥X(t + ∆t) + t
+2
+˙X(t + ∆t)− x⋆∥2− 2∥X(t) + t
+2
+˙X(t)− x⋆∥2
+= 4⟨X + t
+2
+˙X− x⋆, 3
+2
+˙X + t
+2
+¨X⟩∆t + o(∆t)
+=− t2⟨ ˙X, G (X, ˙X)⟩∆t− 2t⟨X− x⋆, G (X, ˙X )⟩∆t + o(∆t).
+(39)
+For the ﬁrst term, note that
+(t + ∆t)2(f (X(t + ∆t))− f ⋆)− t2(f (X(t))− f ⋆) = 2 t(f (X(t + ∆t))− f ⋆)∆t+
+t2(f (X(t + ∆t))− f (X(t))) + o(∆t).
+Since f is locally Lipschitz, o(∆t) term does not aﬀect the function in the limit,
+f (X(t + ∆t)) = f (X + ∆t ˙X + o(∆t)) = f (X + ∆t ˙X) + o(∆t). (40)
+By Lemma 22, we have the approximation
+f (X + ∆t ˙X) = f (X) +⟨ ˙X, G (X, ˙X )⟩∆t + o(∆t). (41)
+Combining all of (39), (40) and (41), we obtain
+E(t + ∆t)−E (t) = 2 t(f (X(t + ∆t))− f ⋆)∆t + t2⟨ ˙X, G (X, ˙X )⟩∆t− t2⟨ ˙X, G (X, ˙X )⟩∆t
+− 2t⟨X− x⋆, G (X, ˙X )⟩∆t + o(∆t)
+= 2t(f (X)− f ⋆)∆t− 2t⟨X− x⋆, G (X, ˙X )⟩∆t + o(∆t)≤ o(∆t),
+where the last inequality follows from the convexity of f . Thus,
+lim sup
+∆t→ 0+
+E(t + ∆t)−E (t)
+∆t ≤ 0,
+which along with the continuity of E, concludes that E(t) is a non-increasing function of t.
+36
+
+--- PAGE 37 ---
+An ODE for Modeling Nesterov’s Scheme
+We give a simple example as follows. Consider the Lasso probl em
+minimize 1
+2∥y− Ax∥2 + λ∥x∥1.
+Any directional subgradients admits the form G(x, p ) =− AT (y− Ax) + λ sgn(x, p ), where
+sgn(x, p )i =
+
+
+
+
+
+sgn(xi), x i̸= 0
+sgn(pi), x i = 0, p i̸= 0
+∈ [− 1, 1], x i = 0, p i = 0.
+To encourage sparsity, for any index i with xi = 0, p i = 0, we let
+G(x, p )i = sgn
+(
+AT
+i (Ax− y)
+) (
+|AT
+i (Ax− y)|− λ
+)
++ .
+Appendix D. Proof of Theorem 9
+Proof Let g be µ –strongly convex and h be convex. For f = g + h, we show that (22) can
+be strengthened to
+f (y− sGs(y))≤ f (x) + Gs(y)T (y− x)− s
+2∥Gs(y)∥2− µ
+2∥y− x∥2. (42)
+Summing (4k− 3)× (42) with x = xk− 1, y = yk− 1 and (4r− 6)× (42) with x = x⋆, y = yk− 1
+yields
+(4k + 4r− 9)f (xk)≤ (4k− 3)f (xk− 1) + (4r− 6)f ⋆
++ Gs(yk− 1)T [(4k + 4r− 9)yk− 1− (4k− 3)xk− 1− (4r− 6)x⋆]
+− s(4k + 4r− 9)
+2 ∥Gs(yk− 1)∥2− µ (4k− 3)
+2 ∥yk− 1− xk− 1∥2− µ (2r− 3)∥yk− 1− x⋆∥2
+≤ (4k− 3)f (xk− 1) + (4r− 6)f ⋆− µ (2r− 3)∥yk− 1− x⋆∥2
++ Gs(yk− 1)T [(4k + 4r− 9)(yk− 1− x⋆)− (4k− 3)(xk− 1− x⋆)] , (43)
+which gives a lower bound on Gs(yk− 1)T [(4k + 4r− 9)yk− 1− (4k− 3)xk− 1− (4r− 6)x⋆].
+Denote by ∆ k the second term of ˜E(k) in (28), namely,
+∆k ≜ k + d
+8 ∥(2k + 2r− 2)(yk− x⋆)− (2k + 1)(xk− x⋆)∥2,
+37
+
+--- PAGE 38 ---
+Su, Boyd and Cand `
+es
+where d := 3r/ 2− 5/ 2. Then by (43), we get
+∆k− ∆k− 1 =− k + d8
+⣨
+s(2r+2k− 5)Gs(yk− 1)+ k− 2
+k + r− 2 (xk− 1− xk− 2), (4k+4r− 9)(yk− 1− x⋆)
+− (4k− 3)(xk− 1− x⋆)
+⟩
++ 1
+8∥(2k + 2r− 4)(yk− 1− x⋆)− (2k− 1)(xk− 1− x⋆)∥2
+≤− s(k + d)(2k + 2r− 5)
+8
+[
+(4k + 4r− 9)(f (xk)− f ⋆)
+− (4k− 3)(f (xk− 1)− f ⋆) + µ (2r− 3)∥yk− 1− x⋆∥2]
+− (k + d)(k− 2)
+8(k + r− 2) ⟨xk− 1− xk− 2, (4k + 4r− 9)(yk− 1− x⋆)− (4k− 3)(xk− 1− x⋆)⟩
++ 1
+8∥2(k + r− 2)(yk− 1− x⋆)− (2k− 1)(xk− 1− x⋆)∥2.
+Hence,
+∆k + s(k + d)(2k + 2r− 5)(4k + 4r− 9)
+8 (f (xk)− f ⋆)
+≤ ∆k− 1 + s(k + d)(2k + 2r− 5)(4k− 3)
+8 (f (xk− 1)− f ⋆)
+− sµ (2r− 3)(k + d)(2k + 2r− 5)
+8 ∥yk− 1− x⋆∥2 + Π1 + Π2, (44)
+where
+Π1 ≜− (k + d)(k− 2)
+8(k + r− 2) ⟨xk− 1− xk− 2, (4k + 4r− 9)(yk− 1− x⋆)− (4k− 3)(xk− 1− x⋆)⟩,
+Π2 ≜ 1
+8∥2(k + r− 2)(yk− 1− x⋆)− (2k− 1)(xk− 1− x⋆)∥2.
+By the iterations deﬁned in (19), one can show that
+Π1 =− (2r− 3)(k + d)(k− 2)
+8(k + r− 2) (∥xk− 1− x⋆∥2−∥ xk− 2− x⋆∥2)
+− (k− 2)2(4k + 4r− 9)(k + d) + (2r− 3)(k− 2)(k + r− 2)(k + d)
+8(k + r− 2)2 ∥xk− 1− xk− 2∥2,
+Π2 = (2r− 3)2
+8 ∥yk− 1− x⋆∥2 + (2r− 3)(2k− 1)(k− 2)
+8(k + r− 2) (∥xk− 1− x⋆∥2−∥ xk− 2− x⋆∥2)
++ (k− 2)2(2k− 1)(2k + 4r− 7) + (2r− 3)(2k− 1)(k− 2)(k + r− 2)
+8(k + r− 2)2 ∥xk− 1− xk− 2∥2.
+Although this is a little tedious, it is straightforward to c heck that (k− 2)2(4k+4r− 9)(k+d)+
+(2r− 3)(k− 2)(k+r− 2)(k+d)≥ (k− 2)2(2k− 1)(2k+4r− 7)+(2r− 3)(2k− 1)(k− 2)(k+r− 2)
+for any k. Therefore, Π 1 + Π2 is bounded as
+Π1 + Π2≤ (2r− 3)2
+8 ∥yk− 1− x⋆∥2 + (2r− 3)(k− d− 1)(k− 2)
+8(k + r− 2) (∥xk− 1− x⋆∥2−∥ xk− 2− x⋆∥2),
+38
+
+--- PAGE 39 ---
+An ODE for Modeling Nesterov’s Scheme
+which, together with the fact that sµ (2r− 3)(k + d)(2k + 2r− 5)≥ (2r− 3)2 when k≥√
+(2r− 3)/ (2sµ ), reduces (44) to
+∆k + s(k + d)(2k + 2r− 5)(4k + 4r− 9)
+8 (f (xk)− f ⋆)
+≤ ∆k− 1 + s(k + d)(2k + 2r− 5)(4k− 3)
+8 (f (xk− 1)− f ⋆)
++ (2r− 3)(k− d− 1)(k− 2)
+8(k + r− 2) (∥xk− 1− x⋆∥2−∥ xk− 2− x⋆∥2).
+This can be further simpliﬁed as
+˜E(k) + Ak(f (xk− 1)− f ⋆)≤ ˜E(k− 1) + Bk(∥xk− 1− x⋆∥2−∥ xk− 2− x⋆∥2) (45)
+for k≥
+√
+(2r− 3)/ (2sµ ), where Ak = (8r− 36)k2 + (20r2− 126r + 200)k + 12r3− 100r2 +
+288r− 281 > 0 since r≥ 9/ 2 and Bk = (2r− 3)(k− d− 1)(k− 2)/ (8(k + r− 2)). Denote
+by k⋆ =⌈max{
+√
+(2r− 3)/ (2sµ ), 3r/ 2− 3/ 2}⌉≍ 1/√ sµ . Then Bk is a positive increasing
+sequence if k > k ⋆. Summing (45) from k to k⋆ + 1, we obtain
+E(k) +
+k∑
+i=k⋆ +1
+Ai(f (xi− 1)− f ⋆)≤E (k⋆) +
+k∑
+i=k⋆ +1
+Bi(∥xi− 1− x⋆∥2−∥ xi− 2− x⋆∥2)
+=E(k⋆) + Bk∥xk− 1− x⋆∥2− Bk⋆ +1∥xk⋆ − 1− x⋆∥2 +
+k− 1∑
+i=k⋆ +1
+(Bj− Bj+1)∥xj− 1− x⋆∥2
+≤E (k⋆) + Bk∥xk− 1− x⋆∥2.
+Similarly, as in the proof of Theorem 8, we can bound E(k⋆) via another energy functional
+deﬁned from Theorem 5,
+E(k⋆)≤ s(2k⋆ + 3r− 5)(k⋆ + r− 2)2
+2 (f (xk⋆ )− f ⋆)
++ 2k⋆ + 3r− 5
+16 ∥2(k⋆ + r− 1)yk⋆− 2k⋆xk⋆− 2(r− 1)x⋆− (xk⋆− x⋆)∥2
+≤ s(2k⋆ + 3r− 5)(k⋆ + r− 2)2
+2 (f (xk⋆ )− f ⋆)
++ 2k⋆ + 3r− 5
+8 ∥2(k⋆ + r− 1)yk⋆− 2k⋆xk⋆− 2(r− 1)x⋆∥2
++ 2k⋆ + 3r− 5
+8 ∥xk⋆− x⋆∥2≤ (r− 1)2(2k⋆ + 3r− 5)
+2 ∥x0− x⋆∥2
++ (r− 1)2(2k⋆ + 3r− 5)
+8sµ (k⋆ + r− 2)2 ∥x0− x⋆∥2 ≲∥x0− x⋆∥2
+√ sµ . (46)
+39
+
+--- PAGE 40 ---
+Su, Boyd and Cand `
+es
+For the second term, it follows from Theorem 6 that
+Bk∥xk− 1− x⋆∥2≤ (2r− 3)(2k− 3r + 3)(k− 2)8µ (k + r− 2) (f (xk− 1)− x⋆)
+≤ (2r− 3)(2k− 3r + 3)(k− 2)
+8µ (k + r− 2)
+(r− 1)2∥x0− x⋆∥2
+2s(k + r− 3)2
+≤ (2r− 3)(r− 1)2(2k⋆− 3r + 3)(k⋆− 2)
+16sµ (k⋆ + r− 2)(k⋆ + r− 3)2 ∥x0− x⋆∥2 ≲∥x0− x⋆∥2
+√ sµ .
+(47)
+For k > k ⋆, (46) together with (47) this gives
+f (xk)− f ⋆≤ 16E(k)
+s(2k + 3r− 5)(2k + 2r− 5)(4k + 4r− 9)
+≤ 16(E(k⋆) + Bk∥xk− 1− x⋆∥2)
+s(2k + 3r− 5)(2k + 2r− 5)(4k + 4r− 9) ≲∥x0− x⋆∥2
+s
+3
+2 µ
+1
+2 k3
+.
+To conclusion, note that by Theorem 6 the gap f (xk)− f ⋆ for k≤ k⋆ is bounded by
+(r− 1)2∥x0− x⋆∥2
+2s(k + r− 2)2 = (r− 1)2√ sµk 3
+2(k + r− 2)2
+∥x0− x⋆∥2
+s
+3
+2 µ
+1
+2 k3
+≲√ sµk ⋆∥x0− x⋆∥2
+s
+3
+2 µ
+1
+2 k3
+≲∥x0− x⋆∥2
+s
+3
+2 µ
+1
+2 k3
+.
+Appendix E. Proof of Lemmas in Section 5
+First, we prove Lemma 11.
+Proof To begin with, note that the ODE (3) is equivalent to d( t3 ˙X(t))/ dt =− t3∇ f (X(t)),
+which by integration leads to
+t3 ˙X(t) =− t4
+4∇ f (x0)−
+∫ t
+0
+u3(∇ f (X(u))−∇ f (x0))du =− t4
+4∇ f (x0)− I(t). (48)
+Dividing (48) by t4 and applying the bound on I(t), we obtain
+∥ ˙X(t)∥
+t ≤ ∥∇ f (x0)∥
+4 +∥I(t)∥
+t4 ≤ ∥∇ f (x0)∥
+4 + LM (t)t2
+12 .
+Note that the right-hand side of the last display is monotoni cally increasing in t. Hence, by
+taking the supremum of the left-hand side over (0 , t ], we get
+M (t)≤ ∥∇ f (x0)∥
+4 + LM (t)t2
+12 ,
+which completes the proof by rearrangement.
+Next, we prove the lemma used in the proof of Lemma 12.
+40
+
+--- PAGE 41 ---
+An ODE for Modeling Nesterov’s Scheme
+Lemma 25 The speed restarting time T satisﬁes
+T (x0, f )≥ 4
+5
+√
+L
+.
+Proof The proof is based on studying ⟨ ˙X(t), ¨X(t)⟩. Dividing (48) by t3, we get an expres-
+sion for ˙X,
+˙X(t) =− t
+4∇ f (x0)− 1
+t3
+∫ t
+0
+u3(∇ f (X(u))−∇ f (x0))du. (49)
+Diﬀerentiating the above, we also obtain an expression for ¨X:
+¨X(t) =−∇ f (X(t)) + 3
+4∇ f (x0) + 3
+t4
+∫ t
+0
+u3(∇ f (X(u))−∇ f (x0))du. (50)
+Using the two equations we can show that d ∥ ˙X∥2/ dt = 2⟨ ˙X(t), ¨X(t)⟩ > 0 for 0 < t <
+4/ (5
+√
+L). Continue by observing that (49) and (50) yield
+⟨ ˙X(t), ¨X(t)⟩ =
+⣨
+− t
+4∇ f (x0)− 1
+t3 I(t), −∇ f (X(t)) + 3
+4∇ f (x0) + 3
+t4 I(t)
+⟩
+≥ t
+4⟨∇ f (x0),∇ f (X(t))⟩− 3t
+16∥∇ f (x0)∥2− 1
+t3∥I(t)∥
+(
+∥∇ f (X(t))∥ + 3
+2∥∇ f (x0)∥
+)
+− 3
+t7∥I(t)∥2
+≥ t
+4∥∇ f (x0)∥2− t
+4∥∇ f (x0)∥∥∇ f (X(t))−∇ f (x0)∥− 3t
+16∥∇ f (x0)∥2
+− LM (t)t3
+12
+(
+∥∇ f (X(t))−∇ f (x0)∥ + 5
+2∥∇ f (x0)∥
+)
+− L2M (t)2t5
+48
+≥ t
+16∥∇ f (x0)∥2− LM (t)t3∥∇ f (x0)∥
+8 − LM (t)t3
+12
+(LM (t)t2
+2 + 5
+2∥∇ f (x0)∥
+)
+− L2M (t)2t5
+48
+= t
+16∥∇ f (x0)∥2− LM (t)t3
+3 ∥∇ f (x0)∥− L2M (t)2t5
+16 .
+To complete the proof, applying Lemma 11, the last inequalit y yields
+⟨ ˙X(t), ¨X(t)⟩≥
+( 1
+16− Lt2
+12(1− Lt2/ 12)− L2t4
+256(1− Lt2/ 12)2
+)
+∥∇ f (x0)∥2t≥ 0
+for t < min{
+√
+12/L, 4/ (5
+√
+L)} = 4/ (5
+√
+L), where the positivity follows from
+1
+16− Lt2
+12(1− Lt2/ 12)− L2t4
+256(1− Lt2/ 12)2 > 0,
+which is valid for 0 < t≤ 4/ (5
+√
+L).
+References
+A. Beck. Introduction to Nonlinear Optimization: Theory, Algorithms , and Applications
+with MATLAB. SIAM, 2014.
+41
+
+--- PAGE 42 ---
+Su, Boyd and Cand `
+es
+A. Beck and M. Teboulle. A fast iterative shrinkage-thresho lding algorithm for linear inverse
+problems. SIAM Journal on Imaging Sciences , 2(1):183–202, 2009.
+S. Becker, J. Bobin, and E. J. Cand` es. NESTA: A fast and accur ate ﬁrst-order method for
+sparse recovery. SIAM Journal on Imaging Sciences , 4(1):1–39, 2011.
+M. Bogdan, E. v. d. Berg, C. Sabatti, W. Su, and E. J. Cand` es. S LOPE–adaptive variable
+selection via convex optimization. The Annals of Applied Statistics , 9(3):1103–1140, 2015.
+S. Boyd and L. Vandenberghe. Convex Optimization . Cambridge University Press, 2004.
+S. Boyd, N. Parikh, E. Chu, B. Peleato, and J. Eckstein. Distr ibuted optimization and
+statistical learning via the alternating direction method of multipliers. Foundations and
+Trends in Machine Learning , 3(1):1–122, 2011.
+H.-B. D¨ urr and C. Ebenbauer. On a class of smooth optimizati on algorithms with applica-
+tions in control. Nonlinear Model Predictive Control , 4(1):291–298, 2012.
+H.-B. D¨ urr, E. Saka, and C. Ebenbauer. A smooth vector ﬁeld f or quadratic programming.
+In 51st IEEE Conference on Decision and Control , pages 2515–2520, 2012.
+S. Fiori. Quasi-geodesic neural learning algorithms over t he orthogonal group: A tutorial.
+Journal of Machine Learning Research , 6:743–781, 2005.
+U. Helmke and J. Moore. Optimization and dynamical systems. Proceedings of the IEEE ,
+84(6):907, 1996.
+D. Hinton. Sturm’s 1836 oscillation results evolution of th e theory. In Sturm-Liouville
+theory, pages 1–27. Birkh¨ auser, Basel, 2005.
+J. J. Leader. Numerical Analysis and Scientiﬁc Computation . Pearson Addison Wesley,
+2004.
+L. Lessard, B. Recht, and A. Packard. Analysis and design of o ptimization algorithms via
+integral quadratic constraints. arXiv preprint arXiv:1408.3595 , 2014.
+R. Monteiro, C. Ortiz, and B. Svaiter. An adaptive accelerat ed ﬁrst-order method for convex
+optimization. Technical report, ISyE, Gatech, 2012.
+Y. Nesterov. A method of solving a convex programming proble m with convergence rate
+O(1/k 2). Soviet Mathematics Doklady , 27(2):372–376, 1983.
+Y. Nesterov. Introductory Lectures on Convex Pptimization: A Basic Course , volume 87 of
+Applied Optimization. Kluwer Academic Publishers, Boston, MA, 2004.
+Y. Nesterov. Smooth minimization of non-smooth functions. Mathematical Programming,
+103(1):127–152, 2005.
+Y. Nesterov. Gradient methods for minimizing composite fun ctions. Mathematical Pro-
+gramming, 140(1):125–161, 2013.
+42
+
+--- PAGE 43 ---
+An ODE for Modeling Nesterov’s Scheme
+J. Nocedal and S. Wright. Numerical Optimization . Springer Science & Business Media,
+2006.
+B. O’Donoghue and E. J. Cand` es. Adaptive restart for accele rated gradient schemes. Found.
+Comput. Math. , 2013.
+S. Osher, F. Ruan, J. Xiong, Y. Yao, and W. Yin. Sparse recover y via diﬀerential inclusions.
+arXiv preprint arXiv:1406.7728 , 2014.
+B. T. Polyak. Introduction to optimization . Optimization Software New York, 1987.
+Z. Qin and D. Goldfarb. Structured sparsity via alternating direction methods. Journal of
+Machine Learning Research, 13(1):1435–1468, 2012.
+R. T. Rockafellar. Convex Analysis . Princeton Landmarks in Mathematics. Princeton
+University Press, 1997. Reprint of the 1970 original.
+A. P. Ruszczy´ nski.Nonlinear Optimization. Princeton University Press, 2006.
+J. Schropp and I. Singer. A dynamical systems approach to con strained minimization.
+Numerical functional analysis and optimization , 21(3-4):537–551, 2000.
+N. Z. Shor. Minimization Methods for Non-Diﬀerentiable Functions . Springer Science &
+Business Media, 2012.
+I. Sutskever, J. Martens, G. Dahl, and G. Hinton. On the impor tance of initialization
+and momentum in deep learning. In Proceedings of the 30th International Conference on
+Machine Learning, pages 1139–1147, 2013.
+P. Tseng. On accelerated proximal gradient methods for conv ex-concave optimization.
+http://pages.cs.wisc.edu/ brecht/cs726docs/Tseng.APG .pdf, 2008.
+P. Tseng. Approximation accuracy, gradient methods, and er ror bound for structured
+convex optimization. Mathematical Programming, 125(2):263–295, 2010.
+G. N. Watson. A Treatise on the Theory of Bessel Functions . Cambridge Mathematical
+Library. Cambridge University Press, 1995. Reprint of the s econd (1944) edition.
+43

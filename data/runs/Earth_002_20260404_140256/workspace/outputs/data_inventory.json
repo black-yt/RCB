@@ -1,0 +1,23 @@
+{
+  "mangrove_points": 100000,
+  "mangrove_bounds": [
+    -179.9965,
+    -39.81275378221357,
+    179.9899,
+    32.96143419561505
+  ],
+  "country_polygons": 121,
+  "country_fields": [
+    "Country",
+    "ISO3",
+    "Mang_Ha_2020",
+    "Risk_Pop_2020",
+    "Risk_Stock_2020",
+    "Ben_Pop_2020",
+    "Ben_Stock_2020",
+    "geometry"
+  ],
+  "tc_records": 200000,
+  "tc_wind_min": 33.001609802246094,
+  "tc_wind_max": 124.44410705566406
+}

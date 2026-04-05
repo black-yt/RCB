@@ -1,0 +1,82 @@
+{
+  "n_interface_residues_total": 195,
+  "n_direct_contact_pairs": 55,
+  "n_1brs_single_mutants": 49,
+  "global_skempi_entries": 6798,
+  "pearson_ddg_vs_distance": -0.6235646755435168,
+  "spearman_ddg_vs_distance": -0.6545682871934161,
+  "pearson_ddg_vs_contacts": 0.6517008748691495,
+  "spearman_ddg_vs_contacts": 0.6581143534683712,
+  "top_hotspots": [
+    {
+      "residue": "A:H102",
+      "ddG_kcal_mol": 7.662922851446397,
+      "n_direct_contacts": 8.0,
+      "min_atom_distance_to_partner": 2.805394411087036,
+      "closest_partner": "D:D39"
+    },
+    {
+      "residue": "D:D39",
+      "ddG_kcal_mol": 7.647565443139597,
+      "n_direct_contacts": 6.0,
+      "min_atom_distance_to_partner": 2.4972522258758545,
+      "closest_partner": "A:R83"
+    },
+    {
+      "residue": "A:H102",
+      "ddG_kcal_mol": 6.909089293446864,
+      "n_direct_contacts": 8.0,
+      "min_atom_distance_to_partner": 2.805394411087036,
+      "closest_partner": "D:D39"
+    },
+    {
+      "residue": "A:H102",
+      "ddG_kcal_mol": 6.817803284994182,
+      "n_direct_contacts": 8.0,
+      "min_atom_distance_to_partner": 2.805394411087036,
+      "closest_partner": "D:D39"
+    },
+    {
+      "residue": "A:H102",
+      "ddG_kcal_mol": 6.251961953998086,
+      "n_direct_contacts": 8.0,
+      "min_atom_distance_to_partner": 2.805394411087036,
+      "closest_partner": "D:D39"
+    },
+    {
+      "residue": "A:H102",
+      "ddG_kcal_mol": 6.143045264316185,
+      "n_direct_contacts": 8.0,
+      "min_atom_distance_to_partner": 2.805394411087036,
+      "closest_partner": "D:D39"
+    },
+    {
+      "residue": "A:H102",
+      "ddG_kcal_mol": 6.073651471839849,
+      "n_direct_contacts": 8.0,
+      "min_atom_distance_to_partner": 2.805394411087036,
+      "closest_partner": "D:D39"
+    },
+    {
+      "residue": "A:R83",
+      "ddG_kcal_mol": 5.949457727216838,
+      "n_direct_contacts": 4.0,
+      "min_atom_distance_to_partner": 2.4972522258758545,
+      "closest_partner": "D:D39"
+    },
+    {
+      "residue": "D:D39",
+      "ddG_kcal_mol": 5.932467594312997,
+      "n_direct_contacts": 6.0,
+      "min_atom_distance_to_partner": 2.4972522258758545,
+      "closest_partner": "A:R83"
+    },
+    {
+      "residue": "A:R83",
+      "ddG_kcal_mol": 5.562211059878031,
+      "n_direct_contacts": 4.0,
+      "min_atom_distance_to_partner": 2.4972522258758545,
+      "closest_partner": "D:D39"
+    }
+  ]
+}

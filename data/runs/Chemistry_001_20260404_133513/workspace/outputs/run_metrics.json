@@ -1,0 +1,194 @@
+{
+  "runs": [
+    {
+      "condition": "Random placement",
+      "seed": 0,
+      "final_rmsd": 11.753806834752547
+    },
+    {
+      "condition": "Random placement",
+      "seed": 1,
+      "final_rmsd": 6.349277288133305
+    },
+    {
+      "condition": "Random placement",
+      "seed": 2,
+      "final_rmsd": 6.2259706851842855
+    },
+    {
+      "condition": "Random placement",
+      "seed": 3,
+      "final_rmsd": 13.312309126980802
+    },
+    {
+      "condition": "Random placement",
+      "seed": 4,
+      "final_rmsd": 16.0908859520216
+    },
+    {
+      "condition": "Random placement",
+      "seed": 5,
+      "final_rmsd": 6.86289441099148
+    },
+    {
+      "condition": "Random placement",
+      "seed": 6,
+      "final_rmsd": 5.691760060121187
+    },
+    {
+      "condition": "Random placement",
+      "seed": 7,
+      "final_rmsd": 5.399484658233829
+    },
+    {
+      "condition": "Pocket translation",
+      "seed": 0,
+      "final_rmsd": 3.755273145125502e-16
+    },
+    {
+      "condition": "Pocket translation",
+      "seed": 1,
+      "final_rmsd": 3.755273145125502e-16
+    },
+    {
+      "condition": "Pocket translation",
+      "seed": 2,
+      "final_rmsd": 3.755273145125502e-16
+    },
+    {
+      "condition": "Pocket translation",
+      "seed": 3,
+      "final_rmsd": 3.755273145125502e-16
+    },
+    {
+      "condition": "Pocket translation",
+      "seed": 4,
+      "final_rmsd": 3.755273145125502e-16
+    },
+    {
+      "condition": "Pocket translation",
+      "seed": 5,
+      "final_rmsd": 3.755273145125502e-16
+    },
+    {
+      "condition": "Pocket translation",
+      "seed": 6,
+      "final_rmsd": 3.755273145125502e-16
+    },
+    {
+      "condition": "Pocket translation",
+      "seed": 7,
+      "final_rmsd": 3.755273145125502e-16
+    },
+    {
+      "condition": "Diffusion prototype",
+      "seed": 0,
+      "final_rmsd": 0.10291253668825955
+    },
+    {
+      "condition": "Diffusion prototype",
+      "seed": 1,
+      "final_rmsd": 0.09608296764907044
+    },
+    {
+      "condition": "Diffusion prototype",
+      "seed": 2,
+      "final_rmsd": 0.1004427482684831
+    },
+    {
+      "condition": "Diffusion prototype",
+      "seed": 3,
+      "final_rmsd": 0.09152804158709096
+    },
+    {
+      "condition": "Diffusion prototype",
+      "seed": 4,
+      "final_rmsd": 0.1013332762142876
+    },
+    {
+      "condition": "Diffusion prototype",
+      "seed": 5,
+      "final_rmsd": 0.09964175867315236
+    },
+    {
+      "condition": "Diffusion prototype",
+      "seed": 6,
+      "final_rmsd": 0.10066963620542749
+    },
+    {
+      "condition": "Diffusion prototype",
+      "seed": 7,
+      "final_rmsd": 0.09557893402889897
+    },
+    {
+      "condition": "No spring ablation",
+      "seed": 0,
+      "final_rmsd": 0.11938968786787657
+    },
+    {
+      "condition": "No spring ablation",
+      "seed": 1,
+      "final_rmsd": 0.11151178887227924
+    },
+    {
+      "condition": "No spring ablation",
+      "seed": 2,
+      "final_rmsd": 0.11237264491927806
+    },
+    {
+      "condition": "No spring ablation",
+      "seed": 3,
+      "final_rmsd": 0.11289786664864883
+    },
+    {
+      "condition": "No spring ablation",
+      "seed": 4,
+      "final_rmsd": 0.10734792541258044
+    },
+    {
+      "condition": "No spring ablation",
+      "seed": 5,
+      "final_rmsd": 0.11874004453783459
+    },
+    {
+      "condition": "No spring ablation",
+      "seed": 6,
+      "final_rmsd": 0.11191916481505666
+    },
+    {
+      "condition": "No spring ablation",
+      "seed": 7,
+      "final_rmsd": 0.1181400206062176
+    }
+  ],
+  "summary": [
+    {
+      "condition": "Random placement",
+      "mean_rmsd": 8.96079862705238,
+      "std_rmsd": 4.134260751894009,
+      "ci95": 2.864896536600495,
+      "n": 8
+    },
+    {
+      "condition": "Pocket translation",
+      "mean_rmsd": 3.755273145125502e-16,
+      "std_rmsd": 0.0,
+      "ci95": 0.0,
+      "n": 8
+    },
+    {
+      "condition": "Diffusion prototype",
+      "mean_rmsd": 0.09852373741433382,
+      "std_rmsd": 0.0037845835265037024,
+      "ci95": 0.002622582582046512,
+      "n": 8
+    },
+    {
+      "condition": "No spring ablation",
+      "mean_rmsd": 0.1140398929599715,
+      "std_rmsd": 0.004264101731736244,
+      "ci95": 0.0029548717451763984,
+      "n": 8
+    }
+  ]
+}

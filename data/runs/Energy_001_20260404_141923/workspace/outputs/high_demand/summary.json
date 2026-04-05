@@ -1,0 +1,20 @@
+{
+  "scenario": "high_demand",
+  "description": "Stylized stress test with 15% higher demand.",
+  "objective_gbp": 71128222337.74304,
+  "total_demand_mwh": 18330661.934226435,
+  "served_mwh": 4119343.4257355407,
+  "unserved_mwh": 14211318.508490894,
+  "unserved_share": 0.7752757952486139,
+  "wind_generation_mwh": 2364663.8339354307,
+  "wind_available_mwh": 4192662.004779862,
+  "wind_curtailment_mwh": 1827998.17084443,
+  "wind_curtailment_share": 0.43599941248791657,
+  "gas_generation_mwh": 1351955.90577219,
+  "nuclear_generation_mwh": 403200.0,
+  "storage_discharge_mwh": 1428.9419162443237,
+  "storage_charge_mwh": 1905.255888325765,
+  "max_line_utilization": 1.0,
+  "mean_line_utilization": 0.6384952566015927,
+  "peak_unserved_mw": 136754.53658720743
+}

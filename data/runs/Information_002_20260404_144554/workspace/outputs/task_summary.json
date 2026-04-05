@@ -1,0 +1,16 @@
+{
+  "paper_id": "2111.01152",
+  "num_tasks_scored": 17,
+  "num_placeholders": 105,
+  "num_auto_sections": 16,
+  "mean_scores": {
+    "in_paper": 1.5,
+    "prompt_quality": 1.812,
+    "follow_instructions": 1.875,
+    "physics_logic": 2.0,
+    "math_derivation": 1.875,
+    "final_answer_accuracy": 1.75
+  },
+  "placeholder_mismatch_rate": 1.0,
+  "mean_completion_reference_similarity": 0.33282902904751643
+}

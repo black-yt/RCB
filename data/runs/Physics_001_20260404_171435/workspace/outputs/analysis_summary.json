@@ -1,0 +1,112 @@
+{
+  "dataset_checks": {
+    "carrier_rows": 50,
+    "temperature_rows": 90,
+    "temperature_common_aligned_length": 90,
+    "temperature_original_lengths": {
+      "T_K": 100,
+      "D_s_bcs": 95,
+      "D_s_nodal": 95,
+      "D_s_power_n2": 95,
+      "D_s_power_n2_5": 90,
+      "D_s_power_n3": 90,
+      "D_s_experimental": 110
+    },
+    "dc_current_rows": 50,
+    "dc_common_aligned_length": 50,
+    "dc_original_lengths": {
+      "I_dc_nA": 50,
+      "D_s_gl": 60,
+      "D_s_linear": 50,
+      "D_s_dc_exp": 85
+    },
+    "mw_rows": 50,
+    "mw_common_aligned_length": 50,
+    "mw_original_lengths": {
+      "P_mw_norm": 50,
+      "I_mw_amplitude_nA": 50,
+      "D_s_mw_exp": 50
+    }
+  },
+  "density_dependence": {
+    "mean_hole_vs_conventional_enhancement": 55.268020807816065,
+    "mean_electron_vs_conventional_enhancement": 52.50461576389423,
+    "mean_hole_vs_geometric_enhancement": 11.944462681228238,
+    "mean_electron_vs_geometric_enhancement": 11.347237708270587,
+    "mean_hole_electron_ratio": 1.0526319957156556,
+    "max_hole_stiffness": 233911617000.0,
+    "max_electron_stiffness": 222216036000.0,
+    "carrier_density_at_max_hole": 5000000000000000.0
+  },
+  "temperature_dependence": {
+    "model_metrics": {
+      "bcs": {
+        "rmse": 32.18826329600608,
+        "r2": -12.686191797683389
+      },
+      "nodal_linear": {
+        "rmse": 42.093713184879235,
+        "r2": -22.40572007688044
+      },
+      "power_n2": {
+        "rmse": 32.18826329600608,
+        "r2": -12.686191797683389
+      },
+      "power_n2_5": {
+        "rmse": 35.95816077030977,
+        "r2": -16.079787822306802
+      },
+      "power_n3": {
+        "rmse": 42.19105012507674,
+        "r2": -22.514091379389143
+      }
+    },
+    "best_model_by_rmse": "bcs"
+  },
+  "current_dependence": {
+    "dc": {
+      "gl_model": {
+        "rmse": 4.345446291074606,
+        "r2": 0.977082161398559
+      },
+      "linear_model": {
+        "rmse": 22.44768973043256,
+        "r2": 0.38842716648166586
+      },
+      "low_current_quadratic_fit": {
+        "current_max_nA": 30.0,
+        "slope_vs_I2": -0.03783814912427973,
+        "intercept": 99.63839988531416,
+        "rmse": 0.3573486942572511,
+        "r2": 0.9987657656539021
+      },
+      "low_current_linear_fit": {
+        "current_max_nA": 30.0,
+        "slope": -1.1209097802018315,
+        "intercept": 104.98912834182822,
+        "rmse": 2.3456346548511386,
+        "r2": 0.9468217590632378
+      },
+      "minimum_dc_stiffness": 14.37362461,
+      "current_at_minimum_dc_stiffness": 60.0
+    },
+    "microwave": {
+      "monotonic_decrease": true,
+      "low_current_linear_fit": {
+        "current_max_nA": 15.0,
+        "slope": -0.4262589495063061,
+        "intercept": 101.79857367131108,
+        "rmse": 0.5932138557256011,
+        "r2": 0.8814747219885708
+      },
+      "low_current_quadratic_fit": {
+        "current_max_nA": 15.0,
+        "slope_vs_I2": -0.026173720834445597,
+        "intercept": 100.50143194455246,
+        "rmse": 0.17790022311143389,
+        "r2": 0.9893403880373057
+      },
+      "fractional_drop_full_range": 0.1322651318
+    }
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "full": {
+    "translated_imo_2000_p1": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2000_p6": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2002_p2a": [
+      10,
+      4,
+      9,
+      14,
+      16
+    ],
+    "translated_imo_2002_p2b": [
+      10,
+      4,
+      9,
+      14,
+      16
+    ],
+    "translated_imo_2003_p4": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2004_p1": [
+      16,
+      17,
+      18,
+      19,
+      21
+    ],
+    "translated_imo_2004_p5": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2005_p5": [
+      2,
+      5,
+      4,
+      6,
+      16
+    ],
+    "translated_imo_2007_p4": [
+      11,
+      30,
+      16,
+      17,
+      18
+    ],
+    "translated_imo_2008_p1a": [
+      2,
+      5,
+      4,
+      6,
+      22
+    ],
+    "translated_imo_2008_p1b": [
+      2,
+      5,
+      4,
+      6,
+      22
+    ],
+    "translated_imo_2008_p6": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2009_p2": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2010_p2": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2010_p4": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2011_p6": [
+      16,
+      17,
+      18,
+      19,
+      21
+    ],
+    "translated_imo_2012_p1": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2012_p5": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2013_p4": [
+      16,
+      17,
+      18,
+      19,
+      21
+    ],
+    "translated_imo_2014_p4": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2015_p3": [
+      16,
+      17,
+      18,
+      19,
+      21
+    ],
+    "translated_imo_2015_p4": [
+      16,
+      17,
+      18,
+      19,
+      21
+    ],
+    "translated_imo_2016_p1": [],
+    "translated_imo_2017_p4": [
+      17,
+      21,
+      31,
+      16,
+      24
+    ],
+    "translated_imo_2018_p1": [
+      42,
+      1,
+      3,
+      7,
+      26
+    ],
+    "translated_imo_2019_p2": [
+      2,
+      5,
+      4,
+      6,
+      22
+    ],
+    "translated_imo_2019_p6": [
+      17,
+      21,
+      31,
+      16,
+      24
+    ],
+    "translated_imo_2020_p1": [
+      32,
+      6,
+      15,
+      20,
+      23
+    ],
+    "translated_imo_2021_p3": [
+      16,
+      17,
+      18,
+      19,
+      21
+    ],
+    "translated_imo_2022_p4": [
+      2,
+      5,
+      4,
+      6,
+      22
+    ]
+  },
+  "retrieval_only": {
+    "translated_imo_2000_p1": [
+      32,
+      6
+    ],
+    "translated_imo_2000_p6": [
+      32,
+      6
+    ],
+    "translated_imo_2002_p2a": [
+      10,
+      4
+    ],
+    "translated_imo_2002_p2b": [
+      10,
+      4
+    ],
+    "translated_imo_2003_p4": [
+      32,
+      6
+    ],
+    "translated_imo_2004_p1": [
+      16,
+      17
+    ],
+    "translated_imo_2004_p5": [
+      32,
+      6
+    ],
+    "translated_imo_2005_p5": [
+      2,
+      5
+    ],
+    "translated_imo_2007_p4": [
+      11,
+      30
+    ],
+    "translated_imo_2008_p1a": [
+      2,
+      5
+    ],
+    "translated_imo_2008_p1b": [
+      2,
+      5
+    ],
+    "translated_imo_2008_p6": [
+      32,
+      6
+    ],
+    "translated_imo_2009_p2": [
+      32,
+      6
+    ],
+    "translated_imo_2010_p2": [
+      32,
+      6
+    ],
+    "translated_imo_2010_p4": [
+      32,
+      6
+    ],
+    "translated_imo_2011_p6": [
+      16,
+      17
+    ],
+    "translated_imo_2012_p1": [
+      32,
+      6
+    ],
+    "translated_imo_2012_p5": [
+      32,
+      6
+    ],
+    "translated_imo_2013_p4": [
+      16,
+      17
+    ],
+    "translated_imo_2014_p4": [
+      32,
+      6
+    ],
+    "translated_imo_2015_p3": [
+      16,
+      17
+    ],
+    "translated_imo_2015_p4": [
+      16,
+      17
+    ],
+    "translated_imo_2016_p1": [],
+    "translated_imo_2017_p4": [
+      17,
+      21
+    ],
+    "translated_imo_2018_p1": [
+      42,
+      1
+    ],
+    "translated_imo_2019_p2": [
+      2,
+      5
+    ],
+    "translated_imo_2019_p6": [
+      17,
+      21
+    ],
+    "translated_imo_2020_p1": [
+      32,
+      6
+    ],
+    "translated_imo_2021_p3": [
+      16,
+      17
+    ],
+    "translated_imo_2022_p4": [
+      2,
+      5
+    ]
+  },
+  "definitions_only": {
+    "translated_imo_2000_p1": [],
+    "translated_imo_2000_p6": [],
+    "translated_imo_2002_p2a": [],
+    "translated_imo_2002_p2b": [],
+    "translated_imo_2003_p4": [],
+    "translated_imo_2004_p1": [],
+    "translated_imo_2004_p5": [],
+    "translated_imo_2005_p5": [],
+    "translated_imo_2007_p4": [],
+    "translated_imo_2008_p1a": [],
+    "translated_imo_2008_p1b": [],
+    "translated_imo_2008_p6": [],
+    "translated_imo_2009_p2": [],
+    "translated_imo_2010_p2": [],
+    "translated_imo_2010_p4": [],
+    "translated_imo_2011_p6": [],
+    "translated_imo_2012_p1": [],
+    "translated_imo_2012_p5": [],
+    "translated_imo_2013_p4": [],
+    "translated_imo_2014_p4": [],
+    "translated_imo_2015_p3": [],
+    "translated_imo_2015_p4": [],
+    "translated_imo_2016_p1": [],
+    "translated_imo_2017_p4": [],
+    "translated_imo_2018_p1": [],
+    "translated_imo_2019_p2": [],
+    "translated_imo_2019_p6": [],
+    "translated_imo_2020_p1": [],
+    "translated_imo_2021_p3": [],
+    "translated_imo_2022_p4": []
+  },
+  "no_context": {
+    "translated_imo_2000_p1": [],
+    "translated_imo_2000_p6": [],
+    "translated_imo_2002_p2a": [],
+    "translated_imo_2002_p2b": [],
+    "translated_imo_2003_p4": [],
+    "translated_imo_2004_p1": [],
+    "translated_imo_2004_p5": [],
+    "translated_imo_2005_p5": [],
+    "translated_imo_2007_p4": [],
+    "translated_imo_2008_p1a": [],
+    "translated_imo_2008_p1b": [],
+    "translated_imo_2008_p6": [],
+    "translated_imo_2009_p2": [],
+    "translated_imo_2010_p2": [],
+    "translated_imo_2010_p4": [],
+    "translated_imo_2011_p6": [],
+    "translated_imo_2012_p1": [],
+    "translated_imo_2012_p5": [],
+    "translated_imo_2013_p4": [],
+    "translated_imo_2014_p4": [],
+    "translated_imo_2015_p3": [],
+    "translated_imo_2015_p4": [],
+    "translated_imo_2016_p1": [],
+    "translated_imo_2017_p4": [],
+    "translated_imo_2018_p1": [],
+    "translated_imo_2019_p2": [],
+    "translated_imo_2019_p6": [],
+    "translated_imo_2020_p1": [],
+    "translated_imo_2021_p3": [],
+    "translated_imo_2022_p4": []
+  },
+  "shuffled_retrieval": {
+    "translated_imo_2000_p1": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2000_p6": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2002_p2a": [
+      31,
+      19,
+      17,
+      6,
+      3
+    ],
+    "translated_imo_2002_p2b": [
+      31,
+      19,
+      17,
+      6,
+      3
+    ],
+    "translated_imo_2003_p4": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2004_p1": [
+      21,
+      19,
+      18,
+      17,
+      16
+    ],
+    "translated_imo_2004_p5": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2005_p5": [
+      25,
+      22,
+      21,
+      19,
+      18
+    ],
+    "translated_imo_2007_p4": [
+      32,
+      28,
+      21,
+      19,
+      18
+    ],
+    "translated_imo_2008_p1a": [
+      25,
+      22,
+      6,
+      4,
+      5
+    ],
+    "translated_imo_2008_p1b": [
+      25,
+      22,
+      6,
+      4,
+      5
+    ],
+    "translated_imo_2008_p6": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2009_p2": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2010_p2": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2010_p4": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2011_p6": [
+      21,
+      19,
+      18,
+      17,
+      16
+    ],
+    "translated_imo_2012_p1": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2012_p5": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2013_p4": [
+      21,
+      19,
+      18,
+      17,
+      16
+    ],
+    "translated_imo_2014_p4": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2015_p3": [
+      21,
+      19,
+      18,
+      17,
+      16
+    ],
+    "translated_imo_2015_p4": [
+      21,
+      19,
+      18,
+      17,
+      16
+    ],
+    "translated_imo_2016_p1": [],
+    "translated_imo_2017_p4": [
+      23,
+      20,
+      19,
+      18,
+      9
+    ],
+    "translated_imo_2018_p1": [
+      43,
+      29,
+      27,
+      22,
+      21
+    ],
+    "translated_imo_2019_p2": [
+      25,
+      22,
+      6,
+      4,
+      5
+    ],
+    "translated_imo_2019_p6": [
+      23,
+      20,
+      19,
+      18,
+      9
+    ],
+    "translated_imo_2020_p1": [
+      41,
+      38,
+      37,
+      34,
+      33
+    ],
+    "translated_imo_2021_p3": [
+      21,
+      19,
+      18,
+      17,
+      16
+    ],
+    "translated_imo_2022_p4": [
+      25,
+      22,
+      6,
+      4,
+      5
+    ]
+  }
+}

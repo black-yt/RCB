@@ -1,0 +1,205 @@
+{
+  "cell_populations": {
+    "n_rows": 28068,
+    "n_columns": 6,
+    "columns": [
+      "repetition",
+      "cell_ids",
+      "presented_peptides",
+      "presented_hlas",
+      "simulation_name",
+      "mutation"
+    ],
+    "n_duplicates": 10720
+  },
+  "final_response": {
+    "n_rows": 1000,
+    "n_columns": 6,
+    "columns": [
+      "name",
+      "num_presented_peptides",
+      "population",
+      "vaccine",
+      "p_response",
+      "log_p_response"
+    ],
+    "n_duplicates": 0
+  },
+  "runtime": {
+    "n_rows": 35,
+    "n_columns": 3,
+    "columns": [
+      "SampleID",
+      "PopulationSize",
+      "RunTime"
+    ],
+    "n_duplicates": 0
+  },
+  "selected_elements": {
+    "n_rows": 100,
+    "n_columns": 5,
+    "columns": [
+      "peptide",
+      "repetition",
+      "simulation_name",
+      "weight",
+      "run_time"
+    ],
+    "n_duplicates": 0
+  },
+  "sim_response": {
+    "n_rows": 1000,
+    "n_columns": 6,
+    "columns": [
+      "name",
+      "num_presented_peptides",
+      "population",
+      "vaccine",
+      "p_response",
+      "log_p_response"
+    ],
+    "n_duplicates": 0
+  },
+  "vaccine_summary": {
+    "n_rows": 10,
+    "n_columns": 3,
+    "columns": [
+      "peptide",
+      "counts",
+      "weight"
+    ],
+    "n_duplicates": 0
+  },
+  "score_tables": {
+    "vaccine-elements.scores.100-cells.10x.rep-0": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    },
+    "vaccine-elements.scores.100-cells.10x.rep-1": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    },
+    "vaccine-elements.scores.100-cells.10x.rep-2": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    },
+    "vaccine-elements.scores.100-cells.10x.rep-3": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    },
+    "vaccine-elements.scores.100-cells.10x.rep-4": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    },
+    "vaccine-elements.scores.100-cells.10x.rep-5": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    },
+    "vaccine-elements.scores.100-cells.10x.rep-6": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    },
+    "vaccine-elements.scores.100-cells.10x.rep-7": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    },
+    "vaccine-elements.scores.100-cells.10x.rep-8": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    },
+    "vaccine-elements.scores.100-cells.10x.rep-9": {
+      "n_rows": 1200,
+      "n_columns": 6,
+      "columns": [
+        "cell_id",
+        "vaccine_element",
+        "log_p_no_response",
+        "p_no_response",
+        "p_response",
+        "log_p_response"
+      ],
+      "n_duplicates": 0
+    }
+  }
+}

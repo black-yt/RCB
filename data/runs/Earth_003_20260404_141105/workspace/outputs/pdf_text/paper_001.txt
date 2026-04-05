@@ -1,0 +1,1060 @@
+Geosci. Model Dev., 11, 3999–4009, 2018
+https://doi.org/10.5194/gmd-11-3999-2018
+© Author(s) 2018. This work is distributed under
+the Creative Commons Attribution 4.0 License.
+Challenges and design choices for global weather and climate
+models based on machine learning
+Peter D. Dueben and Peter Bauer
+European Centre for Medium-range Weather Forecasts, Shinﬁeld Rd, Reading, RG2 9AX, UK
+Correspondence: Peter D. Dueben (peter.dueben@ecmwf.int)
+Received: 16 June 2018 – Discussion started: 28 June 2018
+Revised: 30 August 2018 – Accepted: 12 September 2018 – Published: 1 October 2018
+Abstract. Can models that are based on deep learning and
+trained on atmospheric data compete with weather and cli-
+mate models that are based on physical principles and the
+basic equations of motion? This question has been asked of-
+ten recently due to the boom in deep-learning techniques.
+The question is valid given the huge amount of data that
+are available, the computational efﬁciency of deep-learning
+techniques and the limitations of today’s weather and climate
+models in particular with respect to resolution and complex-
+ity.
+In this paper, the question will be discussed in the context
+of global weather forecasts. A toy model for global weather
+predictions will be presented and used to identify challenges
+and fundamental design choices for a forecast system based
+on neural networks.
+1 Introduction
+In recent years, artiﬁcial intelligence and machine learn-
+ing have become very important for hardware development
+in high-performance computing (HPC) and have attracted a
+large amount of public interest. Neural networks (NNs) are
+tools from machine learning that are used successfully within
+many applications such as computer vision, speech recog-
+nition and data ﬁltering. If a sufﬁcient amount of data are
+available, NNs can be trained to describe the evolution of
+non-linear processes. Due to the fundamentally application-
+unaware character, no complete understanding of the under-
+lying process is necessary. Very complex NNs can be trained
+that use more than a billion trainable parameters and millions
+of datasets for training on HPC architecture; see, for exam-
+ple, Le (2013).
+On the other hand, numerical weather forecasts are com-
+putationally expensive and forecast quality reduces signiﬁ-
+cantly already after a couple of days even in the best models
+available. Most processes in the Earth system are described
+by non-linear differential equations with non-linear interac-
+tions between Earth system components. Due to the com-
+plexity and size of the Earth system and the limited capacity
+of today’s supercomputers, it is necessary to make approxi-
+mations when weather prediction models are formulated and
+resolution is truncated in space and time. The use of lim-
+ited resolution makes it necessary to parameterise processes
+that are not resolved explicitly within model simulations. To
+optimise parameterisation schemes a large number of param-
+eters has to be tuned towards optimal model performance,
+and the traceability of physical laws of the underlying pro-
+cess as well as the physical interpretation for each parame-
+ter is often lost during this exercise. Furthermore, to perform
+weather predictions, a huge amount of data need to be pro-
+cessed and assimilated to create initial conditions. This is a
+process that will again cause signiﬁcant errors and uncertain-
+ties. Only a rather small fraction of all observations can be as-
+similated into state-of-the-art weather prediction models due
+to the large computational cost and simpliﬁed assumptions
+required such as vanishing error correlation.
+NNs have been used to post-process data from weather
+forecast models to optimise predictions; see, for example,
+Krasnopolsky and Lin (2012) or Rasp and Lerch (2018). NNs
+have also been used for radiation parameterisation in oper-
+ational forecasts at ECMWF in the past (Chevallier et al.,
+1998, 2000; Krasnopolsky et al., 2005) as well as for the pa-
+rameterisation of ocean physics (Krasnopolsky et al., 2002;
+Tolman et al., 2005) and convection (Krasnopolsky et al.,
+2013). Recently, the representation of atmospheric sub-grid
+Published by Copernicus Publications on behalf of the European Geosciences Union.
+4000 P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning
+processes using techniques from machine learning was inves-
+tigated in more detail, with promising results using both NNs
+(Brenowitz and Bretherton, 2018; Gentine et al., 2018; Rasp
+et al., 2018) and random forest decision trees (O’Gorman
+and Dwyer, 2018). For parameterisation, NNs can be trained
+on observations or high-resolution model data, for example
+from high-resolution simulations of the same model, simu-
+lations that use super-parameterisation or large-eddy simula-
+tions, with the ambition to provide better results compared
+to conventional parameterisation schemes (see, for example,
+Schneider et al., 2018). NN parameterisation schemes can
+also be trained with input–output pairs of existing parame-
+terisation schemes to emulate the behaviour and eventually
+replace the parameterisation scheme within forecasts. The
+latter is useful since NN parameterisation schemes that are
+based on very efﬁcient HPC libraries such as TensorFlow
+(TensorFlow, 2018) for which co-designed hardware exists
+will in general be much more efﬁcient compared to conven-
+tional parameterisation schemes that have a very large code
+base that is difﬁcult to optimise. Speed-up factors of up to 105
+have been observed; see Krasnopolsky and Fox-Rabinovitz
+(2006). It is possible that NNs may become a standard tool
+to be used within the complex environment of Earth system
+models to speed up speciﬁc model components or to improve
+the representation of processes that cannot be represented ad-
+equately by physical equations. The use of NNs in the devel-
+opment of parameterisation schemes may also enable new
+approaches for representing model uncertainty in ensemble
+predictions.
+Today many scientiﬁc groups around the world are trying
+to answer the more general question that is controversial: can
+forecast models that are based on deep learning and trained
+on atmospheric data compete with or even beat weather and
+climate models that are based on physical knowledge and the
+basic equations of motion? Given the increasing number of
+meteorological observations that are available to train NNs,
+in particular since the beginning of the satellite era, the use
+of NNs may not be limited to parameterisation schemes and
+speciﬁc model components in the future. NNs may also come
+to compete with existing weather forecast models as a whole
+to perform actual weather predictions if observations of the
+past are used for training while observations of the present
+are used as input to generate forecasts. Global weather fore-
+cast models that solve three-dimensional, non-linear equa-
+tions may become obsolete. It can be assumed that more ob-
+servations can be used for predictions in a weather forecast
+system based on NNs in comparison to predictions with dy-
+namical models since data preprocessing and selection could
+be done by the networks and since higher resolution can be
+used for predictions since NNs can be expected to be much
+cheaper and easier to optimise for HPC in comparison to con-
+ventional models.
+NNs have been used to generate local weather predictions
+(see, for example, Hall et al., 1999), and it has been shown
+that NNs can be used to improve El Niño predictions of au-
+toregressive integrated moving average techniques (Noote-
+boom et al., 2018). However, it has yet to be shown that fore-
+casts based on deep learning can compete with global oper-
+ational weather forecast models, in particular in the medium
+range. Answering this question is difﬁcult since it requires
+scaling up the training process of NNs to the level of com-
+plexity of a large supercomputing application to allow a fair
+comparison between the two approaches. In this paper we
+will make the ﬁrst step and discuss the potential of NNs
+for global weather predictions. We base this discussion on
+tests with NNs that are used to represent the equation of the
+Lorenz’95 model – which is a low-complexity model to test
+new approaches to atmospheric modelling – as well as a NN
+toy model for global weather predictions that is trained on at-
+mospheric reanalysis data. In both cases, no dynamical equa-
+tions are used to update the model state. Results will be used
+to identify challenges and fundamental design choices for a
+forecast system based on NNs. Tests with Lorenz’95 serve
+as an example for a system for which the basic equations
+are known while the exact equations are unknown for the toy
+model for global weather predictions.
+Our tests with Lorenz’95 and the toy model for global
+weather forecasts are presented in Sect. 2. Based on the re-
+sults, Sect. 3 discusses challenges and fundamental design
+choices for the development of forecast systems based on
+NNs. Section 4 presents the conclusions.
+2 Results with neural networks
+Section 2.1 will present results for initial tests with the
+Lorenz’95 low-complexity model that serves as a test bed for
+atmospheric dynamics. We will then develop a toy model for
+the global atmosphere that is used to calculate global weather
+forecasts in Sect. 2.2.
+NNs consist of neurons that resemble properties of neu-
+rons in the brain in terms of functionality and connectivity.
+In NNs, neurons are connected with each other and organised
+in layers. All networks that are used in the following are se-
+quential NNs that use a linear stock of layers of neurons for
+which each neuron is connected to each neuron of the pre-
+vious and subsequent layer, a so-called multilayer percep-
+tron (MLP). Information travels from the inputs in the ﬁrst
+layer to subsequent layers. The outputs will leave the NN
+in the output layer. The layers between the input and output
+layers are called hidden layers. Each neuron is a weighted
+sum over all inputs (all neurons of the previous layer) plus a
+bias term (∑N
+i=1wini+ b; wi are weights, b is the bias term).
+An activation function is applied to the accumulated value to
+represent non-linearity. During the training phase of the NN,
+the weights and biases within the network are optimised by
+reducing a loss function (mean absolute error for results in
+this paper). We use the Keras Python library (Chollet et al.,
+2015) to train and apply NNs for all results that are presented
+in the following. We have tested several activation functions
+Geosci. Model Dev., 11, 3999–4009, 2018 www.geosci-model-dev.net/11/3999/2018/
+P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning 4001
+and optimisers and obtained the best results using hyperbolic
+tangents as a activation function and a stochastic gradient de-
+scent optimiser. Overall, 20 % of the training data is used for
+validation during training. All input and output data are nor-
+malised. All NNs that are used were trained for at least 200
+training iterations that go through the entire dataset during
+optimisation, called epochs.
+2.1 Initial tests with a toy model for atmospheric
+dynamics
+We study the three-level Lorenz’95 model that was presented
+in Thornes et al. (2017). The model extends the original two-
+scaled Lorenz’95 model (Lorenz, 2006) by one more level
+such that it provides ﬂexibility regarding tests at different
+resolutions in a toy model for atmospheric dynamics. The
+model consists of three levels of model variables that can
+be assumed to be large-scale “ X”, medium-scale “ Y ” and
+small-scale “ Z”. At each level, all degrees of freedom form a
+one-dimensional ring, and the number of degrees of freedom
+increases by a factor of 8 from one level to the next (8 for
+X, 64 for Y , 512 for Z). Eight degrees of freedom on a ﬁner
+model level are coupled to 1 degree of freedom on the coarser
+level respectively. The degrees of freedom are described by
+the following differential equations:
+dXk
+dt = Xk−1 (Xk+1− Xk−2)− Xk+ F− hc
+b
+J∑
+j=1
+Yj,k ,
+(1)
+dYj,k
+dt =− cbYj+1,k
+(
+Yj+2,k− Yj−1,k
+)
+− cYj,k+ hc
+b Xk
+− he
+d
+I∑
+i=1
+Zi,j,k , (2)
+dZi,j,k
+dt = edZ i−1,j,k
+(
+Zi+1,j,k− Zi−2,j,k
+)
+− gZeZi,j,k
++ he
+d Yj,k . (3)
+The indices i, j and k range from 1 up to I= 8, J= 8
+and K= 8 for the Z, Y and X tiers. F is a large-scale forc-
+ing term which determines the chaoticity of the model and
+is set to 20 in the simulations of this paper, which results
+in fully chaotic model dynamics. The remaining parameters
+allow tuning of the frequency and amplitude of oscillation
+as well as the coupling between tiers and are set to h= 1,
+c= b= e= d= 10 and gZ= 1 to obtain slow oscillations
+with a large amplitude in the X tier while the other two tiers
+oscillate more quickly at a lower amplitude. A fourth-order
+Runge–Kutta method is used to integrate the model in time
+using a time step of 0.005 model time units (MTUs).
+We consider a model simulation that uses all of the scales
+as a “truth”. Similar to a weather prediction model that trun-
+cates spatial resolution, we can mimic limited resolution in
+the Lorenz’95 model by truncating the medium- and small-
+scale degrees of freedom.
+We have trained several NNs to predict the tendency of
+the model (1Xn
+k= Xn+1
+k − Xn
+k ) to update the state vector in
+one time step. The NNs are used iteratively to make predic-
+tions for more than one time step (Xm+1
+k = Xm
+k+ 1Xm
+k ). To
+reduce the error due to time discretisation, the calculation
+of the right-hand-side tendency via the NN is coupled to a
+third-order Adams–Bashforth explicit time-stepping scheme.
+We use a ﬁrst- and second-order scheme for the ﬁrst two
+time steps. The medium- and small-scale variables (Yj,k and
+Zi,j,k ) are not represented in the NN, neither as inputs nor as
+outputs.
+We use two different architectures to set up forecast mod-
+els. A “global” approach uses all eight Xk variables as input
+to predict the tendencies. On the other hand, a “local” ap-
+proach uses Xk−2, Xk−1, Xk and Xk+1 as input to predict
+a tendency for a single variable Xk. For the local approach,
+the same NN is called eight times to update the entire state
+vector. The pairs of training sets are separated by one model
+time unit in the truth run to generate data points that are suf-
+ﬁciently uncorrelated. We use 2 000 000 pairs of Xm+1
+k and
+Xm
+k to train the NNs. For local NNs the information for each
+variable Xk of a training set with a full state vector is used as
+an independent training set.
+We have performed tests with many different NN conﬁg-
+urations with different layer width and number of layers. We
+achieved the best results using four hidden layers between
+the input and output layer with 100 neurons per layer for the
+global setup and two hidden layers with 20 neurons each for
+the local setup. These conﬁgurations were used in the follow-
+ing.
+Figure 1 shows results for the two NNs. The trajectories
+that are calculated with the NNs show the typical dynamic of
+a Lorenz’95 model, and it is indeed possible to generate rea-
+sonable forecasts with the two models based on NNs. The er-
+ror of the local NN conﬁguration is signiﬁcantly lower com-
+pared to the global conﬁguration. For comparison, we mimic
+a standard forecast with limited resolution using a dynamic
+model that is based on Eq. (1) (see Fig. 1b). The medium- and
+small-scale variables (Yj,k and Zi,j,k ) are not represented. No
+sophisticated parameterisation scheme is used and the cou-
+pling terms for the degrees of freedom that are not resolved
+are removed with no replacement (the last terms in Eq. 1).
+The standard model produces a lower forecast error com-
+pared to the global NN forecast systems and a lower forecast
+error for the local NN forecast system at the beginning of the
+forecast. However, the error for the local NN forecast system
+is lower towards the end of the forecast.
+2.2 A toy model for global weather forecasts
+We have developed a toy model to simulate the dynamics of
+the global atmosphere that can be used for global weather
+forecasts. We have focussed on the representation of geopo-
+www.geosci-model-dev.net/11/3999/2018/ Geosci. Model Dev., 11, 3999–4009, 2018
+4002 P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning
+-10
+-5
+ 0
+ 5
+ 10
+ 15
+ 20
+ 25
+ 0  0.5  1  1.5  2  2.5  3  3.5  4
+X1
+Time in MTUs
+Global NN
+Local NN
+Truth
+ 0
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 0  0.2  0.4  0.6  0.8  1  1.2  1.4
+L1 forecast error
+Time in MTUs
+Global NN
+Local NN
+Dynamical model
+(b)(a)
+Figure 1. (a) Example trajectory for the global and local NN as well as the truth. (b) L1 error for forecasts with the global and local NN as
+well as the truncated dynamical forecast model.
+tential height at 500 hPa (Z500), which is a standard ﬁeld for
+analysing the quality of weather forecasts. Z500 was picked
+since the dependency on local conditions such as topogra-
+phy is limited (in contrast to ﬁelds such as surface pressure),
+since Z500 is not spotty with very strong local gradients (in
+contrast to ﬁelds such as humidity or precipitation) and since
+most of the important global ﬂow pattern – such as midlat-
+itude jets and a gradient between poles and Equator – are
+visible.
+2.2.1 General model setup
+We use Z500 data of the ERA5 reanalysis dataset (ERA,
+2018) for training. Reanalysis data are the state of an atmo-
+spheric model with a continuous assimilation of observations
+to generate the best possible picture of the global atmosphere
+at a given time. The advantage of the use of a reanalysis
+dataset instead of observations for training is that data are
+available for each grid point at each time step and that the
+data are consistent over the entire data window. However,
+the use of analysis data restricts the use of the NN model to
+the forecast only. A conventional data-assimilation system is
+still necessary to generate initial conditions.
+We use hourly data of Z500 from ERA5 for training and
+map the data to a longitude–latitude grid with 6◦ resolution.
+We therefore consider global snapshots of Z500 with 60 ×
+31= 1860 grid points. Overall, 67 200 of these snapshots are
+available in total in the period between 1 January 2010 and
+31 August 2017.
+We have tested many different NN architectures and train-
+ing conﬁgurations. Some changes to the setup had a sig-
+niﬁcant inﬂuence on the quality of the toy model. We will
+only present the most successful approaches in the following.
+We have played around with normalised ﬁelds that would
+use the anomaly ﬁeld and remove the annual mean from
+the data. However, we found that the use of absolute ﬁeld
+values achieved the best results. Similar to the NNs for the
+Lorenz model, all NNs are trained with Z500 data at the full
+hour ( n) to predict the tendency as the difference in Z500
+(1Z500= Z500n+1−Z500n) 1 h later (n+1). This tendency
+is equivalent to the right-hand side of a differential equation
+in time if the time step is 1 h. The NNs are used iteratively
+with a third-order Adams–Bashforth explicit time-stepping
+scheme to make predictions for more than 1 h into the future.
+Time was used as additional input variable for all NNs.
+There is one coordinate that represents the daily cycle (grow-
+ing linearly from midnight to midnight of the following day)
+and one coordinate to represent the annual cycle growing lin-
+early from the beginning to the end of the year with a correct
+representation of leap years.
+In a second set of tests, we have included 2 m temperature
+(2mT) as an additional prognostic ﬁeld in the NN forecast
+system. ERA5 data for 2mT were retrieved and processed in
+the same way as for Z500 and added as additional input and
+output parameters.
+2.2.2 Global and local networks
+As for the Lorenz case, we present results for a global and
+a local model conﬁguration. Global networks are using all
+60× 31 grid points plus the two time coordinates as input to
+calculate the 60× 31 tendencies for each grid point that are
+used to update the entire state vector 1 h into the future. This
+process is iterated to make predictions for longer lead times.
+Local networks are using a stencil of N× N points to calcu-
+late the tendency for a single grid point in the centre of the
+stencil, with N being an odd integer number. This is simi-
+lar to ﬁnite-difference schemes in conventional models. We
+have trained NNs for different stencil sizes for the input ﬁelds
+(3×3, 5×5, 7×7, 9×9). For each stencil size, the same NN
+is used to update grid points in the entire domain. However,
+to enable the NN to learn and represent local dynamics, we
+have added the horizontal coordinates longitude and latitude
+as additional input variables. The approach of a local stencil
+is easy to realise, but it generates a standard problem for all
+Geosci. Model Dev., 11, 3999–4009, 2018 www.geosci-model-dev.net/11/3999/2018/
+P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning 4003
+forecast models that are based on longitude–latitude grids:
+the pole requires special treatment.
+To represent polar areas in local networks we have trained
+a special NN to update the north and south pole of the grid.
+The poles are represented by the ﬁrst and last latitude band
+of the grid (60 grid points for each pole but all of the points
+have the same value). The special pole NN was trained with
+the value of the pole plus the 60 variables of the next latitude
+band as input to output the tendency to update the pole. If
+we use a stencil of 5× 5 grid point inputs to update the bulk
+of the grid points, we use the special pole NN to update the
+poles, a 3× 3 stencil NN to update the latitude bands that
+are closest to the poles and the 5× 5 stencil NN for all other
+points. To use a 9× 9 stencil NN would require the use of a
+7× 7, a 5× 5 and a 3× 3 stencil NN as well as the special
+polar NN towards the two poles.
+We have tested many different conﬁgurations of the NNs
+to identify the setups that produced the best results. For the
+results of the following section, we used four hidden layers
+of neurons that have the same width as the input layer (1862
+neurons for the global and N× N+ 4 neurons for local con-
+ﬁgurations). For the NNs that use both Z500 and 2mT as in-
+put, the same conﬁguration for neurons in hidden layers was
+used for the local conﬁgurations while the width of the hid-
+den layers was increased to the size of the new input vector
+for the global conﬁguration and the number of hidden layers
+was reduced to two.
+2.2.3 Results
+Figure 2 shows the global forecast error compared against the
+analysis that is used for operational forecasts at ECMWF for
+the local NN conﬁguration and different stencil sizes. The
+forecast error was calculated as the average of 10 forecasts
+distributed equally between March 2017 and February 2018.
+Some of the dates that have been used to calculate the fore-
+cast error are also used when training the networks. However,
+this overlap is not a problem since a different analysis dataset
+has been used for initialisation. The forecast error is not very
+different for different stencil sizes at the beginning of the
+forecast. However, for the local networks that use the special
+treatment of the area around the pole, as discussed in the pre-
+vious section, the forecast error diverges for the 7×7 and the
+9×9 conﬁguration. When looking into the actual ﬁelds, it be-
+came visible that this divergence is caused by chequerboard
+patterns developing close to the poles. We therefore started
+a second set of simulations that used the original stencil size
+but kept all grid points that could not be calculated with the
+largest stencil ﬁxed throughout the forecast. These simula-
+tions remained stable for much longer lead times of up to
+around 2 weeks, and it is visible that the lines do not diverge
+in the same way towards the end of the forecast. The dif-
+ference in forecast error between the two approaches is very
+small at the beginning of the forecasts.
+It is likely that the instabilities that were found near the
+poles could be removed using a polar ﬁlter or a relaxation of
+the model ﬁelds against a reference solution. These methods
+have been used to stabilise conventional grid point models
+near the poles in the past. It is also possible that the pole prob-
+lem can be solved via a change in the network architecture of
+the NNs that are used in the vicinity of the poles. However,
+a more detailed investigation of this problem is beyond the
+scope of this paper.
+Figure 3a shows the same global forecast error as Fig. 2
+when using different methods to generate the forecasts. We
+show results for forecasts with the Integrated Forecast Sys-
+tem (IFS) at very coarse resolution (TL21 with 60 vertical
+levels) as well as operational forecasts. The TL21 resolution
+forecast uses a coarser horizontal resolution, and model data
+were mapped to the 6 ◦ longitude–latitude grid to calculate
+the forecast error. Therefore, the initial error is not zero for
+the TL21 forecast. We also show the persistence forecast er-
+ror when assuming that the Z500 ﬁeld will not change dur-
+ing the forecast window. The forecasts with local NNs beat
+TL21 forecasts at the beginning of the forecast as well as the
+persistence forecasts during the full 5-day period. The global
+network shows little beneﬁt compared to the persistence fore-
+cast.
+Figure 3b shows the global forecast error for Z500 when
+2mT was added as prognostic ﬁeld in the forecast system.
+The quality of forecasts for Z500 did not improve in compar-
+ison to the forecast system based on Z500 only.
+Figure 4 shows the Z500 ﬁelds for a 1-day forecast with
+a single ﬁeld as well as the change in Z500 during the ﬁrst
+day of the forecast with the local and global NN conﬁgu-
+ration. The analysis that is used for operational forecasts at
+ECMWF is also presented. The Z500 ﬁelds that are gener-
+ated with the NNs look healthy and reasonable after 1 day
+with no obvious problems in the solution. Generated videos
+that visualise the development of the ﬁeld in time (attached
+as a Supplement) also look very realistic for the ﬁrst cou-
+ple of days. The difference between the observed tendencies
+and the local network is small during the ﬁrst forecast day.
+The global network seems to underestimate the magnitude
+of changes.
+3 Challenges and fundamental design choices for
+forecast systems based on NNs
+The results of the previous section show that it may indeed
+be possible to generate global weather predictions based on
+NNs for short-range prediction and at this rather course spa-
+tial resolution. Whether a NN prediction system will ever be
+competitive with state-of-the-art weather prediction models
+remains an open question. It would certainly require a seri-
+ous level of complexity with as many (or more) degrees of
+freedom as conventional models. To develop such a system,
+a couple of important decisions need to be made regarding
+www.geosci-model-dev.net/11/3999/2018/ Geosci. Model Dev., 11, 3999–4009, 2018
+4004 P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning
+ 0
+ 200
+ 400
+ 600
+ 800
+ 1000
+ 1200
+ 1400
+ 1600
+ 1800
+ 2000
+ 0  20  40  60  80  100  120
+L1 forecast error
+Time in hours
+3X3
+5X5
+7X7
+9X9
+ 0
+ 100
+ 200
+ 300
+ 400
+ 500
+ 600
+ 700
+ 800
+ 900
+ 0  20  40  60  80  100  120
+L1 forecast error
+Time in hours
+3X3
+5X5
+7X7
+9X9
+(a) (b)
+Figure 2. Globally integrated absolute forecast error plotted against time for local NNs with different stencil size. (a) NNs that use local
+networks with smaller stencil size as well as the special pole network towards the poles. (b) NNs that ﬁx the ﬁelds close to the poles to
+stabilise simulations.
+ 0
+ 200
+ 400
+ 600
+ 800
+ 1000
+ 1200
+ 0  20  40  60  80  100  120
+L1 forecast error
+Time in hours
+Local NN
+Global NN
+Persistence
+T21 forecast
+oper. forecast
+ 0
+ 200
+ 400
+ 600
+ 800
+ 1000
+ 1200
+ 0  20  40  60  80  100  120
+L1 forecast error
+Time in hours
+Local NN
+Global NN
+Local NN; 2 fields
+Global NN; 2 fields
+(a) (b)
+Figure 3. (a) Globally integrated absolute forecast error for the best local network (9× 9 stencil), the global network, a persistence forecast,
+an IFS forecast at TL21 resolution and the operational weather forecast of ECMWF. The persistence forecast shows a 12-hourly ﬂuctuation
+since Z500 has a weak 12-hourly cycle in the tropics due to atmospheric tides. (b) The same globally integrated absolute forecast error for
+the best local and global network as in (a) plus the best results for local and global networks that use 2mT as additional prognostic ﬁeld.
+the structure of the networks and the shape of the training
+data. We can only guess how the optimal conﬁguration of
+a NN prediction system may look. This section will iden-
+tify and discuss some of the important challenges and design
+choices.
+3.1 Local or global networks and time-stepping
+schemes
+Should forecasts with NNs be iterative or should they be
+trained for speciﬁc lead times? Should global forecasts be
+performed by a single NN that takes as many data inputs as
+possible or would it be better to use many NNs that are cou-
+pled together?
+State-of-the-art weather forecast models use up to a billion
+variables to represent the state of the Earth system. Atmo-
+sphere and ocean show chaotic behaviour with scale interac-
+tions that result in exponential error growth. Global weather
+forecast models have skill for several forecast days into the
+future and can be used for seasonal predictions. This requires
+models to be able to represent complex interactions between
+weather features, such as convection in the tropics that gen-
+erates gravity waves to inﬂuence jet position in the midlati-
+tudes. To enable forecast systems based on NNs to be com-
+petitive in global weather predictions several days into the
+future would require them to (1) represent all relevant scales
+and features all over the globe, (2) allow scale interactions
+and (3) be able to represent chains of complex interactions
+between weather features.
+Similar to the use of explicit or implicit time-stepping
+methods for conventional models, there seem to be two ap-
+proaches to achieve (1)–(3) with NNs. Either all information
+is connected, such as in implicit methods, to allow large time
+steps, or the connectivity of networks is local and time steps
+are short, such as in explicit time-stepping schemes. The
+sheer size of the Earth will make it difﬁcult to connect all in-
+formation in global networks, and if global all-to-all commu-
+Geosci. Model Dev., 11, 3999–4009, 2018 www.geosci-model-dev.net/11/3999/2018/
+P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning 4005
+Figure 4. Top: Z500 from analysis on 1 March 2017 that is used as initial conditions for forecasts. Middle: Z500 for the analysis on 2 March
+for reference (left) as well as the local network and the global network conﬁgurations 1 day into the forecast (middle and right). Bottom:
+difference between Z500 for the analysis on 1 and 2 March (left) as well as the difference between initialisation and after 24 h for the local
+and the global network conﬁguration (middle and right). The local network uses a 9× 9 stencil and ﬁxed polar regions.
+nication across many compute nodes of an HPC system were
+required, NNs would loose much of their performance bene-
+ﬁt in comparison to conventional models on modern HPC fa-
+cilities. High-resolution global networks could certainly not
+be dense, meaning that all neurons between different lay-
+ers are connected as in MLPs. The global networks at very
+coarse resolution that were used in the paper already use a
+very large number of tunable parameters in comparison to
+NNs used in other disciplines due to their dense character.
+To reduce the amount of trainable parameters with no loss in
+scale interactions will be important.
+On the other hand, local networks would need to be ap-
+plied in iterative ways to allow interactions between scales
+and features in predictions for longer lead times. It can be ar-
+gued that the lead time needs to be adjusted to the size of the
+local stencil of inputs. If local networks are used, there is an-
+other decision to be made: should the same network be used
+for all grid points or should different networks be used for
+different locations around the globe. In this paper, we use the
+same NN for all grid points. However, an approach that used
+a different network for different locations could be realised
+using convolutional networks that combine stencil informa-
+tion locally within one of the layers but do not propagate in-
+formation throughout the entire grid. This would allow us to
+update a large part of the domain with a single network and to
+exploit standard network conﬁgurations for image process-
+ing, at least if structured grids are used. However, it would
+require signiﬁcant work to make sure that boundary condi-
+tions are represented correctly. This approach was therefore
+not tested in this paper.
+Can we assume that NNs can use time steps that are as long
+or longer than time steps of implicit time-stepping schemes
+in conventional models? This should be possible in principle
+since a complex network with global internode communica-
+tion could, in an extreme case, resemble an implicit time step
+of a conventional model one-to-one. However, the amount of
+training data and network complexity that is necessary will
+quickly become prohibitive if interactions between more and
+more features and longer chains of causality are to be repre-
+sented.
+Results with our toy model suggest the following:
+www.geosci-model-dev.net/11/3999/2018/ Geosci. Model Dev., 11, 3999–4009, 2018
+4006 P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning
+– It is fundamentally possible to generate global weather
+forecasts when connecting iterative time-stepping
+schemes with NNs. This conclusion is entirely based on
+very coarse resolution data and derived from assessing
+the predictive skill for a variable that varies much more
+slowly in space and time than, for example, precipita-
+tion. However, none of the network conﬁgurations that
+we tested allowed stable simulations for integrations of
+more than 2 weeks into the future, and forecast skill
+quickly deteriorates after a couple of days. If networks
+are applied iteratively, it will be important to satisfy fun-
+damental conservation properties and to stabilise simu-
+lations. This is non-trivial and will require attention, in
+particular if it is the aim to generate climate predictions.
+It is also likely that model biases – that are difﬁcult to
+distinguish from forecast variance – will perturb predic-
+tions of a NN forecast system.
+– It will be difﬁcult to train networks to make predic-
+tions with long lead time with a single time step.
+When we tried to train NNs to make prediction with
+longer time steps than 1 h, results were degraded sig-
+niﬁcantly. A linear reduction in the time step will most
+likely be required if resolution is increased, similar
+to Courant–Friedrichs–Lewy (CFL) condition require-
+ments for conventional models.
+– Results are much better for the local approach when
+compared to the global approach for both the Lorenz’95
+model and the toy model for global predictions. We de-
+cided to use the same network to update grid points all
+over the domain instead of using special networks for
+each grid point. This approach appears more promis-
+ing since the resulting network is more likely to be con-
+sistent with physical laws since it is trained for many
+different physical situations. Local information can be
+represented even if the network is used in the entire do-
+main when adding spatial coordinates to the inputs. If a
+customised network is used for each grid point or if a
+convolutional network is used to connect local stencils,
+the amount of data that are available for training is re-
+duced by the number of grid points, and the representa-
+tion of extreme events within the training data will often
+be questionable, in particular in a changing climate.
+3.2 Understanding the physical system
+How far can we go using a “black box”? NNs allow us
+to solve non-linear systems as a black box with no knowl-
+edge of the actual physical system. There is no reason why
+weather forecasts could not be generated with such a black
+box. However, the work on the toy model clearly indicated
+that a physical understanding is still important to improve the
+NN architecture and training to perform weather predictions.
+One example is the time-stepping scheme that was used.
+In a ﬁrst approach, we have tried to generate daily or 6-
+hourly forecasts with a single step with only very limited
+success. When thinking about possible problems, we remem-
+bered that an explicit time-stepping scheme would require
+much shorter steps at the given level of model resolution.
+Due to our knowledge of the level of numerical complexity
+that is required to allow weather and climate models to run at
+longer time steps, we concluded that it would be much eas-
+ier for the NN to learn the correct dynamics for shorter time
+steps and switched the dataset from ERA Interim (Dee et al.,
+2011) to ERA5 to allow training with hourly data. Results
+improved signiﬁcantly.
+A second example relates to the preprocessing of input
+and output data. Meteorological data come in very differ-
+ent shapes. For example, while speciﬁc humidity seems to
+be an easy quantity since it is conﬁned to between 0 and 1,
+very small values can still be very important and values can
+change by orders of magnitude between the stratosphere and
+the troposphere within a single vertical level; precipitation
+can have very signiﬁcant outliers in extreme events; ﬁelds
+such as geopotential height or temperature show global gra-
+dients and local features which makes it difﬁcult to judge
+whether gradients or absolute ﬁelds are important; ﬁelds such
+as surface pressure depend heavily on local features such as
+topography. If these ﬁelds are used as input or output for NNs
+to predict weather, physical knowledge of the properties of
+the ﬁelds and their connectivity will be essential to design
+the optimal data preprocessing and the optimal network ar-
+chitecture. It may be possible to heal shortcomings of data
+preprocessing and network conﬁgurations with a brute-force
+increase in data volume and training time as long as limits
+in numerical precision do not remove information from data.
+However, success will be limited, in particular since many
+trial and error tests at large computational cost will be nec-
+essary to ﬁnd the optimal network conﬁguration for complex
+conﬁgurations that have the ambition to compete with con-
+ventional weather forecast models.
+At the given state of software and science it is very difﬁ-
+cult for domain experts to evaluate and understand connec-
+tivity of data in NNs to be in a good position to improve pre-
+dictions. Networks are treated as a black box. The case of the
+Lorenz’95 model is a good example. If sub-grid-scale param-
+eters are ignored for the moment, the differential equations
+and correct connectivity between the prognostic variables are
+known. It should be possible to design and train NNs that
+resemble the exact behaviour of the equation and compete
+with the dynamic model. Since parameters are adjusted to
+the data, networks should also be able to automatically in-
+corporate parameterisation schemes for sub-grid-scale vari-
+ables and to beat dynamic models that do not have parame-
+terisation schemes. However, it was unclear how to project
+our knowledge onto the design of the NN and the training
+procedure. As a consequence, we did not manage to obtain
+results that were close to optimal. However, we do not claim
+that we have tested all possible options. While it is likely
+that even small changes in the network setup may have im-
+Geosci. Model Dev., 11, 3999–4009, 2018 www.geosci-model-dev.net/11/3999/2018/
+P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning 4007
+proved results signiﬁcantly, the parameter space that needs
+to be explored to ﬁnd the optimal conﬁguration has many
+dimensions (activation function, #layers, #neurons, #epochs,
+#datasets, data normalisation, connectivity between neurons,
+. . . ). This makes the search for the optimal conﬁguration
+cumbersome. Tests with 2mT as an additional ﬁeld in the
+global toy model also showed that it is difﬁcult to relate dif-
+ferent model ﬁelds to each other and that it is not sufﬁcient
+to just add input information to improve predictions. A phys-
+ical understanding of connectivity and signal propagation is
+much easier in conventional models that allow us to assign
+a physical meaning to all parameters. To develop tools and
+approaches for domain scientists to understand and improve
+connectivity within complex NNs will be essential.
+3.3 Data
+What data should be used for training and how should they
+be preprocessed? How can observational data be assimilated
+to generate initial conditions for forecasts?
+A vast amount of meteorological data are available that
+could be used for training of forecast models. The data han-
+dling system of ECMWF provides access to over 210 PB
+of primary data, and the data archive of ECMWF grows by
+about 233 TB per day (ECM, 2018). However, it is question-
+able how much of this data can actually be used for training,
+and the numbers shrink substantially depending on choices
+regarding network architecture and the selection of training
+data.
+If unﬁltered observational data are used as input for net-
+works, biases between different observation systems need to
+be addressed and networks need to be robust against miss-
+ing or faulty input data. In a ﬁrst step, it would probably be
+necessary to use data from a small number of sources that
+provide a continuous spatial coverage rather than a moving
+data window. Even if, for example, all satellite data could
+be used for training, such data would only be available for a
+couple of decades.
+It is also questionable how much data can actually be used
+given that the climate of the Earth is constantly changing and
+in particular given the rapid changes due to anthropogenic
+climate change. This will also decrease the time frame for
+which data can be used for training since we cannot expect
+a model that is trained as a black box to provide reliable
+predictions if the underlying climate state has changed and
+if events that have never happened in the training data start
+to happen in the real world, such as an ice-free Arctic dur-
+ing summer. Conventional models show signiﬁcant biases in
+long-term simulations. These biases will also be a problem
+for models based on NNs and may change the local “climate”
+within a couple of days of simulations and push the network
+to weather regimes that were not covered by the training data.
+For a model that is based on physical principles, it can be
+assumed that changes in the general circulation or the fre-
+quency and shape of extreme events due to climate change
+can be represented correctly, at least within limits. Local net-
+works that are trained to represent the dynamics at all grid
+points, as in the toy model, will be better suited for simu-
+lations in a changing climate compared to networks that are
+trained for local conditions at each grid point since they have
+been trained in the context of a different local climate.
+Existing weather and climate models could be used to gen-
+erate a shear unlimited amount of training data to train a
+forecast system based on NNs also for a changing climate.
+Reanalysis data that were used for the toy model could be
+used as well. However, the quality of the existing models and
+the assimilation system would limit the quality of predictions
+with the NN forecast system, reducing the advantage of the
+deep-learning approach. Tests with the toy model clearly in-
+dicate that it will require data with very high temporal reso-
+lution to develop a NN forecast system that can run at high
+resolution, similar to the length of time steps in conventional
+models, which will not be available in standard reanalysis
+datasets or for standard long-term model integrations and re-
+quire a very large data system.
+The results with the toy model suggest that it is difﬁcult
+enough to develop forecast models if consistent data with full
+spatial coverage are used for training. This suggests starting
+investigations towards a NN forecast system with reanalysis
+or model data which is less noisy and more consistent when
+compared to real-world observations. If it is possible to repli-
+cate the dynamics of the model in sufﬁcient detail, more dif-
+ﬁcult tasks such as the use of real observations as input can
+be addressed.
+4 Conclusions
+We have developed a toy model based on NNs to gener-
+ate global weather forecasts. The toy model does not use
+any dynamical equation of motion. The model is based on
+a 6◦ longitude–latitude grid and represents Z500 as the only
+model ﬁeld. We show that it is indeed possible to make pre-
+dictions into the future that are better than a simple per-
+sistence forecast and are competitive with forecasts of very
+coarse-resolution (TL21) atmosphere models of similar com-
+plexity at least for short lead times. We did not intend to build
+a model that can be competitive with operational weather
+forecast models. However, we use the toy model to identify
+challenges and to indicate fundamental design choices that
+may lead to optimal results for forecast systems based on
+NNs.
+While the use of deep-learning techniques is often dis-
+cussed as being a silver bullet to represent non-linear sys-
+tems, it has yet to be shown whether weather forecast sys-
+tems based on NNs can be competitive compared to con-
+ventional models in particular for global forecasts, for longer
+time ranges than 1 day and across the wide range of physical
+parameters that are provided by numerical models with phys-
+ical consistency. The experience with the toy model suggests
+www.geosci-model-dev.net/11/3999/2018/ Geosci. Model Dev., 11, 3999–4009, 2018
+4008 P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning
+that there will be no free lunch. While NNs can, in principle,
+be used as a black box, the development of a weather forecast
+system will require domain knowledge about the Earth sys-
+tem. Close collaborations between computer scientists and
+meteorologists will be essential even if petabytes of training
+data and exascale supercomputers are available. A deep un-
+derstanding of how to use physical knowledge of the Earth
+system and the connectivity between degrees of freedom to
+improve the development of network architectures and net-
+work training and how to preserve conservation properties
+will be required.
+The development of a NN forecast model that is based on
+a model grid as discussed in this paper will face similar chal-
+lenges when compared to the development of conventional
+models such as the complexity of the Earth system with non-
+linear interactions between model components, scale interac-
+tions, exponential growth of errors in initial conditions, nu-
+merical instabilities and the discrete representation of model
+ﬁelds on the sphere (leading to the pole problem in our toy
+model), the treatment of conservation properties, model bi-
+ases in long-term simulations, errors in observations, and in-
+sufﬁcient data coverage of observations. On the one hand,
+it is likely that NN models could make better use of future
+computing hardware and use more observations and higher
+resolution. On the other hand, it is also likely that it will
+be difﬁcult to stabilise long-term integrations (in particular
+in a changing climate) and to represent complex interactions
+between model features in long simulations since it will be
+hard to improve physical consistency within networks. For
+NN forecast systems that try to describe the evolution of the
+atmosphere based on grid points after learning the right-hand
+side of the equations of motion from data, it therefore seems
+obvious to focus on short-term forecasts and potentially also
+regional predictions in a ﬁrst approach. It will be difﬁcult
+for these models to compete with conventional models in
+medium- and long-range weather forecasts and climate pre-
+dictions. However, the same statement may not be true for
+other applications of NNs that do not propagate the full at-
+mosphere to make long-term forecasts but rather focus on
+predictions of large-scale ﬂow patterns such as El Niño and
+weather regimes (see, for example, Nooteboom et al., 2018).
+Code availability. The code that was used to generate the result of
+this paper is attached as a Supplement.
+Data availability. Only standard ERA5 reanalysis data (see ERA,
+2018) were used for training.
+The Supplement related to this article is available
+online at https://doi.org/10.5194/gmd-11-3999-2018-
+supplement.
+Author contributions. The paper was written by both authors. Nu-
+merical experiments were done by PDD.
+Competing interests. The authors declare that they have no conﬂict
+of interest.
+Acknowledgements. Peter D. Düben gratefully acknowledges
+funding from the Royal Society for his University Research
+Fellowship and the ESIW ACE project. The ESIW ACE project
+has received funding from the European Union’s Horizon 2020
+research and innovation programme under grant agreement no.
+675191. Many thanks to Christoph Angerer, John Grifﬁth, Peter
+Watson and Nils Wedi for very helpful comments and advice.
+Edited by: David Topping
+Reviewed by: two anonymous referees
+References
+Brenowitz, N. D. and Bretherton, C. S.: Prognostic Val-
+idation of a Neural Network Uniﬁed Physics Pa-
+rameterization, Geophys. Res. Lett., 45, 6289–6298,
+https://doi.org/10.1029/2018GL078510, 2018.
+Chevallier, F., Chéruy, F., Scott, N. A., and Chédin, A.:
+A Neural Network Approach for a Fast and Accurate
+Computation of a Longwave Radiative Budget, J. Appl.
+Meteorol., 37, 1385–1397, https://doi.org/10.1175/1520-
+0450(1998)037<1385:ANNAFA>2.0.CO;2, 1998.
+Chevallier, F., Morcrette, J.-J., Chéruy, F., and Scott, N. A.: Use of
+a neural-network-based long-wave radiative-transfer scheme in
+the ECMWF atmospheric model, Q. J. Roy. Meteor. Soc., 126,
+761–776, https://doi.org/10.1002/qj.49712656318, 2000.
+Chollet, F. et al.: Keras, available at: https://github.com/fchollet/
+keras (last access: 28 September 2018), 2015.
+Dee, D. P., Uppala, S. M., Simmons, A. J., Berrisford, P., Poli,
+P., Kobayashi, S., Andrae, U., Balmaseda, M. A., Balsamo, G.,
+Bauer, P., Bechtold, P., Beljaars, A. C. M., van de Berg, L., Bid-
+lot, J., Bormann, N., Delsol, C., Dragani, R., Fuentes, M., Geer,
+A. J., Haimberger, L., Healy, S. B., Hersbach, H., Hólm, E. V .,
+Isaksen, L., Kållberg, P., Köhler, M., Matricardi, M., McNally,
+A. P., Monge-Sanz, B. M., Morcrette, J. J., Park, B. K., Peubey,
+C., de Rosnay, P., Tavolato, C., Thépaut, J. N., and Vitart, F.: The
+ERA-Interim reanalysis: conﬁguration and performance of the
+data assimilation system, Q. J. Roy. Meteor. Soc., 137, 553–597,
+https://doi.org/10.1002/qj.828, 2011.
+ECMWF: Homepage, available at: https://www.ecmwf.int/en/
+computing/our-facilities/data-handling-system, last access:
+16 June 2018.
+ERA5: dataset, available at: https://www.ecmwf.int/en/forecasts/
+datasets/reanalysis-datasets/era5, last access: 10 April 2018.
+Gentine, P., Pritchard, M., Rasp, S., Reinaudi, G., and Yacalis,
+G.: Could Machine Learning Break the Convection Param-
+eterization Deadlock?, Geophys. Res. Lett., 45, 5742–5751,
+https://doi.org/10.1029/2018GL078202, 2018.
+Hall, T., Brooks, H. E., and Doswell III, C. A.: Precip-
+itation Forecasting Using a Neural Network, Weather
+Geosci. Model Dev., 11, 3999–4009, 2018 www.geosci-model-dev.net/11/3999/2018/
+P . D. Dueben and P . Bauer: Global weather and climate models based on machine learning 4009
+Forecast., 14, 338–345, https://doi.org/10.1175/1520-
+0434(1999)014<0338:PFUANN>2.0.CO;2, 1999.
+Krasnopolsky, V . M. and Fox-Rabinovitz, M. S.: A new
+synergetic paradigm in environmental numerical mod-
+eling: Hybrid models combining deterministic and ma-
+chine learning components, Ecol. Model., 191, 5–18,
+https://doi.org/10.1016/j.ecolmodel.2005.08.009, 2006.
+Krasnopolsky, V . M. and Lin, Y .: A Neural Network Non-
+linear Multimodel Ensemble to Improve Precipitation Fore-
+casts over Continental US, Adv. Meteorol., 2012, 649450,
+https://doi.org/10.1155/2012/649450, 2012.
+Krasnopolsky, V . M., Chalikov, D. V ., and Tolman, H. L.: A
+neural network technique to improve computational efﬁciency
+of numerical oceanic models, Ocean Model., 4, 363–383,
+https://doi.org/10.1016/S1463-5003(02)00010-0, 2002.
+Krasnopolsky, V . M., Fox-Rabinovitz, M. S., and Chalikov, D. V .:
+New Approach to Calculation of Atmospheric Model Physics:
+Accurate and Fast Neural Network Emulation of Longwave Ra-
+diation in a Climate Model, Mon. Weather Rev., 133, 1370–1383,
+https://doi.org/10.1175/MWR2923.1, 2005.
+Krasnopolsky, V . M., Fox-Rabinovitz, M. S., and Belochitski, A. A.:
+Using Ensemble of Neural Networks to Learn Stochastic Con-
+vection Parameterizations for Climate and Numerical Weather
+Prediction Models from Data Simulated by a Cloud Resolving
+Model, Advances in Artiﬁcial Neural Systems, 2013, 485913,
+https://doi.org/10.1155/2013/485913, 2013.
+Le, Q. V .: Building high-level features using large scale un-
+supervised learning, in: 2013 IEEE International Conference
+on Acoustics, Speech and Signal Processing, 8595–8598,
+https://doi.org/10.1109/ICASSP.2013.6639343, 2013.
+Lorenz, E. N.: Predictability – a problem partly solved, in: Pre-
+dictability of Weather and Climate, edited by: Palmer, T. N. and
+Hagedorn, R., chap. 3, Cambridge University Press, 40–58, 2006.
+Nooteboom, P. D., Feng, Q. Y ., López, C., Hernández-García,
+E., and Dijkstra, H. A.: Using network theory and machine
+learning to predict El Niño, Earth Syst. Dynam., 9, 969–983,
+https://doi.org/10.5194/esd-9-969-2018, 2018.
+O’Gorman, P. A. and Dwyer, J. G.: Using machine learning
+to parameterize moist convection: potential for modeling of
+climate, climate change and extreme events, ArXiv e-prints,
+arXiv:1806.11037, 2018.
+Rasp, S. and Lerch, S.: Neural networks for post-processing ensem-
+ble weather forecasts, ArXiv e-prints, arXiv:1805.09091, 2018.
+Rasp, S., Pritchard, M. S., and Gentine, P.: Deep learning to rep-
+resent sub-grid processes in climate models, ArXiv e-prints,
+arXiv:1806.04731, 2018.
+Schneider, T., Lan, S., Stuart, A., and Teixeira, J.: Earth
+System Modeling 2.0: A Blueprint for Models That
+Learn From Observations and Targeted High-Resolution
+Simulations, Geophys. Res. Lett., 44, 12396–12417,
+https://doi.org/10.1002/2017GL076101, 2018.
+TensorFlow: available at: https://www.tensorﬂow.org, last access:
+28 September 2018.
+Thornes, T., Düben, P., and Palmer, T.: On the use of scale-
+dependent precision in Earth System modelling, Q. J. Roy. Me-
+teor. Soc., 143, 897–908, https://doi.org/10.1002/qj.2974, 2017.
+Tolman, H. L., Krasnopolsky, V . M., and Chalikov, D. V .: Neu-
+ral network approximations for nonlinear interactions in wind
+wave spectra: direct mapping for wind seas in deep water, Ocean
+Model., 8, 253–278, 2005.
+www.geosci-model-dev.net/11/3999/2018/ Geosci. Model Dev., 11, 3999–4009, 2018

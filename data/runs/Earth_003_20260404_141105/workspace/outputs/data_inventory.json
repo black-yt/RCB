@@ -1,0 +1,226 @@
+{
+  "input": {
+    "name": "input",
+    "dims": {
+      "time": 2,
+      "level": 70,
+      "lat": 181,
+      "lon": 360
+    },
+    "coords": {
+      "lon": {
+        "shape": [
+          360
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "head": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "4.0"
+        ],
+        "tail": [
+          "355.0",
+          "356.0",
+          "357.0",
+          "358.0",
+          "359.0"
+        ]
+      },
+      "lat": {
+        "shape": [
+          181
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "head": [
+          "90.0",
+          "89.0",
+          "88.0",
+          "87.0",
+          "86.0"
+        ],
+        "tail": [
+          "-86.0",
+          "-87.0",
+          "-88.0",
+          "-89.0",
+          "-90.0"
+        ]
+      },
+      "level": {
+        "shape": [
+          70
+        ],
+        "dtype": "object",
+        "attrs": {},
+        "head": [
+          "Z50",
+          "Z100",
+          "Z150",
+          "Z200",
+          "Z250"
+        ],
+        "tail": [
+          "T2M",
+          "U10",
+          "V10",
+          "MSL",
+          "TP"
+        ]
+      },
+      "time": {
+        "shape": [
+          2
+        ],
+        "dtype": "datetime64[ns]",
+        "attrs": {},
+        "values": [
+          "1697068800000000000",
+          "1697090400000000000"
+        ]
+      }
+    },
+    "data_vars": {
+      "data": {
+        "dims": [
+          "time",
+          "level",
+          "lat",
+          "lon"
+        ],
+        "shape": [
+          2,
+          70,
+          181,
+          360
+        ],
+        "dtype": "float32",
+        "attrs": {
+          "description": "Sample input for FuXi (1\u00b0 resolution)"
+        }
+      }
+    },
+    "attrs": {}
+  },
+  "forecast": {
+    "name": "forecast",
+    "dims": {
+      "time": 1,
+      "step": 1,
+      "level": 70,
+      "lat": 181,
+      "lon": 360
+    },
+    "coords": {
+      "lon": {
+        "shape": [
+          360
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "head": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "4.0"
+        ],
+        "tail": [
+          "355.0",
+          "356.0",
+          "357.0",
+          "358.0",
+          "359.0"
+        ]
+      },
+      "lat": {
+        "shape": [
+          181
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "head": [
+          "90.0",
+          "89.0",
+          "88.0",
+          "87.0",
+          "86.0"
+        ],
+        "tail": [
+          "-86.0",
+          "-87.0",
+          "-88.0",
+          "-89.0",
+          "-90.0"
+        ]
+      },
+      "level": {
+        "shape": [
+          70
+        ],
+        "dtype": "object",
+        "attrs": {},
+        "head": [
+          "Z50",
+          "Z100",
+          "Z150",
+          "Z200",
+          "Z250"
+        ],
+        "tail": [
+          "T2M",
+          "U10",
+          "V10",
+          "MSL",
+          "TP"
+        ]
+      },
+      "time": {
+        "shape": [
+          1
+        ],
+        "dtype": "datetime64[ns]",
+        "attrs": {},
+        "values": [
+          "1697090400000000000"
+        ]
+      },
+      "step": {
+        "shape": [
+          1
+        ],
+        "dtype": "int32",
+        "attrs": {},
+        "values": [
+          "6"
+        ]
+      }
+    },
+    "data_vars": {
+      "data": {
+        "dims": [
+          "time",
+          "step",
+          "level",
+          "lat",
+          "lon"
+        ],
+        "shape": [
+          1,
+          1,
+          70,
+          181,
+          360
+        ],
+        "dtype": "float32",
+        "attrs": {
+          "description": "Sample FuXi output for 6-hour forecast (1\u00b0 resolution)"
+        }
+      }
+    },
+    "attrs": {}
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scenario": "low_wind",
+  "description": "Stylized stress test with 35% lower wind availability.",
+  "objective_gbp": 60315103707.301216,
+  "total_demand_mwh": 15939706.029762119,
+  "served_mwh": 3891014.5320645273,
+  "unserved_mwh": 12048691.497697592,
+  "unserved_share": 0.7558917005872413,
+  "wind_generation_mwh": 2135985.7512073787,
+  "wind_available_mwh": 2725230.3031069105,
+  "wind_curtailment_mwh": 589244.5518995305,
+  "wind_curtailment_share": 0.2162182591422676,
+  "gas_generation_mwh": 1351955.90577219,
+  "nuclear_generation_mwh": 404842.35246210895,
+  "storage_discharge_mwh": 5308.432131455322,
+  "storage_charge_mwh": 7077.909508607097,
+  "max_line_utilization": 1.0,
+  "mean_line_utilization": 0.5747602709580827,
+  "peak_unserved_mw": 117069.62795025003
+}

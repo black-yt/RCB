@@ -1,0 +1,4 @@
+scenario,sites_below_europe,sites_below_europe_plus_10pct,best_site_gap,worst_site_gap
+baseline,0,12,0.17555956930610428,1.719214913774512
+derisked,17,30,-0.7942438686161202,0.7386989294146371
+high_rate,0,9,0.3693483984276664,1.9265907724776952

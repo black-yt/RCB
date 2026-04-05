@@ -1,0 +1,10 @@
+{
+  "n_channels": 70,
+  "n_surface_channels": 5,
+  "n_upper_air_channels": 65,
+  "mean_input_tendency_rmse": 14.064034589844397,
+  "median_input_tendency_rmse": 14.138221461895313,
+  "mean_forecast_increment_rmse": 14.054465695539843,
+  "median_forecast_increment_rmse": 14.130415377530097,
+  "corr_tendency_vs_forecast_increment": 0.9979221979554234
+}

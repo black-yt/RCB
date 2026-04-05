@@ -1,0 +1,221 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_matbg.py",
+    "path": "code/analyze_matbg.py",
+    "type": "file",
+    "size": 19665,
+    "mtime": 1775318082.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "MATBG Superfluid Stiffness Core Dataset.txt",
+    "path": "data/MATBG Superfluid Stiffness Core Dataset.txt",
+    "type": "file",
+    "size": 19467,
+    "mtime": 1770189695.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 3128,
+    "mtime": 1775318078.0,
+    "exported": true
+  },
+  {
+    "name": "carrier_density_data.csv",
+    "path": "outputs/carrier_density_data.csv",
+    "type": "file",
+    "size": 8511,
+    "mtime": 1775318078.0,
+    "exported": true
+  },
+  {
+    "name": "current_data_dc.csv",
+    "path": "outputs/current_data_dc.csv",
+    "type": "file",
+    "size": 2300,
+    "mtime": 1775318080.0,
+    "exported": true
+  },
+  {
+    "name": "current_data_mw.csv",
+    "path": "outputs/current_data_mw.csv",
+    "type": "file",
+    "size": 1731,
+    "mtime": 1775318078.0,
+    "exported": true
+  },
+  {
+    "name": "dataset_overview.csv",
+    "path": "outputs/dataset_overview.csv",
+    "type": "file",
+    "size": 205,
+    "mtime": 1775318078.0,
+    "exported": true
+  },
+  {
+    "name": "model_comparison_metrics.csv",
+    "path": "outputs/model_comparison_metrics.csv",
+    "type": "file",
+    "size": 579,
+    "mtime": 1775318078.0,
+    "exported": true
+  },
+  {
+    "name": "temperature_data.csv",
+    "path": "outputs/temperature_data.csv",
+    "type": "file",
+    "size": 7104,
+    "mtime": 1775318078.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 3666801,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 225641,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3542674,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 17317606,
+    "mtime": 1773914913.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "dataset_overview.png",
+    "path": "report/images/dataset_overview.png",
+    "type": "file",
+    "size": 228509,
+    "mtime": 1775318080.0,
+    "exported": true
+  },
+  {
+    "name": "dc_current_dependence.png",
+    "path": "report/images/dc_current_dependence.png",
+    "type": "file",
+    "size": 302191,
+    "mtime": 1775318082.0,
+    "exported": true
+  },
+  {
+    "name": "dc_low_current_fit.png",
+    "path": "report/images/dc_low_current_fit.png",
+    "type": "file",
+    "size": 302561,
+    "mtime": 1775318082.0,
+    "exported": true
+  },
+  {
+    "name": "density_dependence.png",
+    "path": "report/images/density_dependence.png",
+    "type": "file",
+    "size": 281815,
+    "mtime": 1775318080.0,
+    "exported": true
+  },
+  {
+    "name": "density_enhancement.png",
+    "path": "report/images/density_enhancement.png",
+    "type": "file",
+    "size": 262632,
+    "mtime": 1775318082.0,
+    "exported": true
+  },
+  {
+    "name": "microwave_current_dependence.png",
+    "path": "report/images/microwave_current_dependence.png",
+    "type": "file",
+    "size": 226349,
+    "mtime": 1775318080.0,
+    "exported": true
+  },
+  {
+    "name": "temperature_dependence.png",
+    "path": "report/images/temperature_dependence.png",
+    "type": "file",
+    "size": 331469,
+    "mtime": 1775318082.0,
+    "exported": true
+  },
+  {
+    "name": "temperature_residuals.png",
+    "path": "report/images/temperature_residuals.png",
+    "type": "file",
+    "size": 277730,
+    "mtime": 1775318080.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 15816,
+    "mtime": 1775318083.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5571,
+    "mtime": 1775294075.0,
+    "exported": true
+  }
+]

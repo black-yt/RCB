@@ -1,0 +1,17 @@
+task,reference_key,token_jaccard,completion_length,reference_length
+"Construct Kinetic Hamiltonian (continuum version, single-particle)",continuum_hamiltonian_main_text,0.3076923076923077,997,301
+Define each term in Kinetic Hamiltonian (continuum version),continuum_hamiltonian_main_text,0.46153846153846156,557,301
+Construct Potential Hamiltonian (continuum version),continuum_hamiltonian_main_text,0.24358974358974358,894,301
+Define each term in Potential Hamiltonian (continuum version),interlayer_tunneling_main_text,0.18823529411764706,1939,141
+"Convert from single-particle to second-quantized form, return in matrix",single_particle_second_quantized,0.3673469387755102,1647,702
+"Convert from single-particle to second-quantized form, return in summation (expand the matrix)",single_particle_second_quantized,0.42857142857142855,1190,702
+Convert noninteracting Hamiltonian in real space to momentum space (continuum version),,,3214,0
+Particle-hole transformation,,,645,0
+Simplify the Hamiltonian in the particle-hole basis,,,2215,0
+Construct interaction Hamiltonian (momentum space),,,667,0
+Wick's theorem,,,2359,0
+Extract quadratic term,,,763,0
+Swap the index to combine Hartree and Fock terms,,,6552,0
+Reduce momentum in Hartree term (momentum in BZ + reciprocal lattice),,,2835,0
+Reduce momentum in Fock term (momentum in BZ + reciprocal lattice),,,2745,0
+Combine the Hartree and Fock term,,,1987,0

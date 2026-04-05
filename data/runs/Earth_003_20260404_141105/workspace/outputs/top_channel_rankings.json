@@ -1,0 +1,106 @@
+{
+  "top_input_tendency_rmse": [
+    {
+      "channel_label": "Z700",
+      "variable": "Z",
+      "tendency_rmse": 14.233866656466883
+    },
+    {
+      "channel_label": "Z925",
+      "variable": "Z",
+      "tendency_rmse": 14.227049376865672
+    },
+    {
+      "channel_label": "T925",
+      "variable": "T",
+      "tendency_rmse": 14.221210781543395
+    },
+    {
+      "channel_label": "R150",
+      "variable": "R",
+      "tendency_rmse": 14.214162131197888
+    },
+    {
+      "channel_label": "Z1000",
+      "variable": "Z",
+      "tendency_rmse": 14.207938996459603
+    },
+    {
+      "channel_label": "V500",
+      "variable": "V",
+      "tendency_rmse": 14.206120263000402
+    },
+    {
+      "channel_label": "R600",
+      "variable": "R",
+      "tendency_rmse": 14.20311774519644
+    },
+    {
+      "channel_label": "R700",
+      "variable": "R",
+      "tendency_rmse": 14.201921823631313
+    },
+    {
+      "channel_label": "T200",
+      "variable": "T",
+      "tendency_rmse": 14.191800206264064
+    },
+    {
+      "channel_label": "V100",
+      "variable": "V",
+      "tendency_rmse": 14.188178956226274
+    }
+  ],
+  "top_forecast_increment_rmse": [
+    {
+      "channel_label": "T925",
+      "variable": "T",
+      "forecast_minus_latest_rmse": 14.233365978853302
+    },
+    {
+      "channel_label": "U600",
+      "variable": "U",
+      "forecast_minus_latest_rmse": 14.213681512512807
+    },
+    {
+      "channel_label": "T200",
+      "variable": "T",
+      "forecast_minus_latest_rmse": 14.207845579391678
+    },
+    {
+      "channel_label": "R700",
+      "variable": "R",
+      "forecast_minus_latest_rmse": 14.205899141362455
+    },
+    {
+      "channel_label": "R150",
+      "variable": "R",
+      "forecast_minus_latest_rmse": 14.20206740968385
+    },
+    {
+      "channel_label": "U10",
+      "variable": "U10",
+      "forecast_minus_latest_rmse": 14.200123186147508
+    },
+    {
+      "channel_label": "R100",
+      "variable": "R",
+      "forecast_minus_latest_rmse": 14.195806208268404
+    },
+    {
+      "channel_label": "R50",
+      "variable": "R",
+      "forecast_minus_latest_rmse": 14.184759584398458
+    },
+    {
+      "channel_label": "V500",
+      "variable": "V",
+      "forecast_minus_latest_rmse": 14.184143591439563
+    },
+    {
+      "channel_label": "U1000",
+      "variable": "U",
+      "forecast_minus_latest_rmse": 14.175784997248781
+    }
+  ]
+}

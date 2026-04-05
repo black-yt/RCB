@@ -1,0 +1,5 @@
+condition,mean_rmsd,std_rmsd,ci95,n
+Random placement,8.960799,4.134261,2.864897,8
+Pocket translation,0.000000,0.000000,0.000000,8
+Diffusion prototype,0.098524,0.003785,0.002623,8
+No spring ablation,0.114040,0.004264,0.002955,8

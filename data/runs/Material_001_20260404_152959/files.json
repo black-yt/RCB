@@ -1,0 +1,226 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "materials_multimodal_study.py",
+    "path": "code/materials_multimodal_study.py",
+    "type": "file",
+    "size": 15830,
+    "mtime": 1775317526.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "M-AI-Synth__Materials_AI_Dataset_.txt",
+    "path": "data/M-AI-Synth__Materials_AI_Dataset_.txt",
+    "type": "file",
+    "size": 3970,
+    "mtime": 1770620672.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "data_summary.json",
+    "path": "outputs/data_summary.json",
+    "type": "file",
+    "size": 417,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "generation_metrics.json",
+    "path": "outputs/generation_metrics.json",
+    "type": "file",
+    "size": 536,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "optimization_results.json",
+    "path": "outputs/optimization_results.json",
+    "type": "file",
+    "size": 417,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "optimization_surface.csv",
+    "path": "outputs/optimization_surface.csv",
+    "type": "file",
+    "size": 198380,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "property_feature_importance.csv",
+    "path": "outputs/property_feature_importance.csv",
+    "type": "file",
+    "size": 148,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "property_linear_coefficients.csv",
+    "path": "outputs/property_linear_coefficients.csv",
+    "type": "file",
+    "size": 172,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "property_metrics.csv",
+    "path": "outputs/property_metrics.csv",
+    "type": "file",
+    "size": 11450,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "property_metrics_summary.csv",
+    "path": "outputs/property_metrics_summary.csv",
+    "type": "file",
+    "size": 465,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "property_predictions.csv",
+    "path": "outputs/property_predictions.csv",
+    "type": "file",
+    "size": 4656,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "structure_generated.csv",
+    "path": "outputs/structure_generated.csv",
+    "type": "file",
+    "size": 7236,
+    "mtime": 1775317524.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 1 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 2155763,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 2638490,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 891813,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 510141,
+    "mtime": 1773914903.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview_property.png",
+    "path": "report/images/data_overview_property.png",
+    "type": "file",
+    "size": 191901,
+    "mtime": 1775317526.0,
+    "exported": true
+  },
+  {
+    "name": "optimization_heatmap.png",
+    "path": "report/images/optimization_heatmap.png",
+    "type": "file",
+    "size": 421495,
+    "mtime": 1775317526.0,
+    "exported": true
+  },
+  {
+    "name": "property_feature_importance.png",
+    "path": "report/images/property_feature_importance.png",
+    "type": "file",
+    "size": 132164,
+    "mtime": 1775317526.0,
+    "exported": true
+  },
+  {
+    "name": "property_model_results.png",
+    "path": "report/images/property_model_results.png",
+    "type": "file",
+    "size": 274229,
+    "mtime": 1775317526.0,
+    "exported": true
+  },
+  {
+    "name": "structure_generation_validation.png",
+    "path": "report/images/structure_generation_validation.png",
+    "type": "file",
+    "size": 281527,
+    "mtime": 1775317526.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12837,
+    "mtime": 1775317527.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5377,
+    "mtime": 1775287799.0,
+    "exported": true
+  }
+]

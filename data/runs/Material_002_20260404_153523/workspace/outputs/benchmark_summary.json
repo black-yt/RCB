@@ -1,0 +1,24 @@
+{
+  "available_asset": "benchmark specification text only",
+  "n_surface_metals": 6,
+  "surface_metals": [
+    "Ni",
+    "Cu",
+    "Rh",
+    "Pd",
+    "Ir",
+    "Pt"
+  ],
+  "n_reactions": 3,
+  "reaction_labels": [
+    "Rxn 1",
+    "Rxn 11",
+    "Rxn 20"
+  ],
+  "n_unique_elements_in_benchmarks": 3,
+  "unique_elements_in_benchmarks": [
+    "C",
+    "H",
+    "O"
+  ]
+}

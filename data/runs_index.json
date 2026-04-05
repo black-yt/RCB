@@ -1,5 +1,16 @@
 [
   {
+    "run_id": "Physics_003_20260404_173350",
+    "task_id": "Physics_003",
+    "timestamp": "20260404_173350",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 321,
+    "total_score": 36.8
+  },
+  {
     "run_id": "Physics_003_20260403_001651",
     "task_id": "Physics_003",
     "timestamp": "20260403_001651",
@@ -44,6 +55,17 @@
     "total_score": 46.5
   },
   {
+    "run_id": "Physics_002_20260404_172029",
+    "task_id": "Physics_002",
+    "timestamp": "20260404_172029",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 794,
+    "total_score": 24.85
+  },
+  {
     "run_id": "Physics_002_20260403_001108",
     "task_id": "Physics_002",
     "timestamp": "20260403_001108",
@@ -86,6 +108,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 194,
     "total_score": 10.35
+  },
+  {
+    "run_id": "Physics_001_20260404_171435",
+    "task_id": "Physics_001",
+    "timestamp": "20260404_171435",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 354,
+    "total_score": 24.5
   },
   {
     "run_id": "Physics_001_20260403_000425",
@@ -187,6 +220,17 @@
     "total_score": 32.1
   },
   {
+    "run_id": "Neuroscience_003_20260404_170410",
+    "task_id": "Neuroscience_003",
+    "timestamp": "20260404_170410",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 625,
+    "total_score": 5.95
+  },
+  {
     "run_id": "Neuroscience_003_20260402_235804",
     "task_id": "Neuroscience_003",
     "timestamp": "20260402_235804",
@@ -231,6 +275,17 @@
     "total_score": 4.25
   },
   {
+    "run_id": "Neuroscience_002_20260404_162607",
+    "task_id": "Neuroscience_002",
+    "timestamp": "20260404_162607",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 2282,
+    "total_score": 1.0
+  },
+  {
     "run_id": "Neuroscience_002_20260402_234030",
     "task_id": "Neuroscience_002",
     "timestamp": "20260402_234030",
@@ -273,6 +328,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 295,
     "total_score": 0.4
+  },
+  {
+    "run_id": "Neuroscience_001_20260404_161809",
+    "task_id": "Neuroscience_001",
+    "timestamp": "20260404_161809",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 478,
+    "total_score": 0.75
   },
   {
     "run_id": "Neuroscience_001_20260402_233406",
@@ -374,6 +440,17 @@
     "total_score": 8.6
   },
   {
+    "run_id": "Math_003_20260404_161228",
+    "task_id": "Math_003",
+    "timestamp": "20260404_161228",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 341,
+    "total_score": 0.0
+  },
+  {
     "run_id": "Math_003_20260402_232335",
     "task_id": "Math_003",
     "timestamp": "20260402_232335",
@@ -418,6 +495,17 @@
     "total_score": 0.0
   },
   {
+    "run_id": "Math_002_20260404_160235",
+    "task_id": "Math_002",
+    "timestamp": "20260404_160235",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 588,
+    "total_score": 14.1
+  },
+  {
     "run_id": "Math_002_20260402_231652",
     "task_id": "Math_002",
     "timestamp": "20260402_231652",
@@ -460,6 +548,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 125,
     "total_score": 0.0
+  },
+  {
+    "run_id": "Math_001_20260404_155539",
+    "task_id": "Math_001",
+    "timestamp": "20260404_155539",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 416,
+    "total_score": 35.2
   },
   {
     "run_id": "Math_001_20260402_231143",
@@ -561,6 +660,17 @@
     "total_score": 26.65
   },
   {
+    "run_id": "Material_003_20260404_153922",
+    "task_id": "Material_003",
+    "timestamp": "20260404_153922",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 977,
+    "total_score": 19.95
+  },
+  {
     "run_id": "Material_003_20260402_225655",
     "task_id": "Material_003",
     "timestamp": "20260402_225655",
@@ -605,6 +715,17 @@
     "total_score": 12.35
   },
   {
+    "run_id": "Material_002_20260404_153523",
+    "task_id": "Material_002",
+    "timestamp": "20260404_153523",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 239,
+    "total_score": 10.05
+  },
+  {
     "run_id": "Material_002_20260402_225007",
     "task_id": "Material_002",
     "timestamp": "20260402_225007",
@@ -647,6 +768,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 157,
     "total_score": 14.9
+  },
+  {
+    "run_id": "Material_001_20260404_152959",
+    "task_id": "Material_001",
+    "timestamp": "20260404_152959",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 323,
+    "total_score": 6.3
   },
   {
     "run_id": "Material_001_20260402_224523",
@@ -748,6 +880,17 @@
     "total_score": 23.0
   },
   {
+    "run_id": "Life_003_20260404_152331",
+    "task_id": "Life_003",
+    "timestamp": "20260404_152331",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 388,
+    "total_score": 36.0
+  },
+  {
     "run_id": "Life_003_20260402_223914",
     "task_id": "Life_003",
     "timestamp": "20260402_223914",
@@ -792,6 +935,17 @@
     "total_score": 29.3
   },
   {
+    "run_id": "Life_002_20260404_152005",
+    "task_id": "Life_002",
+    "timestamp": "20260404_152005",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 206,
+    "total_score": 9.1
+  },
+  {
     "run_id": "Life_002_20260402_024836",
     "task_id": "Life_002",
     "timestamp": "20260402_024836",
@@ -834,6 +988,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 438,
     "total_score": 9.7
+  },
+  {
+    "run_id": "Life_001_20260404_151432",
+    "task_id": "Life_001",
+    "timestamp": "20260404_151432",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 333,
+    "total_score": 13.6
   },
   {
     "run_id": "Life_001_20260402_223418",
@@ -957,6 +1122,17 @@
     "total_score": 7.55
   },
   {
+    "run_id": "Information_003_20260404_145105",
+    "task_id": "Information_003",
+    "timestamp": "20260404_145105",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 1406,
+    "total_score": 4.75
+  },
+  {
     "run_id": "Information_003_20260402_222436",
     "task_id": "Information_003",
     "timestamp": "20260402_222436",
@@ -1001,6 +1177,17 @@
     "total_score": 9.2
   },
   {
+    "run_id": "Information_002_20260404_144554",
+    "task_id": "Information_002",
+    "timestamp": "20260404_144554",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 311,
+    "total_score": 14.1
+  },
+  {
     "run_id": "Information_002_20260402_222052",
     "task_id": "Information_002",
     "timestamp": "20260402_222052",
@@ -1043,6 +1230,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 146,
     "total_score": 11.5
+  },
+  {
+    "run_id": "Information_001_20260404_143647",
+    "task_id": "Information_001",
+    "timestamp": "20260404_143647",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 547,
+    "total_score": 3.6
   },
   {
     "run_id": "Information_001_20260402_221510",
@@ -1144,6 +1342,17 @@
     "total_score": 10.0
   },
   {
+    "run_id": "Energy_003_20260404_143111",
+    "task_id": "Energy_003",
+    "timestamp": "20260404_143111",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 336,
+    "total_score": 26.3
+  },
+  {
     "run_id": "Energy_003_20260402_220933",
     "task_id": "Energy_003",
     "timestamp": "20260402_220933",
@@ -1188,6 +1397,17 @@
     "total_score": 9.0
   },
   {
+    "run_id": "Energy_002_20260404_142606",
+    "task_id": "Energy_002",
+    "timestamp": "20260404_142606",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 304,
+    "total_score": 36.4
+  },
+  {
     "run_id": "Energy_002_20260402_021822",
     "task_id": "Energy_002",
     "timestamp": "20260402_021822",
@@ -1230,6 +1450,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 334,
     "total_score": 31.0
+  },
+  {
+    "run_id": "Energy_001_20260404_141923",
+    "task_id": "Energy_001",
+    "timestamp": "20260404_141923",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 404,
+    "total_score": 20.9
   },
   {
     "run_id": "Energy_001_20260402_215912",
@@ -1331,6 +1562,17 @@
     "total_score": 11.3
   },
   {
+    "run_id": "Earth_003_20260404_141105",
+    "task_id": "Earth_003",
+    "timestamp": "20260404_141105",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 497,
+    "total_score": 0.0
+  },
+  {
     "run_id": "Earth_003_20260402_215412",
     "task_id": "Earth_003",
     "timestamp": "20260402_215412",
@@ -1375,6 +1617,17 @@
     "total_score": 0.6
   },
   {
+    "run_id": "Earth_002_20260404_140256",
+    "task_id": "Earth_002",
+    "timestamp": "20260404_140256",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 488,
+    "total_score": 15.1
+  },
+  {
     "run_id": "Earth_002_20260402_214628",
     "task_id": "Earth_002",
     "timestamp": "20260402_214628",
@@ -1417,6 +1670,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 1367,
     "total_score": 22.6
+  },
+  {
+    "run_id": "Earth_001_20260404_135907",
+    "task_id": "Earth_001",
+    "timestamp": "20260404_135907",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 229,
+    "total_score": 39.97
   },
   {
     "run_id": "Earth_001_20260402_214137",
@@ -1518,6 +1782,17 @@
     "total_score": 24.6
   },
   {
+    "run_id": "Chemistry_003_20260404_134700",
+    "task_id": "Chemistry_003",
+    "timestamp": "20260404_134700",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 727,
+    "total_score": 1.5
+  },
+  {
     "run_id": "Chemistry_003_20260402_213222",
     "task_id": "Chemistry_003",
     "timestamp": "20260402_213222",
@@ -1562,6 +1837,17 @@
     "total_score": 7.5
   },
   {
+    "run_id": "Chemistry_002_20260404_134119",
+    "task_id": "Chemistry_002",
+    "timestamp": "20260404_134119",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 341,
+    "total_score": 1.4
+  },
+  {
     "run_id": "Chemistry_002_20260402_212616",
     "task_id": "Chemistry_002",
     "timestamp": "20260402_212616",
@@ -1604,6 +1890,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 90,
     "total_score": 0.0
+  },
+  {
+    "run_id": "Chemistry_001_20260404_133513",
+    "task_id": "Chemistry_001",
+    "timestamp": "20260404_133513",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 366,
+    "total_score": 7.3
   },
   {
     "run_id": "Chemistry_001_20260402_212107",
@@ -1705,6 +2002,17 @@
     "total_score": 16.85
   },
   {
+    "run_id": "Astronomy_003_20260404_133145",
+    "task_id": "Astronomy_003",
+    "timestamp": "20260404_133145",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 208,
+    "total_score": 47.3
+  },
+  {
     "run_id": "Astronomy_003_20260402_211549",
     "task_id": "Astronomy_003",
     "timestamp": "20260402_211549",
@@ -1749,6 +2057,17 @@
     "total_score": 44.2
   },
   {
+    "run_id": "Astronomy_002_20260404_132455",
+    "task_id": "Astronomy_002",
+    "timestamp": "20260404_132455",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 410,
+    "total_score": 23.9
+  },
+  {
     "run_id": "Astronomy_002_20260401_141959",
     "task_id": "Astronomy_002",
     "timestamp": "20260401_141959",
@@ -1791,6 +2110,17 @@
     "model_display": "GPT-5.4",
     "duration_seconds": 242,
     "total_score": 11.6
+  },
+  {
+    "run_id": "Astronomy_001_20260403_194127",
+    "task_id": "Astronomy_001",
+    "timestamp": "20260403_194127",
+    "status": "completed",
+    "agent_name": "EvoScientist",
+    "model": "",
+    "model_display": "",
+    "duration_seconds": 420,
+    "total_score": 21.2
   },
   {
     "run_id": "Astronomy_001_20260402_210925",

@@ -1,0 +1,23 @@
+{
+  "property_prediction": {
+    "n_samples": 97,
+    "n_edges": 20,
+    "target_mean": 0.08402989690721649,
+    "target_std": 0.5819259369335851
+  },
+  "structure_generation": {
+    "n_samples": 101,
+    "a_mean": 5.520376237623763,
+    "b_mean": 5.521465346534654
+  },
+  "autonomous_optimization": {
+    "temperature_bounds": [
+      200.0,
+      500.0
+    ],
+    "time_bounds": [
+      10.0,
+      30.0
+    ]
+  }
+}

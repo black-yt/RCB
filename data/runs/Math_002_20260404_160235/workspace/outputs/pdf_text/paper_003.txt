@@ -1,0 +1,919 @@
+EECBS: A Bounded-Suboptimal Search for Multi-Agent Path Finding
+Jiaoyang Li,1*Wheeler Ruml,2Sven Koenig1
+1University of Southern California, Los Angeles, California, USA
+2University of New Hampshire, Durham, New Hampshire, USA
+jiaoyanl@usc.edu, ruml@cs.unh.edu, skoenig@usc.edu
+Abstract
+Multi-Agent Path Finding (MAPF), i.e., ﬁnding collision-free
+paths for multiple robots, is important for many applications
+where small runtimes are necessary, including the kind of
+automated warehouses operated by Amazon. CBS is a lead-
+ing two-level search algorithm for solving MAPF optimally.
+ECBS is a bounded-suboptimal variant of CBS that uses focal
+search to speed up CBS by sacriﬁcing optimality and instead
+guaranteeing that the costs of its solutions are within a given
+factor of optimal. In this paper, we study how to decrease
+its runtime even further using inadmissible heuristics. Moti-
+vated by Explicit Estimation Search (EES), we propose Ex-
+plicit Estimation CBS (EECBS), a new bounded-suboptimal
+variant of CBS, that uses online learning to obtain inadmis-
+sible estimates of the cost of the solution of each high-level
+node and uses EES to choose which high-level node to ex-
+pand next. We also investigate recent improvements of CBS
+and adapt them to EECBS. We ﬁnd that EECBS with the im-
+provements runs signiﬁcantly faster than the state-of-the-art
+bounded-suboptimal MAPF algorithms ECBS, BCP-7, and
+eMDD-SAT on a variety of MAPF instances. We hope that
+the scalability of EECBS enables additional applications for
+bounded-suboptimal MAPF algorithms.
+1 Introduction
+Multi-Agent Path Finding (MAPF) is the problem of ﬁnd-
+ing collision-free paths for a team of agents in a known en-
+vironment while minimizing the sum of their travel times.
+It is inspired by real-world applications such as warehouse
+logistics (Ma et al. 2017), airport operations (Li et al.
+2019d), UA V trafﬁc management (Ho et al. 2019), auto-
+mated valet parking (Okoso, Otaki, and Nishi 2019), and
+video games (Li et al. 2020b).
+CBS (Sharon et al. 2015) is a leading two-level search al-
+gorithm for solving MAPF optimally. Its central idea is to
+plan a path for each agent independently and then resolve
+collisions between two agents by branching. Each branch
+is a new candidate plan wherein one agent or the other is
+forced to ﬁnd a new path that avoids the chosen collision.
+Researchers have made signiﬁcant progress on speeding up
+CBS (Boyarski et al. 2015a,b, 2020a,b; Felner et al. 2018;
+*Jiaoyang Li performed the research during her visit to Monash
+University.
+Copyright © 2021, Association for the Advancement of Artiﬁcial
+Intelligence (www.aaai.org). All rights reserved.Gange, Harabor, and Stuckey 2019; Li et al. 2019b,c, 2020a;
+Zhang et al. 2020) and designing compilation-based algo-
+rithms that use ideas similar to CBS (Surynek 2019; Lam
+et al. 2019; Lam and Le Bodic 2020). However, for many
+applications, we need to coordinate hundreds of agents with
+limited computational resources. The fact that MAPF is NP-
+hard to solve optimally (Yu and LaValle 2013) motivates
+ﬁnding bounded-suboptimal solutions in order to reduce the
+runtime of the search.
+Enhanced CBS (ECBS) (Barer et al. 2014) is a bounded-
+suboptimal variant of CBS that is guaranteed to ﬁnd solu-
+tions whose costs are no more than a user-speciﬁed factor
+away from optimal. Its bounded suboptimality is achieved
+by replacing the best-ﬁrst search in the high and low levels
+of CBS with focal search (Pearl and Kim 1982). Focal search
+uses an admissible heuristic for bounding the solution cost
+and another heuristic for determining the distance of nodes
+to the goal nodes. We will demonstrate that ECBS becomes
+inefﬁcient if these heuristics are negatively correlated.
+In this paper, we propose a new bounded-suboptimal
+variant of CBS, called Explicit Estimation CBS (EECBS).
+EECBS replaces focal search with Explicit Estimation
+Search (Thayer and Ruml 2011) on the high level and uses
+online learning (Thayer, Dionne, and Ruml 2011) to learn
+an informed but potentially inadmissible heuristic to guide
+the high-level search. ECBS and EECBS differ from CBS
+only in the node selection rules used in their high- and low-
+level searches. Hence, the ideas behind many improvements
+of CBS, such as bypassing conﬂicts (Boyarski et al. 2015a),
+prioritizing conﬂicts (Boyarski et al. 2015b), symmetry rea-
+soning (Li et al. 2019c, 2020a), and focusing the high-level
+search with admissible heuristics (Li et al. 2019a), might im-
+prove ECBS and EECBS as well, and we show how they
+can be adapted to them. We empirically evaluate how each
+improvement affects performance, ﬁnding that their combi-
+nation is best. EECBS with the improvements runs signif-
+icantly faster than ECBS and BCP-7 (Lam and Le Bodic
+2020) and eMDD-SAT (Surynek et al. 2018), two other
+state-of-the-art bounded-suboptimal MAPF algorithms.
+2 Preliminaries
+In this section, we formalize the deﬁnition of MAPF and
+introduce the baseline algorithms CBS and ECBS.arXiv:2010.01367v2  [cs.AI]  12 Mar 2021
+2.1 Multi-Agent Path Finding (MAPF)
+MAPF has many variants. In this paper, we focus on the vari-
+ant deﬁned by Stern et al. (2019) that (1) considers vertex
+and swapping conﬂicts, (2) uses the “stay at target” assump-
+tion, and (3) optimizes the sum of costs. Formally, we deﬁne
+MAPF by a graph and a set of magentsfa1;:::;amg. Each
+agentaihas a start vertex siand a target vertex gi. Time is
+discretized into timesteps. At each timestep, every agent can
+either move to an adjacent vertex or wait at its current vertex.
+Apathpifor agentaiis a sequence of vertices that are pair-
+wise adjacent or identical (indicating a wait action), starting
+at the start vertex siand ending at the goal vertex gi. The cost
+of a pathpiis its lengthjpij. Agents remain at their goal ver-
+tices after they complete their paths. We say that two agents
+have a conﬂict iff they are at the same vertex or traverse the
+same edge in opposite directions at the same timestep. A so-
+lution is a set of conﬂict-free paths fp1;:::;pmg, one for
+each agent. An optimal solution is a solution with the mini-
+mum sum of costsPm
+i=1jpij.
+2.2 Conﬂict-Based Search (CBS)
+Vanilla CBS CBS (Sharon et al. 2015) is a two-level
+search algorithm for solving MAPF optimally. On the high
+level, CBS performs a best-ﬁrst search on a binary constraint
+tree (CT). Each CT node Ncontains a set of constraints
+N:constraints that are used to coordinate agents to avoid
+conﬂicts and a set of paths N:paths , one for each agent, that
+satisfy the constraints. We use N:paths [i]to denote the path
+of agentai. The cost ofNis the sum of costs of its paths,
+i.e.,cost(N) =Pm
+i=1jN:paths [i]j. The root CT node con-
+tains an empty set of constraints and a set of shortest paths.
+When expanding a CT node, CBS checks for conﬂicts
+among its paths. If there are none, then the CT node is a goal
+CT node, and CBS terminates. Otherwise, CBS chooses one
+of the conﬂicts and resolves it by splitting the CT node into
+two child CT nodes. In each child CT node, one agent from
+the conﬂict is prohibited from using the conﬂicting vertex
+or edge at the conﬂicting timestep by way of an additional
+constraint. The path of this agent does not satisfy the new
+constraint and is replanned with A* on the low level. CBS
+guarantees completeness by eventually exploring both ways
+of resolving each conﬂict. It guarantees optimality by per-
+forming best-ﬁrst searches on both its high and low levels.
+Recent Improvements of CBS Researchers have pro-
+posed many techniques for speeding up CBS while preserv-
+ing its completeness and optimality.
+Bypassing conﬂicts (Boyarski et al. 2015a) is a conﬂict-
+resolution technique that, instead of splitting a CT node,
+modiﬁes the paths of the agents involved in the chosen con-
+ﬂict. When expanding a CT node Nand generating child CT
+nodes, if the cost of a child CT node N0is equal tocost(N)
+and the number of conﬂicts of N0:paths is smaller than the
+number of conﬂicts of N:paths , then it replaces the paths in
+Nwith the paths in N0and discards all generated child CT
+nodes. Otherwise, it splits Nas before. It has been shown
+that bypassing conﬂicts often produces smaller CTs and de-
+creases the runtime of CBS.
+Figure 1: Examples of symmetries on 4-neighbor grids.
+Prioritizing conﬂicts (Boyarski et al. 2015b) is a conﬂict-
+selection technique. A conﬂict is cardinal iff, when CBS
+uses the conﬂict to split a CT node N, the costs of both child
+CT nodes are larger than cost(N). It is semi-cardinal iff the
+cost of one child CT node is larger than cost(N)and the
+cost of the other child CT node is equal to cost(N). It is
+non-cardinal iff the costs of both child CT nodes are equal
+tocost(N). The cardinality of a conﬂict is determined by
+building a Multi-Valued Decision Diagram (MDD) (Sharon
+et al. 2013) for each agent (i.e., an acrylic directed graph that
+consists of all shortest paths of the agent). CBS can signiﬁ-
+cantly improve its efﬁciency by resolving cardinal conﬂicts
+ﬁrst, then semi-cardinal conﬂicts, and ﬁnally non-cardinal
+conﬂicts, because generating CT nodes with larger costs ﬁrst
+typically improves the lower bound of the CT (i.e., the min-
+imum cost of the CT nodes in the open list) faster and thus
+produce smaller CTs.
+Symmetry reasoning (Li et al. 2019c, 2020a) is a tech-
+nique for avoiding to resolve conﬂicts between the same
+pair of agents repeatedly due to symmetric paths and con-
+ﬂicts. Figure 1(a) shows an example of rectangle symmetry.
+There exist multiple shortest paths for each agent, each of
+which can be obtained by changing the order of the indi-
+vidual R IGHT and D OWN moves. Any shortest path for one
+agent is in conﬂict with any shortest path for the other agent.
+CBS has to try multiple combinations of these paths before
+realizing that one of the agents has to wait for one timestep.
+The size of the CT grows exponentially as the size of the
+yellow rectangular area (i.e., the region where conﬂicts can
+occur) increases. Similar behaviors of CBS can be observed
+in corridor and target symmetries (Figure 1(b) and (c)). Sym-
+metry reasoning identiﬁes each symmetry efﬁciently and re-
+solves it by a single splitting action with specialized con-
+straints, producing smaller CTs and decreasing the runtime
+of CBS.
+Weighted Dependency Graph (WDG) heuristic (Li et al.
+2019a) is an admissible heuristic for the high-level search of
+CBS. It proceeds by building a weighted dependency graph
+for each CT node N, whose vertices represent agents, whose
+edges represent that the two corresponding agents are de-
+pendent, i.e., the minimum sum of costs of their conﬂict-
+free paths that satisfy N:constraints (which is computed
+by solving a 2-agent MAPF instance using CBS) is larger
+than the sum of costs of their paths in N:paths (which are
+the shortest paths that satisfy N:constraints but are not
+necessarily conﬂict-free), and whose edge weights repre-
+sent the difference between the minimum sum of costs of
+the conﬂict-free paths that satisfy N:constraints and the
+sum of costs of their paths in N:paths . The value of the
+edge-weighted minimum vertex cover of the graph is then
+used as an admissible heuristic for the high-level search.
+Despite the runtime overhead of building the weighted de-
+pendency graphs and ﬁnding their edge-weighted minimum
+vertex cover, the addition of the WDG heuristics often pro-
+duces smaller CTs and decreases the runtime of CBS.
+2.3 Enhanced CBS (ECBS)
+Focal search is a bounded-suboptimal search algorithm
+based onA
+(Pearl and Kim 1982). It maintains two lists
+of nodes: OPEN and FOCAL. OPEN is the regular open list
+of A*, sorted according to an admissible cost function f. Let
+bestfbe the node in OPEN with the minimum fvalue and
+wbe a user-speciﬁed suboptimality factor. FOCAL contains
+those nodes nin OPEN for which f(n)wf(bestf),
+sorted according to a function dthat estimates the distance-
+to-go , i.e., the number of hops from node nto a goal node.
+Focal search always expands a node with the minimum d
+value in FOCAL. Since f(bestf)is a lower bound on the
+optimal solution cost C, focal search guarantees that the
+returned solution cost is at most wC.
+ECBS (Barer et al. 2014) is a bounded-suboptimal variant
+of CBS that uses focal search with the same suboptimality
+factorwon both the high and low levels. The low level of
+ECBS ﬁnds a bounded-suboptimal path for agent aithat sat-
+isﬁes the constraints of CT node Nand minimizes the num-
+ber of conﬂicts with the paths of other agents. It achieves
+this by using a focal search with f(n)being the standard
+f(n) =g(n) +h(n)of A* andd(n)being the number of
+conﬂicts with the paths of other agents. When it ﬁnds a so-
+lution, it returns not only the path but also the minimum f
+valuefi
+min(N)in OPEN, indicating a lower bound on the
+cost of the shortest path for agent ai. For clarity, we denote
+the cost of the shortest path for agent aiasfi
+opt(N), but this
+value is in general unknown during search. Thus,
+fi
+min(N)fi
+opt(N)jN:paths [i]jwfi
+min(N):(1)
+Unlike usual bounded-suboptimal searches, the focal search
+used on the low level of ECBS is to speed up the high-level
+search, instead of the low-level search itself, as it tries to
+reduce the number of conﬂicts that need to be resolved by
+the high-level search.
+The high level of ECBS uses a modiﬁed focal search.
+OPEN is the regular open list of A*, which sorts its CT
+nodesNaccording to lb(N) =Pm
+i=1fi
+min(N), indicating a
+lower bound on the minimum cost of the solutions below
+CT nodeN. From Equation (1), we know that lb(N)
+cost(N)wlb(N). Letbestlbbe the node in OPEN with
+the minimum lbvalue. FOCAL contains those CT nodes N
+in OPEN for which cost(N)wlb(bestlb), sorted accord-
+ing to the number of conﬂicts hc(N)ofN:paths , roughly
+indicating the distance-to-go for the high-level search, i.e.,
+the number of splitting actions required to ﬁnd a solution
+below CT node N. Sincelb(bestlb)is a lower bound on the
+optimal sum of costs, the cost of any CT node in FOCAL is
+no larger than wtimes the optimal sum of costs. Thus, once
+a solution is found, its sum of costs is also no larger than w
+times the optimal sum of costs.w 1.04 1.08 1.12 1.16 1.20
+ECBS lb 0.63 0.63 0.64 0.52 0.56
+EECBSlb 5.21 2.32 1.40 0.71 0.64
+Cleanup 39.6% 14.4% 11.1% 0.7% 0.0%
+Table 1: Lower-bound improvement lb, i.e., the value of
+lb(bestlb)when the algorithm terminates minus the lbvalue
+of the root CT node. Cleanup represents the percentage of
+expanded CT nodes that are selected from CLEANUP.
+3 Explicit Estimation CBS (EECBS)
+We ﬁrst analyze the behavior of the high-level focal search
+of ECBS. We then present our new algorithm EECBS, which
+uses Explicit Estimation Search on the high level and online
+learning to estimate the solution cost.
+To evaluate the effectiveness of each technique that
+we introduce, we test it on 200 standard MAPF bench-
+marks (Stern et al. 2019) with a time limit of one minute per
+instance. In particular, we use map random-32-32-20 , a
+32324-neighbor grid with 20% randomly blocked cells,
+shown in Figure 2, with the number of agents varying from
+45 to 150 in increments of 15. We use the “random” scenar-
+ios of the benchmarks, yielding 25 instances for each num-
+ber of agents. We vary the suboptimality factor from 1.02 to
+1.20 in increments of 0.02.
+3.1 Limitations of ECBS
+Figure 3 shows the typical behavior of ECBS on a hard
+MAPF instance, revealing two drawbacks of its high-level
+focal search. The ﬁrst drawback is that, when selecting CT
+nodes for expansion, ECBS only considers the distance-to-
+go and requires the cost of the selected CT node Nto be
+within suboptimality bound wlb(bestlb)but ignores the
+fact that the cost of the solution below CT node Nis likely
+to be larger than cost(N)and thus could also be larger than
+the suboptimality bound. In the example of Figure 3, ECBS
+ﬁrst keeps expanding CT nodes roughly along a branch (i.e.,
+CT nodes 1!2!3!! 487in the left diagram), so
+the cost of the selected CT node keeps increasing and its hc
+value keeps decreasing until it expands a CT node Nboth
+of whose child CT nodes are not qualiﬁed for inclusion in
+FOCAL (i.e., CT node 487 in the left diagram). As a result,
+it then expands a neighboring CT node N0whose cost is
+slightly smaller than cost(N)and whosehcvalue is slightly
+larger thanhc(N). It keeps expanding CT nodes below CT
+nodeN0, but, after several iterations, expands another CT
+node both of whose child CT nodes are not qualiﬁed for in-
+clusion in FOCAL (i.e., CT node 506 in the left diagram). It
+repeats numerous times, indicated by the right charts, and as
+a result, as shown in the middle diagram, ECBS is stuck in a
+local area of the CT and never gets a chance to explore other
+parts of the CT. This thrashing behavior, in which the neg-
+ative correlation of hc(N)andcost(N)causes focal search
+to repeatedly abandon the children of expanded CT nodes,
+was noted by Thayer, Ruml, and Kreis (2009).
+The second drawback is that the lower bound of ECBS
+rarely increases, as shown by the ﬂat red line in the ﬁrst
+chart of Figure 3. This is because, when expanding a CT
+Figure 2: Performance. The left ﬁgure plots the average runtime of the algorithms over 200 instances. One minute is included
+in the average for each unsolved instance. The right ﬁgure plots the success rate (i.e., the percentage of the instances solved
+within the time limit) of the algorithms with suboptimality factors 1.02, 1.10, and 1.20. BP, PC, SR, and WDG are short for
+bypassing conﬂicts, prioritizing conﬂicts, symmetry reasoning, and using the WDG heuristic, respectively.
+Figure 3: Performance of ECBS on a hard MAPF instance. The left and middle diagrams illustrate the CT tree of ECBS after
+506 and 5,000 iterations (i.e., after expanding 506 and 5,000 CT nodes). The right three charts plot the cost, the hcvalue, and
+the depth of the selected CT node at each iteration, respectively, with the red and green lines in the ﬁrst chart being the lower
+boundlb(bestlb)and the suboptimality bound wlb(bestlb)at each iteration.
+nodeN, ECBS resolves a conﬂict and adds new constraints
+to the generated child CT nodes, so the lbvalues of the child
+CT nodes tend to be equal to or larger than lb(N)while
+thehcvalues of the child CT nodes tend to be smaller than
+hc(N). As a result, bestlbtends to have a large hcvalue.
+This results in bestlbbeing expanded only when FOCAL is
+almost empty. Since there are many CT nodes of the same
+cost, ECBS rarely empties FOCAL, and thus its lower bound
+lb(bestlb)rarely increases. More statistics can be found in
+Table 1 (second row). Therefore, if the optimal sum of costs
+is not within the initial suboptimality bound, ECBS can have
+difﬁculty ﬁnding a solution within a reasonable time. While
+this problematic behavior is similar to that in the ﬁrst draw-
+back, in that both involve a negative correlation of node val-
+ues, it is subtly different as it involves the lower bound rather
+than the cost.
+3.2 Explicit Estimation Search (EES)
+EES (Thayer and Ruml 2011) is a bounded-suboptimal
+search algorithm designed in part to overcome the poor
+behavior of focal search. It introduces a third function ^f
+that estimates, potentially inadmissibly, the cost of the so-
+lution below a given node. EES combines estimates of the
+distance-to-go and the solution cost to predict the expansion
+of which nodes will lead most quickly to a solution within
+the given suboptimality factor. If the nodes of interest are not
+within the current suboptimality bound, it expands the node
+with the minimum fvalue to improve the current subopti-
+mality bound. Formally, EES maintains three lists of nodes:
+CLEANUP, OPEN, and FOCAL. CLEANUP is the regu-lar open list of A*, sorted according to an admissible cost
+functionf. Letbestfbe the node in CLEANUP with the
+minimumfvalue andwbe the user-speciﬁed suboptimal-
+ity factor. OPEN is also another regular open list of A*,
+sorted according to a more informed but potentially inad-
+missible cost function ^f. Letbest ^fbe the node in OPEN
+with the minimum ^fvalue. FOCAL contains those nodes n
+in OPEN for which ^f(n)w^f(best ^f), sorted accord-
+ing to a distance-to-go function d.^f(best ^f)is an estimate
+of the cost of an optimal solution, so EES suspects that ex-
+panding the nodes in FOCAL can lead to solutions that are
+no more than wtimes away from optimal. Let bestdbe the
+node in FOCAL with the minimum dvalue. When selecting
+nodes for expansion, EES ﬁrst considers bestd, as expand-
+ing nodes with nearby goal nodes should lead to a goal node
+fast. To guarantee bounded suboptimality, EES selects bestd
+for expansion only if f(bestd)wf(bestf). Ifbestdis
+not selected, EES next considers best ^f, as it suspects that
+best ^flies along a path to an optimal solution. To guaran-
+tee bounded suboptimality, EES selects best ^ffor expansion
+only iff(best ^f)wf(bestf). If neitherbestdnorbest ^f
+is selected, EES selects bestf, which can raise the subopti-
+mality bound wf(bestf), allowing EES to consider bestd
+orbest ^fin the next iteration.
+3.3 Explicit Estimation CBS (EECBS)
+We form EECBS by replacing focal search with EES on
+the high level of ECBS. Formally, the high level of EECBS
+maintains three lists of CT nodes: CLEANUP, OPEN, and
+FOCAL. CLEANUP is the regular open list of A*, sorted
+according to the lower bound function lb. OPEN is another
+regular open list of A*, sorted according to a potentially in-
+admissible cost function ^f, which estimates the minimum
+cost of a solutions below a CT node. We use ^f(N) =
+cost(N) +^h(N), where ^h(N)is the cost-to-go. We intro-
+duce ^hin Section 3.4. FOCAL contains those CT nodes N
+in OPEN for which ^f(N)w^f(best ^f), sorted according
+to the distance-to go function hc. EECBS selects CT nodes
+from these three lists using the SELECT NODE function:
+1. ifcost(besthc)wlb(bestlb), then select besthc(i.e.,
+selected from FOCAL);
+2. else ifcost(best ^f)wlb(bestlb), then select best ^f(i.e.,
+selected from OPEN);
+3. else select bestlb(i.e., selected from CLEANUP).
+Like EES, EECBS selects a CT node Nonly if its cost is
+within the current suboptimality bound, i.e.,
+cost(N)wlb(bestlb); (2)
+which guarantees bounded suboptimality. EECBS uses the
+same focal search as ECBS on its low level.
+EECBS overcomes the ﬁrst drawback from Section 3.1
+by taking the potential cost increment below a CT node into
+consideration in Steps 1 and 2 and selecting a CT node N
+whose estimated cost ^f(N)is within estimated suboptimal-
+ity boundw^f(best ^f). It overcomes the second drawback
+by selecting the CT node with the minimum lbvalue in Step
+3 to raise the lower bound. Table 1 (third row) shows its em-
+pirical behavior in comparison with ECBS. Unlike ECBS,
+whose lower-bound improvement is always around 0.6, the
+lower-bound improvement of EECBS increases as the sub-
+optimality factor wdecreases. The smaller wis, the less
+likely a solution is within the initial suboptimality bound
+and thus the more frequently EECBS selects CT nodes from
+CLEANUP (as shown in Table 1 (fourth row)). Figure 2
+shows the runtimes and success rates of ECBS and EECBS.
+As expected, EECBS (green lines) has a smaller runtime and
+larger success rate than ECBS (red lines). The improvement
+increases as wdecreases.
+3.4 Online Learning of the Cost-To-Go ^h
+Our estimate of the minimum cost of the solutions below
+a given CT node Nuses online learning since it does not
+require preprocessing and allows for instance-speciﬁc learn-
+ing. Thayer, Dionne, and Ruml (2011) present a method for
+learning the cost-to-go during search using the error expe-
+rienced during node expansions. Consider a node nwith an
+admissible cost heuristic hand a distance-to-go heuristic d.
+The errordof the distance-to-go heuristic d, called one-step
+distance error , is deﬁned as d(n) =d(bc(n)) (d(n) 1),
+wherebc(n)is the best child node of noden, i.e., the child
+node with the smallest ^fvalue, breaking ties in favor of
+the child node with the smallest dvalue. Similarly, the er-
+rorhof the cost function f, called one-step cost error , is
+deﬁned ash(n) =h(bc(n)) (h(n) c(n;bc(n))), wherec(n;bc(n))is the cost of moving from node nto nodebc(n).
+These errors can be calculated after every node expansion.
+They use a global error model that assumes that the distri-
+bution of one-step errors across the entire search space is
+uniform and can be estimated as an average of all observed
+one-step errors. Therefore, the search maintains a running
+average of the one-step errors observed so far, denoted by
+dandh. Then, they prove that the true cost-to-go of node
+ncan be approximated by ^h(n) =h(n) +d(n)
+1 d(n)h(n)
+(Thayer, Dionne, and Ruml 2011).
+We apply this method to EECBS. Since EECBS does not
+have an admissible cost heuristic h, we deﬁne dof CT
+nodeNasd(N) =hc(bc(N)) (hc(N) 1)andhof
+CT nodeNash(N) =cost(bc(N)) cost(N). Then,
+^h(N) =hc(N)
+1 d(N)h(N). Thus ^h(N)is linear inhc(N), in-
+dicating that the larger the number of conﬂicts of a CT node,
+the higher the potential cost increments below the CT node
+could be.
+Algorithm 1 shows the pseudo-code of the high-level
+search of EECBS. For now, we ignore Lines 2, 8-13, and
+19-22 since they will be introduced in the next section. Com-
+pared to the high-level search of ECBS, EECBS changes the
+PUSH NODE and SELECT NODE functions and adds an UP-
+DATE ONESTEPERRORS function at the end of each iteration
+to update the one-step errors (Line 26).
+4 Bringing CBS Improvements to EECBS
+We now show how we can incorporate recent CBS improve-
+ments into EECBS. We introduce these techniques one by
+one and, for each one, evaluate its effectiveness by adding it
+to the best version of EECBS so far and showing the result-
+ing performance in Figure 2.
+4.1 Bypassing Conﬂicts
+In CBS, the paths of every CT node Nare the shortest paths
+that satisfyN:constraints . However, in EECBS, the paths
+can be bounded-suboptimal. Therefore, we can resolve more
+conﬂicts with the bypassing conﬂicts technique in EECBS if
+we relax the conditions of accepting bypasses. In addition,
+since bypassing conﬂicts resolves conﬂicts without adding
+any constraints, it does not change the lbvalue of a CT node.
+Therefore, it may not be helpful if the purpose of expand-
+ing a CT node Nis to improve the lower bound, i.e., CT
+nodeNis selected from CLEANUP. Formally, when ex-
+panding a CT node Nand generating its child CT nodes,
+EECBS replaces the paths of Nwith the paths of a child
+CT nodeN0and discards all generated child CT nodes iff
+(1) CT node Nis not selected from CLEANUP, (2) the
+cost of every path of CT node N0is within the suboptimal-
+ity bound of the corresponding agent in CT node N, i.e.,
+8ijN0:paths [i]jwfi
+min(N), (3) the cost of CT node
+N0is within suboptimality bound wlb(bestlb), and (4)
+the number of conﬂicts decreases, i.e., hc(N0)< hc(N).
+The ﬁrst condition avoids wasting time in applying the by-
+passing conﬂicts technique to CT nodes that are selected
+from CLEANUP. The second and third conditions ensure
+that Equations (1) and (2) hold after replacing the paths,
+which in turn guarantees bounded suboptimality. The last
+Algorithm 1: High-level search of EECBS.
+1Generate root CT node R;
+2COMPUTE WDGH EURISTIC (R);
+3PUSH NODE(R);
+4while OPEN is not empty do
+5 P SELECT NODE();
+6 ifP:conflicts is empty then
+7 return P.paths; // P is a goal node
+8 ifPis selected from CLEANUP and the WDG
+heuristic of Phas not been computed yet then
+9 COMPUTE WDGH EURISTIC (P);
+10 PUSH NODE(P);
+11 continue ;
+12 CONFLICT PRIORITIZATION (P:conflicts );
+13 SYMMETRY REASONING (P:conflicts );
+14 conflict CHOOSE CONFLICT (P:conflicts );
+15 constraints RESOLVE CONFLICT (conflict );
+16 children ;;
+17 forconstraint inconstraints do
+18 Q GENERATE CHILD(P; constraint );
+19 ifPis not selected from CLEANUP and
+8ijQ:paths [i]jwfi
+min(P)and
+cost(Q)wlb(best lb)andhc(Q)< h c(P)
+then // Bypassing
+20 P:paths Q:paths ;
+21 P:conflicts Q:conflicts ;
+22 Go to Line 6;
+23 AddQtochildren ;
+24 forQinchildren do
+25 PUSH NODE(Q);
+26 UPDATE ONESTEPERRORS (P; children );
+27return “No solutions”;
+w 1.04 1.08 1.12 1.16 1.20
+CBS bypassing 0.086 0.107 0.110 0.116 0.108
+Relaxed bypassing 0.091 0.114 0.104 0.131 0.126
+Table 2: Average number of accepted bypasses per CT node.
+condition avoids deadlocks, as in the standard CBS bypass-
+ing technique. See Lines 19-22 of Algorithm 1.1
+Empirically, we compare the effectiveness of EECBS
+with relaxed bypassing and EECBS with CBS bypassing.
+Table 2 reports the average number of accepted bypasses
+per expanded CT node. Relaxed bypassing accepts more by-
+passes than CBS bypassing, and the difference increases as
+the suboptimality factor wincreases. The yellow and green
+lines in Figure 2 show the performance of EECBS with and
+without relaxed bypassing. Relaxed bypassing improves the
+performance of EECBS for all values of wand all numbers
+of agents. In general, the improvement increases with w.
+1There are many other ways to relax the conditions. For exam-
+ple, one can omit the third condition and re-insert CT node Ninto
+the appropriate lists (instead of keeping expanding it) after apply-
+ing the bypassing conﬂicts technique. We leave it for future work
+to evaluate different ways of relaxing the conditions of accepting
+bypasses for EECBS.4.2 Prioritizing Conﬂicts
+In CBS, the prioritizing conﬂicts technique (PC) tries to im-
+prove the costs of CT nodes faster since the cost of a CT
+node also serves as a lower bound on the minimum cost
+of the solutions below this CT node. In EECBS, however,
+the cost of a CT node is different from its lower bound.
+Therefore, we reformulate cardinal, semi-cardinal, and non-
+cardinal conﬂicts. A conﬂict is cardinal iff, when CBS uses
+the conﬂict to split CT node Nand generates two child CT
+nodesN0andN00, bothPm
+i=1fi
+opt(N0)andPm
+i=1fi
+opt(N00)
+are larger thanPm
+i=1fi
+opt(N). The changes to the deﬁni-
+tions of semi-cardinal and non-cardinal conﬂicts are simi-
+lar. Like CBS, EECBS performs PC before it chooses con-
+ﬂicts (Line 12) and uses MDDs to classify conﬂicts. Since
+the construction of MDDs induces runtime overhead and
+not all cardinal conﬂicts are important to EECBS, EECBS
+classiﬁes a conﬂict between agents aiandajonly when
+(1) the CT node Nis selected from CLEANUP or (2) at
+least one of the path costs is equal to its lower bound, i.e.,
+jN:paths [i]j=fi
+min(N)orjN:paths [j]j=fj
+min(N). PC
+is applied in Case (1) because resolving cardinal conﬂicts
+tends to raise the lower bound in this case. It is applied in
+Case (2) because resolving cardinal conﬂicts can increase
+the agents’ path costs in this case (which makes the costs
+of the resulting child CT nodes closer to the sum of costs
+of the solutions below them). EECBS selects cardinal con-
+ﬂicts ﬁrst, then semi-cardinal conﬂicts, then non-cardinal
+conﬂicts, and ﬁnally unclassiﬁed conﬂicts. By comparing
+the purple and yellow lines in Figure 2, we see that PC im-
+proves the performance of EECBS.
+4.3 Symmetry Reasoning
+We adapt symmetry reasoning techniques to EECBS with
+almost no changes. EECBS performs symmetry reasoning
+before it chooses conﬂicts (Line 13). Rectangle symmetry
+occurs only if the paths of both agents are the shortest be-
+cause, otherwise, one of the agents can simply perform a
+wait action to avoid the rectangle symmetry. Therefore, for
+a given conﬂict between agents aiandajat CT nodeN, we
+apply rectangle symmetry reasoning only when the paths of
+both agents are provably the shortest, i.e., jN:paths [i]j=
+fi
+min(N)andjN:paths [j]j=fj
+min(N). Corridor and target
+symmetries can occur even if the paths of the agents are sub-
+optimal. Therefore, we apply corridor and target symmetry
+reasoning to all conﬂicts. By comparing the grey and purple
+lines in Figure 2, we see that the symmetry reasoning tech-
+nique signiﬁcantly improves the performance of EECBS.
+4.4 WDG Heuristic
+Since a path of a CT node Nin EECBS is not necessarily
+the shortest one and, for each agent ai,fi
+min(N)could be
+smaller than fi
+opt(N), we need to modify the WDG heuris-
+tic as follows. When EECBS computes the WDG heuristic
+for a CT node N, it builds a weighted dependency graph
+G= (V;E). Each vertex i2Vcorresponds to an agent
+ai. The edge weight on each edge (i;j)2Eis equal to the
+minimum sum of costs of the conﬂict-free paths for agents ai
+andajthat satisfyN:constraints minusfi
+opt(N)+fj
+opt(N)
+w 1.04 1.08 1.12 1.16 1.20
+No WDGlb 36.1 23.4 12.9 7.4 3.9
+Cleanup 84.0% 74.0% 56.6% 40.4% 11.6%
+CBS WDGlb 54.5 45.0 37.0 30.1 25.8
+Cleanup 49.9% 46.5% 25.1% 17.8% 5.7%
+WDG time 87.9% 84.5% 80.1% 76.4% 65.3%
+Adaptive WDGlb 54.8 45.2 36.8 29.1 25.3
+Cleanup 53.2% 44.0% 27.2% 14.4% 8.7%
+WDG time 77.6% 62.6% 56.9% 43.2% 24.1%
+Table 3: Lower-bound improvement lb, i.e., thelb+hvalue
+of the best CT node in CLEANUP when EECBS terminates
+minus thelbvalue of the root CT node. WDG time is the
+percentage of runtime spent on computing WDG heuristics.
+(instead ofjN:paths [i]j+jN:paths [j]j). Like CBS, we
+compute each edge weight by solving a 2-agent MAPF in-
+stance (with the constraints in N:constraints ) using CBS:
+fi
+opt(N)andfj
+opt(N)are equal to the costs of the paths
+of agentsaiandajof the root CT node of CBS, and the
+minimum sum of costs of the conﬂict-free paths for agents
+aiandajis equal to the cost of the solution returned by
+CBS. Since computing the edge weights for all pairs of
+agents is time-consuming, we follow CBS by computing the
+weight for an edge (i;j)only when the paths N:paths [i]
+andN:paths [j]are in conﬂict (as the weight is more likely
+to be larger than 0 in this case). We delete the other edges
+and the vertices that have no edges. Let hWDG(N)be the
+value of the edge-weighted minimum vertex cover of G(Li
+et al. 2019a). By the proof in (Li et al. 2019a), we know thatPm
+i=1fi
+opt(N) +hWDG(N)is a lower bound on the mini-
+mum sum of costs of the solutions below CT node N. SincePm
+i=1fi
+opt(N) +hWDG(N)
+=lb(N) +Pm
+i=1(fi
+opt(N) fi
+min(N)) +hWDG(N)
+lb(N) +P
+i2V(fi
+opt(N) fi
+min(N)) +hWDG(N);
+h(N) =P
+i2V(fi
+opt(N) fi
+min(N)) +hWDG(N)is ad-
+missible, and we can thus use lb(N) +h(N)to sort the CT
+nodes in CLEANUP and compute the lower bound.
+Since computing the WDG heuristic for a CT node is
+time-consuming, Li et al. (2019a) suggest to calculate the
+heuristic lazily by computing a cheaper but less informed
+heuristic (e.g., using pathmax) when generating a CT node
+N. Only when CT node Nis selected for expansion is the
+WDG heuristic computed and Nre-inserted into the appro-
+priate lists. Here, we follow the same scheme, as shown on
+Lines 8-11. But, instead of computing the WDG heuristic for
+all CT nodes, we only compute it for CT nodes selected from
+CLEANUP, as the purpose of computing the WDG heuristic
+is to improve the lower bound. In addition, we also compute
+the WDG heuristic for the root CT node (Line 2), as this can
+provide a higher lower bound to begin with.
+Table 3 reports the lower-bound improvements of EECBS
+without the WDG heuristic technique (denoted as No
+WDG), with the WDG heuristic being computed for all CT
+nodes (denoted as CBS WDG), and with the WDG heuris-
+tic technique introduced above (denoted as Adaptive WDG).
+Compared to No WDG, Adaptive WDG selects CT nodes
+less frequently from CLEANUP but obtains a larger lower-
+bound improvement. Compared to CBS WDG, Adaptive
+Figure 4: Runtimes of ECBS and EECBS+ on the random
+map withmvarying from 45 to 150 and wvarying from
+1.02 to 1.20. The runtime of each unsolved instance is set to
+60 seconds. Among the 2,000 instances, 475 instances are
+solved by neither algorithm; 444 instances are solved only
+by EECBS+; and 0 instances are solved only by ECBS.
+WDG obtains similar lower-bound improvements but spends
+less time on computing the WDG heuristic. By comparing
+the blue and grey lines in Figure 2, we see that adaptive
+WDG improves the performance of EECBS for small and
+moderately large suboptimality factors.
+5 Empirical Evaluation
+We evaluate the algorithms on 6 maps of different sizes
+and structures from the MAPF benchmark suite (Stern et al.
+2019) with 8 different numbers of agents per map. We use
+the “random” scenarios, yielding 25 instances for each map
+and number of agents. We evaluate 10 different values of
+wfor each setting, and the values of wdecrease as the
+map size increases. The algorithms are implemented in C++,
+and the experiments are conducted on Ubuntu 20.04 LTS
+on an Intel Xeon 8260 CPU with a memory limit of 16
+GB and a time limit of 1 minute. The code is available at
+https://github.com/Jiaoyang-Li/EECBS.
+As shown in Figure 5, EECBS (green lines) outperforms
+ECBS (red lines) on some maps but shows a similar or
+even slightly worse performance on other maps. The four
+improvements improve the performance of both ECBS and
+EECBS, but EECBS beneﬁts more from them. As a result,
+EECBS+ (EECBS with all improvements, purple lines) sig-
+niﬁcantly outperforms the other algorithms on all six maps
+in terms of both runtime and success rate. When compar-
+ing the dashed lines in the success rate ﬁgures, we observe
+that, in many cases (e.g., for 60 agents on the random map
+and 180 agents on the empty map), EECBS+ is able to solve
+almost all instances within the runtime limit while ECBS
+solves only a few or even no instances. For a given success
+rate, EECBS+ is able to solve instances with up to twice the
+number of agents than ECBS (e.g., on map den520d ).
+We provide more details of the experiment on the ran-
+dom map in Figure 4. EECBS+ runs faster than ECBS in
+most cases and never fails to solve an instance that is solved
+by ECBS. In addition, when comparing the solution qual-
+ity, the average solution costs of ECBS and EECBS+ over
+the 1,081 instances solved by both algorithms are 1,967 and
+1,958, respectively, indicating that the improvements used in
+EECBS+ do not sacriﬁce the solution quality.
+Figure 5: Performance of ECBS, EECBS, ECBS+ (ECBS with all improvements), EECBS+ (EECBS with all improvements),
+BCP-7, and eMDD-SAT. All results are presented in the same format as in Figure 2. The legend for each row is shown above
+it. The algorithms are indicated by the legend with the same color and the same marker style, while the suboptimality factors of
+the lines in the success rate ﬁgures are indicated by the legend with the same line style. Since some algorithms solve (almost)
+zero instances, their lines overlap at the top of the runtime ﬁgures and the bottom of the success rate ﬁgures: the grey lines are
+hidden by the blue lines in the runtime ﬁgures of maps warehouse-10-2-10-2-1 ,den520d , andPairs 1256; the red
+and green dashed lines are hidden by the yellow dashed line in the success rate ﬁgure of map den312d ; and many of the grey/
+blue dashed/solid/dotted lines are hidden by other lines at the bottom of many of the success rate ﬁgures.
+We omit comparisons with the many search-based
+bounded-suboptimal MAPF algorithms that have already
+been shown to perform worse than ECBS (Aljalaud and
+Sturtevant 2013; Barer et al. 2014; Wagner 2015). However,
+there are two recent reduction-based bounded-suboptimal
+MAPF algorithms, namely BCP-7 (Lam and Le Bodic 2020)
+and eMDD-SAT (Surynek et al. 2018). BCP-7 can out-
+perform CBS when ﬁnding optimal solutions (Lam and
+Le Bodic 2020), and eMDD-SAT can outperform ECBS in
+some domains (Surynek et al. 2018). We therefore com-
+pare them with our algorithms. We modify the search of the
+ILP solver used by BCP-7 from a best-ﬁrst search (which
+is more beneﬁcial for ﬁnding optimal solutions) to a depth-
+ﬁrst search with restarts (which is more beneﬁcial for ﬁnd-
+ing suboptimal solutions). As shown in Figure 5, BCP-7 and
+eMDD-SAT outperform ECBS on the two small maps when
+the suboptimality factor is small. But for larger suboptimal-
+ity factors or larger maps, they perform worse than ECBS.EECBS+ performs better than them on all six maps.
+6 Conclusion
+We proposed a new bounded-suboptimal MAPF algorithm
+EECBS that uses online learning to estimate the cost of the
+solution below each high-level node and uses EES to se-
+lect high-level nodes for expansion. We further improve it
+by adding bypassing conﬂicts, prioritizing conﬂicts, symme-
+try reasoning, and using the WDG heuristic. With these im-
+provements, EECBS signiﬁcantly outperforms the state-of-
+the-art bounded-suboptimal MAPF algorithms ECBS, BCP-
+7, and eMDD-SAT. Within one minute, it is able to ﬁnd so-
+lutions that are provably at most 2% worse than optimal for
+large MAPF instances with up to 1,000 agents, while, on the
+same map, state-of-the-art optimal algorithms can handle at
+most 200 agents (Lam and Le Bodic 2020). We hope that
+the scalability of EECBS enables additional applications for
+bounded-suboptimal MAPF algorithms.
+Acknowledgments
+The research at the University of Southern California was
+supported by the National Science Foundation (NSF) under
+grant numbers 1409987, 1724392, 1817189, 1837779, and
+1935712 as well as a gift from Amazon. The research at the
+University of New Hampshire was supported by NSF-BSF
+grant 2008594. The views and conclusions contained in this
+document are those of the authors and should not be inter-
+preted as representing the ofﬁcial policies, either expressed
+or implied, of the sponsoring organizations, agencies, or the
+U.S. government.
+References
+Aljalaud, F.; and Sturtevant, N. R. 2013. Finding Bounded
+Suboptimal Multi-Agent Path Planning Solutions Using In-
+creasing Cost Tree Search (Extended Abstract). In Helmert,
+M.; and R ¨oger, G., eds., Proceedings of the Annual Sympo-
+sium on Combinatorial Search (SoCS) , 203–204.
+Barer, M.; Sharon, G.; Stern, R.; and Felner, A. 2014. Sub-
+optimal Variants of the Conﬂict-Based Search Algorithm for
+the Multi-Agent Pathﬁnding Problem. In Proceedings of the
+Annual Symposium on Combinatorial Search (SoCS) , 19–
+27.
+Boyarski, E.; Felner, A.; Harabor, D.; Stuckey, P. J.; Co-
+hen, L.; Li, J.; and Koenig, S. 2020a. Iterative-Deepening
+Conﬂict-Based Search. In Proceedings of the 29th Inter-
+national Joint Conference on Artiﬁcial Intelligence (IJCAI) ,
+4084–4090.
+Boyarski, E.; Felner, A.; Sharon, G.; and Stern, R. 2015a.
+Don’t Split, Try To Work It Out: Bypassing Conﬂicts in
+Multi-Agent Pathﬁnding. In Proceedings of the Interna-
+tional Conference on Automated Planning and Scheduling
+(ICAPS) , 47–51.
+Boyarski, E.; Felner, A.; Stern, R.; Sharon, G.; Tolpin, D.;
+Betzalel, O.; and Shimony, S. E. 2015b. ICBS: Improved
+Conﬂict-Based Search Algorithm for Multi-Agent Pathﬁnd-
+ing. In Proceedings of the International Joint Conference on
+Artiﬁcial Intelligence (IJCAI) , 740–746.
+Boyarski, E.; Harabor, D.; Stuckey, P. J.; Le Bodic, P.; and
+Felner, A. 2020b. F-Cardinal Conﬂicts in Conﬂict-Based
+Search. In Proceedings of the International Symposium on
+Combinatorial Search (SoCS) , 123–124.
+Felner, A.; Li, J.; Boyarski, E.; Ma, H.; Cohen, L.; Kumar, T.
+K. S.; and Koenig, S. 2018. Adding Heuristics to Conﬂict-
+Based Search for Multi-Agent Pathﬁnding. In Proceedings
+of the International Conference on Automated Planning and
+Scheduling (ICAPS) , 83–87.
+Gange, G.; Harabor, D.; and Stuckey, P. J. 2019. Lazy CBS:
+Implict Conﬂict-Based Search Using Lazy Clause Genera-
+tion. In Proceedings of the International Conference on Au-
+tomated Planning and Scheduling (ICAPS) , 155–162.
+Ho, F.; Salta, A.; Geraldes, R.; Goncalves, A.; Cavazza, M.;
+and Prendinger, H. 2019. Multi-Agent Path Finding for UA V
+Trafﬁc Management. In Proceedings of the International
+Conference on Autonomous Agents and Multiagent Systems
+(AAMAS) , 131–139.Lam, E.; and Le Bodic, P. 2020. New Valid Inequalities in
+Branch-and-Cut-and-Price for Multi-Agent Path Finding. In
+Proceedings of the International Conference on Automated
+Planning and Scheduling (ICAPS) , 184–192.
+Lam, E.; Le Bodic, P.; Harabor, D.; and Stuckey, P. J. 2019.
+Branch-and-Cut-and-Price for Multi-Agent Pathﬁnding. In
+Proceedings of the International Joint Conference on Artiﬁ-
+cial Intelligence (IJCAI) , 1289–1296.
+Li, J.; Felner, A.; Boyarski, E.; Ma, H.; and Koenig, S.
+2019a. Improved Heuristics for Multi-Agent Path Finding
+with Conﬂict-Based Search. In Proceedings of the Inter-
+national Joint Conference on Artiﬁcial Intelligence (IJCAI) ,
+442–449.
+Li, J.; Gange, G.; Harabor, D.; Stuckey, P. J.; Ma, H.; and
+Koenig, S. 2020a. New Techniques for Pairwise Symmetry
+Breaking in Multi-Agent Path Finding. In Proceedings of
+the International Conference on Automated Planning and
+Scheduling (ICAPS) , 193–201.
+Li, J.; Harabor, D.; Stuckey, P. J.; Felner, A.; Ma, H.; and
+Koenig, S. 2019b. Disjoint Splitting for Conﬂict-Based
+Search for Multi-Agent Path Finding. In Proceedings of
+the International Conference on Automated Planning and
+Scheduling (ICAPS) , 279–283.
+Li, J.; Harabor, D.; Stuckey, P. J.; Ma, H.; and Koenig,
+S. 2019c. Symmetry-Breaking Constraints for Grid-Based
+Multi-Agent Path Finding. In Proceedings of the AAAI Con-
+ference on Artiﬁcial Intelligence (AAAI) , 6087–6095.
+Li, J.; Sun, K.; Ma, H.; Felner, A.; Kumar, T. K. S.; and
+Koenig, S. 2020b. Moving Agents in Formation in Con-
+gested Environments. In Proceedings of the International
+Joint Conference on Autonomous Agents and Multiagent
+Systems (AAMAS) , 726–734.
+Li, J.; Zhang, H.; Gong, M.; Liang, Z.; Liu, W.; Tong, Z.;
+Yi, L.; Morris, R.; Pasareanu, C.; and Koenig, S. 2019d.
+Scheduling and Airport Taxiway Path Planning under Un-
+certainty. In Proceedings of the AIAA Aviation Forum .
+Ma, H.; Li, J.; Kumar, T. K. S.; and Koenig, S. 2017. Life-
+long Multi-Agent Path Finding for Online Pickup and Deliv-
+ery Tasks. In Proceedings of the International Conference
+on Autonomous Agents and Multiagent Systems (AAMAS) ,
+837–845.
+Okoso, A.; Otaki, K.; and Nishi, T. 2019. Multi-Agent
+Path Finding with Priority for Cooperative Automated Valet
+Parking. In Proceedings of the IEEE Intelligent Transporta-
+tion Systems Conference (ITSC) , 2135–2140.
+Pearl, J.; and Kim, J. H. 1982. Studies in Semi-Admissible
+Heuristics. IEEE Transaction on Pattern Analysis and Ma-
+chine Intelligence 4(4): 392–399.
+Sharon, G.; Stern, R.; Felner, A.; and Sturtevant, N. R. 2015.
+Conﬂict-Based Search for Optimal Multi-Agent Pathﬁnd-
+ing. Artiﬁcial Intelligence 219: 40–66.
+Sharon, G.; Stern, R.; Goldenberg, M.; and Felner, A. 2013.
+The Increasing Cost Tree Search for Optimal Multi-Agent
+Pathﬁnding. Artiﬁcial Intelligence 195: 470–495.
+Stern, R.; Sturtevant, N. R.; Felner, A.; Koenig, S.; Ma, H.;
+Walker, T.; Li, J.; Atzmon, D.; Cohen, L.; Kumar, T. K. S.;
+Boyarski, E.; and Bartak, R. 2019. Multi-Agent Pathﬁnd-
+ing: Deﬁnitions, Variants, and Benchmarks. In Proceedings
+of the International Symposium on Combinatorial Search
+(SoCS) , 151–159.
+Surynek, P. 2019. Lazy Compilation of Variants of Multi-
+robot Path Planning with Satisﬁability Modulo Theory
+(SMT) Approach. In Proceedings of the IEEE/RSJ Interna-
+tional Conference on Intelligent Robots and Systems (IROS) ,
+3282–3287.
+Surynek, P.; Felner, A.; Stern, R.; and Boyarski, E. 2018.
+Sub-Optimal SAT-Based Approach to Multi-Agent Path-
+Finding Problem. In Proceedings of the International Sym-
+posium on Combinatorial Search (SoCS) , 90–105.
+Thayer, J. T.; Dionne, A. J.; and Ruml, W. 2011. Learning
+Inadmissible Heuristics During Search. In Proceedings of
+the International Conference on Automated Planning and
+Scheduling (ICAPS) , 250–257.
+Thayer, J. T.; and Ruml, W. 2011. Bounded Suboptimal
+Search: A Direct Approach Using Inadmissible Estimates.
+InProceedings of the International Joint Conference on Ar-
+tiﬁcial Intelligence (IJCAI) , 674–679.
+Thayer, J. T.; Ruml, W.; and Kreis, J. 2009. Using Distance
+Estimates in Heuristic Search: A Re-Evaluation. In Pro-
+ceedings of the Annual Symposium on Combinatorial Search
+(SoCS) .
+Wagner, G. 2015. Subdimensional Expansion: A Frame-
+work for Computationally Tractable Multirobot Path Plan-
+ning. Ph.D. thesis, Carnegie Mellon University.
+Yu, J.; and LaValle, S. M. 2013. Structure and Intractability
+of Optimal Multi-Robot Path Planning on Graphs. In Pro-
+ceedings of the AAAI Conference on Artiﬁcial Intelligence
+(AAAI) , 1444–1449.
+Zhang, H.; Li, J.; Surnek, P.; Koenig, S.; and Kumar, T. K. S.
+2020. Multi-Agent Path Finding with Mutex Propagation. In
+Proceedings of the International Conference on Automated
+Planning and Scheduling (ICAPS) , 323–332.

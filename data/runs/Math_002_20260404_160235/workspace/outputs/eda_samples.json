@@ -1,0 +1,345 @@
+[
+  {
+    "dataset": "maps_60_10_10_0.175",
+    "map_path": "data/maps_60_10_10_0.175/eval_map_1.npy",
+    "agent_count": 42,
+    "first_starts": [
+      [
+        4,
+        7
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        9
+      ]
+    ],
+    "first_goals": [
+      [
+        8,
+        7
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        9,
+        5
+      ]
+    ]
+  },
+  {
+    "dataset": "random_small",
+    "map_path": "data/random_small/maps_50_10_10_0.175/eval_map_1.npy",
+    "agent_count": 42,
+    "first_starts": [
+      [
+        4,
+        7
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        9
+      ]
+    ],
+    "first_goals": [
+      [
+        8,
+        7
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        9,
+        5
+      ]
+    ]
+  },
+  {
+    "dataset": "random_medium",
+    "map_path": "data/random_medium/maps_312_25_25_0.175/eval_map_1.npy",
+    "agent_count": 80,
+    "first_starts": [
+      [
+        7,
+        23
+      ],
+      [
+        23,
+        24
+      ],
+      [
+        3,
+        17
+      ],
+      [
+        9,
+        14
+      ],
+      [
+        16,
+        1
+      ]
+    ],
+    "first_goals": [
+      [
+        19,
+        16
+      ],
+      [
+        22,
+        7
+      ],
+      [
+        17,
+        3
+      ],
+      [
+        19,
+        7
+      ],
+      [
+        6,
+        1
+      ]
+    ]
+  },
+  {
+    "dataset": "maze",
+    "map_path": "data/maze/maze_maps_125_25_25/eval_map_maze_1.npy",
+    "agent_count": 80,
+    "first_starts": [
+      [
+        12,
+        17
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        23,
+        18
+      ],
+      [
+        2,
+        11
+      ]
+    ],
+    "first_goals": [
+      [
+        15,
+        20
+      ],
+      [
+        1,
+        22
+      ],
+      [
+        3,
+        13
+      ],
+      [
+        20,
+        12
+      ],
+      [
+        7,
+        7
+      ]
+    ]
+  },
+  {
+    "dataset": "room",
+    "map_path": "data/room/room_maps_250_25_25/eval_map_room_1.npy",
+    "agent_count": 80,
+    "first_starts": [
+      [
+        8,
+        4
+      ],
+      [
+        24,
+        5
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        9,
+        21
+      ],
+      [
+        16,
+        14
+      ]
+    ],
+    "first_goals": [
+      [
+        19,
+        22
+      ],
+      [
+        21,
+        19
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        19,
+        14
+      ],
+      [
+        5,
+        13
+      ]
+    ]
+  },
+  {
+    "dataset": "warehouse",
+    "map_path": "data/warehouse/warehouse_maps_266_25_25/eval_map_warehouse_1.npy",
+    "agent_count": 80,
+    "first_starts": [
+      [
+        9,
+        0
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        11,
+        2
+      ],
+      [
+        19,
+        23
+      ],
+      [
+        0,
+        24
+      ]
+    ],
+    "first_goals": [
+      [
+        15,
+        13
+      ],
+      [
+        14,
+        23
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        12,
+        19
+      ],
+      [
+        7,
+        2
+      ]
+    ]
+  },
+  {
+    "dataset": "empty",
+    "map_path": "data/empty/empty_maps_453_25_25/eval_map_empty_1.npy",
+    "agent_count": 80,
+    "first_starts": [
+      [
+        13,
+        6
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        16,
+        4
+      ],
+      [
+        1,
+        24
+      ],
+      [
+        2,
+        24
+      ]
+    ],
+    "first_goals": [
+      [
+        23,
+        17
+      ],
+      [
+        13,
+        23
+      ],
+      [
+        14,
+        8
+      ],
+      [
+        23,
+        8
+      ],
+      [
+        18,
+        17
+      ]
+    ]
+  }
+]

@@ -1,0 +1,297 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_uncalled4.py",
+    "path": "code/analyze_uncalled4.py",
+    "type": "file",
+    "size": 14054,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "dna_r10.4.1_400bps_9mer_uncalled4.csv",
+    "path": "data/dna_r10.4.1_400bps_9mer_uncalled4.csv",
+    "type": "file",
+    "size": 13869488,
+    "mtime": 1772609428.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "dna_r9.4.1_400bps_6mer_uncalled4.csv",
+    "path": "data/dna_r9.4.1_400bps_6mer_uncalled4.csv",
+    "type": "file",
+    "size": 204434,
+    "mtime": 1772609426.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "m6a_labels.csv",
+    "path": "data/m6a_labels.csv",
+    "type": "file",
+    "size": 38905,
+    "mtime": 1772609432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "m6a_predictions_nanopolish.csv",
+    "path": "data/m6a_predictions_nanopolish.csv",
+    "type": "file",
+    "size": 120766,
+    "mtime": 1772609432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "m6a_predictions_uncalled4.csv",
+    "path": "data/m6a_predictions_uncalled4.csv",
+    "type": "file",
+    "size": 119042,
+    "mtime": 1772609432.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "performance_summary.csv",
+    "path": "data/performance_summary.csv",
+    "type": "file",
+    "size": 760,
+    "mtime": 1772609430.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "rna004_130bps_9mer_uncalled4.csv",
+    "path": "data/rna004_130bps_9mer_uncalled4.csv",
+    "type": "file",
+    "size": 13868930,
+    "mtime": 1772609430.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "rna_r9.4.1_70bps_5mer_uncalled4.csv",
+    "path": "data/rna_r9.4.1_70bps_5mer_uncalled4.csv",
+    "type": "file",
+    "size": 50124,
+    "mtime": 1772609428.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "data_overview.csv",
+    "path": "outputs/data_overview.csv",
+    "type": "file",
+    "size": 569,
+    "mtime": 1775317342.0,
+    "exported": true
+  },
+  {
+    "name": "data_summary.json",
+    "path": "outputs/data_summary.json",
+    "type": "file",
+    "size": 1897,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_best_f1_thresholds.csv",
+    "path": "outputs/m6a_best_f1_thresholds.csv",
+    "type": "file",
+    "size": 397,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_joined_predictions.csv",
+    "path": "outputs/m6a_joined_predictions.csv",
+    "type": "file",
+    "size": 210661,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_metrics.json",
+    "path": "outputs/m6a_metrics.json",
+    "type": "file",
+    "size": 1323,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_metrics_table.csv",
+    "path": "outputs/m6a_metrics_table.csv",
+    "type": "file",
+    "size": 880,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_threshold_metrics.csv",
+    "path": "outputs/m6a_threshold_metrics.csv",
+    "type": "file",
+    "size": 5556,
+    "mtime": 1775317342.0,
+    "exported": true
+  },
+  {
+    "name": "performance_metrics.csv",
+    "path": "outputs/performance_metrics.csv",
+    "type": "file",
+    "size": 2128,
+    "mtime": 1775317342.0,
+    "exported": true
+  },
+  {
+    "name": "pore_model_pairwise_deltas.csv",
+    "path": "outputs/pore_model_pairwise_deltas.csv",
+    "type": "file",
+    "size": 648,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "pore_model_summary.csv",
+    "path": "outputs/pore_model_summary.csv",
+    "type": "file",
+    "size": 779,
+    "mtime": 1775317342.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 1 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1895840,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 11834529,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 3088444,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 11844346,
+    "mtime": 1773914901.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "m6a_pr_curve.png",
+    "path": "report/images/m6a_pr_curve.png",
+    "type": "file",
+    "size": 106651,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_roc_curve.png",
+    "path": "report/images/m6a_roc_curve.png",
+    "type": "file",
+    "size": 110478,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "m6a_score_distributions.png",
+    "path": "report/images/m6a_score_distributions.png",
+    "type": "file",
+    "size": 85595,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "performance_benchmarks.png",
+    "path": "report/images/performance_benchmarks.png",
+    "type": "file",
+    "size": 104927,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "pore_model_overview.png",
+    "path": "report/images/pore_model_overview.png",
+    "type": "file",
+    "size": 148969,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "position_effects_heatmap.png",
+    "path": "report/images/position_effects_heatmap.png",
+    "type": "file",
+    "size": 181837,
+    "mtime": 1775317344.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14864,
+    "mtime": 1775317345.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 6922,
+    "mtime": 1775287411.0,
+    "exported": true
+  }
+]

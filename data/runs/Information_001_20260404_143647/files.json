@@ -1,0 +1,308 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_analysis.py",
+    "path": "code/run_analysis.py",
+    "type": "file",
+    "size": 11684,
+    "mtime": 1775317722.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "demo_imgs",
+    "path": "data/demo_imgs",
+    "type": "directory"
+  },
+  {
+    "name": "demo1.png",
+    "path": "data/demo_imgs/demo1.png",
+    "type": "file",
+    "size": 179505,
+    "mtime": 1770297040.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "demo2.png",
+    "path": "data/demo_imgs/demo2.png",
+    "type": "file",
+    "size": 2121327,
+    "mtime": 1770297040.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "method_case.png",
+    "path": "data/demo_imgs/method_case.png",
+    "type": "file",
+    "size": 1626509,
+    "mtime": 1770297040.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_notes.md",
+    "path": "outputs/analysis_notes.md",
+    "type": "file",
+    "size": 568,
+    "mtime": 1775317710.0,
+    "exported": true
+  },
+  {
+    "name": "comparison_long.csv",
+    "path": "outputs/comparison_long.csv",
+    "type": "file",
+    "size": 359,
+    "mtime": 1775317710.0,
+    "exported": true
+  },
+  {
+    "name": "metrics.csv",
+    "path": "outputs/metrics.csv",
+    "type": "file",
+    "size": 788,
+    "mtime": 1775317710.0,
+    "exported": true
+  },
+  {
+    "name": "roi_windows.json",
+    "path": "outputs/roi_windows.json",
+    "type": "file",
+    "size": 1274,
+    "mtime": 1775317710.0,
+    "exported": true
+  },
+  {
+    "name": "scale_curve.csv",
+    "path": "outputs/scale_curve.csv",
+    "type": "file",
+    "size": 913,
+    "mtime": 1775317710.0,
+    "exported": true
+  },
+  {
+    "name": "summary.csv",
+    "path": "outputs/summary.csv",
+    "type": "file",
+    "size": 301,
+    "mtime": 1775317710.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 4558893,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 8166173,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 6663910,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 7823571,
+    "mtime": 1773914896.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "area_vs_gain.png",
+    "path": "report/images/area_vs_gain.png",
+    "type": "file",
+    "size": 301296,
+    "mtime": 1775317714.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview.png",
+    "path": "report/images/data_overview.png",
+    "type": "file",
+    "size": 4475237,
+    "mtime": 1775317718.0,
+    "exported": false
+  },
+  {
+    "name": "demo1_crops.png",
+    "path": "report/images/demo1_crops.png",
+    "type": "file",
+    "size": 3410425,
+    "mtime": 1775317722.0,
+    "exported": false
+  },
+  {
+    "name": "demo1_heatmap.png",
+    "path": "report/images/demo1_heatmap.png",
+    "type": "file",
+    "size": 433436,
+    "mtime": 1775317718.0,
+    "exported": true
+  },
+  {
+    "name": "demo1_heatmap_raw.png",
+    "path": "report/images/demo1_heatmap_raw.png",
+    "type": "file",
+    "size": 212059,
+    "mtime": 1775317714.0,
+    "exported": true
+  },
+  {
+    "name": "demo1_overlay.png",
+    "path": "report/images/demo1_overlay.png",
+    "type": "file",
+    "size": 911337,
+    "mtime": 1775317718.0,
+    "exported": true
+  },
+  {
+    "name": "demo2_crops.png",
+    "path": "report/images/demo2_crops.png",
+    "type": "file",
+    "size": 5701039,
+    "mtime": 1775317720.0,
+    "exported": false
+  },
+  {
+    "name": "demo2_heatmap.png",
+    "path": "report/images/demo2_heatmap.png",
+    "type": "file",
+    "size": 653436,
+    "mtime": 1775317718.0,
+    "exported": true
+  },
+  {
+    "name": "demo2_heatmap_raw.png",
+    "path": "report/images/demo2_heatmap_raw.png",
+    "type": "file",
+    "size": 1434765,
+    "mtime": 1775317720.0,
+    "exported": false
+  },
+  {
+    "name": "demo2_overlay.png",
+    "path": "report/images/demo2_overlay.png",
+    "type": "file",
+    "size": 6818956,
+    "mtime": 1775317716.0,
+    "exported": false
+  },
+  {
+    "name": "detail_gain.png",
+    "path": "report/images/detail_gain.png",
+    "type": "file",
+    "size": 88109,
+    "mtime": 1775317722.0,
+    "exported": true
+  },
+  {
+    "name": "main_comparison.png",
+    "path": "report/images/main_comparison.png",
+    "type": "file",
+    "size": 68147,
+    "mtime": 1775317718.0,
+    "exported": true
+  },
+  {
+    "name": "method_case_crops.png",
+    "path": "report/images/method_case_crops.png",
+    "type": "file",
+    "size": 4248661,
+    "mtime": 1775317714.0,
+    "exported": false
+  },
+  {
+    "name": "method_case_heatmap.png",
+    "path": "report/images/method_case_heatmap.png",
+    "type": "file",
+    "size": 244438,
+    "mtime": 1775317718.0,
+    "exported": true
+  },
+  {
+    "name": "method_case_heatmap_raw.png",
+    "path": "report/images/method_case_heatmap_raw.png",
+    "type": "file",
+    "size": 634402,
+    "mtime": 1775317718.0,
+    "exported": true
+  },
+  {
+    "name": "method_case_overlay.png",
+    "path": "report/images/method_case_overlay.png",
+    "type": "file",
+    "size": 3433242,
+    "mtime": 1775317712.0,
+    "exported": false
+  },
+  {
+    "name": "scale_validation.png",
+    "path": "report/images/scale_validation.png",
+    "type": "file",
+    "size": 192903,
+    "mtime": 1775317716.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 10438,
+    "mtime": 1775317723.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 4815,
+    "mtime": 1775284607.0,
+    "exported": true
+  }
+]

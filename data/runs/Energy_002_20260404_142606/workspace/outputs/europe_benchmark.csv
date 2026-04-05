@@ -1,0 +1,4 @@
+scenario,europe_h2_cost_modelled,europe_h2_cost_assumed
+baseline,4.610977079187583,7.2
+derisked,4.322621573531328,7.4
+high_rate,5.02180368597509,7.6

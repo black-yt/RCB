@@ -1,0 +1,20 @@
+{
+  "shape_A": [
+    1000,
+    2000
+  ],
+  "shape_b": [
+    1000
+  ],
+  "shape_x_true": [
+    2000
+  ],
+  "meta": "Lasso Regression Problem with Condition Number 10",
+  "lambda_max": 44.38774948348783,
+  "lambda_used": 4.438774948348783,
+  "lipschitz_estimate": 100.00000000000038,
+  "condition_estimate_positive_spectrum": 100.00000000000374,
+  "x_true_nnz": 100,
+  "b_norm": 41.76404972339419,
+  "A_fro_norm": 192.38896411570366
+}

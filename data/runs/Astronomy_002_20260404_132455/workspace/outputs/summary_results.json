@@ -1,0 +1,52 @@
+{
+  "seed": 20260404,
+  "baseline": {
+    "M_B": -19.468456102562484,
+    "M_B_err": 0.03754548622442188,
+    "H0": 109.26293359525172,
+    "H0_err": 1.677740158816079,
+    "H0_mc_std": 2.378992903771507,
+    "H0_mc_p16": 106.89341224190056,
+    "H0_mc_p84": 111.67390408316528,
+    "tension_sigma_vs_planck": 23.91265159104719,
+    "difference_vs_reference_73p5": 35.762933595251724,
+    "interpretation": "The minimal dataset does not reproduce the published consensus normalization; its absolute SN and SBF calibrations imply a much higher H0 than the target 73.5 km s^-1 Mpc^-1."
+  },
+  "baseline_monte_carlo": {
+    "median": 109.25396349529967,
+    "p16": 106.89341224190056,
+    "p84": 111.67390408316528,
+    "std": 2.378992903771507
+  },
+  "snia_calibration": {
+    "abs_mag": -19.468456102562484,
+    "abs_mag_err": 0.03754548622442188,
+    "n_calibrators": 7,
+    "chi2": 127.8489202480882,
+    "dof": 6,
+    "reduced_chi2": 21.308153374681368
+  },
+  "sbf_calibration": {
+    "abs_mag": -2.8924163617737473,
+    "abs_mag_err": 0.10493984812953573,
+    "n_calibrators": 3,
+    "chi2": 7.975222477062294,
+    "dof": 2,
+    "reduced_chi2": 3.987611238531147
+  },
+  "sbf_flow": {
+    "H0": 150.18502933712705,
+    "H0_err": 7.810111183851231,
+    "log10_H0": 2.176626643717992,
+    "log10_H0_err": 0.022584729018386644,
+    "n_flow": 3
+  },
+  "dataset_counts": {
+    "host_measurements": 11,
+    "unique_hosts": 7,
+    "snia_calibrators": 7,
+    "snia_hubble_flow": 5,
+    "sbf_calibrators": 3,
+    "sbf_hubble_flow": 3
+  }
+}

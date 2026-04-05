@@ -1,0 +1,47 @@
+{
+  "seed": 7,
+  "random_charges": {
+    "n_frames": 100,
+    "forces_available": false,
+    "sign_recovery_possible_from_forces": false,
+    "reason": "random_charges.xyz stores positions and true_charges but no forces or energies, so force-based sign recovery cannot be performed using only local files.",
+    "mean_same_sign_distance": 10.062917376093242,
+    "mean_opposite_sign_distance": 10.054806137475268,
+    "mean_distance_gap_same_minus_opposite": 0.008111238617973662,
+    "distance_gap_ci95": [
+      -0.0029039119652952685,
+      0.018742421161115415
+    ]
+  },
+  "charged_dimer": {
+    "n_frames": 60,
+    "short_range_only": {
+      "mae": 0.18559798356757062,
+      "rmse": 0.2694153914502692,
+      "r2": 0.49884803521742194
+    },
+    "coulomb_aware": {
+      "mae": 0.19372876994005075,
+      "rmse": 0.2745724511883411,
+      "r2": 0.47947864325857725
+    },
+    "delta_mae": -0.008130786372480131,
+    "delta_mae_percent": -4.3808592185054405
+  },
+  "ag3": {
+    "n_frames": 60,
+    "geometry_only": {
+      "mae": 0.2529598698555803,
+      "rmse": 0.30593166490999685,
+      "r2": 0.7956051072308807
+    },
+    "geometry_plus_charge": {
+      "mae": 0.2529598698555803,
+      "rmse": 0.30593166490999685,
+      "r2": 0.7956051072308807
+    },
+    "delta_mae": 0.0,
+    "delta_mae_percent": 0.0,
+    "note": "In this dataset, +1 and -1 entries are duplicated geometries/energies, so charge labels may not add new information beyond geometry."
+  }
+}

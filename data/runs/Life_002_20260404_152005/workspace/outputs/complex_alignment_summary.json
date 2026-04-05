@@ -1,0 +1,51 @@
+{
+  "query_total_residues": 2876,
+  "target_total_residues": 726,
+  "matched_chains": [
+    {
+      "query_chain": "H",
+      "target_chain": "A"
+    }
+  ],
+  "unmatched_query_chains": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "L"
+  ],
+  "unmatched_target_chains": [],
+  "global_rotation_matrix": [
+    [
+      -0.8415259633412054,
+      -0.461230526608309,
+      -0.2812480299438162
+    ],
+    [
+      0.016610415526228887,
+      -0.542466376260257,
+      0.8399132840496754
+    ],
+    [
+      -0.5399612459415045,
+      0.7021371888396789,
+      0.4641607705629709
+    ]
+  ],
+  "global_translation_vector": [
+    249.96212860398123,
+    119.96319263613631,
+    250.09234186013856
+  ],
+  "best_pair_tm_query_norm": 0.08708572270653858,
+  "best_pair_tm_target_norm": 0.05797232153807826,
+  "coverage_penalized_complex_tm_query_norm": 0.007024995712071262,
+  "coverage_penalized_complex_tm_target_norm": 0.018525590353766056,
+  "best_pair_rmsd": 27.51656676756229,
+  "best_pair_aligned_length": 232,
+  "best_pair_query_chain": "H",
+  "best_pair_target_chain": "A"
+}

@@ -1,0 +1,9 @@
+dataset,rows,columns,kmer_length,null_rows,duplicate_kmers
+DNA R9.4.1 6mer,4096,"kmer,current_mean,current_std,dwell_time",6.0,0,0
+DNA R10.4.1 9mer,262144,"kmer,current_mean,current_std,dwell_time",9.0,0,0
+RNA R9.4.1 5mer,1024,"kmer,current_mean,current_std,dwell_time",5.0,0,0
+RNA004 9mer,262144,"kmer,current_mean,current_std,dwell_time",9.0,0,0
+performance_summary,16,"Chemistry,Tool,Time_min,FileSize_MB",,4,12
+m6a_predictions_uncalled4,5000,"site_id,probability",,0,0
+m6a_predictions_nanopolish,5000,"site_id,probability",,0,0
+m6a_labels,5000,"site_id,label",,0,0

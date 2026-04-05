@@ -1,0 +1,33 @@
+condition,seed,final_rmsd
+Random placement,0,11.753807
+Random placement,1,6.349277
+Random placement,2,6.225971
+Random placement,3,13.312309
+Random placement,4,16.090886
+Random placement,5,6.862894
+Random placement,6,5.691760
+Random placement,7,5.399485
+Pocket translation,0,0.000000
+Pocket translation,1,0.000000
+Pocket translation,2,0.000000
+Pocket translation,3,0.000000
+Pocket translation,4,0.000000
+Pocket translation,5,0.000000
+Pocket translation,6,0.000000
+Pocket translation,7,0.000000
+Diffusion prototype,0,0.102913
+Diffusion prototype,1,0.096083
+Diffusion prototype,2,0.100443
+Diffusion prototype,3,0.091528
+Diffusion prototype,4,0.101333
+Diffusion prototype,5,0.099642
+Diffusion prototype,6,0.100670
+Diffusion prototype,7,0.095579
+No spring ablation,0,0.119390
+No spring ablation,1,0.111512
+No spring ablation,2,0.112373
+No spring ablation,3,0.112898
+No spring ablation,4,0.107348
+No spring ablation,5,0.118740
+No spring ablation,6,0.111919
+No spring ablation,7,0.118140

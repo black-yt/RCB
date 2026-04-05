@@ -1,0 +1,1031 @@
+SCRIMP: Scalable Communication for Reinforcement- and
+Imitation-Learning-Based Multi-Agent Pathfinding
+Yutong Wang1, Bairan Xiang1, Shinan Huang1, Guillaume Sartoretti1†
+Abstract — Trading off performance guarantees in favor of
+scalability, the Multi-Agent Path Finding (MAPF) community
+has recently started to embrace Multi-Agent Reinforcement
+Learning (MARL), where agents learn to collaboratively gen-
+erate individual, collision-free (but often suboptimal) paths.
+Scalability is usually achieved by assuming a local field of
+view (FOV) around the agents, helping scale to arbitrary world
+sizes. However, this assumption significantly limits the amount
+of information available to the agents, making it difficult for
+them to enact the type of joint maneuvers needed in denser
+MAPF tasks. In this paper, we propose SCRIMP, where agents
+learn individual policies from even very small (down to 3x3)
+FOVs, by relying on a highly-scalable global communication
+mechanism based on a modified transformer. We further equip
+agents with a state-value-based tie-breaking strategy to further
+improve performance in symmetric situations, and introduce
+intrinsic rewards to encourage exploration while mitigating the
+long-term credit assignment problem. Empirical evaluations on
+a set of experiments indicate that SCRIMP can achieve higher
+performance with improved scalability compared to other state-
+of-the-art learning-based MAPF planners with larger FOVs,
+and even yields similar performance as a classical centralized
+planner in many cases. Ablation studies further validate the
+effectiveness of our proposed techniques. Finally, we show that
+our trained model can be directly implemented on real robots
+for online MAPF through high-fidelity simulations in gazebo.
+I. I NTRODUCTION
+Multi-Agent Path Finding (MAPF) is an NP-hard problem
+(even for suboptimal paths), aimed at generating collision-
+free paths for a set of agents from their initial position to
+their assigned goal on a given graph (often, a gridworld).
+Most traditional centralized planning methods solve MAPF
+by following movement rules [1], planing paths based on
+the priority order of agents [2], expending the search space
+when a collision is found [3], or ignoring other agents first
+and resolving collisions afterwards [4]. These approaches are
+usually unable to scale to larger teams while maintaining
+high-quality solutions, and often struggle with the frequent
+online re-planning required in realistic deployments, due to
+their high computational cost.
+Recently, the MAPF community has turned to Multi-
+Agent Reinforcement Learning (MARL) to produce fast and
+scalable, but suboptimal solutions to the MAPF problem by
+relying on decentralized planning under partial observability
+(to help scale to arbitrary world sizes). However, this ap-
+proach severely limit the amount of information available
+†Corresponding author, to whom correspondence should be addressed.
+1Authors are with the Department of Mechanical Engineering, Col-
+lege of Design and Engineering, National University of Singapore,
+21 Lower Kent Ridge Rd, Singapore {e0576114, e1011060,
+e1010775 }@u.nus.edu, mpegas@nus.edu.sgto the agents, making it difficult for them to detect and
+enact the type of joint maneuvers required to complete
+complex MAPF tasks. Introducing (learned) communication
+to allow agents to share information within a team, thereby
+increasing each other’s knowledge/observations, can help
+augment the amount of information available to single agent
+and promote team cooperation. However, designing scalable
+communication learning mechanisms is highly nontrivial:
+as the team size increases, agents are more likely to be
+overwhelmed by (potentially contradictory) messages that
+essentially introduce noise into their observation (i.e., the
+chatter problem ).
+This work extends our previous works, PRI-
+MAL/PRIMAL2 [5], [6], which combine Reinforcement
+Learning (RL) and imitation learning to teach fully-
+decentralized policies for MAPF. We propose SCRIMP,
+a new decentralized MAPF planner where agents make
+individual decisions based on their own, very small field of
+view (FOV) and on global highly-scalable communications1.
+The three main contributions of this work are: First, we
+introduce a scalable and differentiable Transformer-based
+communication mechanism to effectively mitigate the
+hazards caused by partial observations and further promote
+team-level cooperation, while alleviating the chatter
+problem. Second, we propose a learning-based stochastic
+tie-breaking method to handle scenarios in which agents’
+preferred actions would lead to vertex conflicts (agents
+choose actions that would have them occupy the same cell
+at the next time step) or swap conflicts (agents’ actions
+would have them swap locations in a single time step),
+and efficiently break symmetries to maximize the agents’
+progression. Third, we propose a simple intrinsic rewards
+structure, aimed at improving the agents’ single-episode
+exploration, thus increasing their probability to reach
+their goal and mitigating the long-term credit assignment
+problem. Throughout this work, to simplify implementation
+on robot that often rely on limited-range onboard sensing,
+we train agents with a small 3×3FOV (the agent can
+only see itself and one grid cell around it). We further
+show that the benefit from expanding this FOV is not
+significant, as the communication mechanism of SCRIMP
+already provides sufficient information (see Supplementary
+Material2). We test our trained models on an extensive
+set of simulation experiments with various team sizes,
+1Note that an earlier version of this work was briefly described in an
+extended abstract (poster presentation) at AAMAS ’23 [7].
+2Available at https://drive.google.com/drive/folders/
+1wEm4p3jICdpoWf032egrcVSr9I3tMTIZarXiv:2303.00605v3  [cs.RO]  31 Aug 2023
+world sizes, and obstacle densities. These evaluation results
+show that our models can scale nearly-losslessly to larger
+teams without retraining, and outperforms state-of-the-art
+learning-based MAPF planners (even with larger FOVs) in
+most relevant metrics. In the majority of cases, our models
+actually perform similarly to the classical centralized
+planner ODrM* [3], and even achieve higher success
+rate in complex tasks that require joint maneuvers. Our
+ablation studies further validate the effectiveness of the three
+proposed techniques. We finally present simulation results
+of our trained policy implemented on robots in Gazebo.
+II. R ELATED WORK
+A. Multi-Agent Reinforcement Learning
+MARL approaches can be broadly classified into three big
+paradigms, namely Centralized Learning (CL), Independent
+Learning (IL) and Centralized Training Decentralized Exe-
+cution (CTDE) [8]. CL methods model a multi-agent system
+as a single-agent and aim to learn a joint policy from the
+joint observations of all agents. An obvious flaw is that the
+dimension of the state-action space increases exponentially
+with the number of agents, making learning hard and not
+scalable to larger teams. In IL, each agent independently
+learns its own policy based on its own observation, while
+considering other agents as a part of the environment. In
+partially observable environments, these individual policies
+usually tend to be strongly sub-optimal and unstable due to
+the lack of sufficient information, preventing agents from
+cooperating well.
+By allowing agents to learn in a centralized setting while
+executing in a decentralized setting, the CTDE paradigm
+aims at getting the best of both CL and IL. One effective
+approach in CTDE is to introduce explicit/implicit com-
+munication among agents (potentially learned as well), to
+share relevant information and/or intents, towards true joint
+cooperation at the team-level [9][10]. In addition, based on
+shared additional information at training time, the learning
+speed and final performance of CTDE paradigm can be both
+improved through learning centralized critics [11] or value
+factorization networks [12], etc.
+B. Reinforcement Learning-based MAPF
+Solving MAPF via MARL, often using demonstrations
+from a classical planner, has recently drawn great attention
+from the community. The first work, named PRIMAL [5],
+proposed to combine RL and imitation learning to plan paths
+using fully-decentralized policies in a partially observable
+environment. The RL part is trained by the asynchronous ad-
+vantage actor critic (A3C) algorithm, where all agents share
+the same parameters. The imitation learning part relies on
+behavior cloning using training data generated online from
+a dynamically-coupled planner (ODrM* [3]). PRIMAL2 [6]
+then extended PRIMAL to lifelong MAPF, and relied on
+learned conventions to improve cooperation among agents
+in highly-structured environments.
+More recent works have looked to communication learning
+as another promising direction to improve solution quality.Similar to our work, MAGAT [13] and DHC [14] both intro-
+duced Graph Neural Networks (GNN) based communication-
+learning by treating each agent as a node, and making deci-
+sions on aggregated information from its close-by neighbors.
+DCC [15] learns a request-reply selective communication by
+determining whether the central agent’s decision is altered
+by the presence of a neighbor. More recently, PICO [16]
+integrated planning priorities generated by a classical cou-
+pled planner into an ad-hoc routing communication topol-
+ogy to produce a collision-reducing policy. However, all
+these communication learning based methods exhibit reduced
+scalability (usually cannot solve tasks with more than 64
+agents) compared to earlier communication-free approaches,
+exhibiting a trade-off between solution quality and success
+rate as the team size increases.
+III. MAPF AS A RL P ROBLEM
+A. MAPF Problem Statement
+In this work, we consider MAPF problems composed
+of a set of nagents {1, . . . , n }, represented by a tuple
+⟨G, S, T ⟩, where G= (V, E)is an undirected graph, S=
+{s1, . . . , s n} ⊂VandT={t1, . . . , t n} ⊂Vrespectively
+contain nunique start vertices and nunique goal vertices,
+one for each agent [17]. Time is discretized into steps. At
+each discrete time step, each agent (currently located at one
+of the graph’s vertices) is allowed to execute a single action:
+either move to one of its adjacent vertices in the graph, or
+wait at its current vertex. Movement actions are only feasible
+if they do not result in vertex/edge/swapping collisions. The
+goal is to find the collision-free, shortest joint path that
+consists of nsingle agent paths, such that all agents start
+from S, and finally end up at Tat some terminal time step,
+via a sequence of feasible actions.
+B. RL Environment Setup
+In line with the classical MAPF problem described above,
+we consider a discrete 2D gridworld environment where
+agents, goals, and obstacles each occupy one grid cell. The
+world is described by a m×mmatrix, where 0 represents an
+empty cell. At the beginning of each episode, nrandom, non-
+repeating start positions and ncorresponding goal positions
+are assigned to the nagents. In doing so, we also ensure that
+each agent’s start and goal positions are randomly sampled
+from empty cells of the same connected region of the
+environment. Different from previous work [5], where agents
+are allowed to enact their action sequentially at each time
+step, our environment allows agents to move simultaneously
+and checks for collisions on this joint action vector. Such
+operation is closer to the standard MAPF setting used by
+centralized planners, and in particular allows agents to follow
+each other with no empty space between them. As it is
+more realistic for real-world applications, we keep all of the
+agents in the environment after they have reached their goal.
+The MAPF environment is set to be partially observable by
+only allowing each agent access to the information inside its
+FOV ( 3×3in our experiments). This partial-observability
+assumption enables the trained policy to scale to arbitrary
+…Local FOV ( 3×3×8)
+ 𝑜𝑖𝑡
+෤𝑜𝑖𝑡V ector (1×7)𝑑𝑥𝑖𝑡𝑑𝑦𝑖𝑡𝑑𝑖𝑡𝑟𝑒𝑖𝑡−1𝑟𝑖𝑖𝑡−1𝑑𝑚𝑖𝑛𝑖𝑡−1𝑎𝑖𝑡−1
+𝑚1𝑡−1
+𝑚𝑛𝑡−1
+…(n×512)
+Conv2d
+×3MaxPool MaxPool Conv2d
+FC
+ConcatenateFC
+×2
+LSTMConcatenate
+ℎ𝑖𝑡−1
+EmbeddingComputation 
+Block⊕Conv2d
+×3ሶ𝑜𝑖𝑡
+ሷ𝑜𝑖𝑡
+ഺ𝑚𝑖𝑡−1
+𝑚𝑛𝑡−1
+…(n×512)
+FC
+FC FC
+Extrinsic 
+V alueMessage 𝑚𝑖𝑡EmbeddingComputation 
+Block
+Layer Norm Layer Norm GRU GRUMulti -head 
+AttentionFeed 
+ForwardComputation Block
+×𝐿
+ሶ𝑚𝑖𝑡−1ሷ𝑚𝑖𝑡−1 BlockingFC
+Intrinsic 
+V aluePolicyFC FC
+𝜑
+Fig. 1: Network structure of SCRIMP. Green modules belong to the observation encoder which is nearly-identical as PRIMAL,
+red modules to the transformer-based communication block, and purple modules to the output heads. The transformer-based
+communication block consists of a stack of Lcomputation blocks. The details of one computation block are shown in the red
+dashed box at the bottom of the figure. In the environment map, the gray squares represent static obstacles, and corresponding
+pairs of agents (squares) and goals (circles) are shown in the same color.
+world sizes by fixing the dimensions of the neural network’s
+inputs, and to remain closer to practical applications where
+robots will usually rely on onboard sensors whose view can
+be occluded by close-by obstacles/agents.
+The observation of each agent is grouped into two parts.
+The first part consists of eight binary matrices. The first four
+heuristic maps correspond to each of the four movement
+actions, where a position is marked as 1 if and only if the
+agent would get closer to its goal by taking that action [14].
+The remaining four maps represent, respectively, nearby
+obstacles, the positions of other agents, the agent’s own
+goal location (if within the FOV), and the projected position
+of other observable agents’ goals. All locations outside the
+world’s boundaries are regarded as obstacles. The second part
+is a seven-length vector consisting of the current normalized
+distance between the agent and its own goal along the x-
+axisdx, y-axis dy, and total Euclidean distance d, extrinsic
+reward ret−1(see below and in Table I), intrinsic reward
+rit−1and minimum Euclidean distance between the agent’s
+previous location and past locations stored in its episodic
+memory buffer dmint−1(both described in Section IV-C),
+as well as its most recent action at−1.
+Our reward structure is shown in Table I. Aligned with
+previous works, agents currently off-goal are penalized at
+each step to encourage faster task completion. An episode
+terminates if all agents are on goal at the end of a time step,
+or when the episode reaches the pre-defined time limit (in
+practice, 256 time steps). Agents can communicate with each
+other, with a one time step delay from sending a message to
+receiving/using it and the communications are not hindered
+by obstacles.
+TABLE I: Reward structure
+Action Reward
+Move(Up/Down/Left/Right) -0.3
+Stay(On goal, Away goal) 0.0,-0.3
+Collision -2
+Block -1IV. L EARNING TECHNIQUES
+A. Transformer-based Communication Learning
+To address the shortcomings of CL and IL described in
+Section II-A, this work learns a common decentralized policy
+network while simultaneously introducing a scalable and
+differentiable communication mechanism that allows agents
+to gain knowledge about other agents’ past observations,
+thereby effectively mitigating the risks posed by partial ob-
+servations and further facilitating team-level cooperation that
+can not be learned under a communication-free decentralized
+framework. Our communication mechanism is based on the
+transformer model [18], which has recently shown ground-
+breaking success in numerous fields of artificial intelligence.
+The transformer’s ability to efficiently integrate information
+over long sequences and scale to large amounts of data
+matches the primary requirement of our communications,
+which is to fuse messages sent by multiple agents into
+a single message in a scalable manner. In addition, the
+transformer’s ability to model dynamic pairwise relationships
+between messages without considering the order of inputs
+helps mitigate the chatter problem . A typical method in com-
+munication learning is to use the Long Short-Term Memory
+(LSTM) units as the communication channel. Since trans-
+formers have demonstrated significant performance gains
+compared to LSTM in other domains, we hypothesize
+that transformer-based communication mechanisms should
+also outperform such LSTM-based communication mecha-
+nisms [19] in MARL. However, in contrast to fields such
+as natural language processing, computer vision, etc., only a
+small amount of data is available in online RL for training
+models. In addition, RL models must be able to rapidly adapt
+to changing tasks, which makes it challenging to optimize
+the classical transformer and often leads its performance
+to only remain comparable to stochastic strategies [20]. To
+stabilize the training, we removed dropout layers, rearranged
+the location of layer normalizations in the submodules, and
+additionally added a Gate Recurrent Unit (GRU) in place
+of the residual connection of the vanilla transformer, as
+recommended in [21].
+Fig. 1 shows the network structure of SCRIMP, composed
+of three modules: the observation encoder, the transformer-
+based communication block, and the output heads.
+a) Observation Encoder : Seven convolutional layers, two
+max pooling layers, three Fully Connected (FC) layers,
+and one LSTM unit make up the observation encoder.
+Specifically, for agent iat time step t, the local observation
+ot
+iconsisting of a four-channel matrix is encoded into ˙ot
+i,
+via two stages of three convolutions and one maxpooling,
+followed by a last convolutional layer. In parallel, the vector
+of length seven ˜ot
+iis independently encoded by a FC layer
+and then concatenated with the matrix ˙ot
+ito form ¨ot
+i. The
+encoded observation ¨ot
+iis finally passed through two FC
+layers and then fed into an LSTM unit together with the
+output hidden state ht−1
+iof the unit at the previous time
+step, to endow each agent with the ability to integrate (its
+own) past information across time.
+b) Transformer-Based Communication Block : Here, only
+the encoder of the transformer is used .It applies to
+different agents, not to time , i.e., the transformer’s encoder
+treats messages output by all agents at the previous time
+step
+mt−1
+1, . . . mt−1
+n	
+as input. These messages are first
+augmented with information about the unique ID of each
+agent using a sinusoidal positional embedding, and passed
+through multiple iterative computation blocks to produce
+the final output of the communication block...mt−1
+i. Each
+computation block includes a multi-head self-attention mech-
+anism, a multi-layer perceptron, residual connections, layer
+normalizations, and GRUs. The multi-head self-attention
+is the central block of our communication mechanism. It
+encodes not only the high-level information of messages but
+also the dynamic interrelationships between messages. For
+each agent i, at each of the hindependent attention head, its
+own message is linearly projected to a Query by learnable
+weights wq3, while all messages are linearly projected to the
+Keys and Values by learnable weights Wk,Wv, and packed
+into matrix KandV. The relation between the self-message
+of agent iand messages from all agents is then computed
+as:
+αi= softmax
+wq˙mt−1
+i·(Wk[˙mt−1
+1,...˙mt−1
+n])⊤
+√
+dK
+, (1)
+where ˙mt−1
+iis the representation of mt−1
+iprocessed by the
+previous layers;√dKis the dimension of the Keys, used as
+a scaling factor to alleviate the gradient vanishing problem
+of the Softmax function. The Values are weighted-summed
+overαito produce the final output of this attention head:
+head i=αiWv
+˙mt−1
+1, . . .˙mt−1
+n
+. (2)
+The output of all heads are then concatenated and projected
+by the learnable weight Woto obtain the final joint output
+from different representation subspaces, that is
+¨mt−1
+i=Concat (head i1, . . . , head ih)Wo. (3)
+When global communication is not available, SCRIMP can
+be extended to a local communication version that limits
+the communication range based on Euclidean distance. The
+3In practice, the attention function is calculated simultaneously over the
+set of all agents’ queries, which are linearly projected by the weights Wq,
+packed into a matrix Q.
+𝑎1𝑎2𝑔2𝑔1Fig. 2: Example of target symmetry. Agent 1(a1) needs to
+traverse the goal ( g2) ofa2to reach its own goal ( g1).
+local communication is achieved by masking (setting to −∞)
+inputs of the Softmax function from illegal communication
+in the dot product attention. Since the encoder is placed
+before the output heads, agents’ decisions are conditioned
+on their own observation as well as the messages exchanged
+within the team. Because the encoder is differentiable, it is
+trained using the gradient of all agents’ losses, and as training
+proceeds, it learns to capture more useful information and
+to ignore noise/mitigate chatter to reduce the losses of all
+agents, leading to a policy that exhibits enhanced and larger-
+scale cooperation.
+c) Output Heads : Finally, the output of the transformer...mt−1
+iis concatenated with the output and the input of the
+LSTM cell, which is then used by the output heads to
+generate 1) a message used at the next time step, 2) predicted
+state values for extrinsic and intrinsic reward (detailed in
+Section IV-C), 3) the agent’s policy for the current time
+step, and 4) the learned “blocking” output used to indicate
+whether the agent is blocking other agents from reaching
+their goals [5]. Our model is trained by proximal policy
+optimization (PPO) [22]. During training, the predictions
+of state values for extrinsic and intrinsic reward are both
+updated by minimizing the temporal difference (TD) error
+between the predicted value and the discounted return. The
+output policy is optimized using the loss:
+Lπ(θ) =1
+T1
+nTX
+t=1nX
+i=1min
+rt
+i(θ)cAt
+i,
+clip 
+rt
+i(θ),1−ϵ,1 +ϵcAt
+i
+,(4)
+where θdenotes the parameters of the neural net-
+work, rt
+i(θ)the clipped probability ratio rt
+i(θ) =
+πθ
+i(at
+i|ot
+i,˜ot
+i,ht−1
+i,mt−1
+1···,mt−1
+n)
+πθold
+i(at
+i|ot
+i,˜ot
+i,ht−1
+i,mt−1
+1...,mt−1
+n)with πθ
+iandπθold
+ithe new
+and old policies of the agent i, respectively. ϵis a clipping
+hyperparameter, and bAt
+iis the truncated version of the
+generalized advantage function. The ”blocking” prediction
+is trained using a binary cross-entropy loss, and implicitly
+helps agents understand the additional blocking penalty they
+might receive (see Section IV-D for details). The total loss
+also includes an entropy term, which has been shown to
+encourage exploration and inhibit premature convergence.
+B. Value-Based Tie Breaking
+Inter-agent collisions/deadlocks is one of the most impor-
+tant causes of low-quality paths, and is the main challenge
+in complex MAPF tasks. We expect dramatic gains in per-
+formance if agents can reach a meaningful consensus on the
+priority of competing moves before a conflict occurs, thereby
+effectively breaking such symmetries. Previous works often
+proposed to handle vertex or swap conflicts, by discarding
+these actions and instead letting agents remain at their
+current position and receive a large penalty. In this work, we
+propose to let agents check if they will collide at the next
+time step before the action is actually executed, and then
+(weighted-)randomly sample which agent is finally allowed
+to perform its preferred action, based on a learning-based
+priority probability . Other agents then re-sample a new action
+according to their policy, where their former, conflicting
+choice is masked. We propose to use the predicted difference
+in team state-value as a component in the calculation of
+the priority probability, since it represents the long-term
+collective benefit of that agent being allowed to choose
+this specific action, thus preventing selfish, short-sighted
+behaviors. Specifically, if agent iwould collide with agent
+jat the next step, we compute the difference between the
+predicted current team state value and the next team state
+value where agent i’s action is executed and agent jre-
+samples a new action. We also calculate the same difference
+for agent jusing the same process. This difference in team
+state values for agent iis defined as:
+difft
+i=nX
+k=1 
+¯vt
+k−¯vt+1
+ki
+, (5)
+where ¯vt
+kis the predicted state value of agent k∈ {1, . . . , n }
+at step t, and ¯vt+1
+kiis that of agent k∈ {1, . . . , n }at step
+t+ 1obtained by agent iperforming the original action and
+agent jre-sampling a new action. Here, we assume that the
+team state value is the sum of the individual state value
+functions, because it is easy to implement and guarantees a
+global argmax operation on the team state value produces the
+same result as a collection of individual argmax operations
+on each individual state value [23].
+It is worth noting that an agent closer to its goal has
+a greater self-benefit from performing its preferred action,
+since fewer time steps (i.e., exponents of the discount fac-
+tor) are required to obtain the higher rewards associated
+with reaching and staying on goal. However, in the “target
+symmetry” scenario [24] depicted in Figure 2, where one
+agent needs to move past another agent’s goal to reach
+its own, the agent closer to its goal should be assigned
+a lower priority probability to prevent deadlocks, which
+may contradict the result calculated in Eq. (5). Therefore,
+we introduce a second component in the calculation of the
+priority probability, which relies on the normalized Euclidean
+distance between the current position of each agent and its
+goal. The weighted sums of the state-value differences and
+the normalized distances are fed into a softmax layer to
+generate the final priority probability:
+P= softmax
+difft
+i+µdt
+iP
+kdt
+k,difft
+j+µdt
+jP
+kdt
+k,···
+, k∈ {i, j . . .},
+(6)
+where µis a pre-defined hyperparameter to control the
+importance of distance, dt
+iis the distance between agent
+i’s current position and its own goal, {i, j . . .}is the set of
+collided agents. Finally, the agent allowed to move is sam-
+pled based on this probability. We experimentally observed
+that always greedily selecting the highest priority probability
+agent as the movable agent gives slightly worse performance
+compared to this stochastic method.C. Episodic Buffer for Improved Exploration
+Efficient exploration of the state-action space remains one
+of the main challenges in (MA)RL. In general, strategies
+that become greedy too early during training often cannot
+learn to act optimally; they may converge prematurely to
+worse suboptimal policies and then never collect new data
+that would allow them to further improve [25]. This is even
+more challenging in MAPF tasks, where agents may need
+hundreds of (lowly-rewarded) actions before they get any
+more significant signal for reaching and staying on their
+goal. In practice, we often observe that agents whose goal
+is far from their current location may choose to safely
+wander around the same area in a safe, collision-free man-
+ner, rather than try to reach their goal by exploring new
+paths/strategies. Recent years have seen considerable efforts
+to encourage exploration from different perspectives [26].
+A common solution is to let agents create bonus rewards
+for themselves based on their familiarity with visited states.
+These bonuses (i.e., intrinsic rewards ) are summed with
+their true task rewards (i.e., extrinsic rewards), and let the
+RL algorithm learn from these combined rewards. Most
+existing approaches measure state familiarity by building
+a model that predicts dynamic environmental properties,
+and devise intrinsic rewards proportional to the error or
+uncertainty in the model prediction [27]. However, since our
+MAPF environment is a gridworld, we propose a simple and
+straightforward method that shares the same intuition as these
+approaches, but avoids the expensive resources required to
+build such a model, by generating intrinsic rewards based on
+the(x, y)coordinates of the visited grid cells.
+Rather than encouraging agents to simply visit more state-
+action pairs during training, our proposed approach focuses
+on encouraging agents to explore more new area within each
+episode, to increase their probability of reaching their goal.
+We let each agent keep an independent buffer with a limited
+capacity M, which starts each episode empty. At each step,
+each off-goal agent first separately calculate the Euclidean
+distance between its current (x, y)location and all stored
+locations in the buffer. If the maximum distance is greater
+than a threshold τ, the agent generates an intrinsic reward:
+rit
+i=φ(β−δ), δ =
+1, if max distance < τ
+0, if max distance ≥τ,(7)
+where τ,φ∈R+andβ∈ {0,1}are pre-defined hyperpa-
+rameters. Essentially, τchecks whether the agent has stepped
+out of the qualitative region it was familiar with so far during
+the current episode. The value of φdepends on the scale
+of the task reward, while the value of βdetermines the
+sign of the intrinsic reward. In our tasks, we set φ= 0.2
+andβ= 1, to ensure that the best total reward can still
+only be obtained when agents reach their goal as fast as
+possible and then stay on it. The final reward is calculated
+asrt
+i=rit
+i+ret
+i. After calculating any intrinsic rewards,
+each agent determines whether its current maximum distance
+is greater than or equal to another threshold ρ; if so, the
+current (x, y)location is added to the episodic buffer [28].
+There, if the buffer is at full capacity M, a random element
+TABLE II: Average performance and standard deviation along standard MAPF metrics of different algorithms for instances
+with different team sizes, environment sizes, and obstacle densities. All results are averaged over 100 episodes with randomly
+generated maps. The episode length (EL) is the number of time steps required to complete the task. Episode lengths for failed
+tasks (no solution after 5 minutes of planning for ODrM*, more than 256 time steps for learning-based methods) are excluded.
+The maximum number of goals reached (MR) indicates the maximum number of on-goal agents at any point during an
+episode. The collision ratio with static obstacles including boundaries (CO) is calculated asNumber of collisions
+Episode length ×Number of agents×100% . The
+success rate (SR) is the percentage of episodes fully solved (i.e., where all agents reached their goal within the planning
+time/episode length constraints). ↑indicates that “higher is better”, and ↓“lower is better”. ”-” represents unavailable data.
+The results of the best-performing algorithms in each task, except for ODrM*, are highlighted in bold.
+Methods8 agents in 10×10world with 0%, 15%, 30% static obstacle rate
+EL↓ MR ↑ CO↓ SR↑
+ODrM* 12.64(2.13) 13.72(2.46) 16.16(4.03) - - - 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 100% 100%
+DHC 14.34(5.08) 17.23(5.96) 29.82(20.93) 8.00(0.00) 7.98(0.14) 7.88(0.50) 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 98% 92%
+PICO 17.35(12.39) 29.23(28.71) 35.04(26.93) 8.00(0.00) 7.51(0.72) 6.68(1.76) 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 63% 29%
+SCRIMP 12.05(2.53) 14.17(3.52) 18.56(7.80) 8.00(0.00) 8.00(0.00) 7.93(0.45) 0.00%(0.00%) 0.04%(0.18%) 0.07%(0.26%) 100% 100% 97%
+32 agents in 30×30world with 0%, 15%, 30% static obstacle rate
+ODrM* 42.97(4.62) 43.39(4.97) 53.95(10.43) - - - 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 100% 97%
+DHC 48.64(17.54) 52.48(7.10) 91.29(29.25) 32.00(0.00) 31.97(0.22) 31.61(1.10) 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 98% 78%
+PICO 65.14(10.30) - - 30.26(1.18) 22.70(2.40) 12.20(2.53) 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 14% 0% 0%
+SCRIMP 42.59(4.87) 43.90(5.11) 62.31(17.86) 32.00(0.00) 32.00(0.00) 31.94(0.34) 0.00%(0.00%) 0.00%(0.02%) 0.32%(0.44%) 100% 100% 96%
+128 agents in 40×40world with 0%, 15%, 30% static obstacle rate
+ODrM* 64.55(4.97) 67.77(6.64) 76.90(7.12) - - - 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 100% 20%
+DHC 93.00(39.24) 137.76(47.69) - 127.92(0.31) 127.45(1.06) 97.83(16.08) 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 93% 70% 0%
+PICO 135.00(84.85) - - 126.59(3.88) 95.01(6.97) 58.11(8.79) 0.00%(0.00%) 0.024%(0.022%) 7.80%(8.52%) 2% 0% 0%
+SCRIMP 66.86(5.83) 73.15(8.53) 135.43(42.32) 128.00(0.00) 128.00(0.00) 121.95(13.16) 0.01%(0.01%) 0.14%(0.13%) 3.72%(4.40%) 100% 100% 58%
+in the buffer is instead replaced with the current element.
+The above process continues until the end of the episode,
+where the buffer is emptied and a new episode begins.
+Aligned with famous single-agent exploration works
+such as Agent57 [27], we let the policy network use
+rit−1
+i,ret−1
+i,dmint−1
+ias additional inputs, both during train-
+ing and execution, and further train two separate value out-
+puts to predict vit
+iandvet
+i, which are summed into the final
+critic value. In practice, we start giving intrinsic rewards only
+after agents have learned the basics of the task (empirically
+set to be after 106time steps). Our experimental results
+show that these additional techniques bring improvements
+in training stability and final performance.
+D. Other Training Details
+In addition to the three learning techniques proposed
+above, we also keep the following techniques, which were
+introduced and shown to be effective in our previous
+works [6] [5]. At the beginning of each episode, we randomly
+choose whether the network will be trained by imitation
+learning (behavior cloning based on the centralized planner
+ODrM*) or RL, depending on a predetermined ratio. We
+also rely on a (supervised) binary cross-entropy loss to
+teach agents to avoid undesirable actions (e.g., actions that
+cause an agent to collide with a static obstacle, including
+world boundaries, or to directly return to their previous
+location), since it helps obtain better solutions compared
+training this from negative rewards. We further included a
+blocking penalty in our general reward structure to encourage
+agents to temporarily move away from their goal in specific
+selfish “blocking” situations, defined as the presence of an
+agent extending the A*-path length of another agent by
+more than 10 steps. However, unlike our prior works [6][5],
+where agents only draw actions from the set of valid actions
+during training, in all experiments in this paper, actions
+are sampled from the full action space, as we find no
+significant performance reduction when doing so, and the
+training curves are thus easier to compare.V. E XPERIMENTS
+A. Comparison with Other MAPF Planners
+Our models are trained and tested in the MAPF envi-
+ronments described in Section III-B. During training, at the
+beginning of each episode, the size of the square gridworld
+is randomly selected as either 10,25, or40. The obstacle
+density is randomly selected from a triangular distribution
+between 0%and50%, with the peak located at 33% (same as
+the compared baseline algorithms). The number of agents is
+fixed at 8. During testing, the number of agents varies among
+8,32, and 128and the gridworld size is varied from 10to40,
+the obstacle density varies among 0%,15%, and 30%. The
+experimental setup, additional evaluation results and the hy-
+perparameters of our models are detailed in the Supplemen-
+tary Material. Our full training and testing code is available
+athttps://github.com/marmotlab/SCRIMP .
+We compare our method with two other state-of-the-art
+MARL methods, namely the GNN-based communication
+method DHC, and the ad-hoc routing communication method
+PICO, in terms of episode length to completed a task ( EL),
+maximum number of goals reached ( MR), collision rate with
+static obstacles including boundaries ( CO), and success rate
+(SR). All training hyperparameters of these two methods
+are the same as their official codes/paper, where the FOV
+of DHC is 9×9and PICO is 11×11. We also show the
+results of the bounded-optimal centralized planner ODrM*
+with inflation factor ϵ= 2.0and a timeout of 5minutes as
+a reference.
+Testing results are presented in Table II. Overall, SCRIMP
+outperforms the other two learning-based methods, DHC and
+PICO, in almost all cases in terms of EL, MR and SR. Fur-
+thermore, SCRIMP is even able to yield similar performance
+as the classical centralized planner ODrM*, even though
+ODrM* has access to the entire state of the system and relies
+on (at worst, exhaustive) search-based planning, and can
+guarantee bounded-optimal solutions given sufficiently large
+planning times. In particular, SCRIMP still achieves 58%
+10% 15% 30%
+Obstacle Density5060708090100Success Rate
+SCRIMP
+SCRIMP-without-com
+SCRIMP-without-encoder(a) Communication Ablation
+10% 15% 30%
+Obstacle Density020406080100Success Rate
+SCRIMP
+SCRIMP-random
+SCRIMP-stop (b) Tie Breaking Ablation
+10% 15% 30%
+Obstacle Density405060708090100Success Rate
+ SCRIMP
+SCRIMP-penalty-stop (c) Intrinsic Reward Ablation
+Fig. 3: Success rate in our ablation study. The number of agents is equals to 128, 40×40world size, and increasing static
+obstacle rates.
+SR in the most difficult task requiring a high degree of agent
+cooperation (128 agents, 30% obstacle density), while the SR
+of ODrM* is only 20% within 5min of planning, and DHC
+and PICO are completely unable to solve the task. Although
+the CO of our models is already very low, in most cases it
+is higher than the CO of DHC and PICO. A possible reason
+for this is that our intrinsic rewards encourage SCRIMP to
+learn less conservative policies to approach goals, where the
+probability of encountering obstacles in agents’ long-term
+movement path inevitably rises. In contrast, the policies of
+the other two approaches tend to keep agents within their
+starting region more often, and thus their EL, MR and SR are
+significantly worse than our models despite having a lower
+CO.
+B. Ablation Results
+1) Communication Mechanism Ablation: To fairly com-
+pare the importance of our Transformer-based communica-
+tions, we develop two ablation baselines: SCRIMP-without-
+com and SCRIMP-without-encoder. The structures of these
+SCRIMP variants are identical to the original SCRIMP,
+except that for SCRIMP-without-com, the entire commu-
+nication mechanism is completely removed, i.e., agents
+never receive/use messages. For SCRIMP-without-encoder,
+we only remove the transformer encoder and replace the
+fused message in the original SCRIMP with a self-message,
+i.e., agents cannot communicate with each other but are able
+to receive a message from themselves from the previous
+step. Our evaluation results indicate that in simple tasks
+with fewer than 128 agents, SCRIMP performs similarly
+to these two variants, with success rates close to 100% in
+most tasks. However, in challenging tasks, the advantage of
+SCRIMP start to emerge as shown in Figure 3(a). SCRIMP-
+without-com exhibits the lowest success rate, which indicates
+that the content being encoded is essential for good final
+performance. SCRIMP-without-encoder also performs worse
+than SCRIMP. We believe that these results validate the
+effectiveness of obtaining information about other agents
+through dynamic fusion in harder tasks that are highly
+dependent on agent cooperation.
+2) Tie Breaking Ablation: In this ablation experiment,
+when a inter-agent collision is about to occur, SCRIMP-stop
+uses the same processing as PRIMAL, i.e., all agents that
+cause the collision stop at their previous position and receive
+a−2penalty. SCRIMP-random follows a similar strategy to
+the original SCRIMP, but where the agent allowed to move
+Fig. 4: Gazebo Environment setup. Sixteen autonomous
+ground vehicles and their corresponding goals in a high
+structured simulation environment.
+at a conflict is randomly determined. Figure 3(b) demon-
+strates that allowing agents to re-sample actions instead of
+directly stopping yields great benefits, as expected, but if
+the movement priority is completely randomly determined,
+unknown instabilities will deteriorate the performance of the
+final learned policies.
+3) Intrinsic Reward Ablation: Finally, we compare
+SCRIMP with SCRIMP-penalty-stop. This variant removes
+the intrinsic reward completely (including the additional net-
+work inputs and output). Same as in PRIMAL, we now give a
+slightly higher negative reward to an agent stopping off-goal
+(−0.5) than for moving ( −0.3) to implicitly encourage ex-
+ploration. The SR of SCRIMP-penalty-stop and SCRIMP are
+also similar on simple tasks, but the gap between the baseline
+and SCRIMP on complex tasks, as shown in Figure 3(c),
+suggests that our proposed approach effectively encourages
+exploration while balancing exploitation.
+C. Experimental Validation
+We implemented our trained SCRIMP model on a team of
+sixteen autonomous ground vehicles in Gazebo, without any
+additional training/modification. Figure 4 shows our highly
+structured simulation environment. Although the online plan-
+ner is trained in a randomised grid world with no clear
+spatial structure, all vehicles are able to reach their goals
+quickly without collision. The full video is available in the
+Supplementary Material.
+VI. C ONCLUSION
+This work introduces SCRIMP, a new RL approach to
+MAPF that relies on a highly scalable communication
+mechanism. Our proposed communication learning method
+utilizes a modified transformer encoder to selectively and
+dynamically fuse information from other agents, enabling
+effective information sharing while avoiding overwhelming
+communications, thus significantly reducing the risk caused
+by partial observations and enabling cooperative operations
+that cannot be learned by a fully decentralized RL approach.
+We further propose to break ties between competing agents
+online, by using a stochastic priority-based system based
+on learned, long-term team values. Additionally, SCRIMP
+employs intrinsic rewards based on an episodic buffer, which
+encourages agents to explore more areas within an episode,
+improving the probability of reaching the goal and alleviating
+the long-term credit assignment issue. Our experimental re-
+sults across a range of tasks show that SCRIMP significantly
+outperforms other learning-based state-of-the-art planners,
+while maintaining scalability to larger teams. In most cases,
+our models even perform similarly to a conventional search-
+based centralized planner, and even achieves higher success
+rate in our largest, most complex task. Through a set of
+ablation studies, we demonstrate the effectiveness of the
+three proposed methods. Finally, we implement our trained
+model on robot in a high-fidelity simulator, showing that
+robots can rely on our learned policy to plan online collision-
+free paths in real-time. Future work will extend our approach
+to more practical MAPF tasks where each agent’s vision can
+be obstructed by obstacles, and focus on environments that
+may contain dynamic obstacles such as humans.
+ACKNOWLEDGMENT
+This work was supported by the Singapore Ministry of
+Education Academic Research Fund Tier 1.
+REFERENCES
+[1] Q. Sajid, R. Luna, and K. Bekris, “Multi-agent pathfinding with
+simultaneous execution of single-agent primitives,” in International
+symposium on combinatorial search , vol. 3, no. 1, 2012.
+[2] M. Erdmann and T. Lozano-Perez, “On multiple moving objects,”
+Algorithmica , vol. 2, pp. 477–521, 1987.
+[3] G. Wagner and H. Choset, “Subdimensional expansion for multirobot
+path planning,” Artificial intelligence , vol. 219, pp. 1–24, 2015.
+[4] G. Sharon, R. Stern, A. Felner, and N. R. Sturtevant, “Conflict-based
+search for optimal multi-agent pathfinding,” Artificial Intelligence , vol.
+219, pp. 40–66, 2015.
+[5] G. Sartoretti, J. Kerr, Y . Shi, G. Wagner, T. S. Kumar, S. Koenig, and
+H. Choset, “PRIMAL: Pathfinding via Reinforcement and Imitation
+Multi-Agent Learning,” IEEE Robotics and Automation Letters (RA-
+L), vol. 4(3), pp. 2378–2385, 2019.
+[6] M. Damani, Z. Luo, E. Wenzel, and G. Sartoretti, “PRIMAL 2:
+Pathfinding via Reinforcement and Imitation Multi-Agent Learning
+- Lifelong,” IEEE RA-L , vol. 6, no. 2, pp. 2666–2673, 2021.
+[7] Y . Wang, B. Xiang, S. Huan, and G. Sartoretti, “SCRIMP: Scalable
+communication for reinforcement- and imitation-learning-based multi-
+agent pathfinding,” in Accepted as an extended abstract (poster
+presentation) at AAMAS , 2023.
+[8] Y . Wang, M. Damani, P. Wang, Y . Cao, and G. Sartoretti, “Distributed
+reinforcement learning for robot teams: A review,” Conditionally
+Accepted to Springer’s Current Robotics Reports , 2022.
+[9] S. Shaw, E. Wenzel, A. Walker, and G. Sartoretti, “ForMIC: Foraging
+via Multiagent rl with Implicit Communication,” IEEE Robotics and
+Automation Letters , vol. 7, no. 2, pp. 4877–4884, 2022.
+[10] S. Q. Zhang, Q. Zhang, and J. Lin, “Efficient communication in multi-
+agent reinforcement learning via variance based control,” Advances in
+Neural Information Processing Systems , vol. 32, 2019.
+[11] J. Foerster, G. Farquhar, T. Afouras, N. Nardelli, and S. Whiteson,
+“Counterfactual multi-agent policy gradients,” in Proceedings of the
+AAAI conference on artificial intelligence , vol. 32, no. 1, 2018.
+[12] T. Rashid, M. Samvelyan, C. Schroeder, G. Farquhar, J. Foerster, and
+S. Whiteson, “Qmix: Monotonic value function factorisation for deep
+multi-agent reinforcement learning,” in ICML , 2018, pp. 4295–4304.
+[13] Q. Li, W. Lin, Z. Liu, and A. Prorok, “Message-aware graph attention
+networks for large-scale multi-robot path planning,” IEEE Robotics
+and Automation Letters , vol. 6, no. 3, pp. 5533–5540, 2021.[14] Z. Ma, Y . Luo, and H. Ma, “Distributed heuristic multi-agent path
+finding with communication,” in ICRA , 2021, pp. 8699–8705.
+[15] Z. Ma, Y . Luo, and J. Pan, “Learning selective communication for
+multi-agent path finding,” IEEE RA-L , vol. 7(2), pp. 1455–1462, 2021.
+[16] W. Li, H. Chen, B. Jin, W. Tan, H. Zha, and X. Wang, “Multi-agent
+path finding with prioritized communication learning,” arXiv preprint
+arXiv:2202.03634 , 2022.
+[17] R. Stern, N. Sturtevant, A. Felner, S. Koenig, H. Ma, T. Walker, J. Li,
+D. Atzmon, L. Cohen, T. Kumar, et al. , “Multi-agent pathfinding: Def-
+initions, variants, and benchmarks,” in Proceedings of SoCS , vol. 10,
+no. 1, 2019, pp. 151–158.
+[18] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N.
+Gomez, Ł. Kaiser, and I. Polosukhin, “Attention is all you need,”
+Advances in neural information processing systems , vol. 30, 2017.
+[19] Y . Wang and G. Sartoretti, “FCMNet: Full Communication Memory
+Net for team-level cooperation in multi-agent systems,” in AAMAS ,
+2022, pp. 1355–1363.
+[20] N. Mishra, M. Rohaninejad, X. Chen, and P. Abbeel, “A simple neural
+attentive meta-learner,” arXiv preprint arXiv:1707.03141 , 2017.
+[21] E. Parisotto, F. Song, J. Rae, R. Pascanu, C. Gulcehre, S. Jayakumar,
+M. Jaderberg, R. L. Kaufman, A. Clark, S. Noury, et al. , “Stabilizing
+transformers for reinforcement learning,” in International conference
+on machine learning . PMLR, 2020, pp. 7487–7498.
+[22] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov,
+“Proximal policy optimization algorithms,” arXiv preprint
+arXiv:1707.06347 , 2017.
+[23] P. Sunehag, G. Lever, A. Gruslys, W. M. Czarnecki, V . Zambaldi,
+M. Jaderberg, M. Lanctot, N. Sonnerat, J. Z. Leibo, K. Tuyls, et al. ,
+“Value-decomposition networks for cooperative multi-agent learning,”
+arXiv preprint arXiv:1706.05296 , 2017.
+[24] J. Li, G. Gange, D. Harabor, P. J. Stuckey, H. Ma, and S. Koenig,
+“New techniques for pairwise symmetry breaking in multi-agent path
+finding,” in ICAPS , vol. 30, 2020, pp. 193–201.
+[25] T. Yang, H. Tang, C. Bai, J. Liu, J. Hao, Z. Meng, and P. Liu,
+“Exploration in deep reinforcement learning: a comprehensive survey,”
+arXiv preprint arXiv:2109.06668 , 2021.
+[26] S. Amin, M. Gomrokchi, H. Satija, H. van Hoof, and D. Precup,
+“A survey of exploration methods in reinforcement learning,” arXiv
+preprint arXiv:2109.00157 , 2021.
+[27] A. P. Badia, B. Piot, S. Kapturowski, P. Sprechmann, A. Vitvitskyi,
+Z. D. Guo, and C. Blundell, “Agent57: Outperforming the atari hu-
+man benchmark,” in International Conference on Machine Learning .
+PMLR, 2020, pp. 507–517.
+[28] N. Savinov, A. Raichuk, R. Marinier, D. Vincent, M. Pollefeys,
+T. Lillicrap, and S. Gelly, “Episodic curiosity through reachability,”
+arXiv preprint arXiv:1810.02274 , 2018.
+SUPPLEMENTARY MATERIAL
+VII. E XPERIMENTAL SETUP
+All training instances (i.e., everything but comparison
+experiments) were conducted on a server equipped with
+four Nvidia GeForce RTX 3090 GPUs and one Intel(R)
+Core(TM) i9-10980XE CPU (18 cores, 36 threads). Only
+one GPU is used during training. The code for the neural
+network part was written in torch 1.9.0. We relied on Ray
+1.2.0 to employ 16 processes to collect data in parallel.
+The training speed shows a significant improvement com-
+pared to our previous work, and the model using standard
+hyperparameters converges within 8 hours on tasks with
+8 agents, but longer training can lead to better scalability.
+Our full training and testing code is available at https:
+//github.com/marmotlab/SCRIMP .
+VIII. H YPERPARAMETERS
+Table III presents the hyperparameters used to train the
+model evaluated in Section V .A of our paper. The first 20
+hyperparameters are general hyperparameters for PPO and
+our MAPF task, while remaining hyperparameters are unique
+to the methods proposed in our paper.
+TABLE III: Hyperparameters table
+Hyperparameter Value
+Number of agents 8
+FOV size 3
+Maximum episode length 256
+World size (10,40)
+Obstacle density (0%,50%)
+Learning rate 1e-5
+Discount factor 0.95
+Gae lamda 0.95
+Clip parameter for probability ratio ϵ 0.2
+Gradient clip norm 10
+Number of epoch 10
+Number of processes 16
+Mini batch size 1024
+Imitation learning rate 10%
+Optimizer AdamOptimizer
+Entropy coefficient 0.01
+Policy coefficient 10
+Valid action coefficient 0.5
+Block coefficient 0.5
+Number of seeds in main processing 1234
+Dimension of the feed-forward network of the encoder 1024
+Number of computation blocks 1
+Number of heads 8
+Dimension of q,k,v 32
+Distance discount factor µ 0.1
+Intrinsic value coefficient 0.08
+Extrinsic value coefficient 0.08
+Capacity of episodic buffer M 80
+Threshold for obtaining intrinsic reward τ random(1,3)
+Threshold for adding to buffer ρ 3
+Number of steps to start adding intrinsic rewards 1e6
+φ 0.2
+β 1
+IX. E XTENDED EXPERIMENTS
+Using the same environment and hyperparameters de-
+scribed in Section V .A of our paper, we further testedour learned models in additional experiments with different
+team sizes, world sizes and obstacle densities as shown in
+Table IV. The results of these extended experiments are
+aligned with the experimental analysis in Section V .A of our
+paper.
+X. I NFLUENCE OF FOV SIZE
+We further tested the performance of our model with
+different FOV sizes. Figure 5 shows that in tasks involving
+16 or fewer agents, the benefit of expanding the FOV is not
+significant, as the communication mechanism of SCRIMP al-
+ready provides sufficient information. The best performance
+is achieved when the FOV size is 5, where we see a 72%
+success rate in the 128-agent task, in a 40×40world
+with 30% obstacles. As expected, the time required for
+convergence increases with the FOV size, since a larger FOV
+requires a larger neural network with more trainable weights.
+8 16 32 64 128
+Agents5060708090100Success Rate
+SCRIMP
+SCRIMP-FOV=5
+SCRIMP-FOV=7
+SCRIMP-FOV=9
+Fig. 5: Success rate of SCRIMP variants with different FOV
+dimensions. The size of the world changes with the number
+of agents as described in the paper, but obstacle density
+remains 30%.
+TABLE IV: Extended experimental results of Section V .A
+Methods16 agents in 20×20world with 0%, 15%, 30% static obstacle rate
+EL↓ MR ↑ CO↓ SR↑
+ODrM* 27.38(3.63) 27.64(3.74) 34.61(6.55) - - - 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 100% 95%
+DHC 29.15(4.66) 34.72(8.44) 55.71(26.75) 16.00(0.00) 16.00(0.00) 15.80(0.49) 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 100% 83%
+PICO 29.83(5.80) 61.83(30.73) - 16.00(0.00) 13.85(1.92) 9.96(2.17) 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 18% 0%
+SCRIMP 26.40(3.87) 27.75(4.34) 36.00(8.75) 16.00(0.00) 16.00(0.00) 16.00(16.00) 0.00%(0.00%) 0.02%(0.17%) 0.1%(0.21%) 100% 100% 100%
+64 agents in 40×40world with 0%, 15%, 30% static obstacle rate
+ODrM* 61.40(5.33) 62.42(6.11) 73.59(10.25) - - - 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 100% 92%
+DHC 65.59(7.22) 82.6(22.11) 137.87(39.15) 64.00(0.00) 63.99(0.10) 61.44(4.42) 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 100% 99% 46%
+PICO 67.67(9.97) - - 61.64(1.29) 47.52(3.60) 27.61(5.23) 0.00%(0.00%) 0.003%(0.004%) 0.07%(0.05%) 6% 0% 0%
+SCRIMP 61.82(6.13) 65.44(10.28) 90.72(29.16) 64.00(0.00) 63.99(0.10) 63.77(1.23) 0.00%(0.00%) 0.02%(0.03%) 0.56%(1.17%) 100% 99% 89 %
+256 agents in 40×40world with 0%, 15%, 30% static obstacle rate
+ODrM* 69.77(5.77) 76.08(6.57) - - - - 0.00%(0.00%) 0.00%(0.00%) 0.00%(0.00%) 96% 39% 0%
+SCRIMP 77.26(7.03) 104.87(24.21) 243.5(5.5) 256.00(0.00) 255.95(0.22) 181.30(43.89) 0.07%(0.03%) 0.85%(0.52%) 16.54%(7.49%) 100% 95% 2%

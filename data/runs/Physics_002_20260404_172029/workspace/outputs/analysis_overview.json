@@ -1,0 +1,10 @@
+{
+  "global_xeb_mean": 0.4841444740866811,
+  "global_xeb_std": 0.33790117022912314,
+  "num_negative_instances": 29,
+  "num_positive_instances": 521,
+  "depth_scan_N40_mean_range": [
+    0.2661268834768434,
+    0.6317206938771034
+  ]
+}

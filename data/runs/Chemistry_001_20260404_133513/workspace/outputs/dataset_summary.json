@@ -1,0 +1,55 @@
+{
+  "protein": {
+    "num_residues_ca": 161,
+    "num_all_atoms": 2591,
+    "sequence_length_seqres": 162,
+    "mean_ca_step": 3.8491204185861454,
+    "std_ca_step": 0.03761995620838297
+  },
+  "ligand": {
+    "num_atoms": 194,
+    "num_bonds": 193,
+    "element_counts": {
+      "C": 53,
+      "H": 104,
+      "N": 20,
+      "O": 17
+    }
+  },
+  "pocket": {
+    "num_residues": 12,
+    "pocket_center": [
+      11.158,
+      5.348,
+      -8.189
+    ],
+    "contacting_residue_indices": [
+      112,
+      111,
+      27,
+      113,
+      110,
+      26,
+      101,
+      28,
+      103,
+      25,
+      102,
+      65
+    ]
+  },
+  "feature_shapes": {
+    "protein_sequence_features": [
+      162,
+      21
+    ],
+    "ligand_atom_features": [
+      194,
+      7
+    ],
+    "ligand_adjacency": [
+      194,
+      194
+    ]
+  }
+}

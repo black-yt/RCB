@@ -1,0 +1,4 @@
+dataset,n_points,z_min,z_max,monotonic_redshift,positive_errors
+desi_dvrd,7,0.295,2.33,True,True
+desi_fap,7,0.295,2.33,True,True
+sne_mu,7,0.1,0.7,True,True

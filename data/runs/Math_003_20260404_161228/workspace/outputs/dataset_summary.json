@@ -1,0 +1,37 @@
+{
+  "num_problems": 30,
+  "goal_distribution": {
+    "cong": 12,
+    "eqangle": 2,
+    "coll": 7,
+    "cyclic": 5,
+    "eqratio": 1,
+    "perp": 2,
+    "para": 1
+  },
+  "operator_distribution_top20": {
+    "on_line": 120,
+    "on_circle": 72,
+    "circle": 28,
+    "triangle": 23,
+    "on_bline": 18,
+    "on_tline": 17,
+    "midpoint": 14,
+    "on_aline": 13,
+    "foot": 11,
+    "reflect": 10,
+    "angle_bisector": 8,
+    "mirror": 6,
+    "segment": 5,
+    "on_pline": 5,
+    "orthocenter": 5,
+    "eqdistance": 3,
+    "incenter": 3,
+    "incenter2": 2,
+    "on_dia": 2,
+    "eqangle3": 2
+  },
+  "avg_constructions": 8.666666666666666,
+  "avg_points": 16.4,
+  "max_constructions_problem": "translated_imo_2011_p6"
+}

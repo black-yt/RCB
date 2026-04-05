@@ -1,0 +1,73 @@
+{
+  "n_models": 50,
+  "validation_loss_mean": 5.314309535159006,
+  "validation_loss_median": 5.3001416068938045,
+  "validation_loss_std": 0.07520905350524594,
+  "validation_loss_cv": 0.014152177814948383,
+  "validation_loss_min": 5.136557016107771,
+  "validation_loss_max": 5.677851685219341,
+  "validation_loss_iqr": [
+    5.278739505757888,
+    5.33258860061566
+  ],
+  "validation_loss_mean_95ci": [
+    5.2934626491168535,
+    5.335156421201156
+  ],
+  "best_run": "000",
+  "worst_run": "049",
+  "relative_gap_best_to_worst_pct": 10.538083533661165,
+  "duplicate_loss_max_abs_diff": 0.0,
+  "n_cluster_pickles": 65,
+  "cluster_family_counts": [
+    [
+      "Tm",
+      13
+    ],
+    [
+      "T",
+      12
+    ],
+    [
+      "Mi",
+      11
+    ],
+    [
+      "TmY",
+      9
+    ],
+    [
+      "R",
+      8
+    ],
+    [
+      "L",
+      5
+    ],
+    [
+      "C",
+      2
+    ],
+    [
+      "CT",
+      2
+    ],
+    [
+      "Lawf",
+      2
+    ],
+    [
+      "Am",
+      1
+    ]
+  ],
+  "torch_checkpoint_load_success_count": 50,
+  "network_bias_mean_mean": 0.42265133678913114,
+  "network_bias_mean_std": 0.06495028585524813,
+  "network_time_const_mean_mean": 0.045241259709000586,
+  "network_time_const_mean_std": 0.006546576347062045,
+  "network_syn_strength_mean_mean": 0.035624331794679165,
+  "network_syn_strength_mean_std": 0.0037686181112901685,
+  "loss_vs_syn_strength_corr": -0.3409058254270093,
+  "loss_vs_time_const_corr": 0.08978111382700252
+}

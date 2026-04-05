@@ -1,0 +1,275 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "run_experiment.py",
+    "path": "code/run_experiment.py",
+    "type": "file",
+    "size": 15217,
+    "mtime": 1775317486.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "test_simulated.csv",
+    "path": "data/test_simulated.csv",
+    "type": "file",
+    "size": 29204490,
+    "mtime": 1772421508.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "train_simulated.csv",
+    "path": "data/train_simulated.csv",
+    "type": "file",
+    "size": 68149042,
+    "mtime": 1772421506.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "best_model_by_degradation.csv",
+    "path": "outputs/best_model_by_degradation.csv",
+    "type": "file",
+    "size": 1081,
+    "mtime": 1775317368.0,
+    "exported": true
+  },
+  {
+    "name": "data_summary.json",
+    "path": "outputs/data_summary.json",
+    "type": "file",
+    "size": 581,
+    "mtime": 1775317368.0,
+    "exported": true
+  },
+  {
+    "name": "experiment_summary.json",
+    "path": "outputs/experiment_summary.json",
+    "type": "file",
+    "size": 639,
+    "mtime": 1775317368.0,
+    "exported": true
+  },
+  {
+    "name": "high_precision_thresholds.csv",
+    "path": "outputs/high_precision_thresholds.csv",
+    "type": "file",
+    "size": 260,
+    "mtime": 1775317370.0,
+    "exported": true
+  },
+  {
+    "name": "hist_gradient_boosting.joblib",
+    "path": "outputs/hist_gradient_boosting.joblib",
+    "type": "file",
+    "size": 1138762,
+    "mtime": 1775317370.0,
+    "exported": false
+  },
+  {
+    "name": "logistic_regression.joblib",
+    "path": "outputs/logistic_regression.joblib",
+    "type": "file",
+    "size": 5050,
+    "mtime": 1775317368.0,
+    "exported": false
+  },
+  {
+    "name": "model_metrics.csv",
+    "path": "outputs/model_metrics.csv",
+    "type": "file",
+    "size": 2853,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "permutation_importance.csv",
+    "path": "outputs/permutation_importance.csv",
+    "type": "file",
+    "size": 995,
+    "mtime": 1775317368.0,
+    "exported": true
+  },
+  {
+    "name": "random_forest.joblib",
+    "path": "outputs/random_forest.joblib",
+    "type": "file",
+    "size": 410312331,
+    "mtime": 1775317484.0,
+    "exported": false
+  },
+  {
+    "name": "run.log",
+    "path": "outputs/run.log",
+    "type": "file",
+    "size": 0,
+    "mtime": 1775317368.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 1 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 7682715,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 540574,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 725080,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 736463,
+    "mtime": 1773914910.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "calibration_curves.png",
+    "path": "report/images/calibration_curves.png",
+    "type": "file",
+    "size": 145065,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "cv_pr_curves.png",
+    "path": "report/images/cv_pr_curves.png",
+    "type": "file",
+    "size": 123569,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "cv_roc_curves.png",
+    "path": "report/images/cv_roc_curves.png",
+    "type": "file",
+    "size": 124799,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview_degradation.png",
+    "path": "report/images/data_overview_degradation.png",
+    "type": "file",
+    "size": 97778,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "data_overview_label_rate.png",
+    "path": "report/images/data_overview_label_rate.png",
+    "type": "file",
+    "size": 87766,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "feature_correlation_heatmap.png",
+    "path": "report/images/feature_correlation_heatmap.png",
+    "type": "file",
+    "size": 64795,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "feature_distributions.png",
+    "path": "report/images/feature_distributions.png",
+    "type": "file",
+    "size": 78219,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "performance_by_degradation.png",
+    "path": "report/images/performance_by_degradation.png",
+    "type": "file",
+    "size": 75525,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "permutation_importance.png",
+    "path": "report/images/permutation_importance.png",
+    "type": "file",
+    "size": 63542,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "test_metric_comparison.png",
+    "path": "report/images/test_metric_comparison.png",
+    "type": "file",
+    "size": 68543,
+    "mtime": 1775317484.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12680,
+    "mtime": 1775317487.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5539,
+    "mtime": 1775291167.0,
+    "exported": true
+  }
+]

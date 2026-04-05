@@ -1,0 +1,55 @@
+{
+  "validation": {
+    "fig6_shape": [
+      1500,
+      1
+    ],
+    "fig7_shape": [
+      1500,
+      7
+    ],
+    "fig8_shape": [
+      1200,
+      2
+    ],
+    "fig6_missing": 0,
+    "fig7_missing": 0,
+    "fig8_missing": 0,
+    "seed": 12345
+  },
+  "resolution_summary": {
+    "name": "resolution_difference",
+    "count": 1500,
+    "mean": 0.0008733345414674213,
+    "std": 0.0016497878302906164,
+    "min": 8.182058252102732e-06,
+    "q25": 0.0001891664013006976,
+    "median": 0.0004249407871194731,
+    "q75": 0.0009046546054452167,
+    "q90": 0.0020565016876326328,
+    "q95": 0.003122652402503906,
+    "max": 0.04073090157875922,
+    "median_ci_low": 0.00039619138007480567,
+    "median_ci_high": 0.0004572429597411358
+  },
+  "resolution_thresholds": {
+    "frac_below_1e-04": 0.114,
+    "frac_below_5e-04": 0.554,
+    "frac_below_1e-03": 0.7773333333333333,
+    "frac_below_1e-02": 0.998
+  },
+  "resolution_tail": {
+    "frac_above_1e-2": 0.002,
+    "frac_above_5e-3": 0.02266666666666667,
+    "top_1pct_threshold": 0.007158164256168963
+  },
+  "mode_monotonic_median_increase": true,
+  "mode_monotonic_q75_increase": true,
+  "extrapolation_median_ratio_N24_to_N23": 2.668263131144048,
+  "extrapolation_median_log10_ratio_ci": [
+    0.38277125960614417,
+    0.47190745960660047
+  ],
+  "extrapolation_frac_N24_gt_N23": 0.7216666666666667,
+  "extrapolation_wilcoxon_proxy_sign_fraction": 0.7216666666666667
+}

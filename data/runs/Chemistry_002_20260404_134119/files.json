@@ -1,0 +1,198 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_haddock_input.py",
+    "path": "code/analyze_haddock_input.py",
+    "type": "file",
+    "size": 16578,
+    "mtime": 1775317584.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "1brs_AD.pdb",
+    "path": "data/1brs_AD.pdb",
+    "type": "file",
+    "size": 175527,
+    "mtime": 1772768164.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "skempi_v2.csv",
+    "path": "data/skempi_v2.csv",
+    "type": "file",
+    "size": 1602208,
+    "mtime": 1772768166.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "analysis_summary.json",
+    "path": "outputs/analysis_summary.json",
+    "type": "file",
+    "size": 2389,
+    "mtime": 1775317582.0,
+    "exported": true
+  },
+  {
+    "name": "chain_summary.csv",
+    "path": "outputs/chain_summary.csv",
+    "type": "file",
+    "size": 79,
+    "mtime": 1775317584.0,
+    "exported": true
+  },
+  {
+    "name": "interface_atom_contacts.csv",
+    "path": "outputs/interface_atom_contacts.csv",
+    "type": "file",
+    "size": 15174,
+    "mtime": 1775317582.0,
+    "exported": true
+  },
+  {
+    "name": "interface_residues.csv",
+    "path": "outputs/interface_residues.csv",
+    "type": "file",
+    "size": 13889,
+    "mtime": 1775317584.0,
+    "exported": true
+  },
+  {
+    "name": "skempi_1brs_single_mutants.csv",
+    "path": "outputs/skempi_1brs_single_mutants.csv",
+    "type": "file",
+    "size": 19978,
+    "mtime": 1775317582.0,
+    "exported": true
+  },
+  {
+    "name": "skempi_global_summary.csv",
+    "path": "outputs/skempi_global_summary.csv",
+    "type": "file",
+    "size": 450,
+    "mtime": 1775317582.0,
+    "exported": true
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 162669,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 305268,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 599969,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 3938436,
+    "mtime": 1773914887.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "contact_heatmap.png",
+    "path": "report/images/contact_heatmap.png",
+    "type": "file",
+    "size": 196629,
+    "mtime": 1775317584.0,
+    "exported": true
+  },
+  {
+    "name": "ddg_vs_contacts.png",
+    "path": "report/images/ddg_vs_contacts.png",
+    "type": "file",
+    "size": 136513,
+    "mtime": 1775317584.0,
+    "exported": true
+  },
+  {
+    "name": "interface_contact_profile.png",
+    "path": "report/images/interface_contact_profile.png",
+    "type": "file",
+    "size": 104303,
+    "mtime": 1775317584.0,
+    "exported": true
+  },
+  {
+    "name": "skempi_ddg_overview.png",
+    "path": "report/images/skempi_ddg_overview.png",
+    "type": "file",
+    "size": 81896,
+    "mtime": 1775317584.0,
+    "exported": true
+  },
+  {
+    "name": "structure_mutation_validation.png",
+    "path": "report/images/structure_mutation_validation.png",
+    "type": "file",
+    "size": 169577,
+    "mtime": 1775317584.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 14129,
+    "mtime": 1775317585.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5185,
+    "mtime": 1775281279.0,
+    "exported": true
+  }
+]

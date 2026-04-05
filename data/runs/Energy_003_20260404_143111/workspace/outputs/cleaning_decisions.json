@@ -1,0 +1,6 @@
+{
+  "duplicate_rule": "Drop duplicated timestamps, keep first occurrence.",
+  "alignment_rule": "Reindex all datasets to complete hourly range for 2014.",
+  "negative_value_rule": "Replace negative energy values with NaN; no negatives were observed in this mini-dataset.",
+  "imputation_rule": "No forward/backward filling for primary analysis; correlation uses pairwise complete observations."
+}

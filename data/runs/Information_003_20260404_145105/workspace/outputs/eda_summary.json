@@ -1,0 +1,26 @@
+{
+  "num_events": 148774,
+  "num_features_before_context": 40,
+  "num_features_after_context": 130,
+  "binary_counts": {
+    "0": 114716,
+    "1": 34058
+  },
+  "attack_counts": {
+    "Analysis": 380,
+    "Backdoor": 341,
+    "Benign": 114716,
+    "DoS": 3666,
+    "Exploits": 1473,
+    "Fuzzers": 1009,
+    "Generic": 14688,
+    "Reconnaissance": 10910,
+    "Shellcode": 1427,
+    "Worms": 164
+  },
+  "time_range": [
+    0,
+    86399
+  ],
+  "nan_features": 0
+}

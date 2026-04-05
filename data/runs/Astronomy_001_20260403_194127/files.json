@@ -1,0 +1,234 @@
+[
+  {
+    "name": "code",
+    "path": "code",
+    "type": "directory"
+  },
+  {
+    "name": "analyze_ede_summary.py",
+    "path": "code/analyze_ede_summary.py",
+    "type": "file",
+    "size": 13143,
+    "mtime": 1775317754.0,
+    "exported": true
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "type": "directory"
+  },
+  {
+    "name": "DESI_EDE_Repro_Data.txt",
+    "path": "data/DESI_EDE_Repro_Data.txt",
+    "type": "file",
+    "size": 2010,
+    "mtime": 1772000178.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "outputs",
+    "path": "outputs",
+    "type": "directory"
+  },
+  {
+    "name": "data_manifest.md",
+    "path": "outputs/data_manifest.md",
+    "type": "file",
+    "size": 512,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "data_qc.csv",
+    "path": "outputs/data_qc.csv",
+    "type": "file",
+    "size": 156,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "data_qc_summary.txt",
+    "path": "outputs/data_qc_summary.txt",
+    "type": "file",
+    "size": 365,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "desi_dvrd_residual_points.csv",
+    "path": "outputs/desi_dvrd_residual_points.csv",
+    "type": "file",
+    "size": 132,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "desi_dvrd_residual_summary.csv",
+    "path": "outputs/desi_dvrd_residual_summary.csv",
+    "type": "file",
+    "size": 380,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "desi_fap_residual_points.csv",
+    "path": "outputs/desi_fap_residual_points.csv",
+    "type": "file",
+    "size": 120,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "desi_fap_residual_summary.csv",
+    "path": "outputs/desi_fap_residual_summary.csv",
+    "type": "file",
+    "size": 345,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "ede_specific_parameters.csv",
+    "path": "outputs/ede_specific_parameters.csv",
+    "type": "file",
+    "size": 61,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "h0_comparison.csv",
+    "path": "outputs/h0_comparison.csv",
+    "type": "file",
+    "size": 66,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "highlights.md",
+    "path": "outputs/highlights.md",
+    "type": "file",
+    "size": 708,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "\u2026 6 more items",
+    "path": "outputs/_more",
+    "type": "truncated"
+  },
+  {
+    "name": "related_work",
+    "path": "related_work",
+    "type": "directory"
+  },
+  {
+    "name": "paper_000.pdf",
+    "path": "related_work/paper_000.pdf",
+    "type": "file",
+    "size": 1135737,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_001.pdf",
+    "path": "related_work/paper_001.pdf",
+    "type": "file",
+    "size": 6745329,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_002.pdf",
+    "path": "related_work/paper_002.pdf",
+    "type": "file",
+    "size": 5592750,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "paper_003.pdf",
+    "path": "related_work/paper_003.pdf",
+    "type": "file",
+    "size": 1107361,
+    "mtime": 1773914883.0,
+    "shared": true,
+    "exported": false
+  },
+  {
+    "name": "report",
+    "path": "report",
+    "type": "directory"
+  },
+  {
+    "name": "images",
+    "path": "report/images",
+    "type": "directory"
+  },
+  {
+    "name": "desi_dvrd.png",
+    "path": "report/images/desi_dvrd.png",
+    "type": "file",
+    "size": 73815,
+    "mtime": 1775317754.0,
+    "exported": true
+  },
+  {
+    "name": "desi_fap.png",
+    "path": "report/images/desi_fap.png",
+    "type": "file",
+    "size": 63903,
+    "mtime": 1775317754.0,
+    "exported": true
+  },
+  {
+    "name": "desi_residuals.png",
+    "path": "report/images/desi_residuals.png",
+    "type": "file",
+    "size": 95380,
+    "mtime": 1775317752.0,
+    "exported": true
+  },
+  {
+    "name": "parameter_forest.png",
+    "path": "report/images/parameter_forest.png",
+    "type": "file",
+    "size": 128258,
+    "mtime": 1775317754.0,
+    "exported": true
+  },
+  {
+    "name": "pull_heatmap.png",
+    "path": "report/images/pull_heatmap.png",
+    "type": "file",
+    "size": 101145,
+    "mtime": 1775317754.0,
+    "exported": true
+  },
+  {
+    "name": "union3_mu.png",
+    "path": "report/images/union3_mu.png",
+    "type": "file",
+    "size": 68884,
+    "mtime": 1775317754.0,
+    "exported": true
+  },
+  {
+    "name": "report.md",
+    "path": "report/report.md",
+    "type": "file",
+    "size": 12190,
+    "mtime": 1775317755.0,
+    "exported": true
+  },
+  {
+    "name": "INSTRUCTIONS.md",
+    "path": "INSTRUCTIONS.md",
+    "type": "file",
+    "size": 5423,
+    "mtime": 1775216487.0,
+    "exported": true
+  }
+]

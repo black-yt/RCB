@@ -1,0 +1,93 @@
+{
+  "raw_data": {
+    "energy_points": 200,
+    "kx_points": 150,
+    "time_delays": [
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "polarization_angles": [
+      0,
+      30,
+      60,
+      90,
+      120,
+      150,
+      180
+    ],
+    "energy_range_eV": [
+      -0.5,
+      0.5
+    ],
+    "kx_range_Ainv": [
+      -0.3,
+      0.3
+    ],
+    "pump_off_mean": 16.712215467169834,
+    "pump_off_std": 28.71400676637142
+  },
+  "processed_data": {
+    "dirac_point_kx_energy": [
+      -0.3,
+      -0.042713567839196
+    ],
+    "replica_count": 4,
+    "replica_summary": [
+      {
+        "order": -1,
+        "kx": -0.046308724832214765,
+        "energy": -0.290713567839196,
+        "intensity": 0.49521670717091265,
+        "delta_energy_from_dirac_eV": -0.248,
+        "expected_order_energy_eV": -0.2479683968,
+        "spacing_error_eV": -3.1603200000007714e-05
+      },
+      {
+        "order": -1,
+        "kx": 0.046308724832214765,
+        "energy": -0.290713567839196,
+        "intensity": 0.4951316941393499,
+        "delta_energy_from_dirac_eV": -0.248,
+        "expected_order_energy_eV": -0.2479683968,
+        "spacing_error_eV": -3.1603200000007714e-05
+      },
+      {
+        "order": 1,
+        "kx": -0.03422818791946308,
+        "energy": 0.205286432160804,
+        "intensity": 0.5244272546110498,
+        "delta_energy_from_dirac_eV": 0.248,
+        "expected_order_energy_eV": 0.2479683968,
+        "spacing_error_eV": 3.1603200000007714e-05
+      },
+      {
+        "order": 1,
+        "kx": 0.03422818791946308,
+        "energy": 0.205286432160804,
+        "intensity": 0.5244228565426068,
+        "delta_energy_from_dirac_eV": 0.248,
+        "expected_order_energy_eV": 0.2479683968,
+        "spacing_error_eV": 3.1603200000007714e-05
+      }
+    ],
+    "estimated_dirac_cone_slope_eV_per_Ainv": 5.591600508637978
+  },
+  "physics_metrics": {
+    "pump_wavelength_um": 5.0,
+    "photon_energy_eV": 0.2479683968,
+    "mean_abs_replica_spacing_eV": 0.248,
+    "max_abs_spacing_error_eV": 3.1603200000007714e-05,
+    "replica_intensity_mean": 0.5097996281159798,
+    "replica_intensity_std": 0.014625458428109504
+  },
+  "polarization_fit": {
+    "offset_a0": 0.5004768482689556,
+    "amplitude_a1": 0.001304551041405218,
+    "phase_phi_rad": 0.0035914054865863305,
+    "r_squared": 0.04735111865847452,
+    "modulation_depth_percent": 1.8166338782606053
+  }
+}
